@@ -163,6 +163,7 @@ export function TestimonialSection() {
                 src="/images/mahmoud-ben-ahmed.jpg"
                 alt="Mahmoud Ben Ahmed — M&M CONSTRUCTION"
                 fill
+                sizes="(max-width: 768px) 100vw, 400px"
                 className="object-cover opacity-40"
               />
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-6">

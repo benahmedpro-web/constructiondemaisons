@@ -2,31 +2,37 @@
 > Maîtrise d'œuvre spécialisée maison ossature bois en Haute-Savoie et Genevois français.
 
 ## Pages principales
-- Accueil: https://www.constructiondemaisons.com
-- Maison ossature bois: https://www.constructiondemaisons.com/maison-ossature-bois
-- Extension bois: https://www.constructiondemaisons.com/extension-bois
-- Rénovation bois: https://www.constructiondemaisons.com/renovation-bois
-- Notre méthode MOE: https://www.constructiondemaisons.com/notre-methode
-- Annonces: https://www.constructiondemaisons.com/annonces
-- Guides techniques: https://www.constructiondemaisons.com/guides
-- À propos: https://www.constructiondemaisons.com/a-propos
-- Contact: https://www.constructiondemaisons.com/contact
+- [Accueil](https://www.constructiondemaisons.com/)
+- [Maison ossature bois neuve](https://www.constructiondemaisons.com/maison-ossature-bois/)
+- [Extension ossature bois](https://www.constructiondemaisons.com/extension-bois/)
+- [Rénovation & isolation bois](https://www.constructiondemaisons.com/renovation-bois/)
+- [Notre méthode MOE](https://www.constructiondemaisons.com/notre-methode/)
+- [Annonces](https://www.constructiondemaisons.com/annonces/)
+- [Guides techniques](https://www.constructiondemaisons.com/guides/)
+- [À propos](https://www.constructiondemaisons.com/a-propos/)
+- [Contact](https://www.constructiondemaisons.com/contact/)
+- [Demande d'étude gratuite](https://www.constructiondemaisons.com/demande-etude/)
 
 ## Guides techniques
-- Maison ossature bois — avantages, coûts et délais: https://www.constructiondemaisons.com/guides/maison-ossature-bois
-- Coordonner un chantier bois: https://www.constructiondemaisons.com/guides/coordonner-chantier-bois
-- MOE vs CCMI — les différences: https://www.constructiondemaisons.com/guides/moe-vs-ccmi
-- RE2020 et maison bois: https://www.constructiondemaisons.com/guides/re2020-maison-bois
-- Extension ossature bois: https://www.constructiondemaisons.com/guides/extension-ossature-bois
-- Choisir ses artisans bois: https://www.constructiondemaisons.com/guides/choisir-artisans-maison-bois
-- Permis de construire en Genevois: https://www.constructiondemaisons.com/guides/permis-construire-genevois
+- [Maison ossature bois — avantages, coûts et délais](https://www.constructiondemaisons.com/guides/maison-ossature-bois/)
+- [Comment coordonner un chantier bois](https://www.constructiondemaisons.com/guides/coordonner-chantier-bois/)
+- [MOE vs CCMI — les différences](https://www.constructiondemaisons.com/guides/moe-vs-ccmi/)
+- [RE2020 et maison bois](https://www.constructiondemaisons.com/guides/re2020-maison-bois/)
+- [Extension ossature bois — guide complet](https://www.constructiondemaisons.com/guides/extension-ossature-bois/)
+- [Choisir ses artisans bois](https://www.constructiondemaisons.com/guides/choisir-artisans-maison-bois/)
+- [Permis de construire en Genevois français](https://www.constructiondemaisons.com/guides/permis-construire-genevois/)
 
 ## Expertise
 Mahmoud Ben Ahmed, responsable de projets de construction de maisons individuelles avec 20 ans d'expérience
 en Haute-Savoie (74), Ain (01) et Genevois français. Spécialisé maison ossature bois, extension et rénovation bois.
-Basé à Annemasse (74100). Contact : benahmed.pro@icloud.com | +33 6 25 59 09 26
+Basé à Annemasse (74100). Contact : benahmed.pro@icloud.com
 
 ## Zone d'intervention
 Annecy, Annemasse, Thonon-les-Bains, Saint-Julien-en-Genevois, Gex, Ferney-Voltaire, Cluses,
 Bonneville, Évian-les-Bains, Sallanches, Chamonix, Archamps, Cruseilles, Douvaine,
 Saint-Genis-Pouilly, Prévessin-Moëns, Divonne-les-Bains, Rumilly, La Roche-sur-Foron, Gaillard.
+
+## À propos
+M&M CONSTRUCTION est une entreprise individuelle de maîtrise d'œuvre (NAF 71.12B), non constructeur.
+Elle accompagne les particuliers dans leurs projets de maisons bois sans vendre de maisons catalogue.
+Indépendance totale : honoraires forfaitaires, transparence sur les artisans et les budgets.

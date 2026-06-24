@@ -6,9 +6,35 @@ export const metadata: Metadata = {
   description: "Guide complet sur la maison ossature bois en 2025 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
 };
 
+const BASE = "https://www.constructiondemaisons.com";
+
+const jsonLdArticle = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Maison ossature bois : avantages, coûts et délais en 2025",
+  description: "Guide complet sur la maison ossature bois en 2025 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
+  url: BASE + "/guides/maison-ossature-bois/",
+  author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
+  publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
+  dateModified: "2025-06-01",
+  inLanguage: "fr-FR",
+};
+
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: BASE + "/" },
+    { "@type": "ListItem", position: 2, name: "Guides", item: BASE + "/guides/" },
+    { "@type": "ListItem", position: 3, name: "Maison ossature bois 2025", item: BASE + "/guides/maison-ossature-bois/" },
+  ],
+};
+
 export default function GuideMaisonBoisPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">
           <div className="flex gap-2 text-[13px] text-white/40 mb-4">

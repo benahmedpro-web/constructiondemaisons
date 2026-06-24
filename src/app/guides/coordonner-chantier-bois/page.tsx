@@ -6,8 +6,35 @@ export const metadata: Metadata = {
   description: "Les étapes clés de la coordination de chantier bois : planning, corps de métier, suivi qualité. Guide pratique par M&M CONSTRUCTION, maître d'œuvre en Haute-Savoie.",
 };
 
+const BASE = "https://www.constructiondemaisons.com";
+
+const jsonLdArticle = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Comment coordonner un chantier maison bois ?",
+  description: "Les étapes clés de la coordination de chantier bois : planning, corps de métier, suivi qualité.",
+  url: BASE + "/guides/coordonner-chantier-bois/",
+  author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
+  publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
+  dateModified: "2025-06-01",
+  inLanguage: "fr-FR",
+};
+
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: BASE + "/" },
+    { "@type": "ListItem", position: 2, name: "Guides", item: BASE + "/guides/" },
+    { "@type": "ListItem", position: 3, name: "Coordonner un chantier bois", item: BASE + "/guides/coordonner-chantier-bois/" },
+  ],
+};
+
 export default function GuideCoordonnationPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">
@@ -120,5 +147,6 @@ export default function GuideCoordonnationPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

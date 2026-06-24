@@ -45,7 +45,7 @@ export const viewport = {
   themeColor: "#2C2C2A",
 };
 
-const jsonLd = {
+const jsonLdBusiness = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   name: "M&M CONSTRUCTION",
@@ -80,6 +80,21 @@ const jsonLd = {
   },
 };
 
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "M&M CONSTRUCTION",
+  url: BASE,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: BASE + "/guides/?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,7 +105,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBusiness) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
         />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>

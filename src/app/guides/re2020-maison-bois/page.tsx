@@ -6,8 +6,35 @@ export const metadata: Metadata = {
   description: "La RE2020 favorise-t-elle l'ossature bois ? Exigences concrètes pour construire en zone alpine en 2025. Guide par M&M CONSTRUCTION, maître d'œuvre Haute-Savoie.",
 };
 
+const BASE = "https://www.constructiondemaisons.com";
+
+const jsonLdArticle = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "RE2020 et maison bois en Haute-Savoie : ce qui change",
+  description: "La RE2020 favorise-t-elle l'ossature bois ? Exigences concrètes pour construire en zone alpine en 2025.",
+  url: BASE + "/guides/re2020-maison-bois/",
+  author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
+  publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
+  dateModified: "2025-06-01",
+  inLanguage: "fr-FR",
+};
+
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: BASE + "/" },
+    { "@type": "ListItem", position: 2, name: "Guides", item: BASE + "/guides/" },
+    { "@type": "ListItem", position: 3, name: "RE2020 & maison bois", item: BASE + "/guides/re2020-maison-bois/" },
+  ],
+};
+
 export default function GuideRe2020Page() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">
@@ -91,5 +118,6 @@ export default function GuideRe2020Page() {
         </div>
       </section>
     </main>
+    </>
   );
 }

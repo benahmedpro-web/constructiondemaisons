@@ -6,8 +6,35 @@ export const metadata: Metadata = {
   description: "Comparaison objective MOE vs CCMI : budget, liberté de choix, garanties, suivi de chantier. Ce que vous gagnez avec un maître d'œuvre spécialisé bois.",
 };
 
+const BASE = "https://www.constructiondemaisons.com";
+
+const jsonLdArticle = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Maîtrise d'œuvre vs CCMI : quelles différences concrètes ?",
+  description: "Comparaison objective MOE vs CCMI : budget, liberté de choix, garanties, suivi de chantier. Ce que vous gagnez avec un maître d'œuvre spécialisé bois.",
+  url: BASE + "/guides/moe-vs-ccmi/",
+  author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
+  publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
+  dateModified: "2025-06-01",
+  inLanguage: "fr-FR",
+};
+
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: BASE + "/" },
+    { "@type": "ListItem", position: 2, name: "Guides", item: BASE + "/guides/" },
+    { "@type": "ListItem", position: 3, name: "MOE vs CCMI", item: BASE + "/guides/moe-vs-ccmi/" },
+  ],
+};
+
 export default function GuideMoeVsCcmiPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">
@@ -103,5 +130,6 @@ export default function GuideMoeVsCcmiPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
