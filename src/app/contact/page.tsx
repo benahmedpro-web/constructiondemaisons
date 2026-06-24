@@ -58,7 +58,7 @@ export default function ContactPage() {
                 <div className="text-[#BA7517] text-[48px] mb-4">✓</div>
                 <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-2">Message envoyé</h2>
                 <p className="text-[15px] text-[#888780] leading-[1.7]">
-                  Mahmoud vous répond sous 48h. En cas d&apos;urgence, appelez directement au <strong className="text-[#2C2C2A]">+33 6 25 59 09 26</strong>.
+                  Mahmoud vous répond sous 48h. En cas d&apos;urgence, <a href="tel:+33625590926" className="text-[#BA7517] no-underline font-bold hover:underline">appelez directement</a>.
                 </p>
                 <Link href="/" className="inline-block mt-6 text-[#BA7517] text-[14px] font-bold no-underline hover:underline">
                   ← Retour à l&apos;accueil
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <div className="text-[13px] font-bold text-[#2C2C2A]">Téléphone</div>
-                    <a href="tel:+33625590926" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517]">+33 6 25 59 09 26</a>
+                    <a href="tel:+33625590926" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517]">Appeler directement</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

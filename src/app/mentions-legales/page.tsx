@@ -27,7 +27,7 @@ export default function MentionsLegalesPage() {
               <p><strong className="text-[#2C2C2A]">Forme juridique :</strong> Entreprise individuelle</p>
               <p><strong className="text-[#2C2C2A]">Responsable :</strong> Mahmoud Ben Ahmed</p>
               <p><strong className="text-[#2C2C2A]">Adresse :</strong> Annemasse (74100), Haute-Savoie</p>
-              <p><strong className="text-[#2C2C2A]">Téléphone :</strong> <a href="tel:+33625590926" className="text-[#BA7517] no-underline hover:underline">+33 6 25 59 09 26</a></p>
+              <p><strong className="text-[#2C2C2A]">Téléphone :</strong> <a href="tel:+33625590926" className="text-[#BA7517] no-underline hover:underline">Disponible par téléphone</a></p>
               <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a></p>
               <p><strong className="text-[#2C2C2A]">Code NAF :</strong> 71.12B — Ingénierie, études techniques</p>
               <p><strong className="text-[#2C2C2A]">Directeur de la publication :</strong> Mahmoud Ben Ahmed</p>
