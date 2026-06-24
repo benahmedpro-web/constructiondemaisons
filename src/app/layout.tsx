@@ -4,6 +4,13 @@ import "./globals.css";
 const BASE = "https://www.constructiondemaisons.com";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   title: "M&M CONSTRUCTION — Maîtrise d'œuvre maison bois | Genevois",
   description:
     "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
