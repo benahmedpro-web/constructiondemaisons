@@ -37,7 +37,7 @@ export function CommunesTicker() {
           100% { transform: translateX(-50%); }
         }
         @media (max-width: 768px) {
-          .ticker-track { animation-duration: 18s !important; }
+          .ticker-track { animation-duration: 10s !important; }
         }
       `}</style>
     </div>
