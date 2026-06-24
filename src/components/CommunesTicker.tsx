@@ -20,7 +20,7 @@ export function CommunesTicker() {
 
         {/* Ticker */}
         <div className="overflow-hidden flex-1">
-          <div className="flex whitespace-nowrap" style={{ animation: "ticker 35s linear infinite" }}>
+          <div className="ticker-track flex whitespace-nowrap" style={{ animation: "ticker 35s linear infinite" }}>
             {items.map((commune, i) => (
               <span key={i} className="inline-flex items-center gap-3 text-white/70 text-[13px] px-5">
                 <span className="text-[#BA7517] text-[8px]">◆</span>
@@ -35,6 +35,9 @@ export function CommunesTicker() {
         @keyframes ticker {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
+        }
+        @media (max-width: 768px) {
+          .ticker-track { animation-duration: 18s !important; }
         }
       `}</style>
     </div>
