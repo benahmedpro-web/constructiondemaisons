@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -121,6 +122,22 @@ export default function GuideMoeVsCcmiPage() {
           </p>
         </div>
       </article>
+
+      <div className="border-t border-[#D9D4CC] py-10 px-5 bg-white">
+        <div className="max-w-[780px] mx-auto">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projet réalisé en MOE</p>
+          <Link href="/annonces/maison-ossature-bois-gex-01/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
+            <div className="flex-shrink-0 overflow-hidden w-24 h-16">
+              <Image src="/images/hero-extension-bois-jardin.jpg" alt="Maison ossature bois Gex" width={96} height={64} className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Maison ossature bois · Gex (01)</div>
+              <div className="text-[13px] text-[#888780] mt-1">130 m² · 400 000 € · Livré — budget respecté</div>
+              <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir la réalisation →</div>
+            </div>
+          </Link>
+        </div>
+      </div>
 
       <section className="bg-[#F2EDE6] py-12 px-5">
         <div className="max-w-[780px] mx-auto flex flex-col md:flex-row gap-6 items-start">

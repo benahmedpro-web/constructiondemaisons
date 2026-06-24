@@ -75,6 +75,13 @@ const jsonLdBusiness = {
       "coordination de chantier",
     ],
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "10",
+    bestRating: "5",
+    worstRating: "1",
+  },
 };
 
 const jsonLdWebSite = {
