@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { HeroSlider } from "@/components/HeroSlider";
+import { CommunesTicker } from "@/components/CommunesTicker";
 import { QuickLinks } from "@/components/QuickLinks";
 import { IntroSection } from "@/components/IntroSection";
 import { FeaturesGrid } from "@/components/FeaturesGrid";
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen">
       <Header />
       <HeroSlider />
+      <CommunesTicker />
       <QuickLinks />
       <IntroSection />
       <FeaturesGrid />
