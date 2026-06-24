@@ -175,6 +175,23 @@ export default function DemandeEtudePage() {
             <p className="text-red-600 text-[14px] bg-red-50 border border-red-200 px-4 py-3">{error}</p>
           )}
 
+          {/* Consentement RGPD */}
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="rgpd"
+              required
+              className="mt-0.5 flex-shrink-0 w-4 h-4 accent-[#BA7517] cursor-pointer"
+            />
+            <span className="text-[13px] text-[#888780] leading-[1.6]">
+              J&apos;accepte la{" "}
+              <Link href="/vie-privee/" className="text-[#BA7517] no-underline hover:underline" target="_blank">politique de confidentialité</Link>
+              {" "}et la{" "}
+              <Link href="/politique-cookies/" className="text-[#BA7517] no-underline hover:underline" target="_blank">politique de cookies</Link>
+              . Mes données sont utilisées uniquement pour traiter ma demande d&apos;étude. *
+            </span>
+          </label>
+
           {/* Submit */}
           <button
             type="submit"
