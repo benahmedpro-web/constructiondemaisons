@@ -5,7 +5,7 @@ const col2Links = [
   { label: "Extension ossature bois", href: "/extension-bois/" },
   { label: "Rénovation & isolation bois", href: "/renovation-bois/" },
   { label: "Notre méthode MOE", href: "/notre-methode/" },
-  { label: "Zone d'intervention", href: "/zone-intervention/" },
+  { label: "Annonces", href: "/annonces/" },
 ];
 
 const col3Links = [
@@ -19,7 +19,7 @@ const col3Links = [
 
 const col4Links = [
   { label: "À propos", href: "/a-propos/" },
-  { label: "Réalisations", href: "/realisations/" },
+  { label: "Annonces", href: "/annonces/" },
   { label: "Demande d'étude gratuite", href: "/demande-etude/" },
   { label: "Contact", href: "/contact/" },
 ];
