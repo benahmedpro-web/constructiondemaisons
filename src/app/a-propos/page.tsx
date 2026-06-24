@@ -90,7 +90,7 @@ export default function AProposPage() {
               <div className="flex gap-3 mt-4">
                 <div className="text-center">
                   <div className="text-[22px] font-black text-[#BA7517]">20+</div>
-                  <div className="text-[11px] text-[#888780]">ans BTP</div>
+                  <div className="text-[11px] text-[#888780]">ans terrain</div>
                 </div>
                 <div className="w-px bg-[#D9D4CC]" />
                 <div className="text-center">
