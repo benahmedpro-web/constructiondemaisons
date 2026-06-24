@@ -49,7 +49,6 @@ const valeurs = [
 const parcours = [
   { annee: "2003", evenement: "Débuts en CMI chez Maisons Pierre en Île-de-France — 47 projets commercialisés" },
   { annee: "2006", evenement: "Commercial chez Geoxia — 17 projets accompagnés en Île-de-France" },
-  { annee: "2007", evenement: "Entrepreneur — création et gestion de Seven Fitness à Sousse, Tunisie (7 ans)" },
   { annee: "2014", evenement: "Retour chez Maisons Pierre — triple progression en 3 ans : commercial, ingénieur commercial, responsable d'agence. 92 projets commercialisés" },
   { annee: "2017", evenement: "Responsable d'agence chez Les Demeures Traditionnelles (Groupe Lesterlin), Beauvais — 41 projets réalisés" },
   { annee: "2020", evenement: "Création de M&M CONSTRUCTION — indépendant, projets de construction individuelle en Haute-Savoie. 24 projets conduits à ce jour" },
