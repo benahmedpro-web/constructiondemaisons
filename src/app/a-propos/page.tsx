@@ -118,7 +118,7 @@ export default function AProposPage() {
               En 2017, il prend la direction d&apos;agence des Demeures Traditionnelles (Groupe Lesterlin) à Beauvais — 41 projets supplémentaires sur des clients particuliers premium. En 2020, il devient indépendant pour accompagner des projets de construction individuelle en totale autonomie, sans structure intermédiaire ni catalogue imposé.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              Aujourd&apos;hui basé à Annemasse, il intervient sur la Haute-Savoie, l&apos;Ain et le Genevois français. Son réseau — architectes, maîtres d&apos;œuvre, bureaux d&apos;études, géomètres, notaires — s&apos;est construit sur deux décennies de terrain.
+              Aujourd&apos;hui basé à Annemasse, il intervient sur la Haute-Savoie, l&apos;Ain et le Genevois français.
             </p>
             <div className="bg-[#F2EDE6] p-5 mt-6">
               <p className="text-[15px] text-[#2C2C2A] leading-[1.7] italic">
