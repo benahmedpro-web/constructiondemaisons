@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 
 export function Header() {
@@ -30,19 +29,10 @@ export function Header() {
 
       {/* Main nav */}
       <div className="max-w-[1200px] mx-auto px-5 py-3 flex items-center gap-8">
-        {/* Logo */}
-        <Link href="/" className="flex-shrink-0 mr-auto flex items-center gap-3 no-underline">
-          <Image
-            src="/images/logo-icon-m.png"
-            alt="M&M CONSTRUCTION"
-            width={40}
-            height={40}
-            className="object-contain"
-          />
-          <div className="flex flex-col leading-none">
-            <span className="text-[22px] font-black text-[#2C2C2A] tracking-tight">M&amp;M CONSTRUCTION</span>
-            <span className="text-[11px] text-[#888780] tracking-widest uppercase">Maîtrise d&apos;œuvre · Maison bois</span>
-          </div>
+        {/* Logo text */}
+        <Link href="/" className="flex-shrink-0 mr-auto flex flex-col leading-none no-underline">
+          <span className="text-[22px] font-black text-[#2C2C2A] tracking-tight">M&amp;M CONSTRUCTION</span>
+          <span className="text-[11px] text-[#888780] tracking-widest uppercase">Maîtrise d&apos;œuvre · Maison bois</span>
         </Link>
 
         {/* Desktop nav */}
