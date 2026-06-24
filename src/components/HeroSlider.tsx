@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const slides = [
   { bg: "/images/hero-maison-bois-alpine.jpg" },
@@ -34,8 +35,23 @@ export function HeroSlider() {
         <div
           key={i}
           className={`absolute inset-0 transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
-          style={{ backgroundImage: `url(${s.bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        />
+        >
+          {i === 0 ? (
+            <Image
+              src={s.bg}
+              alt="M&M CONSTRUCTION — Maison ossature bois Haute-Savoie"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          ) : (
+            <div
+              className="absolute inset-0"
+              style={{ backgroundImage: `url(${s.bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+            />
+          )}
+        </div>
       ))}
 
       {/* Dark overlay */}
