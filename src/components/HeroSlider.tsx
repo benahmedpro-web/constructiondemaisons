@@ -36,21 +36,15 @@ export function HeroSlider() {
           key={i}
           className={`absolute inset-0 transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
         >
-          {i === 0 ? (
-            <Image
-              src={s.bg}
-              alt="M&M CONSTRUCTION — Maison ossature bois Haute-Savoie"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-          ) : (
-            <div
-              className="absolute inset-0"
-              style={{ backgroundImage: `url(${s.bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-            />
-          )}
+          <Image
+            src={s.bg}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
+          />
         </div>
       ))}
 
