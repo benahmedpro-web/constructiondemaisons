@@ -91,6 +91,10 @@ export function Header() {
                     <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Gex — Pays de Gex (01)</div>
                     <div className="text-[#888780] text-[12px]">Ain, frontaliers CERN, DDT01.</div>
                   </Link>
+                  <Link href="/maison-ossature-bois-thonon/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Thonon — Chablais (74)</div>
+                    <div className="text-[#888780] text-[12px]">Lac Léman, Evian, vallées alpines.</div>
+                  </Link>
                   <div className="mt-auto pt-4 border-t border-[#D9D4CC]">
                     <Link href="/faire-construire-haute-savoie/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
                       → Toutes nos zones d&apos;intervention
@@ -145,6 +149,7 @@ export function Header() {
           <Link href="/maison-ossature-bois-annemasse/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Annemasse (74)</Link>
           <Link href="/maison-ossature-bois-saint-julien-en-genevois/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Saint-Julien-en-Genevois (74)</Link>
           <Link href="/maison-ossature-bois-gex/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Gex — Pays de Gex (01)</Link>
+          <Link href="/maison-ossature-bois-thonon/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Thonon — Chablais (74)</Link>
           <Link href="/guides/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Guides</Link>
           <Link href="/annonces/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Annonces</Link>
           <Link href="/a-propos/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">À propos</Link>
