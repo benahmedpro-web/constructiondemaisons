@@ -52,6 +52,7 @@ export const viewport = {
 const jsonLdBusiness = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
+  "@id": BASE + "/#business",
   name: "M&M CONSTRUCTION",
   url: BASE,
   telephone: "+33625590926",
@@ -114,6 +115,7 @@ const jsonLdBusiness = {
 const jsonLdWebSite = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": BASE + "/#website",
   name: "M&M CONSTRUCTION",
   url: BASE,
   potentialAction: {

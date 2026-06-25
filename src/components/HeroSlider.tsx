@@ -5,11 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const slides = [
-  { bg: "/images/hero-maison-bois-alpine.jpg" },
-  { bg: "/images/hero-maison-bois-montagne-1.jpg" },
-  { bg: "/images/hero-extension-bois-golden.jpg" },
-  { bg: "/images/hero-extension-bois-jardin.jpg" },
-  { bg: "/images/hero-maison-bois-montagne-2.jpg" },
+  { bg: "/images/hero-maison-bois-alpine.jpg", alt: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie" },
+  { bg: "/images/hero-maison-bois-montagne-1.jpg", alt: "Maison ossature bois en montagne — Genevois français" },
+  { bg: "/images/hero-extension-bois-golden.jpg", alt: "Extension ossature bois en Haute-Savoie" },
+  { bg: "/images/hero-extension-bois-jardin.jpg", alt: "Terrasse et extension bois en Haute-Savoie" },
+  { bg: "/images/hero-maison-bois-montagne-2.jpg", alt: "Maison ossature bois R+1 — Ain et Genevois" },
 ];
 
 export function HeroSlider() {
@@ -38,7 +38,7 @@ export function HeroSlider() {
         >
           <Image
             src={s.bg}
-            alt={i === 0 ? "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie" : ""}
+            alt={s.alt}
             fill
             sizes="100vw"
             className="object-cover object-center"
