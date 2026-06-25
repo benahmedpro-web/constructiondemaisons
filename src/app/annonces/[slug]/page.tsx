@@ -15,7 +15,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = getAnnonce(slug);
   if (!a) return {};
   return {
-    title: `${a.type} ${a.commune} — ${a.surfaceHabitable} m² | M&M CONSTRUCTION`,
+    title: a.surfaceHabitable > 0
+      ? `${a.type} ${a.commune} — ${a.surfaceHabitable} m² | M&M CONSTRUCTION`
+      : `${a.type} ${a.commune} — ${a.surfaceTerrain} m² | M&M CONSTRUCTION`,
     description: a.accroche,
     alternates: {
       canonical: `https://www.constructiondemaisons.com/annonces/${slug}/`,
@@ -157,14 +159,14 @@ export default async function AnnonceDetailPage({ params }: Props) {
                 </div>
                 <div className="p-5 flex flex-col gap-3">
                   {[
-                    { label: "Terrain", val: `${a.surfaceTerrain} m²` },
-                    { label: "Surface habitable", val: `${a.surfaceHabitable} m²` },
-                    { label: "Pièces", val: `${a.pieces} pièces` },
+                    a.surfaceTerrain > 0 ? { label: "Terrain", val: `${a.surfaceTerrain} m²` } : null,
+                    a.surfaceHabitable > 0 ? { label: "Surface habitable", val: `${a.surfaceHabitable} m²` } : null,
+                    a.pieces > 0 ? { label: "Pièces", val: `${a.pieces} pièces` } : null,
                     { label: "Type", val: a.type },
                     { label: "Commune", val: a.commune },
                     { label: "Zone", val: a.zone },
                     { label: "Statut", val: a.statut },
-                  ].map((row) => (
+                  ].filter((row): row is { label: string; val: string } => row !== null).map((row) => (
                     <div key={row.label} className="flex justify-between items-center py-1.5 border-b border-[#D9D4CC] last:border-0 text-[14px]">
                       <span className="text-[#888780]">{row.label}</span>
                       <span className="font-bold text-[#2C2C2A]">{row.val}</span>
