@@ -60,6 +60,48 @@ const guides = [
     href: "/guides/permis-construire-genevois/",
     tag: "Urbanisme",
   },
+  {
+    title: "Prix maison ossature bois en Haute-Savoie : tarifs 2025",
+    excerpt: "Budget réaliste par poste, écarts avec le reste de la France, honoraires MOE inclus — tous les chiffres pour cadrer votre projet en zone alpine.",
+    image: "/images/hero-maison-bois-montagne-1.jpg",
+    href: "/guides/prix-maison-ossature-bois-haute-savoie/",
+    tag: "Budget",
+  },
+  {
+    title: "Construction chalet ossature bois en Haute-Savoie",
+    excerpt: "Différences techniques avec une maison classique, contraintes PLU en zone de montagne, budget indicatif et rôle du maître d'œuvre.",
+    image: "/images/hero-maison-bois-alpine.jpg",
+    href: "/guides/construction-chalet-ossature-bois-haute-savoie/",
+    tag: "Chalet",
+  },
+  {
+    title: "Garantie décennale et assurance dommage ouvrage en maîtrise d'œuvre",
+    excerpt: "Qui souscrit quoi, ce que couvre la DO quand il n'y a pas de CCMI, et les points de vigilance spécifiques à l'ossature bois.",
+    image: "/images/hero-maison-bois-montagne-2.jpg",
+    href: "/guides/garanties-assurance-maitre-oeuvre/",
+    tag: "Juridique",
+  },
+  {
+    title: "Prix maison ossature bois 100m² en Haute-Savoie — Budget estimatif",
+    excerpt: "Fourchette 210 000 – 290 000 €, décomposé poste par poste : terrassement, ossature, isolation, menuiseries, honoraires MOE et VRD.",
+    image: "/images/Fotolia_58453596_XL-scaled.jpg",
+    href: "/guides/prix-maison-ossature-bois-100m2/",
+    tag: "Budget 100m²",
+  },
+  {
+    title: "Prix maison ossature bois 120m² en Haute-Savoie — Budget estimatif",
+    excerpt: "Fourchette 250 000 – 340 000 €, comparatif R+1 vs plain-pied, et tous les postes détaillés pour un projet 4 chambres en Genevois.",
+    image: "/images/hero-extension-bois-jardin.jpg",
+    href: "/guides/prix-maison-ossature-bois-120m2/",
+    tag: "Budget 120m²",
+  },
+  {
+    title: "Prix maison ossature bois 150m² en Haute-Savoie — Budget estimatif",
+    excerpt: "Fourchette 310 000 – 420 000 €, pourquoi le MOE devient rentable à cette surface, et les spécificités RE2020 pour les grandes surfaces.",
+    image: "/images/hero-extension-bois-golden.jpg",
+    href: "/guides/prix-maison-ossature-bois-150m2/",
+    tag: "Budget 150m²",
+  },
 ];
 
 export default function GuidesPage() {
