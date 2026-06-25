@@ -47,27 +47,52 @@ export function Header() {
               Nos services
             </button>
             {servicesDropdown && (
-              <div className="absolute top-full left-0 bg-white border border-[#D9D4CC] shadow-lg min-w-[360px] z-50 p-6 flex flex-col gap-4">
-                <Link href="/faire-construire-haute-savoie/" className="block no-underline hover:text-[#BA7517] group border-b border-[#D9D4CC] pb-4">
-                  <div className="font-bold text-[#2C2C2A] text-[15px] mb-1 group-hover:text-[#BA7517]">Faire construire en Haute-Savoie</div>
-                  <div className="text-[#888780] text-[13px]">Guide complet pour votre projet de construction.</div>
-                </Link>
-                <Link href="/maison-ossature-bois/" className="block no-underline hover:text-[#BA7517] group">
-                  <div className="font-bold text-[#2C2C2A] text-[15px] mb-1 group-hover:text-[#BA7517]">Maison ossature bois neuve</div>
-                  <div className="text-[#888780] text-[13px]">Construction complète, de la conception à la réception.</div>
-                </Link>
-                <Link href="/extension-bois/" className="block no-underline hover:text-[#BA7517] group">
-                  <div className="font-bold text-[#2C2C2A] text-[15px] mb-1 group-hover:text-[#BA7517]">Extension ossature bois</div>
-                  <div className="text-[#888780] text-[13px]">Agrandissement de votre maison existante.</div>
-                </Link>
-                <Link href="/renovation-bois/" className="block no-underline hover:text-[#BA7517] group">
-                  <div className="font-bold text-[#2C2C2A] text-[15px] mb-1 group-hover:text-[#BA7517]">Rénovation & isolation bois</div>
-                  <div className="text-[#888780] text-[13px]">Réhabilitation et performance énergétique.</div>
-                </Link>
-                <Link href="/notre-methode/" className="block no-underline hover:text-[#BA7517] group">
-                  <div className="font-bold text-[#2C2C2A] text-[15px] mb-1 group-hover:text-[#BA7517]">Notre méthode MOE</div>
-                  <div className="text-[#888780] text-[13px]">Coordination de chantier, un seul interlocuteur.</div>
-                </Link>
+              <div className="absolute top-full left-0 bg-white border border-[#D9D4CC] shadow-lg min-w-[640px] z-50 p-6 grid grid-cols-2 gap-6">
+                {/* Col 1 : Services */}
+                <div className="flex flex-col gap-4">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Services</p>
+                  <Link href="/faire-construire-haute-savoie/" className="block no-underline hover:text-[#BA7517] group border-b border-[#D9D4CC] pb-3">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Faire construire en Haute-Savoie</div>
+                    <div className="text-[#888780] text-[12px]">Guide complet pour votre projet.</div>
+                  </Link>
+                  <Link href="/maison-ossature-bois/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Maison ossature bois neuve</div>
+                    <div className="text-[#888780] text-[12px]">De la conception à la réception.</div>
+                  </Link>
+                  <Link href="/extension-bois/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Extension ossature bois</div>
+                    <div className="text-[#888780] text-[12px]">Agrandissement de votre maison.</div>
+                  </Link>
+                  <Link href="/renovation-bois/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Rénovation & isolation bois</div>
+                    <div className="text-[#888780] text-[12px]">Réhabilitation et performance énergétique.</div>
+                  </Link>
+                  <Link href="/notre-methode/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Notre méthode MOE</div>
+                    <div className="text-[#888780] text-[12px]">Un seul interlocuteur, zéro coordination.</div>
+                  </Link>
+                </div>
+                {/* Col 2 : Zones */}
+                <div className="flex flex-col gap-4 border-l border-[#D9D4CC] pl-6">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Zones d&apos;intervention</p>
+                  <Link href="/maison-ossature-bois-annemasse/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Annemasse (74)</div>
+                    <div className="text-[#888780] text-[12px]">Genevois nord, agglomération.</div>
+                  </Link>
+                  <Link href="/maison-ossature-bois-saint-julien-en-genevois/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Saint-Julien-en-Genevois (74)</div>
+                    <div className="text-[#888780] text-[12px]">Sud Genevois, terrains en pente.</div>
+                  </Link>
+                  <Link href="/maison-ossature-bois-gex/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Gex — Pays de Gex (01)</div>
+                    <div className="text-[#888780] text-[12px]">Ain, frontaliers CERN, DDT01.</div>
+                  </Link>
+                  <div className="mt-auto pt-4 border-t border-[#D9D4CC]">
+                    <Link href="/faire-construire-haute-savoie/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
+                      → Toutes nos zones d&apos;intervention
+                    </Link>
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -111,6 +136,10 @@ export function Header() {
           <Link href="/maison-ossature-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Maison ossature bois</Link>
           <Link href="/extension-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Extension bois</Link>
           <Link href="/renovation-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Rénovation bois</Link>
+          <p className="pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Zones</p>
+          <Link href="/maison-ossature-bois-annemasse/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Annemasse (74)</Link>
+          <Link href="/maison-ossature-bois-saint-julien-en-genevois/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Saint-Julien-en-Genevois (74)</Link>
+          <Link href="/maison-ossature-bois-gex/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Gex — Pays de Gex (01)</Link>
           <Link href="/guides/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Guides</Link>
           <Link href="/annonces/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Annonces</Link>
           <Link href="/a-propos/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">À propos</Link>

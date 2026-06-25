@@ -58,7 +58,7 @@ export default function DemandeEtudePage() {
     <main className="bg-[#F2EDE6] min-h-screen">
       {/* Header simple */}
       <div className="bg-[#2C2C2A] py-12 px-5">
-        <div className="max-w-[780px] mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">
             ← Retour à l&apos;accueil
           </Link>
@@ -71,8 +71,70 @@ export default function DemandeEtudePage() {
         </div>
       </div>
 
-      {/* Form */}
-      <div className="max-w-[780px] mx-auto px-5 py-12">
+      {/* Layout 2 colonnes */}
+      <div className="max-w-[1100px] mx-auto px-5 py-12 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
+
+      {/* Colonne réassurance (droite sur desktop, en bas sur mobile) */}
+      <aside className="order-2 lg:order-2 flex flex-col gap-5">
+
+        {/* Engagements */}
+        <div className="bg-white p-6 flex flex-col gap-4">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Ce qui se passe ensuite</p>
+          {[
+            { num: "01", titre: "Réponse sous 48h", detail: "Mahmoud analyse votre demande et revient avec un premier retour par email ou téléphone." },
+            { num: "02", titre: "Appel de 20 minutes", detail: "Un échange pour clarifier votre projet, votre terrain, vos délais et vos priorités." },
+            { num: "03", titre: "Étude de faisabilité", detail: "Analyse PLU, contraintes techniques locales, première fourchette budgétaire réaliste." },
+            { num: "04", titre: "Proposition MOE", detail: "Si la faisabilité est confirmée, une proposition de mission maîtrise d'œuvre sur mesure." },
+          ].map((s) => (
+            <div key={s.num} className="flex gap-3">
+              <div className="text-[#BA7517] font-black text-[18px] w-7 flex-shrink-0">{s.num}</div>
+              <div>
+                <div className="text-[14px] font-bold text-[#2C2C2A]">{s.titre}</div>
+                <div className="text-[13px] text-[#888780] leading-[1.6] mt-0.5">{s.detail}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Garanties */}
+        <div className="bg-[#2C2C2A] p-6 flex flex-col gap-3">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Garanties</p>
+          {[
+            "Réponse garantie sous 48h ouvrées",
+            "Zéro engagement à ce stade",
+            "Données confidentielles, non revendues",
+            "Étude initiale entièrement gratuite",
+          ].map((g) => (
+            <div key={g} className="flex items-start gap-2 text-[14px] text-white/80">
+              <span className="text-[#BA7517] flex-shrink-0 mt-0.5">✓</span>
+              {g}
+            </div>
+          ))}
+        </div>
+
+        {/* Contact direct */}
+        <div className="bg-white p-5 border-l-4 border-[#BA7517]">
+          <p className="text-[13px] font-bold text-[#2C2C2A] mb-1">Préférez-vous appeler ?</p>
+          <p className="text-[13px] text-[#888780] mb-3">Mahmoud est disponible du lundi au vendredi, 8h–19h.</p>
+          <a href="tel:+33625590926" className="inline-block bg-[#BA7517] text-white text-[14px] font-bold px-4 py-2.5 no-underline hover:bg-[#9E6312] transition-colors">
+            Appeler directement
+          </a>
+        </div>
+
+        {/* Zones couvertes */}
+        <div className="bg-white p-5">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Zones couvertes</p>
+          <div className="flex flex-wrap gap-1.5">
+            {["Haute-Savoie (74)", "Ain (01)", "Annemasse", "Saint-Julien-en-Genevois", "Gex", "Pays de Gex", "Genevois français"].map((z) => (
+              <span key={z} className="bg-[#F2EDE6] text-[#2C2C2A] text-[12px] px-2 py-0.5 border border-[#D9D4CC]">{z}</span>
+            ))}
+          </div>
+        </div>
+
+      </aside>
+
+      {/* Form (gauche) */}
+      <div className="order-1 lg:order-1">
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
           {/* Identité */}
@@ -205,6 +267,8 @@ export default function DemandeEtudePage() {
             Réponse garantie sous 48h · Sans engagement · Vos données restent confidentielles
           </p>
         </form>
+      </div>
+
       </div>
     </main>
   );
