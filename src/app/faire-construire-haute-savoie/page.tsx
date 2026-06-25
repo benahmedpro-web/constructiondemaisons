@@ -325,27 +325,24 @@ export default function FaireConsuireHauteSavoiePage() {
           </div>
         </section>
 
-        {/* Réalisations */}
+        {/* Ce que vous obtenez */}
         <section className="bg-[#F2EDE6] py-14 px-5">
           <div className="max-w-[900px] mx-auto">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Projets réalisés</p>
-            <h2 className="text-[26px] font-black text-[#2C2C2A] mb-8">Exemples de constructions en Haute-Savoie et Genevois</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Votre projet</p>
+            <h2 className="text-[26px] font-black text-[#2C2C2A] mb-8">Ce que vous obtenez avec M&amp;M CONSTRUCTION</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                { slug: "maison-ossature-bois-annemasse-74", ville: "Annemasse (74)", desc: "120 m² · Ossature bois · Genevois" },
-                { slug: "maison-ossature-bois-gex-01", ville: "Gex (01)", desc: "130 m² · Livré · Budget respecté" },
-                { slug: "maison-ossature-bois-saint-julien-en-genevois-74", ville: "Saint-Julien (74)", desc: "145 m² · Terrain en pente" },
-              ].map((p) => (
-                <Link key={p.slug} href={`/annonces/${p.slug}/`} className="block bg-white border border-[#D9D4CC] p-4 no-underline hover:border-[#BA7517] transition-colors group">
-                  <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors mb-1">{p.ville}</div>
-                  <div className="text-[13px] text-[#888780]">{p.desc}</div>
-                  <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir le projet →</div>
-                </Link>
+                { titre: "Un interlocuteur unique", texte: "Mahmoud coordonne l'ensemble des intervenants — architecte, bureau d'études, artisans, mairie. Vous n'avez qu'un seul contact tout au long du projet." },
+                { titre: "Des artisans locaux vérifiés", texte: "Sélection rigoureuse sur références, assurances et qualifications. Chaque artisan est mis en concurrence sur votre projet. Vous signez directement avec eux." },
+                { titre: "Une transparence totale", texte: "Devis comparatifs disponibles, compte rendu de chaque réunion de chantier, accès aux documents à chaque étape. Aucune surprise budgétaire cachée." },
+                { titre: "Une expertise ossature bois", texte: "20 ans d'expérience sur la construction bois. Connaissance des spécificités thermiques, acoustiques et structurelles propres à l'ossature bois en zone alpine." },
+              ].map((item) => (
+                <div key={item.titre} className="bg-white p-5 border border-[#D9D4CC]">
+                  <div className="text-[15px] font-bold text-[#2C2C2A] mb-2">{item.titre}</div>
+                  <div className="text-[14px] text-[#888780] leading-[1.7]">{item.texte}</div>
+                </div>
               ))}
             </div>
-            <Link href="/annonces/" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517] transition-colors">
-              Voir toutes nos réalisations →
-            </Link>
           </div>
         </section>
 
