@@ -30,7 +30,7 @@ export default function ExtensionBoisPage() {
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
           <p className="text-[#BA7517] text-[12px] font-bold uppercase tracking-widest mt-4 mb-3">Maîtrise d&apos;œuvre · Extension</p>
           <h1 className="text-white text-[36px] md:text-[50px] font-black leading-tight mb-4">
-            Extension ossature bois
+            Extension ossature bois<br className="hidden md:block" /> en Haute-Savoie et Genevois
           </h1>
           <p className="text-white/75 text-[18px] leading-[1.7] max-w-[640px]">
             Agrandissez votre maison avec une extension bois coordonnée de A à Z — permis, artisans, chantier. Haute-Savoie · Ain · Genevois français.
