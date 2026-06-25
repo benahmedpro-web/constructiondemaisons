@@ -4,6 +4,7 @@ const col2Links = [
   { label: "Maison ossature bois neuve", href: "/maison-ossature-bois/" },
   { label: "Extension ossature bois", href: "/extension-bois/" },
   { label: "Rénovation & isolation bois", href: "/renovation-bois/" },
+  { label: "Faire construire en Haute-Savoie", href: "/faire-construire-haute-savoie/" },
   { label: "Notre méthode MOE", href: "/notre-methode/" },
   { label: "Annonces", href: "/annonces/" },
 ];
@@ -12,9 +13,10 @@ const col3Links = [
   { label: "Maison ossature bois en 2025", href: "/guides/maison-ossature-bois/" },
   { label: "RE2020 & maison bois", href: "/guides/re2020-maison-bois/" },
   { label: "MOE vs CCMI : les différences", href: "/guides/moe-vs-ccmi/" },
-  { label: "Extension ossature bois", href: "/guides/extension-ossature-bois/" },
+  { label: "Prix maison bois Haute-Savoie", href: "/guides/prix-maison-ossature-bois-haute-savoie/" },
   { label: "Choisir ses artisans bois", href: "/guides/choisir-artisans-maison-bois/" },
   { label: "Permis de construire Genevois", href: "/guides/permis-construire-genevois/" },
+  { label: "Garanties & assurance MOE", href: "/guides/garanties-assurance-maitre-oeuvre/" },
 ];
 
 const col4Links = [

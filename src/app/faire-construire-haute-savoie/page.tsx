@@ -367,6 +367,29 @@ export default function FaireConsuireHauteSavoiePage() {
           </div>
         </section>
 
+        {/* Guides liés */}
+        <div className="bg-white py-10 px-5">
+          <div className="max-w-[780px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Guides utiles</p>
+            <div className="flex flex-col gap-2">
+              {[
+                { href: "/guides/prix-maison-ossature-bois-haute-savoie/", titre: "Prix maison ossature bois en Haute-Savoie : estimation au m²" },
+                { href: "/guides/prix-maison-ossature-bois-100m2/", titre: "Budget maison ossature bois 100m² — poste par poste" },
+                { href: "/guides/prix-maison-ossature-bois-120m2/", titre: "Budget maison ossature bois 120m² — poste par poste" },
+                { href: "/guides/prix-maison-ossature-bois-150m2/", titre: "Budget maison ossature bois 150m² — poste par poste" },
+                { href: "/guides/moe-vs-ccmi/", titre: "CCMI ou maîtrise d'œuvre : comparatif complet" },
+                { href: "/guides/permis-construire-genevois/", titre: "Permis de construire dans le Genevois français" },
+                { href: "/guides/re2020-maison-bois/", titre: "RE2020 et maison ossature bois : ce qui change" },
+              ].map((g) => (
+                <Link key={g.href} href={g.href} className="flex items-center gap-3 p-3 bg-[#F2EDE6] border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
+                  <span className="text-[#BA7517]">→</span>
+                  <span className="text-[14px] font-medium text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">{g.titre}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* CTA final */}
         <section className="bg-[#BA7517] py-14 px-5">
           <div className="max-w-[780px] mx-auto text-center">

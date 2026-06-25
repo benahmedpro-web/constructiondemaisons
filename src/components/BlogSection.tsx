@@ -8,6 +8,9 @@ const sidebarPosts = [
   { title: "Extension ossature bois : permis, coût, délais", image: "/images/1200x742_Azur.jpg", href: "/guides/extension-ossature-bois/" },
   { title: "Comment choisir ses artisans pour une maison bois ?", image: "/images/1200x742-maisons-pierre-corail-1.jpg", href: "/guides/choisir-artisans-maison-bois/" },
   { title: "Permis de construire en zone Genevois français : les pièges à éviter", image: "/images/maisons_pierre_Vision_4_136_nord_biton_noir_avant.jpg", href: "/guides/permis-construire-genevois/" },
+  { title: "Prix maison ossature bois en Haute-Savoie : estimation au m²", image: "/images/hero-maison-bois-montagne-1.jpg", href: "/guides/prix-maison-ossature-bois-haute-savoie/" },
+  { title: "Construction chalet ossature bois en Haute-Savoie", image: "/images/hero-maison-bois-alpine.jpg", href: "/guides/construction-chalet-ossature-bois-haute-savoie/" },
+  { title: "Garantie décennale et assurance dommage ouvrage en maîtrise d'œuvre", image: "/images/hero-maison-bois-montagne-2.jpg", href: "/guides/garanties-assurance-maitre-oeuvre/" },
 ];
 
 export function BlogSection() {

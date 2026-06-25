@@ -256,9 +256,11 @@ export default function GuidePrixMaisonBoisPage() {
             <div className="flex flex-col gap-2">
               {[
                 { href: "/faire-construire-haute-savoie/", titre: "Faire construire en Haute-Savoie : le guide complet" },
+                { href: "/guides/prix-maison-ossature-bois-100m2/", titre: "Budget détaillé maison ossature bois 100m² en Haute-Savoie" },
+                { href: "/guides/prix-maison-ossature-bois-120m2/", titre: "Budget détaillé maison ossature bois 120m² en Haute-Savoie" },
+                { href: "/guides/prix-maison-ossature-bois-150m2/", titre: "Budget détaillé maison ossature bois 150m² en Haute-Savoie" },
                 { href: "/guides/moe-vs-ccmi/", titre: "CCMI ou maîtrise d'œuvre : que choisir ?" },
                 { href: "/guides/re2020-maison-bois/", titre: "RE2020 et maison ossature bois : ce qui change" },
-                { href: "/guides/permis-construire-genevois/", titre: "Permis de construire dans le Genevois français" },
               ].map((g) => (
                 <Link key={g.href} href={g.href} className="flex items-center gap-3 p-3 bg-[#F2EDE6] border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
                   <span className="text-[#BA7517]">→</span>
