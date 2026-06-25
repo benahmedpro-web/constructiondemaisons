@@ -154,7 +154,7 @@ export default async function AnnonceDetailPage({ params }: Props) {
               {/* Fiche chiffrée */}
               <div className="border border-[#D9D4CC] mb-5">
                 <div className="bg-[#2C2C2A] px-5 py-4">
-                  <div className="text-[11px] text-white/50 uppercase tracking-widest mb-1">Budget estimé</div>
+                  <div className="text-[11px] text-white/50 uppercase tracking-widest mb-1">{a.type === "Terrain à bâtir" ? "Prix du terrain" : "Budget estimé"}</div>
                   <div className="text-[32px] font-black text-[#BA7517]">{formatBudget(a.budget)}</div>
                 </div>
                 <div className="p-5 flex flex-col gap-3">
