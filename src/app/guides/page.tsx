@@ -171,7 +171,7 @@ export default function GuidesPage() {
             Ces guides vous donnent les clés. Pour votre projet spécifique, Mahmoud vous répond directement — premier échange gratuit.
           </p>
           <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[16px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors">
-            Demande d&apos;étude gratuite →
+            Configurer mon projet →
           </Link>
         </div>
       </section>
