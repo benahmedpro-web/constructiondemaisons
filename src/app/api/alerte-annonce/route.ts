@@ -1,6 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+const CHECKLIST_ITEMS = [
+  "RDV découverte fixé",
+  "RDV découverte effectué",
+  "Besoin qualifié (budget, secteur, planning)",
+  "Recherche terrain lancée",
+  "Terrain identifié",
+  "Faisabilité terrain validée (PLU, accès, viabilisation)",
+  "Plans validés client",
+  "Chiffrage présenté",
+  "Promesse ou compromis de vente terrain signé",
+  "CCMI signé",
+  "Dossier financement déposé",
+  "Offre de prêt obtenue",
+  "Permis de construire déposé",
+  "Permis accordé",
+  "Démarrage chantier",
+  "Réception chantier",
+];
+
 async function createTrelloCard(name: string, desc: string) {
   const key = process.env.TRELLO_API_KEY;
   const token = process.env.TRELLO_TOKEN;
@@ -10,17 +29,38 @@ async function createTrelloCard(name: string, desc: string) {
     return;
   }
   try {
-    const res = await fetch(`https://api.trello.com/1/cards?key=${key}&token=${token}`, {
+    const cardRes = await fetch(`https://api.trello.com/1/cards?key=${key}&token=${token}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idList: listId, name, desc }),
     });
-    if (!res.ok) {
-      const text = await res.text();
-      console.error("[Trello] Erreur API:", res.status, text);
-    } else {
-      console.log("[Trello] Carte créée:", name);
+    if (!cardRes.ok) {
+      const text = await cardRes.text();
+      console.error("[Trello] Erreur création carte:", cardRes.status, text);
+      return;
     }
+    const card = await cardRes.json();
+    console.log("[Trello] Carte créée:", name);
+
+    const clRes = await fetch(`https://api.trello.com/1/checklists?key=${key}&token=${token}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idCard: card.id, name: "Suivi projet" }),
+    });
+    if (!clRes.ok) {
+      console.error("[Trello] Erreur création checklist:", clRes.status);
+      return;
+    }
+    const checklist = await clRes.json();
+
+    for (const item of CHECKLIST_ITEMS) {
+      await fetch(`https://api.trello.com/1/checklists/${checklist.id}/checkItems?key=${key}&token=${token}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: item }),
+      });
+    }
+    console.log("[Trello] Checklist ajoutée:", card.id);
   } catch (e) {
     console.error("[Trello] Fetch échoué:", e);
   }
