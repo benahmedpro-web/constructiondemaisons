@@ -61,18 +61,20 @@ const jsonLdBusiness = {
     "Maîtrise d'œuvre spécialisée maison ossature bois en Haute-Savoie, Genevois français et Ain.",
   address: {
     "@type": "PostalAddress",
+    "@id": BASE + "/#address",
     addressLocality: "Annemasse",
     postalCode: "74100",
     addressRegion: "Haute-Savoie",
     addressCountry: "FR",
   },
   areaServed: [
-    { "@type": "State", name: "Haute-Savoie" },
-    { "@type": "State", name: "Ain" },
-    { "@type": "Place", name: "Genevois français" },
+    { "@type": "State", "@id": BASE + "/#area-haute-savoie", name: "Haute-Savoie" },
+    { "@type": "State", "@id": BASE + "/#area-ain", name: "Ain" },
+    { "@type": "Place", "@id": BASE + "/#area-genevois", name: "Genevois français" },
   ],
   founder: {
     "@type": "Person",
+    "@id": BASE + "/#person-mahmoud",
     name: "Mahmoud Ben Ahmed",
     jobTitle: "Responsable de projets de construction",
     knowsAbout: [
@@ -85,6 +87,7 @@ const jsonLdBusiness = {
   },
   aggregateRating: {
     "@type": "AggregateRating",
+    "@id": BASE + "/#aggregate-rating",
     ratingValue: "5.0",
     reviewCount: "10",
     bestRating: "5",
@@ -93,19 +96,22 @@ const jsonLdBusiness = {
   review: [
     {
       "@type": "Review",
-      author: { "@type": "Person", name: "Jocelyn S." },
+      "@id": BASE + "/#review-jocelyn",
+      author: { "@type": "Person", "@id": BASE + "/#reviewer-jocelyn", name: "Jocelyn S." },
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
       reviewBody: "Excellent professionnel, très à l'écoute qui a su cerner nos besoins et envies. Disponible, réactif et rassurant tout au long du processus, je recommande fortement.",
     },
     {
       "@type": "Review",
-      author: { "@type": "Person", name: "Supa W." },
+      "@id": BASE + "/#review-supa",
+      author: { "@type": "Person", "@id": BASE + "/#reviewer-supa", name: "Supa W." },
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
       reviewBody: "Bienveillant, à l'écoute, visionnaire, Mr Ben Ahmed est un professionnel de qualité. Ses analyses sont justes et pertinentes. Vous serez entre de bonnes mains.",
     },
     {
       "@type": "Review",
-      author: { "@type": "Person", name: "Martin M." },
+      "@id": BASE + "/#review-martin",
+      author: { "@type": "Person", "@id": BASE + "/#reviewer-martin", name: "Martin M." },
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
       reviewBody: "M. Ben Ahmed est un professionnel très consciencieux. Grâce à lui nous avons pu construire notre maison. Vous pouvez lui faire confiance pour votre projet.",
     },

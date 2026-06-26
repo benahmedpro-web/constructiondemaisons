@@ -639,5 +639,11 @@ export function getAnnonce(slug: string): Annonce | undefined {
 }
 
 export function getAutresAnnonces(slug: string): Annonce[] {
-  return annonces.filter((a) => a.slug !== slug).slice(0, 3);
+  const current = annonces.find((a) => a.slug === slug);
+  const others = annonces.filter((a) => a.slug !== slug);
+  if (!current) return others.slice(0, 3);
+  const sameZoneAndType = others.filter((a) => a.zone === current.zone && a.type === current.type);
+  const sameZone = others.filter((a) => a.zone === current.zone && a.type !== current.type);
+  const rest = others.filter((a) => a.zone !== current.zone);
+  return [...sameZoneAndType, ...sameZone, ...rest].slice(0, 3);
 }

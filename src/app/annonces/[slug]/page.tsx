@@ -128,6 +128,30 @@ export default async function AnnonceDetailPage({ params }: Props) {
               </div>
             )}
 
+            {/* Section terrain — contenu additionnel */}
+            {a.type === "Terrain à bâtir" && (
+              <div className="mb-8">
+                <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-4">Construire en ossature bois sur ce terrain</h2>
+                <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
+                  La maison ossature bois est particulièrement adaptée aux terrains du Genevois français et de Haute-Savoie.
+                  Sa légèreté structurelle réduit les contraintes sur les fondations — un avantage concret en zone sismique 3,
+                  où le calcul parasismique est obligatoire. La mise hors d&apos;eau et hors d&apos;air est réalisée en 4 à 6 semaines,
+                  limitant les risques liés aux intempéries alpines pendant le chantier.
+                </p>
+                <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
+                  La réglementation RE2020 en vigueur depuis janvier 2022 favorise nettement le bois parmi les matériaux de construction :
+                  faible bilan carbone, performance thermique élevée (R ≥ 5 en mur, R ≥ 7 en toiture) et compatibilité native
+                  avec les systèmes de chauffage basse consommation (PAC, plancher chauffant, VMC double flux).
+                  Sur ce type de parcelle, une maison bien orientée peut atteindre un Bbio inférieur à 50 sans surcoût significatif.
+                </p>
+                <p className="text-[15px] text-[#888780] leading-[1.8]">
+                  Avec M&M CONSTRUCTION, l&apos;accompagnement commence dès l&apos;étude de faisabilité : analyse du PLU, simulation
+                  d&apos;emprises, orientation bioclimatique, budget poste par poste. Un seul interlocuteur de la conception
+                  jusqu&apos;à la réception des travaux — sans frais de commission d&apos;entreprise générale.
+                </p>
+              </div>
+            )}
+
             {/* Guides liés */}
             {a.guidesLies && a.guidesLies.length > 0 && (
               <div className="border-t border-[#D9D4CC] pt-6">
