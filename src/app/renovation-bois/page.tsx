@@ -13,7 +13,7 @@ const jsonLdBreadcrumb = {
 };
 
 export const metadata: Metadata = {
-  title: "Rénovation & isolation bois — Maître d'œuvre Haute-Savoie | M&M CONSTRUCTION",
+  title: "Rénovation maison bois Haute-Savoie | M&M CONSTRUCTION",
   description: "M&M CONSTRUCTION coordonne votre rénovation thermique par l'extérieur et isolation biosourcée en Genevois français, Haute-Savoie et Ain.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/renovation-bois/",
