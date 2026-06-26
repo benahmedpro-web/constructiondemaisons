@@ -61,7 +61,14 @@ const guides = [
     tag: "Urbanisme",
   },
   {
-    title: "Prix maison ossature bois en Haute-Savoie : tarifs 2025",
+    title: "Prix construction maison 2026 : budget complet par type de projet",
+    excerpt: "Maison neuve, extension, rénovation — fourchettes réalistes, tableau des postes de coût et surcoûts spécifiques au Genevois français.",
+    image: "/images/hero-maison-bois-montagne-1.jpg",
+    href: "/guides/prix-construction-maison/",
+    tag: "Budget",
+  },
+  {
+    title: "Prix maison ossature bois en Haute-Savoie : tarifs 2026",
     excerpt: "Budget réaliste par poste, écarts avec le reste de la France, honoraires MOE inclus — tous les chiffres pour cadrer votre projet en zone alpine.",
     image: "/images/hero-maison-bois-montagne-1.jpg",
     href: "/guides/prix-maison-ossature-bois-haute-savoie/",
