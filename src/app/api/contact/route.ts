@@ -1,6 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+async function createTrelloCard(name: string, desc: string) {
+  const key = process.env.TRELLO_API_KEY;
+  const token = process.env.TRELLO_TOKEN;
+  const listId = process.env.TRELLO_LIST_NOUVEAUX;
+  if (!key || !token || !listId) return;
+  await fetch(
+    `https://api.trello.com/1/cards?key=${key}&token=${token}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idList: listId, name, desc }),
+    }
+  );
+}
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
@@ -11,7 +26,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Champs requis manquants." }, { status: 400 });
     }
 
-    await resend.emails.send({
+    const cardName = `${prenom} ${nom} — ${typeProjet || "Demande d'étude"}`;
+    const cardDesc = [
+      `📧 ${email}`,
+      telephone ? `📞 ${telephone}` : "",
+      typeProjet ? `🏠 Projet : ${typeProjet}` : "",
+      zone ? `📍 Zone : ${zone}` : "",
+      budget ? `💶 Budget : ${budget}` : "",
+      "",
+      message,
+    ].filter(Boolean).join("\n");
+
+    await Promise.all([
+      createTrelloCard(cardName, cardDesc),
+      resend.emails.send({
       from: "M&M CONSTRUCTION <onboarding@resend.dev>",
       to: "benahmed.pro@icloud.com",
       replyTo: email,
@@ -41,7 +69,8 @@ export async function POST(req: NextRequest) {
           </div>
         </div>
       `,
-    });
+      }),
+    ]);
 
     return NextResponse.json({ success: true });
   } catch {

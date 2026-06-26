@@ -1,6 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+async function createTrelloCard(name: string, desc: string) {
+  const key = process.env.TRELLO_API_KEY;
+  const token = process.env.TRELLO_TOKEN;
+  const listId = process.env.TRELLO_LIST_NOUVEAUX;
+  if (!key || !token || !listId) return;
+  await fetch(`https://api.trello.com/1/cards?key=${key}&token=${token}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ idList: listId, name, desc }),
+  });
+}
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
@@ -15,7 +27,18 @@ export async function POST(req: NextRequest) {
       communes && communes.length > 0 ? communes.join(", ") : "Toutes les communes (74 + 01)";
     const statutLabel = statut && statut !== "Tous" ? statut : "Tous statuts";
 
-    await resend.emails.send({
+    const cardName = `${prenom || email} — Alerte annonce`;
+    const cardDesc = [
+      `📧 ${email}`,
+      telephone ? `📞 ${telephone}` : "",
+      `🔔 Alerte annonce`,
+      `📍 Communes : ${communesLabel}`,
+      `📋 Statut recherché : ${statutLabel}`,
+    ].filter(Boolean).join("\n");
+
+    await Promise.all([
+      createTrelloCard(cardName, cardDesc),
+      resend.emails.send({
       from: "M&M CONSTRUCTION <onboarding@resend.dev>",
       to: "benahmed.pro@icloud.com",
       replyTo: email,
@@ -44,7 +67,8 @@ export async function POST(req: NextRequest) {
           </div>
         </div>
       `,
-    });
+      }),
+    ]);
 
     return NextResponse.json({ success: true });
   } catch {
