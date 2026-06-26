@@ -142,8 +142,6 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full antialiased">
       <head>
-        {/* LCP image preload — hero homepage slide 1 */}
-        <link rel="preload" as="image" href="/images/hero-maison-bois-alpine.jpg" fetchPriority="high" />
         {/* Font preloads — critical weights */}
         <link rel="preload" href="/fonts/BrandonGrotesque-Black.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/BrandonGrotesque-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
