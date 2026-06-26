@@ -1,8 +1,6 @@
-"use client";
-
-import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { HeroSliderClient } from "./HeroSliderClient";
 
 const slides = [
   { bg: "/images/hero-maison-bois-alpine.jpg", alt: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie" },
@@ -13,40 +11,23 @@ const slides = [
 ];
 
 export function HeroSlider() {
-  const [current, setCurrent] = useState(0);
-
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % slides.length);
-  }, []);
-
-  const prev = useCallback(() => {
-    setCurrent((c) => (c - 1 + slides.length) % slides.length);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(next, 5500);
-    return () => clearInterval(timer);
-  }, [next]);
-
   return (
     <div className="relative w-full h-[400px] md:h-[750px] overflow-hidden">
-      {/* Slides */}
-      {slides.map((s, i) => (
-        <div
-          key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
-        >
-          <Image
-            src={s.bg}
-            alt={s.alt}
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            priority={i === 0}
-            loading={i === 0 ? "eager" : "lazy"}
-          />
-        </div>
-      ))}
+      {/* Slide 0 — server-rendered, no JS dependency, LCP image */}
+      <div className="absolute inset-0">
+        <Image
+          src={slides[0].bg}
+          alt={slides[0].alt}
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+          fetchPriority="high"
+        />
+      </div>
+
+      {/* Slides 1–4 + navigation controls — client only */}
+      <HeroSliderClient slides={slides} />
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/35 z-[1]" />
@@ -79,36 +60,6 @@ export function HeroSlider() {
       <div className="absolute bottom-10 right-5 z-10 bg-white/90 px-3 py-2 flex flex-col items-center text-center">
         <span className="text-[11px] font-bold text-[#2C2C2A] uppercase tracking-wide">Conforme</span>
         <span className="text-[13px] font-black text-[#BA7517]">RE 2020</span>
-      </div>
-
-      {/* Left arrow */}
-      <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center bg-white/30 hover:bg-white/50 transition-colors border-none cursor-pointer text-white text-[20px]"
-        aria-label="Slide précédent"
-      >
-        ‹
-      </button>
-
-      {/* Right arrow */}
-      <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center bg-white/30 hover:bg-white/50 transition-colors border-none cursor-pointer text-white text-[20px]"
-        aria-label="Slide suivant"
-      >
-        ›
-      </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-2 h-2 rounded-full border-none cursor-pointer transition-colors ${i === current ? "bg-white" : "bg-white/40"}`}
-            aria-label={`Slide ${i + 1}`}
-          />
-        ))}
       </div>
     </div>
   );
