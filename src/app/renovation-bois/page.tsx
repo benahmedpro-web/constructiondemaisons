@@ -74,7 +74,7 @@ export default function RenovationBoisPage() {
                 La rénovation d&apos;une maison bois ou l&apos;isolation par bardage bois ne s&apos;improvise pas. Les jonctions entre ancien et neuf, les risques de pont thermique, l&apos;étanchéité à l&apos;air et la gestion de la vapeur d&apos;eau demandent des artisans qui connaissent le bois — pas des généralistes.
               </p>
               <p className="text-[16px] text-[#888780] leading-[1.8]">
-                En Haute-Savoie et Ain, les conditions climatiques (enneigement, gel, humidité) renforcent ces exigences. M&M CONSTRUCTION sélectionne uniquement des artisans avec références bois locales, qualifications Qualibat et décennale à jour — avant tout démarrage de chantier.
+                En Haute-Savoie et Ain, les conditions climatiques (enneigement, gel, humidité) renforcent ces exigences. M&M CONSTRUCTION sélectionne uniquement des artisans avec références bois locales, qualifications Qualibat et décennale à jour — avant tout démarrage de chantier. Chaque rénovation thermique cible un gain d&apos;au moins deux classes énergétiques au DPE, conformément aux exigences RE2020.
               </p>
             </div>
             <div className="bg-[#F2EDE6] p-6 flex flex-col gap-3">
