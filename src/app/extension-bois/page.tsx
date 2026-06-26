@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const etapes = [
-  { title: "Faisabilité & PLU", body: "Analyse de votre terrain, de l'existant et des règles PLU locales. On vérifie le coefficient d'emprise au sol, les marges de recul, la hauteur autorisée — avant de dessiner quoi que ce soit." },
+  { title: "Faisabilité & PLU", body: "Analyse de votre terrain, de l'existant et des règles PLU locales. On vérifie le coefficient d'emprise au sol, les marges de recul, la hauteur autorisée et les règles de mitoyenneté — avant de dessiner quoi que ce soit." },
   { title: "Conception & intégration architecturale", body: "L'extension doit s'intégrer à l'existant sur le plan structurel et esthétique. Nous coordonnons avec le bureau d'études structure bois pour garantir la liaison ossature neuve / maçonnerie existante." },
   { title: "Permis ou déclaration préalable", body: "Selon la surface et la commune, il faut un permis de construire ou une déclaration préalable. On s'occupe du dossier complet, du dépôt et du suivi en mairie." },
   { title: "Sélection artisans & chantier", body: "Charpentier bois, menuisier, isolation, bardage, plomberie, électricité — chaque artisan est sélectionné sur ses qualifications bois et ses références locales. Coordination complète de votre côté : zéro." },
@@ -68,8 +68,11 @@ export default function ExtensionBoisPage() {
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
               En Haute-Savoie et Ain, les PLU autorisent souvent le bardage bois, ce qui permet une intégration naturelle dans le paysage alpin. La réglementation RE2020 — en vigueur depuis janvier 2022 — favorise les matériaux biosourcés comme le bois : bilan carbone faible, performance thermique élevée, compatibilité native avec les systèmes de chauffage basse consommation (PAC, plancher chauffant).
             </p>
-            <p className="text-[16px] text-[#888780] leading-[1.8]">
+            <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
               En zone sismique 3 (Genevois français, Annecy, Annemasse), la légèreté structurelle de l&apos;ossature bois réduit les contraintes sur les fondations existantes — un avantage décisif par rapport à une extension maçonnée, qui nécessite souvent des travaux de reprise en sous-œuvre.
+            </p>
+            <p className="text-[16px] text-[#888780] leading-[1.8]">
+              Sur le plan budgétaire, une extension ossature bois en Haute-Savoie représente généralement entre 1 500 et 2 200 €/m² de surface créée, selon la complexité de l&apos;intégration structurelle et le niveau de finitions. Le chantier d&apos;une extension de 20 à 40 m² dure en moyenne 4 à 8 semaines une fois le permis obtenu — soit un délai total de 6 à 12 mois du premier échange à la réception, permis de construire inclus.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4">

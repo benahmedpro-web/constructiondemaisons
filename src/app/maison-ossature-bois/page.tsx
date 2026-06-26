@@ -92,8 +92,11 @@ export default function MaisonOssatureBoisPage() {
               <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
                 Un constructeur vous vend une maison catalogue avec des marges intégrées sur les matériaux et les artisans. Un maître d&apos;œuvre travaille pour vous : il sélectionne les meilleurs artisans locaux, négocie en votre nom, et assure un suivi indépendant du chantier.
               </p>
-              <p className="text-[16px] text-[#888780] leading-[1.8]">
+              <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
                 M&M CONSTRUCTION est spécialisé maison ossature bois. Ce n&apos;est pas un service parmi d&apos;autres — c&apos;est notre seul métier. Nous connaissons les spécificités structurelles du bois, les DTU applicables, les artisans compétents sur notre zone et les délais réels en Haute-Savoie et Genevois français. Résultat : moins de surprises, plus de maîtrise sur votre chantier.
+              </p>
+              <p className="text-[16px] text-[#888780] leading-[1.8]">
+                En zone sismique 3 — qui couvre Annemasse, Saint-Julien-en-Genevois, Annecy et une grande partie de la Haute-Savoie — les règles parasismiques imposent des contreventements spécifiques à l&apos;ossature bois. Le bureau d&apos;études structure que nous mandatons maîtrise ces contraintes. La réglementation RE2020, en vigueur depuis janvier 2022, favorise les matériaux biosourcés : une maison bois neuve respecte ces exigences nativement, sans surcoût de mise en conformité. Budget indicatif sur notre zone : 1 800 à 2 500 €/m² en maîtrise d&apos;œuvre, finitions comprises, hors terrain.
               </p>
             </div>
             <div className="bg-[#F2EDE6] p-6 flex flex-col gap-3">
@@ -145,6 +148,26 @@ export default function MaisonOssatureBoisPage() {
               <div className="text-[13px] text-white/60 mt-1">{s.label}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Délais */}
+      <section className="bg-white py-14 px-5">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-bold text-[#2C2C2A] mb-6">Délais réels en Haute-Savoie et Genevois</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { phase: "Études & permis", duree: "4 à 6 mois", detail: "Conception, dépôt, instruction en mairie — variable selon les communes du Genevois et de Haute-Savoie." },
+              { phase: "Chantier ossature bois", duree: "4 à 6 mois", detail: "Gros œuvre, charpente, clos couvert, second œuvre. Chantier rapide grâce à la préfabrication des éléments bois en atelier." },
+              { phase: "Total projet", duree: "12 à 18 mois", detail: "Du premier échange à la remise des clés, hors délais fonciers. Un planning tenu grâce à la coordination centralisée." },
+            ].map((item) => (
+              <div key={item.phase} className="border-l-4 border-[#BA7517] pl-5 py-2">
+                <div className="text-[13px] font-bold uppercase tracking-widest text-[#BA7517] mb-1">{item.phase}</div>
+                <div className="text-[22px] font-black text-[#2C2C2A] mb-2">{item.duree}</div>
+                <p className="text-[14px] text-[#888780] leading-[1.6]">{item.detail}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
