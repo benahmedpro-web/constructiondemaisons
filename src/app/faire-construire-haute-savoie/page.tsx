@@ -37,60 +37,33 @@ const jsonLdService = {
   serviceType: "Maîtrise d'œuvre maison ossature bois",
 };
 
-const jsonLdFaq = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Combien coûte la construction d'une maison en Haute-Savoie ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "En Haute-Savoie, le coût de construction d'une maison ossature bois varie entre 1 800 et 2 800 € HT/m² selon les prestations, le terrain et les contraintes techniques. Les zones à fort prix foncier (Genevois, rives du lac Léman) peuvent dépasser ce seuil. Une étude gratuite permet d'obtenir une estimation précise pour votre projet.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quelle est la différence entre un constructeur CCMI et une maîtrise d'œuvre en Haute-Savoie ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Un constructeur CCMI vous propose un contrat clé-en-main avec des artisans qu'il choisit lui-même. La maîtrise d'œuvre (comme M&M CONSTRUCTION) vous représente : elle sélectionne les artisans locaux sur appel d'offres, coordonne le chantier et défend vos intérêts. En Haute-Savoie, la MOE est souvent plus adaptée aux projets atypiques, ossature bois ou en zone de montagne.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quels sont les délais pour faire construire une maison en Haute-Savoie ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "De la première étude à la réception, il faut compter en moyenne 18 à 24 mois : 2 à 3 mois d'étude et conception, 3 à 5 mois pour l'obtention du permis de construire (variable selon les communes du Genevois et du Chablais), puis 10 à 14 mois de chantier pour une maison ossature bois.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Peut-on construire une maison ossature bois partout en Haute-Savoie ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Oui, sous réserve de respecter le PLU (Plan Local d'Urbanisme) de la commune concernée. Certaines communes du Genevois (Annemasse, Archamps) et du Chablais (Thonon) ont des règles spécifiques sur les matériaux de façade et l'aspect extérieur. La Haute-Savoie est en zone sismique 3, ce qui impose des prescriptions parasismiques sur la structure, que l'ossature bois respecte naturellement.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "M&M CONSTRUCTION intervient-il côté suisse (canton de Genève) ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Non, M&M CONSTRUCTION intervient exclusivement côté français : Haute-Savoie (74), Ain (01) et Genevois français. Pour des projets en Suisse, d'autres démarches administratives s'appliquent.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Faut-il posséder un terrain avant de contacter M&M CONSTRUCTION ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Non. M&M CONSTRUCTION peut intervenir dès la phase de recherche foncière pour analyser la faisabilité d'un terrain (PLU, accès, orientation, contraintes géotechniques). Avoir un terrain au moment du premier contact est un plus, mais ce n'est pas obligatoire pour démarrer une étude.",
-      },
-    },
-  ],
-};
+
+const faqItems = [
+  {
+    name: "Combien coûte la construction d'une maison en Haute-Savoie ?",
+    acceptedAnswer: { text: "En Haute-Savoie, le coût de construction d'une maison ossature bois varie entre 1 800 et 2 800 € HT/m² selon les prestations, le terrain et les contraintes techniques. Les zones à fort prix foncier (Genevois, rives du lac Léman) peuvent dépasser ce seuil. Une étude gratuite permet d'obtenir une estimation précise pour votre projet." },
+  },
+  {
+    name: "Quelle est la différence entre un constructeur CCMI et une maîtrise d'œuvre en Haute-Savoie ?",
+    acceptedAnswer: { text: "Un constructeur CCMI vous propose un contrat clé-en-main avec des artisans qu'il choisit lui-même. La maîtrise d'œuvre (comme M&M CONSTRUCTION) vous représente : elle sélectionne les artisans locaux sur appel d'offres, coordonne le chantier et défend vos intérêts. En Haute-Savoie, la MOE est souvent plus adaptée aux projets atypiques, ossature bois ou en zone de montagne." },
+  },
+  {
+    name: "Quels sont les délais pour faire construire une maison en Haute-Savoie ?",
+    acceptedAnswer: { text: "De la première étude à la réception, il faut compter en moyenne 18 à 24 mois : 2 à 3 mois d'étude et conception, 3 à 5 mois pour l'obtention du permis de construire (variable selon les communes du Genevois et du Chablais), puis 10 à 14 mois de chantier pour une maison ossature bois." },
+  },
+  {
+    name: "Peut-on construire une maison ossature bois partout en Haute-Savoie ?",
+    acceptedAnswer: { text: "Oui, sous réserve de respecter le PLU (Plan Local d'Urbanisme) de la commune concernée. Certaines communes du Genevois (Annemasse, Archamps) et du Chablais (Thonon) ont des règles spécifiques sur les matériaux de façade et l'aspect extérieur. La Haute-Savoie est en zone sismique 3, ce qui impose des prescriptions parasismiques sur la structure, que l'ossature bois respecte naturellement." },
+  },
+  {
+    name: "M&M CONSTRUCTION intervient-il côté suisse (canton de Genève) ?",
+    acceptedAnswer: { text: "Non, M&M CONSTRUCTION intervient exclusivement côté français : Haute-Savoie (74), Ain (01) et Genevois français. Pour des projets en Suisse, d'autres démarches administratives s'appliquent." },
+  },
+  {
+    name: "Faut-il posséder un terrain avant de contacter M&M CONSTRUCTION ?",
+    acceptedAnswer: { text: "Non. M&M CONSTRUCTION peut intervenir dès la phase de recherche foncière pour analyser la faisabilité d'un terrain (PLU, accès, orientation, contraintes géotechniques). Avoir un terrain au moment du premier contact est un plus, mais ce n'est pas obligatoire pour démarrer une étude." },
+  },
+];
 
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
@@ -172,7 +145,6 @@ export default function FaireConsuireHauteSavoiePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>
 
@@ -352,7 +324,7 @@ export default function FaireConsuireHauteSavoiePage() {
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Questions fréquentes</p>
             <h2 className="text-[26px] font-black text-[#2C2C2A] mb-8">Faire construire en Haute-Savoie : vos questions</h2>
             <div className="flex flex-col gap-0 border border-[#D9D4CC]">
-              {jsonLdFaq.mainEntity.map((item, i) => (
+              {faqItems.map((item, i) => (
                 <details key={i} className="border-b border-[#D9D4CC] last:border-0 group">
                   <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none text-[15px] font-medium text-[#2C2C2A] hover:text-[#BA7517] transition-colors">
                     {item.name}
