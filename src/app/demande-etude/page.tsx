@@ -20,7 +20,12 @@ type Answers = {
   message: string;
 };
 
-const TOTAL_STEPS = 7;
+const STEPS_WITH_TERRAIN = 7;
+const STEPS_WITHOUT_TERRAIN = 6;
+
+function needsTerrainStep(typeProjet: string) {
+  return typeProjet === "Maison neuve ossature bois" || typeProjet === "";
+}
 
 // ─── Step options ─────────────────────────────────────────────────────────────
 
@@ -150,7 +155,7 @@ function buildMessage(a: Answers): string {
     "",
     `Type de projet : ${a.typeProjet}`,
     `Zone : ${a.zone}`,
-    `Situation terrain : ${a.terrainStatus}`,
+    a.terrainStatus ? `Situation terrain : ${a.terrainStatus}` : "",
     `Surface souhaitée : ${a.surface}`,
     `Budget global : ${a.budget}`,
     `Délai envisagé : ${a.delai}`,
@@ -268,19 +273,34 @@ export default function DemandeEtudePage() {
     telephone: "", message: "",
   });
 
+  const totalSteps = needsTerrainStep(answers.typeProjet) ? STEPS_WITH_TERRAIN : STEPS_WITHOUT_TERRAIN;
+
+  function displayStep(s: number): number {
+    if (!needsTerrainStep(answers.typeProjet) && s >= 4) return s - 1;
+    return s;
+  }
+
   function set<K extends keyof Answers>(key: K, value: string) {
     setAnswers(prev => ({ ...prev, [key]: value }));
   }
 
-  // Select an option and auto-advance after a brief visual feedback delay
   function pick<K extends keyof Answers>(key: K, value: string) {
-    setAnswers(prev => ({ ...prev, [key]: value }));
-    setTimeout(() => setStep(s => Math.min(s + 1, TOTAL_STEPS)), 280);
+    const newAnswers = { ...answers, [key]: value };
+    setAnswers(newAnswers);
+    setTimeout(() => {
+      setStep(s => {
+        if (s === 2 && !needsTerrainStep(newAnswers.typeProjet)) return 4;
+        return Math.min(s + 1, STEPS_WITH_TERRAIN);
+      });
+    }, 280);
   }
 
   function prev() {
     setError("");
-    setStep(s => Math.max(s - 1, 1));
+    setStep(s => {
+      if (s === 4 && !needsTerrainStep(answers.typeProjet)) return 2;
+      return Math.max(s - 1, 1);
+    });
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -311,13 +331,18 @@ export default function DemandeEtudePage() {
     }
   }
 
-  const progress = step === 1 ? 0 : ((step - 1) / (TOTAL_STEPS - 1)) * 100;
+  const progress = step === 1 ? 0 : ((displayStep(step) - 1) / (totalSteps - 1)) * 100;
+
+  const isTravaux = answers.typeProjet === "Extension ossature bois" || answers.typeProjet === "Rénovation & isolation bois";
 
   const stepMeta: Record<number, { title: string; sub: string }> = {
     1: { title: "Quel est votre projet ?", sub: "Sélectionnez le type de travaux envisagés" },
     2: { title: "Dans quelle zone ?", sub: "Sélectionnez votre secteur géographique" },
     3: { title: "Votre situation foncière", sub: "Où en êtes-vous avec le terrain ?" },
-    4: { title: "Surface souhaitée", sub: "Surface habitable visée pour le projet" },
+    4: {
+      title: isTravaux ? "Surface des travaux" : "Surface souhaitée",
+      sub: isTravaux ? "Surface concernée par les travaux" : "Surface habitable visée pour le projet",
+    },
     5: { title: "Budget global estimé", sub: "Travaux, honoraires MOE et taxes compris" },
     6: { title: "Délai du projet", sub: "Quand souhaitez-vous démarrer ?" },
     7: { title: "Vos coordonnées", sub: "Mahmoud vous recontacte sous 48h" },
@@ -336,7 +361,7 @@ export default function DemandeEtudePage() {
             Configurez votre projet
           </h1>
           <p className="text-white/60 text-[14px] mb-5">
-            {TOTAL_STEPS} questions · Gratuit · Sans engagement · Réponse sous 48h
+            {totalSteps} questions · Gratuit · Sans engagement · Réponse sous 48h
           </p>
 
           {/* Progress bar */}
@@ -348,7 +373,7 @@ export default function DemandeEtudePage() {
               />
             </div>
             <span className="text-[12px] text-white/40 whitespace-nowrap flex-shrink-0">
-              {step} / {TOTAL_STEPS}
+              {displayStep(step)} / {totalSteps}
             </span>
           </div>
         </div>
@@ -363,7 +388,7 @@ export default function DemandeEtudePage() {
           {/* Step header */}
           <div className="mb-6">
             <div className="text-[11px] text-[#BA7517] font-bold uppercase tracking-widest mb-1">
-              Étape {step} sur {TOTAL_STEPS}
+              Étape {displayStep(step)} sur {totalSteps}
             </div>
             <h2 className="text-[22px] font-black text-[#2C2C2A] mb-1">{stepMeta[step].title}</h2>
             <p className="text-[13px] text-[#888780]">{stepMeta[step].sub}</p>
@@ -614,7 +639,7 @@ export default function DemandeEtudePage() {
         </div>
 
         {/* Sidebar — visible desktop always, mobile only on last step */}
-        <aside className={`order-2 ${step < TOTAL_STEPS ? "hidden lg:block" : "block"}`}>
+        <aside className={`order-2 ${displayStep(step) < totalSteps ? "hidden lg:block" : "block"}`}>
           <Sidebar />
         </aside>
       </div>
