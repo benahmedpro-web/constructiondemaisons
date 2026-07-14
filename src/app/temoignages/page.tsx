@@ -26,7 +26,7 @@ const avis = [
     date: "juin 2023",
     dateISO: "2023-06",
     texte: "Excellent professionnel, très à l'écoute qui a su cerner nos besoins et envies. De plus disponible, réactif et rassurant tout au long du processus, bref je recommande fortement.",
-    projet: "Projet de construction",
+    projet: "Construction de maison",
   },
   {
     nom: "Sandrine Revaux",
@@ -35,7 +35,7 @@ const avis = [
     date: "juin 2023",
     dateISO: "2023-06",
     texte: "A su nous écouter et établir un projet correspondant à nos attentes. Nous a parfaitement accompagné pour cette étape importante de notre vie, je recommande fortement.",
-    projet: "Accompagnement construction",
+    projet: "Construction de maison",
   },
   {
     nom: "Supa Wesman",
@@ -44,7 +44,7 @@ const avis = [
     date: "février 2021",
     dateISO: "2021-02",
     texte: "Bienveillant, à l'écoute, visionnaire, Mr Ben Ahmed est un professionnel de qualité ! N'hésitez pas à faire appel à lui, et à ses analyses justes et pertinentes. Vous serez entre de bonnes mains, celle d'un véritable expert et homme de parole.",
-    projet: "Étude de projet",
+    projet: "Construction de maison",
   },
   {
     nom: "Laurent Ramos",
@@ -53,7 +53,7 @@ const avis = [
     date: "avril 2021",
     dateISO: "2021-04",
     texte: "Vraiment très professionnel. Mr Ben Ahmed est une personne de confiance. Sans lui je n'aurais pas construit ma nouvelle maison. Je le recommande vivement.",
-    projet: "Construction maison",
+    projet: "Construction de maison",
   },
   {
     nom: "Kévin Ducrot",
@@ -62,7 +62,7 @@ const avis = [
     date: "juillet 2023",
     dateISO: "2023-07",
     texte: "Mr Ben Ahmed est un professionnel à l'écoute, réactif et qui prend le temps d'affiner les projets qu'on lui soumet afin qu'ils correspondent à nos attentes. Il fournit un travail de qualité. Je recommande.",
-    projet: "Coordination de chantier",
+    projet: "Construction de maison",
   },
   {
     nom: "Michael Camalet",
@@ -71,7 +71,7 @@ const avis = [
     date: "mai 2024",
     dateISO: "2024-05",
     texte: "Très belle expérience avec un excellent professionnel Mr Ben Ahmed. Avec son professionnalisme, il a donné des bons conseils tout au long du projet. Nous sommes très satisfaits !",
-    projet: "Projet construction",
+    projet: "Construction de maison",
   },
   {
     nom: "Mathieu S",
@@ -80,7 +80,7 @@ const avis = [
     date: "août 2023",
     dateISO: "2023-08",
     texte: "Très professionnel et réactif, Monsieur BEN AHMED nous fournit un travail de qualité lors de l'élaboration de notre projet.",
-    projet: "Élaboration de projet",
+    projet: "Construction de maison",
   },
   {
     nom: "Julien B",
@@ -89,7 +89,7 @@ const avis = [
     date: "mai 2024",
     dateISO: "2024-05",
     texte: "Mr Ben Ahmed nous a accompagné pour la construction de notre premier bien de la meilleure des façons, ce qui nous a permis de la construire.",
-    projet: "Premier projet",
+    projet: "Construction de maison",
   },
   {
     nom: "Elodie Maes",
@@ -98,7 +98,7 @@ const avis = [
     date: "mai 2024",
     dateISO: "2024-05",
     texte: "Conseiller au top, disponible, bienveillant, à l'écoute. A su cerner le projet, nos besoins et envies.",
-    projet: "Accompagnement projet",
+    projet: "Construction de maison",
   },
   {
     nom: "Martin Mous",
@@ -107,7 +107,7 @@ const avis = [
     date: "avril 2024",
     dateISO: "2024-04",
     texte: "M. Ben Ahmed est un professionnel très consciencieux. Grâce à lui nous avons pu construire notre maison. Vous pouvez lui faire confiance pour votre projet. Il fera tout pour vous satisfaire pleinement.",
-    projet: "Construction maison",
+    projet: "Construction de maison",
   },
   {
     nom: "Theresa Deblaine",
@@ -116,7 +116,7 @@ const avis = [
     date: "juillet 2026",
     dateISO: "2026-07",
     texte: "Mr Ben Ahmed est un professionnel à l'écoute de ses clients, réactif et soucieux du travail bien réalisé jusqu'au bout. Son professionnalisme hors pair nous a accompagné tout au long de notre projet jusqu'à notre entière satisfaction. Nous le recommandons pleinement.",
-    projet: "Accompagnement projet",
+    projet: "Rénovation de maison",
   },
   {
     nom: "Joelle Thise",
@@ -125,7 +125,7 @@ const avis = [
     date: "mai 2025",
     dateISO: "2025-05",
     texte: "Un immense Merci à Mr Ben Ahmed. Vous nous avez écoutés et ce dans les moindres détails, y compris pour les modifications en cours de route, vous avez su gérer la totalité à la perfection. Du plan de la maison à la réception de celle-ci, vous avez été attentif aux détails de façon très professionnel, et ce toujours avec une grande empathie afin de nous satisfaire totalement. N'habitant pas en France, nous vous avons fait une confiance totale, ce qui nous a permis de réaliser notre rêve : \"une nouvelle maison\". Mr BEN AHMED est un homme de confiance et de parole. Merci pour tout votre travail.",
-    projet: "Construction maison neuve",
+    projet: "Construction de maison",
   },
   {
     nom: "Francis Nossin",
@@ -134,7 +134,7 @@ const avis = [
     date: "mai 2025",
     dateISO: "2025-05",
     texte: "UN REVE REALISE ! Malgré notre éloignement du lieu choisi pour notre projet, nous avons trouvé en Mr BEN AHMED une personne entièrement disponible dès le premier contact. Ecoute, dialogue, engagement sans compter ses heures nous ont été consacrées jusqu'à la finalisation. Notre nouvelle vie démarre grâce à vous et à votre totale disponibilité ! Mille merci.",
-    projet: "Construction maison",
+    projet: "Construction de maison",
   },
   {
     nom: "Mahamadi Kabore",
@@ -143,7 +143,7 @@ const avis = [
     date: "juillet 2026",
     dateISO: "2026-07",
     texte: "M Ben Ahmed est un professionnel de bons conseils et à l'écoute, qui nous a accompagné tout au long de notre projet avec au centre de ses interventions notre satisfaction. Nous le recommandons.",
-    projet: "Accompagnement projet",
+    projet: "Rénovation de maison",
   },
 ];
 
