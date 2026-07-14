@@ -120,7 +120,7 @@ export default function GuideChaletPage() {
           <div className="max-w-[780px] mx-auto">
 
             <p className="text-[18px] text-[#888780] leading-[1.8] mb-8 font-medium">
-              "Chalet" et "ossature bois" sont souvent confondus. L&apos;un est un style architectural, l&apos;autre une technique constructive. En Haute-Savoie, les deux se marient naturellement — mais il y a des nuances importantes sur le budget, la réglementation et le choix des artisans.
+              &ldquo;Chalet&rdquo; et &ldquo;ossature bois&rdquo; sont souvent confondus. L&apos;un est un style architectural, l&apos;autre une technique constructive. En Haute-Savoie, les deux se marient naturellement — mais il y a des nuances importantes sur le budget, la réglementation et le choix des artisans.
             </p>
 
             <h2 className="text-[24px] font-bold text-[#2C2C2A] mt-10 mb-4">Chalet vs maison ossature bois : quelle différence ?</h2>
