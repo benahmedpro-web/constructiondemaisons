@@ -61,6 +61,30 @@ const avis = [
     texte: "M. Ben Ahmed est un professionnel très consciencieux. Grâce à lui nous avons pu construire notre maison. Vous pouvez lui faire confiance pour votre projet. Il fera tout pour vous satisfaire pleinement.",
     date: "avril 2024",
   },
+  {
+    nom: "Theresa Deblaine",
+    note: 5,
+    texte: "Mr Ben Ahmed est un professionnel à l'écoute de ses clients, réactif et soucieux du travail bien réalisé jusqu'au bout. Son professionnalisme hors pair nous a accompagné tout au long de notre projet jusqu'à notre entière satisfaction. Nous le recommandons pleinement.",
+    date: "juillet 2026",
+  },
+  {
+    nom: "Joelle Thise",
+    note: 5,
+    texte: "Un immense Merci à Mr Ben Ahmed. Vous nous avez écoutés et ce dans les moindres détails, y compris pour les modifications en cours de route, vous avez su gérer la totalité à la perfection. Du plan de la maison à la réception de celle-ci, vous avez été attentif aux détails de façon très professionnel, et ce toujours avec une grande empathie afin de nous satisfaire totalement. N'habitant pas en France, nous vous avons fait une confiance totale, ce qui nous a permis de réaliser notre rêve : une nouvelle maison. Mr BEN AHMED est un homme de confiance et de parole. Merci pour tout votre travail.",
+    date: "mai 2025",
+  },
+  {
+    nom: "Francis Nossin",
+    note: 5,
+    texte: "UN REVE REALISE ! Malgré notre éloignement du lieu choisi pour notre projet, nous avons trouvé en Mr BEN AHMED une personne entièrement disponible dès le premier contact. Ecoute, dialogue, engagement sans compter ses heures nous ont été consacrées jusqu'à la finalisation. Notre nouvelle vie démarre grâce à vous et à votre totale disponibilité ! Mille merci.",
+    date: "mai 2025",
+  },
+  {
+    nom: "Mahamadi Kabore",
+    note: 5,
+    texte: "M Ben Ahmed est un professionnel de bons conseils et à l'écoute, qui nous a accompagné tout au long de notre projet avec au centre de ses interventions notre satisfaction. Nous le recommandons.",
+    date: "juillet 2026",
+  },
 ];
 
 function Etoiles({ n }: { n: number }) {
@@ -126,7 +150,7 @@ export function TestimonialSection() {
                 <span className="text-[42px] font-black text-[#2C2C2A] leading-none">5,0</span>
                 <Etoiles n={5} />
               </div>
-              <div className="text-[13px] text-[#888780] mt-0.5">10 avis Google vérifiés</div>
+              <div className="text-[13px] text-[#888780] mt-0.5">14 avis Google vérifiés</div>
             </div>
           </div>
           <div className="hidden sm:block w-px h-12 bg-[#D9D4CC]" />
