@@ -219,7 +219,7 @@ export default function TemoignagesPage() {
             Ce que disent nos clients
           </h1>
           <p className="text-white/60 text-[17px] leading-[1.6] max-w-[620px]">
-            10 avis Google vérifiés · 5/5 étoiles · Clients accompagnés en Haute-Savoie, Ain et Genevois français depuis 2020.
+            14 avis Google vérifiés · 5/5 étoiles · Clients accompagnés en Haute-Savoie, Ain et Genevois français depuis 2020.
           </p>
         </div>
       </div>
@@ -232,7 +232,7 @@ export default function TemoignagesPage() {
               <span className="text-[56px] font-black text-[#2C2C2A] leading-none">5,0</span>
               <div className="pb-2">
                 <Etoiles n={5} />
-                <div className="text-[12px] text-[#888780] mt-1">sur 5 — 10 avis</div>
+                <div className="text-[12px] text-[#888780] mt-1">sur 5 — 14 avis</div>
               </div>
             </div>
           </div>
@@ -264,10 +264,10 @@ export default function TemoignagesPage() {
         </div>
       </section>
 
-      {/* Grille des 10 avis */}
+      {/* Grille des 14 avis */}
       <section className="bg-white py-14 px-5">
         <div className="max-w-[1100px] mx-auto">
-          <h2 className="text-[24px] font-bold text-[#2C2C2A] mb-8">Les 10 avis</h2>
+          <h2 className="text-[24px] font-bold text-[#2C2C2A] mb-8">Les 14 avis</h2>
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
             {avis.map((a, i) => (
               <div key={i} className="break-inside-avoid bg-[#F2EDE6] p-5 mb-4">
