@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "M&M CONSTRUCTION — Responsable de projets en Haute-Savoie",
+  title: "M&M CONSTRUCTION — Construction de maison en Haute-Savoie",
   description: "M&M CONSTRUCTION — Accompagnement et coordination de projets de construction en Haute-Savoie, Ain et Genevois français.",
 };
 
