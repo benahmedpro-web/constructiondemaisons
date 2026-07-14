@@ -175,6 +175,9 @@ export function Header() {
           <Link href="/a-propos/" className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline">
             À propos
           </Link>
+          <Link href="/temoignages/" className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline">
+            Avis clients
+          </Link>
         </nav>
 
         {/* CTA desktop */}
@@ -219,6 +222,7 @@ export function Header() {
           <Link href="/guides/" className="py-2.5 text-[15px] text-[#BA7517] border-b border-[#D9D4CC] no-underline pl-2 font-medium">→ Tous les guides</Link>
           <Link href="/annonces/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Annonces</Link>
           <Link href="/a-propos/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">À propos</Link>
+          <Link href="/temoignages/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Avis clients</Link>
           <div className="pt-4">
             <Link href="/demande-etude/" className="block bg-[#BA7517] text-white text-center text-[15px] font-bold py-3 no-underline">
               Demande d&apos;étude gratuite
