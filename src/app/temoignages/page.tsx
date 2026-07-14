@@ -5,13 +5,13 @@ import type { Metadata } from "next";
 const BASE = "https://www.constructiondemaisons.com";
 
 export const metadata: Metadata = {
-  title: "Avis clients — M&M CONSTRUCTION | 10 témoignages vérifiés",
-  description: "10 avis vérifiés Google · 5/5 étoiles · Jocelyn, Sandrine, Supa, Laurent, Kévin, Michael et d'autres témoignent de leur expérience avec M&M CONSTRUCTION en Haute-Savoie.",
+  title: "Avis clients — M&M CONSTRUCTION | 14 témoignages vérifiés",
+  description: "14 avis vérifiés Google · 5/5 étoiles · Jocelyn, Sandrine, Joelle, Francis, Theresa et d'autres témoignent de leur expérience avec M&M CONSTRUCTION en Haute-Savoie.",
   alternates: {
     canonical: `${BASE}/temoignages/`,
   },
   openGraph: {
-    title: "Avis clients M&M CONSTRUCTION — 10 témoignages 5★",
+    title: "Avis clients M&M CONSTRUCTION — 14 témoignages 5★",
     description: "Ce que disent nos clients sur leur expérience avec M&M CONSTRUCTION, responsable de projets de construction en Haute-Savoie.",
     url: `${BASE}/temoignages/`,
     type: "website",
@@ -109,6 +109,42 @@ const avis = [
     texte: "M. Ben Ahmed est un professionnel très consciencieux. Grâce à lui nous avons pu construire notre maison. Vous pouvez lui faire confiance pour votre projet. Il fera tout pour vous satisfaire pleinement.",
     projet: "Construction maison",
   },
+  {
+    nom: "Theresa Deblaine",
+    initiale: "T",
+    note: 5,
+    date: "juillet 2026",
+    dateISO: "2026-07",
+    texte: "Mr Ben Ahmed est un professionnel à l'écoute de ses clients, réactif et soucieux du travail bien réalisé jusqu'au bout. Son professionnalisme hors pair nous a accompagné tout au long de notre projet jusqu'à notre entière satisfaction. Nous le recommandons pleinement.",
+    projet: "Accompagnement projet",
+  },
+  {
+    nom: "Joelle Thise",
+    initiale: "J",
+    note: 5,
+    date: "mai 2025",
+    dateISO: "2025-05",
+    texte: "Un immense Merci à Mr Ben Ahmed. Vous nous avez écoutés et ce dans les moindres détails, y compris pour les modifications en cours de route, vous avez su gérer la totalité à la perfection. Du plan de la maison à la réception de celle-ci, vous avez été attentif aux détails de façon très professionnel, et ce toujours avec une grande empathie afin de nous satisfaire totalement. N'habitant pas en France, nous vous avons fait une confiance totale, ce qui nous a permis de réaliser notre rêve : \"une nouvelle maison\". Mr BEN AHMED est un homme de confiance et de parole. Merci pour tout votre travail.",
+    projet: "Construction maison neuve",
+  },
+  {
+    nom: "Francis Nossin",
+    initiale: "F",
+    note: 5,
+    date: "mai 2025",
+    dateISO: "2025-05",
+    texte: "UN REVE REALISE ! Malgré notre éloignement du lieu choisi pour notre projet, nous avons trouvé en Mr BEN AHMED une personne entièrement disponible dès le premier contact. Ecoute, dialogue, engagement sans compter ses heures nous ont été consacrées jusqu'à la finalisation. Notre nouvelle vie démarre grâce à vous et à votre totale disponibilité ! Mille merci.",
+    projet: "Construction maison",
+  },
+  {
+    nom: "Mahamadi Kabore",
+    initiale: "M",
+    note: 5,
+    date: "juillet 2026",
+    dateISO: "2026-07",
+    texte: "M Ben Ahmed est un professionnel de bons conseils et à l'écoute, qui nous a accompagné tout au long de notre projet avec au centre de ses interventions notre satisfaction. Nous le recommandons.",
+    projet: "Accompagnement projet",
+  },
 ];
 
 const jsonLdPage = {
@@ -121,7 +157,7 @@ const jsonLdPage = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5.0",
-    reviewCount: "10",
+    reviewCount: "14",
     bestRating: "5",
     worstRating: "1",
   },
