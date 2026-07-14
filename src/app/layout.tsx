@@ -3,8 +3,8 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Proplab — Dashboard",
-  description: "Proplab dashboard — études capacitaires",
+  title: "M&M CONSTRUCTION — Responsable de projets en Haute-Savoie",
+  description: "M&M CONSTRUCTION — Accompagnement et coordination de projets de construction en Haute-Savoie, Ain et Genevois français.",
 };
 
 export default function RootLayout({
