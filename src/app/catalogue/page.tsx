@@ -191,7 +191,7 @@ export default function CataloguePage() {
                     </div>
                   </div>
                   <Link
-                    href="/demande-etude/"
+                    href={`/demande-etude/?type=maison-neuve&gamme=${encodeURIComponent(g.nom)}`}
                     className="block bg-[#BA7517] text-white text-center text-[13px] font-bold py-3 no-underline hover:bg-[#9E6312] transition-colors"
                   >
                     Obtenir les plans

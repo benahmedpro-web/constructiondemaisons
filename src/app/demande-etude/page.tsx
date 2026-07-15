@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect, FormEvent } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 type Answers = {
   typeProjet: string;
+  gamme: string;
   zone: string;
   terrainStatus: string;
   surface: string;
@@ -173,6 +174,7 @@ function buildMessage(a: Answers): string {
     "CONFIGURATEUR M&M CONSTRUCTION — RÉSUMÉ DU PROJET",
     "",
     `Type de projet : ${a.typeProjet}`,
+    a.gamme ? `Gamme catalogue : ${a.gamme}` : "",
     `Zone : ${a.zone}`,
     a.terrainStatus ? `Situation terrain : ${a.terrainStatus}` : "",
     `Surface souhaitée : ${a.surface}`,
@@ -283,15 +285,29 @@ function Sidebar() {
 
 export default function DemandeEtudePage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [rgpd, setRgpd] = useState(false);
   const [answers, setAnswers] = useState<Answers>({
-    typeProjet: "", zone: "", terrainStatus: "", surface: "",
+    typeProjet: "", gamme: "", zone: "", terrainStatus: "", surface: "",
     budget: "", bienAVendre: "", delai: "", prenom: "", nom: "",
     email: "", telephone: "", message: "",
   });
+
+  useEffect(() => {
+    const type = searchParams.get("type");
+    const gamme = searchParams.get("gamme");
+    if (type === "maison-neuve") {
+      setAnswers(prev => ({
+        ...prev,
+        typeProjet: "Maison neuve ossature bois",
+        gamme: gamme ?? "",
+      }));
+      setStep(2);
+    }
+  }, [searchParams]);
 
   const totalSteps = needsTerrainStep(answers.typeProjet) ? STEPS_WITH_TERRAIN : STEPS_WITHOUT_TERRAIN;
 
@@ -315,8 +331,14 @@ export default function DemandeEtudePage() {
     }, 280);
   }
 
+  const fromCatalogue = answers.gamme !== "";
+
   function prev() {
     setError("");
+    if (step === 2 && fromCatalogue) {
+      router.push("/catalogue/");
+      return;
+    }
     setStep(s => {
       if (s === 4 && !needsTerrainStep(answers.typeProjet)) return 2;
       return Math.max(s - 1, 1);
@@ -375,14 +397,14 @@ export default function DemandeEtudePage() {
       {/* Header */}
       <div className="bg-[#2C2C2A] pt-10 pb-0 px-5">
         <div className="max-w-[1100px] mx-auto">
-          <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">
-            ← Retour à l&apos;accueil
+          <Link href={fromCatalogue ? "/catalogue/" : "/"} className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">
+            {fromCatalogue ? "← Retour au catalogue" : "← Retour à l'accueil"}
           </Link>
           <h1 className="text-white text-[28px] md:text-[38px] font-black mt-4 mb-1 leading-tight">
-            Configurez votre projet
+            {fromCatalogue ? `Obtenir les plans — Gamme ${answers.gamme}` : "Configurez votre projet"}
           </h1>
           <p className="text-white/60 text-[14px] mb-5">
-            {totalSteps} questions · Gratuit · Sans engagement · Réponse sous 48h
+            {fromCatalogue ? totalSteps - 1 : totalSteps} questions · Gratuit · Sans engagement · Réponse sous 48h
           </p>
 
           {/* Progress bar */}
