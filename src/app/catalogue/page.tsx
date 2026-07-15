@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -66,6 +67,7 @@ const gammes = [
     variantes: 5,
     description: "La gamme la plus spacieuse. Grandes pièces de vie, volumes généreux, jusqu'à 118 m² habitables. Pour un projet sans compromis.",
     tag: "Haut de gamme",
+    image: "/images/modele-etale.png",
   },
 ];
 
@@ -95,7 +97,14 @@ function Re2020Badge() {
   );
 }
 
-function PlaceholderVisuel({ nom }: { nom: string }) {
+function VisuelGamme({ nom, image }: { nom: string; image?: string }) {
+  if (image) {
+    return (
+      <div className="w-full aspect-[4/3] relative overflow-hidden">
+        <Image src={image} alt={`Maison ossature bois gamme ${nom}`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+      </div>
+    );
+  }
   return (
     <div className="w-full aspect-[4/3] bg-[#E8E2D9] flex flex-col items-center justify-center gap-3">
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B8B0A4" strokeWidth="1">
@@ -163,7 +172,7 @@ export default function CataloguePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {plains.map((g) => (
               <div key={g.slug} className="border border-[#D9D4CC] flex flex-col">
-                <PlaceholderVisuel nom={g.nom} />
+                <VisuelGamme nom={g.nom} image={"image" in g ? g.image : undefined} />
                 <div className="p-5 flex flex-col flex-1">
                   <div className="flex items-start justify-between mb-3">
                     <div>
@@ -214,7 +223,7 @@ export default function CataloguePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {etages.map((g) => (
               <div key={g.slug} className="border border-[#D9D4CC] bg-white flex flex-col">
-                <PlaceholderVisuel nom={g.nom} />
+                <VisuelGamme nom={g.nom} image={"image" in g ? g.image : undefined} />
                 <div className="p-5 flex flex-col flex-1">
                   <div className="flex items-start justify-between mb-3">
                     <div>
