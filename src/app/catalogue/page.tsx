@@ -17,6 +17,7 @@ const gammes = [
     variantes: 9,
     description: "Maison de plain-pied compacte et fonctionnelle. Idéale pour les terrains à faible emprise. Disponible avec ou sans garage intégré.",
     tag: "Entrée de gamme",
+    image: "/images/modele-tournette.png",
   },
   {
     nom: "Bargy",
