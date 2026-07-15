@@ -28,6 +28,7 @@ const gammes = [
     variantes: 8,
     description: "Plain-pied spacieux avec séjour traversant ou séjour avant selon l'orientation de votre terrain. Grande luminosité naturelle.",
     tag: "Le plus populaire",
+    image: "/images/modele-bargy.png",
   },
   {
     nom: "Voirons",
