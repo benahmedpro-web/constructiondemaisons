@@ -150,11 +150,12 @@ export function LpPage() {
             <div className="p-6 border-b md:border-b-0 md:border-r border-[#D9D4CC] bg-white">
               <div className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-4">Constructeur CCMI</div>
               {[
-                "Modèle de maison imposé",
-                "Marge intégrée sur les artisans",
-                "Interlocuteur commercial, pas technique",
-                "Prix fixe apparent, options chiffrées après",
-                "Sous-traitance souvent opaque",
+                "Projet défini dans le cadre de l'offre du constructeur",
+                "Équipe d'entreprises organisée par le constructeur",
+                "Gestion centralisée par le constructeur",
+                "Choix définis selon les prestations proposées",
+                "Prix global du projet",
+                "Interlocuteurs selon les étapes du projet",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2 text-[14px] text-[#888780] py-2 border-b border-[#F2EDE6] last:border-0">
                   <svg className="flex-shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9D4CC" strokeWidth="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -165,11 +166,12 @@ export function LpPage() {
             <div className="p-6 bg-[#F2EDE6]">
               <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION — MOE</div>
               {[
-                "Conception sur mesure, adaptée à votre terrain",
-                "Honoraires forfaitaires — aucune marge cachée",
-                "Mahmoud Ben Ahmed, interlocuteur technique unique",
-                "Budget chiffré précisément avant toute décision",
-                "Artisans sélectionnés, contrats directs avec vous",
+                "Projet conçu autour de vos besoins et de votre terrain",
+                "Réseau d'entreprises qualifiées sélectionnées pour votre projet",
+                "Coordination complète des différents intervenants",
+                "Solutions et prestations adaptées à vos priorités",
+                "Budget détaillé, poste par poste",
+                "Un interlocuteur dédié de la conception à la réception",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2 text-[14px] text-[#2C2C2A] py-2 border-b border-[#D9D4CC] last:border-0">
                   <svg className="flex-shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#BA7517" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
