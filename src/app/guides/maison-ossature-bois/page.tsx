@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois : avantages, coûts et délais en 2025 | M&M CONSTRUCTION",
+  title: "Maison ossature bois : guide complet 2025 | M&M CONSTRUCTION",
   description: "Guide complet sur la maison ossature bois en 2025 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/maison-ossature-bois/",

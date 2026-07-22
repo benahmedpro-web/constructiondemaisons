@@ -3,8 +3,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Extension ossature bois : permis, coût, délais | M&M CONSTRUCTION",
-  description: "Tout savoir sur l'extension ossature bois en Haute-Savoie : surface, budget, permis de construire, délais de chantier. Guide par M&M CONSTRUCTION, maître d'œuvre.",
+  title: "Extension ossature bois : coût et permis | M&M CONSTRUCTION",
+  description: "Tout savoir sur l'extension ossature bois en Haute-Savoie : surface, budget, permis de construire, délais de chantier.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/extension-ossature-bois/",
   },

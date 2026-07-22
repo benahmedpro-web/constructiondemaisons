@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "À propos — Mahmoud Ben Ahmed | M&M CONSTRUCTION",
-  description: "20 ans de BTP, 200+ projets accompagnés, expert des deux côtés du marché. Mahmoud Ben Ahmed fonde M&M CONSTRUCTION à Annemasse pour accompagner les particuliers sans intermédiaire.",
+  description: "20 ans de BTP, 200+ projets accompagnés. Mahmoud Ben Ahmed coordonne vos projets de construction bois en Haute-Savoie sans intermédiaire.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/a-propos/",
   },

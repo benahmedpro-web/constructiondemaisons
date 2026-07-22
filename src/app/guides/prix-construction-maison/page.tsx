@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prix construction maison 2026 : budget complet par type de projet | M&M CONSTRUCTION",
-  description: "Combien coûte une construction de maison en 2026 dans le Genevois français ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie. Guide complet par M&M CONSTRUCTION.",
+  title: "Prix construction maison 2026 | M&M CONSTRUCTION",
+  description: "Combien coûte une construction de maison en 2026 dans le Genevois français ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
   },
