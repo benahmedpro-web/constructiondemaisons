@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     canonical: "https://www.constructiondemaisons.com/politique-cookies/",
   },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Politique de cookies — M&M CONSTRUCTION",
+    description: "Ce site n'utilise pas de cookies de traçage ou publicitaires.",
+    url: "https://www.constructiondemaisons.com/politique-cookies/",
+    siteName: "M&M CONSTRUCTION",
+    locale: "fr_FR",
+    type: "website",
+  },
 };
 
 export default function PolitiqueCookiesPage() {
