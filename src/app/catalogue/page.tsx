@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Catalogue de maisons ossature bois RE2020 — M&M CONSTRUCTION",
-  description: "Découvrez nos 6 gammes de maisons ossature bois conformes RE2020 : plain-pied ou étage, de 65 à 118 m², adaptables à votre terrain en Haute-Savoie, Ain et Genevois français.",
+  description: "6 gammes de maisons ossature bois RE2020 : plain-pied ou étage, de 65 à 118 m², adaptables à votre terrain en Haute-Savoie et Genevois français.",
 };
 
 const gammes = [
