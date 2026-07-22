@@ -161,27 +161,27 @@ export function LpPage() {
           <div className="border border-t-0 border-[#D9D4CC] md:border-t-0">
             {[
               {
-                dim: "Votre projet",
+                dim: "Projet",
                 ccmi: "Cadre prédéfini par le constructeur",
                 mm: "Conçu autour de vos besoins et de votre terrain",
               },
               {
-                dim: "Vos artisans",
+                dim: "Artisans",
                 ccmi: "Sous-traitants du constructeur, marges intégrées",
                 mm: "Mis en concurrence, contrats directs avec vous",
               },
               {
-                dim: "Votre budget",
+                dim: "Budget",
                 ccmi: "Prix global, détail non communiqué",
                 mm: "Devis poste par poste avant toute décision",
               },
               {
-                dim: "Vos honoraires",
+                dim: "Honoraires",
                 ccmi: "Intégrés dans le prix global",
                 mm: "Forfaitaires et connus à la signature",
               },
               {
-                dim: "Votre suivi",
+                dim: "Suivi",
                 ccmi: "Interlocuteurs multiples selon les phases",
                 mm: "Un seul interlocuteur de la conception à la livraison",
               },
