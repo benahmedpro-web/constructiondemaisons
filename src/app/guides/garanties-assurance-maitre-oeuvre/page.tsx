@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Garantie décennale et assurance dommage ouvrage en maîtrise d'œuvre | M&M CONSTRUCTION",
-  description: "En MOE, qui souscrit la décennale ? Qui prend en charge l'assurance dommage ouvrage ? Garanties légales, responsabilité du MOE, ossature bois : le guide complet pour Haute-Savoie.",
+  title: "Décennale et dommage ouvrage : guide MOE | M&M CONSTRUCTION",
+  description: "En MOE, qui souscrit la décennale ? Qui prend l'assurance dommage ouvrage ? Garanties légales et responsabilité du MOE en Haute-Savoie.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/garanties-assurance-maitre-oeuvre/",
   },

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois Gex — Pays de Gex (01) | M&M CONSTRUCTION",
+  title: "Maison ossature bois Pays de Gex (01) | M&M CONSTRUCTION",
   description: "Construction maison ossature bois à Gex et Pays de Gex (01). Réglementation locale, frontaliers CERN, artisans vérifiés. Étude gratuite sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-gex/",

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Faire construire votre maison en Haute-Savoie | M&M CONSTRUCTION",
+  title: "Faire construire en Haute-Savoie | M&M CONSTRUCTION",
   description: "Construire une maison en Haute-Savoie et Genevois français : permis, artisans locaux, chantier ossature bois. Accompagnement complet. Étude gratuite sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/faire-construire-haute-savoie/",

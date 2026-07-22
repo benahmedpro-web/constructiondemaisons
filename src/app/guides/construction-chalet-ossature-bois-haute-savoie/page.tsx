@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Construction chalet ossature bois en Haute-Savoie 2025 | M&M CONSTRUCTION",
+  title: "Chalet ossature bois en Haute-Savoie | M&M CONSTRUCTION",
   description: "Construire un chalet ossature bois en Haute-Savoie : réglementation, budget, artisans. Guide complet pour votre projet dans les Alpes. Étude gratuite.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/construction-chalet-ossature-bois-haute-savoie/",

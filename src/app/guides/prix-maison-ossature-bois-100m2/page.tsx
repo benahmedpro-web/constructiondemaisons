@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prix maison ossature bois 100m² en Haute-Savoie 2025 — Budget estimatif | M&M CONSTRUCTION",
-  description: "Budget détaillé pour une maison ossature bois de 100m² en Haute-Savoie : fondations, charpente, isolation, menuiseries, honoraires MOE. Fourchette réaliste poste par poste.",
+  title: "Prix maison bois 100m² en Haute-Savoie | M&M CONSTRUCTION",
+  description: "Budget détaillé maison ossature bois 100m² en Haute-Savoie : fondations, charpente, isolation, menuiseries, MOE. Fourchette réaliste poste par poste.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-maison-ossature-bois-100m2/",
   },

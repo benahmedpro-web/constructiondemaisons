@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois Saint-Julien-en-Genevois (74) | M&M CONSTRUCTION",
+  title: "Maison bois à Saint-Julien-en-Genevois | M&M CONSTRUCTION",
   description: "Construction maison ossature bois à Saint-Julien-en-Genevois. Terrains en pente, PLU frontalier, sismique zone 3. Accompagnement complet. Étude gratuite.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-saint-julien-en-genevois/",

@@ -6,14 +6,16 @@ const BASE = "https://www.constructiondemaisons.com";
 
 export const metadata: Metadata = {
   title: "Avis clients — M&M CONSTRUCTION | 14 témoignages vérifiés",
-  description: "14 avis vérifiés Google · 5/5 étoiles · Jocelyn, Sandrine, Joelle, Francis, Theresa et d'autres témoignent de leur expérience avec M&M CONSTRUCTION en Haute-Savoie.",
+  description: "14 avis Google 5/5 étoiles — Jocelyn, Sandrine, Joelle, Francis, Theresa et d'autres témoignent de leur expérience avec M&M CONSTRUCTION en Haute-Savoie.",
   alternates: {
     canonical: `${BASE}/temoignages/`,
   },
   openGraph: {
     title: "Avis clients M&M CONSTRUCTION — 14 témoignages 5★",
-    description: "Ce que disent nos clients sur leur expérience avec M&M CONSTRUCTION, responsable de projets de construction en Haute-Savoie.",
+    description: "Ce que disent nos clients sur leur expérience avec M&M CONSTRUCTION, maître d'œuvre en Haute-Savoie.",
     url: `${BASE}/temoignages/`,
+    siteName: "M&M CONSTRUCTION",
+    locale: "fr_FR",
     type: "website",
   },
 };

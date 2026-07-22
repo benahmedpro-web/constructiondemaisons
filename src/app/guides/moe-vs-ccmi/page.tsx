@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CCMI ou maîtrise d'œuvre : que choisir pour construire en Haute-Savoie ? | M&M CONSTRUCTION",
-  description: "Comparatif objectif CCMI vs maîtrise d'œuvre pour un projet de construction en Haute-Savoie. Budget, liberté, garanties, artisans : les vraies différences expliquées.",
+  title: "CCMI vs maîtrise d'œuvre : que choisir ? | M&M CONSTRUCTION",
+  description: "CCMI vs maîtrise d'œuvre pour construire en Haute-Savoie. Budget, liberté, garanties, artisans : les vraies différences.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/moe-vs-ccmi/",
   },

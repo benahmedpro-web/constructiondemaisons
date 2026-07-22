@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Comment choisir ses artisans pour une maison bois ? | M&M CONSTRUCTION",
+  title: "Choisir ses artisans pour une maison bois | M&M CONSTRUCTION",
   description: "Décennale, Qualibat bois, références locales : les critères concrets pour sélectionner les bons artisans pour votre chantier bois en Haute-Savoie et Ain.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/choisir-artisans-maison-bois/",

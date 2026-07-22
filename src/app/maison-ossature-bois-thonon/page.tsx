@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois Thonon-les-Bains — Chablais (74) | M&M CONSTRUCTION",
-  description: "Construction maison ossature bois à Thonon-les-Bains et dans le Chablais. Evian, Douvaine, Publier, Sciez. PLU, sismique zone 3, artisans vérifiés. Étude gratuite.",
+  title: "Maison bois Thonon-les-Bains — Chablais | M&M CONSTRUCTION",
+  description: "Maison ossature bois à Thonon-les-Bains et dans le Chablais (Evian, Douvaine, Publier, Sciez). PLU, sismique zone 3, artisans vérifiés.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-thonon/",
   },

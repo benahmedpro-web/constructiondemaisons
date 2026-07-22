@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prix maison ossature bois en Haute-Savoie 2025 — Estimation au m² | M&M CONSTRUCTION",
-  description: "Combien coûte une maison ossature bois en Haute-Savoie et Genevois ? Prix au m², postes de coût, variables locales, comparaison CCMI vs MOE. Estimation gratuite.",
+  title: "Prix maison ossature bois en Haute-Savoie | M&M CONSTRUCTION",
+  description: "Combien coûte une maison ossature bois en Haute-Savoie et Genevois ? Prix au m², postes de coût, variables locales, comparaison CCMI vs MOE.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-maison-ossature-bois-haute-savoie/",
   },
