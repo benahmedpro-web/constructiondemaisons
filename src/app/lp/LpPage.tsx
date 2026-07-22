@@ -157,14 +157,13 @@ export function LpPage() {
                 "Prix global du projet",
                 "Interlocuteurs selon les étapes du projet",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-2 text-[14px] text-[#888780] py-2 border-b border-[#F2EDE6] last:border-0">
-                  <svg className="flex-shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9D4CC" strokeWidth="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <div key={item} className="text-[14px] text-[#888780] py-3 border-b border-[#F2EDE6] last:border-0">
                   {item}
                 </div>
               ))}
             </div>
-            <div className="p-6 bg-[#F2EDE6]">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION — MOE</div>
+            <div className="p-6 bg-[#F2EDE6] border-l-4 border-l-[#BA7517]">
+              <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION — Maîtrise d&apos;œuvre</div>
               {[
                 "Projet conçu autour de vos besoins et de votre terrain",
                 "Réseau d'entreprises qualifiées sélectionnées pour votre projet",
@@ -173,8 +172,7 @@ export function LpPage() {
                 "Budget détaillé, poste par poste",
                 "Un interlocuteur dédié de la conception à la réception",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-2 text-[14px] text-[#2C2C2A] py-2 border-b border-[#D9D4CC] last:border-0">
-                  <svg className="flex-shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#BA7517" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <div key={item} className="text-[14px] font-medium text-[#2C2C2A] py-3 border-b border-[#D9D4CC] last:border-0">
                   {item}
                 </div>
               ))}
