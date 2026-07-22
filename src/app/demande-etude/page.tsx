@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect, FormEvent, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -283,7 +283,7 @@ function Sidebar() {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function DemandeEtudePage() {
+function DemandeEtudePageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
@@ -703,5 +703,13 @@ export default function DemandeEtudePage() {
         </aside>
       </div>
     </main>
+  );
+}
+
+export default function DemandeEtudePage() {
+  return (
+    <Suspense>
+      <DemandeEtudePageInner />
+    </Suspense>
   );
 }
