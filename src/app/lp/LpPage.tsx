@@ -146,35 +146,63 @@ export function LpPage() {
           <h2 className="text-[24px] md:text-[30px] font-bold text-[#2C2C2A] text-center mb-10" style={{ textWrap: "balance" } as React.CSSProperties}>
             Constructeur catalogue ou maître d&apos;œuvre — la différence qui compte
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#D9D4CC]">
-            <div className="p-6 border-b md:border-b-0 md:border-r border-[#D9D4CC] bg-white">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-4">Constructeur CCMI</div>
-              {[
-                "Projet défini dans le cadre de l'offre du constructeur",
-                "Équipe d'entreprises organisée par le constructeur",
-                "Gestion centralisée par le constructeur",
-                "Prix global du projet",
-                "Interlocuteurs selon les étapes du projet",
-              ].map((item) => (
-                <div key={item} className="text-[14px] text-[#888780] py-3 border-b border-[#F2EDE6] last:border-0">
-                  {item}
-                </div>
-              ))}
+          {/* En-têtes */}
+          <div className="hidden md:grid md:grid-cols-[140px_1fr_1fr] border border-[#D9D4CC]">
+            <div className="bg-[#2C2C2A]" />
+            <div className="px-6 py-3 border-l border-[#D9D4CC] bg-white">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#888780]">Constructeur CCMI</span>
             </div>
-            <div className="p-6 bg-[#F2EDE6] border-l-4 border-l-[#BA7517]">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION — Maîtrise d&apos;œuvre</div>
-              {[
-                "Artisans mis en concurrence — vous bénéficiez des meilleurs prix du marché",
-                "Contrats signés directement avec chaque artisan — sans intermédiaire",
-                "Devis détaillé poste par poste avant toute décision",
-                "Honoraires forfaitaires connus à la signature",
-                "Un seul interlocuteur de la conception à la livraison",
-              ].map((item) => (
-                <div key={item} className="text-[14px] font-medium text-[#2C2C2A] py-3 border-b border-[#D9D4CC] last:border-0">
-                  {item}
-                </div>
-              ))}
+            <div className="px-6 py-3 border-l-4 border-l-[#BA7517] bg-[#F2EDE6]">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">M&M CONSTRUCTION</span>
             </div>
+          </div>
+
+          {/* Lignes */}
+          <div className="border border-t-0 border-[#D9D4CC] md:border-t-0">
+            {[
+              {
+                dim: "Votre projet",
+                ccmi: "Cadre prédéfini par le constructeur",
+                mm: "Conçu autour de vos besoins et de votre terrain",
+              },
+              {
+                dim: "Vos artisans",
+                ccmi: "Sous-traitants du constructeur, marges intégrées",
+                mm: "Mis en concurrence, contrats directs avec vous",
+              },
+              {
+                dim: "Votre budget",
+                ccmi: "Prix global, détail non communiqué",
+                mm: "Devis poste par poste avant toute décision",
+              },
+              {
+                dim: "Vos honoraires",
+                ccmi: "Intégrés dans le prix global",
+                mm: "Forfaitaires et connus à la signature",
+              },
+              {
+                dim: "Votre suivi",
+                ccmi: "Interlocuteurs multiples selon les phases",
+                mm: "Un seul interlocuteur de la conception à la livraison",
+              },
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-1 md:grid-cols-[140px_1fr_1fr] border-t border-[#D9D4CC] last:border-b-0">
+                {/* Dimension */}
+                <div className="bg-[#2C2C2A] px-4 py-4 flex items-center">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">{row.dim}</span>
+                </div>
+                {/* CCMI */}
+                <div className="px-6 py-4 bg-white border-t md:border-t-0 md:border-l border-[#D9D4CC]">
+                  <span className="md:hidden text-[10px] font-bold uppercase tracking-widest text-[#888780] block mb-1">CCMI</span>
+                  <span className="text-[14px] text-[#888780]">{row.ccmi}</span>
+                </div>
+                {/* M&M */}
+                <div className="px-6 py-4 bg-[#F2EDE6] border-t md:border-t-0 md:border-l-4 md:border-l-[#BA7517]">
+                  <span className="md:hidden text-[10px] font-bold uppercase tracking-widest text-[#BA7517] block mb-1">M&M CONSTRUCTION</span>
+                  <span className="text-[14px] font-semibold text-[#2C2C2A]">{row.mm}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
