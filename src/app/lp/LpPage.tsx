@@ -144,7 +144,7 @@ export function LpPage() {
       <section className="bg-[#F2EDE6] py-14 px-5">
         <div className="max-w-[860px] mx-auto">
           <h2 className="text-[24px] md:text-[30px] font-bold text-[#2C2C2A] text-center mb-10" style={{ textWrap: "balance" } as React.CSSProperties}>
-            Constructeur catalogue ou maître d&apos;œuvre indépendant — la différence qui compte
+            Constructeur catalogue ou maître d&apos;œuvre — la différence qui compte
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#D9D4CC]">
             <div className="p-6 border-b md:border-b-0 md:border-r border-[#D9D4CC] bg-white">
@@ -153,7 +153,6 @@ export function LpPage() {
                 "Projet défini dans le cadre de l'offre du constructeur",
                 "Équipe d'entreprises organisée par le constructeur",
                 "Gestion centralisée par le constructeur",
-                "Choix définis selon les prestations proposées",
                 "Prix global du projet",
                 "Interlocuteurs selon les étapes du projet",
               ].map((item) => (
@@ -165,12 +164,11 @@ export function LpPage() {
             <div className="p-6 bg-[#F2EDE6] border-l-4 border-l-[#BA7517]">
               <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION — Maîtrise d&apos;œuvre</div>
               {[
-                "Projet conçu autour de vos besoins et de votre terrain",
-                "Réseau d'entreprises qualifiées sélectionnées pour votre projet",
-                "Coordination complète des différents intervenants",
-                "Solutions et prestations adaptées à vos priorités",
-                "Budget détaillé, poste par poste",
-                "Un interlocuteur dédié de la conception à la réception",
+                "Artisans mis en concurrence — vous bénéficiez des meilleurs prix du marché",
+                "Contrats signés directement avec chaque artisan — sans intermédiaire",
+                "Devis détaillé poste par poste avant toute décision",
+                "Honoraires forfaitaires connus à la signature",
+                "Un seul interlocuteur de la conception à la livraison",
               ].map((item) => (
                 <div key={item} className="text-[14px] font-medium text-[#2C2C2A] py-3 border-b border-[#D9D4CC] last:border-0">
                   {item}
