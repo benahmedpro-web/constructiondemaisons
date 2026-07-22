@@ -42,8 +42,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/a-propos/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/demande-etude/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/contact/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/guides/prix-construction-maison/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/mentions-legales/`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
     { url: `${BASE}/vie-privee/`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
+    { url: `${BASE}/politique-cookies/`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.1 },
     ...annonceUrls,
   ];
 }

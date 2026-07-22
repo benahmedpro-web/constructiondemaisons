@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
   },
+  openGraph: {
+    title: "Prix construction maison 2026 : budget complet par type de projet",
+    description: "Combien coûte une construction de maison en 2026 dans le Genevois français ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
+    url: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
+    siteName: "M&M CONSTRUCTION",
+    locale: "fr_FR",
+    type: "article",
+  },
 };
 
 const BASE = "https://www.constructiondemaisons.com";
