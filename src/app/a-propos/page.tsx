@@ -55,6 +55,7 @@ const parcours = [
   { annee: "2014", evenement: "Retour chez Maisons Pierre — triple progression en 3 ans : commercial, ingénieur commercial, responsable d'agence. 92 projets commercialisés dont les premières maisons ossature bois du catalogue." },
   { annee: "2017", evenement: "Responsable d'agence chez Les Demeures Traditionnelles (Groupe Lesterlin), Beauvais — 41 projets réalisés sur une clientèle premium. Développement d'une expertise sur la construction haut de gamme et les matériaux biosourcés." },
   { annee: "2020", evenement: "Indépendant pour accompagner des projets de construction individuelle en totale autonomie — sans structure intermédiaire ni catalogue imposé. Basé à Annemasse, intervient en Haute-Savoie, Ain et Genevois français." },
+  { annee: "2026", evenement: "Création de M&M CONSTRUCTION à Annemasse — Juillet 2026." },
 ];
 
 export default function AProposPage() {
