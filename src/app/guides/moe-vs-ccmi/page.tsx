@@ -20,7 +20,7 @@ const jsonLdArticle = {
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
   datePublished: "2025-01-15",
-  dateModified: "2026-06-25",
+  dateModified: "2026-08-01",
   inLanguage: "fr-FR",
 };
 
@@ -163,10 +163,7 @@ export default function GuideMoeVsCcmiPage() {
 
             <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Le CCMI coûte-t-il vraiment moins cher ?</h2>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              C&apos;est le mythe le plus répandu. Le CCMI affiche un prix global unique — ce qui rassure à première vue. Mais ce prix inclut la marge du constructeur sur les matériaux, sur la coordination des sous-traitants et parfois sur des prestations financières liées au chantier. Cette marge est généralement de 15 à 25 % du coût réel des travaux.
-            </p>
-            <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              Avec la maîtrise d&apos;œuvre, les artisans proposent leurs tarifs directement, sans intermédiaire. Sur un projet de 250 000 € HT de travaux, la mise en concurrence peut dégager 20 000 à 40 000 € d&apos;économies. Les 8–12 % d&apos;honoraires MOE (soit 20 000 à 30 000 €) sont donc souvent neutralisés, voire positifs. Le budget final est comparable — mais la maison est sur mesure et les artisans sont connus.
+              Non, dans la grande majorité des cas. Le CCMI affiche un prix global unique — ce qui rassure à première vue — mais ce prix intègre la marge du constructeur sur les matériaux, sur la coordination de ses sous-traitants et parfois sur les prestations financières liées au chantier. Cette marge est généralement comprise entre 15 et 25 % du coût réel des travaux, sans que vous en ayez la visibilité. En maîtrise d&apos;œuvre, les artisans répondent à un dossier de consultation préparé par le MOE et proposent leurs tarifs directement, sans intermédiaire. Sur un projet de 250 000 € HT de travaux en Haute-Savoie, la mise en concurrence entre 3 à 5 artisans par corps de métier dégage en général 20 000 à 40 000 € d&apos;économies. Les honoraires du maître d&apos;œuvre — 8 à 12 % du coût travaux HT, soit 20 000 à 30 000 € sur ce même projet — sont donc fréquemment neutralisés, voire positifs. Le budget final est comparable à un CCMI, mais la maison est sur mesure, les artisans sont connus et vérifiés, et chaque euro dépensé est justifié par un devis signé.
             </p>
 
             <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Pourquoi la MOE est particulièrement adaptée en Haute-Savoie</h2>
