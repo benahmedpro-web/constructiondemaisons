@@ -54,6 +54,7 @@ export default function GuideArtisansPage() {
             Comment choisir ses artisans pour une maison ossature bois ?
           </h1>
           <p className="text-white/60 text-[16px]">Par Mahmoud Ben Ahmed · M&M CONSTRUCTION · Maître d&apos;œuvre Haute-Savoie</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 1er août 2026</p>
         </div>
       </div>
 

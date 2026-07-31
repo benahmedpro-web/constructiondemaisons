@@ -54,6 +54,7 @@ export default function GuideMaisonBoisPage() {
             Maison ossature bois : avantages, coûts et délais en 2025
           </h1>
           <p className="text-white/60 text-[16px]">Par Mahmoud Ben Ahmed · M&M CONSTRUCTION · Maître d&apos;œuvre Haute-Savoie</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 1er août 2026</p>
         </div>
       </div>
 

@@ -56,6 +56,7 @@ export default function GuideCoordonnationPage() {
           <p className="text-white/60 text-[16px] leading-[1.7]">
             Par Mahmoud Ben Ahmed · Maître d&apos;œuvre M&M CONSTRUCTION · 20 ans de terrain en Haute-Savoie
           </p>
+          <p className="text-white/40 text-[13px]">Mis à jour le 1er août 2026</p>
         </div>
       </div>
 

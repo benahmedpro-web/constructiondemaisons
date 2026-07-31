@@ -55,6 +55,7 @@ export default function GuidePermisGenevoisPage() {
             Permis de construire en Genevois français : les pièges à éviter
           </h1>
           <p className="text-white/60 text-[16px]">Par Mahmoud Ben Ahmed · M&M CONSTRUCTION · Maître d&apos;œuvre Haute-Savoie</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 1er août 2026</p>
         </div>
       </div>
 
