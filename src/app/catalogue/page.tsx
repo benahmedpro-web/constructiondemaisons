@@ -59,6 +59,7 @@ const gammes = [
     variantes: 5,
     description: "Maison à étage avec suite parentale au RDC. Organisation optimale : vie de famille à l'étage, intimité des parents préservée.",
     tag: "Suite parentale",
+    image: "/images/modele-aravis.png",
   },
   {
     nom: "Étale",
