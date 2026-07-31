@@ -174,48 +174,6 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* Projets récents */}
-      <section className="bg-white py-12 px-5">
-        <div className="max-w-[900px] mx-auto">
-          <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-2">Projets récents</h2>
-          <p className="text-[15px] text-[#888780] mb-8">Une sélection de projets conduits depuis 2020 en Haute-Savoie, Ain et Genevois français.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {[
-              {
-                commune: "Gex (01)",
-                type: "Maison ossature bois — 130 m²",
-                statut: "Livré octobre 2024",
-                detail: "Budget 400 000 € — tenu à 2 % près. 14 mois de chantier permis compris. Zéro réserve non soldée à la réception.",
-              },
-              {
-                commune: "Annemasse (74)",
-                type: "Maison ossature bois — 120 m²",
-                statut: "Disponible",
-                detail: "Projet plain-pied bioclimatique. PLU zone UA — CES 0,25. Orientation plein sud, bureau d'études structure zone sismique 3.",
-              },
-              {
-                commune: "Cranves-Sales (74)",
-                type: "Maison ossature bois R+1 — 145 m²",
-                statut: "Disponible",
-                detail: "Double hauteur séjour-cuisine, suite parentale à l'étage. Terrain en pente 8 % — adaptation architecturale sur deux niveaux.",
-              },
-              {
-                commune: "Thonon-les-Bains (74)",
-                type: "Extension ossature bois — 45 m²",
-                statut: "En cours — livraison fév. 2026",
-                detail: "Jonction ossature bois sur maçonnerie ancienne. Déclaration préalable obtenue en 2 mois. Bardage douglas harmonisé.",
-              },
-            ].map((p, i) => (
-              <div key={i} className="border border-[#D9D4CC] p-5">
-                <div className="text-[11px] text-[#BA7517] font-bold uppercase tracking-wide mb-1">{p.statut}</div>
-                <div className="text-[17px] font-black text-[#2C2C2A] mb-0.5">{p.commune}</div>
-                <div className="text-[13px] text-[#888780] mb-3">{p.type}</div>
-                <p className="text-[13px] text-[#888780] leading-[1.6]">{p.detail}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Zone d'intervention */}
       <section className="bg-[#F2EDE6] py-12 px-5">
