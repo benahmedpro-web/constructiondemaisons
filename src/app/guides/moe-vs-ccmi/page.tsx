@@ -150,7 +150,7 @@ export default function GuideMoeVsCcmiPage() {
                 ["Garantie légale", "GFA (délais) + décennale globale", "Décennale propre à chaque artisan"],
                 ["Honoraires", "Intégrés au prix (non visibles)", "8–12 % du coût travaux, transparents"],
                 ["Modifications en cours", "Avenant = surcoût immédiat", "Flexible en phase conception"],
-                ["Expertise ossature bois", "Souvent généraliste", "Spécialisation bois depuis 2018"],
+                ["Expertise ossature bois", "Souvent généraliste", "Spécialisation bois"],
                 ["Connaissance locale 74/01", "Constructeurs souvent nationaux", "Basé à Annemasse, réseau local"],
               ].map((row, i) => (
                 <div key={i} className={`grid grid-cols-3 p-3 text-[14px] border-b border-[#D9D4CC] last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-[#F2EDE6]"}`}>
