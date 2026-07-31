@@ -72,6 +72,10 @@ export function Header() {
                     <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Notre méthode MOE</div>
                     <div className="text-[#888780] text-[12px]">Un seul interlocuteur, zéro coordination.</div>
                   </Link>
+                  <Link href="/catalogue/" className="block no-underline hover:text-[#BA7517] group">
+                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Catalogue de modèles</div>
+                    <div className="text-[#888780] text-[12px]">6 modèles ossature bois, plans et surfaces.</div>
+                  </Link>
                 </div>
                 {/* Col 2 : Zones */}
                 <div className="flex flex-col gap-4 border-l border-[#D9D4CC] pl-6">
@@ -208,6 +212,7 @@ export function Header() {
           <Link href="/maison-ossature-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Maison ossature bois</Link>
           <Link href="/extension-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Extension bois</Link>
           <Link href="/renovation-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Rénovation bois</Link>
+          <Link href="/catalogue/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Catalogue de modèles</Link>
           <p className="pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Zones</p>
           <Link href="/maison-ossature-bois-annecy/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Annecy (74)</Link>
           <Link href="/maison-ossature-bois-annemasse/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Annemasse (74)</Link>
