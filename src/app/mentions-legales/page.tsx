@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
         <div className="max-w-[780px] mx-auto">
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
           <h1 className="text-white text-[32px] md:text-[42px] font-black mt-4 mb-2 leading-tight">Mentions légales</h1>
-          <p className="text-white/50 text-[14px]">Dernière mise à jour : juin 2026</p>
+          <p className="text-white/50 text-[14px]">Dernière mise à jour : août 2026</p>
         </div>
       </div>
 
@@ -26,13 +26,16 @@ export default function MentionsLegalesPage() {
           <section>
             <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">1. Éditeur du site</h2>
             <div className="flex flex-col gap-2 text-[15px] text-[#888780] leading-[1.7]">
-              <p><strong className="text-[#2C2C2A]">Raison sociale :</strong> M&amp;M CONSTRUCTION</p>
-              <p><strong className="text-[#2C2C2A]">Forme juridique :</strong> Entreprise individuelle</p>
-              <p><strong className="text-[#2C2C2A]">Responsable :</strong> Mahmoud Ben Ahmed</p>
-              <p><strong className="text-[#2C2C2A]">Adresse :</strong> Annemasse (74100), Haute-Savoie</p>
-              <p><strong className="text-[#2C2C2A]">Téléphone :</strong> <a href="tel:+33625590926" className="text-[#BA7517] no-underline hover:underline">Disponible par téléphone</a></p>
-              <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a></p>
+              <p><strong className="text-[#2C2C2A]">Dénomination sociale :</strong> M&amp;M CONSTRUCTION</p>
+              <p><strong className="text-[#2C2C2A]">Forme juridique :</strong> SASU (Société par Actions Simplifiée Unipersonnelle)</p>
+              <p><strong className="text-[#2C2C2A]">Capital social :</strong> 15 000 €</p>
+              <p><strong className="text-[#2C2C2A]">Siège social :</strong> 5 Rue du 18 Août 1944, 74100 Annemasse</p>
+              <p><strong className="text-[#2C2C2A]">RCS :</strong> Greffe de Thonon-les-Bains — immatriculation en cours</p>
+              <p><strong className="text-[#2C2C2A]">SIREN/SIRET :</strong> En cours d&apos;attribution</p>
+              <p><strong className="text-[#2C2C2A]">Président :</strong> Mahmoud Ben Ahmed</p>
+              <p><strong className="text-[#2C2C2A]">Objet social :</strong> Maîtrise d&apos;œuvre, AMO, études de faisabilité, conseil en construction</p>
               <p><strong className="text-[#2C2C2A]">Code NAF :</strong> 71.12B — Ingénierie, études techniques</p>
+              <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a></p>
               <p><strong className="text-[#2C2C2A]">Directeur de la publication :</strong> Mahmoud Ben Ahmed</p>
             </div>
           </section>
