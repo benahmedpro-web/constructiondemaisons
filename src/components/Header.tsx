@@ -3,10 +3,28 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const MODELES = [
+  { nom: "Tournette", slug: "tournette", surfaces: "65 – 90 m²" },
+  { nom: "Bargy", slug: "bargy", surfaces: "75 – 100 m²" },
+  { nom: "Voirons", slug: "voirons", surfaces: "100 m²" },
+  { nom: "Salève", slug: "saleve", surfaces: "75 – 90 m²" },
+  { nom: "Aravis", slug: "aravis", surfaces: "80 – 100 m²" },
+  { nom: "Étale", slug: "etale", surfaces: "81 – 118 m²" },
+];
+
+const ANNONCES_NAV = [
+  { slug: "terrain-vetraz-monthoux-vue-bassin-genevois", commune: "Vétraz-Monthoux", accroche: "Terrain 817 m² — vue Bassin genevois" },
+  { slug: "terrain-cranves-sales-709m2-vue-bassin-genevois", commune: "Cranves-Sales", accroche: "Terrain 709 m² — vue dégagée" },
+  { slug: "terrain-archamps-679m2-frontiere-geneve", commune: "Archamps", accroche: "Terrain 679 m² — frontaliers Genève" },
+  { slug: "terrain-collonges-sous-saleve-1050m2-vue-geneve", commune: "Collonges-sous-Salève", accroche: "Terrain 1 050 m² — vue Genève" },
+  { slug: "terrain-annemasse-492m2-centre-tram-74100", commune: "Annemasse", accroche: "Terrain 492 m² — centre, tram" },
+];
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
   const [guidesDropdown, setGuidesDropdown] = useState(false);
+  const [modelsDropdown, setModelsDropdown] = useState(false);
 
   return (
     <header className="bg-white w-full border-b border-[#D9D4CC] relative z-50">
@@ -71,10 +89,6 @@ export function Header() {
                   <Link href="/notre-methode/" className="block no-underline hover:text-[#BA7517] group">
                     <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Notre méthode MOE</div>
                     <div className="text-[#888780] text-[12px]">Un seul interlocuteur, zéro coordination.</div>
-                  </Link>
-                  <Link href="/catalogue/" className="block no-underline hover:text-[#BA7517] group">
-                    <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Catalogue de modèles</div>
-                    <div className="text-[#888780] text-[12px]">6 modèles ossature bois, plans et surfaces.</div>
                   </Link>
                 </div>
                 {/* Col 2 : Zones */}
@@ -173,9 +187,50 @@ export function Header() {
               </div>
             )}
           </div>
-          <Link href="/annonces/" className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline">
-            Annonces
-          </Link>
+          {/* Modèles & Annonces dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setModelsDropdown(true)}
+            onMouseLeave={() => setModelsDropdown(false)}
+          >
+            <button className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors bg-transparent border-none cursor-pointer">
+              Modèles &amp; Annonces
+            </button>
+            {modelsDropdown && (
+              <div className="absolute top-full left-0 bg-white border border-[#D9D4CC] shadow-lg min-w-[680px] z-50 p-6 grid grid-cols-2 gap-6">
+                {/* Col 1 : Modèles */}
+                <div className="flex flex-col gap-3">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Nos modèles</p>
+                  {MODELES.map((m) => (
+                    <Link key={m.slug} href={`/catalogue/#${m.slug}`} className="flex items-baseline justify-between no-underline group">
+                      <span className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{m.nom}</span>
+                      <span className="text-[12px] text-[#888780] ml-3">{m.surfaces}</span>
+                    </Link>
+                  ))}
+                  <div className="mt-2 pt-3 border-t border-[#D9D4CC]">
+                    <Link href="/catalogue/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
+                      → Voir le catalogue complet
+                    </Link>
+                  </div>
+                </div>
+                {/* Col 2 : Annonces */}
+                <div className="flex flex-col gap-3 border-l border-[#D9D4CC] pl-6">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Terrains disponibles</p>
+                  {ANNONCES_NAV.map((a) => (
+                    <Link key={a.slug} href={`/annonces/${a.slug}/`} className="block no-underline group">
+                      <div className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{a.commune}</div>
+                      <div className="text-[12px] text-[#888780]">{a.accroche}</div>
+                    </Link>
+                  ))}
+                  <div className="mt-2 pt-3 border-t border-[#D9D4CC]">
+                    <Link href="/annonces/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
+                      → Toutes les annonces
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
           <Link href="/a-propos/" className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline">
             À propos
           </Link>
@@ -212,7 +267,6 @@ export function Header() {
           <Link href="/maison-ossature-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Maison ossature bois</Link>
           <Link href="/extension-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Extension bois</Link>
           <Link href="/renovation-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Rénovation bois</Link>
-          <Link href="/catalogue/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Catalogue de modèles</Link>
           <p className="pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Zones</p>
           <Link href="/maison-ossature-bois-annecy/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Annecy (74)</Link>
           <Link href="/maison-ossature-bois-annemasse/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Annemasse (74)</Link>
@@ -225,7 +279,9 @@ export function Header() {
           <Link href="/guides/extension-ossature-bois/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Extension ossature bois</Link>
           <Link href="/guides/moe-vs-ccmi/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Maîtrise d&apos;œuvre vs CCMI</Link>
           <Link href="/guides/" className="py-2.5 text-[15px] text-[#BA7517] border-b border-[#D9D4CC] no-underline pl-2 font-medium">→ Tous les guides</Link>
-          <Link href="/annonces/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Annonces</Link>
+          <p className="pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Modèles &amp; Annonces</p>
+          <Link href="/catalogue/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Catalogue de modèles</Link>
+          <Link href="/annonces/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Terrains disponibles</Link>
           <Link href="/a-propos/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">À propos</Link>
           <Link href="/temoignages/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Avis clients</Link>
           <div className="pt-4">
