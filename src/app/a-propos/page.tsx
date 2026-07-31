@@ -54,7 +54,7 @@ const parcours = [
   { annee: "2006", evenement: "Commercial chez Geoxia — 17 projets accompagnés en Île-de-France. Découverte d'un second modèle CMI et des pratiques contractuelles CCMI." },
   { annee: "2014", evenement: "Retour chez Maisons Pierre — triple progression en 3 ans : commercial, ingénieur commercial, responsable d'agence. 92 projets commercialisés dont les premières maisons ossature bois du catalogue." },
   { annee: "2017", evenement: "Responsable d'agence chez Les Demeures Traditionnelles (Groupe Lesterlin), Beauvais — 41 projets réalisés sur une clientèle premium. Développement d'une expertise sur la construction haut de gamme et les matériaux biosourcés." },
-  { annee: "2020", evenement: "Indépendant pour accompagner des projets de construction individuelle en totale autonomie — sans structure intermédiaire ni catalogue imposé." },
+  { annee: "2020", evenement: "Indépendant pour accompagner des projets de construction individuelle en totale autonomie — sans structure intermédiaire ni standard imposé." },
   { annee: "2026", evenement: "Création de M&M CONSTRUCTION à Annemasse — Juillet 2026." },
 ];
 
@@ -120,7 +120,7 @@ export default function AProposPage() {
               Mahmoud Ben Ahmed commence en 2003 chez Maisons Pierre en Île-de-France, l&apos;un des premiers constructeurs CMI de France. Il y apprend le métier de A à Z : prospection, analyse de faisabilité, coordination technique, suivi de chantier. Il enchaîne ensuite chez Geoxia, puis revient chez Maisons Pierre en 2014 — où il progresse en trois ans de commercial à responsable d&apos;agence, avec 92 projets à son actif.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              En 2017, il prend la direction d&apos;agence des Demeures Traditionnelles (Groupe Lesterlin) à Beauvais — 41 projets supplémentaires sur une clientèle premium. En 2020, il devient indépendant pour accompagner des projets de construction individuelle en totale autonomie, sans structure intermédiaire ni catalogue imposé.
+              En 2017, il prend la direction d&apos;agence des Demeures Traditionnelles (Groupe Lesterlin) à Beauvais — 41 projets supplémentaires sur une clientèle premium. En 2020, il devient indépendant pour accompagner des projets de construction individuelle en totale autonomie, sans structure intermédiaire ni standard imposé.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
               Aujourd&apos;hui basé à Annemasse, il intervient sur la Haute-Savoie, l&apos;Ain et le Genevois français. Chaque projet est conduit en maîtrise d&apos;œuvre : plan sur mesure, artisans sélectionnés pour leurs références locales et leurs assurances décennales, suivi de chantier hebdomadaire, réception avec grille de contrôle qualité.

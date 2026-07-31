@@ -130,7 +130,7 @@ export default function ExtensionBoisPage() {
         <div className="max-w-[640px] mx-auto">
           <h2 className="text-[28px] font-bold text-white mb-3">Votre extension bois, sans les complications</h2>
           <p className="text-[16px] text-white/60 leading-[1.7] mb-8">
-            On analyse votre projet gratuitement : faisabilité PLU, budget estimatif, délais réalistes. Sans engagement, sans catalogue imposé.
+            On analyse votre projet gratuitement : faisabilité PLU, budget estimatif, délais réalistes. Sans engagement, sans standard imposé.
           </p>
           <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 no-underline hover:bg-[#9E6312] transition-colors">
             Configurer mon projet →

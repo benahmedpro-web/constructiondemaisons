@@ -4,7 +4,7 @@ const serviceBlocks = [
   {
     category: "Maîtrise d'œuvre complète",
     title: "Un chef de projet, pas un vendeur",
-    body: "M&M CONSTRUCTION n'est pas un constructeur qui vous vend une maison catalogue. C'est un maître d'œuvre qui coordonne votre projet bois de A à Z, avec les artisans que vous méritez.",
+    body: "M&M CONSTRUCTION n'est pas un constructeur CCMI. Nos modèles sont des bases de départ — chaque projet est ensuite adapté à votre terrain, votre PLU et vos besoins. C'est un maître d'œuvre qui coordonne votre projet bois de A à Z, avec les artisans que vous méritez.",
     cta: "Notre méthode MOE",
     ctaHref: "/notre-methode/",
     bg: "#2C2C2A",
