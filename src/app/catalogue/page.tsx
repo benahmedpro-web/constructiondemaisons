@@ -39,6 +39,7 @@ const gammes = [
     variantes: 1,
     description: "Grand plain-pied 4 chambres avec garage intégré. Conçu pour les familles qui souhaitent tout de plain-pied sans compromis sur les espaces.",
     tag: "Famille",
+    image: "/images/modele-voirons.png",
   },
   {
     nom: "Salève",
