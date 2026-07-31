@@ -81,7 +81,7 @@ export default function AProposPage() {
           <div>
             <div className="relative bg-[#2C2C2A] aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/mahmoud-ben-ahmed.jpg"
+                src="/images/mahmoud-ben-ahmed.png"
                 alt="Mahmoud Ben Ahmed — M&M CONSTRUCTION"
                 fill
                 sizes="(max-width: 768px) 100vw, 300px"
