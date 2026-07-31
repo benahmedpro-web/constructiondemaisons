@@ -50,6 +50,7 @@ const gammes = [
     variantes: 3,
     description: "Maison à étage gamme Éco. Emprise au sol réduite — idéale pour les terrains étroits. Séjour généreux au RDC, chambres à l'étage.",
     tag: "Gamme Éco",
+    image: "/images/modele-saleve.png",
   },
   {
     nom: "Aravis",
