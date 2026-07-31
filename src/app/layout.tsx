@@ -60,6 +60,9 @@ const jsonLdBusiness = {
       datePublished: "2026-01-18",
     },
   ],
+  sameAs: [
+    "https://g.page/r/Cdn_3K5QUh7wEBM",
+  ],
   founder: {
     "@type": "Person",
     "@id": BASE + "/#person-mahmoud",
