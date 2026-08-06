@@ -3,8 +3,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois : guide complet 2025",
-  description: "Guide complet sur la maison ossature bois en 2025 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
+  title: "Maison ossature bois : guide complet 2026",
+  description: "Guide complet sur la maison ossature bois en 2026 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/maison-ossature-bois/",
   },
@@ -15,8 +15,8 @@ const BASE = "https://www.constructiondemaisons.com";
 const jsonLdArticle = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Maison ossature bois : avantages, coûts et délais en 2025",
-  description: "Guide complet sur la maison ossature bois en 2025 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
+  headline: "Maison ossature bois : avantages, coûts et délais en 2026",
+  description: "Guide complet sur la maison ossature bois en 2026 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
   url: BASE + "/guides/maison-ossature-bois/",
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
@@ -32,7 +32,7 @@ const jsonLdBreadcrumb = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Accueil", item: BASE + "/" },
     { "@type": "ListItem", position: 2, name: "Guides", item: BASE + "/guides/" },
-    { "@type": "ListItem", position: 3, name: "Maison ossature bois 2025", item: BASE + "/guides/maison-ossature-bois/" },
+    { "@type": "ListItem", position: 3, name: "Maison ossature bois 2026", item: BASE + "/guides/maison-ossature-bois/" },
   ],
 };
 
@@ -48,11 +48,11 @@ export default function GuideMaisonBoisPage() {
             <span>/</span>
             <Link href="/guides/" className="text-white/40 no-underline hover:text-white">Guides</Link>
             <span>/</span>
-            <span className="text-white/70">Maison ossature bois 2025</span>
+            <span className="text-white/70">Maison ossature bois 2026</span>
           </div>
           <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Construction</span>
           <h1 className="text-white text-[32px] md:text-[44px] font-black leading-tight mb-4">
-            Maison ossature bois : avantages, coûts et délais en 2025
+            Maison ossature bois : avantages, coûts et délais en 2026
           </h1>
           <p className="text-white/60 text-[16px]">Par Mahmoud Ben Ahmed · M&M CONSTRUCTION · Maître d&apos;œuvre Haute-Savoie</p>
             <p className="text-white/40 text-[13px]">Mis à jour le 1er août 2026</p>
@@ -108,7 +108,7 @@ export default function GuideMaisonBoisPage() {
             </div>
           </div>
 
-          <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Budget : combien coûte une maison ossature bois en 2025 ?</h2>
+          <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Budget : combien coûte une maison ossature bois en 2026 ?</h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
             En Haute-Savoie et Ain, une maison ossature bois neuve construite en maîtrise d&apos;œuvre se situe entre 1 400 et 2 000 €/m² de surface habitable, hors terrain et hors viabilisation (VRD). Ce budget inclut la charpente ossature bois préfabriquée en atelier, l&apos;isolation thermique (laine de bois ou ouate de cellulose pour atteindre R ≥ 6 m².K/W, exigé par la RE2020), les menuiseries extérieures, le bardage bois ventilé et l&apos;ensemble des corps de métier du second œuvre (plomberie, électricité, carrelage, peinture). Les honoraires de maîtrise d&apos;œuvre (8 à 12 % du coût travaux HT) s&apos;ajoutent à ce budget mais sont souvent compensés par les économies dégagées lors de la mise en concurrence des artisans. À titre indicatif, une maison de 120 m² en zone alpine avec fondations sur terrain plat, charpente ossature bois et finitions standard revient entre 168 000 et 240 000 € hors terrain. Les principales variables sont la pente du terrain (fondations spéciales en Haute-Savoie), le niveau de finitions et la complexité architecturale.
           </p>
