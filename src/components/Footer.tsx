@@ -6,19 +6,24 @@ const col2Links = [
   { label: "Rénovation & isolation bois", href: "/renovation-bois/" },
   { label: "Faire construire en Haute-Savoie", href: "/faire-construire-haute-savoie/" },
   { label: "Maison bois Annecy", href: "/maison-ossature-bois-annecy/" },
+  { label: "Maison bois Annemasse", href: "/maison-ossature-bois-annemasse/" },
+  { label: "Maison bois Saint-Julien-en-Genevois", href: "/maison-ossature-bois-saint-julien-en-genevois/" },
+  { label: "Maison bois Gex (01)", href: "/maison-ossature-bois-gex/" },
   { label: "Maison bois Thonon-les-Bains", href: "/maison-ossature-bois-thonon/" },
   { label: "Notre méthode MOE", href: "/notre-methode/" },
-  { label: "Annonces", href: "/annonces/" },
+  { label: "Annonces terrains & projets", href: "/annonces/" },
 ];
 
 const col3Links = [
-  { label: "Maison ossature bois en 2025", href: "/guides/maison-ossature-bois/" },
+  { label: "Maison ossature bois en 2026", href: "/guides/maison-ossature-bois/" },
   { label: "RE2020 & maison bois", href: "/guides/re2020-maison-bois/" },
   { label: "MOE vs CCMI : les différences", href: "/guides/moe-vs-ccmi/" },
   { label: "Prix maison bois Haute-Savoie", href: "/guides/prix-maison-ossature-bois-haute-savoie/" },
   { label: "Choisir ses artisans bois", href: "/guides/choisir-artisans-maison-bois/" },
   { label: "Permis de construire Genevois", href: "/guides/permis-construire-genevois/" },
   { label: "Garanties & assurance MOE", href: "/guides/garanties-assurance-maitre-oeuvre/" },
+  { label: "Coordonner un chantier bois", href: "/guides/coordonner-chantier-bois/" },
+  { label: "Chalet ossature bois Haute-Savoie", href: "/guides/construction-chalet-ossature-bois-haute-savoie/" },
 ];
 
 const col4Links = [
@@ -119,6 +124,8 @@ export function Footer() {
           <Link href="/mentions-legales/" className="text-white/50 hover:text-white no-underline transition-colors">Mentions légales</Link>
           <span>|</span>
           <Link href="/vie-privee/" className="text-white/50 hover:text-white no-underline transition-colors">Politique de confidentialité</Link>
+          <span>|</span>
+          <Link href="/politique-cookies/" className="text-white/50 hover:text-white no-underline transition-colors">Politique de cookies</Link>
           <span>|</span>
           <span>M&amp;M CONSTRUCTION — NAF 71.12B — Maîtrise d&apos;œuvre bois, Genevois français</span>
         </div>

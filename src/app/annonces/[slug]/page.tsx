@@ -128,6 +128,30 @@ export default async function AnnonceDetailPage({ params }: Props) {
               </div>
             )}
 
+            {/* Section maison — contenu additionnel */}
+            {a.type === "Maison ossature bois" && (
+              <div className="mb-8">
+                <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-4">Ce projet en maîtrise d&apos;œuvre ossature bois</h2>
+                <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
+                  La maîtrise d&apos;œuvre en ossature bois diffère fondamentalement d&apos;un contrat CCMI. Ici, aucune marge
+                  d&apos;entreprise générale n&apos;est répercutée : chaque corps de métier est contractualisé directement avec vous,
+                  sur la base d&apos;honoraires fixes et transparents. M&M CONSTRUCTION pilote la coordination de chantier,
+                  vérifie les garanties décennales des artisans et réceptionne les travaux à votre place.
+                </p>
+                <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
+                  La construction ossature bois RE2020 présente des avantages concrets en zone alpine : chantier rapide
+                  (hors d&apos;eau et hors d&apos;air en 4 à 6 semaines), légèreté structurelle adaptée à la zone sismique 3,
+                  et performances thermiques natives (R ≥ 5 en mur, R ≥ 7 en toiture). Une maison bien orientée peut
+                  atteindre un Bbio inférieur à 50 sans surcoût significatif sur le budget de construction.
+                </p>
+                <p className="text-[15px] text-[#888780] leading-[1.8]">
+                  L&apos;accompagnement M&M CONSTRUCTION couvre l&apos;intégralité du projet : analyse PLU et faisabilité,
+                  dépôt du permis de construire, sélection des entreprises, visa des situations de travaux,
+                  levée des réserves à la réception. Un seul interlocuteur, du premier crayon jusqu&apos;à la remise des clés.
+                </p>
+              </div>
+            )}
+
             {/* Section terrain — contenu additionnel */}
             {a.type === "Terrain à bâtir" && (
               <div className="mb-8">
