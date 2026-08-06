@@ -56,7 +56,7 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-0">
-          {/* Services dropdown */}
+          {/* 1 — Services dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setServicesDropdown(true)}
@@ -124,7 +124,57 @@ export function Header() {
             )}
           </div>
 
-          {/* Guides dropdown */}
+          {/* 2 — Nos modèles dropdown (ex "Modèles & Annonces") */}
+          <div
+            className="relative"
+            onMouseEnter={() => setModelsDropdown(true)}
+            onMouseLeave={() => setModelsDropdown(false)}
+          >
+            <button className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors bg-transparent border-none cursor-pointer">
+              Nos modèles
+            </button>
+            {modelsDropdown && (
+              <div className="absolute top-full left-0 bg-white border border-[#D9D4CC] shadow-lg min-w-[680px] z-50 p-6 grid grid-cols-2 gap-6">
+                {/* Col 1 : Modèles de maisons */}
+                <div className="flex flex-col gap-3">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Modèles de maisons</p>
+                  {MODELES.map((m) => (
+                    <Link key={m.slug} href={`/catalogue/#${m.slug}`} className="flex items-baseline justify-between no-underline group">
+                      <span className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{m.nom}</span>
+                      <span className="text-[12px] text-[#888780] ml-3">{m.surfaces}</span>
+                    </Link>
+                  ))}
+                  <div className="mt-2 pt-3 border-t border-[#D9D4CC]">
+                    <Link href="/catalogue/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
+                      → Voir le catalogue complet
+                    </Link>
+                  </div>
+                </div>
+                {/* Col 2 : Terrains et projets disponibles */}
+                <div className="flex flex-col gap-3 border-l border-[#D9D4CC] pl-6">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Terrains et projets disponibles</p>
+                  {ANNONCES_NAV.map((a) => (
+                    <Link key={a.slug} href={`/annonces/${a.slug}/`} className="block no-underline group">
+                      <div className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{a.commune}</div>
+                      <div className="text-[12px] text-[#888780]">{a.accroche}</div>
+                    </Link>
+                  ))}
+                  <div className="mt-2 pt-3 border-t border-[#D9D4CC]">
+                    <Link href="/annonces/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
+                      → Toutes les annonces
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* 3 — Avis clients */}
+          <Link href="/temoignages/" className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline">
+            Avis clients
+          </Link>
+
+          {/* 4 — Guides dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setGuidesDropdown(true)}
@@ -187,55 +237,10 @@ export function Header() {
               </div>
             )}
           </div>
-          {/* Modèles & Annonces dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setModelsDropdown(true)}
-            onMouseLeave={() => setModelsDropdown(false)}
-          >
-            <button className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors bg-transparent border-none cursor-pointer">
-              Modèles &amp; Annonces
-            </button>
-            {modelsDropdown && (
-              <div className="absolute top-full left-0 bg-white border border-[#D9D4CC] shadow-lg min-w-[680px] z-50 p-6 grid grid-cols-2 gap-6">
-                {/* Col 1 : Modèles */}
-                <div className="flex flex-col gap-3">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Nos modèles</p>
-                  {MODELES.map((m) => (
-                    <Link key={m.slug} href={`/catalogue/#${m.slug}`} className="flex items-baseline justify-between no-underline group">
-                      <span className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{m.nom}</span>
-                      <span className="text-[12px] text-[#888780] ml-3">{m.surfaces}</span>
-                    </Link>
-                  ))}
-                  <div className="mt-2 pt-3 border-t border-[#D9D4CC]">
-                    <Link href="/catalogue/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
-                      → Voir le catalogue complet
-                    </Link>
-                  </div>
-                </div>
-                {/* Col 2 : Annonces */}
-                <div className="flex flex-col gap-3 border-l border-[#D9D4CC] pl-6">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Terrains disponibles</p>
-                  {ANNONCES_NAV.map((a) => (
-                    <Link key={a.slug} href={`/annonces/${a.slug}/`} className="block no-underline group">
-                      <div className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{a.commune}</div>
-                      <div className="text-[12px] text-[#888780]">{a.accroche}</div>
-                    </Link>
-                  ))}
-                  <div className="mt-2 pt-3 border-t border-[#D9D4CC]">
-                    <Link href="/annonces/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
-                      → Toutes les annonces
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+
+          {/* 5 — À propos */}
           <Link href="/a-propos/" className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline">
             À propos
-          </Link>
-          <Link href="/temoignages/" className="text-[15px] font-medium uppercase tracking-wide px-4 py-2 text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline">
-            Avis clients
           </Link>
         </nav>
 
@@ -263,6 +268,7 @@ export function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-[#D9D4CC] px-5 py-4 flex flex-col gap-0">
+          {/* Nos services */}
           <Link href="/faire-construire-haute-savoie/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Faire construire en Haute-Savoie</Link>
           <Link href="/maison-ossature-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Maison ossature bois</Link>
           <Link href="/extension-bois/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Extension bois</Link>
@@ -273,17 +279,21 @@ export function Header() {
           <Link href="/maison-ossature-bois-saint-julien-en-genevois/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Saint-Julien-en-Genevois (74)</Link>
           <Link href="/maison-ossature-bois-gex/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Gex — Pays de Gex (01)</Link>
           <Link href="/maison-ossature-bois-thonon/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Thonon — Chablais (74)</Link>
+          {/* Nos modèles */}
+          <p className="pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Nos modèles</p>
+          <Link href="/catalogue/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Modèles de maisons</Link>
+          <Link href="/annonces/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Terrains et projets disponibles</Link>
+          {/* Avis clients */}
+          <Link href="/temoignages/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Avis clients</Link>
+          {/* Guides */}
           <p className="pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Guides</p>
           <Link href="/guides/prix-construction-maison/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Prix construction maison 2026</Link>
           <Link href="/guides/maison-ossature-bois/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Maison ossature bois</Link>
           <Link href="/guides/extension-ossature-bois/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Extension ossature bois</Link>
           <Link href="/guides/moe-vs-ccmi/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Maîtrise d&apos;œuvre vs CCMI</Link>
           <Link href="/guides/" className="py-2.5 text-[15px] text-[#BA7517] border-b border-[#D9D4CC] no-underline pl-2 font-medium">→ Tous les guides</Link>
-          <p className="pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Modèles &amp; Annonces</p>
-          <Link href="/catalogue/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Catalogue de modèles</Link>
-          <Link href="/annonces/" className="py-2.5 text-[15px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline pl-2">→ Terrains disponibles</Link>
+          {/* À propos */}
           <Link href="/a-propos/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">À propos</Link>
-          <Link href="/temoignages/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Avis clients</Link>
           <div className="pt-4">
             <Link href="/demande-etude/" className="block bg-[#BA7517] text-white text-center text-[15px] font-bold py-3 no-underline">
               Demande d&apos;étude gratuite
