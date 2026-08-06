@@ -14,7 +14,6 @@ const jsonLdBusiness = {
   image: BASE + "/images/hero-maison-bois-montagne-1.jpg",
   description:
     "Maîtrise d'œuvre spécialisée construction maison ossature bois en Haute-Savoie, Ain et Genevois français. Conception, permis de construire, coordination de chantier.",
-  telephone: "+33-6-XX-XX-XX-XX",
   email: "contact@constructiondemaisons.com",
   address: {
     "@type": "PostalAddress",
