@@ -28,16 +28,16 @@ const jsonLdBusiness = {
   ],
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "14",
-    bestRating: "5",
-    worstRating: "1",
+    ratingValue: 5.0,
+    reviewCount: 14,
+    bestRating: 5,
+    worstRating: 1,
   },
   review: [
     {
       "@type": "Review",
       author: { "@type": "Person", name: "Sébastien M." },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
       reviewBody:
         "Mahmoud a géré notre projet de A à Z — permis, artisans, chantier. Résultat impeccable, délais tenus. Je recommande sans hésiter.",
       datePublished: "2025-09-12",
@@ -45,7 +45,7 @@ const jsonLdBusiness = {
     {
       "@type": "Review",
       author: { "@type": "Person", name: "Claire et Thomas R." },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
       reviewBody:
         "Très professionnel et transparent sur les coûts dès le départ. Notre extension bois est exactement ce qu'on voulait.",
       datePublished: "2025-11-03",
@@ -53,7 +53,7 @@ const jsonLdBusiness = {
     {
       "@type": "Review",
       author: { "@type": "Person", name: "Frédéric L." },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
       reviewBody:
         "Interlocuteur unique, artisans sérieux, suivi rigoureux. Maison livrée en 14 mois, comme prévu. Excellent rapport qualité/prix.",
       datePublished: "2026-01-18",

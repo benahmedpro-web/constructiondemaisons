@@ -158,16 +158,16 @@ const jsonLdPage = {
   description: "Maîtrise d'œuvre spécialisée maison ossature bois en Haute-Savoie, Genevois français et Ain.",
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "14",
-    bestRating: "5",
-    worstRating: "1",
+    ratingValue: 5.0,
+    reviewCount: 14,
+    bestRating: 5,
+    worstRating: 1,
   },
   review: avis.map((a) => ({
     "@type": "Review",
     author: { "@type": "Person", name: a.nom },
     datePublished: a.dateISO,
-    reviewRating: { "@type": "Rating", ratingValue: String(a.note), bestRating: "5", worstRating: "1" },
+    reviewRating: { "@type": "Rating", ratingValue: a.note, bestRating: 5, worstRating: 1 },
     reviewBody: a.texte,
   })),
 };
