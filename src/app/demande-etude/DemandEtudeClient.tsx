@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, FormEvent, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -285,7 +285,6 @@ function Sidebar() {
 
 function DemandeEtudePageInner() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -297,8 +296,9 @@ function DemandeEtudePageInner() {
   });
 
   useEffect(() => {
-    const type = searchParams.get("type");
-    const gamme = searchParams.get("gamme");
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const gamme = params.get("gamme");
     if (type === "maison-neuve") {
       setAnswers(prev => ({
         ...prev,
@@ -307,7 +307,7 @@ function DemandeEtudePageInner() {
       }));
       setStep(2);
     }
-  }, [searchParams]);
+  }, []);
 
   const totalSteps = needsTerrainStep(answers.typeProjet) ? STEPS_WITH_TERRAIN : STEPS_WITHOUT_TERRAIN;
 
@@ -707,9 +707,5 @@ function DemandeEtudePageInner() {
 }
 
 export default function DemandeEtudePage() {
-  return (
-    <Suspense>
-      <DemandeEtudePageInner />
-    </Suspense>
-  );
+  return <DemandeEtudePageInner />;
 }
