@@ -27,13 +27,15 @@ export default function MentionsLegalesPage() {
             <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">1. Éditeur du site</h2>
             <div className="flex flex-col gap-2 text-[15px] text-[#888780] leading-[1.7]">
               <p><strong className="text-[#2C2C2A]">Dénomination sociale :</strong> M&amp;M CONSTRUCTION</p>
-              <p><strong className="text-[#2C2C2A]">Forme juridique :</strong> SASU (Société par Actions Simplifiée Unipersonnelle)</p>
+              <p><strong className="text-[#2C2C2A]">Forme juridique :</strong> Société par actions simplifiée (Société à associé unique)</p>
               <p><strong className="text-[#2C2C2A]">Capital social :</strong> 15 000 €</p>
               <p><strong className="text-[#2C2C2A]">Siège social :</strong> 5 Rue du 18 Août 1944, 74100 Annemasse</p>
-              <p><strong className="text-[#2C2C2A]">RCS :</strong> Greffe de Thonon-les-Bains — immatriculation en cours</p>
-              <p><strong className="text-[#2C2C2A]">SIREN/SIRET :</strong> En cours d&apos;attribution</p>
+              <p><strong className="text-[#2C2C2A]">RCS :</strong> 108 228 560 R.C.S. Thonon-les-Bains</p>
+              <p><strong className="text-[#2C2C2A]">Date d&apos;immatriculation :</strong> 06/08/2026</p>
+              <p><strong className="text-[#2C2C2A]">SIREN :</strong> 108 228 560</p>
+              <p><strong className="text-[#2C2C2A]">EUID :</strong> FR7402.108228560</p>
               <p><strong className="text-[#2C2C2A]">Président :</strong> Mahmoud Ben Ahmed</p>
-              <p><strong className="text-[#2C2C2A]">Objet social :</strong> Maîtrise d&apos;œuvre, AMO, études de faisabilité, conseil en construction</p>
+              <p><strong className="text-[#2C2C2A]">Objet social :</strong> Maîtrise d&apos;œuvre de projets dans le bâtiment ; Assistance à maîtrise d&apos;ouvrage (AMO) ; Études de faisabilité et études techniques liées au bâtiment et à l&apos;habitat ; Conseil en construction ; Intermédiaire commercial dans le bâtiment ; et toutes activités connexes ou complémentaires.</p>
               <p><strong className="text-[#2C2C2A]">Code NAF :</strong> 71.12B — Ingénierie, études techniques</p>
               <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a></p>
               <p><strong className="text-[#2C2C2A]">Directeur de la publication :</strong> Mahmoud Ben Ahmed</p>
