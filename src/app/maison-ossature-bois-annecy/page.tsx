@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois Annecy (74) | M&M CONSTRUCTION",
+  title: "Maison ossature bois Annecy (74)",
   description: "Maison ossature bois à Annecy et agglomération (Cran-Gevrier, Seynod, Meythet, Pringy). PLU local, sismique zone 3, artisans vérifiés. Étude gratuite.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-annecy/",

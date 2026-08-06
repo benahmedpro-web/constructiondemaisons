@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Décennale et dommage ouvrage : guide MOE | M&M CONSTRUCTION",
+  title: "Décennale et dommage ouvrage : guide MOE",
   description: "En MOE, qui souscrit la décennale ? Qui prend l'assurance dommage ouvrage ? Garanties légales et responsabilité du MOE en Haute-Savoie.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/garanties-assurance-maitre-oeuvre/",
@@ -22,6 +22,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2026-06-25",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const faqItems = [
@@ -67,6 +68,12 @@ const faqItems = [
     },
 ];
 
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -81,6 +88,7 @@ export default function GuideGarantiesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>
 

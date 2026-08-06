@@ -2,14 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politique de cookies | M&M CONSTRUCTION",
+  title: "Politique de cookies",
   description: "Politique de cookies du site constructiondemaisons.com — M&M CONSTRUCTION. Ce site n'utilise pas de cookies de traçage ou publicitaires.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/politique-cookies/",
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Politique de cookies — M&M CONSTRUCTION",
+    title: "Politique de cookies",
     description: "Ce site n'utilise pas de cookies de traçage ou publicitaires.",
     url: "https://www.constructiondemaisons.com/politique-cookies/",
     siteName: "M&M CONSTRUCTION",

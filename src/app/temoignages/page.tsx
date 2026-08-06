@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 const BASE = "https://www.constructiondemaisons.com";
 
 export const metadata: Metadata = {
-  title: "Avis clients — M&M CONSTRUCTION | 14 témoignages vérifiés",
+  title: "Avis clients — 14 témoignages vérifiés",
   description: "14 avis Google 5/5 étoiles — Jocelyn, Sandrine, Joelle, Francis, Theresa et d'autres témoignent de leur expérience avec M&M CONSTRUCTION en Haute-Savoie.",
   alternates: {
     canonical: `${BASE}/temoignages/`,

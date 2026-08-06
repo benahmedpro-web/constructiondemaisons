@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois neuve Haute-Savoie | M&M CONSTRUCTION",
+  title: "Maison ossature bois neuve Haute-Savoie",
   description: "Maison ossature bois neuve en Haute-Savoie et Genevois français : conception, permis, artisans vérifiés, coordination de chantier. Étude gratuite.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois/",

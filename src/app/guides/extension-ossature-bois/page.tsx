@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Extension ossature bois : coût et permis | M&M CONSTRUCTION",
+  title: "Extension ossature bois : coût et permis",
   description: "Tout savoir sur l'extension ossature bois en Haute-Savoie : surface, budget, permis de construire, délais de chantier.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/extension-ossature-bois/",
@@ -23,6 +23,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2025-06-01",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const jsonLdBreadcrumb = {

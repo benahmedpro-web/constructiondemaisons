@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Chalet ossature bois en Haute-Savoie | M&M CONSTRUCTION",
+  title: "Chalet ossature bois en Haute-Savoie",
   description: "Construire un chalet ossature bois en Haute-Savoie : réglementation, budget, artisans. Guide complet pour votre projet dans les Alpes. Étude gratuite.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/construction-chalet-ossature-bois-haute-savoie/",
@@ -22,6 +22,7 @@ const jsonLdArticle = {
   datePublished: "2025-04-01",
   dateModified: "2026-06-25",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const faqItems = [
@@ -67,6 +68,12 @@ const faqItems = [
     },
 ];
 
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -91,6 +98,7 @@ export default function GuideChaletPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>
 

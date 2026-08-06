@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CCMI vs maîtrise d'œuvre : que choisir ? | M&M CONSTRUCTION",
+  title: "CCMI vs maîtrise d'œuvre : que choisir ?",
   description: "CCMI vs maîtrise d'œuvre pour construire en Haute-Savoie. Budget, liberté, garanties, artisans : les vraies différences.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/moe-vs-ccmi/",
@@ -22,6 +22,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2026-08-01",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const faqItems = [
@@ -67,6 +68,12 @@ const faqItems = [
     },
 ];
 
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -81,6 +88,7 @@ export default function GuideMoeVsCcmiPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>
 

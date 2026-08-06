@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité | M&M CONSTRUCTION",
+  title: "Politique de confidentialité",
   description: "Politique de confidentialité et protection des données personnelles — M&M CONSTRUCTION, Annemasse (74100).",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/vie-privee/",

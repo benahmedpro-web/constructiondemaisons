@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois Annemasse (74) | M&M CONSTRUCTION",
+  title: "Maison ossature bois Annemasse (74)",
   description: "Construction maison ossature bois à Annemasse et Genevois français. PLU, sismique zone 3, artisans locaux vérifiés. Étude gratuite sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-annemasse/",

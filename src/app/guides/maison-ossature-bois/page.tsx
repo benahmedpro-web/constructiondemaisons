@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Maison ossature bois : guide complet 2025 | M&M CONSTRUCTION",
+  title: "Maison ossature bois : guide complet 2025",
   description: "Guide complet sur la maison ossature bois en 2025 : budget réaliste, durée de chantier, avantages thermiques, comparaison avec la construction maçonnée.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/maison-ossature-bois/",
@@ -23,6 +23,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2026-08-01",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const jsonLdBreadcrumb = {

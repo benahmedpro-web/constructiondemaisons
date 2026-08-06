@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Guides techniques maison bois — M&M CONSTRUCTION",
+  title: "Guides techniques maison bois",
   description: "Guides maison ossature bois : coûts, délais, RE2020, permis, choix des artisans — par M&M CONSTRUCTION, maître d'œuvre en Haute-Savoie.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/",

@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "À propos — Mahmoud Ben Ahmed | M&M CONSTRUCTION",
+  title: "À propos — Mahmoud Ben Ahmed",
   description: "20 ans de BTP, 200+ projets accompagnés. Mahmoud Ben Ahmed coordonne vos projets de construction bois en Haute-Savoie sans intermédiaire.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/a-propos/",

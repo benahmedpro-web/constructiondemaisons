@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Coordonner un chantier maison bois | M&M CONSTRUCTION",
+  title: "Coordonner un chantier maison bois",
   description: "Les étapes clés de la coordination de chantier bois : planning, corps de métier, suivi qualité, livraison. Guide par M&M CONSTRUCTION, maître d'œuvre.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/coordonner-chantier-bois/",
@@ -22,6 +22,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2025-06-01",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const jsonLdBreadcrumb = {

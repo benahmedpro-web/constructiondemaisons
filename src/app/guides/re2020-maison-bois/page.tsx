@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "RE2020 et maison bois en Haute-Savoie | M&M CONSTRUCTION",
+  title: "RE2020 et maison bois en Haute-Savoie",
   description: "La RE2020 favorise-t-elle l'ossature bois ? Exigences concrètes pour construire en zone alpine en 2025.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/re2020-maison-bois/",
@@ -23,6 +23,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2025-06-01",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const jsonLdBreadcrumb = {

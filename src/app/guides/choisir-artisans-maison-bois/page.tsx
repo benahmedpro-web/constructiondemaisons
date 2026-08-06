@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Choisir ses artisans pour une maison bois | M&M CONSTRUCTION",
+  title: "Choisir ses artisans pour une maison bois",
   description: "Décennale, Qualibat bois, références locales : les critères concrets pour sélectionner les bons artisans pour votre chantier bois en Haute-Savoie et Ain.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/choisir-artisans-maison-bois/",
@@ -22,6 +22,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2025-06-01",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const jsonLdBreadcrumb = {

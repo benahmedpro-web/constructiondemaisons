@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions légales | M&M CONSTRUCTION",
+  title: "Mentions légales",
   description: "Mentions légales du site constructiondemaisons.com — M&M CONSTRUCTION, Annemasse (74100).",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/mentions-legales/",

@@ -13,7 +13,7 @@ const jsonLdBreadcrumb = {
 };
 
 export const metadata: Metadata = {
-  title: "Notre méthode MOE — maison bois | M&M CONSTRUCTION",
+  title: "Notre méthode MOE — maison bois",
   description: "Évaluation, conception, permis, sélection artisans, coordination de chantier, réception. La méthode d'un maître d'œuvre spécialisé bois en Haute-Savoie.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/notre-methode/",

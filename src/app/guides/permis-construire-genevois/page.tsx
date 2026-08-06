@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Permis de construire Genevois français | M&M CONSTRUCTION",
+  title: "Permis de construire Genevois français",
   description: "Délais d'instruction, PLU locaux, recours voisins, zones sismiques — ce que les services d'urbanisme ne vous diront pas.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/permis-construire-genevois/",
@@ -23,6 +23,7 @@ const jsonLdArticle = {
   datePublished: "2025-01-15",
   dateModified: "2025-06-01",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const jsonLdBreadcrumb = {

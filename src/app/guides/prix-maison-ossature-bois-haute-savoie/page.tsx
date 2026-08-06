@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prix maison ossature bois en Haute-Savoie | M&M CONSTRUCTION",
+  title: "Prix maison ossature bois en Haute-Savoie",
   description: "Combien coûte une maison ossature bois en Haute-Savoie et Genevois ? Prix au m², postes de coût, variables locales, comparaison CCMI vs MOE.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-maison-ossature-bois-haute-savoie/",
@@ -22,6 +22,7 @@ const jsonLdArticle = {
   datePublished: "2025-03-01",
   dateModified: "2026-06-25",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const faqItems = [
@@ -67,6 +68,12 @@ const faqItems = [
     },
 ];
 
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -100,6 +107,7 @@ export default function GuidePrixMaisonBoisPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>
 

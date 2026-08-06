@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prix construction maison 2026 | M&M CONSTRUCTION",
+  title: "Prix construction maison 2026",
   description: "Combien coûte une construction de maison en 2026 dans le Genevois français ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
@@ -30,6 +30,7 @@ const jsonLdArticle = {
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   inLanguage: "fr-FR",
+  image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
 
 const faqItems = [
@@ -66,6 +67,12 @@ const faqItems = [
       },
     },
 ];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
 
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
@@ -138,6 +145,7 @@ export default function GuidePrixConstructionMaisonPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>
 
