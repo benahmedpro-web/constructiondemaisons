@@ -1,8 +1,7 @@
 "use client";
 
-import Script from "next/script";
 import { useEffect } from "react";
-import { GA_ID, grantConsent } from "@/lib/ga";
+import { grantConsent } from "@/lib/ga";
 
 export function GoogleAnalytics() {
   useEffect(() => {
@@ -11,10 +10,5 @@ export function GoogleAnalytics() {
     }
   }, []);
 
-  return (
-    <Script
-      src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-      strategy="afterInteractive"
-    />
-  );
+  return null;
 }
