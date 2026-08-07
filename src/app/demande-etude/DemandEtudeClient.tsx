@@ -3,6 +3,7 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { gtagEvent } from "@/lib/ga";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -273,7 +274,11 @@ function Sidebar() {
       <div className="bg-white p-5 border-l-4 border-[#BA7517]">
         <p className="text-[13px] font-bold text-[#2C2C2A] mb-1">Préférez-vous appeler ?</p>
         <p className="text-[13px] text-[#888780] mb-3">Disponible lundi–vendredi, 8h–19h.</p>
-        <a href="tel:+33625590926" className="inline-block bg-[#BA7517] text-white text-[14px] font-bold px-4 py-2.5 no-underline hover:bg-[#9E6312] transition-colors">
+        <a
+          href="tel:+33625590926"
+          className="inline-block bg-[#BA7517] text-white text-[14px] font-bold px-4 py-2.5 no-underline hover:bg-[#9E6312] transition-colors"
+          onClick={() => gtagEvent("click_tel", { event_category: "appel", event_label: "sidebar_demande_etude" })}
+        >
           Appeler directement
         </a>
       </div>
@@ -366,6 +371,7 @@ function DemandeEtudePageInner() {
         }),
       });
       if (!res.ok) throw new Error();
+      gtagEvent("generate_lead", { event_category: "formulaire", event_label: "demande_etude" });
       router.push("/demande-etude/merci");
     } catch {
       setError("Une erreur est survenue. Réessayez ou appelez-nous directement.");

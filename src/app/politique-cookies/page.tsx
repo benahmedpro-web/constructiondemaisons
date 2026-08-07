@@ -50,14 +50,8 @@ export default function PolitiqueCookiesPage() {
           {/* Ce site n'utilise pas de cookies de traçage */}
           <section>
             <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">2. Cookies utilisés sur ce site</h2>
-            <div className="bg-[#F2EDE6] p-5 mb-5">
-              <p className="text-[15px] font-bold text-[#2C2C2A] mb-2">Aucun cookie de traçage ou publicitaire</p>
-              <p className="text-[14px] text-[#888780] leading-[1.7]">
-                Ce site n&apos;installe aucun cookie d&apos;analyse de comportement (Google Analytics, Matomo, Hotjar…), aucun cookie publicitaire (Google Ads, Meta Pixel…), aucun cookie de réseau social, aucun cookie de personnalisation. Aucune donnée de navigation n&apos;est transmise à des tiers à des fins commerciales.
-              </p>
-            </div>
             <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
-              Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être déposés, dans les cas suivants :
+              Ce site utilise deux catégories de cookies :
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-[14px] border-collapse">
@@ -82,19 +76,34 @@ export default function PolitiqueCookiesPage() {
                     <td className="p-3 text-[#888780]">Session</td>
                     <td className="p-3"><span className="text-emerald-700 font-bold">Non</span></td>
                   </tr>
+                  <tr className="border-b border-[#D9D4CC]">
+                    <td className="p-3 text-[#2C2C2A] font-medium">_ga</td>
+                    <td className="p-3 text-[#888780]">Google Analytics — identifiant de visiteur unique, mesure d&apos;audience anonymisée</td>
+                    <td className="p-3 text-[#888780]">2 ans</td>
+                    <td className="p-3"><span className="text-amber-600 font-bold">Oui</span></td>
+                  </tr>
+                  <tr className="border-b border-[#D9D4CC]">
+                    <td className="p-3 text-[#2C2C2A] font-medium">_ga_G-J63BH8ZCMX</td>
+                    <td className="p-3 text-[#888780]">Google Analytics — maintien de l&apos;état de session pour cette propriété</td>
+                    <td className="p-3 text-[#888780]">2 ans</td>
+                    <td className="p-3"><span className="text-amber-600 font-bold">Oui</span></td>
+                  </tr>
                 </tbody>
               </table>
             </div>
             <p className="text-[13px] text-[#888780] mt-4 leading-[1.6]">
-              Ces cookies sont dits « strictement nécessaires » au sens de la directive ePrivacy et des lignes directrices de la CNIL. Ils ne nécessitent pas de consentement préalable de votre part, et ne peuvent pas être désactivés sans compromettre le fonctionnement du site.
+              Les cookies Google Analytics ne sont déposés qu&apos;après votre consentement explicite. Aucune donnée n&apos;est transmise à des fins publicitaires. Les données sont anonymisées et hébergées par Google LLC (États-Unis) dans le cadre du Data Privacy Framework UE–États-Unis.
             </p>
           </section>
 
           {/* Pas de bandeau */}
           <section>
-            <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">3. Pourquoi n&apos;y a-t-il pas de bandeau de cookies ?</h2>
+            <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">3. Le bandeau de consentement</h2>
+            <p className="text-[15px] text-[#888780] leading-[1.8] mb-3">
+              Depuis août 2026, ce site utilise Google Analytics 4 pour mesurer son audience (pages visitées, formulaires remplis, clics). Ces cookies d&apos;analyse requièrent votre consentement préalable, conformément aux lignes directrices de la CNIL (délibération n° 2020-091) et au règlement ePrivacy.
+            </p>
             <p className="text-[15px] text-[#888780] leading-[1.8]">
-              Conformément aux lignes directrices de la CNIL (délibération n° 2020-091 du 17 septembre 2020) et au règlement européen ePrivacy, un bandeau de consentement aux cookies n&apos;est obligatoire que lorsque des cookies non essentiels sont déposés — cookies analytiques, publicitaires ou de personnalisation. Ce site n&apos;en dépose aucun. L&apos;absence de bandeau est donc légalement conforme et délibérée.
+              Un bandeau s&apos;affiche à votre première visite. Vous pouvez accepter ou refuser en un clic. Votre choix est mémorisé dans votre navigateur (<code className="text-[13px] bg-[#F2EDE6] px-1.5 py-0.5">mm_cookie_consent</code>) et reste valable jusqu&apos;à effacement de vos données de navigation. Vous pouvez modifier votre choix à tout moment en effaçant les données de site dans votre navigateur.
             </p>
           </section>
 
