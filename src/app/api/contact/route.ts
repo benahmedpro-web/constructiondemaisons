@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { hasValidMx } from "@/lib/validate-email";
 
 const CHECKLIST_ITEMS = [
   "RDV découverte fixé",
@@ -74,6 +75,11 @@ export async function POST(req: NextRequest) {
 
     if (!nom || !email || !message) {
       return NextResponse.json({ error: "Champs requis manquants." }, { status: 400 });
+    }
+
+    const emailValid = await hasValidMx(email);
+    if (!emailValid) {
+      return NextResponse.json({ error: "Adresse email invalide ou inexistante. Vérifiez l'adresse saisie." }, { status: 400 });
     }
 
     const cardName = `${prenom} ${nom} — ${typeProjet || "Demande d'étude"}`;
