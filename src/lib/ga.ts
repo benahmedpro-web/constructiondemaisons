@@ -15,6 +15,7 @@ export function gtagEvent(name: string, params?: Record<string, string | number 
 export function grantConsent() {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
   window.gtag("consent", "update", { analytics_storage: "granted" });
+  window.gtag("js", new Date());
   window.gtag("config", GA_ID);
 }
 
