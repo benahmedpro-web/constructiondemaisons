@@ -1,0 +1,303 @@
+{
+  "version": "0.1.0-prototype",
+  "questions": [
+    {
+      "code": "project_stage",
+      "screen": "E3",
+      "section": "Projet",
+      "title": "Où en êtes-vous aujourd'hui ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "decouverte", "label": "Je découvre" },
+        { "value": "preparation", "label": "Je prépare mon projet" },
+        { "value": "comparaison", "label": "Je compare des constructeurs" },
+        { "value": "pret", "label": "Je suis prêt à lancer" }
+      ]
+    },
+    {
+      "code": "motivation_projet",
+      "screen": "E3b",
+      "section": "Projet",
+      "title": "Qu'est-ce qui vous pousse aujourd'hui à envisager la construction de votre maison ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "accession", "label": "Je souhaite accéder à la propriété et avoir ma maison" },
+        { "value": "besoin_espace", "label": "J'ai besoin de plus d'espace" },
+        { "value": "logement_inadapte", "label": "Mon logement actuel ne me correspond plus" },
+        { "value": "investissement_locatif", "label": "Je souhaite réaliser un investissement locatif" },
+        { "value": "autre", "label": "Autre" }
+      ]
+    },
+    {
+      "code": "echeance_emmenagement",
+      "screen": "E3c",
+      "section": "Projet",
+      "title": "Quand souhaitez-vous emménager dans votre future maison ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "asap", "label": "Le plus rapidement possible" },
+        { "value": "18_24_mois", "label": "D'ici 18 à 24 mois" },
+        { "value": "plus_2_ans", "label": "Dans plus de 2 ans" },
+        { "value": "information", "label": "Je souhaite simplement me renseigner" }
+      ]
+    },
+    {
+      "code": "regarde_ancien",
+      "screen": "E3d",
+      "section": "Projet",
+      "title": "Regardez-vous aussi l'achat dans l'ancien ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "oui", "label": "Oui, je regarde aussi" },
+        { "value": "non", "label": "Non, pas du tout" }
+      ]
+    },
+    {
+      "code": "transition_configuration",
+      "screen": "E3e",
+      "section": "Ma configuration",
+      "title": "Imaginons maintenant votre future maison",
+      "subtitle": "Quels sont vos souhaits de pièces, de surface habitable, le type de maison ou encore la surface de votre terrain... on va voir tout cela ensemble !",
+      "type": "info"
+    },
+    {
+      "code": "surface_habitable",
+      "screen": "E3f",
+      "section": "Ma configuration",
+      "title": "Quelle est la surface habitable souhaitée ?",
+      "subtitle": "En m²",
+      "type": "number",
+      "placeholder": "Ex. 120",
+      "required": true
+    },
+    {
+      "code": "nombre_chambres",
+      "screen": "E3g",
+      "section": "Ma configuration",
+      "title": "Combien de chambres souhaitez-vous ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "1", "label": "1 chambre" },
+        { "value": "2", "label": "2 chambres" },
+        { "value": "3", "label": "3 chambres" },
+        { "value": "4", "label": "4 chambres" },
+        { "value": "5_plus", "label": "5 chambres ou plus" }
+      ]
+    },
+    {
+      "code": "pieces_complementaires",
+      "screen": "E3h",
+      "section": "Ma configuration",
+      "title": "Quelles pièces souhaitez-vous ?",
+      "subtitle": "Plusieurs réponses possibles",
+      "type": "multi-choice",
+      "required": true,
+      "options": [
+        { "value": "suite_parentale", "label": "Suite parentale" },
+        { "value": "garage", "label": "Un garage" },
+        { "value": "bureau", "label": "Bureau" },
+        { "value": "buanderie", "label": "Buanderie" },
+        { "value": "aucune", "label": "Aucune de ces pièces", "exclusive": true }
+      ]
+    },
+    {
+      "code": "type_maison",
+      "screen": "E3i",
+      "section": "Ma configuration",
+      "title": "Souhaitez-vous une maison…",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "plain_pied", "label": "Plain-pied" },
+        { "value": "etage", "label": "À étage" }
+      ]
+    },
+    {
+      "code": "style_maison",
+      "screen": "E3j",
+      "section": "Ma configuration",
+      "title": "Quel style de maison aimeriez-vous ?",
+      "subtitle": "Une réponse possible",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "traditionnelle", "label": "Traditionnelle" },
+        { "value": "contemporaine", "label": "Contemporaine" },
+        { "value": "bois", "label": "Bois" },
+        { "value": "sans_preference", "label": "Pas de préférence" }
+      ]
+    },
+    {
+      "code": "location",
+      "screen": "E4",
+      "section": "Projet",
+      "title": "Dans quelle zone souhaitez-vous construire ?",
+      "subtitle": "Ville, commune ou secteur géographique",
+      "type": "city-autocomplete",
+      "placeholder": "Ex. Annemasse, Genevois français...",
+      "required": true
+    },
+    {
+      "code": "terrain_status",
+      "screen": "E5",
+      "section": "Terrain",
+      "title": "Avez-vous un terrain ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "acquis", "label": "Oui, acquis" },
+        { "value": "compromis", "label": "Oui, compromis signé" },
+        { "value": "identifie", "label": "Oui, identifié" },
+        { "value": "recherche", "label": "Je recherche" },
+        { "value": "aucun", "label": "Non" }
+      ]
+    },
+    {
+      "code": "terrain_viabilise",
+      "screen": "E6",
+      "section": "Terrain",
+      "title": "Le terrain est-il viabilisé ?",
+      "type": "single-choice",
+      "required": true,
+      "condition": { "field": "terrain_status", "in": ["acquis", "compromis"] },
+      "options": [
+        { "value": "oui", "label": "Oui" },
+        { "value": "non", "label": "Non" },
+        { "value": "ne_sait_pas", "label": "Je ne sais pas" }
+      ]
+    },
+    {
+      "code": "etude_sol",
+      "screen": "E7",
+      "section": "Terrain",
+      "title": "Une étude de sol est-elle disponible ?",
+      "type": "single-choice",
+      "required": true,
+      "condition": { "field": "terrain_status", "in": ["identifie", "acquis"] },
+      "options": [
+        { "value": "oui", "label": "Oui" },
+        { "value": "non", "label": "Non" }
+      ]
+    },
+    {
+      "code": "surface_terrain",
+      "screen": "E7b",
+      "section": "Terrain",
+      "title": "Quelle est la surface du terrain ?",
+      "subtitle": "En m²",
+      "type": "number",
+      "placeholder": "Ex. 800",
+      "required": true,
+      "condition": { "field": "terrain_status", "in": ["identifie", "acquis", "compromis"] }
+    },
+    {
+      "code": "surface_terrain_souhaitee",
+      "screen": "E7c",
+      "section": "Terrain",
+      "title": "Quelle surface de terrain envisagez-vous ?",
+      "subtitle": "Une fourchette suffit",
+      "type": "single-choice",
+      "required": true,
+      "condition": { "field": "terrain_status", "in": ["recherche", "aucun"] },
+      "options": [
+        { "value": "lt500", "label": "Moins de 500 m²" },
+        { "value": "500-800", "label": "500 à 800 m²" },
+        { "value": "800-1200", "label": "800 à 1200 m²" },
+        { "value": "gt1200", "label": "Plus de 1200 m²" },
+        { "value": "ne_sait_pas", "label": "Je ne sais pas encore" }
+      ]
+    },
+    {
+      "code": "mode_financement",
+      "screen": "E8b",
+      "section": "Financement",
+      "title": "Comment allez-vous financer votre maison ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "pret_bancaire", "label": "Prêt bancaire uniquement" },
+        { "value": "pret_avec_apport", "label": "Prêt avec apport personnel" },
+        { "value": "comptant", "label": "Comptant uniquement" }
+      ]
+    },
+    {
+      "code": "budget_global",
+      "screen": "E9",
+      "section": "Budget",
+      "title": "Quel est votre budget global pour ce projet ?",
+      "subtitle": "Terrain + construction, en euros",
+      "type": "number",
+      "placeholder": "Ex. 450000",
+      "required": true
+    },
+    {
+      "code": "budget_valide_professionnel",
+      "screen": "E9c",
+      "section": "Budget",
+      "title": "J'ai vu ce budget avec mon banquier ou mon courtier",
+      "type": "single-choice",
+      "required": true,
+      "condition": { "field": "mode_financement", "in": ["pret_bancaire", "pret_avec_apport"] },
+      "options": [
+        { "value": "true", "label": "Oui" },
+        { "value": "false", "label": "Non" }
+      ]
+    },
+    {
+      "code": "vente_bien_pour_projet",
+      "screen": "E9d",
+      "section": "Budget",
+      "title": "Prévoyez-vous de vendre votre logement actuel dans le cadre de ce projet ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "en_cours", "label": "Oui, c'est déjà en cours" },
+        { "value": "prochainement", "label": "Oui, prochainement" },
+        { "value": "non", "label": "Non, pas pour le moment" }
+      ]
+    },
+    {
+      "code": "apport",
+      "screen": "E9b",
+      "section": "Budget",
+      "title": "Quel est votre apport personnel ?",
+      "subtitle": "Part du budget déjà disponible en fonds propres, en euros",
+      "type": "number",
+      "placeholder": "Ex. 100000",
+      "required": true
+    },
+    {
+      "code": "financement_statut",
+      "screen": "E10",
+      "section": "Financement",
+      "title": "Où en êtes-vous avec le financement ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "accord", "label": "Accord de principe bancaire obtenu" },
+        { "value": "fonds_propres", "label": "Financement sur fonds propres, sans prêt" },
+        { "value": "simulation", "label": "Simulation faite, pas de démarche engagée" },
+        { "value": "pas_commence", "label": "Pas encore commencé" }
+      ]
+    },
+    {
+      "code": "calendrier_demarrage",
+      "screen": "E11",
+      "section": "Calendrier",
+      "title": "Quand souhaitez-vous démarrer les travaux ?",
+      "type": "single-choice",
+      "required": true,
+      "options": [
+        { "value": "6mois", "label": "Dans les 6 mois" },
+        { "value": "6-12mois", "label": "6 à 12 mois" },
+        { "value": "12-24mois", "label": "12 à 24 mois" },
+        { "value": "flou", "label": "Pas de calendrier précis" }
+      ]
+    }
+  ]
+}

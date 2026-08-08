@@ -1,0 +1,39 @@
+{
+  "source": "Captures d'écran fournies par Mahmoud le 08/08/2026 — outil d'analyse immobilier non identifié sur les captures (filtre Localisation + Caractéristiques, type de bien Terrain, transaction Vente/Ancien, particuliers uniquement). Noms de zone ci-dessous attribués par Claude pour la lisibilité, pas des libellés issus de l'outil source.",
+  "cout_construction_eur_m2": {
+    "valeur": 1800,
+    "exclut": ["adaptation au sol (terrassement, fondations spéciales)", "branchements (VRD, eau, électricité, assainissement)"],
+    "note": "Cout hors-oeuvre de base uniquement — a présenter avec cette réserve dans tout rapport/estimation, jamais comme un prix tout compris."
+  },
+  "zones": [
+    {
+      "nom": "Pays de Gex",
+      "communes": ["Ferney-Voltaire", "Saint-Genis-Pouilly", "Prévessin-Moëns", "Divonne-les-Bains", "Gex", "Cessy", "Ornex"],
+      "prix_moyen_eur_m2": 602,
+      "nb_annonces": 92
+    },
+    {
+      "nom": "Chablais / rive sud du Léman (Thonon-Évian)",
+      "communes": ["Douvaine", "Sciez", "Margencel", "Anthy-sur-Léman", "Publier", "Thonon-les-Bains", "Toutes les communes (74360)", "Toutes les communes (74500)", "Évian-les-Bains", "Marin"],
+      "prix_moyen_eur_m2": 398,
+      "nb_annonces": 179
+    },
+    {
+      "nom": "Faucigny / Bonneville-Reignier",
+      "communes": ["Reignier-Ésery", "Bonne", "Lucinges", "Saint-Cergues", "Machilly", "Juvigny", "Valleiry", "Viry", "Bonneville", "Brizon", "Toutes les communes (74130)", "Toutes les communes (74250)", "Toutes les communes (74800)"],
+      "prix_moyen_eur_m2": 293,
+      "nb_annonces": 181
+    },
+    {
+      "nom": "Genevois français (Annemasse / Saint-Julien-en-Genevois)",
+      "communes": ["Annemasse", "Cranves-Sales", "Vétraz-Monthoux", "Saint-Julien-en-Genevois", "Archamps", "Collonges-sous-Salève", "Beaumont", "Bossey", "Chênex", "Chevrier", "Dingy-en-Vuache", "Feigères", "Jonzier-Épagny", "Neydens", "Présilly", "Savigny", "Valleiry", "Viry", "Vulbens"],
+      "prix_moyen_eur_m2": 576,
+      "nb_annonces": 124
+    }
+  ],
+  "notes": [
+    "Valleiry et Viry apparaissent dans les zones Faucigny/Bonneville-Reignier ET Genevois français — chevauchement présent dans les captures d'origine, non résolu ici.",
+    "Zones à prix indexées par commune de résidence du terrain, pas par code postal seul, sauf les 3 entrées 'Toutes les communes (CP)' reprises telles quelles depuis les captures.",
+    "Couverture actuelle : Pays de Gex (01), Chablais/Thonon (74), Faucigny/Bonneville (74), Genevois français (74). Pas de donnée pour le reste de la Haute-Savoie (ex. bassin annécien, vallée de l'Arve au-delà de Bonneville, Mont-Blanc) ni pour l'Ain hors Pays de Gex — à compléter si le funnel reçoit des demandes hors de ces 4 zones."
+  ]
+}
