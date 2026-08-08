@@ -114,6 +114,16 @@ function Landing({ onStart }: { onStart: () => void }) {
             </button>
           </div>
         </div>
+
+        <footer className="mt-10 pt-6 border-t border-[#D9D4CC] flex flex-wrap justify-center gap-x-3 gap-y-1 text-[12px] text-[#888780]">
+          <Link href="/mentions-legales/" className="hover:text-[#2C2C2A] transition-colors">
+            Mentions légales
+          </Link>
+          <span>·</span>
+          <Link href="/vie-privee/" className="hover:text-[#2C2C2A] transition-colors">
+            Politique de confidentialité
+          </Link>
+        </footer>
       </div>
     </main>
   );
