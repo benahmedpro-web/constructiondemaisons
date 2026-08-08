@@ -130,6 +130,16 @@
   --sidebar-ring: #BA7517;
 }
 
+/* Bande d'avis défilante — /indice-de-faisabilite/ (08/08/2026) */
+@keyframes avis-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

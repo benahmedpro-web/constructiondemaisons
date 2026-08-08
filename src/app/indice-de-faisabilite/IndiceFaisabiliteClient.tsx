@@ -37,13 +37,25 @@ function LogoGoogle() {
   );
 }
 
-// 3 avis repris tels quels (mêmes noms, mêmes textes) de la page /temoignages/ — aucun avis
-// inventé, seule une sélection courte pour la landing. Note globale citée sans nombre d'avis
-// (demande explicite de Mahmoud du 08/08/2026), le détail (14 avis) reste visible sur /temoignages/.
+// Les 14 avis repris tels quels (mêmes noms, mêmes textes, note 5/5 pour tous) de la page
+// /temoignages/ — aucun avis inventé. Textes tronqués à la première phrase/idée pour tenir dans
+// une carte compacte défilante (les plus longs, ex. Joelle Thise/Francis Nossin, feraient exploser
+// la hauteur des cartes) ; le texte intégral reste consultable sur /temoignages/.
 const AVIS_LANDING = [
-  { nom: "Elodie Maes", texte: "Conseiller au top, disponible, bienveillant, à l'écoute. A su cerner le projet, nos besoins et envies." },
-  { nom: "Mathieu S.", texte: "Très professionnel et réactif, il nous fournit un travail de qualité lors de l'élaboration de notre projet." },
   { nom: "Jocelyn Schreiner", texte: "Excellent professionnel, très à l'écoute qui a su cerner nos besoins et envies. Disponible, réactif et rassurant." },
+  { nom: "Sandrine Revaux", texte: "A su nous écouter et établir un projet correspondant à nos attentes. Nous a parfaitement accompagné." },
+  { nom: "Supa Wesman", texte: "Bienveillant, à l'écoute, visionnaire. Un professionnel de qualité aux analyses justes et pertinentes." },
+  { nom: "Laurent Ramos", texte: "Vraiment très professionnel. Une personne de confiance. Sans lui je n'aurais pas construit ma nouvelle maison." },
+  { nom: "Kévin Ducrot", texte: "Un professionnel à l'écoute, réactif, qui prend le temps d'affiner les projets. Un travail de qualité." },
+  { nom: "Michael Camalet", texte: "Très belle expérience avec un excellent professionnel. De bons conseils tout au long du projet." },
+  { nom: "Mathieu S.", texte: "Très professionnel et réactif, il nous fournit un travail de qualité lors de l'élaboration de notre projet." },
+  { nom: "Julien B.", texte: "Nous a accompagné pour la construction de notre premier bien de la meilleure des façons." },
+  { nom: "Elodie Maes", texte: "Conseiller au top, disponible, bienveillant, à l'écoute. A su cerner le projet, nos besoins et envies." },
+  { nom: "Martin Mous", texte: "Un professionnel très consciencieux. Grâce à lui nous avons pu construire notre maison. Vous pouvez lui faire confiance." },
+  { nom: "Theresa Deblaine", texte: "À l'écoute de ses clients, réactif et soucieux du travail bien réalisé jusqu'au bout. Nous le recommandons pleinement." },
+  { nom: "Joelle Thise", texte: "Un immense merci. Vous nous avez écoutés dans les moindres détails, du plan de la maison à la réception." },
+  { nom: "Francis Nossin", texte: "Un rêve réalisé ! Écoute, dialogue, engagement sans compter ses heures nous ont été consacrées." },
+  { nom: "Mahamadi Kabore", texte: "Un professionnel de bons conseils et à l'écoute, avec au centre de ses interventions notre satisfaction." },
 ];
 
 // ─── OptionCard (reprend le style de demande-etude/DemandEtudeClient.tsx) ─────
@@ -141,16 +153,23 @@ function Landing({ onStart }: { onStart: () => void }) {
           ))}
         </div>
 
-        {/* Avis Google — identité + note déjà dans le header ci-dessus, ici seulement les 3
-            extraits (repris tels quels de /temoignages/, cf. commentaire sur AVIS_LANDING). */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
-          {AVIS_LANDING.map((a) => (
-            <div key={a.nom} className="bg-white border border-[#D9D4CC] p-3 text-left">
-              <Etoiles n={5} />
-              <p className="text-[12px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5">&ldquo;{a.texte}&rdquo;</p>
-              <p className="text-[11px] font-bold text-[#2C2C2A]">{a.nom}</p>
-            </div>
-          ))}
+        {/* Avis Google — identité + note déjà dans le header ci-dessus. Les 14 avis défilent en
+            bande continue (demande de Mahmoud du 08/08/2026 : "il y en a 14, il faut les faire
+            défiler") plutôt qu'une sélection statique de 3 — liste dupliquée une fois pour une
+            boucle visuelle sans coupure (translateX -50% = exactement une copie). Pause au survol
+            pour laisser le temps de lire. Coup d'œil hors de la colonne à 760px (w-screen +
+            centrage négatif) pour que la bande traverse toute la largeur, cohérent avec le header
+            et le fond déjà pleine largeur. */}
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden mb-8 [mask-image:linear-gradient(to_right,transparent,black_4rem,black_calc(100%-4rem),transparent)]">
+          <div className="flex gap-3 w-max animate-[avis-marquee_60s_linear_infinite] hover:[animation-play-state:paused] px-5">
+            {[...AVIS_LANDING, ...AVIS_LANDING].map((a, i) => (
+              <div key={`${a.nom}-${i}`} className="bg-white border border-[#D9D4CC] p-3 text-left w-[240px] flex-shrink-0">
+                <Etoiles n={5} />
+                <p className="text-[12px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5 line-clamp-3">&ldquo;{a.texte}&rdquo;</p>
+                <p className="text-[11px] font-bold text-[#2C2C2A]">{a.nom}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <div>
           <button
