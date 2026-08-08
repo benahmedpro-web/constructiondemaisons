@@ -526,134 +526,123 @@ const COMPLEMENT_ITEMS = [
   "éventuels travaux extérieurs",
 ];
 
+// ─── Email du diagnostic complet (prospect) ────────────────────────────────────
+
+// Reconstruit en HTML le détail par domaine + l'estimation chiffrée qui étaient auparavant
+// affichés directement sur l'écran de résultat (avant le 08/08/2026) — envoyés maintenant par
+// email au prospect à la soumission du formulaire de coordonnées (route /api/contact), pas
+// affichés à l'écran. Réutilise les mêmes fonctions de calcul/texte que l'écran (domainText,
+// budgetMargeInfo) pour rester cohérent avec ce qui était visible avant.
+function buildDiagnosticEmailHtml(diagnostic: Diagnostic, answers: Answers): string {
+  const { estimate } = diagnostic;
+
+  const domainRows = (Object.keys(DOMAIN_LABELS) as Domain[])
+    .map((d) => {
+      const { tier, texte } = domainText(d, diagnostic.detail[d], estimate, answers);
+      const icon = tier === "fort" ? " ✓" : tier === "faible" ? " ⚠️" : "";
+      return `
+        <tr>
+          <td style="padding:14px 0;border-bottom:1px solid #D9D4CC;">
+            <table style="width:100%;"><tr>
+              <td style="font-weight:bold;color:#2C2C2A;font-size:15px;">${DOMAIN_LABELS[d]}${icon}</td>
+              <td style="font-weight:bold;color:#2C2C2A;font-size:15px;text-align:right;">${diagnostic.detail[d]}/${DOMAIN_MAX[d]}</td>
+            </tr></table>
+            <p style="color:#888780;font-size:14px;line-height:1.6;margin:6px 0 0;">${texte}</p>
+          </td>
+        </tr>`;
+    })
+    .join("");
+
+  let estimationHtml = "";
+  if (estimate) {
+    const marge = budgetMargeInfo(estimate);
+    const terrainRows =
+      estimate.coutTerrain !== null && estimate.zone
+        ? `
+          <tr><td style="padding:8px 0;color:#888780;font-size:15px;">Terrain estimé</td><td style="padding:8px 0;text-align:right;font-weight:bold;font-size:15px;">${formatEur(estimate.coutTerrain * (1 - FOURCHETTE_TERRAIN_MARGE))} – ${formatEur(estimate.coutTerrain * (1 + FOURCHETTE_TERRAIN_MARGE))}</td></tr>
+          ${estimate.coutTotal !== null ? `<tr><td style="padding:10px 0;font-weight:bold;font-size:16px;border-top:1px solid #D9D4CC;">Total estimé</td><td style="padding:10px 0;text-align:right;font-weight:bold;font-size:16px;border-top:1px solid #D9D4CC;">${formatEur(estimate.coutTotal)}</td></tr>`
+          : ""}`
+        : "";
+    const budgetRow =
+      estimate.budget > 0 && estimate.coutTotal !== null
+        ? `<tr><td style="padding:10px 0;color:#888780;font-size:15px;border-top:1px solid #D9D4CC;">Budget annoncé</td><td style="padding:10px 0;text-align:right;font-weight:bold;font-size:15px;border-top:1px solid #D9D4CC;">${formatEur(estimate.budget)}</td></tr>`
+        : "";
+    const margeHtml = marge
+      ? `
+        <tr><td style="padding:10px 0;font-weight:bold;font-size:16px;">${marge.titre}</td><td style="padding:10px 0;text-align:right;font-weight:bold;font-size:16px;color:${marge.couleur};">${marge.ecart >= 0 ? "+" : ""}${formatEur(marge.ecart)}</td></tr>
+        <tr><td colspan="2" style="padding:0 0 10px;">${marge.messages.map((m) => `<p style="color:#888780;font-size:13px;line-height:1.6;margin:4px 0 0;">${m}</p>`).join("")}</td></tr>`
+      : "";
+
+    estimationHtml = `
+      <h2 style="font-size:17px;color:#2C2C2A;margin:28px 0 12px;">Votre estimation</h2>
+      <table style="width:100%;border-collapse:collapse;">
+        <tr><td style="padding:8px 0;color:#888780;font-size:15px;">Construction estimée</td><td style="padding:8px 0;text-align:right;font-weight:bold;font-size:15px;">${formatEur(estimate.coutConstruction)}</td></tr>
+        ${terrainRows}
+        ${budgetRow}
+        ${margeHtml}
+      </table>
+      ${estimate.zone ? `<p style="font-size:13px;color:#888780;margin-top:10px;">Hypothèse utilisée : terrain <strong>${estimate.surfaceTerrain} m²</strong> · secteur <strong>${estimate.zone.nom}</strong></p>` : ""}
+    `;
+  }
+
+  return `
+    <div style="text-align:center;margin-bottom:8px;">
+      <div style="font-size:38px;font-weight:900;color:#2C2C2A;">${diagnostic.total}<span style="font-size:16px;font-weight:500;opacity:0.6;">/100</span></div>
+      <div style="font-size:14px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#BA7517;margin-top:4px;">${diagnostic.niveau.label}</div>
+      <p style="font-size:14px;color:#2C2C2A;line-height:1.6;margin-top:12px;">${diagnostic.synthese}</p>
+    </div>
+    <h2 style="font-size:17px;color:#2C2C2A;margin:28px 0 4px;">Votre diagnostic</h2>
+    <table style="width:100%;border-collapse:collapse;">${domainRows}</table>
+    ${estimationHtml}
+    <div style="margin-top:24px;padding-top:16px;border-top:1px dashed #D9D4CC;">
+      <p style="font-size:13px;color:#888780;margin:0 0 6px;"><strong>À prévoir en complément</strong> — l'estimation ne comprend pas nécessairement : ${COMPLEMENT_ITEMS.join(", ")}.</p>
+      <p style="font-size:12px;color:#888780;line-height:1.6;margin:8px 0 0;">
+        <strong>Estimation indicative et non contractuelle.</strong> Les montants présentés constituent une première estimation basée sur les
+        informations renseignées. Ils devront être confirmés après étude du terrain, du projet et des prestations.
+      </p>
+    </div>
+  `;
+}
+
 function ResultScreen({
   diagnostic,
-  answers,
   onContinue,
   onRestart,
 }: {
   diagnostic: Diagnostic;
-  answers: Answers;
   onContinue: () => void;
   onRestart: () => void;
 }) {
-  const { estimate } = diagnostic;
   const niveauClass = NIVEAU_STYLES[diagnostic.niveau.couleur];
 
+  // Écran "teaser" — décision de Mahmoud du 08/08/2026 (option la plus favorable à la conversion
+  // selon lui) : le score/niveau/synthèse restent visibles immédiatement, mais le détail par
+  // domaine et l'estimation chiffrée (auparavant affichés ici, cf. historique wiki) ne le sont
+  // plus — ils partent par email au prospect à la soumission du formulaire de coordonnées
+  // (buildDiagnosticEmailHtml, voir plus bas, envoyé par /api/contact). Inverse délibérément la
+  // décision précédente "donner avant de demander" (écran complet sans rien caché) — remplacée
+  // par celle-ci à la demande explicite de Mahmoud.
   return (
     <main className="bg-[#F2EDE6] min-h-screen">
       <div className="max-w-[640px] mx-auto px-5 py-10 flex flex-col gap-6">
-        <h1 className="text-[14px] font-bold uppercase tracking-widest text-[#888780]">Votre résultat</h1>
+        <h1 className="text-[15px] font-bold uppercase tracking-widest text-[#888780]">Votre résultat</h1>
 
         <div className={`border-2 p-7 text-center ${niveauClass}`}>
           <div className="text-[44px] font-black leading-none">
             {diagnostic.total}
             <span className="text-[20px] font-medium opacity-60">/100</span>
           </div>
-          <div className="text-[16px] font-bold uppercase tracking-wide mt-2">{diagnostic.niveau.label}</div>
-          <p className="text-[15px] text-[#2C2C2A] leading-relaxed mt-4 pt-4 border-t border-current/20">{diagnostic.synthese}</p>
-        </div>
-
-        <div>
-          <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Votre diagnostic</h2>
-          <div className="bg-white border border-[#D9D4CC] divide-y divide-[#D9D4CC]">
-            {(Object.keys(DOMAIN_LABELS) as Domain[]).map((d) => {
-              const { tier, texte } = domainText(d, diagnostic.detail[d], estimate, answers);
-              const icon = tier === "fort" ? " ✓" : tier === "faible" ? " ⚠️" : "";
-              return (
-                <div key={d} className="p-4">
-                  <div className="flex justify-between text-[15px] font-bold text-[#2C2C2A]">
-                    <span>
-                      {DOMAIN_LABELS[d]}
-                      {icon}
-                    </span>
-                    <span>
-                      {diagnostic.detail[d]}/{DOMAIN_MAX[d]}
-                    </span>
-                  </div>
-                  <p className="text-[14px] text-[#888780] mt-1 leading-relaxed">{texte}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {estimate && (
-          <div className="bg-white border border-[#D9D4CC] p-5">
-            <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Votre estimation</h2>
-            <div className="flex justify-between text-[15px] py-2 border-b border-[#D9D4CC]">
-              <span className="text-[#888780]">Construction estimée</span>
-              <strong>{formatEur(estimate.coutConstruction)}</strong>
-            </div>
-
-            {estimate.coutTerrain !== null && estimate.zone ? (
-              <>
-                <div className="flex justify-between text-[15px] py-2 border-b border-[#D9D4CC]">
-                  <span className="text-[#888780]">Terrain estimé</span>
-                  <strong>
-                    {formatEur(estimate.coutTerrain * (1 - FOURCHETTE_TERRAIN_MARGE))} – {formatEur(estimate.coutTerrain * (1 + FOURCHETTE_TERRAIN_MARGE))}
-                  </strong>
-                </div>
-                <p className="text-[14px] text-[#888780] mt-2">
-                  Hypothèse retenue pour le calcul : {formatEur(estimate.coutTerrain)}
-                  {estimate.surfaceTerrainEstimee ? " (basée sur le milieu de la fourchette de surface que vous avez choisie)" : ""}.
-                </p>
-                {estimate.coutTotal !== null && (
-                  <div className="flex justify-between text-[16px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
-                    <span>Total estimé</span>
-                    <span>{formatEur(estimate.coutTotal)}</span>
-                  </div>
-                )}
-              </>
-            ) : estimate.zone ? (
-              <p className="text-[14px] text-[#888780] mt-2">
-                Vous n&apos;avez pas encore de terrain précis — à titre indicatif, le prix moyen constaté dans le secteur {estimate.zone.nom} est de{" "}
-                {estimate.zone.prix_moyen_eur_m2} €/m². On affinera le coût total dès que vous aurez une surface de terrain.
-              </p>
-            ) : (
-              <p className="text-[14px] text-[#888780] mt-2">
-                Coût du terrain non estimable : secteur pas encore couvert par nos données de prix — un conseiller affinera ce point avec vous.
-              </p>
-            )}
-
-            {estimate.budget > 0 && estimate.coutTotal !== null && (
-              <>
-                <div className="flex justify-between text-[15px] py-2 mt-2 border-t border-[#D9D4CC]">
-                  <span className="text-[#888780]">Budget annoncé</span>
-                  <strong>{formatEur(estimate.budget)}</strong>
-                </div>
-                <BudgetMargeRow estimate={estimate} />
-              </>
-            )}
-
-            {estimate.zone && (
-              <div className="mt-4 pt-3 border-t border-dashed border-[#D9D4CC]">
-                <p className="text-[12px] font-bold uppercase tracking-widest text-[#888780] mb-1">Hypothèse utilisée</p>
-                <p className="text-[14px]">
-                  Terrain : <strong>{estimate.surfaceTerrain} m²</strong> · Secteur : <strong>{estimate.zone.nom}</strong>
-                </p>
-              </div>
-            )}
-          </div>
-        )}
-
-        <div className="pt-4 border-t border-dashed border-[#D9D4CC]">
-          <h3 className="text-[15px] font-bold text-[#2C2C2A] mb-2">À prévoir en complément</h3>
-          <p className="text-[14px] text-[#888780] mb-2">L&apos;estimation ne comprend pas nécessairement :</p>
-          <ul className="text-[14px] text-[#888780] grid grid-cols-2 gap-x-4 list-disc pl-5 mb-3">
-            {COMPLEMENT_ITEMS.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <p className="text-[13px] text-[#888780] leading-relaxed">
-            <strong>Estimation indicative et non contractuelle.</strong> Les montants présentés constituent une première estimation basée sur les
-            informations renseignées. Ils devront être confirmés après étude du terrain, du projet et des prestations.
-          </p>
+          <div className="text-[17px] font-bold uppercase tracking-wide mt-2">{diagnostic.niveau.label}</div>
+          <p className="text-[16px] text-[#2C2C2A] leading-relaxed mt-4 pt-4 border-t border-current/20">{diagnostic.synthese}</p>
         </div>
 
         <div className="text-center pt-4">
-          <h3 className="text-[18px] font-black text-[#2C2C2A] mb-2">{CONCLUSION_TITRES[diagnostic.faisabilite]}</h3>
-          <p className="text-[15px] text-[#888780] mb-5">Découvrez maintenant les points à sécuriser pour pouvoir avancer.</p>
+          <h3 className="text-[19px] font-black text-[#2C2C2A] mb-2">{CONCLUSION_TITRES[diagnostic.faisabilite]}</h3>
+          <p className="text-[16px] text-[#888780] mb-2">
+            Le détail par domaine (Budget, Terrain, Financement, Calendrier, Cohérence) et l&apos;estimation chiffrée de votre projet vous seront
+            envoyés par email.
+          </p>
+          <p className="text-[16px] text-[#888780] mb-5">Découvrez maintenant les points à sécuriser pour pouvoir avancer.</p>
           <button
             type="button"
             onClick={onContinue}
@@ -661,8 +650,8 @@ function ResultScreen({
           >
             Obtenir mon analyse personnalisée
           </button>
-          <p className="text-[13px] text-[#888780] mt-3">Gratuit · Sans engagement</p>
-          <button type="button" onClick={onRestart} className="block mx-auto mt-5 text-[14px] text-[#888780] underline hover:text-[#2C2C2A]">
+          <p className="text-[14px] text-[#888780] mt-3">Gratuit · Sans engagement</p>
+          <button type="button" onClick={onRestart} className="block mx-auto mt-5 text-[15px] text-[#888780] underline hover:text-[#2C2C2A]">
             ↻ Modifier mes réponses
           </button>
         </div>
@@ -671,53 +660,45 @@ function ResultScreen({
   );
 }
 
-function BudgetMargeRow({ estimate }: { estimate: NonNullable<Diagnostic["estimate"]> }) {
+// Logique reprise de l'ancien composant BudgetMargeRow (affiché à l'écran avant le 08/08/2026,
+// désormais réservée à l'email du diagnostic — cf. buildDiagnosticEmailHtml) : titre/couleur/
+// messages selon l'état de l'écart budgétaire.
+function budgetMargeInfo(estimate: NonNullable<Diagnostic["estimate"]>): { titre: string; couleur: string; ecart: number; messages: string[] } | null {
   if (!estimate.coutTotal) return null;
   const ecart = estimate.budget - estimate.coutTotal;
   const ecartRatio = ecart / estimate.budget;
-  let titre: string;
-  let classe: string;
-  let messages: string[];
 
   if (ecart < 0) {
-    titre = "Écart budgétaire estimé";
-    classe = "text-[#B5433B]";
-    messages = [
-      "Le budget annoncé est actuellement inférieur à l'estimation de votre projet.",
-      "Des ajustements pourront être nécessaires sur le terrain, la construction ou le budget global.",
-      "Cette estimation ne tient pas encore compte de certains frais complémentaires liés notamment au terrain, aux raccordements ou à l'adaptation au sol.",
-    ];
-  } else if (ecartRatio < 0.05) {
-    titre = "Marge budgétaire limitée";
-    classe = "text-[#C97A28]";
-    messages = [
-      "Votre budget est très proche de l'estimation actuelle du projet. Les frais complémentaires pourraient nécessiter un ajustement du projet ou du budget global.",
-      "Cette estimation ne tient pas encore compte de certains coûts liés notamment au terrain, aux raccordements et à l'adaptation au sol.",
-    ];
-  } else {
-    titre = "Marge budgétaire avant frais complémentaires";
-    classe = "text-[#4C7A5A]";
-    messages = [
-      "Cette marge pourra contribuer à absorber certains frais complémentaires liés notamment au terrain, aux raccordements, à l'adaptation au sol et aux choix définitifs de prestations.",
-    ];
+    return {
+      titre: "Écart budgétaire estimé",
+      couleur: "#B5433B",
+      ecart,
+      messages: [
+        "Le budget annoncé est actuellement inférieur à l'estimation de votre projet.",
+        "Des ajustements pourront être nécessaires sur le terrain, la construction ou le budget global.",
+        "Cette estimation ne tient pas encore compte de certains frais complémentaires liés notamment au terrain, aux raccordements ou à l'adaptation au sol.",
+      ],
+    };
   }
-
-  return (
-    <>
-      <div className="flex justify-between text-[16px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
-        <span>{titre}</span>
-        <span className={classe}>
-          {ecart >= 0 ? "+" : ""}
-          {formatEur(ecart)}
-        </span>
-      </div>
-      {messages.map((m) => (
-        <p key={m} className="text-[14px] text-[#888780] mt-1 leading-relaxed">
-          {m}
-        </p>
-      ))}
-    </>
-  );
+  if (ecartRatio < 0.05) {
+    return {
+      titre: "Marge budgétaire limitée",
+      couleur: "#C97A28",
+      ecart,
+      messages: [
+        "Votre budget est très proche de l'estimation actuelle du projet. Les frais complémentaires pourraient nécessiter un ajustement du projet ou du budget global.",
+        "Cette estimation ne tient pas encore compte de certains coûts liés notamment au terrain, aux raccordements et à l'adaptation au sol.",
+      ],
+    };
+  }
+  return {
+    titre: "Marge budgétaire avant frais complémentaires",
+    couleur: "#4C7A5A",
+    ecart,
+    messages: [
+      "Cette marge pourra contribuer à absorber certains frais complémentaires liés notamment au terrain, aux raccordements, à l'adaptation au sol et aux choix définitifs de prestations.",
+    ],
+  };
 }
 
 // ─── Lead capture ───────────────────────────────────────────────────────────
@@ -790,6 +771,7 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
           zone: Array.isArray(answers.location) ? (answers.location as string[]).join(", ") : answers.location,
           budget: answers.budget_global ? formatEur(Number(answers.budget_global)) : "",
           message: buildMessage(answers, diagnostic),
+          diagnosticHtml: buildDiagnosticEmailHtml(diagnostic, answers),
         }),
       });
       if (!res.ok) throw new Error();
@@ -977,7 +959,7 @@ export default function IndiceFaisabiliteClient() {
   }
 
   if (phase === "result" && diagnostic) {
-    return <ResultScreen diagnostic={diagnostic} answers={answers} onContinue={() => setPhase("lead")} onRestart={restart} />;
+    return <ResultScreen diagnostic={diagnostic} onContinue={() => setPhase("lead")} onRestart={restart} />;
   }
 
   if (phase === "lead" && diagnostic) {

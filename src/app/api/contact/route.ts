@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
     const body = await req.json();
-    const { nom, prenom, email, telephone, typeProjet, zone, budget, message } = body;
+    const { nom, prenom, email, telephone, typeProjet, zone, budget, message, diagnosticHtml } = body;
 
     if (!nom || !email || !message) {
       return NextResponse.json({ error: "Champs requis manquants." }, { status: 400 });
@@ -126,6 +126,39 @@ export async function POST(req: NextRequest) {
         </div>
       `,
       }),
+      // Diagnostic complet envoyé au prospect lui-même — décision de Mahmoud du 08/08/2026 :
+      // l'écran de résultat de /indice-de-faisabilite ne montre plus qu'un résumé (score/niveau/
+      // synthèse), le détail par domaine + l'estimation chiffrée partent uniquement par email.
+      // diagnosticHtml est construit côté client (buildDiagnosticEmailHtml) et simplement inséré
+      // ici dans l'habillage de marque.
+      ...(diagnosticHtml
+        ? [
+            resend.emails.send({
+              from: "M&M CONSTRUCTION <onboarding@resend.dev>",
+              to: email,
+              replyTo: "benahmed.pro@icloud.com",
+              subject: "Votre diagnostic — M&M CONSTRUCTION",
+              html: `
+                <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #2C2C2A;">
+                  <div style="background: #2C2C2A; padding: 24px 32px;">
+                    <h1 style="color: white; margin: 0; font-size: 20px; font-weight: 900; letter-spacing: -0.5px;">M&M CONSTRUCTION</h1>
+                    <p style="color: rgba(255,255,255,0.6); margin: 4px 0 0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Votre diagnostic de faisabilité</p>
+                  </div>
+                  <div style="padding: 32px; background: #F2EDE6;">
+                    <p style="font-size: 15px; line-height: 1.7; margin: 0 0 20px;">Bonjour ${prenom},<br />Voici le diagnostic complet de votre projet.</p>
+                    <div style="background: white; padding: 24px;">${diagnosticHtml}</div>
+                    <div style="margin-top: 24px; padding: 20px; background: white; border-left: 3px solid #BA7517;">
+                      <p style="font-size: 15px; line-height: 1.7; margin: 0;">Des questions sur ces chiffres ? Répondez directement à cet email ou appelez-nous — nous revenons vers vous rapidement.</p>
+                    </div>
+                  </div>
+                  <div style="padding: 16px 32px; background: #2C2C2A; text-align: center;">
+                    <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">constructiondemaisons.com · NAF 71.12B · Maîtrise d'œuvre bois, Genevois français</p>
+                  </div>
+                </div>
+              `,
+            }),
+          ]
+        : []),
     ]);
 
     return NextResponse.json({ success: true });
