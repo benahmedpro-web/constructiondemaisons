@@ -97,8 +97,35 @@ function Landing({ onStart }: { onStart: () => void }) {
           "radial-gradient(circle at 12% 15%, rgba(186,117,23,0.09), transparent 45%), radial-gradient(circle at 88% 80%, rgba(186,117,23,0.07), transparent 50%), #F2EDE6",
       }}
     >
+      {/* Header dédié — demande de Mahmoud du 08/08/2026 : logo à gauche, signal de confiance
+          (Mahmoud + note Google) à droite. Volontairement PAS le <Header /> mega-menu du reste du
+          site (celui-ci n'est utilisé que sur la home, cf. src/components/Header.tsx) : ça
+          réintroduirait de la navigation qui ferait sortir le prospect de la landing, à l'inverse
+          de la demande précédente du même jour. Logo en texte brut, non cliquable, même raison. */}
+      <header className="bg-white border-b border-[#D9D4CC]">
+        <div className="max-w-[1000px] mx-auto px-5 py-3.5 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-col leading-none">
+            <span className="text-[18px] font-black text-[#2C2C2A] tracking-tight">M&amp;M CONSTRUCTION</span>
+            <span className="text-[10px] text-[#888780] tracking-widest uppercase mt-0.5">Maîtrise d&apos;œuvre · Maison bois</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-[#2C2C2A]">
+              <Image src="/images/mahmoud-ben-ahmed.png" alt="Mahmoud Ben Ahmed" fill sizes="32px" className="object-cover" />
+            </div>
+            <span className="text-[12px] text-[#2C2C2A] leading-tight hidden sm:inline">
+              <span className="font-bold">Mahmoud Ben Ahmed</span>
+              <span className="text-[#888780]"> — 20 ans de terrain, 200+ projets accompagnés</span>
+            </span>
+            <div className="flex items-center gap-1 pl-2.5 border-l border-[#D9D4CC]">
+              <LogoGoogle />
+              <span className="text-[12px] font-bold text-[#2C2C2A]">5,0</span>
+              <Etoiles n={5} />
+            </div>
+          </div>
+        </div>
+      </header>
+
       <div className="max-w-[760px] mx-auto px-5 py-16 text-center">
-        <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION</p>
         <h1 className="text-[32px] md:text-[40px] font-black text-[#2C2C2A] leading-tight mb-5">
           Votre projet de construction est-il réalisable ?
         </h1>
@@ -114,35 +141,16 @@ function Landing({ onStart }: { onStart: () => void }) {
           ))}
         </div>
 
-        {/* Signal de confiance — recommandation UX du 08/08/2026, retravaillée le 08/08/2026 pour
-            rester sur la landing (plus de lien sortant vers /a-propos/) et ajouter la preuve
-            sociale Google (avis réels repris de /temoignages/, note sans le nombre d'avis). */}
-        <div className="bg-white border border-[#D9D4CC] p-5 mb-8 text-left">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-            <div className="flex items-center gap-3">
-              <div className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0 bg-[#2C2C2A]">
-                <Image src="/images/mahmoud-ben-ahmed.png" alt="Mahmoud Ben Ahmed" fill sizes="36px" className="object-cover" />
-              </div>
-              <span className="text-[13px] text-[#2C2C2A] leading-tight">
-                <span className="font-bold">Mahmoud Ben Ahmed</span>
-                <span className="text-[#888780]"> — 20 ans de terrain, 200+ projets accompagnés</span>
-              </span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <LogoGoogle />
-              <span className="text-[13px] font-bold text-[#2C2C2A]">5,0</span>
+        {/* Avis Google — identité + note déjà dans le header ci-dessus, ici seulement les 3
+            extraits (repris tels quels de /temoignages/, cf. commentaire sur AVIS_LANDING). */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+          {AVIS_LANDING.map((a) => (
+            <div key={a.nom} className="bg-white border border-[#D9D4CC] p-3 text-left">
               <Etoiles n={5} />
+              <p className="text-[12px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5">&ldquo;{a.texte}&rdquo;</p>
+              <p className="text-[11px] font-bold text-[#2C2C2A]">{a.nom}</p>
             </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-[#D9D4CC]">
-            {AVIS_LANDING.map((a) => (
-              <div key={a.nom} className="bg-[#F2EDE6] p-3">
-                <Etoiles n={5} />
-                <p className="text-[12px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5">&ldquo;{a.texte}&rdquo;</p>
-                <p className="text-[11px] font-bold text-[#2C2C2A]">{a.nom}</p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
         <div>
           <button
