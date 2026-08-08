@@ -153,24 +153,6 @@ function Landing({ onStart }: { onStart: () => void }) {
           ))}
         </div>
 
-        {/* Avis Google — identité + note déjà dans le header ci-dessus. Les 14 avis défilent en
-            bande continue (demande de Mahmoud du 08/08/2026 : "il y en a 14, il faut les faire
-            défiler") plutôt qu'une sélection statique de 3 — liste dupliquée une fois pour une
-            boucle visuelle sans coupure (translateX -50% = exactement une copie). Pause au survol
-            pour laisser le temps de lire. Coup d'œil hors de la colonne à 760px (w-screen +
-            centrage négatif) pour que la bande traverse toute la largeur, cohérent avec le header
-            et le fond déjà pleine largeur. */}
-        <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden mb-8 [mask-image:linear-gradient(to_right,transparent,black_4rem,black_calc(100%-4rem),transparent)]">
-          <div className="flex gap-3 w-max animate-[avis-marquee_60s_linear_infinite] hover:[animation-play-state:paused] px-5">
-            {[...AVIS_LANDING, ...AVIS_LANDING].map((a, i) => (
-              <div key={`${a.nom}-${i}`} className="bg-white border border-[#D9D4CC] p-3 text-left w-[240px] flex-shrink-0">
-                <Etoiles n={5} />
-                <p className="text-[12px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5 line-clamp-3">&ldquo;{a.texte}&rdquo;</p>
-                <p className="text-[11px] font-bold text-[#2C2C2A]">{a.nom}</p>
-              </div>
-            ))}
-          </div>
-        </div>
         <div>
           <button
             type="button"
@@ -207,6 +189,27 @@ function Landing({ onStart }: { onStart: () => void }) {
               </ul>
             </div>
           </div>
+
+          {/* Avis Google — identité + note déjà dans le header. Les 14 avis défilent en bande
+              continue (demande de Mahmoud du 08/08/2026 : "il y en a 14, il faut les faire
+              défiler") — liste dupliquée une fois pour une boucle visuelle sans coupure
+              (translateX -50% = exactement une copie). Pause au survol pour laisser le temps de
+              lire. Repositionné le 08/08/2026 juste avant ce second CTA plutôt qu'avant le
+              premier : le header n'est pas sticky, donc au-delà du premier écran plus aucun signal
+              de confiance n'est visible — le replacer ici le refait apparaître pile au moment où
+              un visiteur hésitant qui a scrollé jusqu'ici arrive sur une deuxième décision. */}
+          <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_4rem,black_calc(100%-4rem),transparent)]">
+            <div className="flex gap-3 w-max animate-[avis-marquee_60s_linear_infinite] hover:[animation-play-state:paused] px-5">
+              {[...AVIS_LANDING, ...AVIS_LANDING].map((a, i) => (
+                <div key={`${a.nom}-${i}`} className="bg-white border border-[#D9D4CC] p-3 text-left w-[240px] flex-shrink-0">
+                  <Etoiles n={5} />
+                  <p className="text-[12px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5 line-clamp-3">&ldquo;{a.texte}&rdquo;</p>
+                  <p className="text-[11px] font-bold text-[#2C2C2A]">{a.nom}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="bg-white border border-[#D9D4CC] p-5 text-center">
             <h3 className="text-[16px] font-bold text-[#2C2C2A] mb-2">Pourquoi faire cette analyse ?</h3>
             <p className="text-[14px] text-[#888780] leading-relaxed mb-4">
