@@ -167,10 +167,10 @@ function Landing({ onStart }: { onStart: () => void }) {
         </p>
 
         <div className="mt-14 pt-10 border-t border-[#D9D4CC] text-left flex flex-col gap-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
             <div>
               <h3 className="text-[16px] font-bold text-[#2C2C2A] mb-2">Ce que nous analysons</h3>
-              <ul className="text-[14px] text-[#888780] leading-relaxed list-disc pl-5">
+              <ul className="text-[14px] text-[#888780] leading-relaxed list-disc pl-5 inline-block text-left">
                 <li>Budget</li>
                 <li>Terrain</li>
                 <li>Financement</li>
@@ -180,7 +180,7 @@ function Landing({ onStart }: { onStart: () => void }) {
             </div>
             <div>
               <h3 className="text-[16px] font-bold text-[#2C2C2A] mb-2">Ce que vous obtenez</h3>
-              <ul className="text-[14px] text-[#888780] leading-relaxed list-disc pl-5">
+              <ul className="text-[14px] text-[#888780] leading-relaxed list-disc pl-5 inline-block text-left">
                 <li>Un premier diagnostic</li>
                 <li>Une estimation budgétaire indicative</li>
                 <li>Les points forts du projet</li>
