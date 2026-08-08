@@ -162,9 +162,6 @@ function Landing({ onStart }: { onStart: () => void }) {
             Commencer mon analyse
           </button>
         </div>
-        <p className="text-[13px] text-[#888780] mt-3">
-          Vos coordonnées ne vous seront demandées qu&apos;après votre résultat.
-        </p>
 
         <div className="mt-14 pt-10 border-t border-[#D9D4CC] text-left flex flex-col gap-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
