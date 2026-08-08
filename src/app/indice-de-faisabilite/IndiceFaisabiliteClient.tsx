@@ -186,42 +186,11 @@ function QuestionScreen({
 
   const section = getSectionProgress(question.code);
 
-  // Point de réassurance + filet de sécurité anti-abandon (recommandation UX du 08/08/2026) :
-  // ancré sur la première question de la section "Votre terrain", qui tombe précisément au
-  // milieu du parcours réel (~étape 12 sur 18-20 selon les branchements) — pas de calcul de
-  // pourcentage fragile, un point d'ancrage stable dans la structure des questions.
+  // Point de réassurance mi-parcours (recommandation UX du 08/08/2026) : ancré sur la première
+  // question de la section "Votre terrain", qui tombe précisément au milieu du parcours réel
+  // (~étape 12 sur 18-20 selon les branchements) — pas de calcul de pourcentage fragile, un
+  // point d'ancrage stable dans la structure des questions.
   const isMidpoint = question.code === SECTION_GROUPS[2].codes[0];
-  const [safetyEmail, setSafetyEmail] = useState("");
-  const [safetySubmitting, setSafetySubmitting] = useState(false);
-  const [safetySubmitted, setSafetySubmitted] = useState(false);
-  const [safetyError, setSafetyError] = useState("");
-
-  async function submitSafetyNet(e: FormEvent) {
-    e.preventDefault();
-    setSafetySubmitting(true);
-    setSafetyError("");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          nom: safetyEmail,
-          prenom: "",
-          email: safetyEmail,
-          typeProjet: "Indice de faisabilité — session en cours (email de secours)",
-          zone: answers.location,
-          message: buildPartialMessage(answers),
-        }),
-      });
-      if (!res.ok) throw new Error();
-      gtagEvent("indice_faisabilite_email_safety_net", { event_category: "formulaire", event_label: "indice_faisabilite_partiel" });
-      setSafetySubmitted(true);
-    } catch {
-      setSafetyError("Une erreur est survenue, réessayez.");
-    } finally {
-      setSafetySubmitting(false);
-    }
-  }
 
   function handleFieldChange(value: string) {
     setFieldValue(value);
@@ -297,41 +266,13 @@ function QuestionScreen({
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            Retour
+            Précédent
           </button>
         )}
 
         {isMidpoint && (
           <div className="bg-[#FDF8F0] border border-[#BA7517]/30 p-4 mb-6">
-            <p className="text-[13px] text-[#2C2C2A] font-bold mb-2">🕒 Vous êtes à mi-parcours — encore environ 2 minutes.</p>
-            {safetySubmitted ? (
-              <p className="text-[13px] text-[#888780]">C&apos;est noté, on vous recontacte avec votre analyse. Vous pouvez continuer tranquillement.</p>
-            ) : (
-              <>
-                <p className="text-[13px] text-[#888780] mb-3">
-                  Besoin de faire une pause ? Laissez votre email, on vous recontacte personnellement avec votre analyse — pas d&apos;obligation de finir maintenant.
-                </p>
-                <form onSubmit={submitSafetyNet} className="flex flex-col sm:flex-row gap-2">
-                  <input
-                    type="email"
-                    required
-                    value={safetyEmail}
-                    onChange={(e) => setSafetyEmail(e.target.value)}
-                    placeholder="votre@email.fr"
-                    autoComplete="email"
-                    className="flex-1 border border-[#D9D4CC] px-3 py-2 text-[14px] bg-white focus:outline-none focus:border-[#BA7517]"
-                  />
-                  <button
-                    type="submit"
-                    disabled={safetySubmitting}
-                    className="bg-white border-2 border-[#BA7517] text-[#BA7517] text-[13px] font-bold px-4 py-2 hover:bg-[#BA7517] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
-                  >
-                    {safetySubmitting ? "Envoi…" : "Recevoir par email"}
-                  </button>
-                </form>
-                {safetyError && <p className="text-red-600 text-[12px] mt-2">{safetyError}</p>}
-              </>
-            )}
+            <p className="text-[13px] text-[#2C2C2A] font-bold">🕒 Vous êtes à mi-parcours — encore environ 2 minutes.</p>
           </div>
         )}
 
@@ -634,30 +575,6 @@ function BudgetMargeRow({ estimate }: { estimate: NonNullable<Diagnostic["estima
       ))}
     </>
   );
-}
-
-// ─── Filet de sécurité anti-abandon (capture email mi-parcours) ───────────────
-
-// Résumé des réponses déjà connues au milieu du parcours — pas de diagnostic chiffré possible
-// à ce stade (Budget/Terrain/Financement pas encore répondus), juste de quoi qualifier le
-// contact pour une relance manuelle.
-function buildPartialMessage(answers: Answers): string {
-  const lines = [
-    "INDICE DE FAISABILITÉ — SESSION EN COURS (non terminée)",
-    "Le prospect a laissé son email en cours de parcours, avant l'écran de résultat.",
-    "",
-    "--- Réponses connues à ce stade ---",
-    answers.project_stage ? `Avancement du projet : ${answers.project_stage}` : "",
-    answers.motivation_projet ? `Motivation : ${answers.motivation_projet}` : "",
-    answers.echeance_emmenagement ? `Échéance d'emménagement : ${answers.echeance_emmenagement}` : "",
-    answers.regarde_ancien ? `Regarde aussi l'ancien : ${answers.regarde_ancien}` : "",
-    answers.surface_habitable ? `Surface habitable souhaitée : ${answers.surface_habitable} m²` : "",
-    answers.nombre_chambres ? `Chambres souhaitées : ${answers.nombre_chambres}` : "",
-    answers.type_maison ? `Type de maison : ${answers.type_maison}` : "",
-    answers.style_maison ? `Style : ${answers.style_maison}` : "",
-    answers.location ? `Zone : ${answers.location}` : "",
-  ];
-  return lines.filter(Boolean).join("\n");
 }
 
 // ─── Lead capture ───────────────────────────────────────────────────────────
