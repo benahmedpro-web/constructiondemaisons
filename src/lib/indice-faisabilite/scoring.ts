@@ -57,21 +57,27 @@ const COHERENCE_POINTS = [20, 12, 5, 0];
 const STAGE_RANK: Record<string, number> = { decouverte: 1, preparation: 2, comparaison: 3, pret: 4 };
 const CALENDRIER_RANK: Record<string, number> = { flou: 1, "12-24mois": 2, "6-12mois": 3, "6mois": 4 };
 
-function scoreCoherence(answers: Answers, estimate: Estimate | null): number {
-  let incoherences = 0;
+export type CoherenceReason = "budget_ratio" | "calendrier_avancement" | "definition_projet";
 
-  // 1. Budget/surface : ratio Budget/Coût dans le palier "incohérent"
-  if (estimate && estimate.ratio !== null && estimate.ratio < 0.6) incoherences++;
+// Liste les raisons précises d'incohérence plutôt qu'un simple compteur — nécessaire pour que
+// le texte affiché reste honnête (ex. ne jamais dire "globalement cohérent" quand la seule
+// raison est un déficit budgétaire sévère déjà annoncé ailleurs à l'écran).
+export function coherenceReasons(answers: Answers, estimate: Estimate | null): CoherenceReason[] {
+  const reasons: CoherenceReason[] = [];
 
-  // 2. Calendrier/avancement : veut démarrer vite mais projet peu avancé (écart de rang >= 2).
+  if (estimate && estimate.ratio !== null && estimate.ratio < 0.6) reasons.push("budget_ratio");
+
   const sr = STAGE_RANK[(answers.project_stage as string) ?? ""] || 0;
   const cr = CALENDRIER_RANK[(answers.calendrier_demarrage as string) ?? ""] || 0;
-  if (cr - sr >= 2) incoherences++;
+  if (cr - sr >= 2) reasons.push("calendrier_avancement");
 
-  // 3. Définition du projet : se dit "prêt à lancer" sans aucun terrain.
-  if (answers.project_stage === "pret" && answers.terrain_status === "aucun") incoherences++;
+  if (answers.project_stage === "pret" && answers.terrain_status === "aucun") reasons.push("definition_projet");
 
-  return COHERENCE_POINTS[Math.min(incoherences, 3)];
+  return reasons;
+}
+
+function scoreCoherence(answers: Answers, estimate: Estimate | null): number {
+  return COHERENCE_POINTS[Math.min(coherenceReasons(answers, estimate).length, 3)];
 }
 
 export function prioriteFromScore(total: number): { priorite: "A" | "B" | "C" | "D"; delai: string } {

@@ -1,4 +1,4 @@
-import { computeScore, DOMAIN_MAX, type Score } from "./scoring";
+import { computeScore, coherenceReasons, DOMAIN_MAX, type CoherenceReason, type Score } from "./scoring";
 import { budgetEtat, deficitSignificatif, formatEur } from "./estimate";
 import type { Answers, Domain, Estimate } from "./types";
 
@@ -84,7 +84,26 @@ export function tierFor(domain: Domain, points: number): Tier {
   return "faible";
 }
 
-export function domainText(domain: Domain, points: number, estimate: Estimate | null): { tier: Tier; texte: string } {
+const COHERENCE_REASON_TEXT: Record<CoherenceReason, string> = {
+  budget_ratio: "l'écart entre le budget annoncé et l'estimation du projet",
+  calendrier_avancement: "le calendrier envisagé, rapide au regard de l'avancement actuel du projet",
+  definition_projet: "l'absence de terrain alors que le projet est annoncé prêt à lancer",
+};
+
+// Texte Cohérence dynamique — cite la ou les vraies raisons détectées plutôt qu'une formule
+// générique par palier de points. Sans ça, un déficit budgétaire sévère (déjà annoncé en toutes
+// lettres dans le domaine Budget juste au-dessus) pouvait cohabiter avec un texte Cohérence
+// disant "globalement cohérent", contradiction relevée par Mahmoud sur la page en production.
+export function coherenceDiagText(answers: Answers, estimate: Estimate | null): string {
+  const reasons = coherenceReasons(answers, estimate);
+  if (reasons.length === 0) return DOMAIN_TEXTS.coherence.fort;
+  const liste = reasons.map((r) => COHERENCE_REASON_TEXT[r]).join(", ");
+  return reasons.length === 1
+    ? `Un point mérite d'être vérifié pour la cohérence d'ensemble du projet : ${liste}.`
+    : `Plusieurs points méritent d'être vérifiés pour la cohérence d'ensemble du projet : ${liste}.`;
+}
+
+export function domainText(domain: Domain, points: number, estimate: Estimate | null, answers: Answers): { tier: Tier; texte: string } {
   let tier = tierFor(domain, points);
   let texte = DOMAIN_TEXTS[domain][tier];
   if (domain === "budget") {
@@ -93,6 +112,9 @@ export function domainText(domain: Domain, points: number, estimate: Estimate | 
       texte = dynamique;
       if (budgetEtat(estimate) === "deficit") tier = "faible";
     }
+  }
+  if (domain === "coherence") {
+    texte = coherenceDiagText(answers, estimate);
   }
   return { tier, texte };
 }

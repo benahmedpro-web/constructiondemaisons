@@ -340,7 +340,17 @@ const COMPLEMENT_ITEMS = [
   "éventuels travaux extérieurs",
 ];
 
-function ResultScreen({ diagnostic, onContinue, onRestart }: { diagnostic: Diagnostic; onContinue: () => void; onRestart: () => void }) {
+function ResultScreen({
+  diagnostic,
+  answers,
+  onContinue,
+  onRestart,
+}: {
+  diagnostic: Diagnostic;
+  answers: Answers;
+  onContinue: () => void;
+  onRestart: () => void;
+}) {
   const { estimate } = diagnostic;
   const niveauClass = NIVEAU_STYLES[diagnostic.niveau.couleur];
 
@@ -362,7 +372,7 @@ function ResultScreen({ diagnostic, onContinue, onRestart }: { diagnostic: Diagn
           <h2 className="text-[16px] font-bold text-[#2C2C2A] mb-3">Votre diagnostic</h2>
           <div className="bg-white border border-[#D9D4CC] divide-y divide-[#D9D4CC]">
             {(Object.keys(DOMAIN_LABELS) as Domain[]).map((d) => {
-              const { tier, texte } = domainText(d, diagnostic.detail[d], estimate);
+              const { tier, texte } = domainText(d, diagnostic.detail[d], estimate, answers);
               const icon = tier === "fort" ? " ✓" : tier === "faible" ? " ⚠️" : "";
               return (
                 <div key={d} className="p-4">
@@ -781,7 +791,7 @@ export default function IndiceFaisabiliteClient() {
   }
 
   if (phase === "result" && diagnostic) {
-    return <ResultScreen diagnostic={diagnostic} onContinue={() => setPhase("lead")} onRestart={restart} />;
+    return <ResultScreen diagnostic={diagnostic} answers={answers} onContinue={() => setPhase("lead")} onRestart={restart} />;
   }
 
   if (phase === "lead" && diagnostic) {
