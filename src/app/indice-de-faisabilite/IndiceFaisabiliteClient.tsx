@@ -86,7 +86,7 @@ function OptionCard({
           </svg>
         </div>
       )}
-      <div className={`text-[15px] font-bold leading-tight pr-6 ${selected ? "text-[#BA7517]" : "text-[#2C2C2A]"}`}>
+      <div className={`text-[16px] font-bold leading-tight pr-6 ${selected ? "text-[#BA7517]" : "text-[#2C2C2A]"}`}>
         {label}
       </div>
     </button>
@@ -118,19 +118,19 @@ function Landing({ onStart }: { onStart: () => void }) {
         <div className="max-w-[1000px] mx-auto px-5 py-3.5 flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-col leading-none">
             <span className="text-[18px] font-black text-[#2C2C2A] tracking-tight">M&amp;M CONSTRUCTION</span>
-            <span className="text-[10px] text-[#888780] tracking-widest uppercase mt-0.5">Maîtrise d&apos;œuvre · Maison bois</span>
+            <span className="text-[11px] text-[#888780] tracking-widest uppercase mt-0.5">Maîtrise d&apos;œuvre · Maison bois</span>
           </div>
           <div className="flex items-center gap-2.5">
             <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-[#2C2C2A]">
               <Image src="/images/mahmoud-ben-ahmed.png" alt="Mahmoud Ben Ahmed" fill sizes="32px" className="object-cover" />
             </div>
-            <span className="text-[12px] text-[#2C2C2A] leading-tight hidden sm:inline">
+            <span className="text-[13px] text-[#2C2C2A] leading-tight hidden sm:inline">
               <span className="font-bold">Mahmoud Ben Ahmed</span>
               <span className="text-[#888780]"> — 20 ans de terrain, 200+ projets accompagnés</span>
             </span>
             <div className="flex items-center gap-1 pl-2.5 border-l border-[#D9D4CC]">
               <LogoGoogle />
-              <span className="text-[12px] font-bold text-[#2C2C2A]">5,0</span>
+              <span className="text-[13px] font-bold text-[#2C2C2A]">5,0</span>
               <Etoiles n={5} />
             </div>
           </div>
@@ -141,13 +141,13 @@ function Landing({ onStart }: { onStart: () => void }) {
         <h1 className="text-[32px] md:text-[40px] font-black text-[#2C2C2A] leading-tight mb-5">
           Votre projet de construction est-il réalisable ?
         </h1>
-        <p className="text-[16px] text-[#888780] leading-relaxed mb-6 max-w-[520px] mx-auto">
+        <p className="text-[17px] text-[#888780] leading-relaxed mb-6 max-w-[520px] mx-auto">
           Budget, terrain, financement et calendrier : obtenez en quelques minutes un premier
           diagnostic personnalisé de votre projet de construction.
         </p>
         <div className="flex flex-wrap gap-2 justify-center mb-6">
           {["≈ 5 minutes", "Gratuit", "Sans engagement"].map((b) => (
-            <span key={b} className="bg-white border border-[#D9D4CC] rounded-full px-4 py-1.5 text-[13px] text-[#888780]">
+            <span key={b} className="bg-white border border-[#D9D4CC] rounded-full px-4 py-1.5 text-[14px] text-[#888780]">
               {b}
             </span>
           ))}
@@ -157,7 +157,7 @@ function Landing({ onStart }: { onStart: () => void }) {
           <button
             type="button"
             onClick={onStart}
-            className="bg-[#BA7517] text-white text-[16px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors"
+            className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors"
           >
             Commencer mon analyse
           </button>
@@ -166,8 +166,8 @@ function Landing({ onStart }: { onStart: () => void }) {
         <div className="mt-14 pt-10 border-t border-[#D9D4CC] text-left flex flex-col gap-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
             <div>
-              <h3 className="text-[16px] font-bold text-[#2C2C2A] mb-2">Ce que nous analysons</h3>
-              <ul className="text-[14px] text-[#888780] leading-relaxed list-disc pl-5 inline-block text-left">
+              <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-2">Ce que nous analysons</h3>
+              <ul className="text-[15px] text-[#888780] leading-relaxed list-disc pl-5 inline-block text-left">
                 <li>Budget</li>
                 <li>Terrain</li>
                 <li>Financement</li>
@@ -176,8 +176,8 @@ function Landing({ onStart }: { onStart: () => void }) {
               </ul>
             </div>
             <div>
-              <h3 className="text-[16px] font-bold text-[#2C2C2A] mb-2">Ce que vous obtenez</h3>
-              <ul className="text-[14px] text-[#888780] leading-relaxed list-disc pl-5 inline-block text-left">
+              <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-2">Ce que vous obtenez</h3>
+              <ul className="text-[15px] text-[#888780] leading-relaxed list-disc pl-5 inline-block text-left">
                 <li>Un premier diagnostic</li>
                 <li>Une estimation budgétaire indicative</li>
                 <li>Les points forts du projet</li>
@@ -200,30 +200,30 @@ function Landing({ onStart }: { onStart: () => void }) {
               {[...AVIS_LANDING, ...AVIS_LANDING].map((a, i) => (
                 <div key={`${a.nom}-${i}`} className="bg-white border border-[#D9D4CC] p-3 text-left w-[240px] flex-shrink-0">
                   <Etoiles n={5} />
-                  <p className="text-[12px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5 line-clamp-3">&ldquo;{a.texte}&rdquo;</p>
-                  <p className="text-[11px] font-bold text-[#2C2C2A]">{a.nom}</p>
+                  <p className="text-[13px] text-[#888780] italic leading-[1.5] mt-1.5 mb-1.5 line-clamp-3">&ldquo;{a.texte}&rdquo;</p>
+                  <p className="text-[12px] font-bold text-[#2C2C2A]">{a.nom}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="bg-white border border-[#D9D4CC] p-5 text-center">
-            <h3 className="text-[16px] font-bold text-[#2C2C2A] mb-2">Pourquoi faire cette analyse ?</h3>
-            <p className="text-[14px] text-[#888780] leading-relaxed mb-4">
+            <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-2">Pourquoi faire cette analyse ?</h3>
+            <p className="text-[15px] text-[#888780] leading-relaxed mb-4">
               Pour vérifier si les bases de votre projet sont cohérentes avant d&apos;engager
               davantage de temps, de démarches ou de budget.
             </p>
             <button
               type="button"
               onClick={onStart}
-              className="bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 hover:bg-[#9E6312] transition-colors"
+              className="bg-[#BA7517] text-white text-[16px] font-bold px-6 py-3 hover:bg-[#9E6312] transition-colors"
             >
               Commencer mon analyse
             </button>
           </div>
         </div>
 
-        <footer className="mt-10 pt-6 border-t border-[#D9D4CC] flex flex-wrap justify-center gap-x-3 gap-y-1 text-[12px] text-[#888780]">
+        <footer className="mt-10 pt-6 border-t border-[#D9D4CC] flex flex-wrap justify-center gap-x-3 gap-y-1 text-[13px] text-[#888780]">
           <Link href="/mentions-legales/" className="hover:text-[#2C2C2A] transition-colors">
             Mentions légales
           </Link>
@@ -338,7 +338,7 @@ function QuestionScreen({
             <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
               <div className="h-full bg-[#BA7517] rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
             </div>
-            <span className="text-[12px] text-white/40 whitespace-nowrap flex-shrink-0">
+            <span className="text-[13px] text-white/40 whitespace-nowrap flex-shrink-0">
               Section {section.index + 1}/{section.total} · {section.label}
             </span>
           </div>
@@ -350,7 +350,7 @@ function QuestionScreen({
           <button
             type="button"
             onClick={onBack}
-            className="text-[14px] text-[#888780] hover:text-[#2C2C2A] transition-colors cursor-pointer flex items-center gap-1 mb-6"
+            className="text-[15px] text-[#888780] hover:text-[#2C2C2A] transition-colors cursor-pointer flex items-center gap-1 mb-6"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -361,14 +361,14 @@ function QuestionScreen({
 
         {isMidpoint && (
           <div className="bg-[#FDF8F0] border border-[#BA7517]/30 p-4 mb-6">
-            <p className="text-[13px] text-[#2C2C2A] font-bold">🕒 Vous êtes à mi-parcours — encore environ 2 minutes.</p>
+            <p className="text-[14px] text-[#2C2C2A] font-bold">🕒 Vous êtes à mi-parcours — encore environ 2 minutes.</p>
           </div>
         )}
 
         <div className="mb-6">
-          <div className="text-[11px] text-[#BA7517] font-bold uppercase tracking-widest mb-1">{question.section}</div>
+          <div className="text-[12px] text-[#BA7517] font-bold uppercase tracking-widest mb-1">{question.section}</div>
           <h2 className="text-[22px] font-black text-[#2C2C2A] mb-1">{question.title}</h2>
-          {question.subtitle && <p className="text-[13px] text-[#888780]">{question.subtitle}</p>}
+          {question.subtitle && <p className="text-[14px] text-[#888780]">{question.subtitle}</p>}
         </div>
 
         {question.type === "single-choice" && (
@@ -403,7 +403,7 @@ function QuestionScreen({
                 onChange={(e) => handleFieldChange(e.target.value)}
                 placeholder={question.placeholder}
                 autoComplete="off"
-                className="w-full border border-[#D9D4CC] px-4 py-3 text-[16px] text-[#2C2C2A] bg-white focus:outline-none focus:border-[#BA7517] transition-colors"
+                className="w-full border border-[#D9D4CC] px-4 py-3 text-[17px] text-[#2C2C2A] bg-white focus:outline-none focus:border-[#BA7517] transition-colors"
               />
               {isCity && suggestions.length > 0 && (
                 <div className="flex flex-col gap-1.5 mt-2">
@@ -416,7 +416,7 @@ function QuestionScreen({
                         onAnswer(question.code, s.label);
                         setSuggestions([]);
                       }}
-                      className="text-left px-4 py-2.5 text-[14px] border border-[#D9D4CC] bg-white hover:border-[#BA7517]"
+                      className="text-left px-4 py-2.5 text-[15px] border border-[#D9D4CC] bg-white hover:border-[#BA7517]"
                     >
                       {s.label} ({s.postcode})
                     </button>
@@ -428,7 +428,7 @@ function QuestionScreen({
               type="button"
               disabled={!canContinue()}
               onClick={handleNext}
-              className="bg-[#BA7517] text-white text-[16px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-40 disabled:cursor-not-allowed self-start"
+              className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-40 disabled:cursor-not-allowed self-start"
             >
               Suivant
             </button>
@@ -440,7 +440,7 @@ function QuestionScreen({
             type="button"
             disabled={!canContinue()}
             onClick={handleNext}
-            className="mt-3 bg-[#BA7517] text-white text-[16px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-40 disabled:cursor-not-allowed self-start"
+            className="mt-3 bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-40 disabled:cursor-not-allowed self-start"
           >
             Suivant
           </button>
@@ -489,26 +489,26 @@ function ResultScreen({
   return (
     <main className="bg-[#F2EDE6] min-h-screen">
       <div className="max-w-[640px] mx-auto px-5 py-10 flex flex-col gap-6">
-        <h1 className="text-[13px] font-bold uppercase tracking-widest text-[#888780]">Votre résultat</h1>
+        <h1 className="text-[14px] font-bold uppercase tracking-widest text-[#888780]">Votre résultat</h1>
 
         <div className={`border-2 p-7 text-center ${niveauClass}`}>
           <div className="text-[44px] font-black leading-none">
             {diagnostic.total}
             <span className="text-[20px] font-medium opacity-60">/100</span>
           </div>
-          <div className="text-[15px] font-bold uppercase tracking-wide mt-2">{diagnostic.niveau.label}</div>
-          <p className="text-[14px] text-[#2C2C2A] leading-relaxed mt-4 pt-4 border-t border-current/20">{diagnostic.synthese}</p>
+          <div className="text-[16px] font-bold uppercase tracking-wide mt-2">{diagnostic.niveau.label}</div>
+          <p className="text-[15px] text-[#2C2C2A] leading-relaxed mt-4 pt-4 border-t border-current/20">{diagnostic.synthese}</p>
         </div>
 
         <div>
-          <h2 className="text-[16px] font-bold text-[#2C2C2A] mb-3">Votre diagnostic</h2>
+          <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Votre diagnostic</h2>
           <div className="bg-white border border-[#D9D4CC] divide-y divide-[#D9D4CC]">
             {(Object.keys(DOMAIN_LABELS) as Domain[]).map((d) => {
               const { tier, texte } = domainText(d, diagnostic.detail[d], estimate, answers);
               const icon = tier === "fort" ? " ✓" : tier === "faible" ? " ⚠️" : "";
               return (
                 <div key={d} className="p-4">
-                  <div className="flex justify-between text-[14px] font-bold text-[#2C2C2A]">
+                  <div className="flex justify-between text-[15px] font-bold text-[#2C2C2A]">
                     <span>
                       {DOMAIN_LABELS[d]}
                       {icon}
@@ -517,7 +517,7 @@ function ResultScreen({
                       {diagnostic.detail[d]}/{DOMAIN_MAX[d]}
                     </span>
                   </div>
-                  <p className="text-[13px] text-[#888780] mt-1 leading-relaxed">{texte}</p>
+                  <p className="text-[14px] text-[#888780] mt-1 leading-relaxed">{texte}</p>
                 </div>
               );
             })}
@@ -526,45 +526,45 @@ function ResultScreen({
 
         {estimate && (
           <div className="bg-white border border-[#D9D4CC] p-5">
-            <h2 className="text-[16px] font-bold text-[#2C2C2A] mb-3">Votre estimation</h2>
-            <div className="flex justify-between text-[14px] py-2 border-b border-[#D9D4CC]">
+            <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Votre estimation</h2>
+            <div className="flex justify-between text-[15px] py-2 border-b border-[#D9D4CC]">
               <span className="text-[#888780]">Construction estimée</span>
               <strong>{formatEur(estimate.coutConstruction)}</strong>
             </div>
 
             {estimate.coutTerrain !== null && estimate.zone ? (
               <>
-                <div className="flex justify-between text-[14px] py-2 border-b border-[#D9D4CC]">
+                <div className="flex justify-between text-[15px] py-2 border-b border-[#D9D4CC]">
                   <span className="text-[#888780]">Terrain estimé</span>
                   <strong>
                     {formatEur(estimate.coutTerrain * (1 - FOURCHETTE_TERRAIN_MARGE))} – {formatEur(estimate.coutTerrain * (1 + FOURCHETTE_TERRAIN_MARGE))}
                   </strong>
                 </div>
-                <p className="text-[13px] text-[#888780] mt-2">
+                <p className="text-[14px] text-[#888780] mt-2">
                   Hypothèse retenue pour le calcul : {formatEur(estimate.coutTerrain)}
                   {estimate.surfaceTerrainEstimee ? " (basée sur le milieu de la fourchette de surface que vous avez choisie)" : ""}.
                 </p>
                 {estimate.coutTotal !== null && (
-                  <div className="flex justify-between text-[15px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
+                  <div className="flex justify-between text-[16px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
                     <span>Total estimé</span>
                     <span>{formatEur(estimate.coutTotal)}</span>
                   </div>
                 )}
               </>
             ) : estimate.zone ? (
-              <p className="text-[13px] text-[#888780] mt-2">
+              <p className="text-[14px] text-[#888780] mt-2">
                 Vous n&apos;avez pas encore de terrain précis — à titre indicatif, le prix moyen constaté dans le secteur {estimate.zone.nom} est de{" "}
                 {estimate.zone.prix_moyen_eur_m2} €/m². On affinera le coût total dès que vous aurez une surface de terrain.
               </p>
             ) : (
-              <p className="text-[13px] text-[#888780] mt-2">
+              <p className="text-[14px] text-[#888780] mt-2">
                 Coût du terrain non estimable : secteur pas encore couvert par nos données de prix — un conseiller affinera ce point avec vous.
               </p>
             )}
 
             {estimate.budget > 0 && estimate.coutTotal !== null && (
               <>
-                <div className="flex justify-between text-[14px] py-2 mt-2 border-t border-[#D9D4CC]">
+                <div className="flex justify-between text-[15px] py-2 mt-2 border-t border-[#D9D4CC]">
                   <span className="text-[#888780]">Budget annoncé</span>
                   <strong>{formatEur(estimate.budget)}</strong>
                 </div>
@@ -574,8 +574,8 @@ function ResultScreen({
 
             {estimate.zone && (
               <div className="mt-4 pt-3 border-t border-dashed border-[#D9D4CC]">
-                <p className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-1">Hypothèse utilisée</p>
-                <p className="text-[13px]">
+                <p className="text-[12px] font-bold uppercase tracking-widest text-[#888780] mb-1">Hypothèse utilisée</p>
+                <p className="text-[14px]">
                   Terrain : <strong>{estimate.surfaceTerrain} m²</strong> · Secteur : <strong>{estimate.zone.nom}</strong>
                 </p>
               </div>
@@ -584,14 +584,14 @@ function ResultScreen({
         )}
 
         <div className="pt-4 border-t border-dashed border-[#D9D4CC]">
-          <h3 className="text-[14px] font-bold text-[#2C2C2A] mb-2">À prévoir en complément</h3>
-          <p className="text-[13px] text-[#888780] mb-2">L&apos;estimation ne comprend pas nécessairement :</p>
-          <ul className="text-[13px] text-[#888780] grid grid-cols-2 gap-x-4 list-disc pl-5 mb-3">
+          <h3 className="text-[15px] font-bold text-[#2C2C2A] mb-2">À prévoir en complément</h3>
+          <p className="text-[14px] text-[#888780] mb-2">L&apos;estimation ne comprend pas nécessairement :</p>
+          <ul className="text-[14px] text-[#888780] grid grid-cols-2 gap-x-4 list-disc pl-5 mb-3">
             {COMPLEMENT_ITEMS.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <p className="text-[12px] text-[#888780] leading-relaxed">
+          <p className="text-[13px] text-[#888780] leading-relaxed">
             <strong>Estimation indicative et non contractuelle.</strong> Les montants présentés constituent une première estimation basée sur les
             informations renseignées. Ils devront être confirmés après étude du terrain, du projet et des prestations.
           </p>
@@ -599,16 +599,16 @@ function ResultScreen({
 
         <div className="text-center pt-4">
           <h3 className="text-[18px] font-black text-[#2C2C2A] mb-2">{CONCLUSION_TITRES[diagnostic.faisabilite]}</h3>
-          <p className="text-[14px] text-[#888780] mb-5">Découvrez maintenant les points à sécuriser pour pouvoir avancer.</p>
+          <p className="text-[15px] text-[#888780] mb-5">Découvrez maintenant les points à sécuriser pour pouvoir avancer.</p>
           <button
             type="button"
             onClick={onContinue}
-            className="bg-[#BA7517] text-white text-[16px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors"
+            className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors"
           >
             Obtenir mon analyse personnalisée
           </button>
-          <p className="text-[12px] text-[#888780] mt-3">Gratuit · Sans engagement</p>
-          <button type="button" onClick={onRestart} className="block mx-auto mt-5 text-[13px] text-[#888780] underline hover:text-[#2C2C2A]">
+          <p className="text-[13px] text-[#888780] mt-3">Gratuit · Sans engagement</p>
+          <button type="button" onClick={onRestart} className="block mx-auto mt-5 text-[14px] text-[#888780] underline hover:text-[#2C2C2A]">
             ↻ Modifier mes réponses
           </button>
         </div>
@@ -650,7 +650,7 @@ function BudgetMargeRow({ estimate }: { estimate: NonNullable<Diagnostic["estima
 
   return (
     <>
-      <div className="flex justify-between text-[15px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
+      <div className="flex justify-between text-[16px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
         <span>{titre}</span>
         <span className={classe}>
           {ecart >= 0 ? "+" : ""}
@@ -658,7 +658,7 @@ function BudgetMargeRow({ estimate }: { estimate: NonNullable<Diagnostic["estima
         </span>
       </div>
       {messages.map((m) => (
-        <p key={m} className="text-[13px] text-[#888780] mt-1 leading-relaxed">
+        <p key={m} className="text-[14px] text-[#888780] mt-1 leading-relaxed">
           {m}
         </p>
       ))}
@@ -751,7 +751,7 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
     <main className="bg-[#F2EDE6] min-h-screen">
       <div className="max-w-[560px] mx-auto px-5 py-10">
         <h1 className="text-[22px] font-black text-[#2C2C2A] mb-1">Pour recevoir votre analyse</h1>
-        <p className="text-[13px] text-[#888780] mb-6">
+        <p className="text-[14px] text-[#888780] mb-6">
           Vos coordonnées servent uniquement à vous transmettre votre rapport et à organiser un rendez-vous si vous le souhaitez — voir notre{" "}
           <Link href="/vie-privee/" className="text-[#BA7517] underline" target="_blank">
             politique de confidentialité
@@ -761,7 +761,7 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white p-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold uppercase tracking-widest text-[#888780]">
+              <label className="text-[12px] font-bold uppercase tracking-widest text-[#888780]">
                 Prénom <span className="text-[#BA7517]">*</span>
               </label>
               <input
@@ -769,22 +769,22 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
                 required
                 value={prenom}
                 onChange={(e) => setPrenom(e.target.value)}
-                className="border border-[#D9D4CC] px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[#BA7517]"
+                className="border border-[#D9D4CC] px-4 py-3 text-[16px] bg-white focus:outline-none focus:border-[#BA7517]"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold uppercase tracking-widest text-[#888780]">Nom</label>
+              <label className="text-[12px] font-bold uppercase tracking-widest text-[#888780]">Nom</label>
               <input
                 type="text"
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
-                className="border border-[#D9D4CC] px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[#BA7517]"
+                className="border border-[#D9D4CC] px-4 py-3 text-[16px] bg-white focus:outline-none focus:border-[#BA7517]"
               />
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold uppercase tracking-widest text-[#888780]">
+              <label className="text-[12px] font-bold uppercase tracking-widest text-[#888780]">
                 Email <span className="text-[#BA7517]">*</span>
               </label>
               <input
@@ -792,18 +792,18 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border border-[#D9D4CC] px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[#BA7517]"
+                className="border border-[#D9D4CC] px-4 py-3 text-[16px] bg-white focus:outline-none focus:border-[#BA7517]"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold uppercase tracking-widest text-[#888780]">
+              <label className="text-[12px] font-bold uppercase tracking-widest text-[#888780]">
                 Téléphone <span className="font-normal normal-case">(optionnel)</span>
               </label>
               <input
                 type="tel"
                 value={telephone}
                 onChange={(e) => setTelephone(e.target.value)}
-                className="border border-[#D9D4CC] px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-[#BA7517]"
+                className="border border-[#D9D4CC] px-4 py-3 text-[16px] bg-white focus:outline-none focus:border-[#BA7517]"
               />
             </div>
           </div>
@@ -816,17 +816,17 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
               onChange={(e) => setRgpd(e.target.checked)}
               className="mt-0.5 flex-shrink-0 w-4 h-4 accent-[#BA7517] cursor-pointer"
             />
-            <span className="text-[13px] text-[#888780] leading-[1.6]">
+            <span className="text-[14px] text-[#888780] leading-[1.6]">
               J&apos;accepte que M&amp;M Construction utilise ces informations pour me recontacter au sujet de mon projet. *
             </span>
           </label>
 
-          {error && <p className="text-red-600 text-[14px] bg-red-50 border border-red-200 px-4 py-3">{error}</p>}
+          {error && <p className="text-red-600 text-[15px] bg-red-50 border border-red-200 px-4 py-3">{error}</p>}
 
           <button
             type="submit"
             disabled={loading || !rgpd}
-            className="bg-[#BA7517] text-white text-[16px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
+            className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
           >
             {loading ? "Envoi en cours…" : "Recevoir mon analyse"}
           </button>
