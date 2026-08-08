@@ -85,8 +85,19 @@ function OptionCard({
 
 function Landing({ onStart }: { onStart: () => void }) {
   return (
-    <main className="bg-[#F2EDE6] min-h-screen">
-      <div className="max-w-[640px] mx-auto px-5 py-16 text-center">
+    // Fond ambiant + colonne élargie (640 → 760px) — ajustement du 08/08/2026 : sur grand écran,
+    // la colonne étroite laissait un vide flagrant de chaque côté. Pas de photo plein cadre (le
+    // reste du parcours garde un fond clair/questionnaire, un hero sombre aurait cassé la
+    // continuité visuelle en passant à l'écran de question suivant) — juste un dégradé doré très
+    // discret en pur CSS pour que les marges ne lisent plus comme du vide brut.
+    <main
+      className="min-h-screen"
+      style={{
+        background:
+          "radial-gradient(circle at 12% 15%, rgba(186,117,23,0.09), transparent 45%), radial-gradient(circle at 88% 80%, rgba(186,117,23,0.07), transparent 50%), #F2EDE6",
+      }}
+    >
+      <div className="max-w-[760px] mx-auto px-5 py-16 text-center">
         <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION</p>
         <h1 className="text-[32px] md:text-[40px] font-black text-[#2C2C2A] leading-tight mb-5">
           Votre projet de construction est-il réalisable ?
