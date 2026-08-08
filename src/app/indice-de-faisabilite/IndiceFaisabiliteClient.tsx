@@ -283,7 +283,10 @@ function QuestionScreen({
 
   function handleFieldChange(value: string) {
     setFieldValue(value);
-    onAnswer(question.code, isNumber ? (value === "" ? undefined : Number(value)) : value);
+    // Ville : la saisie ne sert qu'à chercher des suggestions, elle n'écrit plus directement la
+    // réponse (qui est maintenant un tableau de villes sélectionnées, cf. addCity/removeCity) —
+    // sélection multiple demandée par Mahmoud le 08/08/2026 pour les prospects ouverts à
+    // plusieurs secteurs.
     if (isCity) {
       if (debounceRef.current) clearTimeout(debounceRef.current);
       if (value.trim().length < 3) {
@@ -291,7 +294,21 @@ function QuestionScreen({
         return;
       }
       debounceRef.current = setTimeout(() => setSuggestions(searchCities(value.trim())), 200);
+      return;
     }
+    onAnswer(question.code, isNumber ? (value === "" ? undefined : Number(value)) : value);
+  }
+
+  function addCity(label: string) {
+    const current = Array.isArray(answers[question.code]) ? (answers[question.code] as string[]) : [];
+    if (!current.includes(label)) onAnswer(question.code, [...current, label]);
+    setFieldValue("");
+    setSuggestions([]);
+  }
+
+  function removeCity(label: string) {
+    const current = Array.isArray(answers[question.code]) ? (answers[question.code] as string[]) : [];
+    onAnswer(question.code, current.filter((c) => c !== label));
   }
 
   function pickSingle(value: string) {
@@ -318,7 +335,7 @@ function QuestionScreen({
 
   function canContinue(): boolean {
     if (!question.required) return true;
-    if (isMulti) return Array.isArray(answers[question.code]) && (answers[question.code] as string[]).length > 0;
+    if (isMulti || isCity) return Array.isArray(answers[question.code]) && (answers[question.code] as string[]).length > 0;
     if (isNumber) return typeof answers[question.code] === "number" && (answers[question.code] as number) > 0;
     if (isInfo) return true;
     const v = answers[question.code];
@@ -392,31 +409,68 @@ function QuestionScreen({
           </div>
         )}
 
-        {(isNumber || isCity) && (
+        {isNumber && (
           <div className="flex flex-col gap-3">
+            <input
+              type="number"
+              min={0}
+              inputMode="decimal"
+              value={fieldValue}
+              onChange={(e) => handleFieldChange(e.target.value)}
+              placeholder={question.placeholder}
+              autoComplete="off"
+              className="w-full border border-[#D9D4CC] px-4 py-3 text-[17px] text-[#2C2C2A] bg-white focus:outline-none focus:border-[#BA7517] transition-colors"
+            />
+            <button
+              type="button"
+              disabled={!canContinue()}
+              onClick={handleNext}
+              className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-40 disabled:cursor-not-allowed self-start"
+            >
+              Suivant
+            </button>
+          </div>
+        )}
+
+        {isCity && (
+          <div className="flex flex-col gap-3">
+            {Array.isArray(answers[question.code]) && (answers[question.code] as string[]).length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {(answers[question.code] as string[]).map((c) => (
+                  <span
+                    key={c}
+                    className="inline-flex items-center gap-1.5 bg-[#FDF8F0] border border-[#BA7517]/40 text-[#2C2C2A] text-[15px] px-3 py-1.5"
+                  >
+                    {c}
+                    <button
+                      type="button"
+                      onClick={() => removeCity(c)}
+                      aria-label={`Retirer ${c}`}
+                      className="text-[#BA7517] hover:text-[#9E6312] font-bold leading-none cursor-pointer"
+                    >
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            )}
             <div className="relative">
               <input
-                type={isNumber ? "number" : "text"}
-                min={isNumber ? 0 : undefined}
-                inputMode={isNumber ? "decimal" : undefined}
+                type="text"
                 value={fieldValue}
                 onChange={(e) => handleFieldChange(e.target.value)}
                 placeholder={question.placeholder}
                 autoComplete="off"
                 className="w-full border border-[#D9D4CC] px-4 py-3 text-[17px] text-[#2C2C2A] bg-white focus:outline-none focus:border-[#BA7517] transition-colors"
               />
-              {isCity && suggestions.length > 0 && (
+              {suggestions.length > 0 && (
                 <div className="flex flex-col gap-1.5 mt-2">
                   {suggestions.map((s) => (
                     <button
                       key={s.label}
                       type="button"
-                      onClick={() => {
-                        setFieldValue(s.label);
-                        onAnswer(question.code, s.label);
-                        setSuggestions([]);
-                      }}
-                      className="text-left px-4 py-2.5 text-[15px] border border-[#D9D4CC] bg-white hover:border-[#BA7517]"
+                      onClick={() => addCity(s.label)}
+                      className="text-left px-4 py-2.5 text-[16px] border border-[#D9D4CC] bg-white hover:border-[#BA7517]"
                     >
                       {s.label} ({s.postcode})
                     </button>
@@ -733,7 +787,7 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
           email,
           telephone,
           typeProjet: "Indice de faisabilité",
-          zone: answers.location,
+          zone: Array.isArray(answers.location) ? (answers.location as string[]).join(", ") : answers.location,
           budget: answers.budget_global ? formatEur(Number(answers.budget_global)) : "",
           message: buildMessage(answers, diagnostic),
         }),

@@ -30,7 +30,14 @@ export function formatEur(n: number): string {
 export function computeEstimate(answers: Answers): Estimate | null {
   const surfaceHabitable = Number(answers.surface_habitable) || 0;
   const budget = Number(answers.budget_global) || 0;
-  const zone = findZoneForCity(answers.location as string | undefined);
+  // "location" est maintenant une sélection multi-villes (choix de Mahmoud le 08/08/2026, pour
+  // les prospects ouverts à plusieurs secteurs) — on retient la première ville pour le calcul du
+  // prix terrain. Les villes suivantes ne sont pas encore utilisées dans l'estimation (moyenner
+  // plusieurs zones demanderait une méthode non calibrée) ; elles restent capturées pour un usage
+  // CRM (relance, qualification du prospect).
+  const locationAnswer = answers.location;
+  const primaryCity = Array.isArray(locationAnswer) ? locationAnswer[0] : locationAnswer;
+  const zone = findZoneForCity(primaryCity as string | undefined);
 
   let surfaceTerrain = Number(answers.surface_terrain) || 0;
   let surfaceTerrainEstimee = false;
