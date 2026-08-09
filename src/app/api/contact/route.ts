@@ -67,6 +67,13 @@ async function createTrelloCard(name: string, desc: string) {
   }
 }
 
+// onboarding@resend.dev est le domaine de test partagé de Resend : il ne délivre qu'à l'adresse
+// du compte Resend lui-même, tout autre destinataire est rejeté sans erreur visible (cause du
+// diagnostic non reçu par un prospect le 09/08/2026). RESEND_FROM_EMAIL permet de basculer vers
+// un domaine vérifié (ex. "M&M CONSTRUCTION <contact@mm-construction.com>") par variable
+// d'environnement dès qu'il est vérifié dans Resend, sans redéploiement de code.
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "M&M CONSTRUCTION <onboarding@resend.dev>";
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
@@ -93,10 +100,12 @@ export async function POST(req: NextRequest) {
       message,
     ].filter(Boolean).join("\n");
 
-    await Promise.allSettled([
-      createTrelloCard(cardName, cardDesc),
-      resend.emails.send({
-      from: "M&M CONSTRUCTION <onboarding@resend.dev>",
+    const tasks: { label: string; promise: Promise<unknown> }[] = [
+      { label: "Trello", promise: createTrelloCard(cardName, cardDesc) },
+      {
+        label: "Email interne (notification)",
+        promise: resend.emails.send({
+      from: FROM_EMAIL,
       to: "benahmed.pro@icloud.com",
       replyTo: email,
       subject: `Nouvelle demande d'étude — ${prenom} ${nom}`,
@@ -125,16 +134,19 @@ export async function POST(req: NextRequest) {
           </div>
         </div>
       `,
-      }),
-      // Diagnostic complet envoyé au prospect lui-même — décision de Mahmoud du 08/08/2026 :
-      // l'écran de résultat de /indice-de-faisabilite ne montre plus qu'un résumé (score/niveau/
-      // synthèse), le détail par domaine + l'estimation chiffrée partent uniquement par email.
-      // diagnosticHtml est construit côté client (buildDiagnosticEmailHtml) et simplement inséré
-      // ici dans l'habillage de marque.
-      ...(diagnosticHtml
-        ? [
-            resend.emails.send({
-              from: "M&M CONSTRUCTION <onboarding@resend.dev>",
+        }),
+      },
+    ];
+    // Diagnostic complet envoyé au prospect lui-même — décision de Mahmoud du 08/08/2026 :
+    // l'écran de résultat de /indice-de-faisabilite ne montre plus qu'un résumé (score/niveau/
+    // synthèse), le détail par domaine + l'estimation chiffrée partent uniquement par email.
+    // diagnosticHtml est construit côté client (buildDiagnosticEmailHtml) et simplement inséré
+    // ici dans l'habillage de marque.
+    if (diagnosticHtml) {
+      tasks.push({
+        label: "Email diagnostic (prospect)",
+        promise: resend.emails.send({
+              from: FROM_EMAIL,
               to: email,
               replyTo: "benahmed.pro@icloud.com",
               subject: "Votre diagnostic — M&M CONSTRUCTION",
@@ -156,10 +168,22 @@ export async function POST(req: NextRequest) {
                   </div>
                 </div>
               `,
-            }),
-          ]
-        : []),
-    ]);
+        }),
+      });
+    }
+
+    const results = await Promise.allSettled(tasks.map((t) => t.promise));
+    results.forEach((result, i) => {
+      const label = tasks[i].label;
+      if (result.status === "rejected") {
+        console.error(`[Contact] ${label} — échec :`, result.reason);
+        return;
+      }
+      const value = result.value as { error?: unknown } | undefined;
+      if (value && typeof value === "object" && value.error) {
+        console.error(`[Contact] ${label} — erreur Resend :`, value.error);
+      }
+    });
 
     return NextResponse.json({ success: true });
   } catch {
