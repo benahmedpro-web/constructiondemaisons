@@ -182,19 +182,19 @@ export function TestimonialSection() {
         {/* Engagements */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 items-start pt-10 border-t border-[#D9D4CC]">
           <div>
-            <div className="relative bg-[#2C2C2A] aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="/images/mahmoud-ben-ahmed.jpg"
                 alt="Mahmoud Ben Ahmed — M&M CONSTRUCTION"
                 width={800}
                 height={600}
                 sizes="(max-width: 768px) 100vw, 400px"
-                className="absolute inset-0 w-full h-full object-cover opacity-40"
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
-              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-6">
-                <div className="w-12 h-1 bg-[#BA7517] mx-auto mb-4" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                <div className="w-8 h-[3px] bg-[#BA7517] mb-3" />
                 <p className="text-white text-[15px] font-bold">Mahmoud Ben Ahmed</p>
-                <p className="text-white/70 text-[13px] mt-1">Responsable de projets — M&amp;M CONSTRUCTION</p>
               </div>
             </div>
             <p className="text-[13px] text-[#888780] leading-[1.6] mt-4">
