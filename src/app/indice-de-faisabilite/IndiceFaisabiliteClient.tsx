@@ -7,7 +7,7 @@ import { gtagEvent } from "@/lib/ga";
 import { QUESTIONS, getVisibleQuestions, findNextIndex, getSectionProgress, SECTION_GROUPS } from "@/lib/indice-faisabilite/questions";
 import { searchCities, type CitySuggestion } from "@/lib/indice-faisabilite/villes";
 import { computeDiagnostic, domainText, DOMAIN_LABELS, type Diagnostic } from "@/lib/indice-faisabilite/diagnostic";
-import { formatEur, FOURCHETTE_TERRAIN_MARGE } from "@/lib/indice-faisabilite/estimate";
+import { formatEur, FOURCHETTE_TERRAIN_MARGE, budgetEtat } from "@/lib/indice-faisabilite/estimate";
 import { DOMAIN_MAX } from "@/lib/indice-faisabilite/scoring";
 import type { Answers, Domain, Question } from "@/lib/indice-faisabilite/types";
 
@@ -662,10 +662,33 @@ function ResultScreen({
           </div>
         </div>
 
-        {/* Bloc 3 — teaser de l'analyse complète */}
+        {/* Première indication — teaser financier ajouté le 09/08/2026 (recommandations
+            page-resultat-diagnostic.md, §3) : entre le diagnostic qualitatif (Bloc 2) et le
+            teaser d'estimation (Bloc 3), une seule phrase sur l'état du budget, SANS montant ni
+            chiffre — ceux-ci restent réservés à l'estimation complète post-coordonnées (§8). Texte
+            adapté à l'état réel du budget (confortable/faible/déficit) plutôt que de reprendre
+            littéralement l'exemple du document (qui suppose un budget cohérent) — jamais annoncer
+            "compatible" si le calcul dit l'inverse. Absent si aucune estimation n'est calculable. */}
+        {(() => {
+          const texte = premiereIndicationTexte(estimate);
+          if (!texte) return null;
+          return (
+            <div>
+              <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Première indication</h2>
+              <div className="bg-white border border-[#D9D4CC] p-4">
+                <p className="text-[15px] font-bold text-[#2C2C2A] mb-1">{texte}</p>
+                <p className="text-[14px] text-[#888780] leading-relaxed">
+                  L&apos;estimation complète détermine maintenant la part à consacrer à la maison, au terrain et aux frais annexes.
+                </p>
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* Bloc 3 — teaser de l'estimation complète */}
         <div className="bg-white border border-[#D9D4CC] p-6 text-center">
-          <h2 className="text-[19px] font-black text-[#2C2C2A] mb-2">Votre étude personnalisée est prête</h2>
-          <p className="text-[15px] text-[#888780] leading-relaxed mb-4">Votre analyse personnalisée comprend :</p>
+          <h2 className="text-[19px] font-black text-[#2C2C2A] mb-2">Votre estimation personnalisée est prête</h2>
+          <p className="text-[15px] text-[#888780] leading-relaxed mb-4">Votre estimation personnalisée comprend :</p>
           <ul className="text-[14px] text-[#2C2C2A] leading-relaxed mb-5 inline-block text-left list-disc pl-5">
             <li>Votre budget construction estimé</li>
             <li>Votre enveloppe terrain recommandée</li>
@@ -680,7 +703,7 @@ function ResultScreen({
               onClick={onContinue}
               className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors"
             >
-              Recevoir mon analyse complète
+              Voir mon estimation complète
             </button>
           </div>
           <p className="text-[14px] text-[#888780] mt-3">Gratuit · Sans engagement</p>
@@ -706,6 +729,18 @@ const DOMAIN_STATUT_COURT: Record<Domain, (tier: "fort" | "moyen" | "faible") =>
   calendrier: (tier) => (tier === "faible" ? { icon: "⚠️", label: "À reconsidérer" } : { icon: "✅", label: "Compatible" }),
   coherence: (tier) => (tier === "faible" ? { icon: "⚠️", label: "À clarifier" } : { icon: "✅", label: "Cohérent" }),
 };
+
+// "Première indication" (recommandations page-resultat-diagnostic.md §3) — une phrase sur l'état
+// du budget, sans chiffre. Adapté à l'état réel (confortable/faible/déficit) plutôt que de
+// toujours annoncer "compatible" comme le fait l'exemple du document : ne jamais dire une chose
+// fausse pour le prospect dont le budget est en réalité insuffisant.
+function premiereIndicationTexte(estimate: Diagnostic["estimate"]): string | null {
+  const etat = budgetEtat(estimate);
+  if (etat === "confortable") return "Votre budget semble compatible avec votre projet de construction.";
+  if (etat === "faible") return "Votre budget semble proche de l'estimation de votre projet — quelques ajustements seront à confirmer.";
+  if (etat === "deficit") return "Votre budget actuel semble inférieur à l'estimation de votre projet — des ajustements seront probablement nécessaires.";
+  return null;
+}
 
 // ─── Rapport complet (post-coordonnées) — Bloc 5 + Bloc 6 ─────────────────────
 
