@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useMemo, useRef, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { gtagEvent } from "@/lib/ga";
 import { QUESTIONS, getVisibleQuestions, findNextIndex, getSectionProgress, SECTION_GROUPS } from "@/lib/indice-faisabilite/questions";
 import { searchCities, type CitySuggestion } from "@/lib/indice-faisabilite/villes";
-import { computeDiagnostic, domainText, DOMAIN_LABELS, CONCLUSION_TITRES, type Diagnostic } from "@/lib/indice-faisabilite/diagnostic";
+import { computeDiagnostic, domainText, DOMAIN_LABELS, type Diagnostic } from "@/lib/indice-faisabilite/diagnostic";
 import { formatEur, FOURCHETTE_TERRAIN_MARGE } from "@/lib/indice-faisabilite/estimate";
 import { DOMAIN_MAX } from "@/lib/indice-faisabilite/scoring";
 import type { Answers, Domain, Question } from "@/lib/indice-faisabilite/types";
@@ -139,11 +138,10 @@ function Landing({ onStart }: { onStart: () => void }) {
 
       <div className="max-w-[760px] mx-auto px-5 py-16 text-center">
         <h1 className="text-[32px] md:text-[40px] font-black text-[#2C2C2A] leading-tight mb-5">
-          Votre projet de construction est-il réalisable ?
+          Découvrez ce que vous pouvez réellement construire avec votre budget
         </h1>
         <p className="text-[17px] text-[#888780] leading-relaxed mb-6 max-w-[520px] mx-auto">
-          Budget, terrain, financement et calendrier : obtenez en quelques minutes un premier
-          diagnostic personnalisé de votre projet de construction.
+          Budget maison + terrain + frais + marge de sécurité en quelques minutes.
         </p>
         <div className="flex flex-wrap gap-2 justify-center mb-6">
           {["≈ 5 minutes", "Gratuit", "Sans engagement"].map((b) => (
@@ -618,16 +616,151 @@ function ResultScreen({
   const { estimate } = diagnostic;
   const niveauClass = NIVEAU_STYLES[diagnostic.niveau.couleur];
 
-  // Retour à l'affichage complet, sans flou — décision du 08/08/2026 après débat du conseil
-  // (voir wiki) : le teaser flouté contredisait le positionnement transparence de la marque
-  // ("je travaille pour mes clients" vs. marketing CMI classique) et floutait précisément la
-  // donnée la plus attendue (l'écart budgétaire) juste après un parcours de 20 questions
-  // personnelles à fort investissement. L'envoi automatique du diagnostic par email au prospect
-  // (buildDiagnosticEmailHtml, LeadForm) est conservé EN PLUS de cet écran, pas à la place.
+  // Parcours "semi-gated" — appliqué le 09/08/2026 depuis les recommandations fournies par
+  // Mahmoud (recommandations_finalite_leadmagnet_M&M_Construction.md). Remplace le débat
+  // flou/pas-flou du conseil du 08/08 (soit tout montrer, soit tout flouter) par une troisième
+  // voie : donner gratuitement une réponse qualitative complète et honnête (score, niveau,
+  // synthèse, statut ✓/⚠️ par domaine — Bloc 1+2), sans jamais rien flouter ni cacher un chiffre
+  // déjà énoncé ailleurs, puis réserver les CHIFFRES personnalisés (construction, terrain, marge)
+  // à l'analyse complète après coordonnées (Bloc 3 = teaser, RapportScreen = Bloc 5+6). Le score
+  // et les scores par domaine (proportion réelle du diagnostic) sont volontairement absents ici :
+  // ce sont déjà des chiffres "à forte valeur" au sens de la recommandation §3, réservés à
+  // l'analyse complète.
   return (
     <main className="bg-[#F2EDE6] min-h-screen">
       <div className="max-w-[640px] mx-auto px-5 py-10 flex flex-col gap-6">
         <h1 className="text-[15px] font-bold uppercase tracking-widest text-[#888780]">Votre résultat</h1>
+
+        {/* Bloc 1 — résultat immédiat */}
+        <div className={`border-2 p-7 text-center ${niveauClass}`}>
+          <div className="text-[44px] font-black leading-none">
+            {diagnostic.total}
+            <span className="text-[20px] font-medium opacity-60">/100</span>
+          </div>
+          <div className="text-[17px] font-bold uppercase tracking-wide mt-2">{diagnostic.niveau.label}</div>
+          <p className="text-[16px] text-[#2C2C2A] leading-relaxed mt-4 pt-4 border-t border-current/20">{diagnostic.synthese}</p>
+        </div>
+
+        {/* Bloc 2 — diagnostic synthétique : statut qualitatif par domaine, sans les scores
+            chiffrés ni le texte d'explication (réservés au rapport complet, Bloc 5). */}
+        <div>
+          <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Diagnostic synthétique</h2>
+          <div className="bg-white border border-[#D9D4CC] divide-y divide-[#D9D4CC]">
+            {(Object.keys(DOMAIN_LABELS) as Domain[]).map((d) => {
+              const { tier } = domainText(d, diagnostic.detail[d], estimate, answers);
+              const { icon, label } = DOMAIN_STATUT_COURT[d](tier);
+              return (
+                <div key={d} className="flex items-center justify-between p-4">
+                  <span className="text-[15px] font-bold text-[#2C2C2A]">{DOMAIN_LABELS[d]}</span>
+                  <span className="text-[14px] font-bold flex items-center gap-1.5">
+                    <span>{icon}</span>
+                    <span className={tier === "faible" ? "text-[#B5433B]" : "text-[#4C7A5A]"}>{label}</span>
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Bloc 3 — teaser de l'analyse complète */}
+        <div className="bg-white border border-[#D9D4CC] p-6 text-center">
+          <h2 className="text-[19px] font-black text-[#2C2C2A] mb-2">Votre étude personnalisée est prête</h2>
+          <p className="text-[15px] text-[#888780] leading-relaxed mb-4">Votre analyse personnalisée comprend :</p>
+          <ul className="text-[14px] text-[#2C2C2A] leading-relaxed mb-5 inline-block text-left list-disc pl-5">
+            <li>Votre budget construction estimé</li>
+            <li>Votre enveloppe terrain recommandée</li>
+            <li>Les frais complémentaires à anticiper</li>
+            <li>Votre marge de sécurité budgétaire</li>
+            <li>Les points à sécuriser</li>
+            <li>Les prochaines étapes recommandées</li>
+          </ul>
+          <div>
+            <button
+              type="button"
+              onClick={onContinue}
+              className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors"
+            >
+              Recevoir mon analyse complète
+            </button>
+          </div>
+          <p className="text-[14px] text-[#888780] mt-3">Gratuit · Sans engagement</p>
+        </div>
+
+        <button type="button" onClick={onRestart} className="block mx-auto text-[15px] text-[#888780] underline hover:text-[#2C2C2A]">
+          ↻ Modifier mes réponses
+        </button>
+      </div>
+    </main>
+  );
+}
+
+// Statut qualitatif court par domaine (Bloc 2) — recommandation §2 : "Budget ✅ Cohérent",
+// "Terrain ⚠️ À sécuriser"... Les tiers "fort" et "moyen" sont regroupés en ✅ (rien de
+// personnalisé/chiffré n'est perdu ici puisque le score exact n'était de toute façon pas montré
+// avant) ; seul "faible" bascule en ⚠️, cohérent avec le seuil déjà utilisé pour l'icône ⚠️ dans
+// le rapport complet (domainText).
+const DOMAIN_STATUT_COURT: Record<Domain, (tier: "fort" | "moyen" | "faible") => { icon: string; label: string }> = {
+  budget: (tier) => (tier === "faible" ? { icon: "⚠️", label: "À ajuster" } : { icon: "✅", label: "Cohérent" }),
+  terrain: (tier) => (tier === "faible" ? { icon: "⚠️", label: "À sécuriser" } : { icon: "✅", label: "Sécurisé" }),
+  financement: (tier) => (tier === "faible" ? { icon: "⚠️", label: "À engager" } : { icon: "✅", label: "Engagé" }),
+  calendrier: (tier) => (tier === "faible" ? { icon: "⚠️", label: "À reconsidérer" } : { icon: "✅", label: "Compatible" }),
+  coherence: (tier) => (tier === "faible" ? { icon: "⚠️", label: "À clarifier" } : { icon: "✅", label: "Cohérent" }),
+};
+
+// ─── Rapport complet (post-coordonnées) — Bloc 5 + Bloc 6 ─────────────────────
+
+// Message et CTA de conversion adaptés au niveau de qualification du lead (recommandation §6),
+// réutilisant tel quel le barème priorité A/B/C/D déjà calibré avec Mahmoud (scoring.ts,
+// prioriteFromScore) plutôt que d'inventer un nouveau découpage. Pas d'automatisation CRM
+// (email de relance, séquence de nurturing) construite ici — recommandation §6 le mentionne pour
+// les tiers B/C mais ça relève d'un outil marketing séparé, pas de ce composant. Pas de vrai
+// calendrier de prise de RDV disponible (aucun outil de réservation branché à ce jour) : le CTA
+// pointe vers un appel direct plutôt que vers une réservation fictive.
+function texteConversion(diagnostic: Diagnostic): { titre: string; message: string; cta: string; discret: boolean } {
+  switch (diagnostic.priorite) {
+    case "A":
+      return {
+        titre: "Votre projet présente de très bons indicateurs de faisabilité.",
+        message: `Un conseiller vous contacte habituellement ${diagnostic.delai}. Vous pouvez aussi échanger directement avec nous dès maintenant.`,
+        cta: "Planifier mon échange projet",
+        discret: false,
+      };
+    case "B":
+      return {
+        titre: "Votre projet semble envisageable, avec quelques points à sécuriser.",
+        message: "Faisons le point ensemble sur les éléments à préciser avant d'aller plus loin — 20 minutes suffisent.",
+        cta: "Échanger sur mon projet",
+        discret: false,
+      };
+    case "C":
+      return {
+        titre: "Votre projet est encore à préciser sur certains points.",
+        message: "Nous revenons vers vous pour vous aider à avancer sur les points à sécuriser en priorité.",
+        cta: "Échanger sur mon projet",
+        discret: true,
+      };
+    default:
+      return {
+        titre: "Votre projet demande à être retravaillé avant d'avancer.",
+        message: "Nous vous recontactons avec quelques pistes pour préparer la suite — sans obligation de votre part.",
+        cta: "Poser une question",
+        discret: true,
+      };
+  }
+}
+
+function RapportScreen({ diagnostic, answers, onRestart }: { diagnostic: Diagnostic; answers: Answers; onRestart: () => void }) {
+  const { estimate } = diagnostic;
+  const niveauClass = NIVEAU_STYLES[diagnostic.niveau.couleur];
+  const conversion = texteConversion(diagnostic);
+
+  return (
+    <main className="bg-[#F2EDE6] min-h-screen">
+      <div className="max-w-[640px] mx-auto px-5 py-10 flex flex-col gap-6">
+        <div>
+          <h1 className="text-[15px] font-bold uppercase tracking-widest text-[#888780] mb-1">Votre analyse complète</h1>
+          <p className="text-[13px] text-[#888780]">Vous en recevez aussi une copie par email.</p>
+        </div>
 
         <div className={`border-2 p-7 text-center ${niveauClass}`}>
           <div className="text-[44px] font-black leading-none">
@@ -712,17 +845,25 @@ function ResultScreen({
           </div>
         )}
 
+        {/* Bloc 6 — conversion en rendez-vous, adaptée au niveau de qualification du lead */}
         <div className="text-center pt-4">
-          <h3 className="text-[19px] font-black text-[#2C2C2A] mb-2">{CONCLUSION_TITRES[diagnostic.faisabilite]}</h3>
-          <p className="text-[16px] text-[#888780] mb-5">Découvrez maintenant les points à sécuriser pour pouvoir avancer.</p>
-          <button
-            type="button"
-            onClick={onContinue}
-            className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors"
-          >
-            Obtenir mon analyse personnalisée
-          </button>
-          <p className="text-[14px] text-[#888780] mt-3">Gratuit · Sans engagement</p>
+          <h3 className="text-[19px] font-black text-[#2C2C2A] mb-2">{conversion.titre}</h3>
+          <p className="text-[16px] text-[#888780] mb-5">{conversion.message}</p>
+          {conversion.discret ? (
+            <a href="tel:+33625590926" className="text-[15px] text-[#BA7517] underline hover:text-[#9E6312]">
+              {conversion.cta}
+            </a>
+          ) : (
+            <>
+              <a
+                href="tel:+33625590926"
+                className="inline-block bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors no-underline"
+              >
+                {conversion.cta}
+              </a>
+              <p className="text-[14px] text-[#888780] mt-3">Sans engagement</p>
+            </>
+          )}
           <button type="button" onClick={onRestart} className="block mx-auto mt-5 text-[15px] text-[#888780] underline hover:text-[#2C2C2A]">
             ↻ Modifier mes réponses
           </button>
@@ -816,8 +957,15 @@ function buildMessage(answers: Answers, diagnostic: Diagnostic): string {
   return lines.filter(Boolean).join("\n");
 }
 
-function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagnostic }) {
-  const router = useRouter();
+function LeadForm({
+  answers,
+  diagnostic,
+  onSuccess,
+}: {
+  answers: Answers;
+  diagnostic: Diagnostic;
+  onSuccess: () => void;
+}) {
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
@@ -848,7 +996,11 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
       });
       if (!res.ok) throw new Error();
       gtagEvent("generate_lead", { event_category: "formulaire", event_label: "indice_faisabilite" });
-      router.push("/demande-etude/merci");
+      // Reste sur place plutôt que de rediriger vers /demande-etude/merci — recommandation §10.4
+      // ("afficher immédiatement le rapport complet après saisie de l'email") appliquée le
+      // 09/08/2026 : le rapport devient l'écran suivant du même parcours, pas une redirection
+      // externe. Le rapport part aussi par email (diagnosticHtml ci-dessus), inchangé.
+      onSuccess();
     } catch {
       setError("Une erreur est survenue. Réessayez ou appelez-nous directement.");
       setLoading(false);
@@ -936,7 +1088,7 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
             disabled={loading || !rgpd}
             className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
           >
-            {loading ? "Envoi en cours…" : "Recevoir mon analyse"}
+            {loading ? "Envoi en cours…" : "Recevoir mon analyse complète"}
           </button>
         </form>
       </div>
@@ -946,7 +1098,7 @@ function LeadForm({ answers, diagnostic }: { answers: Answers; diagnostic: Diagn
 
 // ─── Root component ─────────────────────────────────────────────────────────
 
-type Phase = "landing" | "questions" | "result" | "lead";
+type Phase = "landing" | "questions" | "result" | "lead" | "rapport";
 
 export default function IndiceFaisabiliteClient() {
   const [phase, setPhase] = useState<Phase>("landing");
@@ -957,7 +1109,10 @@ export default function IndiceFaisabiliteClient() {
   const currentQuestion = QUESTIONS[pointer];
   const stepNumber = visibleQuestions.findIndex((q) => q.code === currentQuestion?.code) + 1;
 
-  const diagnostic = useMemo(() => (phase === "result" || phase === "lead" ? computeDiagnostic(answers) : null), [phase, answers]);
+  const diagnostic = useMemo(
+    () => (phase === "result" || phase === "lead" || phase === "rapport" ? computeDiagnostic(answers) : null),
+    [phase, answers]
+  );
 
   function handleAnswer(code: string, value: Answers[string]) {
     setAnswers((prev) => ({ ...prev, [code]: value }));
@@ -1035,7 +1190,11 @@ export default function IndiceFaisabiliteClient() {
   }
 
   if (phase === "lead" && diagnostic) {
-    return <LeadForm answers={answers} diagnostic={diagnostic} />;
+    return <LeadForm answers={answers} diagnostic={diagnostic} onSuccess={() => setPhase("rapport")} />;
+  }
+
+  if (phase === "rapport" && diagnostic) {
+    return <RapportScreen diagnostic={diagnostic} answers={answers} onRestart={restart} />;
   }
 
   return null;
