@@ -138,7 +138,7 @@ function Landing({ onStart }: { onStart: () => void }) {
 
       <div className="max-w-[760px] mx-auto px-5 py-16 text-center">
         <h1 className="text-[32px] md:text-[40px] font-black text-[#2C2C2A] leading-tight mb-5">
-          Découvrez ce que vous pouvez réellement construire avec votre budget
+          Quel projet de maison votre budget permet-il de construire ?
         </h1>
         <p className="text-[17px] text-[#888780] leading-relaxed mb-6 max-w-[520px] mx-auto">
           Budget maison + terrain + frais + marge de sécurité en quelques minutes.
