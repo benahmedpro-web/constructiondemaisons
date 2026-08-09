@@ -249,16 +249,17 @@
       ]
     },
     {
-      "code": "vente_bien_pour_projet",
-      "screen": "E9d",
-      "section": "Budget",
-      "title": "Prévoyez-vous de vendre votre logement actuel dans le cadre de ce projet ?",
+      "code": "financement_statut",
+      "screen": "E10",
+      "section": "Financement",
+      "title": "Où en êtes-vous avec le financement ?",
       "type": "single-choice",
       "required": true,
       "options": [
-        { "value": "en_cours", "label": "Oui, c'est déjà en cours" },
-        { "value": "prochainement", "label": "Oui, prochainement" },
-        { "value": "non", "label": "Non, pas pour le moment" }
+        { "value": "accord", "label": "Accord de principe bancaire obtenu" },
+        { "value": "fonds_propres", "label": "Financement sur fonds propres, sans prêt" },
+        { "value": "simulation", "label": "Simulation faite, pas de démarche engagée" },
+        { "value": "pas_commence", "label": "Pas encore commencé" }
       ]
     },
     {
@@ -272,17 +273,16 @@
       "required": true
     },
     {
-      "code": "financement_statut",
-      "screen": "E10",
-      "section": "Financement",
-      "title": "Où en êtes-vous avec le financement ?",
+      "code": "vente_bien_pour_projet",
+      "screen": "E9d",
+      "section": "Budget",
+      "title": "Prévoyez-vous de vendre votre logement actuel dans le cadre de ce projet ?",
       "type": "single-choice",
       "required": true,
       "options": [
-        { "value": "accord", "label": "Accord de principe bancaire obtenu" },
-        { "value": "fonds_propres", "label": "Financement sur fonds propres, sans prêt" },
-        { "value": "simulation", "label": "Simulation faite, pas de démarche engagée" },
-        { "value": "pas_commence", "label": "Pas encore commencé" }
+        { "value": "en_cours", "label": "Oui, c'est déjà en cours" },
+        { "value": "prochainement", "label": "Oui, prochainement" },
+        { "value": "non", "label": "Non, pas pour le moment" }
       ]
     },
     {
