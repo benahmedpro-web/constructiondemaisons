@@ -57,19 +57,15 @@
       ]
     },
     {
-      "code": "transition_configuration",
-      "screen": "E3e",
-      "section": "Ma configuration",
-      "title": "Imaginons maintenant votre future maison",
-      "subtitle": "Quels sont vos souhaits de pièces, de surface habitable, le type de maison ou encore la surface de votre terrain... on va voir tout cela ensemble !",
-      "type": "info"
-    },
-    {
       "code": "surface_habitable",
       "screen": "E3f",
       "section": "Ma configuration",
       "title": "Quelle est la surface habitable souhaitée ?",
       "subtitle": "En m²",
+      "intro": {
+        "title": "Imaginons maintenant votre future maison",
+        "subtitle": "Quels sont vos souhaits de pièces, de surface habitable, le type de maison ou encore la surface de votre terrain... on va voir tout cela ensemble !"
+      },
       "type": "number",
       "placeholder": "Ex. 120",
       "required": true

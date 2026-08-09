@@ -382,7 +382,13 @@ function QuestionScreen({
 
         <div className="mb-6">
           <div className="text-[12px] text-[#BA7517] font-bold uppercase tracking-widest mb-1">{question.section}</div>
-          <h2 className="text-[22px] font-black text-[#2C2C2A] mb-1">{question.title}</h2>
+          {question.intro && (
+            <div className="mb-4 pb-4 border-b border-[#D9D4CC]">
+              <h2 className="text-[22px] font-black text-[#2C2C2A] mb-1">{question.intro.title}</h2>
+              {question.intro.subtitle && <p className="text-[14px] text-[#888780]">{question.intro.subtitle}</p>}
+            </div>
+          )}
+          <h2 className={question.intro ? "text-[17px] font-bold text-[#2C2C2A] mb-1" : "text-[22px] font-black text-[#2C2C2A] mb-1"}>{question.title}</h2>
           {question.subtitle && <p className="text-[14px] text-[#888780]">{question.subtitle}</p>}
         </div>
 

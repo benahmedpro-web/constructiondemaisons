@@ -30,7 +30,7 @@ export const SECTION_GROUPS: { label: string; codes: string[] }[] = [
   { label: "Votre projet", codes: ["project_stage", "motivation_projet", "echeance_emmenagement", "regarde_ancien"] },
   {
     label: "Votre maison",
-    codes: ["transition_configuration", "surface_habitable", "nombre_chambres", "pieces_complementaires", "type_maison", "style_maison", "location"],
+    codes: ["surface_habitable", "nombre_chambres", "pieces_complementaires", "type_maison", "style_maison", "location"],
   },
   { label: "Votre terrain", codes: ["terrain_status", "terrain_viabilise", "etude_sol", "surface_terrain", "surface_terrain_souhaitee"] },
   {

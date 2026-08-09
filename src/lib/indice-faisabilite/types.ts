@@ -23,6 +23,7 @@ export type Question = {
   section: string;
   title: string;
   subtitle?: string;
+  intro?: { title: string; subtitle?: string };
   type: QuestionType;
   placeholder?: string;
   required?: boolean;
