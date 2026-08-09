@@ -1098,10 +1098,11 @@ function LeadForm({
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-[12px] font-bold uppercase tracking-widest text-[#888780]">
-                Téléphone <span className="font-normal normal-case">(optionnel)</span>
+                Téléphone <span className="text-[#BA7517]">*</span>
               </label>
               <input
                 type="tel"
+                required
                 value={telephone}
                 onChange={(e) => setTelephone(e.target.value)}
                 className="border border-[#D9D4CC] px-4 py-3 text-[16px] bg-white focus:outline-none focus:border-[#BA7517]"
@@ -1129,7 +1130,7 @@ function LeadForm({
             disabled={loading || !rgpd}
             className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
           >
-            {loading ? "Envoi en cours…" : "Recevoir mon analyse complète"}
+            {loading ? "Envoi en cours…" : "Voir mon analyse complète"}
           </button>
         </form>
       </div>
