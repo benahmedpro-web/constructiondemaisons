@@ -604,20 +604,6 @@ function buildDiagnosticEmailHtml(diagnostic: Diagnostic, answers: Answers): str
   `;
 }
 
-// Enveloppe un fragment réel du diagnostic dans un flou visuel — demande de Mahmoud du 08/08/2026 :
-// montrer la forme concrète du rapport (domaines, montants) plutôt qu'une simple promesse
-// abstraite, pour donner envie de laisser ses coordonnées. Flou CSS pur, pas un vrai verrou de
-// sécurité (le texte reste techniquement dans le DOM) — acceptable ici, ce n'est pas une donnée
-// sensible, juste un ressort de conversion. `aria-hidden` : ce texte flouté n'apporte rien à un
-// lecteur d'écran, qui doit se rabattre sur les libellés visibles autour.
-function Flou({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <span aria-hidden="true" className={`blur-[6px] select-none ${className}`}>
-      {children}
-    </span>
-  );
-}
-
 function ResultScreen({
   diagnostic,
   answers,
@@ -632,11 +618,12 @@ function ResultScreen({
   const { estimate } = diagnostic;
   const niveauClass = NIVEAU_STYLES[diagnostic.niveau.couleur];
 
-  // Écran "teaser flouté" — retravaillé le 08/08/2026 à la demande de Mahmoud : plutôt qu'un
-  // simple texte annonçant l'envoi par email (version précédente), on montre la vraie structure
-  // du diagnostic (domaines, lignes d'estimation) avec les valeurs floutées. Le contenu textuel
-  // (domainText, budgetMargeInfo) reste le même que celui envoyé par email — juste rendu
-  // illisible ici, pas remplacé par du texte factice.
+  // Retour à l'affichage complet, sans flou — décision du 08/08/2026 après débat du conseil
+  // (voir wiki) : le teaser flouté contredisait le positionnement transparence de la marque
+  // ("je travaille pour mes clients" vs. marketing CMI classique) et floutait précisément la
+  // donnée la plus attendue (l'écart budgétaire) juste après un parcours de 20 questions
+  // personnelles à fort investissement. L'envoi automatique du diagnostic par email au prospect
+  // (buildDiagnosticEmailHtml, LeadForm) est conservé EN PLUS de cet écran, pas à la place.
   return (
     <main className="bg-[#F2EDE6] min-h-screen">
       <div className="max-w-[640px] mx-auto px-5 py-10 flex flex-col gap-6">
@@ -652,27 +639,23 @@ function ResultScreen({
         </div>
 
         <div>
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="text-[17px] font-bold text-[#2C2C2A]">Votre diagnostic</h2>
-            <span className="text-[12px] font-bold uppercase tracking-widest text-[#BA7517]">🔒 Par email</span>
-          </div>
+          <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Votre diagnostic</h2>
           <div className="bg-white border border-[#D9D4CC] divide-y divide-[#D9D4CC]">
             {(Object.keys(DOMAIN_LABELS) as Domain[]).map((d) => {
               const { tier, texte } = domainText(d, diagnostic.detail[d], estimate, answers);
-              const icon = tier === "fort" ? "✓" : tier === "faible" ? "⚠️" : "";
+              const icon = tier === "fort" ? " ✓" : tier === "faible" ? " ⚠️" : "";
               return (
                 <div key={d} className="p-4">
                   <div className="flex justify-between text-[15px] font-bold text-[#2C2C2A]">
                     <span>
-                      {DOMAIN_LABELS[d]} {icon && <Flou>{icon}</Flou>}
+                      {DOMAIN_LABELS[d]}
+                      {icon}
                     </span>
-                    <Flou>
+                    <span>
                       {diagnostic.detail[d]}/{DOMAIN_MAX[d]}
-                    </Flou>
+                    </span>
                   </div>
-                  <p className="text-[14px] text-[#888780] mt-1 leading-relaxed">
-                    <Flou>{texte}</Flou>
-                  </p>
+                  <p className="text-[14px] text-[#888780] mt-1 leading-relaxed">{texte}</p>
                 </div>
               );
             })}
@@ -684,32 +667,26 @@ function ResultScreen({
             <h2 className="text-[17px] font-bold text-[#2C2C2A] mb-3">Votre estimation</h2>
             <div className="flex justify-between text-[15px] py-2 border-b border-[#D9D4CC]">
               <span className="text-[#888780]">Construction estimée</span>
-              <strong>
-                <Flou>{formatEur(estimate.coutConstruction)}</Flou>
-              </strong>
+              <strong>{formatEur(estimate.coutConstruction)}</strong>
             </div>
             {estimate.coutTerrain !== null && estimate.zone && (
               <div className="flex justify-between text-[15px] py-2 border-b border-[#D9D4CC]">
                 <span className="text-[#888780]">Terrain estimé</span>
                 <strong>
-                  <Flou>
-                    {formatEur(estimate.coutTerrain * (1 - FOURCHETTE_TERRAIN_MARGE))} – {formatEur(estimate.coutTerrain * (1 + FOURCHETTE_TERRAIN_MARGE))}
-                  </Flou>
+                  {formatEur(estimate.coutTerrain * (1 - FOURCHETTE_TERRAIN_MARGE))} – {formatEur(estimate.coutTerrain * (1 + FOURCHETTE_TERRAIN_MARGE))}
                 </strong>
               </div>
             )}
             {estimate.coutTotal !== null && (
               <div className="flex justify-between text-[16px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
                 <span>Total estimé</span>
-                <Flou>{formatEur(estimate.coutTotal)}</Flou>
+                <span>{formatEur(estimate.coutTotal)}</span>
               </div>
             )}
             {estimate.budget > 0 && estimate.coutTotal !== null && (
               <div className="flex justify-between text-[15px] py-2 mt-2 border-t border-[#D9D4CC]">
                 <span className="text-[#888780]">Budget annoncé</span>
-                <strong>
-                  <Flou>{formatEur(estimate.budget)}</Flou>
-                </strong>
+                <strong>{formatEur(estimate.budget)}</strong>
               </div>
             )}
             {estimate.budget > 0 &&
@@ -720,10 +697,10 @@ function ResultScreen({
                 return (
                   <div className="flex justify-between text-[16px] font-bold py-2 mt-2 pt-3 border-t border-[#D9D4CC]">
                     <span>{marge.titre}</span>
-                    <Flou>
+                    <span>
                       {marge.ecart >= 0 ? "+" : ""}
                       {formatEur(marge.ecart)}
-                    </Flou>
+                    </span>
                   </div>
                 );
               })()}
@@ -737,9 +714,7 @@ function ResultScreen({
 
         <div className="text-center pt-4">
           <h3 className="text-[19px] font-black text-[#2C2C2A] mb-2">{CONCLUSION_TITRES[diagnostic.faisabilite]}</h3>
-          <p className="text-[16px] text-[#888780] mb-5">
-            Laissez vos coordonnées pour recevoir le détail complet par email et découvrir les points à sécuriser pour avancer.
-          </p>
+          <p className="text-[16px] text-[#888780] mb-5">Découvrez maintenant les points à sécuriser pour pouvoir avancer.</p>
           <button
             type="button"
             onClick={onContinue}
