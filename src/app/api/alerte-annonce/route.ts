@@ -66,6 +66,9 @@ async function createTrelloCard(name: string, desc: string) {
   }
 }
 
+// Même fallback que src/app/api/contact/route.ts — voir ce fichier pour le contexte complet.
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "M&M CONSTRUCTION <onboarding@resend.dev>";
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
@@ -89,10 +92,12 @@ export async function POST(req: NextRequest) {
       `📋 Statut recherché : ${statutLabel}`,
     ].filter(Boolean).join("\n");
 
-    await Promise.allSettled([
-      createTrelloCard(cardName, cardDesc),
-      resend.emails.send({
-      from: "M&M CONSTRUCTION <onboarding@resend.dev>",
+    const tasks: { label: string; promise: Promise<unknown> }[] = [
+      { label: "Trello", promise: createTrelloCard(cardName, cardDesc) },
+      {
+        label: "Email interne (notification)",
+        promise: resend.emails.send({
+      from: FROM_EMAIL,
       to: "benahmed.pro@icloud.com",
       replyTo: email,
       subject: `Nouvelle alerte annonce — ${prenom || email}`,
@@ -120,8 +125,22 @@ export async function POST(req: NextRequest) {
           </div>
         </div>
       `,
-      }),
-    ]);
+        }),
+      },
+    ];
+
+    const results = await Promise.allSettled(tasks.map((t) => t.promise));
+    results.forEach((result, i) => {
+      const label = tasks[i].label;
+      if (result.status === "rejected") {
+        console.error(`[AlerteAnnonce] ${label} — échec :`, result.reason);
+        return;
+      }
+      const value = result.value as { error?: unknown } | undefined;
+      if (value && typeof value === "object" && value.error) {
+        console.error(`[AlerteAnnonce] ${label} — erreur Resend :`, value.error);
+      }
+    });
 
     return NextResponse.json({ success: true });
   } catch {
