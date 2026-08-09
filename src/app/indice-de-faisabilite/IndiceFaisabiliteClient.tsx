@@ -122,7 +122,7 @@ function Landing({ onStart }: { onStart: () => void }) {
           </div>
           <div className="flex items-center gap-2.5">
             <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-[#2C2C2A]">
-              <Image src="/images/mahmoud-ben-ahmed.png" alt="Mahmoud Ben Ahmed" fill sizes="32px" className="object-cover" />
+              <Image src="/images/mahmoud-ben-ahmed-presentation.png" alt="Mahmoud Ben Ahmed" fill sizes="32px" className="object-cover" />
             </div>
             <span className="text-[13px] text-[#2C2C2A] leading-tight hidden sm:inline">
               <span className="font-bold">Mahmoud Ben Ahmed</span>
