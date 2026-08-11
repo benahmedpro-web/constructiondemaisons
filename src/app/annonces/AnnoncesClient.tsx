@@ -124,15 +124,6 @@ export default function AnnoncesPage() {
 
   return (<>
     <main>
-      <div className="bg-[#2C2C2A] py-3 px-5">
-        <div className="max-w-[1100px] mx-auto">
-          <h1 className="text-white text-[20px] font-black leading-tight">
-            Annonces — Projets disponibles
-          </h1>
-          <p className="text-white/50 text-[13px] mt-0.5">Haute-Savoie · Ain · Genevois français</p>
-        </div>
-      </div>
-
       {/* Filtres */}
       <div className="bg-white border-b border-[#D9D4CC] px-5 sticky top-0 z-30">
         <div className="max-w-[1100px] mx-auto flex flex-wrap items-center gap-x-4 gap-y-2 py-3">
