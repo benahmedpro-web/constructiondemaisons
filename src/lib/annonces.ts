@@ -1647,7 +1647,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/vulbens-407.jpg",
   images: ["/images/terrains/vulbens-407.jpg"],
-  accroche: "78 m² ossature bois modèle Tournette — terrain 407 m² — Vulbens — 378 600 € tout compris",
+  accroche: "78 m² ossature bois modèle Tournette — terrain 407 m² — Vulbens — 378 600 €",
   description: [
    "Projet maison ossature bois sur un terrain de 407 m² situé à Vulbens (74). Le modèle Tournette (78 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -1681,7 +1681,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/vulbens-588.jpg",
   images: ["/images/terrains/vulbens-588.jpg"],
-  accroche: "88 m² ossature bois modèle Aravis — terrain 588 m² — Vulbens — 441 300 € tout compris",
+  accroche: "88 m² ossature bois modèle Aravis — terrain 588 m² — Vulbens — 441 300 €",
   description: [
    "À Vulbens, ce terrain de 588 m² accueille un projet de maison ossature bois 88 m² modèle Aravis. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -1715,7 +1715,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/feigeres.jpg",
   images: ["/images/terrains/feigeres.jpg"],
-  accroche: "110 m² ossature bois modèle Étale — terrain 1394 m² — Feigères — 479 000 € tout compris",
+  accroche: "110 m² ossature bois modèle Étale — terrain 1394 m² — Feigères — 479 000 €",
   description: [
    "Ce projet réunit un terrain de 1394 m² à Feigères et une maison ossature bois 110 m² modèle Étale. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -1728,7 +1728,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Feigères est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -1749,7 +1749,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/beaumont.jpg",
   images: ["/images/terrains/beaumont.jpg"],
-  accroche: "88 m² ossature bois modèle Bargy — terrain 573 m² — Beaumont — 526 000 € tout compris",
+  accroche: "88 m² ossature bois modèle Bargy — terrain 573 m² — Beaumont — 526 000 €",
   description: [
    "Sur cette parcelle de 573 m² à Beaumont, le modèle Bargy (88 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -1783,7 +1783,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/presilly.jpg",
   images: ["/images/terrains/presilly.jpg"],
-  accroche: "88 m² ossature bois modèle Aravis — terrain 661 m² — Présilly — 546 000 € tout compris",
+  accroche: "88 m² ossature bois modèle Aravis — terrain 661 m² — Présilly — 546 000 €",
   description: [
    "Ce projet réunit un terrain de 661 m² à Présilly et une maison ossature bois 88 m² modèle Aravis. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -1817,7 +1817,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/neydens-770.jpg",
   images: ["/images/terrains/neydens-770.jpg"],
-  accroche: "95 m² ossature bois modèle Aravis — terrain 770 m² — Neydens — 550 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Aravis — terrain 770 m² — Neydens — 550 000 €",
   description: [
    "À Neydens, ce terrain de 770 m² accueille un projet de maison ossature bois 95 m² modèle Aravis. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -1830,7 +1830,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Neydens est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -1851,7 +1851,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/saint-julien.jpg",
   images: ["/images/terrains/saint-julien.jpg"],
-  accroche: "75 m² ossature bois modèle Salève — terrain 378 m² — Saint-Julien-en-Genevois — 470 000 € tout compris",
+  accroche: "75 m² ossature bois modèle Salève — terrain 378 m² — Saint-Julien-en-Genevois — 470 000 €",
   description: [
    "Ce projet réunit un terrain de 378 m² à Saint-Julien-en-Genevois et une maison ossature bois 75 m² modèle Salève. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -1885,7 +1885,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/annemasse.jpg",
   images: ["/images/terrains/annemasse.jpg"],
-  accroche: "95 m² ossature bois modèle Bargy — terrain 740 m² — Annemasse — 480 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Bargy — terrain 740 m² — Annemasse — 480 000 €",
   description: [
    "Sur cette parcelle de 740 m² à Annemasse, le modèle Bargy (95 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -1919,7 +1919,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/cranves-sales-715.jpg",
   images: ["/images/terrains/cranves-sales-715.jpg"],
-  accroche: "95 m² ossature bois modèle Aravis — terrain 715 m² — Cranves-Sales — 509 500 € tout compris",
+  accroche: "95 m² ossature bois modèle Aravis — terrain 715 m² — Cranves-Sales — 509 500 €",
   description: [
    "Ce projet réunit un terrain de 715 m² à Cranves-Sales et une maison ossature bois 95 m² modèle Aravis. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -1932,7 +1932,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Cranves-Sales est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -1953,7 +1953,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/cranves-720.jpg",
   images: ["/images/terrains/cranves-720.jpg"],
-  accroche: "92 m² ossature bois modèle Aravis — terrain 720 m² — Cranves-Sales — 433 000 € tout compris",
+  accroche: "92 m² ossature bois modèle Aravis — terrain 720 m² — Cranves-Sales — 433 000 €",
   description: [
    "À Cranves-Sales, ce terrain de 720 m² accueille un projet de maison ossature bois 92 m² modèle Aravis. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -1987,7 +1987,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/cranves-615.jpg",
   images: ["/images/terrains/cranves-615.jpg"],
-  accroche: "88 m² ossature bois modèle Aravis — terrain 615 m² — Cranves-Sales — 474 000 € tout compris",
+  accroche: "88 m² ossature bois modèle Aravis — terrain 615 m² — Cranves-Sales — 474 000 €",
   description: [
    "Ce projet réunit un terrain de 615 m² à Cranves-Sales et une maison ossature bois 88 m² modèle Aravis. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -2021,7 +2021,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/neydens-782.jpg",
   images: ["/images/terrains/neydens-782.jpg"],
-  accroche: "95 m² ossature bois modèle Aravis — terrain 782 m² — Neydens — 550 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Aravis — terrain 782 m² — Neydens — 550 000 €",
   description: [
    "À Neydens, ce terrain de 782 m² accueille un projet de maison ossature bois 95 m² modèle Aravis. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2034,7 +2034,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Neydens est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -2055,7 +2055,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/neydens-831.jpg",
   images: ["/images/terrains/neydens-831.jpg"],
-  accroche: "92 m² ossature bois modèle Aravis — terrain 831 m² — Neydens — 559 000 € tout compris",
+  accroche: "92 m² ossature bois modèle Aravis — terrain 831 m² — Neydens — 559 000 €",
   description: [
    "Ce projet réunit un terrain de 831 m² à Neydens et une maison ossature bois 92 m² modèle Aravis. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -2089,7 +2089,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/vetraz.jpg",
   images: ["/images/terrains/vetraz.jpg"],
-  accroche: "85 m² ossature bois modèle Salève — terrain 462 m² — Vétraz-Monthoux — 395 000 € tout compris",
+  accroche: "85 m² ossature bois modèle Salève — terrain 462 m² — Vétraz-Monthoux — 395 000 €",
   description: [
    "À Vétraz-Monthoux, ce terrain de 462 m² accueille un projet de maison ossature bois 85 m² modèle Salève. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2123,7 +2123,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/vetraz-863.jpg",
   images: ["/images/terrains/vetraz-863.jpg"],
-  accroche: "100 m² ossature bois modèle Voirons — terrain 863 m² — Vétraz-Monthoux — 605 000 € tout compris",
+  accroche: "100 m² ossature bois modèle Voirons — terrain 863 m² — Vétraz-Monthoux — 605 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 863 m² situé à Vétraz-Monthoux (74). Le modèle Voirons (100 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2136,7 +2136,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Vétraz-Monthoux est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -2157,7 +2157,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/dingy-454.jpg",
   images: ["/images/terrains/dingy-454.jpg"],
-  accroche: "80 m² ossature bois modèle Salève — terrain 454 m² — Dingy-en-Vuache — 375 000 € tout compris",
+  accroche: "80 m² ossature bois modèle Salève — terrain 454 m² — Dingy-en-Vuache — 375 000 €",
   description: [
    "À Dingy-en-Vuache, ce terrain de 454 m² accueille un projet de maison ossature bois 80 m² modèle Salève. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2191,7 +2191,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/presilly-681.jpg",
   images: ["/images/terrains/presilly-681.jpg"],
-  accroche: "95 m² ossature bois modèle Bargy — terrain 681 m² — Présilly — 580 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Bargy — terrain 681 m² — Présilly — 580 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 681 m² situé à Présilly (74). Le modèle Bargy (95 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2225,7 +2225,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/viry.jpg",
   images: ["/images/terrains/viry.jpg"],
-  accroche: "90 m² ossature bois modèle Bargy — terrain 626 m² — Viry — 500 000 € tout compris",
+  accroche: "90 m² ossature bois modèle Bargy — terrain 626 m² — Viry — 500 000 €",
   description: [
    "Sur cette parcelle de 626 m² à Viry, le modèle Bargy (90 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -2238,7 +2238,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Viry est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -2259,7 +2259,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/archamps-466.jpg",
   images: ["/images/terrains/archamps-466.jpg"],
-  accroche: "85 m² ossature bois modèle Bargy — terrain 466 m² — Archamps — 440 000 € tout compris",
+  accroche: "85 m² ossature bois modèle Bargy — terrain 466 m² — Archamps — 440 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 466 m² situé à Archamps (74). Le modèle Bargy (85 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2293,7 +2293,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/archamps-822.jpg",
   images: ["/images/terrains/archamps-822.jpg"],
-  accroche: "95 m² ossature bois modèle Bargy — terrain 822 m² — Archamps — 510 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Bargy — terrain 822 m² — Archamps — 510 000 €",
   description: [
    "Sur cette parcelle de 822 m² à Archamps, le modèle Bargy (95 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -2327,7 +2327,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/savigny.jpg",
   images: ["/images/terrains/savigny.jpg"],
-  accroche: "90 m² ossature bois modèle Bargy — terrain 670 m² — Savigny — 379 500 € tout compris",
+  accroche: "90 m² ossature bois modèle Bargy — terrain 670 m² — Savigny — 379 500 €",
   description: [
    "Projet maison ossature bois sur un terrain de 670 m² situé à Savigny (74). Le modèle Bargy (90 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2340,7 +2340,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Savigny est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -2361,7 +2361,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/vers.jpg",
   images: ["/images/terrains/vers.jpg"],
-  accroche: "88 m² ossature bois modèle Bargy — terrain 640 m² — Vers — 406 000 € tout compris",
+  accroche: "88 m² ossature bois modèle Bargy — terrain 640 m² — Vers — 406 000 €",
   description: [
    "Sur cette parcelle de 640 m² à Vers, le modèle Bargy (88 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -2395,7 +2395,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/dingy-835.jpg",
   images: ["/images/terrains/dingy-835.jpg"],
-  accroche: "95 m² ossature bois modèle Bargy — terrain 835 m² — Dingy-en-Vuache — 535 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Bargy — terrain 835 m² — Dingy-en-Vuache — 535 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 835 m² situé à Dingy-en-Vuache (74). Le modèle Bargy (95 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2429,7 +2429,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/dingy-568.jpg",
   images: ["/images/terrains/dingy-568.jpg"],
-  accroche: "90 m² ossature bois modèle Bargy — terrain 568 m² — Dingy-en-Vuache — 420 000 € tout compris",
+  accroche: "90 m² ossature bois modèle Bargy — terrain 568 m² — Dingy-en-Vuache — 420 000 €",
   description: [
    "Sur cette parcelle de 568 m² à Dingy-en-Vuache, le modèle Bargy (90 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -2442,7 +2442,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Dingy-en-Vuache est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -2463,7 +2463,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/vulbens-424.jpg",
   images: ["/images/terrains/vulbens-424.jpg"],
-  accroche: "78 m² ossature bois modèle Tournette — terrain 424 m² — Vulbens — 391 000 € tout compris",
+  accroche: "78 m² ossature bois modèle Tournette — terrain 424 m² — Vulbens — 391 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 424 m² situé à Vulbens (74). Le modèle Tournette (78 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2497,7 +2497,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/collonges-1053.jpg",
   images: ["/images/terrains/collonges-1053.jpg"],
-  accroche: "100 m² ossature bois modèle Étale — terrain 1053 m² — Collonges-sous-Salève — 772 000 € tout compris",
+  accroche: "100 m² ossature bois modèle Étale — terrain 1053 m² — Collonges-sous-Salève — 772 000 €",
   description: [
    "À Collonges-sous-Salève, ce terrain de 1053 m² accueille un projet de maison ossature bois 100 m² modèle Étale. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2531,7 +2531,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/collonges-1096.jpg",
   images: ["/images/terrains/collonges-1096.jpg"],
-  accroche: "100 m² ossature bois modèle Voirons — terrain 1096 m² — Collonges-sous-Salève — 675 000 € tout compris",
+  accroche: "100 m² ossature bois modèle Voirons — terrain 1096 m² — Collonges-sous-Salève — 675 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 1096 m² situé à Collonges-sous-Salève (74). Le modèle Voirons (100 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2544,7 +2544,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Collonges-sous-Salève est une commune prisée du Genevois français, à moins de 20 minutes de Genève. La zone concentre une forte demande de frontaliers souhaitant construire côté France tout en maintenant un accès rapide aux bassins d\'emploi genevois. Zone sismique 3 — bureau d\'études structure requis pour toute construction neuve.",
   guidesLies: [
@@ -2565,7 +2565,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/bonne-719.jpg",
   images: ["/images/terrains/bonne-719.jpg"],
-  accroche: "92 m² ossature bois modèle Aravis — terrain 719 m² — Bonne — 384 000 € tout compris",
+  accroche: "92 m² ossature bois modèle Aravis — terrain 719 m² — Bonne — 384 000 €",
   description: [
    "À Bonne, ce terrain de 719 m² accueille un projet de maison ossature bois 92 m² modèle Aravis. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2599,7 +2599,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/bonne-849.jpg",
   images: ["/images/terrains/bonne-849.jpg"],
-  accroche: "95 m² ossature bois modèle Bargy — terrain 849 m² — Bonne — 430 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Bargy — terrain 849 m² — Bonne — 430 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 849 m² situé à Bonne (74). Le modèle Bargy (95 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2633,7 +2633,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/bonne-800.jpg",
   images: ["/images/terrains/bonne-800.jpg"],
-  accroche: "95 m² ossature bois modèle Aravis — terrain 800 m² — Bonne — 425 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Aravis — terrain 800 m² — Bonne — 425 000 €",
   description: [
    "À Bonne, ce terrain de 800 m² accueille un projet de maison ossature bois 95 m² modèle Aravis. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2646,7 +2646,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Bonne est une commune du Faucigny (Haute-Savoie), entre le bassin genevois et la vallée de l\'Arve. Le secteur offre un cadre de vie alpin préservé avec des prix fonciers inférieurs au Genevois, tout en restant accessible aux bassins d\'emploi de Cluses, Bonneville et Annemasse. Zone sismique 3 — bureau d\'études structure intégré dans tous les projets M&M CONSTRUCTION.",
   guidesLies: [
@@ -2667,7 +2667,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/bonne-800-piscine.jpg",
   images: ["/images/terrains/bonne-800-piscine.jpg"],
-  accroche: "92 m² ossature bois modèle Aravis — terrain 800 m² — Bonne — 449 000 € tout compris",
+  accroche: "92 m² ossature bois modèle Aravis — terrain 800 m² — Bonne — 449 000 €",
   description: [
    "Ce projet réunit un terrain de 800 m² à Bonne et une maison ossature bois 92 m² modèle Aravis. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -2701,7 +2701,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/reignier-608.jpg",
   images: ["/images/terrains/reignier-608.jpg"],
-  accroche: "88 m² ossature bois modèle Aravis — terrain 608 m² — Reignier-Ésery — 436 000 € tout compris",
+  accroche: "88 m² ossature bois modèle Aravis — terrain 608 m² — Reignier-Ésery — 436 000 €",
   description: [
    "À Reignier-Ésery, ce terrain de 608 m² accueille un projet de maison ossature bois 88 m² modèle Aravis. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2735,7 +2735,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/reignier-839.jpg",
   images: ["/images/terrains/reignier-839.jpg"],
-  accroche: "95 m² ossature bois modèle Aravis — terrain 839 m² — Reignier-Ésery — 420 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Aravis — terrain 839 m² — Reignier-Ésery — 420 000 €",
   description: [
    "Ce projet réunit un terrain de 839 m² à Reignier-Ésery et une maison ossature bois 95 m² modèle Aravis. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -2748,7 +2748,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Reignier-Ésery est une commune du Faucigny (Haute-Savoie), entre le bassin genevois et la vallée de l\'Arve. Le secteur offre un cadre de vie alpin préservé avec des prix fonciers inférieurs au Genevois, tout en restant accessible aux bassins d\'emploi de Cluses, Bonneville et Annemasse. Zone sismique 3 — bureau d\'études structure intégré dans tous les projets M&M CONSTRUCTION.",
   guidesLies: [
@@ -2769,7 +2769,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/ayse-1245.jpg",
   images: ["/images/terrains/ayse-1245.jpg"],
-  accroche: "115 m² ossature bois modèle Étale — terrain 1245 m² — Ayse — 500 000 € tout compris",
+  accroche: "115 m² ossature bois modèle Étale — terrain 1245 m² — Ayse — 500 000 €",
   description: [
    "À Ayse, ce terrain de 1245 m² accueille un projet de maison ossature bois 115 m² modèle Étale. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -2803,7 +2803,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/etaux-800.jpg",
   images: ["/images/terrains/etaux-800.jpg"],
-  accroche: "95 m² ossature bois modèle Bargy — terrain 800 m² — Étaux — 405 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Bargy — terrain 800 m² — Étaux — 405 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 800 m² situé à Étaux (74). Le modèle Bargy (95 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2837,7 +2837,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/amancy-644.jpg",
   images: ["/images/terrains/amancy-644.jpg"],
-  accroche: "90 m² ossature bois modèle Bargy — terrain 644 m² — Amancy — 379 000 € tout compris",
+  accroche: "90 m² ossature bois modèle Bargy — terrain 644 m² — Amancy — 379 000 €",
   description: [
    "Sur cette parcelle de 644 m² à Amancy, le modèle Bargy (90 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -2850,7 +2850,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Amancy est une commune du Faucigny (Haute-Savoie), entre le bassin genevois et la vallée de l\'Arve. Le secteur offre un cadre de vie alpin préservé avec des prix fonciers inférieurs au Genevois, tout en restant accessible aux bassins d\'emploi de Cluses, Bonneville et Annemasse. Zone sismique 3 — bureau d\'études structure intégré dans tous les projets M&M CONSTRUCTION.",
   guidesLies: [
@@ -2871,7 +2871,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/la-roche-sur-foron-660.jpg",
   images: ["/images/terrains/la-roche-sur-foron-660.jpg"],
-  accroche: "88 m² ossature bois modèle Bargy — terrain 660 m² — La Roche-sur-Foron — 454 000 € tout compris",
+  accroche: "88 m² ossature bois modèle Bargy — terrain 660 m² — La Roche-sur-Foron — 454 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 660 m² situé à La Roche-sur-Foron (74). Le modèle Bargy (88 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2905,7 +2905,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/la-roche-sur-foron-755.jpg",
   images: ["/images/terrains/la-roche-sur-foron-755.jpg"],
-  accroche: "95 m² ossature bois modèle Bargy — terrain 755 m² — La Roche-sur-Foron — 351 000 € tout compris",
+  accroche: "95 m² ossature bois modèle Bargy — terrain 755 m² — La Roche-sur-Foron — 351 000 €",
   description: [
    "Sur cette parcelle de 755 m² à La Roche-sur-Foron, le modèle Bargy (95 m²) développe un plain-pied lumineux avec séjour traversant, cuisine ouverte et dégagement central. Adapté aux familles, il offre une organisation fonctionnelle : pièces de vie côté jardin, chambres bien séparées du séjour.",
    "Construite en ossature bois certifiée RE2020, cette maison se distingue par sa rapidité de mise en œuvre et ses performances thermiques natives. L\'ossature bois est particulièrement adaptée à la zone sismique 3 : légèreté structurelle, souplesse parasismique, chantier propre et rapide. La structure est posée en quelques semaines sans nuisances prolongées pour le voisinage.",
@@ -2939,7 +2939,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/contamine-sur-arve-647.jpg",
   images: ["/images/terrains/contamine-sur-arve-647.jpg"],
-  accroche: "90 m² ossature bois modèle Bargy — terrain 647 m² — Contamine-sur-Arve — 423 000 € tout compris",
+  accroche: "90 m² ossature bois modèle Bargy — terrain 647 m² — Contamine-sur-Arve — 423 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 647 m² situé à Contamine-sur-Arve (74). Le modèle Bargy (90 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -2952,7 +2952,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Contamine-sur-Arve est une commune du Faucigny (Haute-Savoie), entre le bassin genevois et la vallée de l\'Arve. Le secteur offre un cadre de vie alpin préservé avec des prix fonciers inférieurs au Genevois, tout en restant accessible aux bassins d\'emploi de Cluses, Bonneville et Annemasse. Zone sismique 3 — bureau d\'études structure intégré dans tous les projets M&M CONSTRUCTION.",
   guidesLies: [
@@ -2973,7 +2973,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/contamine-sur-arve-445.jpg",
   images: ["/images/terrains/contamine-sur-arve-445.jpg"],
-  accroche: "80 m² ossature bois modèle Salève — terrain 445 m² — Contamine-sur-Arve — 297 000 € tout compris",
+  accroche: "80 m² ossature bois modèle Salève — terrain 445 m² — Contamine-sur-Arve — 297 000 €",
   description: [
    "À Contamine-sur-Arve, ce terrain de 445 m² accueille un projet de maison ossature bois 80 m² modèle Salève. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -3007,7 +3007,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/viuz-en-sallaz-500.jpg",
   images: ["/images/terrains/viuz-en-sallaz-500.jpg"],
-  accroche: "85 m² ossature bois modèle Bargy — terrain 500 m² — Viuz-en-Sallaz — 350 000 € tout compris",
+  accroche: "85 m² ossature bois modèle Bargy — terrain 500 m² — Viuz-en-Sallaz — 350 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 500 m² situé à Viuz-en-Sallaz (74). Le modèle Bargy (85 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -3041,7 +3041,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/viuz-en-sallaz-1423.jpg",
   images: ["/images/terrains/viuz-en-sallaz-1423.jpg"],
-  accroche: "115 m² ossature bois modèle Étale — terrain 1423 m² — Viuz-en-Sallaz — 450 000 € tout compris",
+  accroche: "115 m² ossature bois modèle Étale — terrain 1423 m² — Viuz-en-Sallaz — 450 000 €",
   description: [
    "À Viuz-en-Sallaz, ce terrain de 1423 m² accueille un projet de maison ossature bois 115 m² modèle Étale. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -3054,7 +3054,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Viuz-en-Sallaz est une commune du Faucigny (Haute-Savoie), entre le bassin genevois et la vallée de l\'Arve. Le secteur offre un cadre de vie alpin préservé avec des prix fonciers inférieurs au Genevois, tout en restant accessible aux bassins d\'emploi de Cluses, Bonneville et Annemasse. Zone sismique 3 — bureau d\'études structure intégré dans tous les projets M&M CONSTRUCTION.",
   guidesLies: [
@@ -3075,7 +3075,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/saint-jean-de-tholome-838.jpg",
   images: ["/images/terrains/saint-jean-de-tholome-838.jpg"],
-  accroche: "92 m² ossature bois modèle Aravis — terrain 838 m² — Saint-Jean-de-Tholome — 414 000 € tout compris",
+  accroche: "92 m² ossature bois modèle Aravis — terrain 838 m² — Saint-Jean-de-Tholome — 414 000 €",
   description: [
    "Ce projet réunit un terrain de 838 m² à Saint-Jean-de-Tholome et une maison ossature bois 92 m² modèle Aravis. La conception à étage optimise l\'emprise au sol : séjour et cuisine au rez-de-chaussée, chambres à l\'étage pour plus de calme et de séparation des espaces de vie.",
    "L\'ossature bois RE2020 offre une mise hors d\'eau rapide (4 à 6 semaines), idéale pour les chantiers en haute altitude ou exposés aux intempéries de printemps. Performances thermiques élevées en standard : isolation R ≥ 5 en mur, R ≥ 7 en toiture, VMC double flux. La maison peut viser un Bbio inférieur à 50 sans surcoût significatif.",
@@ -3109,7 +3109,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/saint-jean-de-tholome-347.jpg",
   images: ["/images/terrains/saint-jean-de-tholome-347.jpg"],
-  accroche: "75 m² ossature bois modèle Salève — terrain 347 m² — Saint-Jean-de-Tholome — 312 000 € tout compris",
+  accroche: "75 m² ossature bois modèle Salève — terrain 347 m² — Saint-Jean-de-Tholome — 312 000 €",
   description: [
    "À Saint-Jean-de-Tholome, ce terrain de 347 m² accueille un projet de maison ossature bois 75 m² modèle Salève. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -3143,7 +3143,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/saint-jean-de-tholome-543.jpg",
   images: ["/images/terrains/saint-jean-de-tholome-543.jpg"],
-  accroche: "85 m² ossature bois modèle Bargy — terrain 543 m² — Saint-Jean-de-Tholome — 357 000 € tout compris",
+  accroche: "85 m² ossature bois modèle Bargy — terrain 543 m² — Saint-Jean-de-Tholome — 357 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 543 m² situé à Saint-Jean-de-Tholome (74). Le modèle Bargy (85 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -3156,7 +3156,7 @@ export const annonces: Annonce[] = [
    "4 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Saint-Jean-de-Tholome est une commune du Faucigny (Haute-Savoie), entre le bassin genevois et la vallée de l\'Arve. Le secteur offre un cadre de vie alpin préservé avec des prix fonciers inférieurs au Genevois, tout en restant accessible aux bassins d\'emploi de Cluses, Bonneville et Annemasse. Zone sismique 3 — bureau d\'études structure intégré dans tous les projets M&M CONSTRUCTION.",
   guidesLies: [
@@ -3177,7 +3177,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/bonneville-395.jpg",
   images: ["/images/terrains/bonneville-395.jpg"],
-  accroche: "80 m² ossature bois modèle Salève — terrain 395 m² — Bonneville — 307 000 € tout compris",
+  accroche: "80 m² ossature bois modèle Salève — terrain 395 m² — Bonneville — 307 000 €",
   description: [
    "À Bonneville, ce terrain de 395 m² accueille un projet de maison ossature bois 80 m² modèle Salève. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -3211,7 +3211,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/saint-pierre-en-faucigny-850.jpg",
   images: ["/images/terrains/saint-pierre-en-faucigny-850.jpg"],
-  accroche: "100 m² ossature bois modèle Voirons — terrain 850 m² — Saint-Pierre-en-Faucigny — 450 000 € tout compris",
+  accroche: "100 m² ossature bois modèle Voirons — terrain 850 m² — Saint-Pierre-en-Faucigny — 450 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 850 m² situé à Saint-Pierre-en-Faucigny (74). Le modèle Voirons (100 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
@@ -3245,7 +3245,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/glieres-val-de-borne-1530.jpg",
   images: ["/images/terrains/glieres-val-de-borne-1530.jpg"],
-  accroche: "115 m² ossature bois modèle Étale — terrain 1530 m² — Glières-Val-de-Borne — 419 000 € tout compris",
+  accroche: "115 m² ossature bois modèle Étale — terrain 1530 m² — Glières-Val-de-Borne — 419 000 €",
   description: [
    "À Glières-Val-de-Borne, ce terrain de 1530 m² accueille un projet de maison ossature bois 115 m² modèle Étale. La distribution à étage sépare les espaces de vie (RDC) et les chambres (étage), avec la possibilité d\'intégrer une suite parentale au rez-de-chaussée selon la variante retenue.",
    "La construction en ossature bois structure les espaces avec précision tout en réduisant les ponts thermiques. RE2020 nativement conforme : bilan carbone réduit, performances thermiques élevées sans recours à des équipements coûteux. Compatible plancher chauffant hydraulique, PAC air/eau et VMC double flux.",
@@ -3258,7 +3258,7 @@ export const annonces: Annonce[] = [
    "5 pièces — T4 à T5",
    "RE2020 — bilan carbone réduit",
    "Chantier propre, délais maîtrisés",
-   "Budget tout compris hors notaire et raccordements",
+   "Budget hors notaire et raccordements",
   ],
   contexte: "Glières-Val-de-Borne est une commune des Préalpes savoisiennes, dans un environnement montagnard préservé. Ce secteur attire les projets de résidences principales souhaitant conjuguer grand espace et calme alpin, avec des prix fonciers encore accessibles par rapport aux zones périurbaines. Zone sismique 3 — calcul parasismique systématiquement intégré.",
   guidesLies: [
@@ -3279,7 +3279,7 @@ export const annonces: Annonce[] = [
   statut: "Disponible",
   image: "/images/terrains/fillinges-491.jpg",
   images: ["/images/terrains/fillinges-491.jpg"],
-  accroche: "85 m² ossature bois modèle Bargy — terrain 491 m² — Fillinges — 349 000 € tout compris",
+  accroche: "85 m² ossature bois modèle Bargy — terrain 491 m² — Fillinges — 349 000 €",
   description: [
    "Projet maison ossature bois sur un terrain de 491 m² situé à Fillinges (74). Le modèle Bargy (85 m²) propose un plain-pied bien conçu : séjour-cuisine ouvert sur l\'extérieur, chambres regroupées, salle de bains et cellier. L\'emprise au sol est adaptée à la parcelle, avec suffisamment d\'espace extérieur exploitable.",
    "La structure ossature bois RE2020 assure une enveloppe performante sans surcoût structurel : isolation renforcée en murs (R ≥ 5) et toiture (R ≥ 7), fenêtres double ou triple vitrage selon exposition, VMC double flux. La mise hors d\'eau et hors d\'air est réalisée en 4 à 6 semaines, ce qui limite l\'exposition aux aléas climatiques en zone alpine.",
