@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactClient from "./ContactClient";
+import { getAnnonce } from "@/lib/annonces";
 
 export const metadata: Metadata = {
   title: "Contactez-nous",
@@ -17,6 +18,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
-  return <ContactClient />;
+type Props = { searchParams: Promise<{ annonce?: string }> };
+
+export default async function ContactPage({ searchParams }: Props) {
+  const { annonce: slug } = await searchParams;
+  const annonce = slug ? getAnnonce(slug) : null;
+
+  const annonceInfo = annonce
+    ? { slug: annonce.slug, type: annonce.type, commune: annonce.commune }
+    : null;
+
+  return <ContactClient annonceInfo={annonceInfo} />;
 }

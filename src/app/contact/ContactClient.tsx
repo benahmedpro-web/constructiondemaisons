@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { gtagEvent } from "@/lib/ga";
 
-export default function ContactPage() {
+type AnnonceInfo = { slug: string; type: string; commune: string } | null;
+
+export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo }) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -68,7 +70,19 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-1">Envoyez un message</h2>
+                        {annonceInfo && (
+                  <div className="flex items-start gap-3 bg-[#F2EDE6] border-l-4 border-[#BA7517] px-4 py-3 mb-2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BA7517" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <div>
+                      <p className="text-[13px] font-bold text-[#2C2C2A]">Votre demande concerne</p>
+                      <p className="text-[14px] text-[#888780]">{annonceInfo.type} — {annonceInfo.commune}</p>
+                    </div>
+                  </div>
+                )}
+
+                <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-1">
+                  {annonceInfo ? "Demande de renseignements" : "Envoyez un message"}
+                </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
@@ -92,21 +106,38 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-[13px] font-bold text-[#2C2C2A] uppercase tracking-wide">Objet</label>
-                  <select name="objet" className="border border-[#D9D4CC] px-4 py-3 text-[15px] text-[#2C2C2A] outline-none focus:border-[#BA7517] bg-white">
-                    <option value="">Sélectionnez un objet</option>
-                    <option value="Projet maison neuve ossature bois">Projet maison neuve ossature bois</option>
-                    <option value="Projet extension bois">Projet extension bois</option>
-                    <option value="Projet rénovation">Projet rénovation</option>
-                    <option value="Annonce — renseignement">Annonce — renseignement</option>
-                    <option value="Autre question">Autre question</option>
-                  </select>
-                </div>
+                {annonceInfo ? (
+                  <>
+                    <input type="hidden" name="objet" value="Annonce — renseignement" />
+                    <input type="hidden" name="annonce_ref" value={annonceInfo.slug} />
+                  </>
+                ) : (
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[13px] font-bold text-[#2C2C2A] uppercase tracking-wide">Objet</label>
+                    <select name="objet" className="border border-[#D9D4CC] px-4 py-3 text-[15px] text-[#2C2C2A] outline-none focus:border-[#BA7517] bg-white">
+                      <option value="">Sélectionnez un objet</option>
+                      <option value="Projet maison neuve ossature bois">Projet maison neuve ossature bois</option>
+                      <option value="Projet extension bois">Projet extension bois</option>
+                      <option value="Projet rénovation">Projet rénovation</option>
+                      <option value="Annonce — renseignement">Annonce — renseignement</option>
+                      <option value="Autre question">Autre question</option>
+                    </select>
+                  </div>
+                )}
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[13px] font-bold text-[#2C2C2A] uppercase tracking-wide">Message *</label>
-                  <textarea name="message" required rows={5} className="border border-[#D9D4CC] px-4 py-3 text-[15px] text-[#2C2C2A] outline-none focus:border-[#BA7517] bg-white resize-none" placeholder="Décrivez votre projet ou votre question..." />
+                  <textarea
+                    name="message"
+                    required
+                    rows={5}
+                    className="border border-[#D9D4CC] px-4 py-3 text-[15px] text-[#2C2C2A] outline-none focus:border-[#BA7517] bg-white resize-none"
+                    placeholder={
+                      annonceInfo
+                        ? `Bonjour, je suis intéressé(e) par l'annonce ${annonceInfo.type} — ${annonceInfo.commune}. Pourriez-vous me donner plus d'informations ?`
+                        : "Décrivez votre projet ou votre question..."
+                    }
+                  />
                 </div>
 
                 {error && <p className="text-red-600 text-[14px]">{error}</p>}

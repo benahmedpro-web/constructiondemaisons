@@ -232,7 +232,7 @@ export default async function AnnonceDetailPage({ params }: Props) {
 
               {/* CTA */}
               <Link
-                href={`/demande-etude/?ref=${a.slug}`}
+                href={`/contact/?annonce=${a.slug}`}
                 className="block bg-[#BA7517] text-white text-center text-[16px] font-bold py-4 no-underline hover:bg-[#9E6312] transition-colors mb-3"
               >
                 Je suis intéressé(e) →
