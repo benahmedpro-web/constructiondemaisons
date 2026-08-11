@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { annonces } from "@/lib/annonces";
 
-const filtres = ["Tous", "Disponible", "En cours", "Livré"] as const;
+const filtres = ["Tous", "Terrain à bâtir", "Maison + terrain"] as const;
 type Filtre = typeof filtres[number];
 
 const statutColors: Record<string, string> = {
@@ -114,7 +114,12 @@ export default function AnnoncesPage() {
   }, {});
 
   const visibles = annonces
-    .filter((a) => actif === "Tous" || a.statut === actif)
+    .filter((a) => {
+      if (actif === "Tous") return true;
+      if (actif === "Terrain à bâtir") return a.type === "Terrain à bâtir";
+      if (actif === "Maison + terrain") return a.type !== "Terrain à bâtir";
+      return true;
+    })
     .filter((a) => communesFiltrees.length === 0 || communesFiltrees.includes(a.commune));
 
   return (<>
@@ -135,9 +140,9 @@ export default function AnnoncesPage() {
       <div className="bg-white border-b border-[#D9D4CC] px-5 sticky top-0 z-30">
         <div className="max-w-[1100px] mx-auto flex flex-wrap items-center gap-x-4 gap-y-2 py-3">
 
-          {/* Statut */}
+          {/* Type */}
           <div className="flex items-center gap-1">
-            <span className="text-[12px] text-[#888780] uppercase tracking-widest mr-2 hidden sm:block">Statut :</span>
+            <span className="text-[12px] text-[#888780] uppercase tracking-widest mr-2 hidden sm:block">Type :</span>
             {filtres.map((f) => (
               <button
                 key={f}
@@ -380,7 +385,7 @@ export default function AnnoncesPage() {
               {/* Récap critères */}
               <div className="bg-[#F2EDE6] px-4 py-3 text-[13px] text-[#888780] leading-[1.7]">
                 <div className="font-bold text-[#2C2C2A] text-[11px] uppercase tracking-widest mb-1.5">Critères de recherche</div>
-                <div><span className="text-[#2C2C2A]">Statut :</span> {actif === "Tous" ? "Tous" : actif}</div>
+                <div><span className="text-[#2C2C2A]">Type :</span> {actif}</div>
                 <div>
                   <span className="text-[#2C2C2A]">Communes :</span>{" "}
                   {communesFiltrees.length === 0
