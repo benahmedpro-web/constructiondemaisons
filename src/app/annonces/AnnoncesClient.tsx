@@ -253,13 +253,14 @@ export default function AnnoncesPage() {
     });
   }
 
-  const villesFiltrees = Object.entries(villesParDept).reduce<Record<string, string[]>>((acc, [dept, villes]) => {
-    const filtered = search
-      ? villes.filter((v) => v.toLowerCase().includes(search.toLowerCase()))
-      : villes;
-    if (filtered.length > 0) acc[dept] = filtered;
-    return acc;
-  }, {});
+  const searchActif = search.length >= 3;
+  const villesFiltrees = searchActif
+    ? Object.entries(villesParDept).reduce<Record<string, string[]>>((acc, [dept, villes]) => {
+        const filtered = villes.filter((v) => v.toLowerCase().includes(search.toLowerCase()));
+        if (filtered.length > 0) acc[dept] = filtered;
+        return acc;
+      }, {})
+    : {};
 
   const prixMinN = prixMin !== "" ? parseInt(prixMin, 10) : 0;
   const prixMaxN = prixMax !== "" ? parseInt(prixMax, 10) : Infinity;
@@ -438,36 +439,60 @@ export default function AnnoncesPage() {
                   </div>
                 )}
 
-                {/* List */}
-                <div className="max-h-64 overflow-y-auto">
-                  {Object.entries(villesFiltrees).map(([dept, villes]) => (
-                    <div key={dept}>
-                      <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#BA7517] bg-[#F2EDE6] sticky top-0">
-                        {dept}
-                      </div>
-                      {villes.map((v) => {
-                        const checked = communesFiltrees.includes(v);
-                        return (
-                          <label
-                            key={v}
-                            className={`flex items-center gap-2.5 px-3 py-2 cursor-pointer transition-colors text-[13px] ${
-                              checked ? "bg-[#FDF8F0] text-[#2C2C2A] font-medium" : "text-[#2C2C2A] hover:bg-[#F2EDE6]"
-                            }`}
-                          >
-                            <input
-                              type="checkbox"
-                              checked={checked}
-                              onChange={() => toggleCommune(v)}
-                              className="accent-[#BA7517] w-3.5 h-3.5 flex-shrink-0"
-                            />
-                            {v}
-                          </label>
-                        );
-                      })}
+                {/* Communes sélectionnées — toujours visibles */}
+                {communesFiltrees.length > 0 && (
+                  <div className="border-b border-[#D9D4CC]">
+                    {communesFiltrees.map((v) => (
+                      <label
+                        key={v}
+                        className="flex items-center gap-2.5 px-3 py-2 cursor-pointer bg-[#FDF8F0] text-[#2C2C2A] font-medium text-[13px]"
+                      >
+                        <input
+                          type="checkbox"
+                          checked
+                          onChange={() => toggleCommune(v)}
+                          className="accent-[#BA7517] w-3.5 h-3.5 flex-shrink-0"
+                        />
+                        {v}
+                      </label>
+                    ))}
+                  </div>
+                )}
+
+                {/* Liste filtrée — uniquement dès 3 caractères */}
+                <div className="max-h-56 overflow-y-auto">
+                  {!searchActif ? (
+                    <div className="px-3 py-5 text-[13px] text-[#888780] text-center">
+                      Tapez 3 lettres pour rechercher
                     </div>
-                  ))}
-                  {Object.keys(villesFiltrees).length === 0 && (
+                  ) : Object.keys(villesFiltrees).length === 0 ? (
                     <div className="px-3 py-4 text-[13px] text-[#888780] text-center">Aucune commune trouvée</div>
+                  ) : (
+                    Object.entries(villesFiltrees).map(([dept, villes]) => {
+                      const nonSelectionnees = villes.filter((v) => !communesFiltrees.includes(v));
+                      if (nonSelectionnees.length === 0) return null;
+                      return (
+                        <div key={dept}>
+                          <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#BA7517] bg-[#F2EDE6] sticky top-0">
+                            {dept}
+                          </div>
+                          {nonSelectionnees.map((v) => (
+                            <label
+                              key={v}
+                              className="flex items-center gap-2.5 px-3 py-2 cursor-pointer transition-colors text-[13px] text-[#2C2C2A] hover:bg-[#F2EDE6]"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={false}
+                                onChange={() => toggleCommune(v)}
+                                className="accent-[#BA7517] w-3.5 h-3.5 flex-shrink-0"
+                              />
+                              {v}
+                            </label>
+                          ))}
+                        </div>
+                      );
+                    })
                   )}
                 </div>
 
