@@ -13,11 +13,8 @@ const MODELES = [
 ];
 
 const ANNONCES_NAV = [
-  { slug: "terrain-vetraz-monthoux-vue-bassin-genevois", commune: "Vétraz-Monthoux", accroche: "Terrain 817 m² — vue Bassin genevois" },
-  { slug: "terrain-cranves-sales-709m2-vue-bassin-genevois", commune: "Cranves-Sales", accroche: "Terrain 709 m² — vue dégagée" },
-  { slug: "terrain-archamps-679m2-frontiere-geneve", commune: "Archamps", accroche: "Terrain 679 m² — frontaliers Genève" },
-  { slug: "terrain-collonges-sous-saleve-1050m2-vue-geneve", commune: "Collonges-sous-Salève", accroche: "Terrain 1 050 m² — vue Genève" },
-  { slug: "terrain-annemasse-492m2-centre-tram-74100", commune: "Annemasse", accroche: "Terrain 492 m² — centre, tram" },
+  { href: "/annonces/?type=terrain", label: "Terrain à bâtir", accroche: "49 terrains disponibles en Haute-Savoie et Genevois" },
+  { href: "/annonces/?type=maison", label: "Maison + terrain", accroche: "Projets clés en main avec modèle ossature bois" },
 ];
 
 export function Header() {
@@ -154,8 +151,8 @@ export function Header() {
                 <div className="flex flex-col gap-3 border-l border-[#D9D4CC] pl-6">
                   <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517]">Terrains et projets disponibles</p>
                   {ANNONCES_NAV.map((a) => (
-                    <Link key={a.slug} href={`/annonces/${a.slug}/`} className="block no-underline group">
-                      <div className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{a.commune}</div>
+                    <Link key={a.href} href={a.href} className="block no-underline group">
+                      <div className="font-bold text-[#2C2C2A] text-[14px] group-hover:text-[#BA7517]">{a.label}</div>
                       <div className="text-[12px] text-[#888780]">{a.accroche}</div>
                     </Link>
                   ))}
