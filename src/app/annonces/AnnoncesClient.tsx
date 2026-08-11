@@ -870,7 +870,7 @@ export default function AnnoncesPage() {
                 placeholder="Rechercher une commune…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full border border-[#D9D4CC] rounded-full px-4 py-2.5 text-[14px] text-[#2C2C2A] placeholder-[#888780] outline-none focus:border-[#BA7517]"
+                className="w-full border border-[#D9D4CC] rounded-full px-4 py-2.5 text-[16px] text-[#2C2C2A] placeholder-[#888780] outline-none focus:border-[#BA7517]"
               />
               {search.length < 3 && communesFiltrees.length === 0 && (
                 <p className="mt-2 text-[13px] text-[#888780]">Tapez 3 lettres pour rechercher</p>
@@ -936,7 +936,7 @@ export default function AnnoncesPage() {
                     type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Prix minimum…"
                     value={prixMin}
                     onChange={(e) => setPrixMin(e.target.value.replace(/\D/g, ""))}
-                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                    className="flex-1 px-4 py-2.5 text-[16px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">€</span>
                 </div>
@@ -945,7 +945,7 @@ export default function AnnoncesPage() {
                     type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Prix maximum…"
                     value={prixMax}
                     onChange={(e) => setPrixMax(e.target.value.replace(/\D/g, ""))}
-                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                    className="flex-1 px-4 py-2.5 text-[16px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">€</span>
                 </div>
@@ -961,7 +961,7 @@ export default function AnnoncesPage() {
                     type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface min"
                     value={surfaceMin}
                     onChange={(e) => setSurfaceMin(e.target.value.replace(/\D/g, ""))}
-                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                    className="flex-1 px-4 py-2.5 text-[16px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">m²</span>
                 </div>
@@ -970,7 +970,7 @@ export default function AnnoncesPage() {
                     type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface max"
                     value={surfaceMax}
                     onChange={(e) => setSurfaceMax(e.target.value.replace(/\D/g, ""))}
-                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                    className="flex-1 px-4 py-2.5 text-[16px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">m²</span>
                 </div>
@@ -987,7 +987,7 @@ export default function AnnoncesPage() {
                       type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface min"
                       value={maisonSurfaceMin}
                       onChange={(e) => setMaisonSurfaceMin(e.target.value.replace(/\D/g, ""))}
-                      className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                      className="flex-1 px-4 py-2.5 text-[16px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                     />
                     <span className="pr-4 text-[14px] text-[#888780]">m²</span>
                   </div>
@@ -996,7 +996,7 @@ export default function AnnoncesPage() {
                       type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface max"
                       value={maisonSurfaceMax}
                       onChange={(e) => setMaisonSurfaceMax(e.target.value.replace(/\D/g, ""))}
-                      className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                      className="flex-1 px-4 py-2.5 text-[16px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                     />
                     <span className="pr-4 text-[14px] text-[#888780]">m²</span>
                   </div>
@@ -1249,7 +1249,7 @@ export default function AnnoncesPage() {
                     value={alerteForm.prenom}
                     onChange={(e) => setAlerteForm((f) => ({ ...f, prenom: e.target.value }))}
                     placeholder="Votre prénom"
-                    className="w-full border border-[#D9D4CC] px-3 py-2.5 text-[14px] text-[#2C2C2A] outline-none focus:border-[#BA7517] placeholder-[#888780]"
+                    className="w-full border border-[#D9D4CC] px-3 py-2.5 text-[16px] text-[#2C2C2A] outline-none focus:border-[#BA7517] placeholder-[#888780]"
                   />
                 </div>
                 <div>
@@ -1260,7 +1260,7 @@ export default function AnnoncesPage() {
                     value={alerteForm.email}
                     onChange={(e) => setAlerteForm((f) => ({ ...f, email: e.target.value }))}
                     placeholder="votre@email.com"
-                    className="w-full border border-[#D9D4CC] px-3 py-2.5 text-[14px] text-[#2C2C2A] outline-none focus:border-[#BA7517] placeholder-[#888780]"
+                    className="w-full border border-[#D9D4CC] px-3 py-2.5 text-[16px] text-[#2C2C2A] outline-none focus:border-[#BA7517] placeholder-[#888780]"
                   />
                 </div>
                 <div>
@@ -1270,7 +1270,7 @@ export default function AnnoncesPage() {
                     value={alerteForm.telephone}
                     onChange={(e) => setAlerteForm((f) => ({ ...f, telephone: e.target.value }))}
                     placeholder="06 xx xx xx xx"
-                    className="w-full border border-[#D9D4CC] px-3 py-2.5 text-[14px] text-[#2C2C2A] outline-none focus:border-[#BA7517] placeholder-[#888780]"
+                    className="w-full border border-[#D9D4CC] px-3 py-2.5 text-[16px] text-[#2C2C2A] outline-none focus:border-[#BA7517] placeholder-[#888780]"
                   />
                 </div>
               </div>
