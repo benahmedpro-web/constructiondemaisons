@@ -124,15 +124,12 @@ export default function AnnoncesPage() {
 
   return (<>
     <main>
-      <div className="bg-[#2C2C2A] py-6 px-5">
+      <div className="bg-[#2C2C2A] py-3 px-5">
         <div className="max-w-[1100px] mx-auto">
-          <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
-          <h1 className="text-white text-[34px] md:text-[46px] font-black mt-4 mb-3 leading-tight">
+          <h1 className="text-white text-[20px] font-black leading-tight">
             Annonces — Projets disponibles
           </h1>
-          <p className="text-white/60 text-[17px] max-w-[600px] leading-[1.6]">
-            Terrains sélectionnés et projets de construction en Haute-Savoie, Ain et Genevois français. Coordonnés par M&amp;M CONSTRUCTION.
-          </p>
+          <p className="text-white/50 text-[13px] mt-0.5">Haute-Savoie · Ain · Genevois français</p>
         </div>
       </div>
 
