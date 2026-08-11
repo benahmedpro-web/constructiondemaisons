@@ -156,7 +156,6 @@ export default function AnnoncesPage() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const [rayon, setRayon] = useState<number | null>(null);
-  const [rayonManuel, setRayonManuel] = useState("");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const [alerteOpen, setAlerteOpen] = useState(false);
@@ -249,7 +248,7 @@ export default function AnnoncesPage() {
   function toggleCommune(c: string) {
     setCommunesFiltrees((prev) => {
       const next = prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c];
-      if (next.length !== 1) { setRayon(null); setRayonManuel(""); }
+      if (next.length !== 1) { setRayon(null); }
       return next;
     });
   }
@@ -431,7 +430,7 @@ export default function AnnoncesPage() {
                   <div className="flex items-center justify-between px-3 py-1.5 border-b border-[#D9D4CC] bg-[#F2EDE6]">
                     <span className="text-[11px] text-[#888780]">{communesFiltrees.length} sélectionnée{communesFiltrees.length > 1 ? "s" : ""}</span>
                     <button
-                      onClick={() => { setCommunesFiltrees([]); setRayon(null); setRayonManuel(""); setDropdownOpen(false); }}
+                      onClick={() => { setCommunesFiltrees([]); setRayon(null); setDropdownOpen(false); }}
                       className="text-[11px] text-[#BA7517] hover:text-[#9E6312] cursor-pointer underline"
                     >
                       Tout effacer
@@ -471,6 +470,32 @@ export default function AnnoncesPage() {
                     <div className="px-3 py-4 text-[13px] text-[#888780] text-center">Aucune commune trouvée</div>
                   )}
                 </div>
+
+                {/* Rayon slider — visible si 1 commune sélectionnée */}
+                {communesFiltrees.length === 1 && (
+                  <div className="border-t border-[#D9D4CC] px-3 pt-3 pb-2">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[11px] text-[#888780] uppercase tracking-widest">Dans un rayon de</span>
+                      <span className="text-[13px] font-bold text-[#2C2C2A]">{rayon !== null ? `${rayon} km` : "—"}</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="50"
+                      step="1"
+                      value={rayon ?? 0}
+                      onChange={(e) => {
+                        const v = parseInt(e.target.value, 10);
+                        setRayon(v === 0 ? null : v);
+                      }}
+                      className="w-full accent-[#BA7517] cursor-pointer"
+                    />
+                    <div className="flex justify-between text-[10px] text-[#D9D4CC] mt-0.5">
+                      <span>0 km</span>
+                      <span>50 km</span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Footer */}
                 <div className="border-t border-[#D9D4CC] px-3 py-2">
@@ -724,43 +749,6 @@ export default function AnnoncesPage() {
             </div>
           )}
 
-          {/* Sélecteur de rayon — visible si 1 commune sélectionnée */}
-          {communesFiltrees.length === 1 && (
-            <div className="flex items-center gap-1.5">
-              <span className="text-[11px] text-[#888780] uppercase tracking-widest hidden sm:block">Périmètre :</span>
-              {[5, 10, 15, 20].map((km) => (
-                <button
-                  key={km}
-                  onClick={() => { setRayon(rayon === km ? null : km); setRayonManuel(""); }}
-                  className={`px-3 py-1.5 text-[12px] font-medium border transition-colors cursor-pointer ${
-                    rayon === km
-                      ? "bg-[#2C2C2A] text-white border-[#2C2C2A]"
-                      : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#2C2C2A] hover:text-[#2C2C2A]"
-                  }`}
-                >
-                  {km} km
-                </button>
-              ))}
-              <div className="flex items-center gap-1">
-                <input
-                  type="number"
-                  min="1"
-                  max="100"
-                  placeholder="—"
-                  value={rayonManuel}
-                  onChange={(e) => {
-                    const v = e.target.value;
-                    setRayonManuel(v);
-                    const n = parseInt(v, 10);
-                    if (!isNaN(n) && n > 0) setRayon(n);
-                    else if (v === "") setRayon(null);
-                  }}
-                  className="w-[46px] border border-[#D9D4CC] px-1.5 py-1.5 text-[12px] text-center text-[#2C2C2A] outline-none focus:border-[#2C2C2A] placeholder-[#D9D4CC]"
-                />
-                <span className="text-[11px] text-[#888780]">km</span>
-              </div>
-            </div>
-          )}
 
           <div className="ml-auto hidden lg:flex items-center gap-3">
             <span className="text-[13px] text-[#888780] whitespace-nowrap">{visibles.length} annonce{visibles.length > 1 ? "s" : ""}</span>
