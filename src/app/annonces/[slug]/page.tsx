@@ -61,14 +61,10 @@ export default async function AnnonceDetailPage({ params }: Props) {
 
       {/* Hero */}
       <div className="bg-[#2C2C2A] py-3 px-5">
-        <div className="max-w-[1100px] mx-auto flex items-center gap-4 flex-wrap">
-          <span className={`text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 ${statutColors[a.statut]}`}>
-            {a.statut}
-          </span>
+        <div className="max-w-[1100px] mx-auto">
           <h1 className="text-white text-[20px] font-black leading-tight">
             {a.type} — {a.commune}
           </h1>
-          <span className="text-white/40 text-[13px]">{a.departement} · {a.zone}</span>
         </div>
       </div>
 
