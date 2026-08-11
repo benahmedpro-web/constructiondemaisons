@@ -124,7 +124,7 @@ export default function AnnoncesPage() {
 
   return (<>
     <main>
-      <div className="bg-[#2C2C2A] py-14 px-5">
+      <div className="bg-[#2C2C2A] py-6 px-5">
         <div className="max-w-[1100px] mx-auto">
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
           <h1 className="text-white text-[34px] md:text-[46px] font-black mt-4 mb-3 leading-tight">
