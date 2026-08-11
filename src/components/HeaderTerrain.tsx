@@ -28,16 +28,16 @@ export function HeaderTerrain() {
 
   return (
     <header className="bg-white w-full border-b border-[#D9D4CC] relative z-50">
-      <div className="max-w-[1200px] mx-auto px-5 py-0 flex items-center h-[64px] gap-10">
+      <div className="max-w-[1200px] mx-auto px-5 py-0 flex items-center h-[90px] gap-10">
 
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 no-underline">
           <Image
             src="/images/logo-mm-construction.png"
             alt="M&M CONSTRUCTION"
-            width={120}
-            height={80}
-            className="h-10 w-auto"
+            width={270}
+            height={180}
+            className="h-[76px] w-auto"
             priority
           />
         </Link>
