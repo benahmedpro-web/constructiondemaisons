@@ -133,10 +133,17 @@ export default function AnnoncesPage() {
   const [prixMax, setPrixMax] = useState("");
   const [surfaceMin, setSurfaceMin] = useState("");
   const [surfaceMax, setSurfaceMax] = useState("");
+  const [maisonSurfaceMin, setMaisonSurfaceMin] = useState("");
+  const [maisonSurfaceMax, setMaisonSurfaceMax] = useState("");
+  const [chambresMin, setChambresMin] = useState(0);
   const [prixOpen, setPrixOpen] = useState(false);
   const [surfaceOpen, setSurfaceOpen] = useState(false);
+  const [maisonSurfaceOpen, setMaisonSurfaceOpen] = useState(false);
+  const [chambresOpen, setChambresOpen] = useState(false);
   const prixRef = useRef<HTMLDivElement>(null);
   const surfaceRef = useRef<HTMLDivElement>(null);
+  const maisonSurfaceRef = useRef<HTMLDivElement>(null);
+  const chambresRef = useRef<HTMLDivElement>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [search, setSearch] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -205,6 +212,24 @@ export default function AnnoncesPage() {
   }, [prixOpen]);
 
   useEffect(() => {
+    if (!maisonSurfaceOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (maisonSurfaceRef.current && !maisonSurfaceRef.current.contains(e.target as Node)) setMaisonSurfaceOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [maisonSurfaceOpen]);
+
+  useEffect(() => {
+    if (!chambresOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (chambresRef.current && !chambresRef.current.contains(e.target as Node)) setChambresOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [chambresOpen]);
+
+  useEffect(() => {
     if (!surfaceOpen) return;
     function handleClickOutside(e: MouseEvent) {
       if (surfaceRef.current && !surfaceRef.current.contains(e.target as Node)) setSurfaceOpen(false);
@@ -233,8 +258,14 @@ export default function AnnoncesPage() {
   const prixMaxN = prixMax !== "" ? parseInt(prixMax, 10) : Infinity;
   const surfaceMinN = surfaceMin !== "" ? parseInt(surfaceMin, 10) : 0;
   const surfaceMaxN = surfaceMax !== "" ? parseInt(surfaceMax, 10) : Infinity;
+  const maisonSurfaceMinN = maisonSurfaceMin !== "" ? parseInt(maisonSurfaceMin, 10) : 0;
+  const maisonSurfaceMaxN = maisonSurfaceMax !== "" ? parseInt(maisonSurfaceMax, 10) : Infinity;
   const prixActif = prixMin !== "" || prixMax !== "";
   const surfaceActif = surfaceMin !== "" || surfaceMax !== "";
+  const maisonSurfaceActif = maisonSurfaceMin !== "" || maisonSurfaceMax !== "";
+  const showMaisonFilters = typeActif !== "terrain";
+
+  const CHAMBRES_OPTIONS = [0, 3, 4, 5];
 
   const visibles = annonces
     .filter((a) => {
@@ -244,6 +275,16 @@ export default function AnnoncesPage() {
     })
     .filter((a) => a.budget >= prixMinN && a.budget <= prixMaxN)
     .filter((a) => a.surfaceTerrain >= surfaceMinN && a.surfaceTerrain <= surfaceMaxN)
+    .filter((a) => {
+      if (!showMaisonFilters) return true;
+      if (chambresMin > 0 && a.type !== "Terrain à bâtir") return (a.pieces - 1) >= chambresMin;
+      return true;
+    })
+    .filter((a) => {
+      if (!showMaisonFilters || !maisonSurfaceActif) return true;
+      if (a.type !== "Terrain à bâtir") return a.surfaceHabitable >= maisonSurfaceMinN && a.surfaceHabitable <= maisonSurfaceMaxN;
+      return true;
+    })
     .filter((a) => {
       if (communesFiltrees.length === 0) return true;
       if (rayon !== null && communesFiltrees.length === 1) {
@@ -524,6 +565,111 @@ export default function AnnoncesPage() {
             )}
           </div>
 
+          {/* Chambres (maison seulement) */}
+          {showMaisonFilters && (
+            <div className="relative" ref={chambresRef}>
+              <button
+                onClick={() => { setChambresOpen((o) => !o); setMaisonSurfaceOpen(false); setPrixOpen(false); setSurfaceOpen(false); setTypeOpen(false); setDropdownOpen(false); }}
+                className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
+                  chambresMin > 0
+                    ? "bg-[#BA7517] text-white border-[#BA7517]"
+                    : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#BA7517] hover:text-[#BA7517]"
+                }`}
+              >
+                <span>{chambresMin > 0 ? `${chambresMin} ch. min` : "Chambres"}</span>
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className={`transition-transform ${chambresOpen ? "rotate-180" : ""}`}>
+                  <path d="M1 1L6 7L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {chambresOpen && (
+                <div className="absolute top-full left-0 mt-1 w-44 bg-white border border-[#D9D4CC] shadow-lg z-50">
+                  {CHAMBRES_OPTIONS.map((n) => (
+                    <button
+                      key={n}
+                      onClick={() => { setChambresMin(n); setChambresOpen(false); }}
+                      className={`w-full text-left px-4 py-2.5 text-[13px] transition-colors cursor-pointer ${
+                        chambresMin === n
+                          ? "bg-[#FDF8F0] font-bold text-[#BA7517]"
+                          : "text-[#2C2C2A] hover:bg-[#F2EDE6]"
+                      }`}
+                    >
+                      {n === 0 ? "Toutes" : `${n} chambres min`}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Surface maison (maison seulement) */}
+          {showMaisonFilters && (
+            <div className="relative" ref={maisonSurfaceRef}>
+              <button
+                onClick={() => { setMaisonSurfaceOpen((o) => !o); setChambresOpen(false); setPrixOpen(false); setSurfaceOpen(false); setTypeOpen(false); setDropdownOpen(false); }}
+                className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
+                  maisonSurfaceActif
+                    ? "bg-[#BA7517] text-white border-[#BA7517]"
+                    : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#BA7517] hover:text-[#BA7517]"
+                }`}
+              >
+                <span>
+                  {maisonSurfaceActif
+                    ? `${maisonSurfaceMin || "0"} – ${maisonSurfaceMax || "∞"} m² hab.`
+                    : "Surface maison"}
+                </span>
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className={`transition-transform ${maisonSurfaceOpen ? "rotate-180" : ""}`}>
+                  <path d="M1 1L6 7L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {maisonSurfaceOpen && (
+                <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-[#D9D4CC] shadow-lg z-50 p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#888780] mb-3">Surface habitable (m²)</p>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1">
+                      <label className="text-[11px] text-[#888780] mb-1 block">Min</label>
+                      <div className="relative">
+                        <input
+                          type="number" min="0" step="5" placeholder="0"
+                          value={maisonSurfaceMin}
+                          onChange={(e) => setMaisonSurfaceMin(e.target.value)}
+                          className="w-full border border-[#D9D4CC] px-2 py-1.5 text-[13px] text-[#2C2C2A] outline-none focus:border-[#BA7517] pr-7"
+                        />
+                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#888780]">m²</span>
+                      </div>
+                    </div>
+                    <span className="text-[#D9D4CC] mt-4">—</span>
+                    <div className="flex-1">
+                      <label className="text-[11px] text-[#888780] mb-1 block">Max</label>
+                      <div className="relative">
+                        <input
+                          type="number" min="0" step="5" placeholder="∞"
+                          value={maisonSurfaceMax}
+                          onChange={(e) => setMaisonSurfaceMax(e.target.value)}
+                          className="w-full border border-[#D9D4CC] px-2 py-1.5 text-[13px] text-[#2C2C2A] outline-none focus:border-[#BA7517] pr-7"
+                        />
+                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#888780]">m²</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2 mt-3">
+                    <button
+                      onClick={() => { setMaisonSurfaceMin(""); setMaisonSurfaceMax(""); }}
+                      className="flex-1 py-1.5 text-[12px] border border-[#D9D4CC] text-[#888780] hover:border-[#2C2C2A] hover:text-[#2C2C2A] transition-colors cursor-pointer"
+                    >
+                      Effacer
+                    </button>
+                    <button
+                      onClick={() => setMaisonSurfaceOpen(false)}
+                      className="flex-1 py-1.5 text-[12px] bg-[#2C2C2A] text-white hover:bg-[#BA7517] transition-colors cursor-pointer"
+                    >
+                      Appliquer
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Sélecteur de rayon — visible si 1 commune sélectionnée */}
           {communesFiltrees.length === 1 && (
             <div className="flex items-center gap-1.5">
@@ -688,7 +834,9 @@ export default function AnnoncesPage() {
                 <div className="font-bold text-[#2C2C2A] text-[11px] uppercase tracking-widest mb-1.5">Critères de recherche</div>
                 {typeActif && <div><span className="text-[#2C2C2A]">Type :</span> {TYPE_OPTIONS.find((o) => o.value === typeActif)?.label}</div>}
                 {prixActif && <div><span className="text-[#2C2C2A]">Prix :</span> {prixMin ? parseInt(prixMin).toLocaleString("fr-FR") + " €" : "0"} – {prixMax ? parseInt(prixMax).toLocaleString("fr-FR") + " €" : "∞"}</div>}
-                {surfaceActif && <div><span className="text-[#2C2C2A]">Surface :</span> {surfaceMin || "0"} – {surfaceMax || "∞"} m²</div>}
+                {surfaceActif && <div><span className="text-[#2C2C2A]">Surface terrain :</span> {surfaceMin || "0"} – {surfaceMax || "∞"} m²</div>}
+                {chambresMin > 0 && <div><span className="text-[#2C2C2A]">Chambres :</span> {chambresMin} min</div>}
+                {maisonSurfaceActif && <div><span className="text-[#2C2C2A]">Surface maison :</span> {maisonSurfaceMin || "0"} – {maisonSurfaceMax || "∞"} m²</div>}
                 <div>
                   <span className="text-[#2C2C2A]">Communes :</span>{" "}
                   {communesFiltrees.length === 0
