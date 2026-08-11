@@ -50,6 +50,8 @@ const COMMUNE_COORDS: Record<string, [number, number]> = {
   "Vétraz-Monthoux": [46.192, 6.258], "Vers": [46.103, 6.030], "Veyrier-du-Lac": [45.867, 6.183],
   "Ville-la-Grand": [46.202, 6.243], "Viry": [46.100, 5.978], "Viuz-en-Sallaz": [46.177, 6.392],
   "Vulbens": [46.087, 5.979],
+  "Étaux": [46.082, 6.388], "Saint-Jean-de-Tholome": [46.107, 6.495],
+  "Glières-Val-de-Borne": [45.977, 6.283],
   // Ain (01)
   "Ambérieu-en-Bugey": [45.947, 5.352], "Bellegarde-sur-Valserine": [46.108, 5.828],
   "Belley": [45.760, 5.693], "Bourg-en-Bresse": [46.205, 5.227], "Cessy": [46.333, 6.088],
@@ -94,6 +96,7 @@ const villesParDept: Record<string, string[]> = {
     "Samoëns", "Scientrier", "Scionzier", "Seynod", "Sillingy",
     "Talloires", "Taninges", "Thonon-les-Bains", "Vétraz-Monthoux", "Vers",
     "Veyrier-du-Lac", "Ville-la-Grand", "Viry", "Viuz-en-Sallaz", "Vulbens",
+    "Dingy-en-Vuache", "Étaux", "Glières-Val-de-Borne", "Saint-Jean-de-Tholome", "Savigny",
   ],
   "Ain (01)": [
     "Ambérieu-en-Bugey", "Bellegarde-sur-Valserine", "Belley", "Bourg-en-Bresse",
