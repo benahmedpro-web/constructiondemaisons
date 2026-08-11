@@ -343,8 +343,8 @@ export default function AnnoncesPage() {
             </div>
           </div>
 
-        {/* Desktop : toujours visible / Mobile : panneau toggle */}
-        <div className={`max-w-[1100px] mx-auto px-5 flex-wrap items-center gap-x-3 gap-y-2 py-3 ${mobileFiltersOpen ? "flex" : "hidden"} lg:flex`}>
+        {/* Desktop uniquement */}
+        <div className="max-w-[1100px] mx-auto px-5 flex-wrap items-center gap-x-3 gap-y-2 py-3 hidden lg:flex">
 
           {/* Dropdown Type */}
           <div className="relative" ref={typeRef}>
@@ -787,6 +787,236 @@ export default function AnnoncesPage() {
           </div>
         </div>
       </div>
+
+      {/* Modale filtres mobile */}
+      {mobileFiltersOpen && (
+        <div className="fixed inset-0 z-[60] bg-white flex flex-col lg:hidden">
+          {/* Header */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-[#D9D4CC] flex-shrink-0">
+            <h2 className="text-[17px] font-bold text-[#2C2C2A]">Rechercher</h2>
+            <button
+              onClick={() => setMobileFiltersOpen(false)}
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-[#F2EDE6] cursor-pointer"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 1L13 13M13 1L1 13" stroke="#2C2C2A" strokeWidth="1.8" strokeLinecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          {/* Contenu scrollable */}
+          <div className="flex-1 overflow-y-auto">
+
+            {/* Type de bien */}
+            <div className="px-5 py-5 border-b border-[#D9D4CC]">
+              <p className="text-[17px] font-bold text-[#2C2C2A] mb-4">Type de bien</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { value: "", label: "Tous" },
+                  { value: "terrain", label: "Terrain à bâtir" },
+                  { value: "maison", label: "Maison + terrain" },
+                ].map((opt) => (
+                  <button
+                    key={opt.value}
+                    onClick={() => setTypeActif(opt.value)}
+                    className={`px-4 py-2 rounded-full border text-[14px] font-medium cursor-pointer transition-colors ${
+                      typeActif === opt.value
+                        ? "bg-[#2C2C2A] text-white border-[#2C2C2A]"
+                        : "bg-white text-[#2C2C2A] border-[#D9D4CC]"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Commune */}
+            <div className="px-5 py-5 border-b border-[#D9D4CC]">
+              <p className="text-[17px] font-bold text-[#2C2C2A] mb-4">Commune</p>
+              <input
+                type="text"
+                placeholder="Rechercher une commune…"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full border border-[#D9D4CC] rounded-full px-4 py-2.5 text-[14px] text-[#2C2C2A] placeholder-[#888780] outline-none focus:border-[#BA7517]"
+              />
+              {search.length < 3 && communesFiltrees.length === 0 && (
+                <p className="mt-2 text-[13px] text-[#888780]">Tapez 3 lettres pour rechercher</p>
+              )}
+              {searchActif && (
+                <div className="mt-2 border border-[#D9D4CC] max-h-40 overflow-y-auto">
+                  {Object.entries(villesFiltrees).map(([dept, villes]) => {
+                    const nonSel = villes.filter((v) => !communesFiltrees.includes(v));
+                    if (!nonSel.length) return null;
+                    return (
+                      <div key={dept}>
+                        <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#BA7517] bg-[#F2EDE6]">{dept}</div>
+                        {nonSel.map((v) => (
+                          <button key={v} onClick={() => { toggleCommune(v); setSearch(""); }} className="w-full text-left px-3 py-2.5 text-[14px] text-[#2C2C2A] hover:bg-[#F2EDE6] cursor-pointer">
+                            {v}
+                          </button>
+                        ))}
+                      </div>
+                    );
+                  })}
+                  {Object.keys(villesFiltrees).length === 0 && (
+                    <div className="px-3 py-3 text-[13px] text-[#888780] text-center">Aucune commune trouvée</div>
+                  )}
+                </div>
+              )}
+              {communesFiltrees.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {communesFiltrees.map((v) => (
+                    <span key={v} className="flex items-center gap-1.5 bg-[#BA7517] text-white px-3 py-1.5 rounded-full text-[13px] font-medium">
+                      {v}
+                      <button onClick={() => toggleCommune(v)} className="cursor-pointer flex-shrink-0">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              )}
+              {communesFiltrees.length === 1 && (
+                <div className="mt-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[13px] text-[#888780]">Dans un rayon de</span>
+                    <span className="text-[14px] font-bold text-[#2C2C2A]">{rayon !== null ? `${rayon} km` : "—"}</span>
+                  </div>
+                  <input
+                    type="range" min="0" max="50" step="1"
+                    value={rayon ?? 0}
+                    onChange={(e) => { const v = parseInt(e.target.value, 10); setRayon(v === 0 ? null : v); }}
+                    className="w-full accent-[#BA7517] cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[10px] text-[#D9D4CC] mt-1">
+                    <span>0 km</span><span>50 km</span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Prix */}
+            <div className="px-5 py-5 border-b border-[#D9D4CC]">
+              <p className="text-[17px] font-bold text-[#2C2C2A] mb-4">Prix</p>
+              <div className="flex items-center gap-3">
+                <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
+                  <input
+                    type="number" min="0" step="10" placeholder="Prix minimum…"
+                    value={prixMin}
+                    onChange={(e) => setPrixMin(e.target.value)}
+                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                  />
+                  <span className="pr-4 text-[14px] text-[#888780]">€</span>
+                </div>
+                <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
+                  <input
+                    type="number" min="0" step="10" placeholder="Prix maximum…"
+                    value={prixMax}
+                    onChange={(e) => setPrixMax(e.target.value)}
+                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                  />
+                  <span className="pr-4 text-[14px] text-[#888780]">€</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Surface terrain */}
+            <div className="px-5 py-5 border-b border-[#D9D4CC]">
+              <p className="text-[17px] font-bold text-[#2C2C2A] mb-4">Surface du terrain</p>
+              <div className="flex items-center gap-3">
+                <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
+                  <input
+                    type="number" min="0" step="50" placeholder="Surface min"
+                    value={surfaceMin}
+                    onChange={(e) => setSurfaceMin(e.target.value)}
+                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                  />
+                  <span className="pr-4 text-[14px] text-[#888780]">m²</span>
+                </div>
+                <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
+                  <input
+                    type="number" min="0" step="50" placeholder="Surface max"
+                    value={surfaceMax}
+                    onChange={(e) => setSurfaceMax(e.target.value)}
+                    className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                  />
+                  <span className="pr-4 text-[14px] text-[#888780]">m²</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Surface maison */}
+            {showMaisonFilters && (
+              <div className="px-5 py-5 border-b border-[#D9D4CC]">
+                <p className="text-[17px] font-bold text-[#2C2C2A] mb-4">Surface habitable</p>
+                <div className="flex items-center gap-3">
+                  <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
+                    <input
+                      type="number" min="0" step="5" placeholder="Surface min"
+                      value={maisonSurfaceMin}
+                      onChange={(e) => setMaisonSurfaceMin(e.target.value)}
+                      className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                    />
+                    <span className="pr-4 text-[14px] text-[#888780]">m²</span>
+                  </div>
+                  <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
+                    <input
+                      type="number" min="0" step="5" placeholder="Surface max"
+                      value={maisonSurfaceMax}
+                      onChange={(e) => setMaisonSurfaceMax(e.target.value)}
+                      className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
+                    />
+                    <span className="pr-4 text-[14px] text-[#888780]">m²</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Chambres */}
+            {showMaisonFilters && (
+              <div className="px-5 py-5">
+                <p className="text-[17px] font-bold text-[#2C2C2A] mb-4">Chambres</p>
+                <div className="flex flex-wrap gap-2">
+                  {CHAMBRES_OPTIONS.map((n) => (
+                    <button
+                      key={n}
+                      onClick={() => setChambresMin(n)}
+                      className={`px-4 py-2 rounded-full border text-[14px] font-medium cursor-pointer transition-colors ${
+                        chambresMin === n
+                          ? "bg-[#2C2C2A] text-white border-[#2C2C2A]"
+                          : "bg-white text-[#2C2C2A] border-[#D9D4CC]"
+                      }`}
+                    >
+                      {n === 0 ? "Toutes" : `${n}+`}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Footer */}
+          <div className="border-t border-[#D9D4CC] px-5 py-4 flex gap-3 flex-shrink-0 bg-white">
+            <button
+              onClick={() => {
+                setTypeActif(""); setCommunesFiltrees([]); setPrixMin(""); setPrixMax("");
+                setSurfaceMin(""); setSurfaceMax(""); setMaisonSurfaceMin(""); setMaisonSurfaceMax("");
+                setChambresMin(0); setRayon(null); setSearch("");
+              }}
+              className="px-6 py-3 rounded-full border border-[#D9D4CC] text-[15px] font-medium text-[#2C2C2A] cursor-pointer"
+            >
+              Effacer
+            </button>
+            <button
+              onClick={() => setMobileFiltersOpen(false)}
+              className="flex-1 py-3 rounded-full bg-[#2C2C2A] text-white text-[15px] font-bold cursor-pointer"
+            >
+              Rechercher ({visibles.length})
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Grille */}
       <section className="bg-[#F2EDE6] py-10 px-5">
