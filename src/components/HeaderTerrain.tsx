@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 
 const MODELES = [
@@ -28,18 +27,12 @@ export function HeaderTerrain() {
 
   return (
     <header className="bg-white w-full border-b border-[#D9D4CC] relative z-50">
-      <div className="max-w-[1200px] mx-auto px-5 py-0 flex items-center h-[90px] gap-10">
+      <div className="max-w-[1200px] mx-auto px-5 py-0 flex items-center h-[64px] gap-10">
 
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0 no-underline">
-          <Image
-            src="/images/logo-mm-construction.png"
-            alt="M&M CONSTRUCTION"
-            width={270}
-            height={180}
-            className="h-[76px] w-auto"
-            priority
-          />
+        <Link href="/" className="flex-shrink-0 flex flex-col leading-none no-underline">
+          <span className="text-[22px] font-black text-[#2C2C2A] tracking-tight">M&amp;M CONSTRUCTION</span>
+          <span className="text-[11px] text-[#888780] tracking-widest uppercase">Maîtrise d&apos;œuvre · Maison bois</span>
         </Link>
 
         {/* Desktop nav */}
