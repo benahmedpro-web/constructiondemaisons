@@ -795,17 +795,12 @@ export default function AnnoncesPage() {
                 <div className="p-5 flex flex-col flex-1">
                   <div className="text-[11px] text-[#888780] uppercase tracking-widest mb-1">{a.departement}</div>
                   <h2 className="text-[18px] font-black text-[#2C2C2A] mb-1 group-hover:text-[#BA7517] transition-colors">{a.commune}</h2>
-                  <div className="text-[13px] text-[#BA7517] font-bold mb-3">{a.type}</div>
+                  <div className="text-[13px] text-[#BA7517] font-bold mb-3">
+                    {a.type}{a.type === "Terrain à bâtir" && a.surfaceTerrain > 0 ? ` — ${a.surfaceTerrain} m²` : ""}
+                  </div>
 
                   {/* Specs */}
-                  {a.type === "Terrain à bâtir" ? (
-                    <div className="grid grid-cols-1 gap-2 mb-4 py-3 border-y border-[#D9D4CC]">
-                      <div className="text-center">
-                        <div className="text-[15px] font-black text-[#2C2C2A]">{a.surfaceTerrain > 0 ? a.surfaceTerrain : "—"}</div>
-                        <div className="text-[10px] text-[#888780]">m² terrain</div>
-                      </div>
-                    </div>
-                  ) : (
+                  {a.type === "Terrain à bâtir" ? null : (
                     <div className="grid grid-cols-3 gap-2 mb-4 py-3 border-y border-[#D9D4CC]">
                       <div className="text-center">
                         <div className="text-[15px] font-black text-[#2C2C2A]">{a.surfaceTerrain}</div>
