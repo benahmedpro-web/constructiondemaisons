@@ -3,11 +3,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect, FormEvent } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { annonces } from "@/lib/annonces";
 
-const filtres = ["Tous", "Terrain à bâtir", "Maison + terrain"] as const;
-type Filtre = typeof filtres[number];
+const PRIX_OPTIONS = [
+  { label: "Tous les prix",         min: 0,      max: Infinity },
+  { label: "Moins de 200 000 €",   min: 0,      max: 200000 },
+  { label: "200 000 – 400 000 €",  min: 200000, max: 400000 },
+  { label: "400 000 – 600 000 €",  min: 400000, max: 600000 },
+  { label: "Plus de 600 000 €",    min: 600000, max: Infinity },
+];
+
+const SURFACE_OPTIONS = [
+  { label: "Toutes surfaces",    min: 0,    max: Infinity },
+  { label: "Moins de 400 m²",   min: 0,    max: 400 },
+  { label: "400 – 700 m²",      min: 400,  max: 700 },
+  { label: "700 – 1 000 m²",    min: 700,  max: 1000 },
+  { label: "Plus de 1 000 m²",  min: 1000, max: Infinity },
+];
 
 const statutColors: Record<string, string> = {
   "Disponible": "bg-emerald-100 text-emerald-800",
@@ -114,34 +127,20 @@ function formatBudget(n: number) {
   return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
 }
 
-const TYPE_TO_PARAM: Record<Filtre, string> = {
-  "Tous": "",
-  "Terrain à bâtir": "terrain",
-  "Maison + terrain": "maison",
-};
-const PARAM_TO_TYPE: Record<string, Filtre> = {
-  "terrain": "Terrain à bâtir",
-  "maison": "Maison + terrain",
-};
-
 export default function AnnoncesPage() {
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
 
-  const actif: Filtre = PARAM_TO_TYPE[searchParams.get("type") ?? ""] ?? "Tous";
+  // Type filter from URL (set by nav links — no buttons displayed)
+  const typeParam = searchParams.get("type");
+  const typeActif = typeParam === "terrain" ? "Terrain à bâtir" : typeParam === "maison" ? "maison" : null;
 
-  function setActif(f: Filtre) {
-    const param = TYPE_TO_PARAM[f];
-    const params = new URLSearchParams(searchParams.toString());
-    if (param) {
-      params.set("type", param);
-    } else {
-      params.delete("type");
-    }
-    router.replace(`${pathname}?${params.toString()}`);
-  }
   const [communesFiltrees, setCommunesFiltrees] = useState<string[]>([]);
+  const [prixIdx, setPrixIdx] = useState(0);
+  const [surfaceIdx, setSurfaceIdx] = useState(0);
+  const [prixOpen, setPrixOpen] = useState(false);
+  const [surfaceOpen, setSurfaceOpen] = useState(false);
+  const prixRef = useRef<HTMLDivElement>(null);
+  const surfaceRef = useRef<HTMLDivElement>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [search, setSearch] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -162,7 +161,7 @@ export default function AnnoncesPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...alerteForm,
-          statut: actif,
+          statut: typeActif ?? "Tous",
           communes: communesFiltrees,
         }),
       });
@@ -191,6 +190,24 @@ export default function AnnoncesPage() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [dropdownOpen]);
 
+  useEffect(() => {
+    if (!prixOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (prixRef.current && !prixRef.current.contains(e.target as Node)) setPrixOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [prixOpen]);
+
+  useEffect(() => {
+    if (!surfaceOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (surfaceRef.current && !surfaceRef.current.contains(e.target as Node)) setSurfaceOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [surfaceOpen]);
+
   function toggleCommune(c: string) {
     setCommunesFiltrees((prev) => {
       const next = prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c];
@@ -207,13 +224,17 @@ export default function AnnoncesPage() {
     return acc;
   }, {});
 
+  const prix = PRIX_OPTIONS[prixIdx];
+  const surface = SURFACE_OPTIONS[surfaceIdx];
+
   const visibles = annonces
     .filter((a) => {
-      if (actif === "Tous") return true;
-      if (actif === "Terrain à bâtir") return a.type === "Terrain à bâtir";
-      if (actif === "Maison + terrain") return a.type !== "Terrain à bâtir";
+      if (typeActif === "Terrain à bâtir") return a.type === "Terrain à bâtir";
+      if (typeActif === "maison") return a.type !== "Terrain à bâtir";
       return true;
     })
+    .filter((a) => a.budget >= prix.min && a.budget < prix.max)
+    .filter((a) => a.surfaceTerrain >= surface.min && a.surfaceTerrain < surface.max)
     .filter((a) => {
       if (communesFiltrees.length === 0) return true;
       if (rayon !== null && communesFiltrees.length === 1) {
@@ -229,28 +250,7 @@ export default function AnnoncesPage() {
     <main>
       {/* Filtres */}
       <div className="bg-white border-b border-[#D9D4CC] px-5 sticky top-0 z-30">
-        <div className="max-w-[1100px] mx-auto flex flex-wrap items-center gap-x-4 gap-y-2 py-3">
-
-          {/* Type */}
-          <div className="flex items-center gap-1">
-            <span className="text-[12px] text-[#888780] uppercase tracking-widest mr-2 hidden sm:block">Type :</span>
-            {filtres.map((f) => (
-              <button
-                key={f}
-                onClick={() => setActif(f)}
-                className={`px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
-                  actif === f
-                    ? "bg-[#2C2C2A] text-white border-[#2C2C2A]"
-                    : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#BA7517] hover:text-[#BA7517]"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-
-          {/* Séparateur */}
-          <div className="hidden sm:block w-px h-5 bg-[#D9D4CC]" />
+        <div className="max-w-[1100px] mx-auto flex flex-wrap items-center gap-x-3 gap-y-2 py-3">
 
           {/* Dropdown communes */}
           <div className="relative" ref={dropdownRef}>
@@ -343,6 +343,74 @@ export default function AnnoncesPage() {
                     Appliquer
                   </button>
                 </div>
+              </div>
+            )}
+          </div>
+
+          {/* Dropdown Prix */}
+          <div className="relative" ref={prixRef}>
+            <button
+              onClick={() => setPrixOpen((o) => !o)}
+              className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
+                prixIdx > 0
+                  ? "bg-[#BA7517] text-white border-[#BA7517]"
+                  : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#BA7517] hover:text-[#BA7517]"
+              }`}
+            >
+              <span>{prixIdx === 0 ? "Prix" : PRIX_OPTIONS[prixIdx].label}</span>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className={`transition-transform ${prixOpen ? "rotate-180" : ""}`}>
+                <path d="M1 1L6 7L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {prixOpen && (
+              <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-[#D9D4CC] shadow-lg z-50">
+                {PRIX_OPTIONS.map((opt, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setPrixIdx(i); setPrixOpen(false); }}
+                    className={`w-full text-left px-4 py-2.5 text-[13px] transition-colors cursor-pointer ${
+                      prixIdx === i
+                        ? "bg-[#FDF8F0] font-bold text-[#BA7517]"
+                        : "text-[#2C2C2A] hover:bg-[#F2EDE6]"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Dropdown Surface */}
+          <div className="relative" ref={surfaceRef}>
+            <button
+              onClick={() => setSurfaceOpen((o) => !o)}
+              className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
+                surfaceIdx > 0
+                  ? "bg-[#BA7517] text-white border-[#BA7517]"
+                  : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#BA7517] hover:text-[#BA7517]"
+              }`}
+            >
+              <span>{surfaceIdx === 0 ? "Surface terrain" : SURFACE_OPTIONS[surfaceIdx].label}</span>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className={`transition-transform ${surfaceOpen ? "rotate-180" : ""}`}>
+                <path d="M1 1L6 7L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {surfaceOpen && (
+              <div className="absolute top-full left-0 mt-1 w-52 bg-white border border-[#D9D4CC] shadow-lg z-50">
+                {SURFACE_OPTIONS.map((opt, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setSurfaceIdx(i); setSurfaceOpen(false); }}
+                    className={`w-full text-left px-4 py-2.5 text-[13px] transition-colors cursor-pointer ${
+                      surfaceIdx === i
+                        ? "bg-[#FDF8F0] font-bold text-[#BA7517]"
+                        : "text-[#2C2C2A] hover:bg-[#F2EDE6]"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
               </div>
             )}
           </div>
@@ -509,7 +577,9 @@ export default function AnnoncesPage() {
               {/* Récap critères */}
               <div className="bg-[#F2EDE6] px-4 py-3 text-[13px] text-[#888780] leading-[1.7]">
                 <div className="font-bold text-[#2C2C2A] text-[11px] uppercase tracking-widest mb-1.5">Critères de recherche</div>
-                <div><span className="text-[#2C2C2A]">Type :</span> {actif}</div>
+                {typeActif && <div><span className="text-[#2C2C2A]">Type :</span> {typeActif === "maison" ? "Maison + terrain" : typeActif}</div>}
+                {prixIdx > 0 && <div><span className="text-[#2C2C2A]">Prix :</span> {PRIX_OPTIONS[prixIdx].label}</div>}
+                {surfaceIdx > 0 && <div><span className="text-[#2C2C2A]">Surface :</span> {SURFACE_OPTIONS[surfaceIdx].label}</div>}
                 <div>
                   <span className="text-[#2C2C2A]">Communes :</span>{" "}
                   {communesFiltrees.length === 0
