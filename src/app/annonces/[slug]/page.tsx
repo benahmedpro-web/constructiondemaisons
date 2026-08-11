@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { annonces, getAnnonce, getAutresAnnonces } from "@/lib/annonces";
+import { AnnonceActions } from "@/components/AnnonceActions";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -55,7 +56,13 @@ export default async function AnnonceDetailPage({ params }: Props) {
             Retour à la liste
           </Link>
           <span className="text-white/20 shrink-0">|</span>
-          <span className="text-[12px] text-white/50 truncate">{a.commune} · {a.type}</span>
+          <span className="text-[12px] text-white/50 truncate min-w-0">{a.commune} · {a.type}</span>
+          <div className="ml-auto">
+            <AnnonceActions
+              slug={a.slug}
+              title={`${a.type} — ${a.commune}`}
+            />
+          </div>
         </div>
       </div>
 

@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { annonces } from "@/lib/annonces";
+import { useFavoris } from "@/hooks/useFavoris";
+import { useSavedSearches } from "@/hooks/useSavedSearches";
 
 
 const statutColors: Record<string, string> = {
@@ -157,6 +159,10 @@ export default function AnnoncesPage() {
 
   const [rayon, setRayon] = useState<number | null>(null);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [saveToast, setSaveToast] = useState("");
+
+  const { isFavori, toggle: toggleFavori } = useFavoris();
+  const { searches: savedSearches, save: saveSearch, remove: removeSearch } = useSavedSearches();
 
   const [alerteOpen, setAlerteOpen] = useState(false);
   const [alerteForm, setAlerteForm] = useState({ prenom: "", email: "", telephone: "" });
@@ -996,24 +1002,79 @@ export default function AnnoncesPage() {
             )}
           </div>
 
+          {/* Recherches sauvegardées */}
+          {savedSearches.length > 0 && (
+            <div className="px-5 py-5 border-t border-[#D9D4CC]">
+              <p className="text-[13px] font-bold text-[#888780] uppercase tracking-widest mb-3">Mes recherches</p>
+              <div className="flex flex-col gap-2">
+                {savedSearches.map((s) => (
+                  <div key={s.id} className="flex items-center gap-2">
+                    <button
+                      onClick={() => {
+                        setTypeActif(s.filters.type);
+                        setCommunesFiltrees(s.filters.communes);
+                        setPrixMin(s.filters.prixMin);
+                        setPrixMax(s.filters.prixMax);
+                        setSurfaceMin(s.filters.surfaceMin);
+                        setSurfaceMax(s.filters.surfaceMax);
+                        setMaisonSurfaceMin(s.filters.maisonSurfaceMin);
+                        setMaisonSurfaceMax(s.filters.maisonSurfaceMax);
+                        setChambresMin(s.filters.chambresMin);
+                        setRayon(s.filters.rayon);
+                      }}
+                      className="flex-1 text-left px-4 py-2.5 border border-[#D9D4CC] rounded-full text-[13px] text-[#2C2C2A] cursor-pointer hover:border-[#BA7517] hover:text-[#BA7517] transition-colors truncate"
+                    >
+                      {s.label}
+                    </button>
+                    <button
+                      onClick={() => removeSearch(s.id)}
+                      className="w-7 h-7 flex items-center justify-center text-[#D9D4CC] hover:text-[#2C2C2A] cursor-pointer flex-shrink-0 transition-colors"
+                    >
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Footer */}
-          <div className="border-t border-[#D9D4CC] px-5 py-4 flex gap-3 flex-shrink-0 bg-white">
-            <button
-              onClick={() => {
-                setTypeActif(""); setCommunesFiltrees([]); setPrixMin(""); setPrixMax("");
-                setSurfaceMin(""); setSurfaceMax(""); setMaisonSurfaceMin(""); setMaisonSurfaceMax("");
-                setChambresMin(0); setRayon(null); setSearch("");
-              }}
-              className="px-6 py-3 rounded-full border border-[#D9D4CC] text-[15px] font-medium text-[#2C2C2A] cursor-pointer"
-            >
-              Effacer
-            </button>
-            <button
-              onClick={() => setMobileFiltersOpen(false)}
-              className="flex-1 py-3 rounded-full bg-[#2C2C2A] text-white text-[15px] font-bold cursor-pointer"
-            >
-              Rechercher ({visibles.length})
-            </button>
+          <div className="border-t border-[#D9D4CC] px-5 py-4 flex flex-col gap-3 flex-shrink-0 bg-white">
+            {/* Sauvegarder la recherche */}
+            {nbFiltresActifs > 0 && (
+              <button
+                onClick={() => {
+                  const label = saveSearch({
+                    type: typeActif, communes: communesFiltrees,
+                    prixMin, prixMax, surfaceMin, surfaceMax,
+                    maisonSurfaceMin, maisonSurfaceMax, chambresMin, rayon,
+                  });
+                  setSaveToast(`Recherche "${label}" sauvegardée`);
+                  setTimeout(() => setSaveToast(""), 2500);
+                }}
+                className="w-full py-2.5 rounded-full border border-[#BA7517] text-[#BA7517] text-[14px] font-medium cursor-pointer hover:bg-[#FDF8F0] transition-colors"
+              >
+                ♡ Sauvegarder cette recherche
+              </button>
+            )}
+            <div className="flex gap-3">
+              <button
+                onClick={() => {
+                  setTypeActif(""); setCommunesFiltrees([]); setPrixMin(""); setPrixMax("");
+                  setSurfaceMin(""); setSurfaceMax(""); setMaisonSurfaceMin(""); setMaisonSurfaceMax("");
+                  setChambresMin(0); setRayon(null); setSearch("");
+                }}
+                className="px-6 py-3 rounded-full border border-[#D9D4CC] text-[15px] font-medium text-[#2C2C2A] cursor-pointer"
+              >
+                Effacer
+              </button>
+              <button
+                onClick={() => setMobileFiltersOpen(false)}
+                className="flex-1 py-3 rounded-full bg-[#2C2C2A] text-white text-[15px] font-bold cursor-pointer"
+              >
+                Rechercher ({visibles.length})
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -1022,7 +1083,8 @@ export default function AnnoncesPage() {
       <section className="bg-[#F2EDE6] py-10 px-5">
         <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibles.map((a) => (
-            <Link key={a.slug} href={`/annonces/${a.slug}/`} className="no-underline group">
+            <div key={a.slug} className="relative group">
+              <Link href={`/annonces/${a.slug}/`} className="no-underline block">
               <div className="bg-white flex flex-col overflow-hidden h-full transition-shadow group-hover:shadow-lg">
                 {/* Photo */}
                 <div className="relative h-[200px] overflow-hidden bg-[#2C2C2A]">
@@ -1074,7 +1136,23 @@ export default function AnnoncesPage() {
                   </div>
                 </div>
               </div>
-            </Link>
+              </Link>
+              {/* Bouton favori */}
+              <button
+                onClick={(e) => { e.preventDefault(); toggleFavori(a.slug); }}
+                title={isFavori(a.slug) ? "Retirer des favoris" : "Ajouter aux favoris"}
+                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-sm shadow cursor-pointer z-10 hover:scale-110 transition-transform"
+              >
+                <svg
+                  width="16" height="16" viewBox="0 0 24 24"
+                  fill={isFavori(a.slug) ? "#BA7517" : "none"}
+                  stroke={isFavori(a.slug) ? "#BA7517" : "#888780"}
+                  strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+            </div>
           ))}
         </div>
       </section>
@@ -1190,6 +1268,13 @@ export default function AnnoncesPage() {
             </form>
           )}
         </div>
+      </div>
+    )}
+
+    {/* Toast sauvegarde recherche */}
+    {saveToast && (
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] bg-[#2C2C2A] text-white text-[13px] font-medium px-5 py-3 shadow-lg whitespace-nowrap">
+        ✓ {saveToast}
       </div>
     )}
   </>);
