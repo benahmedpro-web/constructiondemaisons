@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import AnnoncesClient from "./AnnoncesClient";
 
 export const metadata: Metadata = {
@@ -18,5 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default function AnnoncesPage() {
-  return <AnnoncesClient />;
+  return (
+    <Suspense>
+      <AnnoncesClient />
+    </Suspense>
+  );
 }

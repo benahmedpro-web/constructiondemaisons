@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect, FormEvent } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { annonces } from "@/lib/annonces";
 
 const filtres = ["Tous", "Terrain à bâtir", "Maison + terrain"] as const;
@@ -113,8 +114,33 @@ function formatBudget(n: number) {
   return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
 }
 
+const TYPE_TO_PARAM: Record<Filtre, string> = {
+  "Tous": "",
+  "Terrain à bâtir": "terrain",
+  "Maison + terrain": "maison",
+};
+const PARAM_TO_TYPE: Record<string, Filtre> = {
+  "terrain": "Terrain à bâtir",
+  "maison": "Maison + terrain",
+};
+
 export default function AnnoncesPage() {
-  const [actif, setActif] = useState<Filtre>("Tous");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const actif: Filtre = PARAM_TO_TYPE[searchParams.get("type") ?? ""] ?? "Tous";
+
+  function setActif(f: Filtre) {
+    const param = TYPE_TO_PARAM[f];
+    const params = new URLSearchParams(searchParams.toString());
+    if (param) {
+      params.set("type", param);
+    } else {
+      params.delete("type");
+    }
+    router.replace(`${pathname}?${params.toString()}`);
+  }
   const [communesFiltrees, setCommunesFiltrees] = useState<string[]>([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [search, setSearch] = useState("");
