@@ -61,9 +61,9 @@ export function HeaderTerrain() {
             )}
           </div>
 
-          {/* Terrain avec maison */}
-          <Link href="/faire-construire-haute-savoie/" className="text-[15px] font-medium text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline px-4 py-5">
-            Terrain avec maison
+          {/* Maison + terrain */}
+          <Link href="/annonces/?type=maison" className="text-[15px] font-medium text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline px-4 py-5">
+            Maison + terrain
           </Link>
 
           {/* Modèle de maison */}
@@ -119,7 +119,7 @@ export function HeaderTerrain() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-[#D9D4CC] px-5 py-4 flex flex-col gap-0">
           <Link href="/annonces/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Terrain à bâtir</Link>
-          <Link href="/faire-construire-haute-savoie/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Terrain avec maison</Link>
+          <Link href="/annonces/?type=maison" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Maison + terrain</Link>
           <Link href="/catalogue/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Modèle de maison</Link>
           <div className="pt-4">
             <Link href="/demande-etude/" className="block border border-[#2C2C2A] text-[#2C2C2A] text-center text-[15px] font-semibold py-3 no-underline">
