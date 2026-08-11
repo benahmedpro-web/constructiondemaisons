@@ -555,7 +555,7 @@ export default function AnnoncesPage() {
               </svg>
             </button>
             {prixOpen && (
-              <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-[#D9D4CC] shadow-lg z-50 p-4">
+              <div className="absolute top-full right-0 lg:left-0 lg:right-auto mt-1 w-64 bg-white border border-[#D9D4CC] shadow-lg z-50 p-4">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#888780] mb-3">Budget (€)</p>
                 <div className="flex items-center gap-2">
                   <div className="flex-1">
@@ -686,7 +686,7 @@ export default function AnnoncesPage() {
                 </svg>
               </button>
               {chambresOpen && (
-                <div className="absolute top-full left-0 mt-1 w-44 bg-white border border-[#D9D4CC] shadow-lg z-50">
+                <div className="absolute top-full right-0 lg:left-0 lg:right-auto mt-1 w-44 bg-white border border-[#D9D4CC] shadow-lg z-50">
                   {CHAMBRES_OPTIONS.map((n) => (
                     <button
                       key={n}
