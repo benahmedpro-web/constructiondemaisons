@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const MODELES = [
@@ -30,9 +31,15 @@ export function HeaderTerrain() {
       <div className="max-w-[1200px] mx-auto px-5 py-0 flex items-center h-[64px] gap-10">
 
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0 flex flex-col leading-none no-underline">
-          <span className="text-[20px] font-black text-[#2C2C2A] tracking-tight">M&amp;M</span>
-          <span className="text-[11px] font-bold text-[#BA7517] tracking-widest uppercase">CONSTRUCTION</span>
+        <Link href="/" className="flex-shrink-0 no-underline">
+          <Image
+            src="/images/logo-mm-construction.png"
+            alt="M&M CONSTRUCTION"
+            width={120}
+            height={80}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -89,15 +96,6 @@ export function HeaderTerrain() {
             )}
           </div>
 
-          {/* Guides */}
-          <Link href="/guides/" className="text-[15px] font-medium text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline px-4 py-5">
-            Guides
-          </Link>
-
-          {/* À propos */}
-          <Link href="/a-propos/" className="text-[15px] font-medium text-[#2C2C2A] hover:text-[#BA7517] transition-colors no-underline px-4 py-5">
-            À propos
-          </Link>
         </nav>
 
         {/* CTA desktop — outlined */}
@@ -130,8 +128,6 @@ export function HeaderTerrain() {
           <Link href="/annonces/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Terrain à bâtir</Link>
           <Link href="/faire-construire-haute-savoie/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Terrain avec maison</Link>
           <Link href="/catalogue/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Modèle de maison</Link>
-          <Link href="/guides/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">Guides</Link>
-          <Link href="/a-propos/" className="py-3 text-[16px] text-[#2C2C2A] border-b border-[#D9D4CC] no-underline">À propos</Link>
           <div className="pt-4">
             <Link href="/demande-etude/" className="block border border-[#2C2C2A] text-[#2C2C2A] text-center text-[15px] font-semibold py-3 no-underline">
               Faire estimer mon projet
