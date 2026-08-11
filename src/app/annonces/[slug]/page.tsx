@@ -45,22 +45,17 @@ export default async function AnnonceDetailPage({ params }: Props) {
   return (
     <main>
       {/* Barre sticky */}
-      <div className="sticky top-0 z-40 bg-[#2C2C2A] px-5 py-2.5">
-        <div className="max-w-[1100px] mx-auto flex items-center gap-8">
+      <div className="sticky top-0 z-40 bg-[#2C2C2A] px-5 py-1.5">
+        <div className="max-w-[1100px] mx-auto flex items-center gap-6">
           <Link
             href="/annonces/"
-            className="flex items-center gap-1.5 text-white text-[13px] font-medium no-underline hover:text-[#BA7517] transition-colors shrink-0"
+            className="flex items-center gap-1 text-white text-[12px] font-medium no-underline hover:text-[#BA7517] transition-colors shrink-0"
           >
-            <span className="text-[15px] leading-none">&lt;</span>
+            <span className="text-[13px] leading-none">&lt;</span>
             Retour à la liste
           </Link>
-          <div className="flex items-center gap-1.5 text-[13px] text-white/50 min-w-0 overflow-hidden">
-            <Link href="/" className="text-white/50 no-underline hover:text-white transition-colors shrink-0">Accueil</Link>
-            <span className="shrink-0">&gt;</span>
-            <span className="shrink-0">…</span>
-            <span className="shrink-0">&gt;</span>
-            <span className="text-white/80 truncate">{a.type} — {a.commune}</span>
-          </div>
+          <span className="text-white/20 shrink-0">|</span>
+          <span className="text-[12px] text-white/50 truncate">{a.commune} · {a.type}</span>
         </div>
       </div>
 
