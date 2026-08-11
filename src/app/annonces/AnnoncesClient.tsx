@@ -14,6 +14,66 @@ const statutColors: Record<string, string> = {
   "Livré":      "bg-[#F2EDE6] text-[#888780]",
 };
 
+const COMMUNE_COORDS: Record<string, [number, number]> = {
+  // Haute-Savoie (74)
+  "Allonzier-la-Caille": [45.968, 6.073], "Ambilly": [46.208, 6.241],
+  "Amancy": [46.040, 6.378], "Annecy": [45.899, 6.130], "Annemasse": [46.194, 6.234],
+  "Archamps": [46.148, 6.108], "Argonay": [45.930, 6.130], "Ayse": [46.070, 6.600],
+  "Ballaison": [46.292, 6.408], "Beaumont": [46.115, 6.025], "Bellevaux": [46.238, 6.590],
+  "Bogève": [46.150, 6.540], "Bonne": [46.120, 6.520], "Bonneville": [46.083, 6.408],
+  "Bons-en-Chablais": [46.263, 6.383], "Bossey": [46.160, 6.143], "Cervens": [46.283, 6.418],
+  "Chamonix-Mont-Blanc": [45.923, 6.870], "Charvonnex": [46.003, 6.153], "Châtel": [46.268, 6.838],
+  "Chênex": [46.142, 6.093], "Cluses": [46.063, 6.580], "Collonges-sous-Salève": [46.157, 6.132],
+  "Combloux": [45.903, 6.618], "Contamine-sur-Arve": [46.098, 6.452], "Copponex": [46.003, 6.063],
+  "Cordon": [45.910, 6.632], "Cranves-Sales": [46.188, 6.224], "Cruseilles": [46.013, 6.087],
+  "Dingy-en-Vuache": [46.082, 5.973], "Dingy-Saint-Clair": [45.973, 6.228],
+  "Domancy": [45.898, 6.660], "Doussard": [45.783, 6.222], "Douvaine": [46.298, 6.303],
+  "Draillant": [46.303, 6.432], "Étrembières": [46.172, 6.202], "Évian-les-Bains": [46.397, 6.590],
+  "Évires": [45.983, 6.178], "Faverges": [45.742, 6.293], "Feigères": [46.097, 6.015],
+  "Fillinges": [46.200, 6.352], "Gaillard": [46.192, 6.213], "Groisy": [45.983, 6.128],
+  "La Balme-de-Sillingy": [45.970, 6.013], "La Roche-sur-Foron": [46.068, 6.313],
+  "Larringes": [46.382, 6.662], "Les Gets": [46.158, 6.668], "Les Houches": [45.893, 6.798],
+  "Lucinges": [46.208, 6.333], "Machilly": [46.213, 6.302], "Magland": [46.033, 6.613],
+  "Marignier": [46.093, 6.507], "Marnaz": [46.063, 6.533], "Megève": [45.857, 6.617],
+  "Menthon-Saint-Bernard": [45.847, 6.197], "Meythet": [45.923, 6.098], "Mieussy": [46.137, 6.527],
+  "Morzine": [46.178, 6.712], "Nancy-sur-Cluses": [46.082, 6.523], "Nangy": [46.112, 6.433],
+  "Neydens": [46.118, 6.063], "Onnion": [46.197, 6.532], "Orcier": [46.323, 6.528],
+  "Poisy": [45.928, 6.068], "Présilly": [46.090, 6.013], "Pringy": [45.923, 6.087],
+  "Reignier-Ésery": [46.143, 6.267], "Rumilly": [45.867, 5.938],
+  "Saint-Gervais-les-Bains": [45.883, 6.718], "Saint-Jeoire": [46.143, 6.507],
+  "Saint-Jorioz": [45.822, 6.172], "Saint-Julien-en-Genevois": [46.143, 6.080],
+  "Saint-Martin-Bellevue": [45.963, 6.153], "Saint-Paul-en-Chablais": [46.348, 6.538],
+  "Saint-Pierre-en-Faucigny": [46.063, 6.443], "Sallanches": [45.932, 6.632],
+  "Samoëns": [46.077, 6.722], "Savigny": [46.073, 5.983], "Scientrier": [46.112, 6.467],
+  "Scionzier": [46.052, 6.553], "Seynod": [45.877, 6.088], "Sillingy": [45.967, 5.992],
+  "Talloires": [45.842, 6.213], "Taninges": [46.113, 6.598], "Thonon-les-Bains": [46.373, 6.477],
+  "Vétraz-Monthoux": [46.192, 6.258], "Vers": [46.103, 6.030], "Veyrier-du-Lac": [45.867, 6.183],
+  "Ville-la-Grand": [46.202, 6.243], "Viry": [46.100, 5.978], "Viuz-en-Sallaz": [46.177, 6.392],
+  "Vulbens": [46.087, 5.979],
+  // Ain (01)
+  "Ambérieu-en-Bugey": [45.947, 5.352], "Bellegarde-sur-Valserine": [46.108, 5.828],
+  "Belley": [45.760, 5.693], "Bourg-en-Bresse": [46.205, 5.227], "Cessy": [46.333, 6.088],
+  "Challex": [46.192, 5.988], "Châtillon-en-Michaille": [46.073, 5.793], "Chevry": [46.282, 6.043],
+  "Collonges": [46.152, 5.893], "Crozet": [46.280, 6.033], "Divonne-les-Bains": [46.357, 6.143],
+  "Échenevex": [46.333, 6.053], "Farges": [46.217, 5.972], "Ferney-Voltaire": [46.258, 6.107],
+  "Gex": [46.335, 6.058], "Grilly": [46.338, 6.098], "Injoux-Génissiat": [46.038, 5.793],
+  "Léaz": [46.112, 5.867], "Montluel": [45.847, 5.067], "Nantua": [46.153, 5.608],
+  "Ornex": [46.282, 6.103], "Oyonnax": [46.257, 5.657], "Péron": [46.222, 5.952],
+  "Pougny": [46.152, 5.858], "Prévessin-Moëns": [46.268, 6.103],
+  "Saint-Genis-Pouilly": [46.243, 6.018], "Saint-Jean-de-Gonville": [46.208, 5.933],
+  "Segny": [46.293, 6.103], "Sergy": [46.303, 6.108], "Thoiry": [46.277, 6.058],
+  "Valserhône": [46.083, 5.797], "Versonnex": [46.282, 6.133],
+};
+
+function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) ** 2
+    + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
 const villesParDept: Record<string, string[]> = {
   "Haute-Savoie (74)": [
     "Allonzier-la-Caille", "Ambilly", "Amancy", "Annecy", "Annemasse",
@@ -56,6 +116,9 @@ export default function AnnoncesPage() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [search, setSearch] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const [rayon, setRayon] = useState<number | null>(null);
+  const [rayonManuel, setRayonManuel] = useState("");
 
   const [alerteOpen, setAlerteOpen] = useState(false);
   const [alerteForm, setAlerteForm] = useState({ prenom: "", email: "", telephone: "" });
@@ -100,9 +163,11 @@ export default function AnnoncesPage() {
   }, [dropdownOpen]);
 
   function toggleCommune(c: string) {
-    setCommunesFiltrees((prev) =>
-      prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]
-    );
+    setCommunesFiltrees((prev) => {
+      const next = prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c];
+      if (next.length !== 1) { setRayon(null); setRayonManuel(""); }
+      return next;
+    });
   }
 
   const villesFiltrees = Object.entries(villesParDept).reduce<Record<string, string[]>>((acc, [dept, villes]) => {
@@ -120,7 +185,16 @@ export default function AnnoncesPage() {
       if (actif === "Maison + terrain") return a.type !== "Terrain à bâtir";
       return true;
     })
-    .filter((a) => communesFiltrees.length === 0 || communesFiltrees.includes(a.commune));
+    .filter((a) => {
+      if (communesFiltrees.length === 0) return true;
+      if (rayon !== null && communesFiltrees.length === 1) {
+        const center = COMMUNE_COORDS[communesFiltrees[0]];
+        const aCoords = COMMUNE_COORDS[a.commune];
+        if (!center || !aCoords) return communesFiltrees.includes(a.commune);
+        return haversineKm(center[0], center[1], aCoords[0], aCoords[1]) <= rayon;
+      }
+      return communesFiltrees.includes(a.commune);
+    });
 
   return (<>
     <main>
@@ -190,7 +264,7 @@ export default function AnnoncesPage() {
                   <div className="flex items-center justify-between px-3 py-1.5 border-b border-[#D9D4CC] bg-[#F2EDE6]">
                     <span className="text-[11px] text-[#888780]">{communesFiltrees.length} sélectionnée{communesFiltrees.length > 1 ? "s" : ""}</span>
                     <button
-                      onClick={() => { setCommunesFiltrees([]); setDropdownOpen(false); }}
+                      onClick={() => { setCommunesFiltrees([]); setRayon(null); setRayonManuel(""); setDropdownOpen(false); }}
                       className="text-[11px] text-[#BA7517] hover:text-[#9E6312] cursor-pointer underline"
                     >
                       Tout effacer
@@ -243,6 +317,44 @@ export default function AnnoncesPage() {
               </div>
             )}
           </div>
+
+          {/* Sélecteur de rayon — visible si 1 commune sélectionnée */}
+          {communesFiltrees.length === 1 && (
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] text-[#888780] uppercase tracking-widest hidden sm:block">Périmètre :</span>
+              {[5, 10, 15, 20].map((km) => (
+                <button
+                  key={km}
+                  onClick={() => { setRayon(rayon === km ? null : km); setRayonManuel(""); }}
+                  className={`px-3 py-1.5 text-[12px] font-medium border transition-colors cursor-pointer ${
+                    rayon === km
+                      ? "bg-[#2C2C2A] text-white border-[#2C2C2A]"
+                      : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#2C2C2A] hover:text-[#2C2C2A]"
+                  }`}
+                >
+                  {km} km
+                </button>
+              ))}
+              <div className="flex items-center gap-1">
+                <input
+                  type="number"
+                  min="1"
+                  max="100"
+                  placeholder="—"
+                  value={rayonManuel}
+                  onChange={(e) => {
+                    const v = e.target.value;
+                    setRayonManuel(v);
+                    const n = parseInt(v, 10);
+                    if (!isNaN(n) && n > 0) setRayon(n);
+                    else if (v === "") setRayon(null);
+                  }}
+                  className="w-[46px] border border-[#D9D4CC] px-1.5 py-1.5 text-[12px] text-center text-[#2C2C2A] outline-none focus:border-[#2C2C2A] placeholder-[#D9D4CC]"
+                />
+                <span className="text-[11px] text-[#888780]">km</span>
+              </div>
+            </div>
+          )}
 
           <div className="ml-auto flex items-center gap-3">
             <span className="text-[13px] text-[#888780] whitespace-nowrap">{visibles.length} annonce{visibles.length > 1 ? "s" : ""}</span>
