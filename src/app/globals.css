@@ -151,5 +151,6 @@
   }
   html {
     font-family: "Brandon Grotesque", ui-sans-serif, system-ui, sans-serif;
+    overflow-x: hidden;
   }
 }

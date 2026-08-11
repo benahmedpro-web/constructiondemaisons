@@ -4,7 +4,7 @@ export function HeaderTerrain() {
 
   return (
     <header className="bg-white w-full border-b border-[#D9D4CC] relative z-50">
-      <div className="max-w-[1200px] mx-auto px-5 py-0 flex items-center h-[64px]">
+      <div className="max-w-[1200px] mx-auto px-5 py-0 flex items-center h-[64px] min-w-0 overflow-hidden">
 
         {/* Logo */}
         <Link href="/" className="flex flex-col leading-none no-underline min-w-0 shrink">
