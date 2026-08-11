@@ -157,6 +157,7 @@ export default function AnnoncesPage() {
 
   const [rayon, setRayon] = useState<number | null>(null);
   const [rayonManuel, setRayonManuel] = useState("");
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const [alerteOpen, setAlerteOpen] = useState(false);
   const [alerteForm, setAlerteForm] = useState({ prenom: "", email: "", telephone: "" });
@@ -270,6 +271,7 @@ export default function AnnoncesPage() {
   const prixActif = prixMin !== "" || prixMax !== "";
   const surfaceActif = surfaceMin !== "" || surfaceMax !== "";
   const maisonSurfaceActif = maisonSurfaceMin !== "" || maisonSurfaceMax !== "";
+  const nbFiltresActifs = [typeActif !== "", communesFiltrees.length > 0, prixActif, surfaceActif, maisonSurfaceActif, chambresMin > 0].filter(Boolean).length;
   const MODEL_KEYS = ["tournette", "bargy", "voirons", "saleve", "aravis", "etale", "prestige"];
   const isModelFilter = MODEL_KEYS.includes(typeActif);
   const showMaisonFilters = typeActif !== "terrain";
@@ -316,8 +318,33 @@ export default function AnnoncesPage() {
   return (<>
     <main>
       {/* Filtres */}
-      <div className="bg-white border-b border-[#D9D4CC] px-5 sticky top-0 z-30">
-        <div className="max-w-[1100px] mx-auto flex flex-wrap items-center gap-x-3 gap-y-2 py-3">
+      <div className="bg-white border-b border-[#D9D4CC] sticky top-0 z-30">
+
+          {/* Mobile : barre compacte */}
+          <div className={`flex lg:hidden items-center gap-3 px-5 py-3 ${mobileFiltersOpen ? "border-b border-[#D9D4CC]" : ""}`}>
+            <button
+              onClick={() => setMobileFiltersOpen((o) => !o)}
+              className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border cursor-pointer transition-colors ${
+                nbFiltresActifs > 0 ? "bg-[#BA7517] text-white border-[#BA7517]" : "bg-white text-[#888780] border-[#D9D4CC]"
+              }`}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+              Filtrer{nbFiltresActifs > 0 ? ` (${nbFiltresActifs})` : ""}
+            </button>
+            <div className="ml-auto flex items-center gap-3">
+              <span className="text-[13px] text-[#888780]">{visibles.length} annonce{visibles.length > 1 ? "s" : ""}</span>
+              <button
+                onClick={() => setAlerteOpen(true)}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-[12px] font-bold border border-[#BA7517] text-[#BA7517] cursor-pointer"
+              >
+                <svg width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M6.5 1a4.5 4.5 0 0 1 4.5 4.5c0 2.5.8 3.5 1.3 4H.7C1.2 9 2 8 2 5.5A4.5 4.5 0 0 1 6.5 1ZM5 10.5h3a1.5 1.5 0 0 1-3 0Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/></svg>
+                Alerte
+              </button>
+            </div>
+          </div>
+
+        {/* Desktop : toujours visible / Mobile : panneau toggle */}
+        <div className={`max-w-[1100px] mx-auto px-5 flex-wrap items-center gap-x-3 gap-y-2 py-3 ${mobileFiltersOpen ? "flex" : "hidden"} lg:flex`}>
 
           {/* Dropdown Type */}
           <div className="relative" ref={typeRef}>
@@ -735,7 +762,7 @@ export default function AnnoncesPage() {
             </div>
           )}
 
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto hidden lg:flex items-center gap-3">
             <span className="text-[13px] text-[#888780] whitespace-nowrap">{visibles.length} annonce{visibles.length > 1 ? "s" : ""}</span>
             <button
               onClick={() => setAlerteOpen(true)}
