@@ -902,18 +902,18 @@ export default function AnnoncesPage() {
               <div className="flex items-center gap-3">
                 <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
                   <input
-                    type="number" min="0" step="10" placeholder="Prix minimum…"
+                    type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Prix minimum…"
                     value={prixMin}
-                    onChange={(e) => setPrixMin(e.target.value)}
+                    onChange={(e) => setPrixMin(e.target.value.replace(/\D/g, ""))}
                     className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">€</span>
                 </div>
                 <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
                   <input
-                    type="number" min="0" step="10" placeholder="Prix maximum…"
+                    type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Prix maximum…"
                     value={prixMax}
-                    onChange={(e) => setPrixMax(e.target.value)}
+                    onChange={(e) => setPrixMax(e.target.value.replace(/\D/g, ""))}
                     className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">€</span>
@@ -927,18 +927,18 @@ export default function AnnoncesPage() {
               <div className="flex items-center gap-3">
                 <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
                   <input
-                    type="number" min="0" step="50" placeholder="Surface min"
+                    type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface min"
                     value={surfaceMin}
-                    onChange={(e) => setSurfaceMin(e.target.value)}
+                    onChange={(e) => setSurfaceMin(e.target.value.replace(/\D/g, ""))}
                     className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">m²</span>
                 </div>
                 <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
                   <input
-                    type="number" min="0" step="50" placeholder="Surface max"
+                    type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface max"
                     value={surfaceMax}
-                    onChange={(e) => setSurfaceMax(e.target.value)}
+                    onChange={(e) => setSurfaceMax(e.target.value.replace(/\D/g, ""))}
                     className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                   />
                   <span className="pr-4 text-[14px] text-[#888780]">m²</span>
@@ -953,18 +953,18 @@ export default function AnnoncesPage() {
                 <div className="flex items-center gap-3">
                   <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
                     <input
-                      type="number" min="0" step="5" placeholder="Surface min"
+                      type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface min"
                       value={maisonSurfaceMin}
-                      onChange={(e) => setMaisonSurfaceMin(e.target.value)}
+                      onChange={(e) => setMaisonSurfaceMin(e.target.value.replace(/\D/g, ""))}
                       className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                     />
                     <span className="pr-4 text-[14px] text-[#888780]">m²</span>
                   </div>
                   <div className="flex-1 flex items-center border border-[#D9D4CC] rounded-full overflow-hidden focus-within:border-[#BA7517]">
                     <input
-                      type="number" min="0" step="5" placeholder="Surface max"
+                      type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Surface max"
                       value={maisonSurfaceMax}
-                      onChange={(e) => setMaisonSurfaceMax(e.target.value)}
+                      onChange={(e) => setMaisonSurfaceMax(e.target.value.replace(/\D/g, ""))}
                       className="flex-1 px-4 py-2.5 text-[14px] text-[#2C2C2A] outline-none min-w-0 bg-transparent"
                     />
                     <span className="pr-4 text-[14px] text-[#888780]">m²</span>
