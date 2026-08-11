@@ -115,9 +115,18 @@ function formatBudget(n: number) {
 export default function AnnoncesPage() {
   const searchParams = useSearchParams();
 
-  // Type filter from URL (set by nav links — no buttons displayed)
+  // Type filter — initialisé depuis le param URL (liens nav), modifiable via dropdown
   const typeParam = searchParams.get("type");
-  const typeActif = typeParam === "terrain" ? "Terrain à bâtir" : typeParam === "maison" ? "maison" : null;
+  const typeInit = typeParam === "terrain" ? "terrain" : typeParam === "maison" ? "maison" : "";
+  const [typeActif, setTypeActif] = useState(typeInit);
+  const [typeOpen, setTypeOpen] = useState(false);
+  const typeRef = useRef<HTMLDivElement>(null);
+
+  const TYPE_OPTIONS = [
+    { value: "",        label: "Tous" },
+    { value: "terrain", label: "Terrain à bâtir" },
+    { value: "maison",  label: "Maison + terrain" },
+  ];
 
   const [communesFiltrees, setCommunesFiltrees] = useState<string[]>([]);
   const [prixMin, setPrixMin] = useState("");
@@ -178,6 +187,15 @@ export default function AnnoncesPage() {
   }, [dropdownOpen]);
 
   useEffect(() => {
+    if (!typeOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (typeRef.current && !typeRef.current.contains(e.target as Node)) setTypeOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [typeOpen]);
+
+  useEffect(() => {
     if (!prixOpen) return;
     function handleClickOutside(e: MouseEvent) {
       if (prixRef.current && !prixRef.current.contains(e.target as Node)) setPrixOpen(false);
@@ -220,7 +238,7 @@ export default function AnnoncesPage() {
 
   const visibles = annonces
     .filter((a) => {
-      if (typeActif === "Terrain à bâtir") return a.type === "Terrain à bâtir";
+      if (typeActif === "terrain") return a.type === "Terrain à bâtir";
       if (typeActif === "maison") return a.type !== "Terrain à bâtir";
       return true;
     })
@@ -242,6 +260,40 @@ export default function AnnoncesPage() {
       {/* Filtres */}
       <div className="bg-white border-b border-[#D9D4CC] px-5 sticky top-0 z-30">
         <div className="max-w-[1100px] mx-auto flex flex-wrap items-center gap-x-3 gap-y-2 py-3">
+
+          {/* Dropdown Type */}
+          <div className="relative" ref={typeRef}>
+            <button
+              onClick={() => { setTypeOpen((o) => !o); setPrixOpen(false); setSurfaceOpen(false); setDropdownOpen(false); }}
+              className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
+                typeActif
+                  ? "bg-[#BA7517] text-white border-[#BA7517]"
+                  : "bg-white text-[#888780] border-[#D9D4CC] hover:border-[#BA7517] hover:text-[#BA7517]"
+              }`}
+            >
+              <span>{TYPE_OPTIONS.find((o) => o.value === typeActif)?.label ?? "Type"}</span>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className={`transition-transform ${typeOpen ? "rotate-180" : ""}`}>
+                <path d="M1 1L6 7L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {typeOpen && (
+              <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-[#D9D4CC] shadow-lg z-50">
+                {TYPE_OPTIONS.map((opt) => (
+                  <button
+                    key={opt.value}
+                    onClick={() => { setTypeActif(opt.value); setTypeOpen(false); }}
+                    className={`w-full text-left px-4 py-2.5 text-[13px] transition-colors cursor-pointer ${
+                      typeActif === opt.value
+                        ? "bg-[#FDF8F0] font-bold text-[#BA7517]"
+                        : "text-[#2C2C2A] hover:bg-[#F2EDE6]"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Dropdown communes */}
           <div className="relative" ref={dropdownRef}>
@@ -341,7 +393,7 @@ export default function AnnoncesPage() {
           {/* Dropdown Prix */}
           <div className="relative" ref={prixRef}>
             <button
-              onClick={() => { setPrixOpen((o) => !o); setSurfaceOpen(false); }}
+              onClick={() => { setPrixOpen((o) => !o); setSurfaceOpen(false); setTypeOpen(false); setDropdownOpen(false); }}
               className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
                 prixActif
                   ? "bg-[#BA7517] text-white border-[#BA7517]"
@@ -408,7 +460,7 @@ export default function AnnoncesPage() {
           {/* Dropdown Surface */}
           <div className="relative" ref={surfaceRef}>
             <button
-              onClick={() => { setSurfaceOpen((o) => !o); setPrixOpen(false); }}
+              onClick={() => { setSurfaceOpen((o) => !o); setPrixOpen(false); setTypeOpen(false); setDropdownOpen(false); }}
               className={`flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium border transition-colors cursor-pointer ${
                 surfaceActif
                   ? "bg-[#BA7517] text-white border-[#BA7517]"
@@ -634,7 +686,7 @@ export default function AnnoncesPage() {
               {/* Récap critères */}
               <div className="bg-[#F2EDE6] px-4 py-3 text-[13px] text-[#888780] leading-[1.7]">
                 <div className="font-bold text-[#2C2C2A] text-[11px] uppercase tracking-widest mb-1.5">Critères de recherche</div>
-                {typeActif && <div><span className="text-[#2C2C2A]">Type :</span> {typeActif === "maison" ? "Maison + terrain" : typeActif}</div>}
+                {typeActif && <div><span className="text-[#2C2C2A]">Type :</span> {TYPE_OPTIONS.find((o) => o.value === typeActif)?.label}</div>}
                 {prixActif && <div><span className="text-[#2C2C2A]">Prix :</span> {prixMin ? parseInt(prixMin).toLocaleString("fr-FR") + " €" : "0"} – {prixMax ? parseInt(prixMax).toLocaleString("fr-FR") + " €" : "∞"}</div>}
                 {surfaceActif && <div><span className="text-[#2C2C2A]">Surface :</span> {surfaceMin || "0"} – {surfaceMax || "∞"} m²</div>}
                 <div>
