@@ -44,24 +44,25 @@ export default async function AnnonceDetailPage({ params }: Props) {
 
   return (
     <main>
-      {/* Barre sticky : breadcrumb + retour */}
-      <div className="sticky top-0 z-40 bg-[#2C2C2A] border-b border-white/10 px-5 py-2.5">
-        <div className="max-w-[1100px] mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-1.5 text-[12px] text-white/40 min-w-0 overflow-hidden">
-            <Link href="/" className="text-white/40 no-underline hover:text-white transition-colors shrink-0">Accueil</Link>
-            <span className="shrink-0">/</span>
-            <Link href="/annonces/" className="text-white/40 no-underline hover:text-white transition-colors shrink-0">Annonces</Link>
-            <span className="shrink-0">/</span>
-            <span className="text-white/70 truncate">{a.commune}</span>
-          </div>
+      {/* Barre sticky */}
+      <div className="sticky top-0 z-40 bg-[#2C2C2A] px-5 py-0">
+        <div className="max-w-[1100px] mx-auto flex items-stretch gap-0">
+          {/* Retour — à gauche */}
           <Link
             href="/annonces/"
-            className="shrink-0 flex items-center gap-2 text-white text-[13px] font-semibold border border-white/25 px-4 py-1.5 no-underline hover:bg-white/10 hover:border-white/50 transition-colors"
+            className="flex items-center gap-2 text-white text-[13px] font-medium no-underline hover:text-[#BA7517] transition-colors py-3 pr-6 border-r border-white/15 shrink-0"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-            <span className="hidden sm:inline">Toutes les annonces</span>
-            <span className="sm:hidden">Annonces</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+            Retour à la liste
           </Link>
+          {/* Breadcrumb — centre */}
+          <div className="flex items-center gap-1.5 text-[12px] text-white/40 pl-6 min-w-0 overflow-hidden">
+            <Link href="/" className="text-white/40 no-underline hover:text-white transition-colors shrink-0">Accueil</Link>
+            <span className="shrink-0 text-white/20">&gt;</span>
+            <span className="shrink-0 text-white/20">…</span>
+            <span className="shrink-0 text-white/20">&gt;</span>
+            <span className="text-white/65 truncate">{a.type} — {a.commune}</span>
+          </div>
         </div>
       </div>
 
