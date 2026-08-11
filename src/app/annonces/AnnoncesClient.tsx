@@ -211,8 +211,8 @@ export default function AnnoncesPage() {
     return acc;
   }, {});
 
-  const prixMinN = prixMin !== "" ? parseInt(prixMin, 10) * 1000 : 0;
-  const prixMaxN = prixMax !== "" ? parseInt(prixMax, 10) * 1000 : Infinity;
+  const prixMinN = prixMin !== "" ? parseInt(prixMin, 10) : 0;
+  const prixMaxN = prixMax !== "" ? parseInt(prixMax, 10) : Infinity;
   const surfaceMinN = surfaceMin !== "" ? parseInt(surfaceMin, 10) : 0;
   const surfaceMaxN = surfaceMax !== "" ? parseInt(surfaceMax, 10) : Infinity;
   const prixActif = prixMin !== "" || prixMax !== "";
@@ -350,7 +350,7 @@ export default function AnnoncesPage() {
             >
               <span>
                 {prixActif
-                  ? `${prixMin ? prixMin + "k" : "0"} – ${prixMax ? prixMax + "k" : "∞"} €`
+                  ? `${prixMin ? parseInt(prixMin).toLocaleString("fr-FR") : "0"} – ${prixMax ? parseInt(prixMax).toLocaleString("fr-FR") : "∞"} €`
                   : "Prix"}
               </span>
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className={`transition-transform ${prixOpen ? "rotate-180" : ""}`}>
@@ -359,7 +359,7 @@ export default function AnnoncesPage() {
             </button>
             {prixOpen && (
               <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-[#D9D4CC] shadow-lg z-50 p-4">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#888780] mb-3">Budget (en milliers €)</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#888780] mb-3">Budget (€)</p>
                 <div className="flex items-center gap-2">
                   <div className="flex-1">
                     <label className="text-[11px] text-[#888780] mb-1 block">Min</label>
@@ -370,7 +370,7 @@ export default function AnnoncesPage() {
                         onChange={(e) => setPrixMin(e.target.value)}
                         className="w-full border border-[#D9D4CC] px-2 py-1.5 text-[13px] text-[#2C2C2A] outline-none focus:border-[#BA7517] pr-6"
                       />
-                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#888780]">k€</span>
+                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#888780]">€</span>
                     </div>
                   </div>
                   <span className="text-[#D9D4CC] mt-4">—</span>
@@ -383,7 +383,7 @@ export default function AnnoncesPage() {
                         onChange={(e) => setPrixMax(e.target.value)}
                         className="w-full border border-[#D9D4CC] px-2 py-1.5 text-[13px] text-[#2C2C2A] outline-none focus:border-[#BA7517] pr-6"
                       />
-                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#888780]">k€</span>
+                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#888780]">€</span>
                     </div>
                   </div>
                 </div>
@@ -635,7 +635,7 @@ export default function AnnoncesPage() {
               <div className="bg-[#F2EDE6] px-4 py-3 text-[13px] text-[#888780] leading-[1.7]">
                 <div className="font-bold text-[#2C2C2A] text-[11px] uppercase tracking-widest mb-1.5">Critères de recherche</div>
                 {typeActif && <div><span className="text-[#2C2C2A]">Type :</span> {typeActif === "maison" ? "Maison + terrain" : typeActif}</div>}
-                {prixActif && <div><span className="text-[#2C2C2A]">Prix :</span> {prixMin ? prixMin + " k€" : "0"} – {prixMax ? prixMax + " k€" : "∞"}</div>}
+                {prixActif && <div><span className="text-[#2C2C2A]">Prix :</span> {prixMin ? parseInt(prixMin).toLocaleString("fr-FR") + " €" : "0"} – {prixMax ? parseInt(prixMax).toLocaleString("fr-FR") + " €" : "∞"}</div>}
                 {surfaceActif && <div><span className="text-[#2C2C2A]">Surface :</span> {surfaceMin || "0"} – {surfaceMax || "∞"} m²</div>}
                 <div>
                   <span className="text-[#2C2C2A]">Communes :</span>{" "}
