@@ -123,9 +123,16 @@ export default function AnnoncesPage() {
   const typeRef = useRef<HTMLDivElement>(null);
 
   const TYPE_OPTIONS = [
-    { value: "",        label: "Tous" },
-    { value: "terrain", label: "Terrain à bâtir" },
-    { value: "maison",  label: "Maison + terrain" },
+    { value: "",           label: "Tous",             group: null },
+    { value: "terrain",    label: "Terrain à bâtir",  group: null },
+    { value: "maison",     label: "Maison + terrain",  group: null },
+    { value: "tournette",  label: "Modèle Tournette",  group: "Modèles" },
+    { value: "bargy",      label: "Modèle Bargy",      group: "Modèles" },
+    { value: "voirons",    label: "Modèle Voirons",    group: "Modèles" },
+    { value: "saleve",     label: "Modèle Salève",     group: "Modèles" },
+    { value: "aravis",     label: "Modèle Aravis",     group: "Modèles" },
+    { value: "etale",      label: "Modèle Étale",      group: "Modèles" },
+    { value: "prestige",   label: "Sur mesure",        group: "Modèles" },
   ];
 
   const [communesFiltrees, setCommunesFiltrees] = useState<string[]>([]);
@@ -263,13 +270,23 @@ export default function AnnoncesPage() {
   const prixActif = prixMin !== "" || prixMax !== "";
   const surfaceActif = surfaceMin !== "" || surfaceMax !== "";
   const maisonSurfaceActif = maisonSurfaceMin !== "" || maisonSurfaceMax !== "";
+  const MODEL_KEYS = ["tournette", "bargy", "voirons", "saleve", "aravis", "etale", "prestige"];
+  const isModelFilter = MODEL_KEYS.includes(typeActif);
   const showMaisonFilters = typeActif !== "terrain";
 
   const CHAMBRES_OPTIONS = [0, 3, 4, 5];
 
+  function getModel(images: string[]): string {
+    const img = images[0] ?? "";
+    if (img.includes("alpine-cedar")) return "prestige";
+    const m = img.match(/modele-(\w+)\.png/);
+    return m ? m[1] : "";
+  }
+
   const visibles = annonces
     .filter((a) => {
       if (typeActif === "terrain") return a.type === "Terrain à bâtir";
+      if (isModelFilter) return getModel(a.images) === typeActif;
       if (typeActif === "maison") return a.type !== "Terrain à bâtir";
       return true;
     })
@@ -318,20 +335,30 @@ export default function AnnoncesPage() {
               </svg>
             </button>
             {typeOpen && (
-              <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-[#D9D4CC] shadow-lg z-50">
-                {TYPE_OPTIONS.map((opt) => (
-                  <button
-                    key={opt.value}
-                    onClick={() => { setTypeActif(opt.value); setTypeOpen(false); }}
-                    className={`w-full text-left px-4 py-2.5 text-[13px] transition-colors cursor-pointer ${
-                      typeActif === opt.value
-                        ? "bg-[#FDF8F0] font-bold text-[#BA7517]"
-                        : "text-[#2C2C2A] hover:bg-[#F2EDE6]"
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
+              <div className="absolute top-full left-0 mt-1 w-52 bg-white border border-[#D9D4CC] shadow-lg z-50">
+                {TYPE_OPTIONS.map((opt, i) => {
+                  const prevGroup = i > 0 ? TYPE_OPTIONS[i - 1].group : null;
+                  const showSeparator = opt.group && opt.group !== prevGroup;
+                  return (
+                    <div key={opt.value}>
+                      {showSeparator && (
+                        <div className="px-4 pt-2.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-[#BA7517] bg-[#F2EDE6]">
+                          {opt.group}
+                        </div>
+                      )}
+                      <button
+                        onClick={() => { setTypeActif(opt.value); setTypeOpen(false); }}
+                        className={`w-full text-left px-4 py-2.5 text-[13px] transition-colors cursor-pointer ${
+                          typeActif === opt.value
+                            ? "bg-[#FDF8F0] font-bold text-[#BA7517]"
+                            : "text-[#2C2C2A] hover:bg-[#F2EDE6]"
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
