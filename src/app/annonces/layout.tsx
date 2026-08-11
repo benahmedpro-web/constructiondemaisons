@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HeaderTerrain } from "@/components/HeaderTerrain";
 
 export const metadata: Metadata = {
   alternates: {
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function AnnoncesLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <HeaderTerrain />
+      {children}
+    </>
+  );
 }

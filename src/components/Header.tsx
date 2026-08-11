@@ -124,7 +124,7 @@ export function Header() {
             )}
           </div>
 
-          {/* 2 — Nos modèles dropdown (ex "Modèles & Annonces") */}
+          {/* 2 — Nos modèles dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setModelsDropdown(true)}
