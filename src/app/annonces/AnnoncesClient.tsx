@@ -386,11 +386,6 @@ export default function AnnoncesPage() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute top-3 left-3">
-                    <span className={`text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 ${statutColors[a.statut]}`}>
-                      {a.statut}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Contenu */}

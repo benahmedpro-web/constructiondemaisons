@@ -214,7 +214,6 @@ export default async function AnnonceDetailPage({ params }: Props) {
                     { label: "Type", val: a.type },
                     { label: "Commune", val: a.commune },
                     { label: "Zone", val: a.zone },
-                    { label: "Statut", val: a.statut },
                   ].filter((row): row is { label: string; val: string } => row !== null).map((row) => (
                     <div key={row.label} className="flex justify-between items-center py-1.5 border-b border-[#D9D4CC] last:border-0 text-[14px]">
                       <span className="text-[#888780]">{row.label}</span>
