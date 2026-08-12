@@ -53,6 +53,10 @@ const COMMUNE_COORDS: Record<string, [number, number]> = {
   "Vulbens": [46.087, 5.979],
   "Étaux": [46.082, 6.388], "Saint-Jean-de-Tholome": [46.107, 6.495],
   "Glières-Val-de-Borne": [45.977, 6.283],
+  "Neuvecelle": [46.388, 6.610], "Publier": [46.386, 6.637], "Sciez": [46.342, 6.382],
+  "Abondance": [46.273, 6.723], "Anthy-sur-Léman": [46.367, 6.447], "Novel": [46.355, 6.700],
+  "Marin": [46.382, 6.550], "Bernex": [46.276, 6.760], "Maxilly-sur-Léman": [46.383, 6.572],
+  "Saint-Gingolph": [46.397, 6.800], "Féternes": [46.353, 6.583],
   // Ain (01)
   "Ambérieu-en-Bugey": [45.947, 5.352], "Bellegarde-sur-Valserine": [46.108, 5.828],
   "Belley": [45.760, 5.693], "Bourg-en-Bresse": [46.205, 5.227], "Cessy": [46.333, 6.088],
@@ -98,6 +102,8 @@ const villesParDept: Record<string, string[]> = {
     "Talloires", "Taninges", "Thonon-les-Bains", "Vétraz-Monthoux", "Vers",
     "Veyrier-du-Lac", "Ville-la-Grand", "Viry", "Viuz-en-Sallaz", "Vulbens",
     "Dingy-en-Vuache", "Étaux", "Glières-Val-de-Borne", "Saint-Jean-de-Tholome", "Savigny",
+    "Neuvecelle", "Publier", "Sciez", "Abondance", "Anthy-sur-Léman", "Novel",
+    "Marin", "Bernex", "Maxilly-sur-Léman", "Saint-Gingolph", "Féternes",
   ],
   "Ain (01)": [
     "Ambérieu-en-Bugey", "Bellegarde-sur-Valserine", "Belley", "Bourg-en-Bresse",
