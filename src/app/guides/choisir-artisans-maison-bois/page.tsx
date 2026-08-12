@@ -148,6 +148,15 @@ export default function GuideArtisansPage() {
           <p className="text-[16px] text-[#888780] leading-[1.8]">
             Un maître d&apos;œuvre spécialisé comme M&M CONSTRUCTION a travaillé avec des dizaines d&apos;artisans sur des années. Il sait qui respecte les délais, qui travaille proprement, qui pose des problèmes à la réception. Ce réseau ne s&apos;achète pas — il se construit chantier après chantier.
           </p>
+
+          {/* Sources */}
+          <div className="border-t border-[#D9D4CC] mt-10 pt-6">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-3">Sources</p>
+            <ul className="flex flex-col gap-1.5 list-none p-0">
+              <li><a href="https://www.qualibat.com/trouver-une-entreprise/" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Trouver un artisan qualifié bois — Qualibat ↗</a></li>
+              <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2034" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Garantie décennale — service-public.fr ↗</a></li>
+            </ul>
+          </div>
         </div>
       </article>
 

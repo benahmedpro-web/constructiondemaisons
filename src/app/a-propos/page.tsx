@@ -39,6 +39,7 @@ const jsonLdPerson = {
   },
   description:
     "20 ans d'expérience en construction individuelle. Fondateur de M&M CONSTRUCTION, spécialisé maison ossature bois en Haute-Savoie et Genevois français.",
+  sameAs: ["https://g.page/r/Cdn_3K5QUh7wEBM"],
 };
 
 export const metadata: Metadata = {

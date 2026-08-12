@@ -270,6 +270,16 @@ export default function GuideGarantiesPage() {
               Vous n&apos;êtes pas seul face au mécanisme d&apos;assurance. Si vous avez besoin de déclarer un sinistre dans les 10 ans après réception, nous pouvons vous orienter sur la bonne procédure et identifier les polices concernées à partir du dossier chantier.
             </p>
 
+            {/* Sources */}
+            <div className="border-t border-[#D9D4CC] mt-10 pt-6">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-3">Sources</p>
+              <ul className="flex flex-col gap-1.5 list-none p-0">
+                <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2034" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Garanties dans la construction — service-public.fr ↗</a></li>
+                <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2033" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Assurance dommages-ouvrage — service-public.fr ↗</a></li>
+                <li><a href="https://www.georisques.gouv.fr/risques/seisme" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Zonage sismique — Géorisques (BRGM) ↗</a></li>
+              </ul>
+            </div>
+
           </div>
         </article>
 

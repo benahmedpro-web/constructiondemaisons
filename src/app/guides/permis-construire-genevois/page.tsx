@@ -154,19 +154,29 @@ export default function GuidePermisGenevoisPage() {
           <p className="text-[16px] text-[#888780] leading-[1.8]">
             Se protéger : afficher le permis correctement et immédiatement (panneau réglementaire), conserver les photos d&apos;affichage datées, maintenir de bonnes relations avec les voisins avant les travaux. Un maître d&apos;œuvre expérimenté sur la zone connaît ces risques et peut anticiper les situations problématiques lors de la conception du projet.
           </p>
+
+          {/* Sources */}
+          <div className="border-t border-[#D9D4CC] mt-10 pt-6">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-3">Sources</p>
+            <ul className="flex flex-col gap-1.5 list-none p-0">
+              <li><a href="https://www.service-public.fr/particuliers/vosdroits/F1986" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Permis de construire — service-public.fr ↗</a></li>
+              <li><a href="https://www.georisques.gouv.fr/risques/seisme" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Zonage sismique — Géorisques (BRGM) ↗</a></li>
+              <li><a href="https://www.ecologie.gouv.fr/politiques-publiques/reglementation-re2020" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Réglementation RE2020 — Ministère de la Transition écologique ↗</a></li>
+            </ul>
+          </div>
         </div>
       </article>
 
       <div className="border-t border-[#D9D4CC] py-10 px-5 bg-white">
         <div className="max-w-[780px] mx-auto">
           <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Permis obtenu — chantier en cours</p>
-          <Link href="/annonces/maison-ossature-bois-saint-julien-en-genevois-74/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
+          <Link href="/annonces/projet-maison-saint-julien-en-genevois-terrain-378m2/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
             <div className="flex-shrink-0 overflow-hidden w-24 h-16">
               <Image src="/images/hero-maison-bois-montagne-1.jpg" alt="Maison ossature bois Saint-Julien-en-Genevois" width={96} height={64} className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Maison ossature bois · Saint-Julien-en-Genevois (74)</div>
-              <div className="text-[13px] text-[#888780] mt-1">95 m² · 295 000 € · Permis obtenu en 4 mois</div>
+              <div className="text-[13px] text-[#888780] mt-1">Terrain 378 m² · Permis de construire · Genevois français</div>
               <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir l&apos;annonce →</div>
             </div>
           </Link>

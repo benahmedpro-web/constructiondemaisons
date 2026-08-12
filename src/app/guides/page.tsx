@@ -28,7 +28,7 @@ const guides = [
   {
     title: "RE2020 : ce que ça change pour une maison bois en Haute-Savoie",
     excerpt: "La réglementation RE2020 favorise-t-elle le bois ? Quelles exigences concrètes pour votre projet en zone alpine ?",
-    image: "/images/hero-maison-bois-alpine.jpg",
+    image: "/images/RE2020-2.png",
     href: "/guides/re2020-maison-bois/",
     tag: "Réglementation",
   },
@@ -63,7 +63,7 @@ const guides = [
   {
     title: "Prix construction maison 2026 : budget complet par type de projet",
     excerpt: "Maison neuve, extension, rénovation — fourchettes réalistes, tableau des postes de coût et surcoûts spécifiques au Genevois français.",
-    image: "/images/hero-maison-bois-montagne-1.jpg",
+    image: "/images/MAB4451.jpg",
     href: "/guides/prix-construction-maison/",
     tag: "Budget",
   },
@@ -84,7 +84,7 @@ const guides = [
   {
     title: "Garantie décennale et assurance dommage ouvrage en maîtrise d'œuvre",
     excerpt: "Qui souscrit quoi, ce que couvre la DO quand il n'y a pas de CCMI, et les points de vigilance spécifiques à l'ossature bois.",
-    image: "/images/hero-maison-bois-montagne-2.jpg",
+    image: "/images/mahmoud-ben-ahmed-presentation.png",
     href: "/guides/garanties-assurance-maitre-oeuvre/",
     tag: "Juridique",
   },

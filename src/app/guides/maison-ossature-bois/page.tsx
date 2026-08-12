@@ -173,19 +173,27 @@ export default function GuideMaisonBoisPage() {
           <p className="text-[16px] text-[#888780] leading-[1.8]">
             La maison ossature bois n&apos;est pas plus simple à réaliser qu&apos;une maison maçonnée — elle est différente. Les artisans doivent connaître les DTU bois (DTU 31.2, DTU 40.29, DTU 36.5), la gestion de la vapeur d&apos;eau, les liaisons entre matériaux. Un maître d&apos;œuvre spécialisé bois comme M&M CONSTRUCTION sélectionne uniquement des artisans avec qualifications bois et références locales — et coordonne le chantier pour que les interfaces entre corps de métier soient gérées, pas laissées au hasard.
           </p>
+          {/* Sources */}
+          <div className="border-t border-[#D9D4CC] mt-10 pt-6">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-3">Sources</p>
+            <ul className="flex flex-col gap-1.5 list-none p-0">
+    <li><a href="https://www.ecologie.gouv.fr/politiques-publiques/reglementation-re2020" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Réglementation RE2020 — Ministère de la Transition écologique ↗</a></li>
+    <li><a href="https://www.qualibat.com/trouver-une-entreprise/" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Trouver un artisan qualifié bois — Qualibat ↗</a></li>
+            </ul>
+          </div>
         </div>
       </article>
 
       <div className="border-t border-[#D9D4CC] py-10 px-5 bg-white">
         <div className="max-w-[780px] mx-auto">
           <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projet similaire en cours</p>
-          <Link href="/annonces/maison-ossature-bois-annemasse-74/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
+          <Link href="/annonces/projet-maison-annemasse-terrain-740m2/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
             <div className="flex-shrink-0 overflow-hidden w-24 h-16">
               <Image src="/images/hero-maison-bois-alpine.jpg" alt="Maison ossature bois Annemasse" width={96} height={64} className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Maison ossature bois · Annemasse (74)</div>
-              <div className="text-[13px] text-[#888780] mt-1">120 m² · 385 000 € · Disponible</div>
+              <div className="text-[13px] text-[#888780] mt-1">Terrain 740 m² · PC accepté · Disponible</div>
               <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir l&apos;annonce →</div>
             </div>
           </Link>

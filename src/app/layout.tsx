@@ -62,6 +62,7 @@ const jsonLdBusiness = {
     name: "Mahmoud Ben Ahmed",
     jobTitle: "Maître d'œuvre spécialisé ossature bois",
     url: BASE + "/a-propos/",
+    sameAs: ["https://g.page/r/Cdn_3K5QUh7wEBM"],
     knowsAbout: [
       "Maison ossature bois",
       "Maîtrise d'œuvre",

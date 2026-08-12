@@ -162,14 +162,14 @@ export default function GuideExtensionPage() {
       <div className="border-t border-[#D9D4CC] py-10 px-5 bg-white">
         <div className="max-w-[780px] mx-auto">
           <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Chantier en cours</p>
-          <Link href="/annonces/extension-ossature-bois-thonon-les-bains-74/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
+          <Link href="/annonces/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
             <div className="flex-shrink-0 overflow-hidden w-24 h-16">
-              <Image src="/images/hero-extension-bois-jardin.jpg" alt="Extension ossature bois Thonon-les-Bains" width={96} height={64} className="w-full h-full object-cover" />
+              <Image src="/images/hero-extension-bois-jardin.jpg" alt="Terrains et projets maison ossature bois Haute-Savoie" width={96} height={64} className="w-full h-full object-cover" />
             </div>
             <div>
-              <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Extension ossature bois · Thonon-les-Bains (74)</div>
-              <div className="text-[13px] text-[#888780] mt-1">45 m² · 135 000 € · En cours</div>
-              <div className="text-[13px] text-[#BA7517] font-medium mt-2">Suivre le chantier →</div>
+              <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Terrains et projets disponibles · Haute-Savoie (74)</div>
+              <div className="text-[13px] text-[#888780] mt-1">Annemasse, Saint-Julien, Archamps, Genevois français</div>
+              <div className="text-[13px] text-[#BA7517] font-medium mt-2">Consulter les annonces →</div>
             </div>
           </Link>
         </div>
