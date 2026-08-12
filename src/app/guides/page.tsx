@@ -56,7 +56,7 @@ const guides = [
   {
     title: "Permis de construire en zone Genevois français : les pièges à éviter",
     excerpt: "Délais d'instruction, PLU locaux, recours des voisins, demandes de pièces complémentaires — ce que les services d'urbanisme ne vous diront pas d'emblée.",
-    image: "/images/1200x742_Bretagne.jpg",
+    image: "/images/hero-maison-bois-montagne-2.jpg",
     href: "/guides/permis-construire-genevois/",
     tag: "Urbanisme",
   },

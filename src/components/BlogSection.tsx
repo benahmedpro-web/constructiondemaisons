@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const sidebarPosts = [
-  { title: "Maison ossature bois : avantages, coûts et délais en 2025", image: "/images/maisons_pierre_Saturnia_3_102_nord_biton_noir_avant.jpg", href: "/guides/maison-ossature-bois/" },
-  { title: "RE2020 : ce que ça change pour une maison bois en Haute-Savoie", image: "/images/maisons_pierre_Cadence_4_132_gi_nord_noir_detail4.jpg", href: "/guides/re2020-maison-bois/" },
-  { title: "Maîtrise d'œuvre vs CCMI : quelles différences concrètes ?", image: "/images/1200x742_Bretagne.jpg", href: "/guides/moe-vs-ccmi/" },
-  { title: "Extension ossature bois : permis, coût, délais", image: "/images/1200x742_Azur.jpg", href: "/guides/extension-ossature-bois/" },
-  { title: "Comment choisir ses artisans pour une maison bois ?", image: "/images/1200x742-maisons-pierre-corail-1.jpg", href: "/guides/choisir-artisans-maison-bois/" },
-  { title: "Permis de construire en zone Genevois français : les pièges à éviter", image: "/images/maisons_pierre_Vision_4_136_nord_biton_noir_avant.jpg", href: "/guides/permis-construire-genevois/" },
+  { title: "Maison ossature bois : avantages, coûts et délais en 2026", image: "/images/hero-maison-bois-alpine.jpg", href: "/guides/maison-ossature-bois/" },
+  { title: "RE2020 : ce que ça change pour une maison bois en Haute-Savoie", image: "/images/hero-maison-bois-montagne-2.jpg", href: "/guides/re2020-maison-bois/" },
+  { title: "Maîtrise d'œuvre vs CCMI : quelles différences concrètes ?", image: "/images/hero-maison-bois-montagne-1.jpg", href: "/guides/moe-vs-ccmi/" },
+  { title: "Extension ossature bois : permis, coût, délais", image: "/images/hero-extension-bois-jardin.jpg", href: "/guides/extension-ossature-bois/" },
+  { title: "Comment choisir ses artisans pour une maison bois ?", image: "/images/hero-extension-bois-golden.jpg", href: "/guides/choisir-artisans-maison-bois/" },
+  { title: "Permis de construire en zone Genevois français : les pièges à éviter", image: "/images/hero-maison-bois-montagne-2.jpg", href: "/guides/permis-construire-genevois/" },
   { title: "Prix maison ossature bois en Haute-Savoie : estimation au m²", image: "/images/hero-maison-bois-montagne-1.jpg", href: "/guides/prix-maison-ossature-bois-haute-savoie/" },
   { title: "Construction chalet ossature bois en Haute-Savoie", image: "/images/hero-maison-bois-alpine.jpg", href: "/guides/construction-chalet-ossature-bois-haute-savoie/" },
   { title: "Garantie décennale et assurance dommage ouvrage en maîtrise d'œuvre", image: "/images/hero-maison-bois-montagne-2.jpg", href: "/guides/garanties-assurance-maitre-oeuvre/" },
