@@ -185,6 +185,18 @@ export default function MaisonBoisThononPage() {
           </div>
         </section>
 
+        {/* Annonces disponibles */}
+        <section className="bg-white py-10 px-5">
+          <div className="max-w-[780px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projets disponibles</p>
+            <p className="text-[14px] text-[#888780] mb-4">Terrains et projets maison ossature bois disponibles dans le Chablais et le département 74.</p>
+            <Link href="/annonces/" className="flex items-center gap-3 p-4 bg-[#F2EDE6] border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
+              <span className="text-[#BA7517] flex-shrink-0">◆</span>
+              <span className="text-[14px] font-medium text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Consulter tous les terrains et projets disponibles en Haute-Savoie →</span>
+            </Link>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-[#BA7517] py-12 px-5">
           <div className="max-w-[780px] mx-auto text-center">

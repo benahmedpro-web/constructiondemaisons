@@ -172,6 +172,29 @@ export default function MaisonBoisAnnemassePage() {
           </div>
         </section>
 
+        {/* Annonces disponibles */}
+        <section className="bg-white py-10 px-5">
+          <div className="max-w-[780px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projets disponibles</p>
+            <p className="text-[14px] text-[#888780] mb-4">Terrains et projets maison ossature bois disponibles à Annemasse et dans le Genevois français.</p>
+            <div className="flex flex-col gap-2">
+              {[
+                { href: "/annonces/terrain-annemasse-740m2-pc-accepte/", label: "Terrain 740m² à Annemasse — PC accepté, toutes viabilités", tag: "Terrain" },
+                { href: "/annonces/projet-maison-annemasse-terrain-740m2/", label: "Projet maison ossature bois · Annemasse — terrain 740m²", tag: "Maison bois" },
+                { href: "/annonces/terrain-archamps-466m2-ces-02/", label: "Terrain 466m² à Archamps — zone sismique 3, Genevois français", tag: "Terrain" },
+              ].map((l) => (
+                <Link key={l.href} href={l.href} className="flex items-center gap-3 p-3 bg-[#F2EDE6] border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
+                  <span className="text-[11px] font-bold text-[#BA7517] uppercase tracking-wide w-20 flex-shrink-0">{l.tag}</span>
+                  <span className="text-[14px] font-medium text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">{l.label}</span>
+                </Link>
+              ))}
+            </div>
+            <Link href="/annonces/" className="inline-block mt-4 text-[13px] font-bold text-[#BA7517] no-underline hover:underline">
+              Voir toutes les annonces →
+            </Link>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-[#BA7517] py-12 px-5">
           <div className="max-w-[780px] mx-auto text-center">

@@ -263,7 +263,7 @@ export default function GuideMoeVsCcmiPage() {
             </div>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors text-center">
-                Configurer mon projet →
+                Décrire mon projet →
               </Link>
               <a href="tel:+33625590926" className="inline-block border border-white/30 text-white text-[14px] px-6 py-2.5 no-underline hover:border-white transition-colors text-center">
                 Appeler directement

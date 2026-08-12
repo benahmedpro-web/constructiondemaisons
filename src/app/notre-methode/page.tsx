@@ -203,7 +203,7 @@ export default function NotreMethodePage() {
             Le premier échange est gratuit et sans engagement. On analyse votre projet, on vous dit ce qui est faisable et dans quel délai.
           </p>
           <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 no-underline hover:bg-[#9E6312] transition-colors">
-            Configurer mon projet →
+            Démarrer avec nous →
           </Link>
           <p className="mt-5 text-[13px] text-[#888780]">
             <Link href="/a-propos/" className="text-[#BA7517] no-underline hover:underline">→ À propos de Mahmoud Ben Ahmed</Link>

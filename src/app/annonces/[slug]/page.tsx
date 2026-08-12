@@ -36,6 +36,8 @@ function formatBudget(n: number) {
   return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
 }
 
+const BASE = "https://www.constructiondemaisons.com";
+
 export default async function AnnonceDetailPage({ params }: Props) {
   const { slug } = await params;
   const a = getAnnonce(slug);
@@ -43,8 +45,31 @@ export default async function AnnonceDetailPage({ params }: Props) {
 
   const autres = getAutresAnnonces(slug);
 
+  const jsonLdService = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${a.type} — ${a.commune}`,
+    description: a.accroche,
+    provider: {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": BASE + "/#business",
+      name: "M&M CONSTRUCTION",
+      url: BASE + "/",
+    },
+    areaServed: {
+      "@type": "City",
+      name: a.commune,
+      containedInPlace: { "@type": "AdministrativeArea", name: a.departement },
+    },
+    url: `${BASE}/annonces/${a.slug}/`,
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
+      />
       {/* Barre sticky */}
       <div className="sticky top-0 z-40 bg-[#2C2C2A] px-5 py-1.5">
         <div className="max-w-[1100px] mx-auto flex items-center gap-6">

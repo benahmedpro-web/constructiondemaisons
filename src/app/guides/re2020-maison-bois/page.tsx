@@ -152,7 +152,7 @@ export default function GuideRe2020Page() {
             <p className="text-[15px] text-[#888780] leading-[1.7]">Mahmoud vous explique concrètement les exigences RE2020 pour votre terrain et votre programme. Premier échange gratuit.</p>
           </div>
           <Link href="/demande-etude/" className="flex-shrink-0 inline-block bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors self-center">
-            Configurer mon projet →
+            Lancer mon projet bois →
           </Link>
         </div>
       </section>

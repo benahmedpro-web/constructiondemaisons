@@ -1,125 +1,128 @@
-# Plan d'action SEO — Post Audit #20
-**Mise à jour :** 6 août 2026 | Score actuel : 89/100
+# Plan d'action SEO — constructiondemaisons.com
+**Audit #21 — 12 août 2026**
 
 ---
 
-## Priorité 1 — IMMÉDIAT (dans les 7 jours)
+## P1 — Immédiat (cette semaine)
 
-### P1.1 — Corriger le titre du guide "2025" → "2026"
-- **Fichier :** `src/app/guides/maison-ossature-bois/page.tsx`
-- **Action :** Changer `title` de "Maison ossature bois : guide complet 2025" → "Maison ossature bois : guide complet 2026"
-- **Impact :** Cohérence contenu/titre — signal fraîcheur pour Google et IA
-- **Effort :** 5 min
+### 1. Person schema sur `/a-propos/` ⭐ Quick Win
+**Impact** : E-E-A-T majeur — Google associe la page biographie à une expertise prouvée  
+**Effort** : 30 min  
+Ajouter dans `src/app/a-propos/page.tsx` :
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.constructiondemaisons.com/#person-mahmoud",
+  "name": "Mahmoud Ben Ahmed",
+  "jobTitle": "Maître d'œuvre spécialisé maison ossature bois",
+  "url": "https://www.constructiondemaisons.com/a-propos/",
+  "image": "https://www.constructiondemaisons.com/images/mahmoud-ben-ahmed.jpg",
+  "worksFor": { "@type": "Organization", "name": "M&M CONSTRUCTION", "url": "https://www.constructiondemaisons.com/" },
+  "knowsAbout": ["maison ossature bois", "maîtrise d'œuvre", "RE2020", "Genevois français", "Haute-Savoie"],
+  "areaServed": { "@type": "AdministrativeArea", "name": "Haute-Savoie, Ain, Genevois français" }
+}
+```
 
-### P1.2 — Valider le correctif 404 dans GSC
-- **Action :** Google Search Console → Couverture → Erreur 404 → "Valider le correctif"
-- **Prérequis :** Le déploiement Vercel des redirections doit être visible (commit de l'audit #20)
-- **Impact :** Récupération du crawl budget sur ces URLs
-
-### P1.3 — Demander l'indexation des 10 pages prioritaires (GSC)
-- **Outil :** GSC → Inspection d'URL → "Demander l'indexation"
-- **Pages :**
-  1. `/maison-ossature-bois/`
-  2. `/extension-bois/`
-  3. `/renovation-bois/`
-  4. `/faire-construire-haute-savoie/`
-  5. `/demande-etude/`
-  6. `/temoignages/`
-  7. `/notre-methode/`
-  8. `/guides/maison-ossature-bois/`
-  9. `/guides/moe-vs-ccmi/`
-  10. `/guides/re2020-maison-bois/`
-
----
-
-## Priorité 2 — COURT TERME (dans les 30 jours)
-
-### P2.1 — Enrichir les passages citables (GEO)
-- **Objectif :** Porter 5 guides supplémentaires à ≥1 paragraphe de 134-167 mots
-- **Guides cibles :**
-  - `/guides/re2020-maison-bois/` — section norme RE2020 en chiffres
-  - `/guides/extension-ossature-bois/` — section budget extension
-  - `/guides/choisir-artisans-maison-bois/` — section critères sélection
-  - `/guides/coordonner-chantier-bois/` — section planning chantier
-  - `/guides/permis-construire-genevois/` — section délais instruction
-- **Impact :** +5-10 pts GEO (citabilité IA)
-- **Effort :** 2-3h
-
-### P2.2 — BreadcrumbList sur les pages services
-- **Pages :** `/maison-ossature-bois/`, `/extension-bois/`, `/renovation-bois/`, pages villes
-- **Impact :** Rich snippet breadcrumb dans les SERPs
-- **Effort :** 1h (composant JSON-LD réutilisable)
-
-### P2.3 — Liens internes vers les 15 pages orphelines
-- **Pages concernées :** Pages villes (annecy, annemasse, saint-julien, gex, thonon)
-- **Action :** Ajouter des liens depuis les pages guides et services vers les pages villes correspondantes
-- **Impact :** Améliore le crawl budget + autorité interne
-- **Effort :** 2h
-
-### P2.4 — Mettre à jour les mentions légales avec le SIREN
-- **Prérequis :** Réception du SIREN du Greffe de Thonon-les-Bains
-- **Fichier :** `src/app/mentions-legales/page.tsx`
-- **Données à ajouter :**
-  - Forme : SASU
-  - Capital : 15 000 €
-  - RCS Thonon-les-Bains + SIREN
-  - Siège : 5 Rue du 18 Août 1944, 74100 Annemasse
-- **Impact :** E-E-A-T légal, confiance Google
+### 2. Corriger AggregateRating reviewers ⭐ Quick Win
+**Impact** : Cohérence entre schema et avis publics Google — crédibilité E-E-A-T  
+**Effort** : 20 min  
+Dans `src/app/layout.tsx` (ou homepage), remplacer les reviewers fictifs par les vrais :
+- "Sébastien M." → Laurent Ramos (avril 2021)
+- "Claire et Thomas R." → Francis Nossin (mai 2025)
+- Conserver un 3e avis réel (ex: prochain avis reçu sur Google)
 
 ---
 
-## Priorité 3 — MOYEN TERME (30-90 jours)
+## P2 — Court terme (30 jours)
 
-### P3.1 — LinkedIn Mahmoud Ben Ahmed
-- **Action :** Créer le profil LinkedIn avec URL constructiondemaisons.com
-- **Impact :** +3 pts GEO (signal brand authority)
-- **À faire manuellement**
+### 3. Maillage interne vers 5 pages orphelines
+**Impact** : Crawl budget + autorité transmise aux pages faibles  
+**Effort** : 1h  
 
-### P3.2 — Réclamer la fiche Pappers.fr
-- **Prérequis :** RCS immatriculé + SIREN reçu
-- **Action :** Revendiquer la fiche M&M CONSTRUCTION sur pappers.fr, ajouter URL du site
-- **Impact :** Backlink autoritaire depuis un annuaire légal indexé
+Pages à désorphaniser :
+- `/annonces/maison-ossature-bois-archamps-74` → lien depuis `/maison-ossature-bois-annemasse/` (zone géo proche)
+- `/annonces/maison-ossature-bois-annemasse-74` → lien depuis hub `/annonces/`
+- `/annonces/extension-ossature-bois-thonon-les-bains-74` → lien depuis `/extension-bois/`
+- `/annonces/maison-ossature-bois-saint-julien-en-genevois-74` → lien depuis `/maison-ossature-bois-saint-julien-en-genevois/`
+- `/guides/prix-construction-maison` → vérifier si redirect ou doublon de `/guides/prix-construction-maison/`
 
-### P3.3 — Campagne avis Google : 14 → 20+ avis
-- **Lien à partager :** `https://g.page/r/Cdn_3K5QUh7wEBM/review`
-- **Action :** Partager à tous les clients récents (SMS, email de fin de chantier)
-- **Impact :** reviewCount Schema + signal GEO + confiance locale
+### 4. Schema Service sur pages `/annonces/` individuelles
+**Impact** : Éligibilité rich results pour pages de projets  
+**Effort** : 2h (composant réutilisable)  
+Ajouter sur chaque page annonce :
+```json
+{
+  "@type": "Service",
+  "name": "Maison ossature bois — [Ville]",
+  "provider": { "@id": "https://www.constructiondemaisons.com/#business" },
+  "areaServed": { "@type": "City", "name": "[Ville]" }
+}
+```
 
-### P3.4 — Backlinks off-site
-- **Cibles prioritaires :**
-  - Annuaires bâtiment Haute-Savoie
-  - Architectes / maîtres d'œuvre partenaires
-  - Articles presse locale (lemessager.fr déjà publié)
-  - Fédérations construction bois (FNB, CNDB)
-- **Impact :** Domain Authority + crawl budget
+### 5. Varier les ancres de CTA
+**Impact** : Distribution d'autorité plus naturelle, moins de sur-optimisation  
+**Effort** : 1h  
+"Configurer mon projet →" apparaît 18× — alterner avec :
+- "Demander une étude gratuite"
+- "Lancer mon projet bois"  
+- "Décrire mon projet"
+- "Parler de mon terrain"
+
+### 6. Mesurer les Core Web Vitals
+**Impact** : Confirme ou invalide le score Performance (70/100 estimé)  
+**Effort** : 30 min  
+1. Ouvrir `https://pagespeed.web.dev/`
+2. Tester `https://www.constructiondemaisons.com/` — mobile
+3. Tester `https://www.constructiondemaisons.com/maison-ossature-bois/` — mobile
+4. Reporter LCP, INP, CLS dans ce fichier
 
 ---
 
-## Suivi des scores
+## P3 — Moyen terme (30–90 jours)
 
-| Date | Score | Delta | Événement |
-|------|-------|-------|-----------|
-| Audit #18 | 94/100 | — | Score record |
-| Audit #19 | ~65/100 | -29 | Régression layout.tsx |
-| Audit #20 | 89/100 | +24 | Récupération + GEO |
-| Objectif | 95/100 | +6 | Après P2.1-P2.3 |
+### 7. Sources externes dans les guides principaux
+**Impact** : GEO / citabilité IA — les LLMs privilégient les contenus avec références  
+**Effort** : 2h (3-4 guides prioritaires)  
+Ajouter section "Sources" avec liens `rel="noopener"` vers :
+- Ministère (RE2020 → ecologie.gouv.fr)
+- Géorisques (zonage sismique)
+- Qualibat (qualifications artisans)
+
+Guides prioritaires : `/guides/re2020-maison-bois/`, `/guides/maison-ossature-bois/`, `/guides/garanties-assurance-maitre-oeuvre/`
+
+### 8. Diversifier les visuels dans les guides
+**Impact** : Unicité du contenu image, meilleure indexation Google Images  
+**Effort** : 2-3h (choix + remplacement)  
+`hero-maison-bois-montagne-2.jpg` utilisé sur 3 guides — assigner un visuel unique par guide.
+
+### 9. LinkedIn Mahmoud Ben Ahmed (off-site)
+**Impact** : sameAs dans Person schema — signal E-E-A-T fort  
+**Effort** : 1h  
+Créer profil LinkedIn avec URL `constructiondemaisons.com`, puis ajouter dans Person schema :
+```json
+"sameAs": ["https://www.linkedin.com/in/mahmoud-ben-ahmed-[id]"]
+```
+
+### 10. Atteindre 20+ avis Google
+**Impact** : AggregateRating plus crédible, meilleur CTR local  
+**Effort** : Continu  
+Partager `https://g.page/r/Cdn_3K5QUh7wEBM/review` après chaque livraison de chantier.  
+Objectif : 20+ avis avant fin 2026 (actuellement 14).
 
 ---
 
-## Ce qui est DONE depuis l'audit #18
+## Récapitulatif priorisé
 
-- ✅ layout.tsx restauré avec tous les schémas
-- ✅ 18 redirections 301 (anciens URLs 404)
-- ✅ Chaînes redirect 2 hops → 1 hop (audit #20)
-- ✅ OAI-SearchBot dans robots.txt
-- ✅ GBP sameAs dans HomeAndConstructionBusiness
-- ✅ Lien "Laisser un avis Google" (footer + temoignages)
-- ✅ Passages citables 248 et 148 mots (2 guides)
-- ✅ Bylines "Mis à jour" sur 6 guides
-- ✅ Mentions légales SASU mises à jour
-- ✅ Titres dupliqués/trop longs corrigés (SEMrush)
-- ✅ H1 sur /demande-etude/
-- ✅ HTML sémantique + canonical /catalogue/
-- ✅ Rating values en numbers dans JSON-LD
-- ✅ robots.txt nettoyé (/_next/ disallow supprimé)
-- ✅ /catalogue/ ajouté au sitemap (51 URLs)
+| # | Action | Impact | Effort | Priorité |
+|---|--------|--------|--------|----------|
+| 1 | Person schema /a-propos/ | ⭐⭐⭐ | 30 min | P1 |
+| 2 | AggregateRating vrais noms | ⭐⭐⭐ | 20 min | P1 |
+| 3 | Désorphaniser 5 pages | ⭐⭐ | 1h | P2 |
+| 4 | Schema /annonces/ | ⭐⭐ | 2h | P2 |
+| 5 | Varier ancres CTA | ⭐ | 1h | P2 |
+| 6 | Mesurer CWV | ⭐⭐ | 30 min | P2 |
+| 7 | Sources dans guides | ⭐⭐ | 2h | P3 |
+| 8 | Diversifier visuels guides | ⭐ | 3h | P3 |
+| 9 | LinkedIn + sameAs | ⭐⭐ | 1h | P3 |
+| 10 | 20+ avis Google | ⭐⭐⭐ | Continu | P3 |

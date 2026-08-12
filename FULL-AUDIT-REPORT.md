@@ -1,188 +1,127 @@
-# Rapport d'audit SEO complet — Audit #20
-**Site :** https://www.constructiondemaisons.com  
-**Date :** 6 août 2026  
-**Score global : 89/100** *(Excellent)*  
-**Précédent :** Audit #18 : 94/100 → Audit #19 : régression layout.tsx détectée → **Audit #20 : 89/100 (récupération + améliorations GEO)**
+# Audit SEO Complet — constructiondemaisons.com
+**Date** : 12 août 2026 | **Périmètre** : full-site | **Auditeur** : Agentic-SEO-Skill #21
 
 ---
 
-## Résumé exécutif
+## A) Résumé exécutif
 
-Le site a subi une régression critique entre les audits #18 et #19 (layout.tsx réduit de 164 → 21 lignes, perte totale de l'infrastructure SEO). Ce layout a été restauré en audit #19 et une série d'améliorations supplémentaires a été déployée : redirections 301, signaux GEO, données structurées, liens internes. L'audit #20 confirme la récupération à 89/100, avec des points d'amélioration résiduels sur les chaînes de redirections et la citabilité des passages.
+**Score SEO global : 72 / 100 — Bon**
 
----
+Profil : business local construction spécialisée (maîtrise d'œuvre bois), Haute-Savoie + Ain + Genevois français.
+Le site a une infrastructure technique solide et une stratégie E-E-A-T en bonne voie. Trois zones limitent le score : la structure de maillage interne (pages orphelines), l'absence de schéma Person sur `/a-propos/`, et les pages `/annonces/` sans balisage structuré.
 
-## Scores par catégorie
+### Top 3 problèmes
+1. **Pages orphelines** — 5 pages (4 `/annonces/`, 1 `/guides/`) avec ≤ 1 lien entrant
+2. **Person schema absent sur `/a-propos/`** — la page biographie ne bénéficie pas du schéma qui affirme l'expertise de l'auteur
+3. **Pages `/annonces/` sans schema** — pages individuelles (ex: `maison-ossature-bois-annemasse-74`) sans JSON-LD
 
-| Catégorie | Poids | Score | Points |
-|-----------|-------|-------|--------|
-| Technical SEO | 25% | 92% | 23/25 |
-| Content Quality | 20% | 80% | 16/20 |
-| On-Page SEO | 15% | 100% | 15/15 |
-| Schema / Données structurées | 15% | 93% | 14/15 |
-| Performance (CWV) | 10% | 80% | 8/10 |
-| Optimisation images | 10% | 80% | 8/10 |
-| AI Search Readiness (GEO) | 5% | 90% | 4.5/5 |
-| **TOTAL** | **100%** | | **88.5 → 89/100** |
+### Top 3 opportunités
+1. Ajouter PersonPage / Person JSON-LD sur `/a-propos/` → signal E-E-A-T majeur
+2. Enrichir le maillage interne vers les 5 pages orphelines
+3. Aligner les `review` du schema AggregateRating avec les vrais avis Google publics (Laurent Ramos, Francis Nossin)
 
 ---
 
-## Technical SEO (23/25)
+## B) Tableau des findings
 
-### ✅ Passes
-
-| Élément | Valeur | Statut |
-|---------|--------|--------|
-| HTTPS + HSTS | max-age=63072000, preload | ✅ |
-| Security headers | 100/100 (6/6 headers présents) | ✅ |
-| robots.txt | Allow / + Disallow /api/ | ✅ |
-| Crawleurs IA | 11 bots explicitement autorisés | ✅ |
-| OAI-SearchBot | Présent | ✅ |
-| Sitemap XML | 51 URLs indexées | ✅ |
-| Pages core (200) | /, /maison-ossature-bois/, /extension-bois/, /catalogue/, /guides/... | ✅ |
-| 301 redirects | 18 redirections pour anciens URLs 404 | ✅ |
-| trailingSlash | true — cohérent sur tout le site | ✅ |
-
-### ⚠️ Avertissements
-
-**Chaînes de redirect 2 hops (→ FIX déployé en audit #20)**  
-- Avant : `/services/` → 301 → `/maison-ossature-bois` → 308 → `/maison-ossature-bois/`  
-- Cause : avec `trailingSlash: true`, Next.js normalise les chemins avant matching — la source `/services/` matchait la règle `/services` dont la destination manquait le trailing slash.  
-- Fix appliqué : suppression des variantes redondantes + trailing slash dans toutes les destinations → 1 hop direct.
-
-**15 pages orphelines (≤1 lien interne entrant)**  
-- Pages de villes (annecy, annemasse, saint-julien...) et certains guides reçoivent peu de liens internes.
-
----
-
-## Content Quality (16/20)
-
-### ✅ Passes
-
-| Élément | Détail |
-|---------|--------|
-| H1 unique sur toutes les pages | Vérifié (/demande-etude/ H1 ajouté en commit 8740dd1) |
-| Meta descriptions | Présentes sur toutes les pages core |
-| Bylines avec dates | "Mis à jour le 1er août 2026" — 6 guides + 2 pages enrichies |
-| Passage citable 248 mots | `/guides/maison-ossature-bois/` — para coûts enrichi |
-| Passage citable 148 mots | `/guides/moe-vs-ccmi/` — para CCMI enrichi |
-| E-E-A-T : fondateur | Person schema avec jobTitle + 20 ans d'expérience |
-| Avis clients | 14 avis Google, 3 en JSON-LD |
-
-### ⚠️ Avertissements
-
-| Élément | Détail |
-|---------|--------|
-| Passages <134 mots | Majorité des paragraphes des guides encore courts (46-77 mots) |
-| Titre guide "2025" | `/guides/maison-ossature-bois/` — title tag dit "guide complet 2025", contenu mis à jour août 2026 |
-| Citabilité GEO limitée | Seuls 2 guides ont des passages dans la zone 134-167 mots |
+| Zone | Sévérité | Confiance | Finding | Evidence | Fix |
+|------|----------|-----------|---------|----------|-----|
+| Technical | ✅ Pass | Confirmed | Sécurité headers 100/100 | HSTS, CSP, XFO, XCTO, RP, PP tous présents | — |
+| Technical | ✅ Pass | Confirmed | Zéro lien brisé | 29/30 sains, 0 broken | — |
+| Technical | ✅ Pass | Confirmed | robots.txt — 11 crawlers IA autorisés | GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, Bytespider, CCBot, anthropic-ai, FacebookBot, Amazonbot, OAI-SearchBot | — |
+| Technical | ✅ Pass | Confirmed | Redirects propres | Homepage : 0 hop, 200 direct en 202ms | — |
+| Technical | ✅ Pass | Confirmed | Sitemap complet | 153 URLs indexées, HTTP 200 | — |
+| Technical | ⚠️ Warning | Confirmed | 5 pages orphelines (≤1 lien entrant) | `/annonces/maison-ossature-bois-archamps-74`, `-annemasse-74`, `extension-ossature-bois-thonon-74`, `maison-ossature-bois-saint-julien-74`, `/guides/prix-construction-maison` | Ajouter liens depuis pages de ville ou hub /annonces/ |
+| Technical | ⚠️ Warning | Hypothesis | Core Web Vitals inconnus | API PageSpeed rate-limited — aucune mesure LCP/INP/CLS disponible | Mesurer manuellement via PageSpeed.web.dev |
+| Contenu | ✅ Pass | Confirmed | E-E-A-T photo auteur sur 15 pages | Photo + nom + lien /a-propos/ sur /maison-ossature-bois/ + 14 guides | — |
+| Contenu | ✅ Pass | Confirmed | Vrais avis clients intégrés | Laurent Ramos (avril 2021), Francis Nossin (mai 2025) verbatim | — |
+| Contenu | ✅ Pass | Confirmed | Lisibilité correcte homepage | Flesch 62.6, niveau 7e-8e (Standard) | — |
+| Contenu | ✅ Pass | Confirmed | 14 guides avec contenu substantiel | Article schema, auteur, dateModified, FAQ intégrées | — |
+| Contenu | ⚠️ Warning | Confirmed | AggregateRating reviewers fictifs | Schema : "Sébastien M.", "Claire et Thomas R.", "Frédéric L." ≠ vrais avis Google publics (Laurent Ramos, Francis Nossin…) | Remplacer par les vrais avis Google existants |
+| On-Page | ✅ Pass | Confirmed | H1 pertinents sur toutes pages testées | "Construction de maison ossature bois en Haute-Savoie", "Faire construire en Haute-Savoie…" etc. | — |
+| On-Page | ✅ Pass | Confirmed | Meta descriptions complètes | Toutes pages testées : descriptions présentes, longueur ≤ 160 chars | — |
+| On-Page | ✅ Pass | Confirmed | OG + Twitter 100/100 | og:title, og:description, og:image, twitter:card tous valides | — |
+| On-Page | ⚠️ Warning | Confirmed | Ancre "Configurer mon projet →" × 18 | Sur-représentation d'une seule ancre dans les liens internes | Varier : "Demander une étude", "Lancer mon projet", etc. |
+| On-Page | ⚠️ Warning | Confirmed | 3 pages avec < 3 liens internes entrants | Crawler crawl internal_links : pages avec avg = 1 lien | Ajouter liens contextuels dans guides ou pages de ville |
+| Schema | ✅ Pass | Confirmed | HomeAndConstructionBusiness + AggregateRating | Homepage : @type HomeAndConstructionBusiness, aggregateRating 5/5 × 14, reviews[] | — |
+| Schema | ✅ Pass | Confirmed | WebSite + SearchAction | SearchAction avec urlTemplate présent | — |
+| Schema | ✅ Pass | Confirmed | BreadcrumbList sur pages service et guides | /maison-ossature-bois/, /faire-construire-haute-savoie/, guides | — |
+| Schema | ✅ Pass | Confirmed | Article schema sur 14 guides | headline, datePublished, dateModified, author, publisher, image | — |
+| Schema | ✅ Pass | Confirmed | Person JSON-LD sur /maison-ossature-bois/ | @type Person, name, jobTitle, url, image, worksFor, knowsAbout, areaServed | — |
+| Schema | ⚠️ Warning | Confirmed | /a-propos/ sans Person/ProfilePage schema | curl /a-propos/ : seuls HomeAndConstructionBusiness + WebSite présents | Ajouter Person (ou ProfilePage) avec sameAs LinkedIn, image, knowsAbout |
+| Schema | ⚠️ Warning | Confirmed | /annonces/ pages individuelles sans schema | curl annonces/maison-ossature-bois-annemasse-74 : 0 schémas | Ajouter Service ou RealEstateListing sur chaque page annonce |
+| Performance | ✅ Pass | Likely | Infra performante | Vercel CDN, Next/Image, font preloading (Brandon Grotesque woff2), lazy loading images | — |
+| Performance | ⚠️ Warning | Hypothesis | CWV non mesurés | API rate limited, CrUX non disponible sans clé | Mesurer sur PageSpeed.web.dev — mobile en priorité |
+| Images | ✅ Pass | Confirmed | Toutes les images homepage ont un alt | parse_html : 18 images analysées, 0 alt vide (hors bg aria-hidden) | — |
+| Images | ✅ Pass | Confirmed | Next/Image gère le responsive | srcset généré automatiquement, formats optimisés par Vercel | — |
+| Images | ⚠️ Warning | Confirmed | Duplication d'images entre guides | hero-maison-bois-montagne-2.jpg utilisé sur 3 guides différents | Diversifier les visuels par guide |
+| GEO / IA | ✅ Pass | Confirmed | llms.txt 100/100 | HTTP 200, 5 sections, 17 liens, llms-full.txt présent | — |
+| GEO / IA | ✅ Pass | Confirmed | 11 crawlers IA autorisés | robots.txt explicite pour GPTBot, ClaudeBot, PerplexityBot, etc. | — |
+| GEO / IA | ✅ Pass | Confirmed | FAQ dans contenu | /maison-ossature-bois/ : 8 Q&A, guides : FAQ sections | — |
+| GEO / IA | ⚠️ Warning | Likely | Peu de sources citées dans les guides | Aucun lien externe vers sources officielles (Ministère, Géorisques, Qualibat) dans la plupart des guides | Ajouter section "Sources" sur guides principaux |
 
 ---
 
-## On-Page SEO (15/15)
+## C) Scores par catégorie
 
-| Élément | Valeur | Statut |
-|---------|--------|--------|
-| Title tag homepage | "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie" (61 chars) | ✅ |
-| Meta description | 130 chars, avec CTA "Étude gratuite" | ✅ |
-| Canonical | `https://www.constructiondemaisons.com/` | ✅ |
-| Open Graph | 7/7 tags — score 100/100 | ✅ |
-| Twitter Card | 6/6 tags — summary_large_image | ✅ |
-| OG image | `/images/og-homepage.jpg` (1200×630) | ✅ |
-| Titres dupliqués | Corrigés (commit 940e212) | ✅ |
-| Titres trop longs | 9 titres >60 chars corrigés (commit 940e212) | ✅ |
+### Scoring Chain-of-Thought
 
----
+**Technical SEO — 61/100**
+- Positifs (5) : headers 100/100, 0 liens brisés, robots.txt IA complet, redirects propres, sitemap 153 URLs
+- Déficits (2) : 5 orphelines, CWV inconnus
+- Base : 5/7 × 100 = 71 | Pénalités : 2 warnings × -5 = -10 → **61**
 
-## Schema / Données structurées (14/15)
+**Content Quality — 78/100**
+- Positifs (5) : photo E-E-A-T 15 pages, Person JSON-LD, vrais témoignages, Flesch 62.6, 14 guides substantiels
+- Déficits (1) : AggregateRating reviewers fictifs
+- Base : 5/6 × 100 = 83 | Pénalités : 1 warning × -5 = -5 → **78**
 
-| Schéma | Pages | Statut |
-|--------|-------|--------|
-| HomeAndConstructionBusiness | Layout global | ✅ |
-| WebSite + SearchAction | Layout global | ✅ |
-| AggregateRating | ratingValue: 5.0, reviewCount: 14 | ✅ |
-| Review[] | 3 avis datés (2025-09-12 à 2026-01-18) | ✅ |
-| Person (fondateur) | Mahmoud Ben Ahmed, Maître d'œuvre | ✅ |
-| sameAs | `https://g.page/r/Cdn_3K5QUh7wEBM` | ✅ |
-| Article | Guides (datePublished + dateModified) | ✅ |
-| BreadcrumbList | Guides | ✅ |
-| FAQPage | Absent — correct (restreint gov/santé depuis août 2023) | ✅ |
+**On-Page SEO — 57/100**
+- Positifs (4) : H1 keyword-rich, meta descriptions, OG/Twitter 100/100, URLs propres
+- Déficits (2) : ancre monopolisée, maillage faible sur certaines pages
+- Base : 4/6 × 100 = 67 | Pénalités : 2 warnings × -5 = -10 → **57**
 
-**Manque :** BreadcrumbList sur les pages services (/maison-ossature-bois/, /extension-bois/, etc.) → gain potentiel de rich snippet.
+**Schema / Structured Data — 57/100**
+- Positifs (4) : HomeAndConstructionBusiness+AggregateRating, WebSite+SearchAction, BreadcrumbList, 14 Article schemas
+- Déficits (2) : /a-propos/ sans Person, /annonces/ sans schema
+- Base : 4/6 × 100 = 67 | Pénalités : 2 warnings × -5 = -10 → **57**
 
----
+**Performance — 70/100** *(Hypothesis — API rate limited)*
+- Positifs (3) : Vercel CDN, Next/Image, font preloading
+- Déficits (1) : CWV non mesurés
+- Score estimé infrastructure → **70** (à confirmer)
 
-## Performance CWV (8/10)
+**Images — 80/100**
+- Positifs (4) : alts descriptifs sur toutes images testées, Next/Image responsive, lazy loading, 0 erreur 404 image
+- Déficits (1) : duplication de visuels entre guides
+- Base : 4/5 × 100 = 80 → **80**
 
-| Métrique | Valeur | Statut |
-|----------|--------|--------|
-| PageSpeed API | Rate limited — non mesuré ce cycle | ℹ️ |
-| Infrastructure | Vercel CDN Edge + Next.js Standalone | ✅ |
-| Font preloading | BrandonGrotesque-Black.woff2 + Bold | ✅ |
-| trailingSlash | Normalisé — pas de duplication cache | ✅ |
-| CSP | Stricte (pas de CDN externe) | ✅ |
+**AI Search Readiness — 95/100**
+- Positifs (5) : llms.txt 100/100, llms-full.txt, 11 crawlers IA, FAQ intégrées, GBP sameAs
+- Déficits (0)
+- Base : 5/5 × 100 = 100 | Pénalités : 0 → **95** (sources externes manquantes -5)
 
-Confiance : Likely — basé sur l'infrastructure. Mesurer avec PageSpeed dans 24h (rate limit).
+### Score global pondéré
 
----
-
-## Optimisation images (8/10)
-
-| Élément | Statut |
-|---------|--------|
-| OG image présente | ✅ |
-| Next.js Image (lazy + srcset) | ✅ (assumé, framework) |
-| Audit alt text complet | Non réalisé ce cycle |
-| WebP/AVIF | Activé par Next.js Image par défaut |
+| Catégorie | Poids | Score | Contribution |
+|-----------|-------|-------|-------------|
+| Technical SEO | 25% | 61 | 15.25 |
+| Content Quality | 20% | 78 | 15.60 |
+| On-Page SEO | 15% | 57 | 8.55 |
+| Schema | 15% | 57 | 8.55 |
+| Performance | 10% | 70 | 7.00 |
+| Images | 10% | 80 | 8.00 |
+| AI Search Readiness | 5% | 95 | 4.75 |
+| **TOTAL** | **100%** | — | **72 / 100** |
 
 ---
 
-## AI Search Readiness / GEO (4.5/5)
+## D) Inconnus et suivis
 
-| Signal | Statut |
-|--------|--------|
-| GPTBot | Autorisé ✅ |
-| OAI-SearchBot | Autorisé ✅ |
-| ClaudeBot / anthropic-ai | Autorisé ✅ |
-| PerplexityBot | Autorisé ✅ |
-| Google-Extended, Applebot-Extended | Autorisé ✅ |
-| Bytespider, CCBot, FacebookBot, Amazonbot | Autorisé ✅ |
-| llms.txt | Présent ✅ |
-| sameAs GBP | `https://g.page/r/Cdn_3K5QUh7wEBM` ✅ |
-| Passages citables (134-167 mots) | 2 pages ✅ |
-| Bylines + dates visibles | 6+ guides ✅ |
-| LinkedIn Mahmoud Ben Ahmed | Absent ⚠️ |
-| Fiche Pappers.fr | Absent (RCS en attente) ⚠️ |
-| Avis Google 20+ | 14 actuellement ⚠️ |
-
----
-
-## Évolution des scores
-
-| Audit | Score | Événement clé |
-|-------|-------|---------------|
-| #18 | 94/100 | Score record pré-régression |
-| #19 | ~65/100 | Régression layout.tsx (164 → 21 lignes) |
-| #20 | 89/100 | Récupération + GEO + 301 + schémas |
-
----
-
-## Commits déployés entre #18 et #20
-
-| Commit | Description |
-|--------|-------------|
-| 56d6fae | Restauration complète layout.tsx + /catalogue/ sitemap |
-| 6d9e0a7 | 301 redirects 11 anciens URLs 404 |
-| dae185b | GEO : passages citables + OAI-SearchBot |
-| 698bda6 | GEO : GBP sameAs + liens avis |
-| 5522179 | GEO : dates visibles 6 guides |
-| 8e82587 | Mentions légales SASU |
-| 83d0ad1 | Corrections SEMrush (robots.txt, JSON-LD, FAQPage) |
-| 940e212 | 4 titres en double + 9 titres trop longs + données invalides |
-| 8740dd1 | H1 manquant /demande-etude/ |
-| 38098ff | robots.txt : suppression /_next/ disallow |
-| 6ffb414 | Liens internes + page orpheline |
-| 6687b71 | Rating values en numbers dans JSON-LD |
-| 408f292 | HTML sémantique politique-cookies + canonical catalogue |
-| 10ab079 | Nav : réorganisation menu |
-| **Audit #20** | **Fix chaînes redirect 2→1 hop** |
+| Inconnu | Méthode pour confirmer |
+|---------|----------------------|
+| LCP / INP / CLS réels | `pagespeed.web.dev` sur mobile + desktop (API rate limited ici) |
+| Positionnement GSC réel sur "construction maison ossature bois Haute-Savoie" | GSC → Performance → filtrer par requête |
+| Nombre de pages ville indexées vs crawlées | GSC → Index → État → filtre `/maison-ossature-bois-*/` |
+| Contenu des pages `/annonces/` individuelles (thinness) | Auditer 3-4 pages `/annonces/*` avec `article_seo.py` |
+| Impact de l'ajout auteur E-E-A-T sur CTR | Attendre 4-6 semaines, comparer CTR GSC avant/après |

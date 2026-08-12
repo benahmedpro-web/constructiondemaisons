@@ -133,7 +133,7 @@ export default function ExtensionBoisPage() {
             On analyse votre projet gratuitement : faisabilité PLU, budget estimatif, délais réalistes. Sans engagement, sans standard imposé.
           </p>
           <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 no-underline hover:bg-[#9E6312] transition-colors">
-            Configurer mon projet →
+            Décrire mon extension →
           </Link>
           <p className="mt-5 text-[13px] text-white/50">
             <Link href="/a-propos/" className="text-[#BA7517] no-underline hover:underline">→ En savoir plus sur Mahmoud Ben Ahmed</Link>

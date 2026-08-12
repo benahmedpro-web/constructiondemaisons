@@ -274,6 +274,7 @@ export default function GuidePrixMaisonBoisPage() {
             <div className="flex flex-col gap-2">
               {[
                 { href: "/faire-construire-haute-savoie/", titre: "Faire construire en Haute-Savoie : le guide complet" },
+                { href: "/guides/prix-construction-maison/", titre: "Budget construction maison 2026 : tous types de projet" },
                 { href: "/guides/prix-maison-ossature-bois-100m2/", titre: "Budget détaillé maison ossature bois 100m² en Haute-Savoie" },
                 { href: "/guides/prix-maison-ossature-bois-120m2/", titre: "Budget détaillé maison ossature bois 120m² en Haute-Savoie" },
                 { href: "/guides/prix-maison-ossature-bois-150m2/", titre: "Budget détaillé maison ossature bois 150m² en Haute-Savoie" },
@@ -298,7 +299,7 @@ export default function GuidePrixMaisonBoisPage() {
             </div>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors text-center">
-                Configurer mon projet →
+                Demander une étude →
               </Link>
               <a href="tel:+33625590926" className="inline-block border border-white/30 text-white text-[14px] px-6 py-2.5 no-underline hover:border-white transition-colors text-center">
                 Appeler directement

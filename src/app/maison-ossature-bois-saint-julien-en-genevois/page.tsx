@@ -172,6 +172,28 @@ export default function MaisonBoisSaintJulienPage() {
           </div>
         </section>
 
+        {/* Annonces disponibles */}
+        <section className="bg-white py-10 px-5">
+          <div className="max-w-[780px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projets disponibles</p>
+            <p className="text-[14px] text-[#888780] mb-4">Terrains et projets maison ossature bois disponibles à Saint-Julien-en-Genevois et communes du Sud Genevois.</p>
+            <div className="flex flex-col gap-2">
+              {[
+                { href: "/annonces/terrain-saint-julien-378m2-cervonnex-plein-sud/", label: "Terrain 378m² à Saint-Julien-en-Genevois — plein sud, Cervonnex", tag: "Terrain" },
+                { href: "/annonces/projet-maison-saint-julien-en-genevois-terrain-378m2/", label: "Projet maison ossature bois · Saint-Julien-en-Genevois — terrain 378m²", tag: "Maison bois" },
+              ].map((l) => (
+                <Link key={l.href} href={l.href} className="flex items-center gap-3 p-3 bg-[#F2EDE6] border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
+                  <span className="text-[11px] font-bold text-[#BA7517] uppercase tracking-wide w-20 flex-shrink-0">{l.tag}</span>
+                  <span className="text-[14px] font-medium text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">{l.label}</span>
+                </Link>
+              ))}
+            </div>
+            <Link href="/annonces/" className="inline-block mt-4 text-[13px] font-bold text-[#BA7517] no-underline hover:underline">
+              Voir toutes les annonces →
+            </Link>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-[#BA7517] py-12 px-5">
           <div className="max-w-[780px] mx-auto text-center">

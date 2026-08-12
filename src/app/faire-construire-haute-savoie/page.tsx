@@ -165,7 +165,7 @@ export default function FaireConsuireHauteSavoiePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors text-center">
-                Configurer mon projet →
+                Lancer mon projet →
               </Link>
               <a href="tel:+33625590926" className="inline-block border border-white/30 text-white text-[15px] font-medium px-6 py-3 no-underline hover:border-white transition-colors text-center">
                 Appeler directement
@@ -346,6 +346,7 @@ export default function FaireConsuireHauteSavoiePage() {
             <div className="flex flex-col gap-2">
               {[
                 { href: "/guides/prix-maison-ossature-bois-haute-savoie/", titre: "Prix maison ossature bois en Haute-Savoie : estimation au m²" },
+                { href: "/guides/prix-construction-maison/", titre: "Budget construction maison 2026 : neuf, extension, rénovation" },
                 { href: "/guides/prix-maison-ossature-bois-100m2/", titre: "Budget maison ossature bois 100m² — poste par poste" },
                 { href: "/guides/prix-maison-ossature-bois-120m2/", titre: "Budget maison ossature bois 120m² — poste par poste" },
                 { href: "/guides/prix-maison-ossature-bois-150m2/", titre: "Budget maison ossature bois 150m² — poste par poste" },
