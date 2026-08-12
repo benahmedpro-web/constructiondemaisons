@@ -38,27 +38,19 @@ const jsonLdBusiness = {
   review: [
     {
       "@type": "Review",
-      author: { "@type": "Person", name: "Sébastien M." },
+      author: { "@type": "Person", name: "Laurent Ramos" },
       reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
       reviewBody:
-        "Mahmoud a géré notre projet de A à Z — permis, artisans, chantier. Résultat impeccable, délais tenus. Je recommande sans hésiter.",
-      datePublished: "2025-09-12",
+        "Vraiment très professionnel. Mr Ben Ahmed est une personne de confiance. Sans lui je n'aurais pas construit ma nouvelle maison. Je le recommande vivement.",
+      datePublished: "2021-04-01",
     },
     {
       "@type": "Review",
-      author: { "@type": "Person", name: "Claire et Thomas R." },
+      author: { "@type": "Person", name: "Francis Nossin" },
       reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
       reviewBody:
-        "Très professionnel et transparent sur les coûts dès le départ. Notre extension bois est exactement ce qu'on voulait.",
-      datePublished: "2025-11-03",
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Frédéric L." },
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
-      reviewBody:
-        "Interlocuteur unique, artisans sérieux, suivi rigoureux. Maison livrée en 14 mois, comme prévu. Excellent rapport qualité/prix.",
-      datePublished: "2026-01-18",
+        "Malgré notre éloignement du lieu choisi pour notre projet, nous avons trouvé en Mr BEN AHMED une personne entièrement disponible dès le premier contact. Écoute, dialogue, engagement sans compter ses heures nous ont été consacrés jusqu'à la finalisation. Notre nouvelle vie démarre grâce à vous et à votre totale disponibilité !",
+      datePublished: "2025-05-01",
     },
   ],
   sameAs: [

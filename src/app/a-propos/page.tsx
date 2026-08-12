@@ -2,6 +2,45 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 
+const BASE = "https://www.constructiondemaisons.com";
+
+const jsonLdPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": BASE + "/#person-mahmoud",
+  name: "Mahmoud Ben Ahmed",
+  jobTitle: "Maître d'œuvre spécialisé maison ossature bois",
+  url: BASE + "/a-propos/",
+  image: BASE + "/images/mahmoud-ben-ahmed.png",
+  worksFor: {
+    "@type": "Organization",
+    "@id": BASE + "/#business",
+    name: "M&M CONSTRUCTION",
+    url: BASE + "/",
+  },
+  knowsAbout: [
+    "maison ossature bois",
+    "maîtrise d'œuvre",
+    "RE2020",
+    "construction bois Haute-Savoie",
+    "Genevois français",
+    "zone sismique",
+    "permis de construire",
+  ],
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Haute-Savoie, Ain, Genevois français",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Annemasse",
+    postalCode: "74100",
+    addressCountry: "FR",
+  },
+  description:
+    "20 ans d'expérience en construction individuelle. Fondateur de M&M CONSTRUCTION, spécialisé maison ossature bois en Haute-Savoie et Genevois français.",
+};
+
 export const metadata: Metadata = {
   title: "À propos — Mahmoud Ben Ahmed",
   description: "20 ans de BTP, 200+ projets accompagnés. Mahmoud Ben Ahmed coordonne vos projets de construction bois en Haute-Savoie sans intermédiaire.",
@@ -61,6 +100,10 @@ const parcours = [
 export default function AProposPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
+      />
       {/* Hero */}
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[900px] mx-auto">
