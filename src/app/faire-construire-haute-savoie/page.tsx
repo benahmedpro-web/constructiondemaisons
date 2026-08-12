@@ -363,6 +363,29 @@ export default function FaireConsuireHauteSavoiePage() {
           </div>
         </div>
 
+        {/* Projets disponibles */}
+        <section className="bg-white py-10 px-5 border-t border-[#D9D4CC]">
+          <div className="max-w-[900px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Terrains et projets disponibles</p>
+            <div className="flex flex-col gap-3">
+              <Link href="/annonces/projet-maison-archamps-terrain-466m2/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4 bg-[#F2EDE6]">
+                <div>
+                  <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Projet maison ossature bois · Archamps (74)</div>
+                  <div className="text-[13px] text-[#888780] mt-1">Terrain 466 m² · Genevois français · Hauts-de-Cruseilles</div>
+                  <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir l&apos;annonce →</div>
+                </div>
+              </Link>
+              <Link href="/annonces/terrain-archamps-466m2-ces-02/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4 bg-[#F2EDE6]">
+                <div>
+                  <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Terrain à bâtir · Archamps (74)</div>
+                  <div className="text-[13px] text-[#888780] mt-1">466 m² · Zone sismique 3 · Toutes viabilités</div>
+                  <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir le terrain →</div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA final */}
         <section className="bg-[#BA7517] py-14 px-5">
           <div className="max-w-[780px] mx-auto text-center">

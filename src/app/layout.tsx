@@ -19,9 +19,10 @@ const jsonLdBusiness = {
   email: "contact@constructiondemaisons.com",
   address: {
     "@type": "PostalAddress",
+    addressLocality: "Annemasse",
+    postalCode: "74100",
     addressRegion: "Haute-Savoie",
     addressCountry: "FR",
-    addressLocality: "Haute-Savoie / Genevois français",
   },
   areaServed: [
     { "@type": "State", name: "Haute-Savoie" },
@@ -51,6 +52,30 @@ const jsonLdBusiness = {
       reviewBody:
         "Malgré notre éloignement du lieu choisi pour notre projet, nous avons trouvé en Mr BEN AHMED une personne entièrement disponible dès le premier contact. Écoute, dialogue, engagement sans compter ses heures nous ont été consacrés jusqu'à la finalisation. Notre nouvelle vie démarre grâce à vous et à votre totale disponibilité !",
       datePublished: "2025-05-01",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Jocelyn Schreiner" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "Excellent professionnel, très à l'écoute qui a su cerner nos besoins et envies. De plus disponible, réactif et rassurant tout au long du processus, bref je recommande fortement.",
+      datePublished: "2023-06-01",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Joelle Thise" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "Un immense Merci à Mr Ben Ahmed. Vous nous avez écoutés et ce dans les moindres détails. Du plan de la maison à la réception de celle-ci, vous avez été attentif aux détails de façon très professionnelle, et ce toujours avec une grande empathie afin de nous satisfaire totalement.",
+      datePublished: "2025-05-01",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Michael Camalet" },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "Très belle expérience avec un excellent professionnel Mr Ben Ahmed. Avec son professionnalisme, il a donné de bons conseils tout au long du projet. Nous sommes très satisfaits !",
+      datePublished: "2024-05-01",
     },
   ],
   sameAs: [

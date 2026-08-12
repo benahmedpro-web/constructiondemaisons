@@ -186,7 +186,8 @@ export default function GuideMaisonBoisPage() {
 
       <div className="border-t border-[#D9D4CC] py-10 px-5 bg-white">
         <div className="max-w-[780px] mx-auto">
-          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projet similaire en cours</p>
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projets similaires disponibles</p>
+          <div className="flex flex-col gap-3">
           <Link href="/annonces/projet-maison-annemasse-terrain-740m2/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
             <div className="flex-shrink-0 overflow-hidden w-24 h-16">
               <Image src="/images/hero-maison-bois-alpine.jpg" alt="Maison ossature bois Annemasse" width={96} height={64} className="w-full h-full object-cover" />
@@ -197,6 +198,17 @@ export default function GuideMaisonBoisPage() {
               <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir l&apos;annonce →</div>
             </div>
           </Link>
+          <Link href="/annonces/terrain-annemasse-740m2-pc-accepte/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4">
+            <div className="flex-shrink-0 overflow-hidden w-24 h-16">
+              <Image src="/images/hero-maison-bois-alpine.jpg" alt="Terrain à bâtir Annemasse 740m²" width={96} height={64} className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Terrain à bâtir · Annemasse (74)</div>
+              <div className="text-[13px] text-[#888780] mt-1">740 m² · PC accepté · Toutes viabilités</div>
+              <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir le terrain →</div>
+            </div>
+          </Link>
+          </div>
         </div>
       </div>
 

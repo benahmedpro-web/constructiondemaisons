@@ -208,6 +208,15 @@ export default function GuideMoeVsCcmiPage() {
               Le CCMI peut convenir si vous souhaitez une maison standard rapidement, sans vous impliquer dans le choix des artisans, et si la garantie de livraison à prix et délais fixes est votre priorité absolue. Dans ce cas, comparez plusieurs constructeurs locaux et vérifiez leurs références dans la zone.
             </p>
 
+            {/* Sources */}
+            <div className="border-t border-[#D9D4CC] mt-10 pt-6">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-3">Sources</p>
+              <ul className="flex flex-col gap-1.5 list-none p-0">
+                <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2022" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Contrat de construction de maison individuelle (CCMI) — service-public.fr ↗</a></li>
+                <li><a href="https://www.ecologie.gouv.fr/politiques-publiques/reglementation-re2020" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Réglementation RE2020 — Ministère de la Transition écologique ↗</a></li>
+                <li><a href="https://www.unsfa.com/exercer-son-activite/maitre-doeuvre/" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Le rôle du maître d&apos;œuvre — UNSFA ↗</a></li>
+              </ul>
+            </div>
 
           </div>
         </article>

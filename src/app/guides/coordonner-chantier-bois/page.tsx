@@ -136,6 +136,16 @@ export default function GuideCoordonnationPage() {
           <p className="text-[16px] text-[#888780] leading-[1.8]">
             En Haute-Savoie et dans l&apos;Ain, les conditions climatiques (gel, neige, pluie) imposent également de prévoir des fenêtres de chantier adaptées. C&apos;est le maître d&apos;œuvre qui adapte le planning en temps réel — pas les artisans, dont ce n&apos;est pas la mission.
           </p>
+
+          {/* Sources */}
+          <div className="border-t border-[#D9D4CC] mt-10 pt-6">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#888780] mb-3">Sources</p>
+            <ul className="flex flex-col gap-1.5 list-none p-0">
+              <li><a href="https://www.georisques.gouv.fr/risques/seisme" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Zonage sismique — Géorisques (BRGM) ↗</a></li>
+              <li><a href="https://www.qualibat.com/trouver-une-entreprise/" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Vérifier les qualifications artisans — Qualibat ↗</a></li>
+              <li><a href="https://www.service-public.fr/particuliers/vosdroits/F2034" target="_blank" rel="noopener noreferrer" className="text-[13px] text-[#888780] hover:text-[#BA7517] transition-colors">Garantie décennale — service-public.fr ↗</a></li>
+            </ul>
+          </div>
         </div>
       </article>
 
