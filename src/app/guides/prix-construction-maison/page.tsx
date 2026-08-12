@@ -163,9 +163,23 @@ export default function GuidePrixConstructionMaisonPage() {
             <h1 className="text-white text-[28px] md:text-[40px] font-black leading-tight mb-4">
               Combien coûte une construction de maison en 2026 dans le Genevois français ?
             </h1>
-            <p className="text-white/60 text-[16px] leading-[1.7] mb-2">
-              Par Mahmoud Ben Ahmed · M&M CONSTRUCTION · Responsable de projets en Haute-Savoie et Ain frontalier
-            </p>
+          <Link href="/a-propos/" className="inline-flex items-center gap-3 no-underline group mt-4">
+            <Image
+              src="/images/mahmoud-ben-ahmed.jpg"
+              alt="Mahmoud Ben Ahmed, maître d'œuvre"
+              width={40}
+              height={40}
+              className="rounded-full object-cover object-top flex-shrink-0"
+            />
+            <div>
+              <span className="block text-[14px] font-bold text-white group-hover:text-[#BA7517] transition-colors leading-tight">
+                Mahmoud Ben Ahmed
+              </span>
+              <span className="block text-[12px] text-white/50">
+                Maître d'œuvre · M&M CONSTRUCTION · Haute-Savoie
+              </span>
+            </div>
+          </Link>
             <p className="text-white/40 text-[13px]">Mis à jour le 26 juin 2026</p>
           </div>
         </div>
