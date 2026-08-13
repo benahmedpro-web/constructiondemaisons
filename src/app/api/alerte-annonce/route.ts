@@ -68,6 +68,7 @@ async function createTrelloCard(name: string, desc: string) {
 
 // Même fallback que src/app/api/contact/route.ts — voir ce fichier pour le contexte complet.
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "M&M CONSTRUCTION <onboarding@resend.dev>";
+const TO_EMAIL = process.env.RESEND_TO_EMAIL || "benahmed.pro@icloud.com";
 
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
@@ -98,7 +99,7 @@ export async function POST(req: NextRequest) {
         label: "Email interne (notification)",
         promise: resend.emails.send({
       from: FROM_EMAIL,
-      to: "contact@constructiondemaisons.com",
+      to: TO_EMAIL,
       replyTo: email,
       subject: `Nouvelle alerte annonce — ${prenom || email}`,
       html: `
