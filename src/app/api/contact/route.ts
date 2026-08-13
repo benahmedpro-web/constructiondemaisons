@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
         label: "Email interne (notification)",
         promise: resend.emails.send({
       from: FROM_EMAIL,
-      to: "benahmed.pro@icloud.com",
+      to: "contact@constructiondemaisons.com",
       replyTo: email,
       subject: `Nouvelle demande d'étude — ${prenom} ${nom}`,
       html: `
@@ -148,7 +148,7 @@ export async function POST(req: NextRequest) {
         promise: resend.emails.send({
               from: FROM_EMAIL,
               to: email,
-              replyTo: "benahmed.pro@icloud.com",
+              replyTo: "contact@constructiondemaisons.com",
               subject: "Votre diagnostic — M&M CONSTRUCTION",
               html: `
                 <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #2C2C2A;">

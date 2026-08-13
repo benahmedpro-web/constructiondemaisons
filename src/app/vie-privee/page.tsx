@@ -28,7 +28,7 @@ export default function ViePriveePage() {
             <div className="flex flex-col gap-2 text-[15px] text-[#888780] leading-[1.7]">
               <p><strong className="text-[#2C2C2A]">Responsable :</strong> Mahmoud Ben Ahmed — M&amp;M CONSTRUCTION</p>
               <p><strong className="text-[#2C2C2A]">Adresse :</strong> Annemasse (74100), Haute-Savoie</p>
-              <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a></p>
+              <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:contact@constructiondemaisons.com" className="text-[#BA7517] no-underline hover:underline">contact@constructiondemaisons.com</a></p>
             </div>
           </section>
 
@@ -70,7 +70,7 @@ export default function ViePriveePage() {
               Vos données sont transmises uniquement à Mahmoud Ben Ahmed (M&amp;M CONSTRUCTION) pour le traitement de votre demande. Elles ne sont jamais vendues, louées ou partagées avec des tiers à des fins commerciales.
             </p>
             <p className="text-[15px] text-[#888780] leading-[1.7]">
-              Le service d&apos;envoi d&apos;emails utilisé est <strong className="text-[#2C2C2A]">Resend</strong> (Resend Inc., San Francisco, CA, USA), conforme au RGPD via des clauses contractuelles types. Les emails sont acheminés vers benahmed.pro@icloud.com et ne sont pas stockés par Resend au-delà de la transmission.
+              Le service d&apos;envoi d&apos;emails utilisé est <strong className="text-[#2C2C2A]">Resend</strong> (Resend Inc., San Francisco, CA, USA), conforme au RGPD via des clauses contractuelles types. Les emails sont acheminés vers contact@constructiondemaisons.com et ne sont pas stockés par Resend au-delà de la transmission.
             </p>
           </section>
 
@@ -98,7 +98,7 @@ export default function ViePriveePage() {
               ))}
             </div>
             <p className="text-[14px] text-[#888780] mt-4 leading-[1.7]">
-              Pour exercer ces droits, contactez-nous à <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a>. Réponse sous 30 jours. En cas de litige, vous pouvez saisir la <strong className="text-[#2C2C2A]">CNIL</strong> sur <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-[#BA7517] no-underline hover:underline">cnil.fr</a>.
+              Pour exercer ces droits, contactez-nous à <a href="mailto:contact@constructiondemaisons.com" className="text-[#BA7517] no-underline hover:underline">contact@constructiondemaisons.com</a>. Réponse sous 30 jours. En cas de litige, vous pouvez saisir la <strong className="text-[#2C2C2A]">CNIL</strong> sur <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-[#BA7517] no-underline hover:underline">cnil.fr</a>.
             </p>
           </section>
 
@@ -117,7 +117,7 @@ export default function ViePriveePage() {
           </section>
 
           <div className="bg-[#F2EDE6] p-5 text-[14px] text-[#888780]">
-            Pour toute question relative à vos données personnelles : <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a> — voir aussi les <Link href="/mentions-legales/" className="text-[#BA7517] no-underline hover:underline">mentions légales</Link>.
+            Pour toute question relative à vos données personnelles : <a href="mailto:contact@constructiondemaisons.com" className="text-[#BA7517] no-underline hover:underline">contact@constructiondemaisons.com</a> — voir aussi les <Link href="/mentions-legales/" className="text-[#BA7517] no-underline hover:underline">mentions légales</Link>.
           </div>
 
         </div>

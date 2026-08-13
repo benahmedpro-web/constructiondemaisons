@@ -135,7 +135,7 @@ export default function PolitiqueCookiesPage() {
             <p className="text-[15px] text-[#888780] leading-[1.8]">
               Pour toute question relative à cette politique de cookies, vous pouvez contacter M&amp;M CONSTRUCTION à l&apos;adresse :
             </p>
-            <address className="not-italic mt-2 text-[15px] text-[#2C2C2A] font-medium">benahmed.pro@icloud.com</address>
+            <address className="not-italic mt-2 text-[15px] text-[#2C2C2A] font-medium">contact@constructiondemaisons.com</address>
           </section>
 
           {/* Liens */}

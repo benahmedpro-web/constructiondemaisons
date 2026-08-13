@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
         label: "Email interne (notification)",
         promise: resend.emails.send({
       from: FROM_EMAIL,
-      to: "benahmed.pro@icloud.com",
+      to: "contact@constructiondemaisons.com",
       replyTo: email,
       subject: `Nouvelle alerte annonce — ${prenom || email}`,
       html: `

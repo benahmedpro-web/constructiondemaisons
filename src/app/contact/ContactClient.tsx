@@ -191,7 +191,7 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
                   </svg>
                   <div>
                     <div className="text-[13px] font-bold text-[#2C2C2A]">Email</div>
-                    <a href="mailto:benahmed.pro@icloud.com" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517]">benahmed.pro@icloud.com</a>
+                    <a href="mailto:contact@constructiondemaisons.com" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517]">contact@constructiondemaisons.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

@@ -37,7 +37,7 @@ export default function MentionsLegalesPage() {
               <p><strong className="text-[#2C2C2A]">Président :</strong> Mahmoud Ben Ahmed</p>
               <p><strong className="text-[#2C2C2A]">Objet social :</strong> Maîtrise d&apos;œuvre de projets dans le bâtiment ; Assistance à maîtrise d&apos;ouvrage (AMO) ; Études de faisabilité et études techniques liées au bâtiment et à l&apos;habitat ; Conseil en construction ; Intermédiaire commercial dans le bâtiment ; et toutes activités connexes ou complémentaires.</p>
               <p><strong className="text-[#2C2C2A]">Code NAF :</strong> 71.12B — Ingénierie, études techniques</p>
-              <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a></p>
+              <p><strong className="text-[#2C2C2A]">Email :</strong> <a href="mailto:contact@constructiondemaisons.com" className="text-[#BA7517] no-underline hover:underline">contact@constructiondemaisons.com</a></p>
               <p><strong className="text-[#2C2C2A]">Directeur de la publication :</strong> Mahmoud Ben Ahmed</p>
             </div>
           </section>
@@ -83,7 +83,7 @@ export default function MentionsLegalesPage() {
           </section>
 
           <div className="bg-[#F2EDE6] p-5 text-[14px] text-[#888780] flex flex-wrap gap-x-5 gap-y-2 items-center">
-            <span>Pour toute question relative aux mentions légales, contactez-nous à <a href="mailto:benahmed.pro@icloud.com" className="text-[#BA7517] no-underline hover:underline">benahmed.pro@icloud.com</a> ou via la <Link href="/contact/" className="text-[#BA7517] no-underline hover:underline">page de contact</Link>.</span>
+            <span>Pour toute question relative aux mentions légales, contactez-nous à <a href="mailto:contact@constructiondemaisons.com" className="text-[#BA7517] no-underline hover:underline">contact@constructiondemaisons.com</a> ou via la <Link href="/contact/" className="text-[#BA7517] no-underline hover:underline">page de contact</Link>.</span>
             <Link href="/politique-cookies/" className="text-[#BA7517] no-underline hover:underline whitespace-nowrap">Politique de cookies →</Link>
             <Link href="/vie-privee/" className="text-[#BA7517] no-underline hover:underline whitespace-nowrap">Politique de confidentialité →</Link>
           </div>
