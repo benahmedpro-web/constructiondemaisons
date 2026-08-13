@@ -1,17 +1,18 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 const KEY = "mm-favoris";
 
 export function useFavoris() {
-  const [favoris, setFavoris] = useState<string[]>([]);
-
-  useEffect(() => {
+  const [favoris, setFavoris] = useState<string[]>(() => {
+    if (typeof window === "undefined") return [];
     try {
       const stored = localStorage.getItem(KEY);
-      if (stored) setFavoris(JSON.parse(stored));
-    } catch {}
-  }, []);
+      return stored ? (JSON.parse(stored) as string[]) : [];
+    } catch {
+      return [];
+    }
+  });
 
   const toggle = useCallback((slug: string) => {
     setFavoris((prev) => {

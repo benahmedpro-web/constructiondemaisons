@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 const KEY = "mm-recherches";
 
@@ -33,14 +33,15 @@ function buildLabel(f: SavedSearch["filters"]): string {
 }
 
 export function useSavedSearches() {
-  const [searches, setSearches] = useState<SavedSearch[]>([]);
-
-  useEffect(() => {
+  const [searches, setSearches] = useState<SavedSearch[]>(() => {
+    if (typeof window === "undefined") return [];
     try {
       const stored = localStorage.getItem(KEY);
-      if (stored) setSearches(JSON.parse(stored));
-    } catch {}
-  }, []);
+      return stored ? (JSON.parse(stored) as SavedSearch[]) : [];
+    } catch {
+      return [];
+    }
+  });
 
   const save = useCallback((filters: SavedSearch["filters"]) => {
     const entry: SavedSearch = {

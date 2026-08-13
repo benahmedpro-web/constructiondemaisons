@@ -1,15 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { grantConsent, denyConsent } from "@/lib/ga";
 
 export function CookieBanner() {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    if (!localStorage.getItem("mm_cookie_consent")) setShow(true);
-  }, []);
+  const [show, setShow] = useState(() =>
+    typeof window !== "undefined" && !localStorage.getItem("mm_cookie_consent")
+  );
 
   function accept() {
     localStorage.setItem("mm_cookie_consent", "granted");
