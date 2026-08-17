@@ -1,13 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { grantConsent, denyConsent } from "@/lib/ga";
 
 export function CookieBanner() {
-  const [show, setShow] = useState(() =>
-    typeof window !== "undefined" && !localStorage.getItem("mm_cookie_consent")
-  );
+  // false au premier rendu (identique au serveur) pour éviter un mismatch d'hydratation
+  // (React #418) — la lecture de localStorage ne peut se faire qu'après montage côté client.
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(!localStorage.getItem("mm_cookie_consent"));
+  }, []);
 
   function accept() {
     localStorage.setItem("mm_cookie_consent", "granted");
