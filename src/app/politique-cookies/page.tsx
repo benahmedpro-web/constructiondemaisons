@@ -83,7 +83,7 @@ export default function PolitiqueCookiesPage() {
                     <td className="p-3"><span className="text-amber-600 font-bold">Oui</span></td>
                   </tr>
                   <tr className="border-b border-[#D9D4CC]">
-                    <td className="p-3 text-[#2C2C2A] font-medium">_ga_G-J63BH8ZCMX</td>
+                    <td className="p-3 text-[#2C2C2A] font-medium">_ga_G-0L3GXJCJJ1</td>
                     <td className="p-3 text-[#888780]">Google Analytics — maintien de l&apos;état de session pour cette propriété</td>
                     <td className="p-3 text-[#888780]">2 ans</td>
                     <td className="p-3"><span className="text-amber-600 font-bold">Oui</span></td>
