@@ -25,10 +25,19 @@ function injectGAScript(onLoad: () => void) {
   document.head.appendChild(script);
 }
 
+// ad_storage/ad_user_data/ad_personalization : signaux du Consent Mode v2, exigés par Google pour
+// tout compte Google Ads avec du trafic UE (obligatoire depuis mars 2024). Mis à jour ici même si
+// aucun tag Google Ads n'est encore posé — le jour où il le sera, le consentement est déjà en
+// place, rien à reprendre côté bandeau cookies.
 export function grantConsent() {
   if (typeof window === "undefined") return;
   if (typeof window.gtag === "function") {
-    window.gtag("consent", "update", { analytics_storage: "granted" });
+    window.gtag("consent", "update", {
+      analytics_storage: "granted",
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+    });
   }
   injectGAScript(() => {
     if (typeof window.gtag === "function") {
@@ -40,5 +49,10 @@ export function grantConsent() {
 
 export function denyConsent() {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
-  window.gtag("consent", "update", { analytics_storage: "denied" });
+  window.gtag("consent", "update", {
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  });
 }

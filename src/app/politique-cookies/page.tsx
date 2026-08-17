@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Politique de cookies",
-  description: "Politique de cookies du site constructiondemaisons.com — M&M CONSTRUCTION. Ce site n'utilise pas de cookies de traçage ou publicitaires.",
+  description: "Politique de cookies du site constructiondemaisons.com — M&M CONSTRUCTION. Cookies techniques et cookies de mesure d'audience (Google Analytics), soumis à votre consentement.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/politique-cookies/",
   },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Politique de cookies",
-    description: "Ce site n'utilise pas de cookies de traçage ou publicitaires.",
+    description: "Cookies techniques et cookies de mesure d'audience (Google Analytics), soumis à votre consentement.",
     url: "https://www.constructiondemaisons.com/politique-cookies/",
     siteName: "M&M CONSTRUCTION",
     locale: "fr_FR",
@@ -25,7 +25,7 @@ export default function PolitiqueCookiesPage() {
         <div className="max-w-[780px] mx-auto">
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
           <h1 className="text-white text-[32px] md:text-[42px] font-black mt-4 mb-2 leading-tight">Politique de cookies</h1>
-          <p className="text-white/50 text-[14px]">Dernière mise à jour : <time dateTime="2026-06">juin 2026</time></p>
+          <p className="text-white/50 text-[14px]">Dernière mise à jour : <time dateTime="2026-08">août 2026</time></p>
         </div>
       </header>
 
@@ -35,7 +35,7 @@ export default function PolitiqueCookiesPage() {
           {/* Introduction */}
           <section>
             <p className="text-[16px] text-[#888780] leading-[1.8]">
-              La présente politique de cookies explique ce que sont les cookies, lesquels ce site utilise, et pourquoi aucun bandeau de consentement n&apos;est affiché.
+              La présente politique de cookies explique ce que sont les cookies, lesquels ce site utilise, et comment gérer votre consentement.
             </p>
           </section>
 
@@ -47,7 +47,7 @@ export default function PolitiqueCookiesPage() {
             </p>
           </section>
 
-          {/* Ce site n'utilise pas de cookies de traçage */}
+          {/* Cookies utilisés sur ce site */}
           <section>
             <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">2. Cookies utilisés sur ce site</h2>
             <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">

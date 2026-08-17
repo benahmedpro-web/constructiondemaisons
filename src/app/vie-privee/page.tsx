@@ -16,7 +16,7 @@ export default function ViePriveePage() {
         <div className="max-w-[780px] mx-auto">
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
           <h1 className="text-white text-[32px] md:text-[42px] font-black mt-4 mb-2 leading-tight">Politique de confidentialité</h1>
-          <p className="text-white/50 text-[14px]">Dernière mise à jour : juin 2026</p>
+          <p className="text-white/50 text-[14px]">Dernière mise à jour : août 2026</p>
         </div>
       </div>
 
@@ -53,7 +53,7 @@ export default function ViePriveePage() {
               ))}
             </div>
             <p className="text-[13px] text-[#888780] mt-3 italic">
-              Aucun cookie de traçage, aucune publicité ciblée, aucune revente de données à des tiers.
+              Aucune revente de vos données à des tiers. Voir la section « Cookies » ci-dessous pour le détail des cookies utilisés sur ce site.
             </p>
           </section>
 
@@ -105,7 +105,7 @@ export default function ViePriveePage() {
           <section>
             <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">6. Cookies</h2>
             <p className="text-[15px] text-[#888780] leading-[1.7]">
-              Ce site n&apos;utilise pas de cookies de traçage publicitaire, ni de cookies d&apos;analyse de comportement (Google Analytics, Hotjar, etc.). Aucun bandeau de consentement aux cookies n&apos;est nécessaire. Les seuls cookies susceptibles d&apos;être déposés sont des cookies techniques strictement nécessaires au fonctionnement du site (session, sécurité), qui ne nécessitent pas de consentement préalable. <Link href="/politique-cookies/" className="text-[#BA7517] no-underline hover:underline">Voir la politique de cookies complète →</Link>
+              Ce site utilise des cookies techniques strictement nécessaires à son fonctionnement (session, sécurité), qui ne nécessitent pas de consentement préalable. Il utilise également, sous réserve de votre consentement explicite, des cookies de mesure d&apos;audience (Google Analytics). Un bandeau de consentement s&apos;affiche lors de votre première visite ; votre choix est mémorisé et peut être modifié à tout moment en effaçant les données de site dans votre navigateur. <Link href="/politique-cookies/" className="text-[#BA7517] no-underline hover:underline">Voir la politique de cookies complète →</Link>
             </p>
           </section>
 
