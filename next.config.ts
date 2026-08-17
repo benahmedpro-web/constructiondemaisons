@@ -48,7 +48,11 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self'",
-              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+              // *.google-analytics.com (pas seulement www.) : GA4 route les requêtes vers des
+              // sous-domaines régionaux (region1., region2., ...) pour le traitement des données
+              // en zone UE — un blocage CSP ici est silencieux, GA4 semble fonctionner (script
+              // chargé, gtag configuré) mais aucune donnée n'atteint jamais Google.
+              "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
             ].join("; "),
