@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { hasValidMx } from "@/lib/validate-email";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 
 function escHtml(s: unknown): string {
   if (typeof s !== "string") return "";
@@ -101,7 +102,12 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
     const body = await req.json();
-    const { nom, prenom, email, telephone, typeProjet, zone, budget, message, diagnosticHtml } = body;
+    const { nom, prenom, email, telephone, typeProjet, zone, budget, message, diagnosticHtml, recaptchaToken } = body;
+
+    const humanOk = await verifyRecaptcha(recaptchaToken as string | undefined);
+    if (!humanOk) {
+      return NextResponse.json({ error: "Vérification anti-spam échouée. Rechargez la page et réessayez." }, { status: 403 });
+    }
 
     if (!nom || !email || !message) {
       return NextResponse.json({ error: "Champs requis manquants." }, { status: 400 });

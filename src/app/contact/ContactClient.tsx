@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { gtagEvent } from "@/lib/ga";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 type AnnonceInfo = { slug: string; type: string; commune: string } | null;
 
@@ -17,18 +18,20 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
     setError("");
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
+    const recaptchaToken = await getRecaptchaToken("contact");
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, sujet: "Contact site web" }),
+        body: JSON.stringify({ ...data, sujet: "Contact site web", recaptchaToken }),
       });
       if (res.ok) {
         gtagEvent("generate_lead", { event_category: "formulaire", event_label: "contact" });
         setSent(true);
       } else {
-        setError("Une erreur est survenue. Réessayez ou appelez directement.");
+        const json = await res.json().catch(() => ({})) as { error?: string };
+        setError(json.error ?? "Une erreur est survenue. Réessayez ou appelez directement.");
       }
     } catch {
       setError("Une erreur est survenue. Réessayez ou appelez directement.");

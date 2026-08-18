@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { annonces } from "@/lib/annonces";
 import { useFavoris } from "@/hooks/useFavoris";
 import { useSavedSearches } from "@/hooks/useSavedSearches";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 
 const statutColors: Record<string, string> = {
@@ -178,6 +179,7 @@ export default function AnnoncesPage() {
     e.preventDefault();
     setAlerteState("loading");
     try {
+      const recaptchaToken = await getRecaptchaToken("alerte_annonce");
       const res = await fetch("/api/alerte-annonce", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -185,6 +187,7 @@ export default function AnnoncesPage() {
           ...alerteForm,
           statut: typeActif ?? "Tous",
           communes: communesFiltrees,
+          recaptchaToken,
         }),
       });
       setAlerteState(res.ok ? "success" : "error");

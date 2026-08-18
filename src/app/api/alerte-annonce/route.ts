@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 
 function escHtml(s: unknown): string {
   if (typeof s !== "string") return "";
@@ -90,7 +91,12 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
     const body = await req.json();
-    const { email, prenom, telephone, statut, communes } = body;
+    const { email, prenom, telephone, statut, communes, recaptchaToken } = body;
+
+    const humanOk = await verifyRecaptcha(recaptchaToken as string | undefined);
+    if (!humanOk) {
+      return NextResponse.json({ error: "Vérification anti-spam échouée. Rechargez la page et réessayez." }, { status: 403 });
+    }
 
     if (!email || typeof email !== "string") {
       return NextResponse.json({ error: "Email requis." }, { status: 400 });
