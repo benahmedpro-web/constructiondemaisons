@@ -112,6 +112,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Adresse email invalide ou inexistante. Vérifiez l'adresse saisie." }, { status: 400 });
     }
 
+    if (telephone) {
+      const cleaned = String(telephone).replace(/[\s.\-()]/g, "");
+      if (!/^(?:\+33|0033|0)[6-9]\d{8}$/.test(cleaned)) {
+        return NextResponse.json({ error: "Numéro de téléphone invalide. Saisissez un numéro français (06, 07, 08 ou 09)." }, { status: 400 });
+      }
+    }
+
     const sNom = escHtml(nom);
     const sPrenom = escHtml(prenom);
     const sEmail = escHtml(email);

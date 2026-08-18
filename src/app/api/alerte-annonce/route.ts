@@ -99,6 +99,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Format d'email invalide." }, { status: 400 });
     }
 
+    if (telephone) {
+      const cleaned = String(telephone).replace(/[\s.\-()]/g, "");
+      if (!/^(?:\+33|0033|0)[6-9]\d{8}$/.test(cleaned)) {
+        return NextResponse.json({ error: "Numéro de téléphone invalide. Saisissez un numéro français (06, 07, 08 ou 09)." }, { status: 400 });
+      }
+    }
+
     const communesSafe = Array.isArray(communes) ? communes.slice(0, 50) : [];
     const communesLabel =
       communesSafe.length > 0 ? communesSafe.map((c: unknown) => escHtml(String(c))).join(", ") : "Toutes les communes (74 + 01)";
