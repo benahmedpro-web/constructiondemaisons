@@ -32,7 +32,7 @@ function isRateLimited(ip: string): boolean {
   return entry.count > LIMIT;
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith("/api/")) {
     const ip = getIp(req);
     if (isRateLimited(ip)) {
