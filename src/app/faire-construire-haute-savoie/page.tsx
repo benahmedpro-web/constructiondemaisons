@@ -20,7 +20,7 @@ const jsonLdService = {
     "@type": "HomeAndConstructionBusiness",
     name: "M&M CONSTRUCTION",
     url: BASE,
-    telephone: "+33625590926",
+    telephone: "+33480161783",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Annemasse",
@@ -167,7 +167,7 @@ export default function FaireConsuireHauteSavoiePage() {
               <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors text-center">
                 Lancer mon projet →
               </Link>
-              <a href="tel:+33625590926" className="inline-block border border-white/30 text-white text-[15px] font-medium px-6 py-3 no-underline hover:border-white transition-colors text-center">
+              <a href="tel:+33480161783" className="inline-block border border-white/30 text-white text-[15px] font-medium px-6 py-3 no-underline hover:border-white transition-colors text-center">
                 Appeler directement
               </a>
             </div>
@@ -397,7 +397,7 @@ export default function FaireConsuireHauteSavoiePage() {
               <Link href="/demande-etude/" className="inline-block bg-white text-[#BA7517] text-[16px] font-black px-8 py-4 no-underline hover:bg-[#F2EDE6] transition-colors">
                 Déposer ma demande d&apos;étude →
               </Link>
-              <a href="tel:+33625590926" className="inline-block border-2 border-white text-white text-[15px] font-bold px-6 py-4 no-underline hover:bg-white/10 transition-colors">
+              <a href="tel:+33480161783" className="inline-block border-2 border-white text-white text-[15px] font-bold px-6 py-4 no-underline hover:bg-white/10 transition-colors">
                 Appeler directement
               </a>
             </div>

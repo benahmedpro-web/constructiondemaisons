@@ -891,13 +891,13 @@ function RapportScreen({ diagnostic, answers, onRestart }: { diagnostic: Diagnos
           <h3 className="text-[19px] font-black text-[#2C2C2A] mb-2">{conversion.titre}</h3>
           <p className="text-[16px] text-[#888780] mb-5">{conversion.message}</p>
           {conversion.discret ? (
-            <a href="tel:+33625590926" className="text-[15px] text-[#BA7517] underline hover:text-[#9E6312]">
+            <a href="tel:+33480161783" className="text-[15px] text-[#BA7517] underline hover:text-[#9E6312]">
               {conversion.cta}
             </a>
           ) : (
             <>
               <a
-                href="tel:+33625590926"
+                href="tel:+33480161783"
                 className="inline-block bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors no-underline"
               >
                 {conversion.cta}

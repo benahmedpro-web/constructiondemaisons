@@ -275,7 +275,7 @@ function Sidebar() {
         <p className="text-[13px] font-bold text-[#2C2C2A] mb-1">Préférez-vous appeler ?</p>
         <p className="text-[13px] text-[#888780] mb-3">Disponible lundi–vendredi, 8h–19h.</p>
         <a
-          href="tel:+33625590926"
+          href="tel:+33480161783"
           className="inline-block bg-[#BA7517] text-white text-[14px] font-bold px-4 py-2.5 no-underline hover:bg-[#9E6312] transition-colors"
           onClick={() => gtagEvent("click_tel", { event_category: "appel", event_label: "sidebar_demande_etude" })}
         >

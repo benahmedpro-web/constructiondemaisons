@@ -53,9 +53,8 @@ export function Footer() {
             <div>NAF 71.12B — Maîtrise d&apos;œuvre</div>
             <div>constructiondemaisons.com</div>
           </div>
-          <div className="mt-3 flex flex-col gap-1">
-            <a href="tel:+33625590926" className="text-[13px] text-white/60 no-underline hover:text-white transition-colors">06 25 59 09 26 — mobile</a>
-            <a href="tel:+33480161783" className="text-[13px] text-white/60 no-underline hover:text-white transition-colors">04 80 16 17 83 — fixe</a>
+          <div className="mt-3">
+            <a href="tel:+33480161783" className="text-[13px] text-white/60 no-underline hover:text-white transition-colors">04 80 16 17 83</a>
           </div>
         </div>
 

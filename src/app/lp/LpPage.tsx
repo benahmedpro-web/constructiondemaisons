@@ -4,7 +4,7 @@ import { useState, FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const PHONE = "+33625590926";
+const PHONE = "+33480161783";
 
 const TEMOIGNAGES = [
   {

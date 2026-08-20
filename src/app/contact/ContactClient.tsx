@@ -65,7 +65,7 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
                 <div className="text-[#BA7517] text-[48px] mb-4">✓</div>
                 <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-2">Message envoyé</h2>
                 <p className="text-[15px] text-[#888780] leading-[1.7]">
-                  Mahmoud vous répond sous 48h. En cas d&apos;urgence, <a href="tel:+33625590926" className="text-[#BA7517] no-underline font-bold hover:underline" onClick={() => gtagEvent("click_tel", { event_category: "appel", event_label: "contact_merci" })}>appelez directement</a>.
+                  Mahmoud vous répond sous 48h. En cas d&apos;urgence, <a href="tel:+33480161783" className="text-[#BA7517] no-underline font-bold hover:underline" onClick={() => gtagEvent("click_tel", { event_category: "appel", event_label: "contact_merci" })}>appelez directement</a>.
                 </p>
                 <Link href="/" className="inline-block mt-6 text-[#BA7517] text-[14px] font-bold no-underline hover:underline">
                   ← Retour à l&apos;accueil
@@ -185,8 +185,7 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
                   </svg>
                   <div>
                     <div className="text-[13px] font-bold text-[#2C2C2A]">Téléphone</div>
-                    <a href="tel:+33625590926" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517] block" onClick={() => gtagEvent("click_tel", { event_category: "appel", event_label: "contact_sidebar_mobile" })}>06 25 59 09 26 — mobile</a>
-                    <a href="tel:+33480161783" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517] block" onClick={() => gtagEvent("click_tel", { event_category: "appel", event_label: "contact_sidebar_fixe" })}>04 80 16 17 83 — fixe</a>
+                    <a href="tel:+33480161783" className="text-[14px] text-[#888780] no-underline hover:text-[#BA7517] block" onClick={() => gtagEvent("click_tel", { event_category: "appel", event_label: "contact_sidebar" })}>04 80 16 17 83</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
