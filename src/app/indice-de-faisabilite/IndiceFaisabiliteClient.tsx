@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useRef, type FormEvent } from "react";
+import { useState, useMemo, useRef, useEffect, type FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { gtagEvent } from "@/lib/ga";
@@ -10,6 +10,8 @@ import { computeDiagnostic, domainText, DOMAIN_LABELS, type Diagnostic } from "@
 import { formatEur, FOURCHETTE_TERRAIN_MARGE, budgetEtat } from "@/lib/indice-faisabilite/estimate";
 import { DOMAIN_MAX } from "@/lib/indice-faisabilite/scoring";
 import type { Answers, Domain, Question } from "@/lib/indice-faisabilite/types";
+import { captureAttribution, getAttribution } from "@/lib/indice-faisabilite/attribution";
+import { trackFunnelEvent, generateEventId } from "@/lib/indice-faisabilite/tracking";
 
 // ─── Etoiles / logo Google (repris de temoignages/page.tsx pour cohérence visuelle) ───────────
 
@@ -1019,6 +1021,12 @@ function LeadForm({
     e.preventDefault();
     setLoading(true);
     setError("");
+    // Généré avant l'appel serveur, pas après — cf. recommandations tracking OpenAI Ads du
+    // 22/08/2026, §5 : cet identifiant sera réutilisé tel quel côté serveur le jour où la
+    // Conversions API sera ajoutée, pour dédupliquer un même lead compté par le Pixel navigateur
+    // ET par l'API. Non parlant (§12) : ne contient aucune donnée personnelle.
+    const eventId = generateEventId("lead");
+    const attribution = getAttribution();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -1033,10 +1041,17 @@ function LeadForm({
           budget: answers.budget_global ? formatEur(Number(answers.budget_global)) : "",
           message: buildMessage(answers, diagnostic),
           diagnosticHtml: buildDiagnosticEmailHtml(diagnostic, answers),
+          eventId,
+          attribution,
         }),
       });
       if (!res.ok) throw new Error();
+      // Déclenché uniquement après confirmation serveur (§2, règle importante) — jamais sur le
+      // clic du bouton. generate_lead reste inchangé (nom reconnu par Google Ads/GA4, déjà
+      // branché sur l'import de conversion) ; lead_submit est le nom interne du cahier des
+      // charges tracking, en plus, prêt pour un futur connecteur OpenAI.
       gtagEvent("generate_lead", { event_category: "formulaire", event_label: "indice_faisabilite" });
+      trackFunnelEvent("lead_submit", { event_id: eventId, ...(attribution?.utm_source ? { utm_source: attribution.utm_source } : {}) });
       // Reste sur place plutôt que de rediriger vers /demande-etude/merci — recommandation §10.4
       // ("afficher immédiatement le rapport complet après saisie de l'email") appliquée le
       // 09/08/2026 : le rapport devient l'écran suivant du même parcours, pas une redirection
@@ -1156,6 +1171,15 @@ export default function IndiceFaisabiliteClient() {
     [phase, answers]
   );
 
+  // Capture d'attribution (UTM, oppref) + landing_view une seule fois au montage — cf.
+  // recommandations tracking OpenAI Ads du 22/08/2026, §6-8. La landing est toujours la première
+  // phase affichée, donc un effet au montage du composant racine équivaut à "affichage effectif
+  // de la landing page".
+  useEffect(() => {
+    captureAttribution();
+    trackFunnelEvent("landing_view");
+  }, []);
+
   function handleAnswer(code: string, value: Answers[string]) {
     setAnswers((prev) => ({ ...prev, [code]: value }));
   }
@@ -1166,9 +1190,12 @@ export default function IndiceFaisabiliteClient() {
   function pickAndAdvance(code: string, value: string) {
     const updated = { ...answers, [code]: value };
     setAnswers(updated);
+    trackFunnelEvent("diagnostic_step", { step_number: stepNumber, step_name: code });
     setTimeout(() => {
       const next = findNextIndex(updated, pointer + 1, 1);
       if (next >= QUESTIONS.length) {
+        const diag = computeDiagnostic(updated);
+        trackFunnelEvent("diagnostic_complete", { score: diag.total, niveau: diag.niveau.label });
         setPhase("result");
         return;
       }
@@ -1177,8 +1204,11 @@ export default function IndiceFaisabiliteClient() {
   }
 
   function goNext() {
+    trackFunnelEvent("diagnostic_step", { step_number: stepNumber, step_name: currentQuestion?.code ?? "" });
     const next = findNextIndex(answers, pointer + 1, 1);
     if (next >= QUESTIONS.length) {
+      const diag = computeDiagnostic(answers);
+      trackFunnelEvent("diagnostic_complete", { score: diag.total, niveau: diag.niveau.label });
       setPhase("result");
       return;
     }
@@ -1204,6 +1234,7 @@ export default function IndiceFaisabiliteClient() {
     return (
       <Landing
         onStart={() => {
+          trackFunnelEvent("diagnostic_start");
           setPointer(findNextIndex(answers, 0, 1));
           setPhase("questions");
         }}

@@ -102,7 +102,7 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
     const body = await req.json();
-    const { nom, prenom, email, telephone, typeProjet, zone, budget, message, diagnosticHtml, recaptchaToken } = body;
+    const { nom, prenom, email, telephone, typeProjet, zone, budget, message, diagnosticHtml, recaptchaToken, eventId, attribution } = body;
 
     const humanOk = await verifyRecaptcha(recaptchaToken as string | undefined);
     if (!humanOk) {
@@ -134,6 +134,23 @@ export async function POST(req: NextRequest) {
     const sBudget = escHtml(budget);
     const sMessage = escHtml(message);
 
+    // Attribution marketing du lead — recommandations tracking OpenAI Ads du 22/08/2026, §8.
+    // `attribution` vient de localStorage côté client (Attribution | null, cf.
+    // src/lib/indice-faisabilite/attribution.ts) : champs non garantis, tout est optionnel.
+    const attr = (attribution ?? {}) as Record<string, string | undefined>;
+    const attributionLines = [
+      attr.utm_source ? `Source : ${escHtml(attr.utm_source)}` : "",
+      attr.utm_medium ? `Support : ${escHtml(attr.utm_medium)}` : "",
+      attr.utm_campaign ? `Campagne : ${escHtml(attr.utm_campaign)}` : "",
+      attr.utm_content ? `Contenu : ${escHtml(attr.utm_content)}` : "",
+      attr.utm_term ? `Terme : ${escHtml(attr.utm_term)}` : "",
+      attr.oppref ? `OpenAI oppref : ${escHtml(attr.oppref)}` : "",
+      attr.landing_page ? `Page d'entrée : ${escHtml(attr.landing_page)}` : "",
+      attr.referrer ? `Referrer : ${escHtml(attr.referrer)}` : "",
+      attr.first_touch_at ? `Première visite : ${escHtml(attr.first_touch_at)}` : "",
+      eventId ? `Event ID : ${escHtml(String(eventId))}` : "",
+    ].filter(Boolean);
+
     const cardName = `${prenom} ${nom} — ${typeProjet || "Demande d'étude"}`;
     const cardDesc = [
       `📧 ${email}`,
@@ -141,6 +158,7 @@ export async function POST(req: NextRequest) {
       typeProjet ? `🏠 Projet : ${typeProjet}` : "",
       zone ? `📍 Zone : ${zone}` : "",
       budget ? `💶 Budget : ${budget}` : "",
+      attributionLines.length ? ["", "🎯 Acquisition", ...attributionLines].join("\n") : "",
       "",
       message,
     ].filter(Boolean).join("\n");
