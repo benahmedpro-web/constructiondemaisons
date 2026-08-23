@@ -48,11 +48,13 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self'",
-              // *.google-analytics.com (pas seulement www.) : GA4 route les requêtes vers des
-              // sous-domaines régionaux (region1., region2., ...) pour le traitement des données
-              // en zone UE — un blocage CSP ici est silencieux, GA4 semble fonctionner (script
-              // chargé, gtag configuré) mais aucune donnée n'atteint jamais Google.
-              "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+              // *.google-analytics.com ET *.analytics.google.com (pas seulement les domaines nus) :
+              // GA4 route vers des sous-domaines régionaux (region1., region2., ...) pour le
+              // traitement des données en zone UE, sur les deux familles de domaines — un blocage
+              // CSP ici est silencieux, GA4 semble fonctionner (script chargé, gtag configuré)
+              // mais aucune donnée n'atteint jamais Google. Repéré une deuxième fois le 22/08/2026 :
+              // *.analytics.google.com manquait encore (seul le domaine nu était autorisé).
+              "connect-src 'self' https://*.google-analytics.com https://google-analytics.com https://*.analytics.google.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com/recaptcha/",
               "frame-src https://www.google.com/recaptcha/",
               "frame-ancestors 'none'",
               "base-uri 'self'",
