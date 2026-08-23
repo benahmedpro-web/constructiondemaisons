@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useEffect, type FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { gtagEvent } from "@/lib/ga";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 import { QUESTIONS, getVisibleQuestions, findNextIndex, getSectionProgress, SECTION_GROUPS } from "@/lib/indice-faisabilite/questions";
 import { searchCities, type CitySuggestion } from "@/lib/indice-faisabilite/villes";
 import { computeDiagnostic, domainText, DOMAIN_LABELS, type Diagnostic } from "@/lib/indice-faisabilite/diagnostic";
@@ -1027,6 +1028,12 @@ function LeadForm({
     // ET par l'API. Non parlant (§12) : ne contient aucune donnée personnelle.
     const eventId = generateEventId("lead");
     const attribution = getAttribution();
+    // Jamais envoyé jusqu'ici sur ce formulaire — /api/contact rejette systématiquement en 403
+    // ("Vérification anti-spam échouée") dès que RECAPTCHA_SECRET_KEY est configuré côté serveur,
+    // puisqu'aucun token n'était fourni. Bug pré-existant, sans lien avec le tracking OpenAI Ads :
+    // ContactClient.tsx envoie bien le sien, ce formulaire avait été oublié lors de l'ajout de la
+    // protection anti-spam.
+    const recaptchaToken = await getRecaptchaToken("indice_faisabilite_lead");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -1035,6 +1042,7 @@ function LeadForm({
           nom: nom || prenom,
           prenom,
           email,
+          recaptchaToken,
           telephone,
           typeProjet: "Indice de faisabilité",
           zone: Array.isArray(answers.location) ? (answers.location as string[]).join(", ") : answers.location,
