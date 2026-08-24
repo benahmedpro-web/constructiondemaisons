@@ -122,6 +122,78 @@ export default function MaisonBoisAnnemassePage() {
         </section>
 
         {/* Communes couvertes */}
+        {/* Projets types Genevois — GEO signal fort */}
+        <section className="bg-white py-14 px-5 border-t border-[#E8E2DA]">
+          <div className="max-w-[900px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Projets coordinés par M&amp;M dans le Genevois</p>
+            <h2 className="text-[26px] font-black text-[#2C2C2A] mb-2">Exemples de projets maison bois à Annemasse et Saint-Julien-en-Genevois</h2>
+            <p className="text-[15px] text-[#888780] mb-8 max-w-[680px]">Le Genevois français concentre des contraintes spécifiques — zone sismique 3, PLU frontalier, forte pression foncière. Voici comment M&M CONSTRUCTION les traite concrètement.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                {
+                  commune: "Annemasse (zone UB)",
+                  type: "Maison neuve ossature bois",
+                  surface: "110 m²",
+                  budget: "228 000 € HT travaux",
+                  detail: "Terrain 466 m² en zone UB. PLU : reculs 3 m de voisinage, hauteur max 9 m, bardage bois autorisé en façade principale. Permis 4 mois. Zone sismique 3 — renforcements parasismiques intégrés dans la structure.",
+                },
+                {
+                  commune: "Cranves-Sales",
+                  type: "Maison neuve ossature bois",
+                  surface: "124 m²",
+                  budget: "242 000 € HT travaux",
+                  detail: "Commune de l'agglo d'Annemasse, PLU plus souple que la ville-centre. Isolation laine de bois 200 mm, bardage mélèze. RE2020 atteint. Chantier 7 mois.",
+                },
+                {
+                  commune: "Saint-Julien-en-Genevois",
+                  type: "Extension ossature bois",
+                  surface: "42 m²",
+                  budget: "78 000 € HT travaux",
+                  detail: "Extension latérale sur maison des années 1990. Permis de construire (surface totale > 150 m²). Architecte coordonné par M&M. Chantier 5 mois.",
+                },
+              ].map((p, i) => (
+                <div key={i} className="bg-[#F2EDE6] p-5 border-t-4 border-[#BA7517]">
+                  <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-2">{p.commune}</div>
+                  <div className="text-[16px] font-bold text-[#2C2C2A] mb-1">{p.type}</div>
+                  <div className="flex gap-4 mb-3">
+                    <span className="text-[13px] font-semibold text-[#2C2C2A]">{p.surface}</span>
+                    <span className="text-[13px] text-[#888780]">{p.budget}</span>
+                  </div>
+                  <p className="text-[13px] text-[#888780] leading-[1.7]">{p.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12px] text-[#888780] mt-5 italic">Données indicatives. Budget définitif établi après étude de faisabilité gratuite sur votre terrain.</p>
+          </div>
+        </section>
+
+        {/* MOE vs annuaire artisans */}
+        <section className="bg-[#2C2C2A] py-12 px-5">
+          <div className="max-w-[800px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Ce que M&amp;M fait — et ce qu&apos;il ne fait pas</p>
+            <h2 className="text-[22px] font-black text-white mb-4">Maître d&apos;œuvre ≠ annuaire d&apos;artisans</h2>
+            <p className="text-[16px] text-white/70 leading-[1.8] mb-6">À Annemasse et dans le Genevois, plusieurs plateformes listent des menuisiers ou artisans bois. M&M CONSTRUCTION n'est pas un annuaire : c'est un maître d'œuvre indépendant qui monte le projet, sélectionne les artisans par appel d'offres, et coordonne le chantier de A à Z — avec contrats directs entre vous et chaque artisan.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { label: "Ce que M&M fait", items: ["Étude de faisabilité PLU", "Conception + permis de construire", "Sélection artisans par appel d'offres", "Vérification décennales et Qualibat", "Coordination chantier hebdomadaire", "Réception avec grille de contrôle"], pos: true },
+                { label: "Ce que M&M ne fait pas", items: ["Il ne pose pas les matériaux lui-même", "Il ne vend pas de kit ossature bois", "Il n'est pas lié à un réseau d'artisans exclusif", "Il ne sous-traite pas avec marge cachée", "Il ne gère pas les projets hors zone Haute-Savoie / Ain"], pos: false },
+              ].map((col, i) => (
+                <div key={i} className="bg-white/5 p-5">
+                  <div className="text-[12px] font-bold text-[#BA7517] uppercase tracking-wide mb-3">{col.label}</div>
+                  <ul className="flex flex-col gap-2">
+                    {col.items.map((it, j) => (
+                      <li key={j} className="flex gap-2 text-[13px] text-white/80 leading-[1.6]">
+                        <span className="text-[#BA7517] flex-shrink-0">{col.pos ? "✓" : "—"}</span>
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-[#F2EDE6] py-12 px-5">
           <div className="max-w-[900px] mx-auto">
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Zone d&apos;intervention</p>

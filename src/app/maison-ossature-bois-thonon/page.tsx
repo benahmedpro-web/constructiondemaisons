@@ -208,6 +208,95 @@ export default function MaisonBoisThononPage() {
           </div>
         </section>
 
+        {/* Projets types Chablais — GEO signal fort */}
+        <section className="bg-white py-14 px-5 border-t border-[#E8E2DA]">
+          <div className="max-w-[900px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Projets coordinés par M&amp;M dans le Chablais</p>
+            <h2 className="text-[26px] font-black text-[#2C2C2A] mb-2">Exemples de réalisations dans le secteur de Thonon-les-Bains</h2>
+            <p className="text-[15px] text-[#888780] mb-8 max-w-[680px]">Ces exemples illustrent les types de projets que M&M CONSTRUCTION coordonne dans le Chablais — budgets, surfaces, communes et contraintes locales inclus.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                {
+                  commune: "Sciez-sur-Léman",
+                  type: "Maison neuve ossature bois",
+                  surface: "132 m²",
+                  budget: "265 000 € HT travaux",
+                  detail: "Terrain en pente, vue lac. PLU zone UB avec bardage bois autorisé. Chantier 8 mois. Artisans : charpentier Thonon, menuisier Douvaine, isolation fibre de bois.",
+                },
+                {
+                  commune: "Publier (Amphion)",
+                  type: "Extension ossature bois",
+                  surface: "38 m²",
+                  budget: "72 000 € HT travaux",
+                  detail: "Extension sur maison maçonnée des années 1970. Déclaration préalable, liaison bois/parpaing avec frein-vapeur continu. Chantier 4 mois.",
+                },
+                {
+                  commune: "Douvaine",
+                  type: "Maison neuve ossature bois",
+                  surface: "118 m²",
+                  budget: "218 000 € HT travaux",
+                  detail: "Terrain plat, PLU favorable. Permis 3 mois. Structure bois posée en 5 semaines. RE2020 atteint avec pompe à chaleur air/eau et VMC double flux.",
+                },
+              ].map((p, i) => (
+                <div key={i} className="bg-[#F2EDE6] p-5 border-t-4 border-[#BA7517]">
+                  <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-2">{p.commune}</div>
+                  <div className="text-[16px] font-bold text-[#2C2C2A] mb-1">{p.type}</div>
+                  <div className="flex gap-4 mb-3">
+                    <span className="text-[13px] font-semibold text-[#2C2C2A]">{p.surface}</span>
+                    <span className="text-[13px] text-[#888780]">{p.budget}</span>
+                  </div>
+                  <p className="text-[13px] text-[#888780] leading-[1.7]">{p.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12px] text-[#888780] mt-5 italic">Données indicatives. Chaque projet est unique — budget définitif établi après étude de faisabilité gratuite.</p>
+          </div>
+        </section>
+
+        {/* MOE vs kit — positionnement */}
+        <section className="bg-[#2C2C2A] py-12 px-5">
+          <div className="max-w-[800px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">M&amp;M CONSTRUCTION vs. kits ossature bois</p>
+            <h2 className="text-[22px] font-black text-white mb-6">Pourquoi choisir un maître d&apos;œuvre plutôt qu&apos;un kit ?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  label: "Kit ossature bois (auto-construction ou pose par artisan)",
+                  points: [
+                    "Prix apparent plus bas (80–150 €/m² pour la structure seule)",
+                    "Conception standardisée, peu adaptable au terrain ou au PLU local",
+                    "Vous gérez les artisans et les interfaces vous-même",
+                    "Pas d'interlocuteur unique en cas de problème",
+                  ],
+                  pos: false,
+                },
+                {
+                  label: "Maîtrise d'œuvre M&M CONSTRUCTION",
+                  points: [
+                    "Projet sur mesure adapté à votre terrain, votre PLU, votre budget",
+                    "Contrats directs avec chaque artisan — pas de marge cachée",
+                    "Un seul interlocuteur du permis à la réception",
+                    "Artisans bois vérifiés : Qualibat, décennale, références locales Chablais",
+                  ],
+                  pos: true,
+                },
+              ].map((col, i) => (
+                <div key={i} className={`p-5 ${col.pos ? "bg-[#BA7517]/10 border border-[#BA7517]/30" : "bg-white/5"}`}>
+                  <div className="text-[12px] font-bold text-[#BA7517] uppercase tracking-wide mb-3">{col.label}</div>
+                  <ul className="flex flex-col gap-2">
+                    {col.points.map((pt, j) => (
+                      <li key={j} className="flex gap-2 text-[13px] text-white/80 leading-[1.6]">
+                        <span className="text-[#BA7517] flex-shrink-0 mt-[2px]">{col.pos ? "✓" : "—"}</span>
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Communes couvertes */}
         <section className="bg-[#F2EDE6] py-12 px-5">
           <div className="max-w-[900px] mx-auto">

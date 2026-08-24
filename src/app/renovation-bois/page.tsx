@@ -208,6 +208,56 @@ export default function RenovationBoisPage() {
         </div>
       </section>
 
+      {/* MOE vs artisan RGE — positionnement GEO */}
+      <section className="bg-[#2C2C2A] py-14 px-5">
+        <div className="max-w-[820px] mx-auto">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Ce que M&amp;M fait — et ce qu&apos;il ne fait pas</p>
+          <h2 className="text-[24px] font-black text-white mb-4">Maître d&apos;œuvre ≠ artisan poseur d&apos;ITE</h2>
+          <p className="text-[15px] text-white/70 leading-[1.8] mb-8">En Haute-Savoie, plusieurs entreprises réalisent elles-mêmes l&apos;isolation thermique par l&apos;extérieur (ITE) : isolation et pose en interne, mono-prestataire. M&M CONSTRUCTION n&apos;est pas un artisan poseur — c&apos;est un maître d&apos;œuvre qui coordonne les artisans RGE spécialisés en ITE bois et vérifie la qualité de chaque interface.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+            {[
+              {
+                label: "Artisan poseur d'ITE (ex : spécialiste isolation local)",
+                items: [
+                  "Pose l'ITE lui-même — un seul prestataire",
+                  "Pas forcément compétent sur toutes les interfaces (menuiseries, toiture, balcons)",
+                  "Moins adapté aux projets complexes (bois + maçonnerie, sur deux niveaux)",
+                  "Pas de coordination chantier avec d'autres corps de métier",
+                ],
+                pos: false,
+              },
+              {
+                label: "Maîtrise d'œuvre M&M CONSTRUCTION",
+                items: [
+                  "Sélectionne l'artisan RGE le plus adapté par appel d'offres",
+                  "Coordonne ITE bois + menuiseries + traitement ponts thermiques",
+                  "Vérifie les interfaces entre poseurs pour garantir l'étanchéité à l'air",
+                  "Contrôle la réception et déclenche les garanties décennales",
+                ],
+                pos: true,
+              },
+            ].map((col, i) => (
+              <div key={i} className={`p-5 ${col.pos ? "bg-[#BA7517]/10 border border-[#BA7517]/30" : "bg-white/5"}`}>
+                <div className="text-[12px] font-bold text-[#BA7517] uppercase tracking-wide mb-3">{col.label}</div>
+                <ul className="flex flex-col gap-2">
+                  {col.items.map((it, j) => (
+                    <li key={j} className="flex gap-2 text-[13px] text-white/80 leading-[1.6]">
+                      <span className="text-[#BA7517] flex-shrink-0">{col.pos ? "✓" : "—"}</span>
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="bg-[#BA7517]/10 border-l-4 border-[#BA7517] p-5">
+            <p className="text-[14px] text-white/80 leading-[1.7]">
+              <strong className="text-white">Résultat concret :</strong> un projet d&apos;ITE bardage bois coordonné par M&M aboutit à un DPE amélioré d&apos;au moins deux classes, avec des artisans certifiés RGE (Qualibat 71 ou équivalent), une assurance décennale validée, et des aides MaPrimeRénov&apos; / Éco-PTZ mobilisées avant le démarrage du chantier.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#F2EDE6] py-14 px-5 text-center">
         <div className="max-w-[640px] mx-auto">

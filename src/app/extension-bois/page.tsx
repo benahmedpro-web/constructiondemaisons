@@ -211,6 +211,51 @@ export default function ExtensionBoisPage() {
         </div>
       </section>
 
+      {/* Projets types Chablais / Genevois — signal GEO */}
+      <section className="bg-[#F2EDE6] py-14 px-5">
+        <div className="max-w-[900px] mx-auto">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Extensions coordinées par M&amp;M dans le Chablais et le Genevois</p>
+          <h2 className="text-[26px] font-black text-[#2C2C2A] mb-2">Exemples d&apos;extensions ossature bois en Haute-Savoie</h2>
+          <p className="text-[15px] text-[#888780] mb-8 max-w-[680px]">Chaque extension est différente selon le PLU de la commune, la structure existante et les finitions choisies. Voici des profils types de projets coordinés par M&M CONSTRUCTION.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                commune: "Thonon-les-Bains (Chablais)",
+                type: "Extension latérale sur chalet",
+                surface: "28 m²",
+                budget: "52 000 € HT travaux",
+                detail: "Extension sur chalet bois des années 1980. Déclaration préalable (surface totale < 150 m²). Bardage mélèze, isolation laine de bois, fenêtres triple-vitrage. Chantier 3,5 mois.",
+              },
+              {
+                commune: "Annemasse (Genevois)",
+                type: "Surélévation ossature bois",
+                surface: "45 m²",
+                budget: "92 000 € HT travaux",
+                detail: "Ajout d'un niveau complet sur maison R+0. Zone sismique 3 — renforcements parasismiques. Permis de construire 4 mois. Chantier 6 mois. PLU zone UC, hauteur max respectée.",
+              },
+              {
+                commune: "Sciez-sur-Léman (Chablais)",
+                type: "Extension arrière avec baie vitrée",
+                surface: "35 m²",
+                budget: "67 000 € HT travaux",
+                detail: "Extension cuisine/séjour côté jardin. Grande baie coulissante 4,5 m. Isolation fibre de bois 200 mm. Chantier 4 mois. Vue lac depuis la nouvelle pièce.",
+              },
+            ].map((p, i) => (
+              <div key={i} className="bg-white p-5 border-t-4 border-[#BA7517]">
+                <div className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-2">{p.commune}</div>
+                <div className="text-[16px] font-bold text-[#2C2C2A] mb-1">{p.type}</div>
+                <div className="flex gap-4 mb-3">
+                  <span className="text-[13px] font-semibold text-[#2C2C2A]">{p.surface}</span>
+                  <span className="text-[13px] text-[#888780]">{p.budget}</span>
+                </div>
+                <p className="text-[13px] text-[#888780] leading-[1.7]">{p.detail}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-[12px] text-[#888780] mt-5 italic">Données indicatives — budget HT travaux, hors honoraires MOE (8–12 %). Chaque projet fait l&apos;objet d&apos;une étude gratuite.</p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#2C2C2A] py-14 px-5 text-center">
         <div className="max-w-[640px] mx-auto">
