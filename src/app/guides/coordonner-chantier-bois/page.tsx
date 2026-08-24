@@ -36,11 +36,41 @@ const jsonLdBreadcrumb = {
   ],
 };
 
+const faqItems = [
+  {
+    "@type": "Question",
+    name: "Combien de temps dure le chantier d'une maison ossature bois ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le chantier proprement dit (hors permis) dure 6 à 10 mois pour une maison ossature bois de 100 à 150 m². Le gros œuvre bois (hors d'eau, hors d'air) se réalise en 2 à 3 mois, le second œuvre en 3 à 5 mois. En Haute-Savoie, l'hiver peut ralentir certains corps de métier entre novembre et mars (enduits extérieurs, peinture)." },
+  },
+  {
+    "@type": "Question",
+    name: "Qu'est-ce qu'un coordonnateur SPS et est-il obligatoire pour une maison bois ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le coordonnateur SPS (Sécurité et Protection de la Santé) est obligatoire dès lors que le chantier fait intervenir au moins 2 entreprises et dépasse certains seuils de volume de travaux. Pour une maison individuelle neuve avec plusieurs corps de métier, il est généralement requis. Le maître d'œuvre peut être désigné coordonnateur SPS s'il a suivi la formation ad hoc." },
+  },
+  {
+    "@type": "Question",
+    name: "Quels sont les risques d'un chantier bois coordonné directement par le particulier ?",
+    acceptedAnswer: { "@type": "Answer", text: "L'autogestion du chantier expose à plusieurs risques : retards en cascade si un corps de métier est absent, malfaçons aux interfaces entre matériaux (jonction charpente/maçonnerie, raccordement étanchéité/bardage), difficultés de recours en cas de litige entre artisans, et surcoût final souvent supérieur aux honoraires d'un maître d'œuvre." },
+  },
+  {
+    "@type": "Question",
+    name: "Comment se déroule la réception d'un chantier ossature bois ?",
+    acceptedAnswer: { "@type": "Answer", text: "La réception se fait contradictoirement entre le client et chaque artisan. Le maître d'œuvre dresse un procès-verbal avec liste de réserves (défauts à corriger). Les réserves sont levées dans un délai convenu, généralement 30 à 60 jours. La date de réception fait partir les garanties légales : parfait achèvement (1 an), bon fonctionnement (2 ans), décennale (10 ans)." },
+  },
+];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 export default function GuideCoordonnationPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">

@@ -175,6 +175,36 @@ export default function GuidePrixMaisonBoisPage() {
             </div>
             <p className="text-[13px] text-[#888780] italic mb-8">Prix indicatifs HT, hors VRD, hors honoraires MOE, hors études. Mis à jour juin 2026.</p>
 
+            <h2 className="text-[24px] font-bold text-[#2C2C2A] mt-10 mb-4">Délais de permis de construire et tension artisanale par zone</h2>
+            <p className="text-[16px] text-[#888780] leading-[1.8] mb-5">
+              Au-delà du coût au m², le délai global et la disponibilité des artisans varient fortement selon la zone. Ces deux facteurs influencent directement la date d&apos;emménagement et le risque de dépassement budgétaire.
+            </p>
+            <div className="border border-[#D9D4CC] overflow-x-auto mb-4">
+              <div className="grid grid-cols-4 bg-[#2C2C2A] text-white text-[11px] font-bold uppercase tracking-wide p-3 min-w-[560px]">
+                <div>Zone</div>
+                <div className="text-center">Délai permis réel</div>
+                <div className="text-center">Tension artisanale</div>
+                <div className="text-center">Avantage M&M</div>
+              </div>
+              {[
+                ["Annemasse / Genevois nord", "3 – 4 mois", "Très forte", "Réseau artisans local constitué"],
+                ["Saint-Julien / Genevois sud", "3 – 5 mois", "Forte", "Connaissance PLU frontaliers"],
+                ["Gex / Pays de Gex (01)", "4 – 6 mois", "Forte", "Coordination côté Ain maîtrisée"],
+                ["Thonon / Chablais", "2 – 4 mois", "Modérée", "Artisans moins saturés qu'en Genevois"],
+                ["Zone rurale 74", "2 – 3 mois", "Faible", "Disponibilité et prix artisans meilleurs"],
+              ].map(([zone, delai, tension, avantage], i) => (
+                <div key={zone} className={`grid grid-cols-4 p-3 text-[13px] border-b border-[#D9D4CC] last:border-0 min-w-[560px] ${i % 2 === 0 ? "bg-white" : "bg-[#F2EDE6]"}`}>
+                  <div className="text-[#2C2C2A] font-medium">{zone}</div>
+                  <div className="text-center text-[#BA7517] font-semibold">{delai}</div>
+                  <div className={`text-center font-medium ${tension === "Très forte" ? "text-[#8B2020]" : tension === "Forte" ? "text-[#7A5A00]" : "text-[#2E6B2E]"}`}>{tension}</div>
+                  <div className="text-center text-[#888780] text-[12px]">{avantage}</div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-[#F2EDE6] border-l-4 border-[#BA7517] px-4 py-3 mb-8">
+              <p className="text-[14px] text-[#2C2C2A] leading-[1.6]"><strong>Note pratique :</strong> en zone de forte tension artisanale, un maître d&apos;œuvre avec un réseau établi permet de sécuriser les dates de démarrage. M&M CONSTRUCTION travaille avec les mêmes artisans bois depuis plusieurs années — ce qui évite les délais d&apos;attente que subissent les particuliers sans réseau.</p>
+            </div>
+
             <h2 className="text-[24px] font-bold text-[#2C2C2A] mt-10 mb-4">Les postes qui composent le coût de construction</h2>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-5">
               Pour une maison ossature bois de 120 m² avec des prestations intermédiaires, voici comment se répartit approximativement le budget travaux.

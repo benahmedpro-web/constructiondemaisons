@@ -129,6 +129,85 @@ export default function MaisonBoisThononPage() {
           </div>
         </section>
 
+        {/* PLU par commune */}
+        <section className="bg-[#F2EDE6] py-14 px-5">
+          <div className="max-w-[900px] mx-auto">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Urbanisme local</p>
+            <h2 className="text-[22px] font-black text-[#2C2C2A] mb-2">PLU et permis de construire par commune dans le Chablais</h2>
+            <p className="text-[14px] text-[#888780] leading-[1.7] mb-6">Chaque commune du Chablais a ses propres règles d&apos;urbanisme. M&M CONSTRUCTION les vérifie avant toute étude, pour éviter les mauvaises surprises en cours d&apos;instruction.</p>
+            <div className="border border-[#D9D4CC] overflow-x-auto">
+              <div className="grid grid-cols-4 bg-[#2C2C2A] text-white text-[11px] font-bold uppercase tracking-wide p-3 min-w-[600px]">
+                <div>Commune</div>
+                <div>Autorité PLU</div>
+                <div>Délai permis indicatif</div>
+                <div>Contrainte principale</div>
+              </div>
+              {[
+                ["Thonon-les-Bains", "CC Pays d'Évian (CCPEVA)", "3 – 4 mois", "Covisibilité lac, hauteurs limitées"],
+                ["Évian-les-Bains", "CCPEVA", "3 – 5 mois", "Zone ABF, aspect façades strict"],
+                ["Sciez", "CC Pays d'Évian", "2 – 3 mois", "Périmètre agricole, haies à préserver"],
+                ["Publier", "CCPEVA", "3 – 4 mois", "Coteaux, pentes > 20 % réglementées"],
+                ["Douvaine", "CC Bas-Chablais", "2 – 3 mois", "Zone d'extension urbaine — PLU récent"],
+                ["Lugrin", "CCPEVA", "3 – 5 mois", "Littoral Léman — loi littorale applicable"],
+                ["Morzine / Les Gets", "CC Pays du Mont-Blanc", "4 – 6 mois", "Zone montagne, PLU altitude, chalet obligatoire"],
+              ].map(([commune, plu, delai, contrainte], i) => (
+                <div key={commune} className={`grid grid-cols-4 p-3 text-[13px] border-b border-[#D9D4CC] last:border-0 min-w-[600px] ${i % 2 === 0 ? "bg-white" : "bg-[#F2EDE6]"}`}>
+                  <div className="text-[#2C2C2A] font-medium">{commune}</div>
+                  <div className="text-[#888780]">{plu}</div>
+                  <div className="text-[#BA7517] font-semibold">{delai}</div>
+                  <div className="text-[#888780]">{contrainte}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12px] text-[#888780] italic mt-3">Délais indicatifs — peuvent varier selon la complexité du dossier et la période de dépôt. Mis à jour août 2026.</p>
+
+            {/* Prix par sous-zone */}
+            <h2 className="text-[22px] font-black text-[#2C2C2A] mt-10 mb-2">Budget par secteur dans le Chablais</h2>
+            <p className="text-[14px] text-[#888780] leading-[1.7] mb-5">Le Chablais présente des prix plus accessibles que le Genevois ou Annecy, avec des variations importantes selon la localisation.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                {
+                  titre: "Bord du Léman",
+                  communes: "Thonon, Évian, Lugrin, Sciez",
+                  construction: "1 900 – 2 500 €/m²",
+                  foncier: "350 – 700 €/m²",
+                  detail: "Premium vue lac. Contraintes PLU fortes. Artisans plus sollicités.",
+                },
+                {
+                  titre: "Coteaux et arrière-pays",
+                  communes: "Publier, Douvaine, Maxilly",
+                  construction: "1 700 – 2 200 €/m²",
+                  foncier: "200 – 400 €/m²",
+                  detail: "Meilleur rapport qualité-prix. Terrains plus grands, moins de pression PLU.",
+                },
+                {
+                  titre: "Vallées et montagne",
+                  communes: "Morzine, Abondance, Samoëns",
+                  construction: "2 100 – 2 800 €/m²",
+                  foncier: "300 – 600 €/m²",
+                  detail: "Surcoût altitude et neige. PLU chalet souvent exigé. Artisans locaux rares.",
+                },
+              ].map((z) => (
+                <div key={z.titre} className="bg-white border border-[#D9D4CC] p-4">
+                  <div className="text-[13px] font-bold text-[#2C2C2A] mb-1">{z.titre}</div>
+                  <div className="text-[11px] text-[#BA7517] uppercase tracking-wide mb-2">{z.communes}</div>
+                  <div className="flex flex-col gap-1.5 text-[13px]">
+                    <div className="flex justify-between border-b border-[#F2EDE6] pb-1">
+                      <span className="text-[#888780]">Construction HT/m²</span>
+                      <span className="font-bold text-[#2C2C2A]">{z.construction}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-[#F2EDE6] pb-1">
+                      <span className="text-[#888780]">Foncier indicatif/m²</span>
+                      <span className="font-bold text-[#2C2C2A]">{z.foncier}</span>
+                    </div>
+                  </div>
+                  <p className="text-[12px] text-[#888780] mt-2 leading-[1.6]">{z.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Communes couvertes */}
         <section className="bg-[#F2EDE6] py-12 px-5">
           <div className="max-w-[900px] mx-auto">

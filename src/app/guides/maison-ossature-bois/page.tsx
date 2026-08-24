@@ -36,11 +36,41 @@ const jsonLdBreadcrumb = {
   ],
 };
 
+const faqItems = [
+  {
+    "@type": "Question",
+    name: "Quelle est la durée de vie d'une maison ossature bois bien construite ?",
+    acceptedAnswer: { "@type": "Answer", text: "Une maison ossature bois conçue et réalisée dans les règles de l'art a une durée de vie comparable à une maison maçonnée : 80 à 100 ans et plus. Les points d'attention sont la gestion de l'humidité (conception soignée du bardage ventilé et de l'étanchéité à l'air) et l'entretien du bardage extérieur tous les 15 à 25 ans selon l'essence de bois. La structure porteuse elle-même, protégée de l'humidité, ne se dégrade pas." },
+  },
+  {
+    "@type": "Question",
+    name: "La maison ossature bois est-elle adaptée au climat alpin de Haute-Savoie ?",
+    acceptedAnswer: { "@type": "Answer", text: "Oui, particulièrement bien. L'ossature bois offre une isolation forte adaptée aux hivers froids des Alpes. Le matériau gère bien les variations thermiques importantes entre l'été et l'hiver. Les charges de neige sont intégrées dans le calcul structurel (zone B2 ou C pour la plupart des communes de Haute-Savoie). La construction sèche évite les délais de séchage imposés par les hivers humides." },
+  },
+  {
+    "@type": "Question",
+    name: "Quel est le délai réaliste entre la décision de construire et l'emménagement ?",
+    acceptedAnswer: { "@type": "Answer", text: "En Haute-Savoie et Genevois, comptez 14 à 20 mois entre la décision ferme et les clés : 1 à 2 mois de conception, 3 à 6 mois d'instruction du permis (parfois plus dans les communes frontalières comme Annemasse, Saint-Julien ou Gex), 1 mois de préparation chantier, et 8 à 12 mois de chantier proprement dit." },
+  },
+  {
+    "@type": "Question",
+    name: "L'isolation phonique d'une maison bois est-elle suffisante ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le bois transmet mieux les vibrations que le béton, donc l'isolation acoustique demande une attention particulière. Pour un bon niveau sonore, il faut : une isolation lourde sur les planchers (dalle béton ou chape sèche), des cloisons avec masse suffisante (double plaque de plâtre), des désolidarisations mécaniques entre cloisons et structure. C'est possible mais doit être prévu dès la conception." },
+  },
+];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 export default function GuideMaisonBoisPage() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">
           <div className="flex gap-2 text-[13px] text-white/40 mb-4">

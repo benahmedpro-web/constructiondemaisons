@@ -36,11 +36,41 @@ const jsonLdBreadcrumb = {
   ],
 };
 
+const faqItems = [
+  {
+    "@type": "Question",
+    name: "La RE2020 est-elle obligatoire pour toutes les maisons neuves ?",
+    acceptedAnswer: { "@type": "Answer", text: "Oui, la RE2020 est obligatoire pour toutes les maisons individuelles neuves dont le permis a été déposé à partir du 1er janvier 2022. Elle impose trois exigences : une limite de besoins en énergie (Bbio), une limite de consommation d'énergie primaire (Cep), et une limite d'émissions de carbone (Eges) calculées sur tout le cycle de vie du bâtiment — ce dernier point favorise les matériaux biosourcés comme le bois." },
+  },
+  {
+    "@type": "Question",
+    name: "La maison ossature bois satisfait-elle facilement aux exigences RE2020 ?",
+    acceptedAnswer: { "@type": "Answer", text: "Oui. L'ossature bois est nativement bien adaptée à la RE2020, notamment sur le volet carbone (Eges) : le bois stocke le carbone et présente un bilan cycle de vie bien inférieur au béton ou à l'acier. Sur le volet énergie (Bbio et Cep), l'ossature bois atteint facilement les niveaux requis avec une isolation bien dimensionnée et une pompe à chaleur air/eau." },
+  },
+  {
+    "@type": "Question",
+    name: "Quel surcoût représente la RE2020 pour une maison bois en Haute-Savoie ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le surcoût par rapport à la RT2012 est estimé entre 3 et 8 % du coût de construction. En pratique, pour une maison ossature bois, le surcoût principal porte sur le système de chauffage (PAC air/eau vs chaudière gaz, soit +5 000 à 10 000 €) et sur le renforcement de l'étanchéité à l'air. En Haute-Savoie, les exigences alpines d'isolation étaient déjà proches des niveaux RE2020, ce qui limite l'impact." },
+  },
+  {
+    "@type": "Question",
+    name: "Qu'est-ce que le test d'étanchéité à l'air (Blower Door) et est-il obligatoire ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le test Blower Door mesure les infiltrations d'air non contrôlées dans l'enveloppe du bâtiment. La RE2020 exige un Q4Pa-surf ≤ 0,6 m³/(h.m²) pour les maisons individuelles — plus strict que la RT2012. Le test est obligatoire pour justifier les calculs RE2020. En ossature bois, cette valeur requiert une membrane pare-vapeur soigneusement posée et des passages de gaines correctement traités." },
+  },
+];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 export default function GuideRe2020Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">

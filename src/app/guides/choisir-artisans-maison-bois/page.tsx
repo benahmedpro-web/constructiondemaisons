@@ -36,11 +36,41 @@ const jsonLdBreadcrumb = {
   ],
 };
 
+const faqItems = [
+  {
+    "@type": "Question",
+    name: "Quelles certifications vérifier pour un charpentier bois en Haute-Savoie ?",
+    acceptedAnswer: { "@type": "Answer", text: "Demandez systématiquement la qualification Qualibat 3112 (charpente bois traditionnelle) ou 3113 (construction bois), l'assurance décennale avec les codes CNAB correspondant à votre type de travaux, et des références de chantiers comparables en Haute-Savoie ou Ain datant de moins de 3 ans. Méfiez-vous des artisans qui sous-traitent sans vous le signaler." },
+  },
+  {
+    "@type": "Question",
+    name: "Combien d'artisans interviennent sur un chantier maison ossature bois ?",
+    acceptedAnswer: { "@type": "Answer", text: "Un chantier maison ossature bois mobilise généralement 8 à 12 entreprises distinctes : terrassement, fondations, charpente ossature bois, couverture, menuiseries extérieures, bardage, plomberie, électricité, isolation complémentaire et finitions intérieures. Chaque corps de métier doit intervenir dans le bon ordre — c'est le rôle du maître d'œuvre de planifier ces séquences et de gérer les interfaces." },
+  },
+  {
+    "@type": "Question",
+    name: "Un artisan sans Qualibat peut-il intervenir sur une maison bois ?",
+    acceptedAnswer: { "@type": "Answer", text: "Légalement oui. Mais la qualification Qualibat reste un indicateur sérieux : elle atteste que l'entreprise a été auditée sur ses références, ses compétences techniques et la validité de ses assurances. En l'absence de qualification, demandez au minimum 3 références de chantiers similaires avec coordonnées des clients, et vérifiez l'assurance décennale directement auprès de la compagnie d'assurance." },
+  },
+  {
+    "@type": "Question",
+    name: "Que faire si un artisan ne respecte pas ses engagements sur le chantier ?",
+    acceptedAnswer: { "@type": "Answer", text: "En maîtrise d'œuvre, le maître d'œuvre dispose de leviers contractuels : mise en demeure formelle, suspension des acomptes, remplacement de l'artisan défaillant. En cas de malfaçon, la garantie décennale couvre les désordres compromettant la solidité ou l'habitabilité pendant 10 ans après réception des travaux." },
+  },
+];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 export default function GuideArtisansPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">

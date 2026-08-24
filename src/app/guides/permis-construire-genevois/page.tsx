@@ -36,11 +36,41 @@ const jsonLdBreadcrumb = {
   ],
 };
 
+const faqItems = [
+  {
+    "@type": "Question",
+    name: "Combien de temps prend l'instruction d'un permis de construire en Genevois français ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le délai légal est de 2 mois pour une maison individuelle en zone PLU. Mais en Genevois français (Annemasse, Saint-Julien, Archamps, Gaillard), les délais réels sont souvent de 3 à 5 mois en raison de la pression sur les services DDT74. Les communes en zone ABF (Architectes des Bâtiments de France) peuvent aller jusqu'à 5 mois. Prévoyez 4 mois dans votre planning." },
+  },
+  {
+    "@type": "Question",
+    name: "Le PLU de ma commune peut-il refuser une maison ossature bois ?",
+    acceptedAnswer: { "@type": "Answer", text: "Un PLU ne peut pas interdire les matériaux de construction — c'est contraire au Code de l'urbanisme. En revanche, il peut imposer des aspects de façade (couleur du bardage, pente de toiture, teinte des menuiseries) qui orientent fortement le choix architectural. Dans le Genevois, plusieurs communes imposent des bardages bois naturels dans certaines zones — ce qui est favorable à la construction bois." },
+  },
+  {
+    "@type": "Question",
+    name: "Qu'est-ce que le recours des tiers et comment s'en protéger ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le recours des tiers est le droit pour un voisin de contester votre permis dans les 2 mois suivant son affichage réglementaire sur le terrain. Pour vous protéger : vérifiez que l'affichage est conforme (panneau normalisé, visible de la voie publique), conservez des photos datées, et faites constater l'affichage par huissier si le projet est sensible. Passé le délai purgé, votre permis est solide." },
+  },
+  {
+    "@type": "Question",
+    name: "Peut-on construire en zone inondable en Haute-Savoie et Genevois ?",
+    acceptedAnswer: { "@type": "Answer", text: "Les zones inondables (zones bleues ou rouges des PPRi) sont soumises à des prescriptions strictes ou une interdiction de construire. Avant tout achat de terrain, vérifiez l'état des risques sur Géorisques ou en mairie. En zone bleue, la construction est possible avec des prescriptions : plancher au-dessus de la cote de référence, cave interdite. M&M CONSTRUCTION vérifie ces contraintes dans l'étude de faisabilité." },
+  },
+];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 export default function GuidePermisGenevoisPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">

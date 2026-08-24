@@ -36,11 +36,41 @@ const jsonLdBreadcrumb = {
   ],
 };
 
+const faqItems = [
+  {
+    "@type": "Question",
+    name: "Faut-il un permis de construire pour une extension ossature bois ?",
+    acceptedAnswer: { "@type": "Answer", text: "En zone PLU, une extension de moins de 40 m² nécessite une simple déclaration préalable. Au-delà, un permis de construire est obligatoire. Hors zone PLU, le seuil descend à 20 m². Si l'extension porte la surface totale à plus de 150 m², le recours à un architecte est obligatoire. Dans tous les cas, vérifiez le PLU de votre commune : certaines communes en Haute-Savoie ont des règles plus restrictives." },
+  },
+  {
+    "@type": "Question",
+    name: "Quel est le budget moyen d'une extension ossature bois en Haute-Savoie ?",
+    acceptedAnswer: { "@type": "Answer", text: "En Haute-Savoie et Ain, le coût d'une extension ossature bois se situe entre 1 600 et 2 400 € HT/m² selon les finitions et les contraintes techniques. Pour une extension de 30 m², comptez 48 000 à 72 000 € HT. À cela s'ajoutent les honoraires du maître d'œuvre (8-12 % des travaux) et les éventuels frais de raccordement ou de renforcement de la structure existante." },
+  },
+  {
+    "@type": "Question",
+    name: "L'extension ossature bois s'adapte-t-elle à tous les styles de maisons ?",
+    acceptedAnswer: { "@type": "Answer", text: "Oui, l'ossature bois est l'un des systèmes d'extension les plus versatiles architecturalement. Elle permet des bardages bois naturels (épicéa, douglas, mélèze), composite, ou des façades crépies qui s'harmonisent avec une maison maçonnée existante. En Haute-Savoie, les PLU locaux demandent parfois à respecter l'aspect des constructions environnantes — le bois est généralement bien accepté par les services instructeurs." },
+  },
+  {
+    "@type": "Question",
+    name: "Peut-on faire une extension bois sur une maison maçonnée ancienne ?",
+    acceptedAnswer: { "@type": "Answer", text: "Oui, c'est une configuration très courante en Haute-Savoie. La légèreté de la structure bois est un avantage : elle impose peu de charges supplémentaires sur les fondations existantes. Il faut traiter soigneusement la jonction entre l'ancien et le nouveau (liaison bois-maçonnerie, étanchéité à l'air) et gérer les ponts thermiques à l'interface entre les deux structures." },
+  },
+];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems,
+};
+
 export default function GuideExtensionPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
     <main>
       <div className="bg-[#2C2C2A] py-16 px-5">
         <div className="max-w-[780px] mx-auto">
