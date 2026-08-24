@@ -3,6 +3,92 @@ import type { Metadata } from "next";
 
 const BASE = "https://www.constructiondemaisons.com";
 
+const jsonLdService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Maîtrise d'œuvre maison ossature bois — M&M CONSTRUCTION",
+  serviceType: "Maîtrise d'œuvre",
+  description: "Accompagnement complet de votre projet de maison bois : évaluation, conception, permis de construire, sélection artisans, coordination de chantier, réception. Zone Haute-Savoie, Ain, Genevois français.",
+  provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Haute-Savoie" },
+    { "@type": "AdministrativeArea", name: "Ain" },
+    { "@type": "AdministrativeArea", name: "Genevois français" },
+  ],
+  offers: {
+    "@type": "Offer",
+    description: "Honoraires de maîtrise d'œuvre : 8 à 12 % du coût des travaux HT, définis contractuellement avant toute intervention.",
+  },
+};
+
+const jsonLdHowTo = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Comment réaliser un projet de maison ossature bois avec un maître d'œuvre en Haute-Savoie",
+  description: "5 phases pour construire votre maison bois avec M&M CONSTRUCTION, du premier échange à la remise des clés. Haute-Savoie, Ain, Genevois français.",
+  totalTime: "P14M",
+  estimatedCost: { "@type": "MonetaryAmount", currency: "EUR", value: "8 à 12 % du coût travaux HT" },
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Évaluation du projet",
+      text: "Premier échange gratuit par téléphone ou sur site. Analyse du terrain : PLU, accès, orientation, contraintes. Évaluation du programme (surfaces, nombre de pièces, budget). Identification des risques et des marges de manœuvre. Durée : semaines 1 à 2.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Conception et dépôt du permis de construire",
+      text: "Coordination avec l'architecte ou le dessinateur spécialisé bois. Plans d'avant-projet soumis à validation. Constitution et dépôt du dossier de permis de construire en mairie. Suivi de l'instruction — délais de 2 à 6 mois selon les communes du Genevois. Durée : mois 2 à 5.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Sélection des artisans et budget définitif",
+      text: "Appel d'offres auprès des artisans bois vérifiés locaux. Vérification des décennales et qualifications (Qualibat, ECOBOIS, RGE). Analyse comparative des devis. Présentation du budget définitif avant signature. Contrats directs entre le maître d'ouvrage et chaque artisan. Durée : mois 4 à 6.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Coordination de chantier",
+      text: "Planning général établi par corps de métier avant démarrage. Réunions de chantier hebdomadaires ou bimensuelles. Suivi des approvisionnements critiques (ossature, menuiseries, isolation). Gestion des aléas : retards, modifications techniques. Comptes-rendus réguliers transmis par email. Durée : toute la durée du chantier (6 à 10 mois).",
+    },
+    {
+      "@type": "HowToStep",
+      position: 5,
+      name: "Réception et activation des garanties",
+      text: "Visite de pré-réception avec grille de contrôle qualité. Levée des réserves avant remise officielle des clés. Procès-verbal de réception signé avec les artisans. Accompagnement dans l'activation des garanties légales (décennale, parfait achèvement, biennale). Disponibilité 30 jours après réception. Durée : J-7 à J+30.",
+    },
+  ],
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Qu'est-ce qu'un maître d'œuvre pour une maison ossature bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "Le maître d'œuvre est un professionnel indépendant qui coordonne l'ensemble des intervenants d'un chantier — architecte, bureaux d'études, artisans — pour le compte du maître d'ouvrage (le propriétaire). Contrairement au constructeur CCMI, il ne réalise pas les travaux lui-même : il les pilote, les contrôle et en rend compte. Son objectif est défendre vos intérêts, pas ceux d'un catalogue de modèles ou d'artisans intégrés." },
+    },
+    {
+      "@type": "Question",
+      name: "Combien coûte la maîtrise d'œuvre pour une maison bois en Haute-Savoie ?",
+      acceptedAnswer: { "@type": "Answer", text: "Les honoraires de maîtrise d'œuvre représentent généralement 8 à 12 % du coût des travaux HT selon la complexité du projet et l'étendue des missions (de la conception seule à la réception complète). Pour une maison de 120 m² à 240 000 € HT de travaux, cela représente 19 200 à 28 800 €. Ces honoraires sont souvent compensés par les économies réalisées lors de la mise en concurrence des artisans." },
+    },
+    {
+      "@type": "Question",
+      name: "Quelle est la différence concrète entre un maître d'œuvre et un constructeur CCMI ?",
+      acceptedAnswer: { "@type": "Answer", text: "En CCMI, vous signez avec un seul interlocuteur commercial qui sous-traite à des artisans — sa marge (15 à 25 %) est incluse dans le prix global. En maîtrise d'œuvre, vous avez des contrats directs avec chaque artisan : vous voyez chaque devis, chaque facture. Le maître d'œuvre est rémunéré par honoraires fixes, pas par une marge sur les travaux." },
+    },
+    {
+      "@type": "Question",
+      name: "Quel est le délai total d'un projet de maison bois avec un maître d'œuvre ?",
+      acceptedAnswer: { "@type": "Answer", text: "De la première réunion aux clés, il faut compter 14 à 20 mois en Haute-Savoie et Genevois : 1 à 2 mois d'études, 3 à 6 mois de permis de construire (selon la commune), 1 mois de préparation chantier, et 8 à 12 mois de chantier. La phase permis est souvent la plus longue dans les communes frontalières comme Annemasse, Saint-Julien-en-Genevois ou Gex." },
+    },
+  ],
+};
+
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -92,6 +178,9 @@ export default function NotreMethodePage() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHowTo) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       {/* Hero */}
       <div className="bg-[#2C2C2A] py-20 px-5">
         <div className="max-w-[800px] mx-auto">

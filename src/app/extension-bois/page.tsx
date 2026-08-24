@@ -4,6 +4,56 @@ import type { Metadata } from "next";
 
 const BASE = "https://www.constructiondemaisons.com";
 
+const jsonLdService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Extension ossature bois — M&M CONSTRUCTION",
+  serviceType: "Extension ossature bois",
+  description: "Coordination complète de votre extension ossature bois en Haute-Savoie, Ain et Genevois français. Permis de construire, sélection artisans qualifiés bois, suivi de chantier.",
+  provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Haute-Savoie" },
+    { "@type": "AdministrativeArea", name: "Ain" },
+    { "@type": "AdministrativeArea", name: "Genevois français" },
+  ],
+  offers: {
+    "@type": "Offer",
+    description: "Extension ossature bois de 15 à 80 m². Devis gratuit après étude de faisabilité PLU.",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      priceCurrency: "EUR",
+      description: "1 600 à 2 400 € HT/m² selon finitions et contraintes techniques",
+    },
+  },
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Faut-il un permis de construire pour une extension ossature bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "En zone PLU, une extension de moins de 40 m² nécessite une simple déclaration préalable. Au-delà, un permis de construire est obligatoire. Hors zone PLU, le seuil descend à 20 m². Si l'extension porte la surface totale à plus de 150 m², le recours à un architecte devient obligatoire. M&M CONSTRUCTION vérifie le PLU de votre commune et constitue le dossier complet." },
+    },
+    {
+      "@type": "Question",
+      name: "Quel budget prévoir pour une extension ossature bois en Haute-Savoie ?",
+      acceptedAnswer: { "@type": "Answer", text: "En Haute-Savoie et Genevois, le coût d'une extension ossature bois se situe entre 1 600 et 2 400 € HT/m² selon les finitions et les contraintes du chantier. Pour une extension de 30 m², comptez 48 000 à 72 000 € HT de travaux, auxquels s'ajoutent les honoraires de maîtrise d'œuvre (8 à 12 % des travaux) et les éventuels frais d'études et de raccordement." },
+    },
+    {
+      "@type": "Question",
+      name: "Combien de temps dure le chantier d'une extension ossature bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "Le chantier d'une extension bois dure généralement 3 à 5 mois selon la surface et les finitions. La structure bois (hors d'eau, hors d'air) est posée en 3 à 6 semaines. Le second œuvre (isolation, cloisons, électricité, plomberie, finitions) prend ensuite 2 à 4 mois. À cela s'ajoute le délai d'instruction administrative (1 à 3 mois selon la surface et la commune)." },
+    },
+    {
+      "@type": "Question",
+      name: "Peut-on faire une extension bois sur une maison maçonnée ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui, c'est une configuration très courante. La légèreté de l'ossature bois est un avantage sur les fondations existantes. La liaison bois/maçonnerie nécessite une conception soignée pour éviter les ponts thermiques et assurer l'étanchéité à l'air à l'interface. M&M CONSTRUCTION coordonne avec un bureau d'études structure pour valider les calculs de jonction." },
+    },
+  ],
+};
+
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -32,6 +82,8 @@ export default function ExtensionBoisPage() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       {/* Hero */}
       <div
         className="relative bg-[#2C2C2A] py-20 px-5 overflow-hidden"

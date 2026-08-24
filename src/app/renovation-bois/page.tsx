@@ -3,6 +3,47 @@ import type { Metadata } from "next";
 
 const BASE = "https://www.constructiondemaisons.com";
 
+const jsonLdService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Rénovation et isolation bois — M&M CONSTRUCTION",
+  serviceType: "Rénovation thermique, isolation par l'extérieur, réhabilitation ossature bois",
+  description: "Coordination de travaux de rénovation thermique et d'isolation bois en Haute-Savoie, Ain et Genevois français. ITE bardage bois, réhabilitation ossature existante, changement menuiseries.",
+  provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Haute-Savoie" },
+    { "@type": "AdministrativeArea", name: "Ain" },
+    { "@type": "AdministrativeArea", name: "Genevois français" },
+  ],
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Qu'est-ce que l'isolation thermique par l'extérieur (ITE) en bardage bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "L'ITE consiste à envelopper la maison existante d'une couche d'isolant fixée sur la façade, recouverte d'un bardage bois ventilé. Elle améliore l'enveloppe thermique sans réduire la surface habitable et traite les ponts thermiques en façade. En Haute-Savoie, elle est souvent combinée au remplacement des menuiseries pour atteindre les niveaux BBC ou RE2020." },
+    },
+    {
+      "@type": "Question",
+      name: "Quel budget prévoir pour une rénovation thermique bois en Haute-Savoie ?",
+      acceptedAnswer: { "@type": "Answer", text: "Le coût d'une ITE en bardage bois se situe généralement entre 180 et 350 € HT/m² de façade selon l'épaisseur d'isolant, le type de bardage et les contraintes de chantier. Pour une maison de 100 m² avec 150 m² de façade, cela représente 27 000 à 52 000 € HT. Des aides comme MaPrimeRénov' et l'Éco-PTZ peuvent financer une partie de ces travaux." },
+    },
+    {
+      "@type": "Question",
+      name: "Faut-il un permis de construire pour des travaux d'isolation extérieure en bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "Dans la plupart des cas, une déclaration préalable de travaux suffit pour une ITE, car elle modifie l'aspect extérieur du bâtiment. Dans les secteurs ABF (Architectes des Bâtiments de France) ou en zone protégée, l'accord de l'ABF est requis. En Haute-Savoie, certaines communes frontalières ont des règles strictes sur les couleurs et matériaux de façade — M&M CONSTRUCTION vérifie avant tout démarrage." },
+    },
+    {
+      "@type": "Question",
+      name: "Peut-on bénéficier d'aides pour une rénovation thermique en ossature bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. MaPrimeRénov' finance l'isolation des murs par l'extérieur (jusqu'à 75 €/m² selon les revenus). L'Éco-PTZ permet de financer jusqu'à 50 000 € de travaux à taux zéro sur 20 ans. La TVA à 5,5 % s'applique sur les travaux de rénovation énergétique. Pour en bénéficier, les artisans doivent être certifiés RGE — M&M CONSTRUCTION travaille exclusivement avec des artisans RGE." },
+    },
+  ],
+};
+
 const jsonLdBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -43,6 +84,8 @@ export default function RenovationBoisPage() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       {/* Hero */}
       <div className="bg-[#2C2C2A] py-20 px-5">
         <div className="max-w-[800px] mx-auto">
