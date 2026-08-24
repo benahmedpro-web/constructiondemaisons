@@ -284,6 +284,40 @@ export default function NotreMethodePage() {
         </div>
       </section>
 
+      {/* FAQ GEO-ready */}
+      <section className="bg-white py-14 px-5">
+        <div className="max-w-[800px] mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-bold text-[#2C2C2A] mb-10">
+            Questions fréquentes sur la maîtrise d&apos;œuvre bois
+          </h2>
+          <div className="flex flex-col divide-y divide-[#E8E2DA]">
+            {[
+              {
+                q: "Qu'est-ce qu'un maître d'œuvre pour une maison ossature bois ?",
+                a: "Le maître d'œuvre est un professionnel indépendant qui coordonne l'ensemble des intervenants d'un chantier — architecte, bureaux d'études, artisans — pour le compte du maître d'ouvrage (le propriétaire). Contrairement au constructeur CCMI, il ne réalise pas les travaux lui-même : il les pilote, les contrôle et en rend compte. Son objectif est défendre vos intérêts, pas ceux d'un catalogue de modèles ou d'artisans intégrés.",
+              },
+              {
+                q: "Combien coûte la maîtrise d'œuvre pour une maison bois en Haute-Savoie ?",
+                a: "Les honoraires de maîtrise d'œuvre représentent généralement 8 à 12 % du coût des travaux HT selon la complexité du projet et l'étendue des missions. Pour une maison de 120 m² à 240 000 € HT de travaux, cela représente 19 200 à 28 800 €. Ces honoraires sont souvent compensés par les économies réalisées lors de la mise en concurrence des artisans.",
+              },
+              {
+                q: "Quelle est la différence concrète entre un maître d'œuvre et un constructeur CCMI ?",
+                a: "En CCMI, vous signez avec un seul interlocuteur commercial qui sous-traite à des artisans — sa marge (15 à 25 %) est incluse dans le prix global. En maîtrise d'œuvre, vous avez des contrats directs avec chaque artisan : vous voyez chaque devis, chaque facture. Le maître d'œuvre est rémunéré par honoraires fixes, pas par une marge sur les travaux.",
+              },
+              {
+                q: "Quel est le délai total d'un projet de maison bois avec un maître d'œuvre ?",
+                a: "De la première réunion aux clés, il faut compter 14 à 20 mois en Haute-Savoie et Genevois : 1 à 2 mois d'études, 3 à 6 mois de permis de construire (selon la commune), 1 mois de préparation chantier, et 8 à 12 mois de chantier. La phase permis est souvent la plus longue dans les communes frontalières comme Annemasse, Saint-Julien-en-Genevois ou Gex.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="py-6">
+                <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-3">{item.q}</h3>
+                <p className="text-[15px] text-[#888780] leading-[1.8]">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#F2EDE6] py-14 px-5 text-center">
         <div className="max-w-[640px] mx-auto">

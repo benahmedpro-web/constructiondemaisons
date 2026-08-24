@@ -177,6 +177,40 @@ export default function ExtensionBoisPage() {
         </div>
       </section>
 
+      {/* FAQ GEO-ready */}
+      <section className="bg-white py-14 px-5">
+        <div className="max-w-[800px] mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-bold text-[#2C2C2A] mb-10">
+            Questions fréquentes sur l&apos;extension ossature bois
+          </h2>
+          <div className="flex flex-col divide-y divide-[#E8E2DA]">
+            {[
+              {
+                q: "Faut-il un permis de construire pour une extension ossature bois ?",
+                a: "En zone PLU, une extension de moins de 40 m² nécessite une simple déclaration préalable. Au-delà, un permis de construire est obligatoire. Hors zone PLU, le seuil descend à 20 m². Si l'extension porte la surface totale à plus de 150 m², le recours à un architecte devient obligatoire. M&M CONSTRUCTION vérifie le PLU de votre commune et constitue le dossier complet.",
+              },
+              {
+                q: "Quel budget prévoir pour une extension ossature bois en Haute-Savoie ?",
+                a: "En Haute-Savoie et Genevois, le coût d'une extension ossature bois se situe entre 1 600 et 2 400 € HT/m² selon les finitions et les contraintes du chantier. Pour une extension de 30 m², comptez 48 000 à 72 000 € HT de travaux, auxquels s'ajoutent les honoraires de maîtrise d'œuvre (8 à 12 % des travaux) et les éventuels frais d'études et de raccordement.",
+              },
+              {
+                q: "Combien de temps dure le chantier d'une extension ossature bois ?",
+                a: "Le chantier d'une extension bois dure généralement 3 à 5 mois selon la surface et les finitions. La structure bois (hors d'eau, hors d'air) est posée en 3 à 6 semaines. Le second œuvre (isolation, cloisons, électricité, plomberie, finitions) prend ensuite 2 à 4 mois. À cela s'ajoute le délai d'instruction administrative (1 à 3 mois selon la surface et la commune).",
+              },
+              {
+                q: "Peut-on faire une extension bois sur une maison maçonnée ?",
+                a: "Oui, c'est une configuration très courante. La légèreté de l'ossature bois est un avantage sur les fondations existantes. La liaison bois/maçonnerie nécessite une conception soignée pour éviter les ponts thermiques et assurer l'étanchéité à l'air à l'interface. M&M CONSTRUCTION coordonne avec un bureau d'études structure pour valider les calculs de jonction.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="py-6">
+                <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-3">{item.q}</h3>
+                <p className="text-[15px] text-[#888780] leading-[1.8]">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#2C2C2A] py-14 px-5 text-center">
         <div className="max-w-[640px] mx-auto">

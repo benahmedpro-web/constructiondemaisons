@@ -174,6 +174,40 @@ export default function RenovationBoisPage() {
         </div>
       </section>
 
+      {/* FAQ GEO-ready */}
+      <section className="bg-white py-14 px-5">
+        <div className="max-w-[800px] mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-bold text-[#2C2C2A] mb-10">
+            Questions fréquentes sur la rénovation thermique bois
+          </h2>
+          <div className="flex flex-col divide-y divide-[#E8E2DA]">
+            {[
+              {
+                q: "Qu'est-ce que l'isolation thermique par l'extérieur (ITE) en bardage bois ?",
+                a: "L'ITE consiste à envelopper la maison existante d'une couche d'isolant fixée sur la façade, recouverte d'un bardage bois ventilé. Elle améliore l'enveloppe thermique sans réduire la surface habitable et traite les ponts thermiques en façade. En Haute-Savoie, elle est souvent combinée au remplacement des menuiseries pour atteindre les niveaux BBC ou RE2020.",
+              },
+              {
+                q: "Quel budget prévoir pour une rénovation thermique bois en Haute-Savoie ?",
+                a: "Le coût d'une ITE en bardage bois se situe généralement entre 180 et 350 € HT/m² de façade selon l'épaisseur d'isolant, le type de bardage et les contraintes de chantier. Pour une maison de 100 m² avec 150 m² de façade, cela représente 27 000 à 52 000 € HT. Des aides comme MaPrimeRénov' et l'Éco-PTZ peuvent financer une partie de ces travaux.",
+              },
+              {
+                q: "Faut-il un permis de construire pour des travaux d'isolation extérieure en bois ?",
+                a: "Dans la plupart des cas, une déclaration préalable de travaux suffit pour une ITE, car elle modifie l'aspect extérieur du bâtiment. Dans les secteurs ABF (Architectes des Bâtiments de France) ou en zone protégée, l'accord de l'ABF est requis. En Haute-Savoie, certaines communes frontalières ont des règles strictes sur les couleurs et matériaux de façade — M&M CONSTRUCTION vérifie avant tout démarrage.",
+              },
+              {
+                q: "Peut-on bénéficier d'aides pour une rénovation thermique en ossature bois ?",
+                a: "Oui. MaPrimeRénov' finance l'isolation des murs par l'extérieur (jusqu'à 75 €/m² selon les revenus). L'Éco-PTZ permet de financer jusqu'à 50 000 € de travaux à taux zéro sur 20 ans. La TVA à 5,5 % s'applique sur les travaux de rénovation énergétique. Pour en bénéficier, les artisans doivent être certifiés RGE — M&M CONSTRUCTION travaille exclusivement avec des artisans RGE.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="py-6">
+                <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-3">{item.q}</h3>
+                <p className="text-[15px] text-[#888780] leading-[1.8]">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#F2EDE6] py-14 px-5 text-center">
         <div className="max-w-[640px] mx-auto">

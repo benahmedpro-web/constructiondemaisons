@@ -21,6 +21,33 @@ const jsonLdBreadcrumb = {
   ],
 };
 
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Quelle est la durée de vie d'une maison ossature bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "Une maison ossature bois bien conçue et entretenue a une durée de vie équivalente à une construction maçonnée — 80 à 100 ans. La structure bois est protégée par la membrane d'étanchéité, l'isolant et le bardage ventilé. Les traitements fongicides et insecticides appliqués avant mise en œuvre garantissent la durabilité de la structure. En Haute-Savoie, les constructions bois des années 1970-1980 encore debout en attestent." },
+    },
+    {
+      "@type": "Question",
+      name: "Une maison ossature bois est-elle adaptée au climat alpin de Haute-Savoie ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Le bois est le matériau de construction traditionnel des Alpes pour une raison : il s'adapte naturellement aux variations thermiques. Une ossature bois avec 200 mm d'isolation atteint facilement R = 7 m².K/W en mur — bien au-delà des exigences RE2020. La membrane frein-vapeur gère la diffusion de vapeur dans les zones humides. Le bardage bois ventilé résiste à l'enneigement et à l'humidité sans maintenance particulière." },
+    },
+    {
+      "@type": "Question",
+      name: "Quel est le délai de construction d'une maison ossature bois ?",
+      acceptedAnswer: { "@type": "Answer", text: "Du premier contact à la remise des clés, comptez 12 à 18 mois en Haute-Savoie : 1 à 2 mois d'études, 3 à 6 mois d'instruction du permis de construire, et 6 à 10 mois de chantier. La structure ossature bois proprement dite (hors d'eau, hors d'air) est posée en 4 à 8 semaines. Le délai de permis varie fortement selon les communes — Annemasse et Gex sont parmi les plus longs du Genevois." },
+    },
+    {
+      "@type": "Question",
+      name: "Maison ossature bois ou maison maçonnée : laquelle choisir en Haute-Savoie ?",
+      acceptedAnswer: { "@type": "Answer", text: "Le bois offre trois avantages décisifs en Haute-Savoie : chantier plus rapide (6 mois de travaux vs 10-12 pour la maçonnerie), performance thermique native (RE2020 atteignable sans surcouche), et légèreté structurelle (avantage en zone sismique 3). La maçonnerie reste compétitive sur la masse thermique (inertie) en zones sans chauffage continu. Pour les maisons à chauffage continu (résidence principale), le bois est généralement plus économique à l'usage." },
+    },
+  ],
+};
+
 const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -100,6 +127,7 @@ export default function MaisonOssatureBoisPage() {
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       {/* Hero */}
       <div className="relative bg-[#2C2C2A] py-20 px-5 overflow-hidden">
         <Image
@@ -323,6 +351,40 @@ export default function MaisonOssatureBoisPage() {
           </h2>
           <div className="flex flex-col gap-0 divide-y divide-[#D9D4CC]">
             {faq.map((item, i) => (
+              <div key={i} className="py-6">
+                <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-3">{item.q}</h3>
+                <p className="text-[15px] text-[#888780] leading-[1.8]">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ GEO-ready */}
+      <section className="bg-white py-14 px-5 border-t border-[#E8E2DA]">
+        <div className="max-w-[800px] mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-bold text-[#2C2C2A] mb-10">
+            Questions fréquentes sur la maison ossature bois
+          </h2>
+          <div className="flex flex-col divide-y divide-[#E8E2DA]">
+            {[
+              {
+                q: "Quelle est la durée de vie d'une maison ossature bois ?",
+                a: "Une maison ossature bois bien conçue et entretenue a une durée de vie équivalente à une construction maçonnée — 80 à 100 ans. La structure bois est protégée par la membrane d'étanchéité, l'isolant et le bardage ventilé. Les traitements fongicides et insecticides appliqués avant mise en œuvre garantissent la durabilité de la structure. En Haute-Savoie, les constructions bois des années 1970-1980 encore debout en attestent.",
+              },
+              {
+                q: "Une maison ossature bois est-elle adaptée au climat alpin de Haute-Savoie ?",
+                a: "Oui. Le bois est le matériau de construction traditionnel des Alpes pour une raison : il s'adapte naturellement aux variations thermiques. Une ossature bois avec 200 mm d'isolation atteint facilement R = 7 m².K/W en mur — bien au-delà des exigences RE2020. La membrane frein-vapeur gère la diffusion de vapeur dans les zones humides. Le bardage bois ventilé résiste à l'enneigement et à l'humidité sans maintenance particulière.",
+              },
+              {
+                q: "Quel est le délai de construction d'une maison ossature bois ?",
+                a: "Du premier contact à la remise des clés, comptez 12 à 18 mois en Haute-Savoie : 1 à 2 mois d'études, 3 à 6 mois d'instruction du permis de construire, et 6 à 10 mois de chantier. La structure ossature bois proprement dite (hors d'eau, hors d'air) est posée en 4 à 8 semaines. Le délai de permis varie fortement selon les communes — Annemasse et Gex sont parmi les plus longs du Genevois.",
+              },
+              {
+                q: "Maison ossature bois ou maison maçonnée : laquelle choisir en Haute-Savoie ?",
+                a: "Le bois offre trois avantages décisifs en Haute-Savoie : chantier plus rapide (6 mois de travaux vs 10-12 pour la maçonnerie), performance thermique native (RE2020 atteignable sans surcouche), et légèreté structurelle (avantage en zone sismique 3). La maçonnerie reste compétitive sur la masse thermique (inertie) en zones sans chauffage continu. Pour les maisons à chauffage continu (résidence principale), le bois est généralement plus économique à l'usage.",
+              },
+            ].map((item, i) => (
               <div key={i} className="py-6">
                 <h3 className="text-[17px] font-bold text-[#2C2C2A] mb-3">{item.q}</h3>
                 <p className="text-[15px] text-[#888780] leading-[1.8]">{item.a}</p>
