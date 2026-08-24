@@ -4,6 +4,7 @@ import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { gtagEvent } from "@/lib/ga";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -355,6 +356,9 @@ function DemandeEtudePageInner() {
     if (!answers.email || !answers.prenom) return;
     setLoading(true);
     setError("");
+    // Manquait jusqu'ici — même bug que LeadForm (indice-de-faisabilite) : /api/contact rejette
+    // en 403 dès que RECAPTCHA_SECRET_KEY est configuré côté serveur, sans ce token.
+    const recaptchaToken = await getRecaptchaToken("demande_etude");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -368,6 +372,7 @@ function DemandeEtudePageInner() {
           zone: answers.zone,
           budget: answers.budget,
           message: buildMessage(answers),
+          recaptchaToken,
         }),
       });
       if (!res.ok) throw new Error();

@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 const PHONE = "+33480161783";
 
@@ -52,6 +53,9 @@ export function LpPage() {
     if (!form.prenom || !form.email) return;
     setLoading(true);
     setError("");
+    // Manquait jusqu'ici — même bug que LeadForm/DemandEtudeClient : /api/contact rejette en 403
+    // dès que RECAPTCHA_SECRET_KEY est configuré côté serveur, sans ce token.
+    const recaptchaToken = await getRecaptchaToken("lp");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -65,6 +69,7 @@ export function LpPage() {
           zone: form.commune,
           budget: "",
           message: `Type de projet : ${form.typeProjet || "Non précisé"}. Commune : ${form.commune || "Non précisée"}.`,
+          recaptchaToken,
         }),
       });
       if (!res.ok) throw new Error();
