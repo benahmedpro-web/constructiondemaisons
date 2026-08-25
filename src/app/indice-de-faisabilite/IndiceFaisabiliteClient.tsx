@@ -1054,6 +1054,8 @@ function LeadForm({
           diagnosticHtml: buildDiagnosticEmailHtml(diagnostic, answers),
           eventId,
           attribution,
+          source: "indice_faisabilite",
+          answers,
         }),
       });
       if (!res.ok) {

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { verifyRecaptcha } from "@/lib/recaptcha";
+import { archiveLead } from "@/lib/supabase";
 
 function escHtml(s: unknown): string {
   if (typeof s !== "string") return "";
@@ -133,6 +134,15 @@ export async function POST(req: NextRequest) {
 
     const tasks: { label: string; promise: Promise<unknown> }[] = [
       { label: "Trello", promise: createTrelloCard(cardName, cardDesc) },
+      {
+        label: "Supabase (archive lead)",
+        promise: archiveLead({
+          source: "alerte_annonce",
+          prenom, email, telephone,
+          zone: communesLabel,
+          answers: { statut: statutLabel, communes: communesSafe },
+        }),
+      },
       {
         label: "Email interne (notification)",
         promise: resend.emails.send({

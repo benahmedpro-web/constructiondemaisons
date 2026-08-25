@@ -70,6 +70,7 @@ export function LpPage() {
           budget: "",
           message: `Type de projet : ${form.typeProjet || "Non précisé"}. Commune : ${form.commune || "Non précisée"}.`,
           recaptchaToken,
+          source: "lp",
         }),
       });
       if (!res.ok) {

@@ -373,6 +373,8 @@ function DemandeEtudePageInner() {
           budget: answers.budget,
           message: buildMessage(answers),
           recaptchaToken,
+          source: "demande_etude",
+          answers,
         }),
       });
       if (!res.ok) {

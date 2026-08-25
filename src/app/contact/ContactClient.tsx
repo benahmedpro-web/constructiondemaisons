@@ -24,7 +24,7 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, sujet: "Contact site web", recaptchaToken }),
+        body: JSON.stringify({ ...data, sujet: "Contact site web", recaptchaToken, source: "contact" }),
       });
       if (res.ok) {
         gtagEvent("generate_lead", { event_category: "formulaire", event_label: "contact" });

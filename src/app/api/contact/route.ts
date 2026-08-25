@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { hasValidMx } from "@/lib/validate-email";
 import { verifyRecaptcha } from "@/lib/recaptcha";
+import { archiveLead } from "@/lib/supabase";
 
 function escHtml(s: unknown): string {
   if (typeof s !== "string") return "";
@@ -102,7 +103,7 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   try {
     const body = await req.json();
-    const { nom, prenom, email, telephone, typeProjet, zone, budget, message, diagnosticHtml, recaptchaToken, eventId, attribution } = body;
+    const { nom, prenom, email, telephone, typeProjet, zone, budget, message, diagnosticHtml, recaptchaToken, eventId, attribution, source, answers } = body;
 
     const humanOk = await verifyRecaptcha(recaptchaToken as string | undefined);
     if (!humanOk) {
@@ -169,6 +170,17 @@ export async function POST(req: NextRequest) {
 
     const tasks: { label: string; promise: Promise<unknown> }[] = [
       { label: "Trello", promise: createTrelloCard(cardName, cardDesc) },
+      {
+        label: "Supabase (archive lead)",
+        promise: archiveLead({
+          source: typeof source === "string" ? source : "contact",
+          nom, prenom, email, telephone,
+          type_projet: typeProjet, zone, budget, message,
+          answers: answers ?? null,
+          attribution: attribution ?? null,
+          event_id: typeof eventId === "string" ? eventId : undefined,
+        }),
+      },
       {
         label: "Email interne (notification)",
         promise: resend.emails.send({
