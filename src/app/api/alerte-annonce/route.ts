@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { verifyRecaptcha } from "@/lib/recaptcha";
 import { archiveLead } from "@/lib/supabase";
+import { appendLeadToSheet } from "@/lib/googleSheet";
 
 function escHtml(s: unknown): string {
   if (typeof s !== "string") return "";
@@ -137,6 +138,15 @@ export async function POST(req: NextRequest) {
       {
         label: "Supabase (archive lead)",
         promise: archiveLead({
+          source: "alerte_annonce",
+          prenom, email, telephone,
+          zone: communesLabel,
+          answers: { statut: statutLabel, communes: communesSafe },
+        }),
+      },
+      {
+        label: "Google Sheet (export lead)",
+        promise: appendLeadToSheet({
           source: "alerte_annonce",
           prenom, email, telephone,
           zone: communesLabel,
