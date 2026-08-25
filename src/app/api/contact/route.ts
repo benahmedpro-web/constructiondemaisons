@@ -119,9 +119,13 @@ export async function POST(req: NextRequest) {
     }
 
     if (telephone) {
+      // Assoupli le 24/08/2026 : l'ancien regex n'acceptait que le format mobile FR (06-09) ou
+      // CH (+41) exact — une faute de frappe (chiffre en trop/manquant) ou un fixe faisait perdre
+      // le lead entièrement (rejet 400 avant toute création de carte/envoi d'email). On vérifie
+      // juste que ça ressemble à un numéro (chiffres + éventuel préfixe +), pas un format précis.
       const cleaned = String(telephone).replace(/[\s.\-()]/g, "");
-      if (!/^(?:(?:\+33|0033|0)[6-9]\d{8}|(?:\+41|0041)[1-9]\d{8})$/.test(cleaned)) {
-        return NextResponse.json({ error: "Numéro de téléphone invalide. Saisissez un numéro français (06/07/08/09) ou suisse (+41)." }, { status: 400 });
+      if (!/^\+?\d{8,15}$/.test(cleaned)) {
+        return NextResponse.json({ error: "Numéro de téléphone invalide. Vérifiez le nombre de chiffres saisis." }, { status: 400 });
       }
     }
 

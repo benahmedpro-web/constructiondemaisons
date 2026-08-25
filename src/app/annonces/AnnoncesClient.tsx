@@ -174,6 +174,7 @@ export default function AnnoncesPage() {
   const [alerteOpen, setAlerteOpen] = useState(false);
   const [alerteForm, setAlerteForm] = useState({ prenom: "", email: "", telephone: "" });
   const [alerteState, setAlerteState] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [alerteError, setAlerteError] = useState("");
 
   async function submitAlerte(e: FormEvent) {
     e.preventDefault();
@@ -190,8 +191,15 @@ export default function AnnoncesPage() {
           recaptchaToken,
         }),
       });
-      setAlerteState(res.ok ? "success" : "error");
+      if (res.ok) {
+        setAlerteState("success");
+      } else {
+        const data = await res.json().catch(() => null);
+        setAlerteError(data?.error || "Une erreur est survenue. Réessayez ou contactez-nous directement.");
+        setAlerteState("error");
+      }
     } catch {
+      setAlerteError("Une erreur est survenue. Réessayez ou contactez-nous directement.");
       setAlerteState("error");
     }
   }
@@ -1285,7 +1293,7 @@ export default function AnnoncesPage() {
               </div>
 
               {alerteState === "error" && (
-                <p className="text-[13px] text-red-600">Une erreur est survenue. Réessayez ou contactez-nous directement.</p>
+                <p className="text-[13px] text-red-600">{alerteError}</p>
               )}
 
               <button

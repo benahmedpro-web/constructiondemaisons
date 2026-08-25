@@ -72,11 +72,14 @@ export function LpPage() {
           recaptchaToken,
         }),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Une erreur est survenue. Réessayez ou appelez-nous directement.");
+      }
       setSent(true);
       window.location.href = "/demande-etude/merci/";
-    } catch {
-      setError("Une erreur est survenue. Réessayez ou appelez-nous directement.");
+    } catch (err) {
+      setError(err instanceof Error && err.message ? err.message : "Une erreur est survenue. Réessayez ou appelez-nous directement.");
       setLoading(false);
     }
   }

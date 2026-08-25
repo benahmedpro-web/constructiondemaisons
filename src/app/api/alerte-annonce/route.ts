@@ -106,9 +106,10 @@ export async function POST(req: NextRequest) {
     }
 
     if (telephone) {
+      // Assoupli le 24/08/2026, même raison que src/app/api/contact/route.ts.
       const cleaned = String(telephone).replace(/[\s.\-()]/g, "");
-      if (!/^(?:(?:\+33|0033|0)[6-9]\d{8}|(?:\+41|0041)[1-9]\d{8})$/.test(cleaned)) {
-        return NextResponse.json({ error: "Numéro de téléphone invalide. Saisissez un numéro français (06/07/08/09) ou suisse (+41)." }, { status: 400 });
+      if (!/^\+?\d{8,15}$/.test(cleaned)) {
+        return NextResponse.json({ error: "Numéro de téléphone invalide. Vérifiez le nombre de chiffres saisis." }, { status: 400 });
       }
     }
 

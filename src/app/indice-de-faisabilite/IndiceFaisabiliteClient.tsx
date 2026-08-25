@@ -1053,7 +1053,10 @@ function LeadForm({
           attribution,
         }),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Une erreur est survenue. Réessayez ou appelez-nous directement.");
+      }
       // Déclenché uniquement après confirmation serveur (§2, règle importante) — jamais sur le
       // clic du bouton. generate_lead reste inchangé (nom reconnu par Google Ads/GA4, déjà
       // branché sur l'import de conversion) ; lead_submit est le nom interne du cahier des
@@ -1065,8 +1068,8 @@ function LeadForm({
       // 09/08/2026 : le rapport devient l'écran suivant du même parcours, pas une redirection
       // externe. Le rapport part aussi par email (diagnosticHtml ci-dessus), inchangé.
       onSuccess();
-    } catch {
-      setError("Une erreur est survenue. Réessayez ou appelez-nous directement.");
+    } catch (err) {
+      setError(err instanceof Error && err.message ? err.message : "Une erreur est survenue. Réessayez ou appelez-nous directement.");
       setLoading(false);
     }
   }
