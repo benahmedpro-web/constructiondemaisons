@@ -17,10 +17,12 @@ function trackOpenAILead(params?: Record<string, string | number | boolean>) {
   if (typeof window.oaiq !== "function") return;
 
   const eventId = typeof params?.event_id === "string" ? params.event_id : undefined;
-  window.oaiq("measure", "lead_created", {
-    type: "customer_action",
-    ...(eventId ? { event_id: eventId } : {}),
-  });
+  window.oaiq(
+    "measure",
+    "lead_created",
+    { type: "customer_action" },
+    eventId ? { event_id: eventId } : {}
+  );
 }
 
 export function trackFunnelEvent(name: FunnelEventName, params?: Record<string, string | number | boolean>) {
