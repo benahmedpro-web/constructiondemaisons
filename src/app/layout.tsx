@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CookieBanner } from "@/components/CookieBanner";
+import { OpenAIAdsPixel } from "@/components/OpenAIAdsPixel";
 import "./globals.css";
 
 const BASE = "https://www.constructiondemaisons.com";
@@ -78,9 +79,7 @@ const jsonLdBusiness = {
       datePublished: "2024-05-01",
     },
   ],
-  sameAs: [
-    "https://g.page/r/Cdn_3K5QUh7wEBM",
-  ],
+  sameAs: ["https://g.page/r/Cdn_3K5QUh7wEBM"],
   founder: {
     "@type": "Person",
     "@id": BASE + "/#person-mahmoud",
@@ -88,12 +87,7 @@ const jsonLdBusiness = {
     jobTitle: "Maître d'œuvre spécialisé ossature bois",
     url: BASE + "/a-propos/",
     sameAs: ["https://g.page/r/Cdn_3K5QUh7wEBM"],
-    knowsAbout: [
-      "Maison ossature bois",
-      "Maîtrise d'œuvre",
-      "RE2020",
-      "Construction bois Haute-Savoie",
-    ],
+    knowsAbout: ["Maison ossature bois", "Maîtrise d'œuvre", "RE2020", "Construction bois Haute-Savoie"],
   },
 };
 
@@ -103,8 +97,7 @@ const jsonLdWebsite = {
   "@id": BASE + "/#website",
   url: BASE + "/",
   name: "M&M CONSTRUCTION",
-  description:
-    "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français.",
+  description: "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français.",
   publisher: { "@id": BASE + "/#business" },
   potentialAction: {
     "@type": "SearchAction",
@@ -114,107 +107,48 @@ const jsonLdWebsite = {
 };
 
 export const metadata: Metadata = {
-  title: {
-    default: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
-    template: "%s | M&M CONSTRUCTION",
-  },
-  description:
-    "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
+  title: { default: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie", template: "%s | M&M CONSTRUCTION" },
+  description: "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
   metadataBase: new URL(BASE),
   openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    url: BASE + "/",
-    siteName: "M&M CONSTRUCTION",
+    type: "website", locale: "fr_FR", url: BASE + "/", siteName: "M&M CONSTRUCTION",
     title: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
-    description:
-      "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
-    images: [
-      {
-        url: BASE + "/images/og-homepage.jpg",
-        width: 1200,
-        height: 630,
-        alt: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
-      },
-    ],
+    description: "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
+    images: [{ url: BASE + "/images/og-homepage.jpg", width: 1200, height: 630, alt: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie" }],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
-    description:
-      "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés.",
-    images: [BASE + "/images/og-homepage.jpg"],
-    site: "@mmconstruction74",
-    creator: "@mmconstruction74",
+    card: "summary_large_image", title: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
+    description: "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés.",
+    images: [BASE + "/images/og-homepage.jpg"], site: "@mmconstruction74", creator: "@mmconstruction74",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   icons: {
-    icon: [
-      { url: "/seo/favicon.svg", type: "image/svg+xml" },
-      { url: "/seo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
+    icon: [{ url: "/seo/favicon.svg", type: "image/svg+xml" }, { url: "/seo/favicon-32x32.png", sizes: "32x32", type: "image/png" }],
     apple: [{ url: "/seo/apple-touch-icon.png", sizes: "180x180" }],
   },
   manifest: "/seo/site.webmanifest",
   themeColor: "#BA7517",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+  viewport: { width: "device-width", initialScale: 1, maximumScale: 5 },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className="h-full">
       <head>
-        <link
-          rel="preload"
-          href="/fonts/BrandonGrotesque-Black.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/BrandonGrotesque-Bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});`,
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBusiness) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
-        />
+        <link rel="preload" href="/fonts/BrandonGrotesque-Black.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/BrandonGrotesque-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});` }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBusiness) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }} />
         {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
-          <script
-            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-            async
-            defer
-          />
+          <script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`} async defer />
         )}
       </head>
       <body className="h-full">
         {children}
         <Analytics />
         <GoogleAnalytics />
+        <OpenAIAdsPixel />
         <CookieBanner />
       </body>
     </html>
