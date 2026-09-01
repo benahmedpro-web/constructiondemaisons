@@ -16,12 +16,14 @@ export function CookieBanner() {
   function accept() {
     localStorage.setItem("mm_cookie_consent", "granted");
     grantConsent();
+    window.dispatchEvent(new CustomEvent("mm-cookie-consent", { detail: { status: "granted" } }));
     setShow(false);
   }
 
   function refuse() {
     localStorage.setItem("mm_cookie_consent", "denied");
     denyConsent();
+    window.dispatchEvent(new CustomEvent("mm-cookie-consent", { detail: { status: "denied" } }));
     setShow(false);
   }
 
@@ -31,8 +33,8 @@ export function CookieBanner() {
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#2C2C2A] border-t-2 border-[#BA7517] px-5 py-4 shadow-2xl">
       <div className="max-w-[1100px] mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-[13px] text-white/75 leading-[1.6] flex-1">
-          Ce site utilise Google Analytics pour mesurer son audience (pages vues, formulaires).
-          Aucune donnée n&apos;est transmise à des fins publicitaires.{" "}
+          Ce site utilise des outils de mesure d&apos;audience et, avec votre accord, des outils de mesure publicitaire afin d&apos;évaluer les conversions.
+          Vous pouvez accepter ou refuser ces traceurs.{" "}
           <Link href="/politique-cookies/" className="text-[#BA7517] hover:underline">
             En savoir plus
           </Link>
