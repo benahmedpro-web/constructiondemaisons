@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/",
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://bzrcdn.openai.com",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self'",
@@ -54,7 +54,7 @@ const nextConfig: NextConfig = {
               // CSP ici est silencieux, GA4 semble fonctionner (script chargé, gtag configuré)
               // mais aucune donnée n'atteint jamais Google. Repéré une deuxième fois le 22/08/2026 :
               // *.analytics.google.com manquait encore (seul le domaine nu était autorisé).
-              "connect-src 'self' https://*.google-analytics.com https://google-analytics.com https://*.analytics.google.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com/recaptcha/",
+              "connect-src 'self' https://*.google-analytics.com https://google-analytics.com https://*.analytics.google.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com/recaptcha/ https://bzr.openai.com https://bzrcdn.openai.com",
               "frame-src https://www.google.com/recaptcha/",
               "frame-ancestors 'none'",
               "base-uri 'self'",
