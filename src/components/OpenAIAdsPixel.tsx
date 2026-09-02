@@ -2,8 +2,6 @@
 
 import { useEffect } from "react";
 
-export const OPENAI_ADS_PIXEL_ID = "Lv6Ep5Q2Lt1n63MFnmUjxD";
-
 type Oaiq = (...args: unknown[]) => void;
 
 declare global {

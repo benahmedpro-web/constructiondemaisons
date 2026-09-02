@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CookieBanner } from "@/components/CookieBanner";
-import { OpenAIAdsPixel, OPENAI_ADS_PIXEL_ID } from "@/components/OpenAIAdsPixel";
+import { OpenAIAdsPixel } from "@/components/OpenAIAdsPixel";
 import "./globals.css";
 
 const BASE = "https://www.constructiondemaisons.com";
+const OPENAI_ADS_PIXEL_ID = "Lv6Ep5Q2Lt1n63MFnmUjxD";
 
 const jsonLdBusiness = {
   "@context": "https://schema.org",
