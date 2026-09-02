@@ -2,15 +2,24 @@ import { gtagEvent } from "@/lib/ga";
 
 // Couche d'événements interne au tunnel indice-de-faisabilite, découplée de la plateforme
 // publicitaire qui la consomme — cf. recommandations tracking OpenAI Ads du 22/08/2026, §16.
-// Aujourd'hui, un seul connecteur existe (GA4, via gtagEvent, déjà soumis au consentement du
-// bandeau cookies). Le jour où le Pixel OpenAI sera disponible, il se branchera ici sans toucher
-// aux points d'appel dans le funnel. Noms d'événements = ceux du document (§2), internes au
-// site : ne pas les confondre avec un futur nom d'événement standard OpenAI (§3, à déterminer
-// uniquement à la lecture de la documentation développeur officielle).
+// GA4 et le Pixel OpenAI Ads sont tous deux soumis au choix du bandeau cookies.
 export type FunnelEventName = "landing_view" | "diagnostic_start" | "diagnostic_step" | "diagnostic_complete" | "lead_submit";
 
 export function trackFunnelEvent(name: FunnelEventName, params?: Record<string, string | number | boolean>) {
   gtagEvent(name, params);
+}
+
+export function trackOpenAILead(eventId: string) {
+  try {
+    window.oaiq?.(
+      "measure",
+      "lead_created",
+      { type: "customer_action" },
+      { event_id: eventId }
+    );
+  } catch {
+    // La mesure publicitaire ne doit jamais interrompre le parcours principal.
+  }
 }
 
 // Identifiant unique par lead, généré côté client à la soumission et transmis au serveur — prépare

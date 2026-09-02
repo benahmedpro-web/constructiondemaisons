@@ -12,7 +12,7 @@ import { formatEur, FOURCHETTE_TERRAIN_MARGE, budgetEtat } from "@/lib/indice-fa
 import { DOMAIN_MAX } from "@/lib/indice-faisabilite/scoring";
 import type { Answers, Domain, Question } from "@/lib/indice-faisabilite/types";
 import { captureAttribution, getAttribution } from "@/lib/indice-faisabilite/attribution";
-import { trackFunnelEvent, generateEventId } from "@/lib/indice-faisabilite/tracking";
+import { trackFunnelEvent, trackOpenAILead, generateEventId } from "@/lib/indice-faisabilite/tracking";
 
 // ─── Etoiles / logo Google (repris de temoignages/page.tsx pour cohérence visuelle) ───────────
 
@@ -1068,6 +1068,7 @@ function LeadForm({
       // charges tracking, en plus, prêt pour un futur connecteur OpenAI.
       gtagEvent("generate_lead", { event_category: "formulaire", event_label: "indice_faisabilite" });
       trackFunnelEvent("lead_submit", { event_id: eventId, ...(attribution?.utm_source ? { utm_source: attribution.utm_source } : {}) });
+      trackOpenAILead(eventId);
       // Reste sur place plutôt que de rediriger vers /demande-etude/merci — recommandation §10.4
       // ("afficher immédiatement le rapport complet après saisie de l'email") appliquée le
       // 09/08/2026 : le rapport devient l'écran suivant du même parcours, pas une redirection

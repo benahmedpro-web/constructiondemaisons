@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Politique de cookies",
-  description: "Politique de cookies du site constructiondemaisons.com — M&M CONSTRUCTION. Cookies techniques et cookies de mesure d'audience (Google Analytics), soumis à votre consentement.",
+  description: "Politique de cookies du site constructiondemaisons.com — M&M CONSTRUCTION. Cookies techniques, mesure d'audience et mesure publicitaire soumis à votre consentement.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/politique-cookies/",
   },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Politique de cookies",
-    description: "Cookies techniques et cookies de mesure d'audience (Google Analytics), soumis à votre consentement.",
+    description: "Cookies techniques, mesure d'audience et mesure publicitaire soumis à votre consentement.",
     url: "https://www.constructiondemaisons.com/politique-cookies/",
     siteName: "M&M CONSTRUCTION",
     locale: "fr_FR",
@@ -25,7 +25,7 @@ export default function PolitiqueCookiesPage() {
         <div className="max-w-[780px] mx-auto">
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
           <h1 className="text-white text-[32px] md:text-[42px] font-black mt-4 mb-2 leading-tight">Politique de cookies</h1>
-          <p className="text-white/50 text-[14px]">Dernière mise à jour : <time dateTime="2026-08">août 2026</time></p>
+          <p className="text-white/50 text-[14px]">Dernière mise à jour : <time dateTime="2026-09">septembre 2026</time></p>
         </div>
       </header>
 
@@ -51,7 +51,7 @@ export default function PolitiqueCookiesPage() {
           <section>
             <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">2. Cookies utilisés sur ce site</h2>
             <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
-              Ce site utilise deux catégories de cookies :
+              Ce site utilise des cookies techniques, de mesure d&apos;audience et de mesure publicitaire :
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-[14px] border-collapse">
@@ -69,6 +69,12 @@ export default function PolitiqueCookiesPage() {
                     <td className="p-3 text-[#888780]">Infrastructure d&apos;hébergement — sécurité et routage réseau</td>
                     <td className="p-3 text-[#888780]">Session</td>
                     <td className="p-3"><span className="text-emerald-700 font-bold">Non</span></td>
+                  </tr>
+                  <tr className="border-b border-[#D9D4CC]">
+                    <td className="p-3 text-[#2C2C2A] font-medium">__oppref et pixel OpenAI Ads</td>
+                    <td className="p-3 text-[#888780]">Mesure des demandes de contact attribuables aux campagnes diffusées dans ChatGPT</td>
+                    <td className="p-3 text-[#888780]">Selon la durée définie par OpenAI et le navigateur</td>
+                    <td className="p-3"><span className="text-amber-600 font-bold">Oui</span></td>
                   </tr>
                   <tr className="border-b border-[#D9D4CC]">
                     <td className="p-3 text-[#2C2C2A] font-medium">Cookies de formulaire</td>
@@ -92,7 +98,7 @@ export default function PolitiqueCookiesPage() {
               </table>
             </div>
             <p className="text-[13px] text-[#888780] mt-4 leading-[1.6]">
-              Les cookies Google Analytics ne sont déposés qu&apos;après votre consentement explicite. Aucune donnée n&apos;est transmise à des fins publicitaires. Les données sont anonymisées et hébergées par Google LLC (États-Unis) dans le cadre du Data Privacy Framework UE–États-Unis.
+              Google Analytics et le pixel OpenAI Ads ne peuvent envoyer d&apos;événements de mesure qu&apos;après votre consentement explicite. Le pixel OpenAI Ads mesure notamment la création d&apos;un prospect après l&apos;envoi réussi du formulaire. Les coordonnées saisies ne sont pas ajoutées manuellement à l&apos;événement envoyé par ce site.
             </p>
           </section>
 
@@ -100,7 +106,7 @@ export default function PolitiqueCookiesPage() {
           <section>
             <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">3. Le bandeau de consentement</h2>
             <p className="text-[15px] text-[#888780] leading-[1.8] mb-3">
-              Depuis août 2026, ce site utilise Google Analytics 4 pour mesurer son audience (pages visitées, formulaires remplis, clics). Ces cookies d&apos;analyse requièrent votre consentement préalable, conformément aux lignes directrices de la CNIL (délibération n° 2020-091) et au règlement ePrivacy.
+              Ce site utilise Google Analytics 4 pour mesurer son audience et le pixel OpenAI Ads pour mesurer les conversions issues des campagnes publicitaires. Ces traceurs requièrent votre consentement préalable.
             </p>
             <p className="text-[15px] text-[#888780] leading-[1.8]">
               Un bandeau s&apos;affiche à votre première visite. Vous pouvez accepter ou refuser en un clic. Votre choix est mémorisé dans votre navigateur (<code className="text-[13px] bg-[#F2EDE6] px-1.5 py-0.5">mm_cookie_consent</code>) et reste valable jusqu&apos;à effacement de vos données de navigation. Vous pouvez modifier votre choix à tout moment en effaçant les données de site dans votre navigateur.

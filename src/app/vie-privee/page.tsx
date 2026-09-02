@@ -105,7 +105,7 @@ export default function ViePriveePage() {
           <section>
             <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-4 pb-2 border-b border-[#D9D4CC]">6. Cookies</h2>
             <p className="text-[15px] text-[#888780] leading-[1.7]">
-              Ce site utilise des cookies techniques strictement nécessaires à son fonctionnement (session, sécurité), qui ne nécessitent pas de consentement préalable. Il utilise également, sous réserve de votre consentement explicite, des cookies de mesure d&apos;audience (Google Analytics). Un bandeau de consentement s&apos;affiche lors de votre première visite ; votre choix est mémorisé et peut être modifié à tout moment en effaçant les données de site dans votre navigateur. <Link href="/politique-cookies/" className="text-[#BA7517] no-underline hover:underline">Voir la politique de cookies complète →</Link>
+              Ce site utilise des cookies techniques strictement nécessaires à son fonctionnement (session, sécurité), qui ne nécessitent pas de consentement préalable. Il utilise également, sous réserve de votre consentement explicite, Google Analytics pour la mesure d&apos;audience et le pixel OpenAI Ads pour mesurer les demandes attribuables aux campagnes publicitaires. Le pixel est désactivé par défaut et la conversion n&apos;est déclenchée qu&apos;après l&apos;envoi réussi d&apos;un formulaire. Un bandeau de consentement s&apos;affiche lors de votre première visite ; votre choix est mémorisé et peut être modifié à tout moment en effaçant les données de site dans votre navigateur. <Link href="/politique-cookies/" className="text-[#BA7517] no-underline hover:underline">Voir la politique de cookies complète →</Link>
             </p>
           </section>
 

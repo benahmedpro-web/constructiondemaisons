@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CookieBanner } from "@/components/CookieBanner";
+import { OpenAIAdsPixel, OPENAI_ADS_PIXEL_ID } from "@/components/OpenAIAdsPixel";
 import "./globals.css";
 
 const BASE = "https://www.constructiondemaisons.com";
@@ -176,6 +177,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("consent",false);oaiq("init",{pixelId:${JSON.stringify(OPENAI_ADS_PIXEL_ID)}});`,
+          }}
+        />
         <link
           rel="preload"
           href="/fonts/BrandonGrotesque-Black.woff2"
@@ -215,6 +221,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <GoogleAnalytics />
+        <OpenAIAdsPixel />
         <CookieBanner />
       </body>
     </html>
