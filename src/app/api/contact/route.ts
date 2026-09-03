@@ -4,6 +4,7 @@ import { hasValidMx } from "@/lib/validate-email";
 import { verifyRecaptcha } from "@/lib/recaptcha";
 import { archiveLead } from "@/lib/supabase";
 import { appendLeadToSheet } from "@/lib/googleSheet";
+import { sendLeadToCrm } from "@/lib/crm";
 
 function escHtml(s: unknown): string {
   if (typeof s !== "string") return "";
@@ -185,6 +186,17 @@ export async function POST(req: NextRequest) {
       {
         label: "Google Sheet (export lead)",
         promise: appendLeadToSheet({
+          source: typeof source === "string" ? source : "contact",
+          nom, prenom, email, telephone,
+          typeProjet, zone, budget, message,
+          answers: answers ?? null,
+          attribution: attribution ?? null,
+          eventId: typeof eventId === "string" ? eventId : undefined,
+        }),
+      },
+      {
+        label: "CRM Commercial M&M (webhook)",
+        promise: sendLeadToCrm({
           source: typeof source === "string" ? source : "contact",
           nom, prenom, email, telephone,
           typeProjet, zone, budget, message,
