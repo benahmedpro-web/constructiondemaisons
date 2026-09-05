@@ -141,16 +141,31 @@ export async function POST(req: NextRequest) {
     const sBudget = escHtml(budget);
     const sMessage = escHtml(message);
 
-    // Attribution marketing du lead — recommandations tracking OpenAI Ads du 22/08/2026, §8.
+    // Attribution marketing du lead — consigne technique mesure du 05/09/2026, §2.
     // `attribution` vient de localStorage côté client (Attribution | null, cf.
     // src/lib/indice-faisabilite/attribution.ts) : champs non garantis, tout est optionnel.
     const attr = (attribution ?? {}) as Record<string, string | undefined>;
+
+    // source_canal : champ dérivé cookie-indépendant permettant de compter les leads par canal.
+    // Règles : Google Ads si gclid présent ou (utm_source=google + utm_medium=cpc) ;
+    // ChatGPT Ads si utm_source=chatgpt ; sinon valeur brute ou "direct".
+    let source_canal: string;
+    if (attr.gclid || (attr.utm_source === "google" && attr.utm_medium === "cpc")) {
+      source_canal = "Google Ads";
+    } else if (attr.utm_source === "chatgpt") {
+      source_canal = "ChatGPT Ads";
+    } else {
+      source_canal = attr.utm_source || "direct";
+    }
+
     const attributionLines = [
+      `Canal : ${escHtml(source_canal)}`,
       attr.utm_source ? `Source : ${escHtml(attr.utm_source)}` : "",
       attr.utm_medium ? `Support : ${escHtml(attr.utm_medium)}` : "",
       attr.utm_campaign ? `Campagne : ${escHtml(attr.utm_campaign)}` : "",
       attr.utm_content ? `Contenu : ${escHtml(attr.utm_content)}` : "",
       attr.utm_term ? `Terme : ${escHtml(attr.utm_term)}` : "",
+      attr.gclid ? `gclid : ${escHtml(attr.gclid)}` : "",
       attr.oppref ? `OpenAI oppref : ${escHtml(attr.oppref)}` : "",
       attr.landing_page ? `Page d'entrée : ${escHtml(attr.landing_page)}` : "",
       attr.referrer ? `Referrer : ${escHtml(attr.referrer)}` : "",
@@ -176,6 +191,7 @@ export async function POST(req: NextRequest) {
         label: "Supabase (archive lead)",
         promise: archiveLead({
           source: typeof source === "string" ? source : "contact",
+          source_canal,
           nom, prenom, email, telephone,
           type_projet: typeProjet, zone, budget, message,
           answers: answers ?? null,
@@ -187,6 +203,7 @@ export async function POST(req: NextRequest) {
         label: "Google Sheet (export lead)",
         promise: appendLeadToSheet({
           source: typeof source === "string" ? source : "contact",
+          source_canal,
           nom, prenom, email, telephone,
           typeProjet, zone, budget, message,
           answers: answers ?? null,
@@ -198,6 +215,7 @@ export async function POST(req: NextRequest) {
         label: "CRM Commercial M&M (webhook)",
         promise: sendLeadToCrm({
           source: typeof source === "string" ? source : "contact",
+          source_canal,
           nom, prenom, email, telephone,
           typeProjet, zone, budget, message,
           answers: answers ?? null,

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { gtagEvent } from "@/lib/ga";
 import { getRecaptchaToken } from "@/lib/recaptcha";
+import { getAttribution } from "@/lib/indice-faisabilite/attribution";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -375,6 +376,7 @@ function DemandeEtudePageInner() {
           recaptchaToken,
           source: "demande_etude",
           answers,
+          attribution: getAttribution(),
         }),
       });
       if (!res.ok) {

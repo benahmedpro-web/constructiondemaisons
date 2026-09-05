@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { getStoredConsent } from "@/components/CookieBanner";
 
 type Oaiq = (...args: unknown[]) => void;
 
@@ -16,7 +17,7 @@ export function setOpenAIAdsConsent(granted: boolean) {
 
 export function OpenAIAdsPixel() {
   useEffect(() => {
-    if (localStorage.getItem("mm_cookie_consent") === "granted") {
+    if (getStoredConsent() === "granted") {
       setOpenAIAdsConsent(true);
     }
   }, []);

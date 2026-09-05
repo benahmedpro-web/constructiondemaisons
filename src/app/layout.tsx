@@ -199,7 +199,14 @@ export default function RootLayout({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});`,
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);`,
+          }}
+        />
+        {/* gtag.js chargé immédiatement (Consent Mode avancé) — consigne mesure du 05/09/2026, §4. */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=G-0L3GXJCJJ1`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `gtag('js',new Date());gtag('config','G-0L3GXJCJJ1');`,
           }}
         />
         <script

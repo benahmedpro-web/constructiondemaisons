@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GererCookiesButton } from "@/components/GererCookiesButton";
 
 const col2Links = [
   { label: "Maison ossature bois neuve", href: "/maison-ossature-bois/" },
@@ -129,6 +130,8 @@ export function Footer() {
           <Link href="/vie-privee/" className="text-white/50 hover:text-white no-underline transition-colors">Politique de confidentialité</Link>
           <span>|</span>
           <Link href="/politique-cookies/" className="text-white/50 hover:text-white no-underline transition-colors">Politique de cookies</Link>
+          <span>|</span>
+          <GererCookiesButton />
           <span>|</span>
           <span>M&amp;M CONSTRUCTION — NAF 71.12B — Maîtrise d&apos;œuvre bois, Genevois français</span>
         </div>

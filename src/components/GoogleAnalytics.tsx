@@ -2,10 +2,11 @@
 
 import { useEffect } from "react";
 import { grantConsent } from "@/lib/ga";
+import { getStoredConsent } from "@/components/CookieBanner";
 
 export function GoogleAnalytics() {
   useEffect(() => {
-    if (localStorage.getItem("mm_cookie_consent") === "granted") {
+    if (getStoredConsent() === "granted") {
       grantConsent();
     }
   }, []);

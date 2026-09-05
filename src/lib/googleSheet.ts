@@ -1,5 +1,6 @@
 export type LeadRow = {
   source: string;
+  source_canal?: string;
   nom?: string;
   prenom?: string;
   email?: string;

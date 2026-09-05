@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { gtagEvent } from "@/lib/ga";
 import { getRecaptchaToken } from "@/lib/recaptcha";
+import { getAttribution } from "@/lib/indice-faisabilite/attribution";
 
 type AnnonceInfo = { slug: string; type: string; commune: string } | null;
 
@@ -24,7 +25,7 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, sujet: "Contact site web", recaptchaToken, source: "contact" }),
+        body: JSON.stringify({ ...data, sujet: "Contact site web", recaptchaToken, source: "contact", attribution: getAttribution() }),
       });
       if (res.ok) {
         gtagEvent("generate_lead", { event_category: "formulaire", event_label: "contact" });

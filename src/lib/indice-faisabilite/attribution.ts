@@ -9,6 +9,7 @@ export type Attribution = {
   utm_campaign?: string;
   utm_content?: string;
   utm_term?: string;
+  gclid?: string;
   oppref?: string;
   landing_page: string;
   referrer: string;
@@ -28,6 +29,7 @@ export function captureAttribution(): void {
     utm_campaign: params.get("utm_campaign") ?? undefined,
     utm_content: params.get("utm_content") ?? undefined,
     utm_term: params.get("utm_term") ?? undefined,
+    gclid: params.get("gclid") ?? undefined,
     oppref: params.get("oppref") ?? undefined,
     landing_page: window.location.pathname,
     referrer: document.referrer || "",
