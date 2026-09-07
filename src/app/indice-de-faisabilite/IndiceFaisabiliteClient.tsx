@@ -3,7 +3,7 @@
 import { useState, useMemo, useRef, useEffect, type FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { gtagEvent } from "@/lib/ga";
+import { gtagEvent, trackGoogleAdsConversion } from "@/lib/ga";
 import { getRecaptchaToken } from "@/lib/recaptcha";
 import { QUESTIONS, getVisibleQuestions, findNextIndex, getSectionProgress, SECTION_GROUPS } from "@/lib/indice-faisabilite/questions";
 import { searchCities, type CitySuggestion } from "@/lib/indice-faisabilite/villes";
@@ -1067,6 +1067,7 @@ function LeadForm({
       // branché sur l'import de conversion) ; lead_submit est le nom interne du cahier des
       // charges tracking, en plus, prêt pour un futur connecteur OpenAI.
       gtagEvent("generate_lead", { event_category: "formulaire", event_label: "indice_faisabilite" });
+      trackGoogleAdsConversion({ email, phone: telephone });
       trackFunnelEvent("lead_submit", { event_id: eventId, ...(attribution?.utm_source ? { utm_source: attribution.utm_source } : {}) });
       trackOpenAILead(eventId);
       // Reste sur place plutôt que de rediriger vers /demande-etude/merci — recommandation §10.4

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { gtagEvent } from "@/lib/ga";
+import { gtagEvent, trackGoogleAdsConversion } from "@/lib/ga";
 import { getRecaptchaToken } from "@/lib/recaptcha";
 import { getAttribution } from "@/lib/indice-faisabilite/attribution";
 
@@ -29,6 +29,7 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
       });
       if (res.ok) {
         gtagEvent("generate_lead", { event_category: "formulaire", event_label: "contact" });
+        trackGoogleAdsConversion({ email: String(data.email ?? ""), phone: String(data.telephone ?? "") });
         setSent(true);
       } else {
         const json = await res.json().catch(() => ({})) as { error?: string };
