@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Maison ossature bois Annemasse (74)",
-  description: "Construction maison ossature bois à Annemasse et Grand Genève. PLU, sismique zone 3, artisans locaux vérifiés. Étude gratuite sous 48h.",
+  description: "Construction maison ossature bois à Annemasse et dans le Genevois français. PLU, sismique zone 3, artisans locaux vérifiés. Étude gratuite sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-annemasse/",
   },
@@ -15,7 +15,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Maison ossature bois Annemasse",
-  description: "Accompagnement construction maison ossature bois à Annemasse et agglomération du Grand Genève.",
+  description: "Accompagnement construction maison ossature bois à Annemasse et dans le Genevois français, côté français de l'agglomération du Grand Genève.",
   provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
   areaServed: { "@type": "City", name: "Annemasse", containedInPlace: { "@type": "AdministrativeArea", name: "Haute-Savoie" } },
 };
@@ -76,7 +76,7 @@ export default function MaisonBoisAnnemassePage() {
             </div>
             <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Haute-Savoie · 74100 · Genevois</span>
             <h1 className="text-white text-[32px] md:text-[46px] font-black leading-tight mb-5">
-              Maison ossature bois<br className="hidden md:block" /> à Annemasse
+              Maison ossature bois<br className="hidden md:block" /> à Annemasse et dans le Genevois français
             </h1>
             <p className="text-white/60 text-[17px] leading-[1.7] max-w-[620px] mb-8">
               M&M CONSTRUCTION accompagne votre projet de construction ossature bois à Annemasse et dans l&apos;agglomération du Genevois : Cranves-Sales, Ville-la-Grand, Ambilly, Gaillard. Permis de construire, artisans locaux, coordination complète.
@@ -127,7 +127,7 @@ export default function MaisonBoisAnnemassePage() {
           <div className="max-w-[900px] mx-auto">
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Projets coordinés par M&amp;M dans le Genevois</p>
             <h2 className="text-[26px] font-black text-[#2C2C2A] mb-2">Exemples de projets maison bois à Annemasse et Saint-Julien-en-Genevois</h2>
-            <p className="text-[15px] text-[#888780] mb-8 max-w-[680px]">Le Grand Genève concentre des contraintes spécifiques — zone sismique 3, PLU frontalier, forte pression foncière. Voici comment M&M CONSTRUCTION les traite concrètement.</p>
+            <p className="text-[15px] text-[#888780] mb-8 max-w-[680px]">Le Genevois français concentre des contraintes spécifiques — zone sismique 3, PLU frontalier, forte pression foncière. Voici comment M&M CONSTRUCTION les traite concrètement.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
                 {
@@ -248,7 +248,7 @@ export default function MaisonBoisAnnemassePage() {
         <section className="bg-white py-10 px-5">
           <div className="max-w-[780px] mx-auto">
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projets disponibles</p>
-            <p className="text-[14px] text-[#888780] mb-4">Terrains et projets maison ossature bois disponibles à Annemasse et dans le Grand Genève.</p>
+            <p className="text-[14px] text-[#888780] mb-4">Terrains et projets maison ossature bois disponibles à Annemasse et dans le Genevois français.</p>
             <div className="flex flex-col gap-2">
               {[
                 { href: "/annonces/terrain-annemasse-740m2-pc-accepte/", label: "Terrain 740m² à Annemasse — PC accepté, toutes viabilités", tag: "Terrain" },

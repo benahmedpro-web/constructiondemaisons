@@ -7,7 +7,7 @@ export function IntroSection() {
         <p className="text-[18px] text-[#888780] leading-[1.7] mb-6">
           Après 20 ans à accompagner des projets de construction, Mahmoud Ben Ahmed a créé{" "}
           <strong className="text-[#2C2C2A]">M&amp;M CONSTRUCTION</strong> : maîtrise d&apos;œuvre spécialisée
-          maison bois, ossature bois et rénovation en Haute-Savoie, Grand Genève et Ain.
+          maison bois, ossature bois et rénovation en Haute-Savoie, Genevois français, Grand Genève et Ain.
           Concrètement, un seul interlocuteur qui coordonne chaque corps de métier — du permis de construire
           à la réception des travaux — avec des artisans vérifiés locaux et une assurance décennale à jour.
         </p>

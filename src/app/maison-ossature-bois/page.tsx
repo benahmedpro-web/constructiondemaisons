@@ -60,8 +60,8 @@ const jsonLdPerson = {
     name: "M&M CONSTRUCTION",
     url: BASE,
   },
-  knowsAbout: ["maison ossature bois", "construction bois Haute-Savoie", "maîtrise d'œuvre", "RE2020", "Grand Genève"],
-  areaServed: { "@type": "AdministrativeArea", name: "Haute-Savoie, Ain, Grand Genève" },
+  knowsAbout: ["maison ossature bois", "construction bois Haute-Savoie", "maîtrise d'œuvre", "RE2020", "Genevois français", "Grand Genève"],
+  areaServed: { "@type": "AdministrativeArea", name: "Haute-Savoie, Genevois français, Ain, Grand Genève" },
 };
 
 const points = [
@@ -148,7 +148,7 @@ export default function MaisonOssatureBoisPage() {
             Construction de maison ossature bois<br className="hidden md:block" /> en Haute-Savoie
           </h1>
           <p className="text-white/75 text-[18px] leading-[1.7] max-w-[640px]">
-            De la conception à la réception des travaux — un seul interlocuteur pour coordonner votre projet bois dans le Grand Genève, Haute-Savoie et Ain.
+            De la conception à la réception des travaux — un seul interlocuteur pour coordonner votre projet bois en Haute-Savoie, dans le Genevois français et l'Ain.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[16px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors">
@@ -258,7 +258,7 @@ export default function MaisonOssatureBoisPage() {
       <section className="bg-white py-14 px-5">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-[28px] md:text-[34px] font-bold text-[#2C2C2A] mb-4">
-            Nos zones d&apos;intervention en Haute-Savoie et Grand Genève
+            Nos zones d&apos;intervention en Haute-Savoie, Genevois français et Grand Genève
           </h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
             Nous intervenons sur l&apos;ensemble du département 74 et le Grand Genève. <strong className="text-[#2C2C2A]">Annecy, Annemasse, Thonon-les-Bains, Saint-Julien-en-Genevois, Cluses, Bonneville, Évian-les-Bains</strong> et Sallanches constituent le cœur de notre activité. Nous couvrons également les secteurs de montagne — Chamonix, Saint-Gervais-les-Bains, Megève — ainsi que le Pays de Gex (Gex, Ferney-Voltaire) côté Ain (01).

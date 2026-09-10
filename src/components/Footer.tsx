@@ -47,7 +47,7 @@ export function Footer() {
             <div className="text-[11px] text-white/50 tracking-widest uppercase mt-0.5">Maîtrise d&apos;œuvre · Maison bois</div>
           </div>
           <p className="text-[13px] text-white/60 leading-relaxed mb-4">
-            Spécialisé maison ossature bois dans le Grand Genève, Haute-Savoie et Ain.
+            Spécialisé maison ossature bois en Haute-Savoie, Genevois français et Ain.
             Un interlocuteur unique, du projet à la réception.
           </p>
           <div className="text-[13px] text-white/50">
@@ -133,7 +133,7 @@ export function Footer() {
           <span>|</span>
           <GererCookiesButton />
           <span>|</span>
-          <span>M&amp;M CONSTRUCTION — NAF 71.12B — Maîtrise d&apos;œuvre bois, Grand Genève</span>
+          <span>M&amp;M CONSTRUCTION — NAF 71.12B — Maîtrise d&apos;œuvre bois, Genevois français</span>
         </div>
       </div>
     </footer>

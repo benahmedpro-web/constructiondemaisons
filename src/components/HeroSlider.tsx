@@ -44,7 +44,7 @@ export function HeroSlider() {
           </span>
         </h1>
         <p className="mt-4 text-white text-[16px] md:text-[18px] leading-[1.5] drop-shadow font-medium max-w-[480px]">
-          Un seul interlocuteur du projet à la réception des travaux. Maîtrise d&apos;œuvre spécialisée, Grand Genève · Haute-Savoie · Ain.
+          Un seul interlocuteur du projet à la réception des travaux. Maîtrise d&apos;œuvre spécialisée, Haute-Savoie · Genevois français · Ain.
         </p>
         <div className="flex flex-wrap gap-3 mt-6">
           <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] md:text-[17px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors">

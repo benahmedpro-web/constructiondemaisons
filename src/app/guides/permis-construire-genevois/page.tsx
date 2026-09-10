@@ -40,7 +40,7 @@ const faqItems = [
   {
     "@type": "Question",
     name: "Combien de temps prend l'instruction d'un permis de construire dans le Grand Genève ?",
-    acceptedAnswer: { "@type": "Answer", text: "Le délai légal est de 2 mois pour une maison individuelle en zone PLU. Mais dans le Grand Genève (Annemasse, Saint-Julien, Archamps, Gaillard), les délais réels sont souvent de 3 à 5 mois en raison de la pression sur les services DDT74. Les communes en zone ABF (Architectes des Bâtiments de France) peuvent aller jusqu'à 5 mois. Prévoyez 4 mois dans votre planning." },
+    acceptedAnswer: { "@type": "Answer", text: "Le délai légal est de 2 mois pour une maison individuelle en zone PLU. Mais dans le Genevois français (Annemasse, Saint-Julien, Archamps, Gaillard), les délais réels sont souvent de 3 à 5 mois en raison de la pression sur les services DDT74. Les communes en zone ABF (Architectes des Bâtiments de France) peuvent aller jusqu'à 5 mois. Prévoyez 4 mois dans votre planning." },
   },
   {
     "@type": "Question",
@@ -109,12 +109,12 @@ export default function GuidePermisGenevoisPage() {
       <article className="bg-white py-14 px-5">
         <div className="max-w-[780px] mx-auto">
           <p className="text-[18px] text-[#888780] leading-[1.8] mb-8 font-medium">
-            Le Grand Genève (Haute-Savoie, Ain, communes frontalières) est l&apos;une des zones de France où les procédures d&apos;urbanisme sont les plus complexes. Pression foncière, SCOT Grand Genève, zones sismiques, PLU restrictifs, recours fréquents — voici ce qu&apos;il faut anticiper avant de déposer votre demande.
+            Le Genevois français, côté français du Grand Genève (Haute-Savoie, Ain, communes frontalières), est l&apos;une des zones de France où les procédures d&apos;urbanisme sont les plus complexes. Pression foncière, SCOT Grand Genève, zones sismiques, PLU restrictifs, recours fréquents — voici ce qu&apos;il faut anticiper avant de déposer votre demande.
           </p>
 
           <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Délais d&apos;instruction : la réalité sur le terrain</h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-            Le délai légal d&apos;instruction d&apos;un permis de construire de maison individuelle est de 2 mois. Dans le Grand Genève, en pratique, comptez :
+            Le délai légal d&apos;instruction d&apos;un permis de construire de maison individuelle est de 2 mois. Dans le Genevois français, en pratique, comptez :
           </p>
           <div className="border border-[#D9D4CC] overflow-hidden mb-4">
             {[
@@ -132,7 +132,7 @@ export default function GuidePermisGenevoisPage() {
           </div>
           <p className="text-[14px] text-[#888780] italic mb-6">La demande de pièces complémentaires est le piège numéro 1. Si l&apos;instructeur demande un document manquant, le délai d&apos;instruction repart intégralement à zéro à la réception du document.</p>
 
-          <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Les spécificités PLU du Grand Genève</h2>
+          <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Les spécificités PLU du Genevois français</h2>
           <div className="flex flex-col gap-4 mb-6">
             {[
               {
@@ -179,7 +179,7 @@ export default function GuidePermisGenevoisPage() {
 
           <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Recours des tiers : le risque sous-estimé</h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-            Dans le Grand Genève, la pression foncière et la densité des projets rendent les recours de voisinage plus fréquents qu&apos;ailleurs. Un voisin peut contester votre permis jusqu&apos;à 2 mois après son affichage sur le terrain — ce qui peut bloquer votre chantier pendant 12 à 18 mois si un recours aboutit.
+            Dans le Genevois français, la pression foncière et la densité des projets rendent les recours de voisinage plus fréquents qu&apos;ailleurs. Un voisin peut contester votre permis jusqu&apos;à 2 mois après son affichage sur le terrain — ce qui peut bloquer votre chantier pendant 12 à 18 mois si un recours aboutit.
           </p>
           <p className="text-[16px] text-[#888780] leading-[1.8]">
             Se protéger : afficher le permis correctement et immédiatement (panneau réglementaire), conserver les photos d&apos;affichage datées, maintenir de bonnes relations avec les voisins avant les travaux. Un maître d&apos;œuvre expérimenté sur la zone connaît ces risques et peut anticiper les situations problématiques lors de la conception du projet.

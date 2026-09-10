@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Faire construire en Haute-Savoie",
-  description: "Construire une maison en Haute-Savoie et Grand Genève : permis, artisans locaux, chantier ossature bois. Accompagnement complet. Étude gratuite sous 48h.",
+  description: "Construire une maison en Haute-Savoie et dans le Genevois français : permis, artisans locaux, chantier ossature bois. Accompagnement complet. Étude gratuite sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/faire-construire-haute-savoie/",
   },
@@ -15,7 +15,7 @@ const jsonLdService = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Accompagnement construction maison Haute-Savoie",
-  description: "Accompagnement complet pour la construction de maison ossature bois en Haute-Savoie, Grand Genève et Ain : conception, permis de construire, sélection d'artisans, coordination de chantier.",
+  description: "Accompagnement complet pour la construction de maison ossature bois en Haute-Savoie, Genevois français et Ain : conception, permis de construire, sélection d'artisans, coordination de chantier.",
   provider: {
     "@type": "HomeAndConstructionBusiness",
     name: "M&M CONSTRUCTION",
@@ -32,7 +32,8 @@ const jsonLdService = {
   areaServed: [
     { "@type": "Place", name: "Haute-Savoie" },
     { "@type": "Place", name: "Ain" },
-    { "@type": "Place", name: "Grand Genève" },
+    { "@type": "Place", name: "Genevois français" },
+      { "@type": "Place", name: "Grand Genève" },
   ],
   serviceType: "Maîtrise d'œuvre maison ossature bois",
 };
@@ -57,7 +58,7 @@ const faqItems = [
   },
   {
     name: "M&M CONSTRUCTION intervient-il côté suisse (canton de Genève) ?",
-    acceptedAnswer: { text: "Non, M&M CONSTRUCTION intervient exclusivement côté français : Haute-Savoie (74), Ain (01) et Grand Genève. Pour des projets en Suisse, d'autres démarches administratives s'appliquent." },
+    acceptedAnswer: { text: "Non, M&M CONSTRUCTION intervient exclusivement côté français : Haute-Savoie (74) et Ain (01), c'est-à-dire le Genevois français et la partie française du Grand Genève. Pour des projets en Suisse, d'autres démarches administratives s'appliquent." },
   },
   {
     name: "Faut-il posséder un terrain avant de contacter M&M CONSTRUCTION ?",
@@ -117,7 +118,7 @@ const zones = [
     communes: ["Gex", "Ferney-Voltaire", "Saint-Genis-Pouilly", "Divonne-les-Bains", "Prévessin-Moëns", "Thoiry", "Péron", "Ornex"],
   },
   {
-    dept: "Grand Genève — Sud Haute-Savoie",
+    dept: "Genevois français — Sud Haute-Savoie",
     communes: ["Saint-Julien-en-Genevois", "Archamps", "Collonges-sous-Salève", "Neydens", "Valleiry", "Beaumont", "Etrembières", "Viry"],
   },
 ];
@@ -161,7 +162,7 @@ export default function FaireConsuireHauteSavoiePage() {
               Faire construire votre maison<br className="hidden md:block" /> en Haute-Savoie et Genevois
             </h1>
             <p className="text-white/60 text-[17px] leading-[1.7] max-w-[640px] mb-8">
-              De l&apos;étude de faisabilité à la réception du chantier, M&M CONSTRUCTION coordonne votre projet de construction en Haute-Savoie, dans le Pays de Gex et le Grand Genève. Ossature bois, spécialité locale, artisans vérifiés.
+              De l&apos;étude de faisabilité à la réception du chantier, M&M CONSTRUCTION coordonne votre projet de construction en Haute-Savoie, dans le Genevois français et le Pays de Gex. Ossature bois, spécialité locale, artisans vérifiés.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors text-center">

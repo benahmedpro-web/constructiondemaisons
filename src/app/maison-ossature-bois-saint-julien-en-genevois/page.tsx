@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Maison bois à Saint-Julien-en-Genevois",
-  description: "Construction maison ossature bois à Saint-Julien-en-Genevois. Terrains en pente, PLU frontalier, sismique zone 3. Accompagnement complet. Étude gratuite.",
+  description: "Construction maison ossature bois à Saint-Julien-en-Genevois, dans le Genevois français. Terrains en pente, PLU frontalier, sismique zone 3. Accompagnement complet. Étude gratuite.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-saint-julien-en-genevois/",
   },

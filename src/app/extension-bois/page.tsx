@@ -9,12 +9,13 @@ const jsonLdService = {
   "@type": "Service",
   name: "Extension ossature bois — M&M CONSTRUCTION",
   serviceType: "Extension ossature bois",
-  description: "Coordination complète de votre extension ossature bois en Haute-Savoie, Ain et Grand Genève. Permis de construire, sélection artisans qualifiés bois, suivi de chantier.",
+  description: "Coordination complète de votre extension ossature bois en Haute-Savoie, Genevois français, Ain et Grand Genève. Permis de construire, sélection artisans qualifiés bois, suivi de chantier.",
   provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
   areaServed: [
     { "@type": "AdministrativeArea", name: "Haute-Savoie" },
     { "@type": "AdministrativeArea", name: "Ain" },
-    { "@type": "AdministrativeArea", name: "Grand Genève" },
+    { "@type": "AdministrativeArea", name: "Genevois français" },
+      { "@type": "AdministrativeArea", name: "Grand Genève" },
   ],
   offers: {
     "@type": "Offer",
@@ -65,7 +66,7 @@ const jsonLdBreadcrumb = {
 
 export const metadata: Metadata = {
   title: "Extension ossature bois Haute-Savoie",
-  description: "M&M CONSTRUCTION coordonne votre extension ossature bois dans le Grand Genève, Haute-Savoie et Ain. Permis de construire, artisans vérifiés, suivi complet.",
+  description: "M&M CONSTRUCTION coordonne votre extension ossature bois en Haute-Savoie, dans le Genevois français et l'Ain. Permis de construire, artisans vérifiés, suivi complet.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/extension-bois/",
   },
@@ -97,7 +98,7 @@ export default function ExtensionBoisPage() {
             Extension ossature bois<br className="hidden md:block" /> en Haute-Savoie et Genevois
           </h1>
           <p className="text-white/75 text-[18px] leading-[1.7] max-w-[640px]">
-            Agrandissez votre maison avec une extension bois coordonnée de A à Z — permis, artisans, chantier. Haute-Savoie · Ain · Grand Genève.
+            Agrandissez votre maison avec une extension bois coordonnée de A à Z — permis, artisans, chantier. Haute-Savoie · Genevois français · Ain.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[16px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors">
@@ -121,7 +122,7 @@ export default function ExtensionBoisPage() {
               En Haute-Savoie et Ain, les PLU autorisent souvent le bardage bois, ce qui permet une intégration naturelle dans le paysage alpin. La réglementation RE2020 — en vigueur depuis janvier 2022 — favorise les matériaux biosourcés comme le bois : bilan carbone faible, performance thermique élevée, compatibilité native avec les systèmes de chauffage basse consommation (PAC, plancher chauffant).
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              En zone sismique 3 (Grand Genève, Annecy, Annemasse), la légèreté structurelle de l&apos;ossature bois réduit les contraintes sur les fondations existantes — un avantage décisif par rapport à une extension maçonnée, qui nécessite souvent des travaux de reprise en sous-œuvre.
+              En zone sismique 3 (Genevois français, Annecy, Annemasse), la légèreté structurelle de l&apos;ossature bois réduit les contraintes sur les fondations existantes — un avantage décisif par rapport à une extension maçonnée, qui nécessite souvent des travaux de reprise en sous-œuvre.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8]">
               Sur le plan budgétaire, une extension ossature bois en Haute-Savoie représente généralement entre 1 500 et 2 200 €/m² de surface créée, selon la complexité de l&apos;intégration structurelle et le niveau de finitions. Le chantier d&apos;une extension de 20 à 40 m² dure en moyenne 4 à 8 semaines une fois le permis obtenu — soit un délai total de 6 à 12 mois du premier échange à la réception, permis de construire inclus.
