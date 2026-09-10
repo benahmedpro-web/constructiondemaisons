@@ -2,15 +2,25 @@ name: GEO Audit hebdomadaire
 
 on:
   schedule:
-    # Chaque lundi à 8h00 UTC (9h Paris)
+    # Chaque lundi à 8h00 UTC (9h/10h Paris)
     - cron: "0 8 * * 1"
   workflow_dispatch:
-    # Déclenchement manuel depuis GitHub Actions
+    inputs:
+      runs:
+        description: "Exécutions par requête et par passe (3 = protocole ; 1 = test rapide)"
+        default: "3"
+      dry:
+        description: "true = pas d'email"
+        default: "false"
+
+permissions:
+  contents: write # pour archiver data/geo/<date>.json dans le repo
 
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # 20 requêtes × 2 passes × 3 exécutions = 120 appels, ~15 min avec les pauses.
+    timeout-minutes: 40
 
     steps:
       - name: Checkout
@@ -22,9 +32,30 @@ jobs:
           node-version: 24
 
       - name: Run GEO audit
-        run: node scripts/geo-audit.mjs
+        run: node scripts/geo-audit.mjs --runs=${{ github.event.inputs.runs || '3' }} ${{ github.event.inputs.dry == 'true' && '--dry' || '' }} --html=geo-report.html
         env:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_TO_EMAIL: ${{ secrets.RESEND_TO_EMAIL }}
           RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: geo-report
+          path: geo-report.html
+          if-no-files-found: ignore
+
+      - name: Archive results in repo
+        run: |
+          git config user.name "geo-audit-bot"
+          git config user.email "audit@constructiondemaisons.com"
+          mkdir -p data/geo
+          git add -A data/geo
+          if git diff --cached --quiet; then
+            echo "Rien à archiver."
+          else
+            git commit -m "chore(geo): résultats audit $(date -u +%Y-%m-%d) [skip ci] [vercel skip]"
+            git push
+          fi
