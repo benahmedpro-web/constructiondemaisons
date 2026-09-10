@@ -143,11 +143,13 @@ function Landing({ onStart }: { onStart: () => void }) {
         <h1 className="text-[28px] md:text-[30px] font-black text-[#2C2C2A] leading-tight mb-5 md:whitespace-nowrap">
           Quelle maison pouvez-vous construire avec votre budget ?
         </h1>
-        <p className="text-[17px] text-[#888780] leading-relaxed mb-6 max-w-[520px] mx-auto">
-          Budget maison + terrain + frais + marge de sécurité en quelques minutes.
+        {/* Sous-titre avec verbe et zone géographique (audit CRO 09/09/2026, validé le 10/09) : la page
+            ne disait nulle part où M&M CONSTRUCTION intervient. */}
+        <p className="text-[17px] text-[#888780] leading-relaxed mb-6 max-w-[560px] mx-auto">
+          En 5 minutes, vérifiez si votre budget couvre la maison, le terrain et les frais en Haute-Savoie et dans le Genevois français.
         </p>
         <div className="flex flex-wrap gap-2 justify-center mb-6">
-          {["≈ 5 minutes", "Gratuit", "Sans engagement"].map((b) => (
+          {["Gratuit", "Sans engagement"].map((b) => (
             <span key={b} className="bg-white border border-[#D9D4CC] rounded-full px-4 py-1.5 text-[14px] text-[#888780]">
               {b}
             </span>
@@ -162,6 +164,13 @@ function Landing({ onStart }: { onStart: () => void }) {
           >
             Commencer mon analyse
           </button>
+          {/* Réassurance "résultat avant coordonnées" — retirée le 08/08/2026, remise le 10/09/2026
+              après audit CRO : pour un questionnaire de 19 écrans, c'est la première objection d'un
+              visiteur venu d'une annonce. Le parcours est bien semi-gated (score + diagnostic avant le
+              formulaire), la phrase ne promet rien de plus que ce que la page fait. */}
+          <p className="text-[14px] text-[#888780] mt-3">
+            Résultat affiché immédiatement. Vos coordonnées ne sont demandées que pour l&apos;estimation chiffrée.
+          </p>
         </div>
 
         <div className="mt-14 pt-10 border-t border-[#D9D4CC] text-left flex flex-col gap-8">
