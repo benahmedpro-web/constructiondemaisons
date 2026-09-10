@@ -337,7 +337,12 @@ function QuestionScreen({
   function canContinue(): boolean {
     if (!question.required) return true;
     if (isMulti || isCity) return Array.isArray(answers[question.code]) && (answers[question.code] as string[]).length > 0;
-    if (isNumber) return typeof answers[question.code] === "number" && (answers[question.code] as number) > 0;
+    if (isNumber) {
+      const v = answers[question.code];
+      // allowZero : un apport de 0 est une vraie réponse (primo-accédant sans fonds propres) — avant,
+      // le seuil > 0 bloquait le bouton "Suivant" et forçait à mentir ou à abandonner (audit CRO 09/09/2026).
+      return typeof v === "number" && (question.allowZero ? v >= 0 : v > 0);
+    }
     if (isInfo) return true;
     const v = answers[question.code];
     return typeof v === "string" && v.trim().length > 0;
@@ -1084,9 +1089,9 @@ function LeadForm({
   return (
     <main className="bg-[#F2EDE6] min-h-screen">
       <div className="max-w-[560px] mx-auto px-5 py-10">
-        <h1 className="text-[22px] font-black text-[#2C2C2A] mb-1">Pour recevoir votre analyse</h1>
+        <h1 className="text-[22px] font-black text-[#2C2C2A] mb-1">Dernière étape avant votre estimation complète</h1>
         <p className="text-[14px] text-[#888780] mb-6">
-          Vos coordonnées servent uniquement à vous transmettre votre rapport et à organiser un rendez-vous si vous le souhaitez — voir notre{" "}
+          Vos coordonnées servent uniquement à vous transmettre votre estimation et à échanger sur votre projet si vous le souhaitez — voir notre{" "}
           <Link href="/vie-privee/" className="text-[#BA7517] underline" target="_blank">
             politique de confidentialité
           </Link>
@@ -1100,6 +1105,8 @@ function LeadForm({
               </label>
               <input
                 type="text"
+                name="prenom"
+                autoComplete="given-name"
                 required
                 value={prenom}
                 onChange={(e) => setPrenom(e.target.value)}
@@ -1110,6 +1117,8 @@ function LeadForm({
               <label className="text-[12px] font-bold uppercase tracking-widest text-[#888780]">Nom</label>
               <input
                 type="text"
+                name="nom"
+                autoComplete="family-name"
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
                 className="border border-[#D9D4CC] px-4 py-3 text-[16px] bg-white focus:outline-none focus:border-[#BA7517]"
@@ -1123,6 +1132,9 @@ function LeadForm({
               </label>
               <input
                 type="email"
+                name="email"
+                autoComplete="email"
+                inputMode="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -1135,6 +1147,10 @@ function LeadForm({
               </label>
               <input
                 type="tel"
+                name="telephone"
+                autoComplete="tel"
+                inputMode="tel"
+                placeholder="06 12 34 56 78"
                 required
                 value={telephone}
                 onChange={(e) => setTelephone(e.target.value)}
@@ -1158,13 +1174,20 @@ function LeadForm({
 
           {error && <p className="text-red-600 text-[15px] bg-red-50 border border-red-200 px-4 py-3">{error}</p>}
 
+          {/* Bouton actif dès l'affichage (audit CRO 09/09/2026) : grisé tant que la case n'était pas
+              cochée, il absorbait des clics sans rien dire, surtout en mobile. La case reste `required`,
+              c'est le navigateur qui la réclame au clic avec un message explicite. Libellé aligné sur le
+              CTA de l'écran précédent ("Voir mon estimation complète") : un seul nom pour une seule chose. */}
           <button
             type="submit"
-            disabled={loading || !rgpd}
+            disabled={loading}
             className="bg-[#BA7517] text-white text-[17px] font-bold px-8 py-4 hover:bg-[#9E6312] transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
           >
-            {loading ? "Envoi en cours…" : "Voir mon analyse complète"}
+            {loading ? "Envoi en cours…" : "Voir mon estimation complète"}
           </button>
+          <p className="text-[13px] text-[#888780] leading-relaxed">
+            C&apos;est Mahmoud Ben Ahmed qui vous recontacte personnellement, pas un centre d&apos;appels. Aucune relance automatique.
+          </p>
         </form>
       </div>
     </main>

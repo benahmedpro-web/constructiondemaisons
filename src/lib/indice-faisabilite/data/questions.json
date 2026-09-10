@@ -263,10 +263,11 @@
       "screen": "E9b",
       "section": "Budget",
       "title": "Quel est votre apport personnel ?",
-      "subtitle": "Part du budget déjà disponible en fonds propres, en euros",
+      "subtitle": "Part du budget déjà disponible en fonds propres, en euros. Indiquez 0 si vous n'avez pas d'apport.",
       "type": "number",
       "placeholder": "Ex. 100000",
-      "required": true
+      "required": true,
+      "allowZero": true
     },
     {
       "code": "vente_bien_pour_projet",

@@ -27,6 +27,8 @@ export type Question = {
   type: QuestionType;
   placeholder?: string;
   required?: boolean;
+  // Question numérique acceptant 0 comme réponse valide (ex. apport personnel nul).
+  allowZero?: boolean;
   condition?: QuestionCondition;
   options?: QuestionOption[];
 };
