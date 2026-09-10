@@ -176,7 +176,7 @@ export default function GuideRe2020Page() {
             </div>
             <div>
               <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Maison ossature bois · Archamps (74)</div>
-              <div className="text-[13px] text-[#888780] mt-1">Terrain 466 m² · RE2020 intégré dès la conception · Genevois français</div>
+              <div className="text-[13px] text-[#888780] mt-1">Terrain 466 m² · RE2020 intégré dès la conception · Grand Genève</div>
               <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir l&apos;annonce →</div>
             </div>
           </Link>

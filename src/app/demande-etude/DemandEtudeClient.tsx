@@ -71,7 +71,7 @@ const TYPE_OPTIONS = [
   {
     id: "Je cherche un terrain à bâtir",
     label: "Je cherche un terrain",
-    sublabel: "Terrain à bâtir dans le Genevois français",
+    sublabel: "Terrain à bâtir dans le Grand Genève",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -500,7 +500,7 @@ function DemandeEtudePageInner() {
               {answers.terrainStatus === "Terrain en cours de recherche" && (
                 <div className="bg-[#BA7517]/10 border border-[#BA7517]/30 px-4 py-3 flex items-center justify-between">
                   <p className="text-[13px] text-[#2C2C2A]">
-                    Des terrains sont disponibles dans le Genevois français.
+                    Des terrains sont disponibles dans le Grand Genève.
                   </p>
                   <Link href="/annonces/" className="text-[13px] font-bold text-[#BA7517] no-underline hover:underline whitespace-nowrap ml-4">
                     Voir les annonces →

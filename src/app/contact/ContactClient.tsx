@@ -214,7 +214,7 @@ export default function ContactPage({ annonceInfo }: { annonceInfo?: AnnonceInfo
             <div className="bg-[#F2EDE6] p-6">
               <h3 className="text-[15px] font-bold text-[#2C2C2A] uppercase tracking-wide mb-3">Zone d&apos;intervention</h3>
               <div className="flex flex-wrap gap-1.5">
-                {["Haute-Savoie (74)", "Ain (01)", "Genevois français", "Pays de Gex", "Chablais", "Annecy"].map((z) => (
+                {["Haute-Savoie (74)", "Ain (01)", "Grand Genève", "Pays de Gex", "Chablais", "Annecy"].map((z) => (
                   <span key={z} className="text-[12px] bg-white text-[#888780] px-2.5 py-1 border border-[#D9D4CC]">{z}</span>
                 ))}
               </div>

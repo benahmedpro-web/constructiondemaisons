@@ -198,7 +198,7 @@ export function TestimonialSection() {
               </div>
             </div>
             <p className="text-[13px] text-[#888780] leading-[1.6] mt-4">
-              20 ans d&apos;expérience en accompagnement de projets de construction. Basé à Annemasse, intervenant en Haute-Savoie, Ain et Genevois français.
+              20 ans d&apos;expérience en accompagnement de projets de construction. Basé à Annemasse, intervenant en Haute-Savoie, Ain et Grand Genève.
             </p>
           </div>
 

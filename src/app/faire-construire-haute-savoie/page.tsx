@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Faire construire en Haute-Savoie",
-  description: "Construire une maison en Haute-Savoie et Genevois français : permis, artisans locaux, chantier ossature bois. Accompagnement complet. Étude gratuite sous 48h.",
+  description: "Construire une maison en Haute-Savoie et Grand Genève : permis, artisans locaux, chantier ossature bois. Accompagnement complet. Étude gratuite sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/faire-construire-haute-savoie/",
   },
@@ -15,7 +15,7 @@ const jsonLdService = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Accompagnement construction maison Haute-Savoie",
-  description: "Accompagnement complet pour la construction de maison ossature bois en Haute-Savoie, Genevois français et Ain : conception, permis de construire, sélection d'artisans, coordination de chantier.",
+  description: "Accompagnement complet pour la construction de maison ossature bois en Haute-Savoie, Grand Genève et Ain : conception, permis de construire, sélection d'artisans, coordination de chantier.",
   provider: {
     "@type": "HomeAndConstructionBusiness",
     name: "M&M CONSTRUCTION",
@@ -32,7 +32,7 @@ const jsonLdService = {
   areaServed: [
     { "@type": "Place", name: "Haute-Savoie" },
     { "@type": "Place", name: "Ain" },
-    { "@type": "Place", name: "Genevois français" },
+    { "@type": "Place", name: "Grand Genève" },
   ],
   serviceType: "Maîtrise d'œuvre maison ossature bois",
 };
@@ -57,7 +57,7 @@ const faqItems = [
   },
   {
     name: "M&M CONSTRUCTION intervient-il côté suisse (canton de Genève) ?",
-    acceptedAnswer: { text: "Non, M&M CONSTRUCTION intervient exclusivement côté français : Haute-Savoie (74), Ain (01) et Genevois français. Pour des projets en Suisse, d'autres démarches administratives s'appliquent." },
+    acceptedAnswer: { text: "Non, M&M CONSTRUCTION intervient exclusivement côté français : Haute-Savoie (74), Ain (01) et Grand Genève. Pour des projets en Suisse, d'autres démarches administratives s'appliquent." },
   },
   {
     name: "Faut-il posséder un terrain avant de contacter M&M CONSTRUCTION ?",
@@ -117,7 +117,7 @@ const zones = [
     communes: ["Gex", "Ferney-Voltaire", "Saint-Genis-Pouilly", "Divonne-les-Bains", "Prévessin-Moëns", "Thoiry", "Péron", "Ornex"],
   },
   {
-    dept: "Genevois français — Sud Haute-Savoie",
+    dept: "Grand Genève — Sud Haute-Savoie",
     communes: ["Saint-Julien-en-Genevois", "Archamps", "Collonges-sous-Salève", "Neydens", "Valleiry", "Beaumont", "Etrembières", "Viry"],
   },
 ];
@@ -161,7 +161,7 @@ export default function FaireConsuireHauteSavoiePage() {
               Faire construire votre maison<br className="hidden md:block" /> en Haute-Savoie et Genevois
             </h1>
             <p className="text-white/60 text-[17px] leading-[1.7] max-w-[640px] mb-8">
-              De l&apos;étude de faisabilité à la réception du chantier, M&M CONSTRUCTION coordonne votre projet de construction en Haute-Savoie, dans le Pays de Gex et le Genevois français. Ossature bois, spécialité locale, artisans vérifiés.
+              De l&apos;étude de faisabilité à la réception du chantier, M&M CONSTRUCTION coordonne votre projet de construction en Haute-Savoie, dans le Pays de Gex et le Grand Genève. Ossature bois, spécialité locale, artisans vérifiés.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors text-center">
@@ -242,7 +242,7 @@ export default function FaireConsuireHauteSavoiePage() {
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Zones d&apos;intervention</p>
             <h2 className="text-[28px] font-black text-[#2C2C2A] mb-2">Où intervenons-nous ?</h2>
             <p className="text-[16px] text-[#888780] leading-[1.7] mb-10 max-w-[580px]">
-              M&M CONSTRUCTION est basé à Annemasse et intervient dans un rayon couvrant l&apos;ensemble du Genevois français, le Chablais et le Pays de Gex.
+              M&M CONSTRUCTION est basé à Annemasse et intervient dans un rayon couvrant l&apos;ensemble du Grand Genève, le Chablais et le Pays de Gex.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {zones.map((z) => (
@@ -351,7 +351,7 @@ export default function FaireConsuireHauteSavoiePage() {
                 { href: "/guides/prix-maison-ossature-bois-120m2/", titre: "Budget maison ossature bois 120m² — poste par poste" },
                 { href: "/guides/prix-maison-ossature-bois-150m2/", titre: "Budget maison ossature bois 150m² — poste par poste" },
                 { href: "/guides/moe-vs-ccmi/", titre: "CCMI ou maîtrise d'œuvre : comparatif complet" },
-                { href: "/guides/permis-construire-genevois/", titre: "Permis de construire dans le Genevois français" },
+                { href: "/guides/permis-construire-genevois/", titre: "Permis de construire dans le Grand Genève" },
                 { href: "/guides/re2020-maison-bois/", titre: "RE2020 et maison ossature bois : ce qui change" },
               ].map((g) => (
                 <Link key={g.href} href={g.href} className="flex items-center gap-3 p-3 bg-[#F2EDE6] border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
@@ -371,7 +371,7 @@ export default function FaireConsuireHauteSavoiePage() {
               <Link href="/annonces/projet-maison-archamps-terrain-466m2/" className="flex gap-5 items-start no-underline group border border-[#D9D4CC] hover:border-[#BA7517] transition-colors p-4 bg-[#F2EDE6]">
                 <div>
                   <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Projet maison ossature bois · Archamps (74)</div>
-                  <div className="text-[13px] text-[#888780] mt-1">Terrain 466 m² · Genevois français · Hauts-de-Cruseilles</div>
+                  <div className="text-[13px] text-[#888780] mt-1">Terrain 466 m² · Grand Genève · Hauts-de-Cruseilles</div>
                   <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir l&apos;annonce →</div>
                 </div>
               </Link>

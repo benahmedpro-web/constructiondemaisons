@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Permis de construire Genevois français",
+  title: "Permis de construire Grand Genève",
   description: "Délais d'instruction, PLU locaux, recours voisins, zones sismiques — ce que les services d'urbanisme ne vous diront pas.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/permis-construire-genevois/",
@@ -15,7 +15,7 @@ const BASE = "https://www.constructiondemaisons.com";
 const jsonLdArticle = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Permis de construire en Genevois français : les pièges à éviter",
+  headline: "Permis de construire dans le Grand Genève : les pièges à éviter",
   description: "Délais d'instruction, PLU locaux, recours voisins, zones sismiques — ce que les services d'urbanisme ne vous diront pas.",
   url: BASE + "/guides/permis-construire-genevois/",
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
@@ -39,8 +39,8 @@ const jsonLdBreadcrumb = {
 const faqItems = [
   {
     "@type": "Question",
-    name: "Combien de temps prend l'instruction d'un permis de construire en Genevois français ?",
-    acceptedAnswer: { "@type": "Answer", text: "Le délai légal est de 2 mois pour une maison individuelle en zone PLU. Mais en Genevois français (Annemasse, Saint-Julien, Archamps, Gaillard), les délais réels sont souvent de 3 à 5 mois en raison de la pression sur les services DDT74. Les communes en zone ABF (Architectes des Bâtiments de France) peuvent aller jusqu'à 5 mois. Prévoyez 4 mois dans votre planning." },
+    name: "Combien de temps prend l'instruction d'un permis de construire dans le Grand Genève ?",
+    acceptedAnswer: { "@type": "Answer", text: "Le délai légal est de 2 mois pour une maison individuelle en zone PLU. Mais dans le Grand Genève (Annemasse, Saint-Julien, Archamps, Gaillard), les délais réels sont souvent de 3 à 5 mois en raison de la pression sur les services DDT74. Les communes en zone ABF (Architectes des Bâtiments de France) peuvent aller jusqu'à 5 mois. Prévoyez 4 mois dans votre planning." },
   },
   {
     "@type": "Question",
@@ -83,7 +83,7 @@ export default function GuidePermisGenevoisPage() {
           </div>
           <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Urbanisme</span>
           <h1 className="text-white text-[32px] md:text-[44px] font-black leading-tight mb-4">
-            Permis de construire en Genevois français : les pièges à éviter
+            Permis de construire dans le Grand Genève : les pièges à éviter
           </h1>
           <Link href="/a-propos/" className="inline-flex items-center gap-3 no-underline group mt-4">
             <Image
@@ -109,12 +109,12 @@ export default function GuidePermisGenevoisPage() {
       <article className="bg-white py-14 px-5">
         <div className="max-w-[780px] mx-auto">
           <p className="text-[18px] text-[#888780] leading-[1.8] mb-8 font-medium">
-            Le Genevois français (Haute-Savoie, Ain, communes frontalières) est l&apos;une des zones de France où les procédures d&apos;urbanisme sont les plus complexes. Pression foncière, SCOT Grand Genève, zones sismiques, PLU restrictifs, recours fréquents — voici ce qu&apos;il faut anticiper avant de déposer votre demande.
+            Le Grand Genève (Haute-Savoie, Ain, communes frontalières) est l&apos;une des zones de France où les procédures d&apos;urbanisme sont les plus complexes. Pression foncière, SCOT Grand Genève, zones sismiques, PLU restrictifs, recours fréquents — voici ce qu&apos;il faut anticiper avant de déposer votre demande.
           </p>
 
           <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Délais d&apos;instruction : la réalité sur le terrain</h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-            Le délai légal d&apos;instruction d&apos;un permis de construire de maison individuelle est de 2 mois. Dans le Genevois français, en pratique, comptez :
+            Le délai légal d&apos;instruction d&apos;un permis de construire de maison individuelle est de 2 mois. Dans le Grand Genève, en pratique, comptez :
           </p>
           <div className="border border-[#D9D4CC] overflow-hidden mb-4">
             {[
@@ -132,7 +132,7 @@ export default function GuidePermisGenevoisPage() {
           </div>
           <p className="text-[14px] text-[#888780] italic mb-6">La demande de pièces complémentaires est le piège numéro 1. Si l&apos;instructeur demande un document manquant, le délai d&apos;instruction repart intégralement à zéro à la réception du document.</p>
 
-          <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Les spécificités PLU du Genevois français</h2>
+          <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Les spécificités PLU du Grand Genève</h2>
           <div className="flex flex-col gap-4 mb-6">
             {[
               {
@@ -161,7 +161,7 @@ export default function GuidePermisGenevoisPage() {
 
           <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Zone sismique : ce que ça impose pour une maison bois</h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-            La quasi-totalité du Genevois français est en zone de sismicité modérée (zone 3) à moyenne (zone 4 pour certaines communes de l&apos;Ain). Conséquences concrètes pour votre permis et votre construction :
+            La quasi-totalité du Grand Genève est en zone de sismicité modérée (zone 3) à moyenne (zone 4 pour certaines communes de l&apos;Ain). Conséquences concrètes pour votre permis et votre construction :
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             {[
@@ -179,7 +179,7 @@ export default function GuidePermisGenevoisPage() {
 
           <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Recours des tiers : le risque sous-estimé</h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-            En Genevois français, la pression foncière et la densité des projets rendent les recours de voisinage plus fréquents qu&apos;ailleurs. Un voisin peut contester votre permis jusqu&apos;à 2 mois après son affichage sur le terrain — ce qui peut bloquer votre chantier pendant 12 à 18 mois si un recours aboutit.
+            Dans le Grand Genève, la pression foncière et la densité des projets rendent les recours de voisinage plus fréquents qu&apos;ailleurs. Un voisin peut contester votre permis jusqu&apos;à 2 mois après son affichage sur le terrain — ce qui peut bloquer votre chantier pendant 12 à 18 mois si un recours aboutit.
           </p>
           <p className="text-[16px] text-[#888780] leading-[1.8]">
             Se protéger : afficher le permis correctement et immédiatement (panneau réglementaire), conserver les photos d&apos;affichage datées, maintenir de bonnes relations avec les voisins avant les travaux. Un maître d&apos;œuvre expérimenté sur la zone connaît ces risques et peut anticiper les situations problématiques lors de la conception du projet.
@@ -207,7 +207,7 @@ export default function GuidePermisGenevoisPage() {
             </div>
             <div>
               <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Maison ossature bois · Saint-Julien-en-Genevois (74)</div>
-              <div className="text-[13px] text-[#888780] mt-1">Terrain 378 m² · Permis de construire · Genevois français</div>
+              <div className="text-[13px] text-[#888780] mt-1">Terrain 378 m² · Permis de construire · Grand Genève</div>
               <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir l&apos;annonce →</div>
             </div>
           </Link>
@@ -217,7 +217,7 @@ export default function GuidePermisGenevoisPage() {
             </div>
             <div>
               <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Terrain à bâtir · Saint-Julien-en-Genevois — Cervonnex</div>
-              <div className="text-[13px] text-[#888780] mt-1">378 m² · Plein sud · Genevois français</div>
+              <div className="text-[13px] text-[#888780] mt-1">378 m² · Plein sud · Grand Genève</div>
               <div className="text-[13px] text-[#BA7517] font-medium mt-2">Voir le terrain →</div>
             </div>
           </Link>

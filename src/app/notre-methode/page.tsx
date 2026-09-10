@@ -8,12 +8,12 @@ const jsonLdService = {
   "@type": "Service",
   name: "Maîtrise d'œuvre maison ossature bois — M&M CONSTRUCTION",
   serviceType: "Maîtrise d'œuvre",
-  description: "Accompagnement complet de votre projet de maison bois : évaluation, conception, permis de construire, sélection artisans, coordination de chantier, réception. Zone Haute-Savoie, Ain, Genevois français.",
+  description: "Accompagnement complet de votre projet de maison bois : évaluation, conception, permis de construire, sélection artisans, coordination de chantier, réception. Zone Haute-Savoie, Ain, Grand Genève.",
   provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
   areaServed: [
     { "@type": "AdministrativeArea", name: "Haute-Savoie" },
     { "@type": "AdministrativeArea", name: "Ain" },
-    { "@type": "AdministrativeArea", name: "Genevois français" },
+    { "@type": "AdministrativeArea", name: "Grand Genève" },
   ],
   offers: {
     "@type": "Offer",
@@ -25,7 +25,7 @@ const jsonLdHowTo = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   name: "Comment réaliser un projet de maison ossature bois avec un maître d'œuvre en Haute-Savoie",
-  description: "5 phases pour construire votre maison bois avec M&M CONSTRUCTION, du premier échange à la remise des clés. Haute-Savoie, Ain, Genevois français.",
+  description: "5 phases pour construire votre maison bois avec M&M CONSTRUCTION, du premier échange à la remise des clés. Haute-Savoie, Ain, Grand Genève.",
   totalTime: "P14M",
   estimatedCost: { "@type": "MonetaryAmount", currency: "EUR", value: "8 à 12 % du coût travaux HT" },
   step: [
@@ -131,7 +131,7 @@ const phases = [
       "Dépôt en mairie, suivi de l'instruction, réponse aux demandes de pièces",
       "Gestion des modifications éventuelles demandées par l'instructeur",
     ],
-    note: "En Genevois français, les délais d'instruction peuvent aller de 2 à 6 mois selon les communes. On vous prépare à ça.",
+    note: "Dans le Grand Genève, les délais d'instruction peuvent aller de 2 à 6 mois selon les communes. On vous prépare à ça.",
   },
   {
     num: "03",

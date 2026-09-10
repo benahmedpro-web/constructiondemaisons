@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Prix construction maison 2026",
-  description: "Combien coûte une construction de maison en 2026 dans le Genevois français ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
+  description: "Combien coûte une construction de maison en 2026 dans le Grand Genève ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
   },
   openGraph: {
     title: "Prix construction maison 2026 : budget complet par type de projet",
-    description: "Combien coûte une construction de maison en 2026 dans le Genevois français ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
+    description: "Combien coûte une construction de maison en 2026 dans le Grand Genève ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
     url: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
     siteName: "M&M CONSTRUCTION",
     locale: "fr_FR",
@@ -23,8 +23,8 @@ const BASE = "https://www.constructiondemaisons.com";
 const jsonLdArticle = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Prix construction maison 2026 : budget complet par type de projet dans le Genevois français",
-  description: "Combien coûte une construction de maison en 2026 dans le Genevois français ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
+  headline: "Prix construction maison 2026 : budget complet par type de projet dans le Grand Genève",
+  description: "Combien coûte une construction de maison en 2026 dans le Grand Genève ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
   url: BASE + "/guides/prix-construction-maison/",
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
@@ -40,7 +40,7 @@ const faqItems = [
       name: "Quel est le prix moyen d'une construction de maison en 2026 ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "En France, le coût de construction d'une maison neuve varie entre 1 400 et 2 500 € HT/m² selon la région, les matériaux et les prestations. Dans le Genevois français (Haute-Savoie, Ain frontalier), les prix sont structurellement plus élevés : de 1 800 à 2 800 € HT/m² pour une maison ossature bois, hors foncier et hors honoraires.",
+        text: "En France, le coût de construction d'une maison neuve varie entre 1 400 et 2 500 € HT/m² selon la région, les matériaux et les prestations. Dans le Grand Genève (Haute-Savoie, Ain frontalier), les prix sont structurellement plus élevés : de 1 800 à 2 800 € HT/m² pour une maison ossature bois, hors foncier et hors honoraires.",
       },
     },
     {
@@ -48,7 +48,7 @@ const faqItems = [
       name: "Quel budget prévoir pour une maison neuve de 120m² en Haute-Savoie en 2026 ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Pour une maison neuve de 120 m² en ossature bois dans le Genevois français, comptez 250 000 à 340 000 € HT pour les seuls travaux de construction. En ajoutant le foncier (150 000 à 400 000 € selon la commune), les honoraires de maîtrise d'œuvre (8–12 %), les études et les raccordements, le budget total oscille généralement entre 500 000 et 800 000 €.",
+        text: "Pour une maison neuve de 120 m² en ossature bois dans le Grand Genève, comptez 250 000 à 340 000 € HT pour les seuls travaux de construction. En ajoutant le foncier (150 000 à 400 000 € selon la commune), les honoraires de maîtrise d'œuvre (8–12 %), les études et les raccordements, le budget total oscille généralement entre 500 000 et 800 000 €.",
       },
     },
     {
@@ -162,7 +162,7 @@ export default function GuidePrixConstructionMaisonPage() {
             </div>
             <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Guide prix · 2026</span>
             <h1 className="text-white text-[28px] md:text-[40px] font-black leading-tight mb-4">
-              Combien coûte une construction de maison en 2026 dans le Genevois français ?
+              Combien coûte une construction de maison en 2026 dans le Grand Genève ?
             </h1>
           <Link href="/a-propos/" className="inline-flex items-center gap-3 no-underline group mt-4">
             <Image
@@ -190,14 +190,14 @@ export default function GuidePrixConstructionMaisonPage() {
           <div className="max-w-[780px] mx-auto">
 
             <p className="text-[18px] text-[#888780] leading-[1.8] mb-8 font-medium">
-              Le prix de construction d&apos;une maison dépend du type de projet, de la surface, des matériaux et de la localisation. Dans le Genevois français, les prix sont structurellement supérieurs à la moyenne nationale. Ce guide donne des fourchettes réalistes par type de projet, détaille les postes de coût et explique les surcoûts spécifiques à notre zone.
+              Le prix de construction d&apos;une maison dépend du type de projet, de la surface, des matériaux et de la localisation. Dans le Grand Genève, les prix sont structurellement supérieurs à la moyenne nationale. Ce guide donne des fourchettes réalistes par type de projet, détaille les postes de coût et explique les surcoûts spécifiques à notre zone.
             </p>
 
             {/* Encadré alerte zone */}
             <div className="bg-[#F2EDE6] border-l-4 border-[#BA7517] px-5 py-4 mb-10">
               <p className="text-[14px] font-bold text-[#2C2C2A] mb-1">Note sur la zone géographique</p>
               <p className="text-[14px] text-[#888780] leading-[1.7]">
-                Ce guide concerne le Genevois français : Haute-Savoie (74), Pays de Gex (01), Annemasse, Saint-Julien-en-Genevois, Thonon, Annecy et leurs environs. Les prix y sont 15 à 30 % supérieurs à la moyenne nationale pour des raisons détaillées ci-dessous.
+                Ce guide concerne le Grand Genève : Haute-Savoie (74), Pays de Gex (01), Annemasse, Saint-Julien-en-Genevois, Thonon, Annecy et leurs environs. Les prix y sont 15 à 30 % supérieurs à la moyenne nationale pour des raisons détaillées ci-dessous.
               </p>
             </div>
 
@@ -223,7 +223,7 @@ export default function GuidePrixConstructionMaisonPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[12px] text-[#888780] italic mb-10">Estimations HT en zone Genevois français. Mis à jour juin 2026 — peuvent varier selon les conditions d&apos;accès, la nature du sol et le niveau de finition.</p>
+            <p className="text-[12px] text-[#888780] italic mb-10">Estimations HT en zone Grand Genève. Mis à jour juin 2026 — peuvent varier selon les conditions d&apos;accès, la nature du sol et le niveau de finition.</p>
 
             {/* Budget global exemple */}
             <h2 className="text-[24px] font-bold text-[#2C2C2A] mt-4 mb-4">Budget global : exemple pour une maison neuve 120 m²</h2>

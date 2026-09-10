@@ -155,7 +155,7 @@ const jsonLdPage = {
   "@id": BASE + "/#business",
   name: "M&M CONSTRUCTION",
   url: BASE,
-  description: "Maîtrise d'œuvre spécialisée maison ossature bois en Haute-Savoie, Genevois français et Ain.",
+  description: "Maîtrise d'œuvre spécialisée maison ossature bois en Haute-Savoie, Grand Genève et Ain.",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: 5.0,
@@ -221,7 +221,7 @@ export default function TemoignagesPage() {
             Ce que disent nos clients
           </h1>
           <p className="text-white/60 text-[17px] leading-[1.6] max-w-[620px]">
-            14 avis Google vérifiés · 5/5 étoiles · Clients accompagnés en Haute-Savoie, Ain et Genevois français depuis 2020.
+            14 avis Google vérifiés · 5/5 étoiles · Clients accompagnés en Haute-Savoie, Ain et Grand Genève depuis 2020.
           </p>
         </div>
       </div>
@@ -360,7 +360,7 @@ export default function TemoignagesPage() {
             {[
               {
                 label: "Maison ossature bois",
-                desc: "Construction neuve de maisons individuelles de 80 à 200 m² en Haute-Savoie, Ain et Genevois français.",
+                desc: "Construction neuve de maisons individuelles de 80 à 200 m² en Haute-Savoie, Ain et Grand Genève.",
                 href: "/maison-ossature-bois/",
               },
               {
@@ -383,7 +383,7 @@ export default function TemoignagesPage() {
 
           <div className="bg-[#F2EDE6] p-6">
             <p className="text-[14px] text-[#2C2C2A] leading-[1.7]">
-              <strong>Zone d&apos;intervention :</strong> Haute-Savoie (74) · Ain (01) · Genevois français — Annemasse, Annecy, Saint-Julien-en-Genevois, Thonon-les-Bains, Gex, Divonne-les-Bains, Ferney-Voltaire.
+              <strong>Zone d&apos;intervention :</strong> Haute-Savoie (74) · Ain (01) · Grand Genève — Annemasse, Annecy, Saint-Julien-en-Genevois, Thonon-les-Bains, Gex, Divonne-les-Bains, Ferney-Voltaire.
               M&M CONSTRUCTION travaille exclusivement sur cette zone pour garantir un suivi de chantier de proximité.
             </p>
           </div>

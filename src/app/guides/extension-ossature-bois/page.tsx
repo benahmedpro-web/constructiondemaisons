@@ -198,7 +198,7 @@ export default function GuideExtensionPage() {
             </div>
             <div>
               <div className="text-[15px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors">Terrains et projets disponibles · Haute-Savoie (74)</div>
-              <div className="text-[13px] text-[#888780] mt-1">Annemasse, Saint-Julien, Archamps, Genevois français</div>
+              <div className="text-[13px] text-[#888780] mt-1">Annemasse, Saint-Julien, Archamps, Grand Genève</div>
               <div className="text-[13px] text-[#BA7517] font-medium mt-2">Consulter les annonces →</div>
             </div>
           </Link>

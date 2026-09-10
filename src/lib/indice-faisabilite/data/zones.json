@@ -25,15 +25,15 @@
       "nb_annonces": 181
     },
     {
-      "nom": "Genevois français (Annemasse / Saint-Julien-en-Genevois)",
+      "nom": "Grand Genève (Annemasse / Saint-Julien-en-Genevois)",
       "communes": ["Annemasse", "Cranves-Sales", "Vétraz-Monthoux", "Saint-Julien-en-Genevois", "Archamps", "Collonges-sous-Salève", "Beaumont", "Bossey", "Chênex", "Chevrier", "Dingy-en-Vuache", "Feigères", "Jonzier-Épagny", "Neydens", "Présilly", "Savigny", "Valleiry", "Viry", "Vulbens"],
       "prix_moyen_eur_m2": 576,
       "nb_annonces": 124
     }
   ],
   "notes": [
-    "Valleiry et Viry apparaissent dans les zones Faucigny/Bonneville-Reignier ET Genevois français — chevauchement présent dans les captures d'origine, non résolu ici.",
+    "Valleiry et Viry apparaissent dans les zones Faucigny/Bonneville-Reignier ET Grand Genève — chevauchement présent dans les captures d'origine, non résolu ici.",
     "Zones à prix indexées par commune de résidence du terrain, pas par code postal seul, sauf les 3 entrées 'Toutes les communes (CP)' reprises telles quelles depuis les captures.",
-    "Couverture actuelle : Pays de Gex (01), Chablais/Thonon (74), Faucigny/Bonneville (74), Genevois français (74). Pas de donnée pour le reste de la Haute-Savoie (ex. bassin annécien, vallée de l'Arve au-delà de Bonneville, Mont-Blanc) ni pour l'Ain hors Pays de Gex — à compléter si le funnel reçoit des demandes hors de ces 4 zones."
+    "Couverture actuelle : Pays de Gex (01), Chablais/Thonon (74), Faucigny/Bonneville (74), Grand Genève (74). Pas de donnée pour le reste de la Haute-Savoie (ex. bassin annécien, vallée de l'Arve au-delà de Bonneville, Mont-Blanc) ni pour l'Ain hors Pays de Gex — à compléter si le funnel reçoit des demandes hors de ces 4 zones."
   ]
 }

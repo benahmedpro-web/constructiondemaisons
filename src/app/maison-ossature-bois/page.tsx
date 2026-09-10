@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Construction maison ossature bois Haute-Savoie",
-  description: "Maison ossature bois neuve en Haute-Savoie et Genevois français : conception, permis, artisans vérifiés, coordination de chantier. Étude gratuite.",
+  description: "Maison ossature bois neuve en Haute-Savoie et Grand Genève : conception, permis, artisans vérifiés, coordination de chantier. Étude gratuite.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois/",
   },
@@ -60,8 +60,8 @@ const jsonLdPerson = {
     name: "M&M CONSTRUCTION",
     url: BASE,
   },
-  knowsAbout: ["maison ossature bois", "construction bois Haute-Savoie", "maîtrise d'œuvre", "RE2020", "Genevois français"],
-  areaServed: { "@type": "AdministrativeArea", name: "Haute-Savoie, Ain, Genevois français" },
+  knowsAbout: ["maison ossature bois", "construction bois Haute-Savoie", "maîtrise d'œuvre", "RE2020", "Grand Genève"],
+  areaServed: { "@type": "AdministrativeArea", name: "Haute-Savoie, Ain, Grand Genève" },
 };
 
 const points = [
@@ -110,7 +110,7 @@ const faq = [
   },
   {
     q: "Qui dépose le permis de construire pour une maison ossature bois ?",
-    a: "Nous nous en chargeons intégralement : constitution du dossier, coordination avec l'architecte si la surface dépasse 150 m², dépôt en mairie, suivi de l'instruction et gestion des demandes de pièces complémentaires. Le délai d'instruction est généralement de 2 à 3 mois pour une maison individuelle, mais peut varier selon les communes du Genevois français ou des secteurs protégés (ZPPAUP, ABF).",
+    a: "Nous nous en chargeons intégralement : constitution du dossier, coordination avec l'architecte si la surface dépasse 150 m², dépôt en mairie, suivi de l'instruction et gestion des demandes de pièces complémentaires. Le délai d'instruction est généralement de 2 à 3 mois pour une maison individuelle, mais peut varier selon les communes du Grand Genève ou des secteurs protégés (ZPPAUP, ABF).",
   },
   {
     q: "Quelles garanties légales couvrent une maison ossature bois neuve ?",
@@ -148,7 +148,7 @@ export default function MaisonOssatureBoisPage() {
             Construction de maison ossature bois<br className="hidden md:block" /> en Haute-Savoie
           </h1>
           <p className="text-white/75 text-[18px] leading-[1.7] max-w-[640px]">
-            De la conception à la réception des travaux — un seul interlocuteur pour coordonner votre projet bois en Genevois français, Haute-Savoie et Ain.
+            De la conception à la réception des travaux — un seul interlocuteur pour coordonner votre projet bois dans le Grand Genève, Haute-Savoie et Ain.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[16px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors">
@@ -196,7 +196,7 @@ export default function MaisonOssatureBoisPage() {
                 Un constructeur vous vend une maison catalogue avec des marges intégrées sur les matériaux et les artisans. Un maître d&apos;œuvre travaille pour vous : il sélectionne les meilleurs artisans locaux, négocie en votre nom, et assure un suivi indépendant du chantier.
               </p>
               <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-                M&M CONSTRUCTION est spécialisé maison ossature bois. Ce n&apos;est pas un service parmi d&apos;autres — c&apos;est notre seul métier. Nous connaissons les spécificités structurelles du bois, les DTU applicables, les artisans compétents sur notre zone et les délais réels en Haute-Savoie et Genevois français. Résultat : moins de surprises, plus de maîtrise sur votre chantier.
+                M&M CONSTRUCTION est spécialisé maison ossature bois. Ce n&apos;est pas un service parmi d&apos;autres — c&apos;est notre seul métier. Nous connaissons les spécificités structurelles du bois, les DTU applicables, les artisans compétents sur notre zone et les délais réels en Haute-Savoie et Grand Genève. Résultat : moins de surprises, plus de maîtrise sur votre chantier.
               </p>
               <p className="text-[16px] text-[#888780] leading-[1.8]">
                 En zone sismique 3 — qui couvre Annemasse, Saint-Julien-en-Genevois, Annecy et une grande partie de la Haute-Savoie — les règles parasismiques imposent des contreventements spécifiques à l&apos;ossature bois. Le bureau d&apos;études structure que nous mandatons maîtrise ces contraintes. La réglementation RE2020, en vigueur depuis janvier 2022, favorise les matériaux biosourcés : une maison bois neuve respecte ces exigences nativement, sans surcoût de mise en conformité. Budget indicatif sur notre zone : <strong className="text-[#2C2C2A]">1 800 à 2 500 €/m²</strong> en maîtrise d&apos;œuvre, finitions comprises, hors terrain.
@@ -258,10 +258,10 @@ export default function MaisonOssatureBoisPage() {
       <section className="bg-white py-14 px-5">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-[28px] md:text-[34px] font-bold text-[#2C2C2A] mb-4">
-            Nos zones d&apos;intervention en Haute-Savoie et Genevois français
+            Nos zones d&apos;intervention en Haute-Savoie et Grand Genève
           </h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-            Nous intervenons sur l&apos;ensemble du département 74 et le Genevois français. <strong className="text-[#2C2C2A]">Annecy, Annemasse, Thonon-les-Bains, Saint-Julien-en-Genevois, Cluses, Bonneville, Évian-les-Bains</strong> et Sallanches constituent le cœur de notre activité. Nous couvrons également les secteurs de montagne — Chamonix, Saint-Gervais-les-Bains, Megève — ainsi que le Pays de Gex (Gex, Ferney-Voltaire) côté Ain (01).
+            Nous intervenons sur l&apos;ensemble du département 74 et le Grand Genève. <strong className="text-[#2C2C2A]">Annecy, Annemasse, Thonon-les-Bains, Saint-Julien-en-Genevois, Cluses, Bonneville, Évian-les-Bains</strong> et Sallanches constituent le cœur de notre activité. Nous couvrons également les secteurs de montagne — Chamonix, Saint-Gervais-les-Bains, Megève — ainsi que le Pays de Gex (Gex, Ferney-Voltaire) côté Ain (01).
           </p>
           <p className="text-[16px] text-[#888780] leading-[1.8]">
             Notre réseau d&apos;artisans est ancré localement. Ça change tout : les délais d&apos;intervention sont réels, les références vérifiables, et les entreprises connaissent les contraintes propres au territoire — relief, PLU montagnard, zones sismiques 3 et 4.

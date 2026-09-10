@@ -23,13 +23,13 @@ const jsonLdPerson = {
     "maîtrise d'œuvre",
     "RE2020",
     "construction bois Haute-Savoie",
-    "Genevois français",
+    "Grand Genève",
     "zone sismique",
     "permis de construire",
   ],
   areaServed: {
     "@type": "AdministrativeArea",
-    name: "Haute-Savoie, Ain, Genevois français",
+    name: "Haute-Savoie, Ain, Grand Genève",
   },
   address: {
     "@type": "PostalAddress",
@@ -38,7 +38,7 @@ const jsonLdPerson = {
     addressCountry: "FR",
   },
   description:
-    "20 ans d'expérience en construction individuelle. Fondateur de M&M CONSTRUCTION, spécialisé maison ossature bois en Haute-Savoie et Genevois français.",
+    "20 ans d'expérience en construction individuelle. Fondateur de M&M CONSTRUCTION, spécialisé maison ossature bois en Haute-Savoie et Grand Genève.",
   sameAs: ["https://g.page/r/Cdn_3K5QUh7wEBM"],
 };
 
@@ -76,7 +76,7 @@ const valeurs = [
       </svg>
     ),
     titre: "Ancrage Haute-Savoie",
-    corps: "Installé à Annemasse, Mahmoud travaille exclusivement en Haute-Savoie, Ain et Genevois français. Il connaît les PLU locaux, les contraintes alpines, les délais d'instruction réels et les bons interlocuteurs techniques sur la zone.",
+    corps: "Installé à Annemasse, Mahmoud travaille exclusivement en Haute-Savoie, Ain et Grand Genève. Il connaît les PLU locaux, les contraintes alpines, les délais d'instruction réels et les bons interlocuteurs techniques sur la zone.",
   },
   {
     icon: (
@@ -113,7 +113,7 @@ export default function AProposPage() {
             M&amp;M CONSTRUCTION
           </h1>
           <p className="text-white/60 text-[18px] leading-[1.6] max-w-[620px]">
-            Responsable de projets de construction individuelle en Haute-Savoie, Ain et Genevois français. Fondé par Mahmoud Ben Ahmed — 20 ans de BTP.
+            Responsable de projets de construction individuelle en Haute-Savoie, Ain et Grand Genève. Fondé par Mahmoud Ben Ahmed — 20 ans de BTP.
           </p>
         </div>
       </div>
@@ -167,7 +167,7 @@ export default function AProposPage() {
               En 2017, il prend la direction d&apos;agence des Demeures Traditionnelles (Groupe Lesterlin) à Beauvais — 41 projets supplémentaires sur une clientèle premium. En 2020, il devient indépendant pour accompagner des projets de construction individuelle en totale autonomie, sans structure intermédiaire ni standard imposé.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              Aujourd&apos;hui basé à Annemasse, il intervient sur la Haute-Savoie, l&apos;Ain et le Genevois français. Chaque projet est conduit en maîtrise d&apos;œuvre : plan sur mesure, artisans sélectionnés pour leurs références locales et leurs assurances décennales, suivi de chantier hebdomadaire, réception avec grille de contrôle qualité.
+              Aujourd&apos;hui basé à Annemasse, il intervient sur la Haute-Savoie, l&apos;Ain et le Grand Genève. Chaque projet est conduit en maîtrise d&apos;œuvre : plan sur mesure, artisans sélectionnés pour leurs références locales et leurs assurances décennales, suivi de chantier hebdomadaire, réception avec grille de contrôle qualité.
             </p>
             <div className="bg-[#F2EDE6] p-5 mt-6">
               <p className="text-[15px] text-[#2C2C2A] leading-[1.7] italic">
@@ -223,7 +223,7 @@ export default function AProposPage() {
       <section className="bg-[#F2EDE6] py-12 px-5">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-2">Zone d&apos;intervention</h2>
-          <p className="text-[15px] text-[#888780] mb-8">M&amp;M CONSTRUCTION intervient exclusivement sur le bassin Haute-Savoie / Ain / Genevois français — une zone géographique restreinte pour maintenir un suivi de chantier de proximité.</p>
+          <p className="text-[15px] text-[#888780] mb-8">M&amp;M CONSTRUCTION intervient exclusivement sur le bassin Haute-Savoie / Ain / Grand Genève — une zone géographique restreinte pour maintenir un suivi de chantier de proximité.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
@@ -237,7 +237,7 @@ export default function AProposPage() {
                 note: "Pays de Gex — forte demande frontaliers",
               },
               {
-                dept: "Genevois français",
+                dept: "Grand Genève",
                 communes: ["Toutes communes limitrophes Genève côté France", "Zones ZPNAF exclues sauf étude préalable"],
                 note: "Zone sismique 3 — bureau d'études systématique",
               },
@@ -273,7 +273,7 @@ export default function AProposPage() {
               "Réseau de prescripteurs",
               "Accompagnement particuliers",
               "Valorisation foncière",
-              "Zone Genevois français",
+              "Zone Grand Genève",
             ].map((c) => (
               <div key={c} className="flex items-center gap-2 p-3 bg-[#F2EDE6]">
                 <span className="text-[#BA7517] text-[10px]">◆</span>
@@ -289,7 +289,7 @@ export default function AProposPage() {
         <div className="max-w-[900px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
             { label: "Localisation", value: "Annemasse (74100)" },
-            { label: "Zone d'intervention", value: "Haute-Savoie · Ain · Genevois français" },
+            { label: "Zone d'intervention", value: "Haute-Savoie · Ain · Grand Genève" },
             { label: "Langues", value: "Français · Allemand · Anglais" },
           ].map((item) => (
             <div key={item.label}>

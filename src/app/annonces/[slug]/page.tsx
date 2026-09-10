@@ -190,7 +190,7 @@ export default async function AnnonceDetailPage({ params }: Props) {
               <div className="mb-8">
                 <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-4">Construire en ossature bois sur ce terrain</h2>
                 <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
-                  La maison ossature bois est particulièrement adaptée aux terrains du Genevois français et de Haute-Savoie.
+                  La maison ossature bois est particulièrement adaptée aux terrains du Grand Genève et de Haute-Savoie.
                   Sa légèreté structurelle réduit les contraintes sur les fondations — un avantage concret en zone sismique 3,
                   où le calcul parasismique est obligatoire. La mise hors d&apos;eau et hors d&apos;air est réalisée en 4 à 6 semaines,
                   limitant les risques liés aux intempéries alpines pendant le chantier.

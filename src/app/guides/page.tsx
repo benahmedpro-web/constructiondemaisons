@@ -54,7 +54,7 @@ const guides = [
     tag: "Artisans",
   },
   {
-    title: "Permis de construire en zone Genevois français : les pièges à éviter",
+    title: "Permis de construire en zone Grand Genève : les pièges à éviter",
     excerpt: "Délais d'instruction, PLU locaux, recours des voisins, demandes de pièces complémentaires — ce que les services d'urbanisme ne vous diront pas d'emblée.",
     image: "/images/hero-maison-bois-montagne-2.jpg",
     href: "/guides/permis-construire-genevois/",
@@ -62,7 +62,7 @@ const guides = [
   },
   {
     title: "Prix construction maison 2026 : budget complet par type de projet",
-    excerpt: "Maison neuve, extension, rénovation — fourchettes réalistes, tableau des postes de coût et surcoûts spécifiques au Genevois français.",
+    excerpt: "Maison neuve, extension, rénovation — fourchettes réalistes, tableau des postes de coût et surcoûts spécifiques au Grand Genève.",
     image: "/images/MAB4451.jpg",
     href: "/guides/prix-construction-maison/",
     tag: "Budget",
@@ -120,7 +120,7 @@ export default function GuidesPage() {
           <Link href="/" className="text-white/50 text-[13px] no-underline hover:text-white transition-colors">← Accueil</Link>
           <h1 className="text-white text-[36px] md:text-[48px] font-black mt-4 mb-3">Guides techniques</h1>
           <p className="text-white/60 text-[17px] leading-[1.6] max-w-[600px]">
-            Rédigés par Mahmoud Ben Ahmed, maître d&apos;œuvre spécialisé maison ossature bois en Genevois français.
+            Rédigés par Mahmoud Ben Ahmed, maître d&apos;œuvre spécialisé maison ossature bois dans le Grand Genève.
           </p>
         </div>
       </div>

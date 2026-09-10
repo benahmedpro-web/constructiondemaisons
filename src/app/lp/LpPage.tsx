@@ -120,7 +120,7 @@ export function LpPage() {
         <div className="absolute inset-0 bg-[#2C2C2A]/75" />
         <div className="relative z-10 max-w-[720px] mx-auto text-center">
           <p className="text-[#BA7517] text-[11px] font-bold uppercase tracking-widest mb-4">
-            Maîtrise d&apos;œuvre · Haute-Savoie &amp; Genevois français
+            Maîtrise d&apos;œuvre · Haute-Savoie &amp; Grand Genève
           </p>
           <h1 className="text-white text-[32px] md:text-[46px] font-black leading-tight mb-5" style={{ textWrap: "balance" } as React.CSSProperties}>
             Avant de vous engager avec un constructeur, demandez un avis indépendant.
@@ -391,7 +391,7 @@ export function LpPage() {
               <p className="text-[#BA7517] text-[11px] font-bold uppercase tracking-widest mb-2">Votre interlocuteur</p>
               <h2 className="text-[22px] font-bold text-[#2C2C2A] mb-3">Mahmoud Ben Ahmed</h2>
               <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
-                20 ans de terrain dans le BTP, plus de 200 projets coordonnés en Haute-Savoie et Genevois français. Je travaille en indépendant — je n&apos;ai aucune marge à prendre sur les matériaux ou les artisans. Mon seul objectif : que votre projet aboutisse dans les délais, dans le budget prévu, avec les bons intervenants.
+                20 ans de terrain dans le BTP, plus de 200 projets coordonnés en Haute-Savoie et Grand Genève. Je travaille en indépendant — je n&apos;ai aucune marge à prendre sur les matériaux ou les artisans. Mon seul objectif : que votre projet aboutisse dans les délais, dans le budget prévu, avec les bons intervenants.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["20 ans BTP", "200+ projets", "Zone 74 · 01", "Spécialiste bois"].map((tag) => (
@@ -426,7 +426,7 @@ export function LpPage() {
       {/* ── Footer minimal ────────────────────────────────── */}
       <footer className="bg-[#1E1C19] py-5 px-5">
         <div className="max-w-[860px] mx-auto flex flex-wrap items-center justify-between gap-3">
-          <span className="text-white/30 text-[12px]">© 2026 M&M CONSTRUCTION — Haute-Savoie &amp; Genevois français</span>
+          <span className="text-white/30 text-[12px]">© 2026 M&M CONSTRUCTION — Haute-Savoie &amp; Grand Genève</span>
           <div className="flex gap-4">
             <Link href="/mentions-legales/" className="text-white/30 text-[12px] no-underline hover:text-white/60 transition-colors">
               Mentions légales

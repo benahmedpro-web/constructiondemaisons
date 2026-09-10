@@ -11,9 +11,9 @@ const serviceBlocks = [
     textColor: "white",
   },
   {
-    category: "Zone Genevois français",
+    category: "Zone Grand Genève",
     title: "Terrain, permis, chantier : on connaît le territoire",
-    body: "Haute-Savoie, Ain, Genevois français : nous travaillons uniquement sur notre zone pour maîtriser les délais d'instruction, les PLU locaux et le réseau d'artisans qualifiés bois.",
+    body: "Haute-Savoie, Ain, Grand Genève : nous travaillons uniquement sur notre zone pour maîtriser les délais d'instruction, les PLU locaux et le réseau d'artisans qualifiés bois.",
     cta: "Nos annonces",
     ctaHref: "/annonces/",
     bg: "#F2EDE6",

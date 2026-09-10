@@ -191,7 +191,7 @@ export default function GuideMoeVsCcmiPage() {
 
             <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Pourquoi la MOE est particulièrement adaptée en Haute-Savoie</h2>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              La zone Genevois–Chablais cumule des contraintes que les constructeurs nationaux méconnaissent souvent. La Haute-Savoie est en zone sismique 3 : les prescriptions parasismiques sur la structure doivent être intégrées dès la conception. La plupart des PLU du Genevois français (Annemasse, Archamps, Saint-Julien, Cranves-Sales) imposent des règles strictes sur les matériaux de façade, les toitures et l&apos;aspect général — ce qui peut bloquer des modèles catalog standards.
+              La zone Genevois–Chablais cumule des contraintes que les constructeurs nationaux méconnaissent souvent. La Haute-Savoie est en zone sismique 3 : les prescriptions parasismiques sur la structure doivent être intégrées dès la conception. La plupart des PLU du Grand Genève (Annemasse, Archamps, Saint-Julien, Cranves-Sales) imposent des règles strictes sur les matériaux de façade, les toitures et l&apos;aspect général — ce qui peut bloquer des modèles catalog standards.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
               Les terrains en pente sont courants dans le secteur : fondations spéciales, murs de soutènement, accès chantier en dévers — autant de postes qui peuvent exploser le budget si mal anticipés. Un maître d&apos;œuvre local connaît ces contraintes et les artisans qui y répondent. Il les intègre à l&apos;estimation dès l&apos;étude de faisabilité.
@@ -251,7 +251,7 @@ export default function GuideMoeVsCcmiPage() {
               {[
                 { href: "/faire-construire-haute-savoie/", titre: "Faire construire votre maison en Haute-Savoie : le guide complet" },
                 { href: "/guides/coordonner-chantier-bois/", titre: "Comment coordonner un chantier maison bois ?" },
-                { href: "/guides/permis-construire-genevois/", titre: "Permis de construire dans le Genevois français" },
+                { href: "/guides/permis-construire-genevois/", titre: "Permis de construire dans le Grand Genève" },
                 { href: "/guides/re2020-maison-bois/", titre: "RE2020 et maison ossature bois : ce qui change" },
               ].map((g) => (
                 <Link key={g.href} href={g.href} className="flex items-center gap-3 p-3 bg-white no-underline hover:bg-[#E8E2D9] transition-colors group border border-[#D9D4CC]">

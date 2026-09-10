@@ -146,7 +146,7 @@ function Landing({ onStart }: { onStart: () => void }) {
         {/* Sous-titre avec verbe et zone géographique (audit CRO 09/09/2026, validé le 10/09) : la page
             ne disait nulle part où M&M CONSTRUCTION intervient. */}
         <p className="text-[17px] text-[#888780] leading-relaxed mb-6 max-w-[560px] mx-auto">
-          En 5 minutes, vérifiez si votre budget couvre la maison, le terrain et les frais en Haute-Savoie et dans le Genevois français.
+          En 5 minutes, vérifiez si votre budget couvre la maison, le terrain et les frais en Haute-Savoie et dans le Grand Genève.
         </p>
         <div className="flex flex-wrap gap-2 justify-center mb-6">
           {["Gratuit", "Sans engagement"].map((b) => (

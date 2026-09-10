@@ -135,7 +135,7 @@
       "title": "Dans quelle zone souhaitez-vous construire ?",
       "subtitle": "Ville, commune ou secteur géographique — vous pouvez en choisir plusieurs",
       "type": "city-autocomplete",
-      "placeholder": "Ex. Annemasse, Genevois français...",
+      "placeholder": "Ex. Annemasse, Grand Genève...",
       "required": true
     },
     {

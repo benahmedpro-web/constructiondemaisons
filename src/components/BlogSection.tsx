@@ -7,7 +7,7 @@ const sidebarPosts = [
   { title: "Maîtrise d'œuvre vs CCMI : quelles différences concrètes ?", image: "/images/hero-maison-bois-montagne-1.jpg", href: "/guides/moe-vs-ccmi/" },
   { title: "Extension ossature bois : permis, coût, délais", image: "/images/hero-extension-bois-jardin.jpg", href: "/guides/extension-ossature-bois/" },
   { title: "Comment choisir ses artisans pour une maison bois ?", image: "/images/hero-extension-bois-golden.jpg", href: "/guides/choisir-artisans-maison-bois/" },
-  { title: "Permis de construire en zone Genevois français : les pièges à éviter", image: "/images/hero-maison-bois-montagne-2.jpg", href: "/guides/permis-construire-genevois/" },
+  { title: "Permis de construire en zone Grand Genève : les pièges à éviter", image: "/images/hero-maison-bois-montagne-2.jpg", href: "/guides/permis-construire-genevois/" },
   { title: "Prix maison ossature bois en Haute-Savoie : estimation au m²", image: "/images/hero-maison-bois-montagne-1.jpg", href: "/guides/prix-maison-ossature-bois-haute-savoie/" },
   { title: "Construction chalet ossature bois en Haute-Savoie", image: "/images/hero-maison-bois-alpine.jpg", href: "/guides/construction-chalet-ossature-bois-haute-savoie/" },
   { title: "Garantie décennale et assurance dommage ouvrage en maîtrise d'œuvre", image: "/images/hero-maison-bois-montagne-2.jpg", href: "/guides/garanties-assurance-maitre-oeuvre/" },

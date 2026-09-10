@@ -17,7 +17,7 @@ const jsonLdBusiness = {
   logo: BASE + "/seo/logo.svg",
   image: BASE + "/images/hero-maison-bois-montagne-1.jpg",
   description:
-    "Maîtrise d'œuvre spécialisée construction maison ossature bois en Haute-Savoie, Ain et Genevois français. Conception, permis de construire, coordination de chantier.",
+    "Maîtrise d'œuvre spécialisée construction maison ossature bois en Haute-Savoie, Ain et Grand Genève. Conception, permis de construire, coordination de chantier.",
   email: "contact@constructiondemaisons.com",
   address: {
     "@type": "PostalAddress",
@@ -29,7 +29,7 @@ const jsonLdBusiness = {
   areaServed: [
     { "@type": "State", name: "Haute-Savoie" },
     { "@type": "State", name: "Ain" },
-    { "@type": "AdministrativeArea", name: "Genevois français" },
+    { "@type": "AdministrativeArea", name: "Grand Genève" },
   ],
   aggregateRating: {
     "@type": "AggregateRating",
@@ -106,7 +106,7 @@ const jsonLdWebsite = {
   url: BASE + "/",
   name: "M&M CONSTRUCTION",
   description:
-    "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français.",
+    "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Grand Genève.",
   publisher: { "@id": BASE + "/#business" },
   potentialAction: {
     "@type": "SearchAction",
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     template: "%s | M&M CONSTRUCTION",
   },
   description:
-    "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
+    "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Grand Genève. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
   metadataBase: new URL(BASE),
   openGraph: {
     type: "website",
@@ -130,7 +130,7 @@ export const metadata: Metadata = {
     siteName: "M&M CONSTRUCTION",
     title: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
     description:
-      "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
+      "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Grand Genève. 20 ans d'expérience, artisans vérifiés. Étude gratuite.",
     images: [
       {
         url: BASE + "/images/og-homepage.jpg",
@@ -144,7 +144,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
     description:
-      "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Genevois français. 20 ans d'expérience, artisans vérifiés.",
+      "Maîtrise d'œuvre maison ossature bois en Haute-Savoie et Grand Genève. 20 ans d'expérience, artisans vérifiés.",
     images: [BASE + "/images/og-homepage.jpg"],
     site: "@mmconstruction74",
     creator: "@mmconstruction74",

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Maison ossature bois Annemasse (74)",
-  description: "Construction maison ossature bois à Annemasse et Genevois français. PLU, sismique zone 3, artisans locaux vérifiés. Étude gratuite sous 48h.",
+  description: "Construction maison ossature bois à Annemasse et Grand Genève. PLU, sismique zone 3, artisans locaux vérifiés. Étude gratuite sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/maison-ossature-bois-annemasse/",
   },
@@ -15,7 +15,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Maison ossature bois Annemasse",
-  description: "Accompagnement construction maison ossature bois à Annemasse et agglomération du Genevois français.",
+  description: "Accompagnement construction maison ossature bois à Annemasse et agglomération du Grand Genève.",
   provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
   areaServed: { "@type": "City", name: "Annemasse", containedInPlace: { "@type": "AdministrativeArea", name: "Haute-Savoie" } },
 };
@@ -127,7 +127,7 @@ export default function MaisonBoisAnnemassePage() {
           <div className="max-w-[900px] mx-auto">
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-3">Projets coordinés par M&amp;M dans le Genevois</p>
             <h2 className="text-[26px] font-black text-[#2C2C2A] mb-2">Exemples de projets maison bois à Annemasse et Saint-Julien-en-Genevois</h2>
-            <p className="text-[15px] text-[#888780] mb-8 max-w-[680px]">Le Genevois français concentre des contraintes spécifiques — zone sismique 3, PLU frontalier, forte pression foncière. Voici comment M&M CONSTRUCTION les traite concrètement.</p>
+            <p className="text-[15px] text-[#888780] mb-8 max-w-[680px]">Le Grand Genève concentre des contraintes spécifiques — zone sismique 3, PLU frontalier, forte pression foncière. Voici comment M&M CONSTRUCTION les traite concrètement.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
                 {
@@ -248,12 +248,12 @@ export default function MaisonBoisAnnemassePage() {
         <section className="bg-white py-10 px-5">
           <div className="max-w-[780px] mx-auto">
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">Projets disponibles</p>
-            <p className="text-[14px] text-[#888780] mb-4">Terrains et projets maison ossature bois disponibles à Annemasse et dans le Genevois français.</p>
+            <p className="text-[14px] text-[#888780] mb-4">Terrains et projets maison ossature bois disponibles à Annemasse et dans le Grand Genève.</p>
             <div className="flex flex-col gap-2">
               {[
                 { href: "/annonces/terrain-annemasse-740m2-pc-accepte/", label: "Terrain 740m² à Annemasse — PC accepté, toutes viabilités", tag: "Terrain" },
                 { href: "/annonces/projet-maison-annemasse-terrain-740m2/", label: "Projet maison ossature bois · Annemasse — terrain 740m²", tag: "Maison bois" },
-                { href: "/annonces/terrain-archamps-466m2-ces-02/", label: "Terrain 466m² à Archamps — zone sismique 3, Genevois français", tag: "Terrain" },
+                { href: "/annonces/terrain-archamps-466m2-ces-02/", label: "Terrain 466m² à Archamps — zone sismique 3, Grand Genève", tag: "Terrain" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="flex items-center gap-3 p-3 bg-[#F2EDE6] border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
                   <span className="text-[11px] font-bold text-[#BA7517] uppercase tracking-wide w-20 flex-shrink-0">{l.tag}</span>

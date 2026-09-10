@@ -4,13 +4,13 @@ import { getAnnonce } from "@/lib/annonces";
 
 export const metadata: Metadata = {
   title: "Contactez-nous",
-  description: "Contactez Mahmoud Ben Ahmed, responsable de projets maison ossature bois en Haute-Savoie et Genevois français. Réponse sous 48h.",
+  description: "Contactez Mahmoud Ben Ahmed, responsable de projets maison ossature bois en Haute-Savoie et Grand Genève. Réponse sous 48h.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/contact/",
   },
   openGraph: {
     title: "Contact M&M CONSTRUCTION",
-    description: "Contactez Mahmoud Ben Ahmed pour votre projet maison ossature bois en Haute-Savoie et Genevois français.",
+    description: "Contactez Mahmoud Ben Ahmed pour votre projet maison ossature bois en Haute-Savoie et Grand Genève.",
     url: "https://www.constructiondemaisons.com/contact/",
     siteName: "M&M CONSTRUCTION",
     locale: "fr_FR",

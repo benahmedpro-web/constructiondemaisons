@@ -251,7 +251,7 @@ export async function POST(req: NextRequest) {
             </div>
           </div>
           <div style="padding: 16px 32px; background: #2C2C2A; text-align: center;">
-            <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">constructiondemaisons.com · NAF 71.12B · Maîtrise d'œuvre bois, Genevois français</p>
+            <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">constructiondemaisons.com · NAF 71.12B · Maîtrise d'œuvre bois, Grand Genève</p>
           </div>
         </div>
       `,
@@ -283,7 +283,7 @@ export async function POST(req: NextRequest) {
                     </div>
                   </div>
                   <div style="padding: 16px 32px; background: #2C2C2A; text-align: center;">
-                    <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">constructiondemaisons.com · NAF 71.12B · Maîtrise d'œuvre bois, Genevois français</p>
+                    <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">constructiondemaisons.com · NAF 71.12B · Maîtrise d'œuvre bois, Grand Genève</p>
                   </div>
                 </div>
               `,

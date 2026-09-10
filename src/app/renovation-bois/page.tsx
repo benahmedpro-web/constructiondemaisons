@@ -8,12 +8,12 @@ const jsonLdService = {
   "@type": "Service",
   name: "Rénovation et isolation bois — M&M CONSTRUCTION",
   serviceType: "Rénovation thermique, isolation par l'extérieur, réhabilitation ossature bois",
-  description: "Coordination de travaux de rénovation thermique et d'isolation bois en Haute-Savoie, Ain et Genevois français. ITE bardage bois, réhabilitation ossature existante, changement menuiseries.",
+  description: "Coordination de travaux de rénovation thermique et d'isolation bois en Haute-Savoie, Ain et Grand Genève. ITE bardage bois, réhabilitation ossature existante, changement menuiseries.",
   provider: { "@type": "HomeAndConstructionBusiness", name: "M&M CONSTRUCTION", url: BASE },
   areaServed: [
     { "@type": "AdministrativeArea", name: "Haute-Savoie" },
     { "@type": "AdministrativeArea", name: "Ain" },
-    { "@type": "AdministrativeArea", name: "Genevois français" },
+    { "@type": "AdministrativeArea", name: "Grand Genève" },
   ],
 };
 
@@ -55,7 +55,7 @@ const jsonLdBreadcrumb = {
 
 export const metadata: Metadata = {
   title: "Rénovation maison bois Haute-Savoie",
-  description: "M&M CONSTRUCTION coordonne votre rénovation thermique par l'extérieur et isolation biosourcée en Genevois français, Haute-Savoie et Ain.",
+  description: "M&M CONSTRUCTION coordonne votre rénovation thermique par l'extérieur et isolation biosourcée dans le Grand Genève, Haute-Savoie et Ain.",
   alternates: {
     canonical: "https://www.constructiondemaisons.com/renovation-bois/",
   },
@@ -164,7 +164,7 @@ export default function RenovationBoisPage() {
         <div className="max-w-[700px] mx-auto text-center">
           <h2 className="text-[26px] font-bold text-white mb-3">Zone d&apos;intervention</h2>
           <p className="text-[16px] text-white/60 leading-[1.7] mb-6">
-            Nous travaillons en Haute-Savoie (74), Ain (01) et Genevois français. Nous ne nous déployons pas hors de notre zone pour garder le contrôle des délais et la qualité du réseau artisans.
+            Nous travaillons en Haute-Savoie (74), Ain (01) et Grand Genève. Nous ne nous déployons pas hors de notre zone pour garder le contrôle des délais et la qualité du réseau artisans.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {["Annecy", "Thonon-les-Bains", "Annemasse", "Gex", "Bellegarde", "Bourg-en-Bresse"].map((ville) => (

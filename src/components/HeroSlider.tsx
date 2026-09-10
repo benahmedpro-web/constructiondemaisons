@@ -4,7 +4,7 @@ import { HeroSliderClient } from "./HeroSliderClient";
 
 const slides = [
   { bg: "/images/hero-maison-bois-alpine.jpg", alt: "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie" },
-  { bg: "/images/hero-maison-bois-montagne-1.jpg", alt: "Maison ossature bois en montagne — Genevois français" },
+  { bg: "/images/hero-maison-bois-montagne-1.jpg", alt: "Maison ossature bois en montagne — Grand Genève" },
   { bg: "/images/hero-extension-bois-golden.jpg", alt: "Extension ossature bois en Haute-Savoie" },
   { bg: "/images/hero-extension-bois-jardin.jpg", alt: "Terrasse et extension bois en Haute-Savoie" },
   { bg: "/images/hero-maison-bois-montagne-2.jpg", alt: "Maison ossature bois R+1 — Ain et Genevois" },
@@ -44,7 +44,7 @@ export function HeroSlider() {
           </span>
         </h1>
         <p className="mt-4 text-white text-[16px] md:text-[18px] leading-[1.5] drop-shadow font-medium max-w-[480px]">
-          Un seul interlocuteur du projet à la réception des travaux. Maîtrise d&apos;œuvre spécialisée, Genevois français · Haute-Savoie · Ain.
+          Un seul interlocuteur du projet à la réception des travaux. Maîtrise d&apos;œuvre spécialisée, Grand Genève · Haute-Savoie · Ain.
         </p>
         <div className="flex flex-wrap gap-3 mt-6">
           <Link href="/demande-etude/" className="inline-block bg-[#BA7517] text-white text-[15px] md:text-[17px] font-bold px-6 py-3 no-underline hover:bg-[#9E6312] transition-colors">
