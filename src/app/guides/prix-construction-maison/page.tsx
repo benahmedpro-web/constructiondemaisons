@@ -48,7 +48,7 @@ const faqItems = [
       name: "Quel budget prévoir pour une maison neuve de 120m² en Haute-Savoie en 2026 ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Pour une maison neuve de 120 m² en ossature bois dans le Grand Genève, comptez 250 000 à 340 000 € HT pour les seuls travaux de construction. En ajoutant le foncier (150 000 à 400 000 € selon la commune), les honoraires de maîtrise d'œuvre (8–12 %), les études et les raccordements, le budget total oscille généralement entre 500 000 et 800 000 €.",
+        text: "Pour une maison neuve de 120 m² en ossature bois dans le Grand Genève, comptez 204 000 à 336 000 € HT pour les seuls travaux de construction. En ajoutant le foncier (150 000 à 400 000 € selon la commune), les honoraires de maîtrise d'œuvre (8–12 %), les études et les raccordements, le budget total oscille généralement entre 500 000 et 800 000 €.",
       },
     },
     {
@@ -95,13 +95,13 @@ const typesProjets = [
   {
     type: "Maison neuve ossature bois",
     surface: "120 m²",
-    fourchette: "250 000 – 340 000 €",
+    fourchette: "282 000 – 491 000 €",
     note: "Hors foncier, hors MOE",
   },
   {
     type: "Maison neuve ossature bois",
     surface: "150 m²",
-    fourchette: "310 000 – 420 000 €",
+    fourchette: "348 000 – 604 000 €",
     note: "Hors foncier, hors MOE",
   },
   {
@@ -223,7 +223,7 @@ export default function GuidePrixConstructionMaisonPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[12px] text-[#888780] italic mb-10">Estimations HT en zone Grand Genève. Mis à jour juin 2026 — peuvent varier selon les conditions d&apos;accès, la nature du sol et le niveau de finition.</p>
+            <p className="text-[12px] text-[#888780] italic mb-10">Estimations HT en zone Grand Genève, grille unique du site. Mis à jour septembre 2026 — peuvent varier selon les conditions d&apos;accès, la nature du sol et le niveau de finition.</p>
 
             {/* Budget global exemple */}
             <h2 className="text-[24px] font-bold text-[#2C2C2A] mt-4 mb-4">Budget global : exemple pour une maison neuve 120 m²</h2>
@@ -234,13 +234,13 @@ export default function GuidePrixConstructionMaisonPage() {
               <p className="text-[13px] font-bold text-[#BA7517] uppercase tracking-widest mb-4">Exemple — Maison 120 m², Annemasse, terrain plat</p>
               <div className="flex flex-col gap-2.5">
                 {([
-                  ["Travaux de construction HT", "250 000 – 340 000 €", false],
+                  ["Travaux de construction HT", "204 000 – 336 000 €", false],
                   ["Foncier (terrain 500 m² à 300–500 €/m²)", "150 000 – 250 000 €", false],
-                  ["Honoraires MOE (10 % des travaux)", "25 000 – 34 000 €", false],
+                  ["Honoraires MOE (8–12 % des travaux)", "16 300 – 40 300 €", false],
                   ["Études (géotechnique, thermique, structure)", "5 000 – 8 000 €", false],
                   ["VRD et raccordements réseaux", "10 000 – 25 000 €", false],
                   ["Frais notaire + taxes (TFNB, permis)", "15 000 – 25 000 €", false],
-                  ["Budget total TTC estimatif", "560 000 – 790 000 €", true],
+                  ["Budget total TTC estimatif (travaux, honoraires, études et VRD à 20 % de TVA, foncier et frais hors TVA)", "447 000 – 766 000 €", true],
                 ] as [string, string, boolean][]).map(([label, val, total]) => (
                   <div key={label} className={`flex justify-between text-[14px] border-b border-[#D9D4CC] pb-2 last:border-0 last:pt-1 ${total ? "font-bold text-[#2C2C2A]" : ""}`}>
                     <span className={total ? "text-[#2C2C2A]" : "text-[#888780]"}>{label}</span>
@@ -305,9 +305,9 @@ export default function GuidePrixConstructionMaisonPage() {
             <h2 className="text-[20px] font-bold text-[#2C2C2A] mb-5">Budgets détaillés par surface</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
               {[
-                { href: "/guides/prix-maison-ossature-bois-100m2/", label: "Maison 100 m²", detail: "210 000 – 290 000 €" },
-                { href: "/guides/prix-maison-ossature-bois-120m2/", label: "Maison 120 m²", detail: "250 000 – 340 000 €" },
-                { href: "/guides/prix-maison-ossature-bois-150m2/", label: "Maison 150 m²", detail: "310 000 – 420 000 €" },
+                { href: "/guides/prix-maison-ossature-bois-100m2/", label: "Maison 100 m²", detail: "238 000 – 416 000 €" },
+                { href: "/guides/prix-maison-ossature-bois-120m2/", label: "Maison 120 m²", detail: "282 000 – 491 000 €" },
+                { href: "/guides/prix-maison-ossature-bois-150m2/", label: "Maison 150 m²", detail: "348 000 – 604 000 €" },
               ].map((g) => (
                 <Link key={g.href} href={g.href} className="bg-white border border-[#D9D4CC] p-4 no-underline hover:border-[#BA7517] transition-colors group block">
                   <div className="text-[14px] font-bold text-[#2C2C2A] group-hover:text-[#BA7517] transition-colors mb-1">{g.label}</div>

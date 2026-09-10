@@ -251,7 +251,7 @@ export default function GuidePrixMaisonBoisPage() {
               <div className="flex flex-col gap-2">
                 {[
                   ["Travaux de construction HT", "240 000 – 300 000 €"],
-                  ["Honoraires MOE (10 %)", "24 000 – 30 000 €"],
+                  ["Honoraires MOE (10 %, hypothèse médiane de 8–12 %)", "24 000 – 30 000 €"],
                   ["Études (géotechnique, structure, thermique)", "5 000 – 8 000 €"],
                   ["VRD et raccordements", "10 000 – 25 000 €"],
                   ["Foncier (300 €/m² × 500 m²)", "150 000 €"],
@@ -263,8 +263,8 @@ export default function GuidePrixMaisonBoisPage() {
                   </div>
                 ))}
                 <div className="flex justify-between text-[15px] font-bold text-[#2C2C2A] pt-1 mt-1">
-                  <span>Budget total TTC estimatif</span>
-                  <span className="text-[#BA7517]">550 000 – 680 000 €</span>
+                  <span>Budget total TTC estimatif (TVA 20 % sur travaux, honoraires, études et VRD ; foncier et frais hors TVA)</span>
+                  <span className="text-[#BA7517]">500 000 – 611 000 €</span>
                 </div>
               </div>
               <p className="text-[12px] text-[#888780] mt-3">Estimation indicative — hors terrain en pente, hors prestations haut de gamme. TVA à 20 % sur travaux.</p>

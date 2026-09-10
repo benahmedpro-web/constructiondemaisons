@@ -32,7 +32,7 @@ const faqItems = [
       name: "Quel budget prévoir pour une maison ossature bois de 120m² en Haute-Savoie ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Comptez entre 250 000 € et 340 000 € TTC hors terrain pour une maison ossature bois de 120m² en Haute-Savoie, honoraires maîtrise d'œuvre et VRD inclus. La fourchette basse correspond à un terrain plan, des finitions standards et un chauffage au poêle à bois. La fourchette haute intègre un terrain en dénivelé, des fondations spéciales, un système PAC air-eau et des menuiseries triple vitrage.",
+        text: "Comptez entre 282 000 € et 491 000 € TTC hors terrain pour une maison ossature bois de 120m² en Haute-Savoie, honoraires de maîtrise d'œuvre, études et VRD inclus. La fourchette basse correspond à un terrain plan, des finitions standards et un chauffage au poêle à bois. La fourchette haute intègre un terrain en dénivelé, des fondations spéciales, un système PAC air-eau et des menuiseries triple vitrage.",
       },
     },
     {
@@ -79,18 +79,19 @@ const jsonLdBreadcrumb = {
 };
 
 const postes = [
-  { poste: "Terrassement & fondations", bas: "20 000", haut: "45 000", note: "Emprise plus grande qu'un 100m² ; fondations parasismiques et drainage si terrain argileux" },
-  { poste: "Ossature bois & charpente", bas: "38 000", haut: "62 000", note: "Murs ossature bois, solives, charpente — volume plus important que le 100m²" },
-  { poste: "Isolation & étanchéité à l'air", bas: "19 000", haut: "31 000", note: "Isolation soufflée ouate de cellulose, frein-vapeur intello, test pressurisation" },
-  { poste: "Couverture & zinguerie", bas: "12 000", haut: "24 000", note: "Surface de toiture supérieure ; tuile, bac acier ou zinc selon PLU" },
-  { poste: "Menuiseries extérieures", bas: "22 000", haut: "38 000", note: "Plus de fenêtres et baies pour 120m² ; triple vitrage recommandé en zone montagne" },
-  { poste: "Bardage & façade", bas: "12 000", haut: "24 000", note: "Bardage bois brûlé, composite ou enduit — surface de façade plus importante" },
-  { poste: "Électricité, chauffage, VMC", bas: "20 000", haut: "32 000", note: "PAC air-eau ou poêle à bois + insert, VMC double flux, tableau élargi" },
-  { poste: "Plomberie & sanitaires", bas: "12 000", haut: "22 000", note: "Salle de bain + salle d'eau ou WC supplémentaire selon programme" },
-  { poste: "Cloisons & doublages", bas: "9 000", haut: "16 000", note: "Plaquisterie intérieure — volume supérieur au 100m²" },
-  { poste: "Revêtements de sol", bas: "9 000", haut: "18 000", note: "Parquet, carrelage ou béton ciré sur 120m² de surface habitable" },
-  { poste: "VRD & branchements", bas: "12 000", haut: "28 000", note: "Voirie, eau, électricité, assainissement — coût indépendant de la surface" },
-  { poste: "Honoraires MOE (8–10 %)", bas: "17 000", haut: "24 000", note: "Études, DCE, direction de travaux, OPR — basés sur le coût travaux HT" },
+  { poste: "Terrassement & fondations", bas: "24 000", haut: "48 000", note: "Emprise plus grande qu'un 100m² ; fondations parasismiques et drainage si terrain argileux" },
+  { poste: "Ossature bois & charpente", bas: "45 000", haut: "67 000", note: "Murs ossature bois, solives, charpente — volume plus important que le 100m²" },
+  { poste: "Isolation & étanchéité à l'air", bas: "22 000", haut: "33 000", note: "Isolation soufflée ouate de cellulose, frein-vapeur intello, test pressurisation" },
+  { poste: "Couverture & zinguerie", bas: "14 000", haut: "26 000", note: "Surface de toiture supérieure ; tuile, bac acier ou zinc selon PLU" },
+  { poste: "Menuiseries extérieures", bas: "26 000", haut: "41 000", note: "Plus de fenêtres et baies pour 120m² ; triple vitrage recommandé en zone montagne" },
+  { poste: "Bardage & façade", bas: "14 000", haut: "26 000", note: "Bardage bois brûlé, composite ou enduit — surface de façade plus importante" },
+  { poste: "Électricité, chauffage, VMC", bas: "24 000", haut: "34 000", note: "PAC air-eau ou poêle à bois + insert, VMC double flux, tableau élargi" },
+  { poste: "Plomberie & sanitaires", bas: "14 000", haut: "24 000", note: "Salle de bain + salle d'eau ou WC supplémentaire selon programme" },
+  { poste: "Cloisons & doublages", bas: "11 000", haut: "17 000", note: "Plaquisterie intérieure — volume supérieur au 100m²" },
+  { poste: "Revêtements de sol", bas: "10 000", haut: "20 000", note: "Parquet, carrelage ou béton ciré sur 120m² de surface habitable" },
+  { poste: "Études (géotechnique, structure, thermique)", bas: "5 000", haut: "8 000", note: "Étude de sol G2, calcul de structure bois, étude thermique RE2020" },
+  { poste: "VRD & branchements", bas: "10 000", haut: "25 000", note: "Voirie, eau, électricité, assainissement — coût indépendant de la surface" },
+  { poste: "Honoraires MOE (8–12 %)", bas: "16 300", haut: "40 300", note: "Études, DCE, direction de travaux, OPR — basés sur le coût travaux HT" },
 ];
 
 export default function PrixMaison120m2Page() {
@@ -119,11 +120,11 @@ export default function PrixMaison120m2Page() {
             </h1>
             <div className="flex flex-wrap gap-4 mt-4 mb-4">
               <div className="bg-white/10 px-4 py-2.5 text-center">
-                <div className="text-[22px] font-black text-[#BA7517]">250 000 €</div>
+                <div className="text-[22px] font-black text-[#BA7517]">282 000 €</div>
                 <div className="text-[11px] text-white/50 uppercase tracking-wide">Budget bas (TTC)</div>
               </div>
               <div className="bg-white/10 px-4 py-2.5 text-center">
-                <div className="text-[22px] font-black text-[#BA7517]">340 000 €</div>
+                <div className="text-[22px] font-black text-[#BA7517]">491 000 €</div>
                 <div className="text-[11px] text-white/50 uppercase tracking-wide">Budget haut (TTC)</div>
               </div>
               <div className="bg-white/10 px-4 py-2.5 text-center">
@@ -185,13 +186,13 @@ export default function PrixMaison120m2Page() {
               ))}
               <div className="grid grid-cols-[1fr_90px_90px] bg-[#2C2C2A] text-white p-3">
                 <div className="font-bold text-[14px]">Total indicatif TTC</div>
-                <div className="text-center font-bold text-[14px]">202 000 €</div>
-                <div className="text-center font-bold text-[14px] text-[#BA7517]">364 000 €</div>
+                <div className="text-center font-bold text-[14px]">282 000 €</div>
+                <div className="text-center font-bold text-[14px] text-[#BA7517]">491 000 €</div>
               </div>
             </div>
 
             <p className="text-[14px] text-[#888780] leading-[1.7] mb-8 italic">
-              Ces estimations s&apos;entendent hors terrain et hors taxe d&apos;aménagement. Prévoyez 6 000 à 15 000 € de taxe d&apos;aménagement selon la commune et la surface taxable de votre projet.
+              Méthode : coût de construction de 1 700 à 2 800 € HT/m² (grille unique du site, septembre 2026) soit 204 000 à 336 000 € HT pour 120 m², plus études 5 000 à 8 000 €, VRD 10 000 à 25 000 € et honoraires 8 à 12 %, TVA 20 %. Ces estimations s&apos;entendent hors terrain et hors taxe d&apos;aménagement. Prévoyez 6 000 à 15 000 € de taxe d&apos;aménagement selon la commune et la surface taxable de votre projet.
             </p>
 
             <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">R+1 ou plain-pied pour 120m² en Haute-Savoie ?</h2>
@@ -277,11 +278,11 @@ export default function PrixMaison120m2Page() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link href="/guides/prix-maison-ossature-bois-100m2/" className="block p-4 border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
                 <div className="font-bold text-[15px] text-[#2C2C2A] group-hover:text-[#BA7517]">Budget maison 100m²</div>
-                <div className="text-[13px] text-[#888780] mt-1">210 000 – 290 000 € TTC</div>
+                <div className="text-[13px] text-[#888780] mt-1">238 000 – 416 000 € TTC</div>
               </Link>
               <Link href="/guides/prix-maison-ossature-bois-150m2/" className="block p-4 border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
                 <div className="font-bold text-[15px] text-[#2C2C2A] group-hover:text-[#BA7517]">Budget maison 150m²</div>
-                <div className="text-[13px] text-[#888780] mt-1">310 000 – 420 000 € TTC</div>
+                <div className="text-[13px] text-[#888780] mt-1">348 000 – 604 000 € TTC</div>
               </Link>
             </div>
           </div>

@@ -32,7 +32,7 @@ const faqItems = [
       name: "Quel est le budget réaliste pour une maison ossature bois de 100m² en Haute-Savoie ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hors terrain, comptez entre 210 000 € et 290 000 € TTC pour une maison ossature bois de 100m² en Haute-Savoie, honoraires maîtrise d'œuvre et VRD inclus. La fourchette basse correspond à un projet plain-pied sur terrain plat avec des finitions standards. La fourchette haute correspond à un terrain en pente avec fondations spéciales, RE2020 renforcé et finitions de niveau intermédiaire.",
+        text: "Hors terrain, comptez entre 238 000 € et 416 000 € TTC pour une maison ossature bois de 100m² en Haute-Savoie, honoraires de maîtrise d'œuvre, études et VRD inclus. La fourchette basse correspond à un projet plain-pied sur terrain plat avec des finitions standards. La fourchette haute correspond à un terrain en pente avec fondations spéciales, RE2020 renforcé et finitions de niveau intermédiaire.",
       },
     },
     {
@@ -48,7 +48,7 @@ const faqItems = [
       name: "Peut-on construire une maison ossature bois de 100m² à moins de 200 000 € en Haute-Savoie ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "C'est difficile à réaliser sur un chantier complet en Haute-Savoie. Un budget de 200 000 € TTC représente 2 000 €/m² — ce qui correspond à la limite basse du marché local pour l'ossature bois, sur terrain plat et accessible, avec des finitions très simples. Sous ce seuil, il faut compter sur une auto-finition partielle ou un apport personnel conséquent.",
+        text: "C'est difficile à réaliser sur un chantier complet en Haute-Savoie. Un budget de 200 000 € TTC représente 2 000 € TTC/m², soit environ 1 670 € HT/m² : c'est déjà sous la fourchette basse constatée en Haute-Savoie (1 700 € HT/m²), avant même les études, la VRD et les honoraires. Ce n'est envisageable que sur terrain plat et accessible, avec des finitions très simples et une surface très compacte. Sous ce seuil, il faut compter sur une auto-finition partielle ou un apport personnel conséquent.",
       },
     },
     {
@@ -56,7 +56,7 @@ const faqItems = [
       name: "Les honoraires du maître d'œuvre sont-ils inclus dans les chiffres donnés ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Oui. Les fourchettes présentées incluent les honoraires de maîtrise d'œuvre (8 à 10 % du coût travaux HT), soit environ 14 000 à 20 000 € pour un projet de 100m². Ces honoraires couvrent l'étude de faisabilité, les plans, la consultation des entreprises, la direction de chantier et l'assistance à réception.",
+        text: "Oui. Les fourchettes présentées incluent les honoraires de maîtrise d'œuvre (8 à 12 % du coût travaux HT), soit environ 13 600 à 33 600 € pour un projet de 100m². Ces honoraires couvrent l'étude de faisabilité, les plans, la consultation des entreprises, la direction de chantier et l'assistance à réception.",
       },
     },
 ];
@@ -79,18 +79,19 @@ const jsonLdBreadcrumb = {
 };
 
 const postes = [
-  { poste: "Terrassement & fondations", bas: "18 000", haut: "38 000", note: "Fondations profondes si terrain en pente ou argileux ; prescriptions sismiques zone 3" },
-  { poste: "Ossature bois & charpente", bas: "32 000", haut: "52 000", note: "Murs à ossature bois, poteaux, poutres, charpente industrielle ou traditionnelle" },
-  { poste: "Isolation & étanchéité à l'air", bas: "16 000", haut: "26 000", note: "Ouate de cellulose ou laine de bois soufflée, membrane frein-vapeur, test blower door" },
-  { poste: "Couverture & zinguerie", bas: "10 000", haut: "20 000", note: "Tuile béton, bac acier ou zinc selon PLU ; surcoût si forte pente" },
-  { poste: "Menuiseries extérieures", bas: "18 000", haut: "32 000", note: "Fenêtres triple vitrage, baie coulissante, porte d'entrée — prix élevé en zone montagne" },
-  { poste: "Bardage & façade", bas: "10 000", haut: "20 000", note: "Bardage bois, composite ou enduit selon PLU communal" },
-  { poste: "Électricité, chauffage, VMC", bas: "18 000", haut: "28 000", note: "Tableau, gaines, PAC air-eau ou poêle à bois, VMC double flux" },
-  { poste: "Plomberie & sanitaires", bas: "10 000", haut: "18 000", note: "Salle de bain, WC, cuisine (hors équipements), réseau EF/EC" },
-  { poste: "Cloisons & doublages", bas: "7 000", haut: "13 000", note: "Plaquisterie intérieure, isolation phonique entre pièces" },
-  { poste: "Revêtements de sol", bas: "7 000", haut: "14 000", note: "Carrelage, parquet ou béton ciré — choix impactant sur le budget finitions" },
-  { poste: "VRD & branchements", bas: "12 000", haut: "28 000", note: "Voirie, réseaux divers — coût variable selon distance au réseau existant" },
-  { poste: "Honoraires MOE (8–10 %)", bas: "14 000", haut: "20 000", note: "Études, consultation entreprises, direction travaux, assistance réception" },
+  { poste: "Terrassement & fondations", bas: "21 000", haut: "41 000", note: "Fondations profondes si terrain en pente ou argileux ; prescriptions sismiques zone 3" },
+  { poste: "Ossature bois & charpente", bas: "37 000", haut: "56 000", note: "Murs à ossature bois, poteaux, poutres, charpente industrielle ou traditionnelle" },
+  { poste: "Isolation & étanchéité à l'air", bas: "19 000", haut: "28 000", note: "Ouate de cellulose ou laine de bois soufflée, membrane frein-vapeur, test blower door" },
+  { poste: "Couverture & zinguerie", bas: "12 000", haut: "21 000", note: "Tuile béton, bac acier ou zinc selon PLU ; surcoût si forte pente" },
+  { poste: "Menuiseries extérieures", bas: "21 000", haut: "34 000", note: "Fenêtres triple vitrage, baie coulissante, porte d'entrée — prix élevé en zone montagne" },
+  { poste: "Bardage & façade", bas: "12 000", haut: "21 000", note: "Bardage bois, composite ou enduit selon PLU communal" },
+  { poste: "Électricité, chauffage, VMC", bas: "21 000", haut: "30 000", note: "Tableau, gaines, PAC air-eau ou poêle à bois, VMC double flux" },
+  { poste: "Plomberie & sanitaires", bas: "12 000", haut: "19 000", note: "Salle de bain, WC, cuisine (hors équipements), réseau EF/EC" },
+  { poste: "Cloisons & doublages", bas: "8 000", haut: "14 000", note: "Plaquisterie intérieure, isolation phonique entre pièces" },
+  { poste: "Revêtements de sol", bas: "7 000", haut: "16 000", note: "Carrelage, parquet ou béton ciré — choix impactant sur le budget finitions" },
+  { poste: "Études (géotechnique, structure, thermique)", bas: "5 000", haut: "8 000", note: "Étude de sol G2, calcul de structure bois, étude thermique RE2020" },
+  { poste: "VRD & branchements", bas: "10 000", haut: "25 000", note: "Voirie, réseaux divers — coût variable selon distance au réseau existant" },
+  { poste: "Honoraires MOE (8–12 %)", bas: "13 600", haut: "33 600", note: "Études, consultation entreprises, direction travaux, assistance réception" },
 ];
 
 export default function PrixMaison100m2Page() {
@@ -119,11 +120,11 @@ export default function PrixMaison100m2Page() {
             </h1>
             <div className="flex flex-wrap gap-4 mt-4 mb-4">
               <div className="bg-white/10 px-4 py-2.5 text-center">
-                <div className="text-[22px] font-black text-[#BA7517]">210 000 €</div>
+                <div className="text-[22px] font-black text-[#BA7517]">238 000 €</div>
                 <div className="text-[11px] text-white/50 uppercase tracking-wide">Budget bas (TTC)</div>
               </div>
               <div className="bg-white/10 px-4 py-2.5 text-center">
-                <div className="text-[22px] font-black text-[#BA7517]">290 000 €</div>
+                <div className="text-[22px] font-black text-[#BA7517]">416 000 €</div>
                 <div className="text-[11px] text-white/50 uppercase tracking-wide">Budget haut (TTC)</div>
               </div>
               <div className="bg-white/10 px-4 py-2.5 text-center">
@@ -185,13 +186,13 @@ export default function PrixMaison100m2Page() {
               ))}
               <div className="grid grid-cols-[1fr_90px_90px] bg-[#2C2C2A] text-white p-3">
                 <div className="font-bold text-[14px]">Total indicatif TTC</div>
-                <div className="text-center font-bold text-[14px]">172 000 €</div>
-                <div className="text-center font-bold text-[14px] text-[#BA7517]">309 000 €</div>
+                <div className="text-center font-bold text-[14px]">238 000 €</div>
+                <div className="text-center font-bold text-[14px] text-[#BA7517]">416 000 €</div>
               </div>
             </div>
 
             <p className="text-[14px] text-[#888780] leading-[1.7] mb-8 italic">
-              Ces estimations s&apos;entendent hors terrain et hors taxe d&apos;aménagement. La taxe d&apos;aménagement varie de 3 à 8 % de la surface selon la commune (commune urbaine dense ou zone rurale). Prévoyez 5 000 à 12 000 € supplémentaires selon votre localisation.
+              Méthode : coût de construction de 1 700 à 2 800 € HT/m² (grille unique du site, septembre 2026) soit 170 000 à 280 000 € HT pour 100 m², plus études 5 000 à 8 000 €, VRD 10 000 à 25 000 € et honoraires 8 à 12 %, TVA 20 %. Ces estimations s&apos;entendent hors terrain et hors taxe d&apos;aménagement. La taxe d&apos;aménagement varie de 3 à 8 % de la surface selon la commune (commune urbaine dense ou zone rurale). Prévoyez 5 000 à 12 000 € supplémentaires selon votre localisation.
             </p>
 
             <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Spécificités Haute-Savoie pour une maison de 100m²</h2>
@@ -252,7 +253,7 @@ export default function PrixMaison100m2Page() {
 
             <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Rôle du maître d&apos;œuvre sur un projet de 100m²</h2>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-              Sur un projet de cette taille, les honoraires MOE (14 000 à 20 000 €) sont souvent récupérés dès la mise en concurrence des entreprises. Sur un 100m², la différence entre l&apos;offre la plus basse et la plus haute pour un même lot peut atteindre 15 000 à 30 000 €. Le maître d&apos;œuvre analyse ces écarts, vérifie que les offres sont comparables techniquement, et vous conseille sur le bon choix — pas forcément le moins cher.
+              Sur un projet de cette taille, les honoraires MOE (13 600 à 33 600 €) sont souvent récupérés dès la mise en concurrence des entreprises. Sur un 100m², la différence entre l&apos;offre la plus basse et la plus haute pour un même lot peut atteindre 15 000 à 30 000 €. Le maître d&apos;œuvre analyse ces écarts, vérifie que les offres sont comparables techniquement, et vous conseille sur le bon choix — pas forcément le moins cher.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8]">
               Sur la phase chantier, les visites régulières permettent de détecter les non-conformités avant qu&apos;elles ne deviennent des réserves à la réception. Sur une maison ossature bois de 100m², les points critiques sont l&apos;étanchéité à l&apos;air, les jonctions menuiseries/bardage, et la qualité des ancrages parasismiques.
@@ -289,11 +290,11 @@ export default function PrixMaison100m2Page() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link href="/guides/prix-maison-ossature-bois-120m2/" className="block p-4 border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
                 <div className="font-bold text-[15px] text-[#2C2C2A] group-hover:text-[#BA7517]">Budget maison 120m²</div>
-                <div className="text-[13px] text-[#888780] mt-1">250 000 – 340 000 € TTC</div>
+                <div className="text-[13px] text-[#888780] mt-1">282 000 – 491 000 € TTC</div>
               </Link>
               <Link href="/guides/prix-maison-ossature-bois-150m2/" className="block p-4 border border-[#D9D4CC] no-underline hover:border-[#BA7517] transition-colors group">
                 <div className="font-bold text-[15px] text-[#2C2C2A] group-hover:text-[#BA7517]">Budget maison 150m²</div>
-                <div className="text-[13px] text-[#888780] mt-1">310 000 – 420 000 € TTC</div>
+                <div className="text-[13px] text-[#888780] mt-1">348 000 – 604 000 € TTC</div>
               </Link>
             </div>
           </div>

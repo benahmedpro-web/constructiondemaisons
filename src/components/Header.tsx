@@ -215,15 +215,15 @@ export function Header() {
                   </Link>
                   <Link href="/guides/prix-maison-ossature-bois-100m2/" className="block no-underline group">
                     <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Maison 100 m²</div>
-                    <div className="text-[#888780] text-[12px]">210 000 – 290 000 € · budget détaillé.</div>
+                    <div className="text-[#888780] text-[12px]">238 000 – 416 000 € · budget détaillé.</div>
                   </Link>
                   <Link href="/guides/prix-maison-ossature-bois-120m2/" className="block no-underline group">
                     <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Maison 120 m²</div>
-                    <div className="text-[#888780] text-[12px]">250 000 – 340 000 € · budget détaillé.</div>
+                    <div className="text-[#888780] text-[12px]">282 000 – 491 000 € · budget détaillé.</div>
                   </Link>
                   <Link href="/guides/prix-maison-ossature-bois-150m2/" className="block no-underline group">
                     <div className="font-bold text-[#2C2C2A] text-[14px] mb-0.5 group-hover:text-[#BA7517]">Maison 150 m²</div>
-                    <div className="text-[#888780] text-[12px]">310 000 – 420 000 € · budget détaillé.</div>
+                    <div className="text-[#888780] text-[12px]">348 000 – 604 000 € · budget détaillé.</div>
                   </Link>
                   <div className="mt-auto pt-4 border-t border-[#D9D4CC]">
                     <Link href="/guides/" className="text-[12px] text-[#BA7517] no-underline hover:underline font-medium">
