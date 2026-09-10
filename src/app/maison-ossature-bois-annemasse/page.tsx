@@ -42,7 +42,7 @@ const faqItems = [
       name: "Quel est le prix d'une maison ossature bois à Annemasse ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dans l'agglomération d'Annemasse, le coût de construction d'une maison ossature bois varie entre 1 900 et 2 700 € HT/m² selon les prestations. Le prix foncier dans le Genevois est élevé (300 à 700 €/m² selon les quartiers). Une étude gratuite permet d'obtenir une estimation précise pour votre terrain.",
+        text: "Dans l'agglomération d'Annemasse, le coût de construction d'une maison ossature bois varie entre 1 900 et 2 600 € HT/m² selon les prestations. Le prix foncier dans le Genevois est élevé (300 à 700 €/m² selon les quartiers). Une étude gratuite permet d'obtenir une estimation précise pour votre terrain.",
       },
     },
 ];

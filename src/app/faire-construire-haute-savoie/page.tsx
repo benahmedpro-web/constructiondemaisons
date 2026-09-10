@@ -42,7 +42,7 @@ const jsonLdService = {
 const faqItems = [
   {
     name: "Combien coûte la construction d'une maison en Haute-Savoie ?",
-    acceptedAnswer: { text: "En Haute-Savoie, le coût de construction d'une maison ossature bois varie entre 1 800 et 2 800 € HT/m² selon les prestations, le terrain et les contraintes techniques. Les zones à fort prix foncier (Genevois, rives du lac Léman) peuvent dépasser ce seuil. Une étude gratuite permet d'obtenir une estimation précise pour votre projet." },
+    acceptedAnswer: { text: "En Haute-Savoie, le coût de construction d'une maison ossature bois varie entre 1 700 et 2 800 € HT/m² selon les prestations, le secteur, le terrain et les contraintes techniques. Les zones à fort prix foncier (Genevois, rives du lac Léman) peuvent dépasser ce seuil. Une étude gratuite permet d'obtenir une estimation précise pour votre projet." },
   },
   {
     name: "Quelle est la différence entre un constructeur CCMI et une maîtrise d'œuvre en Haute-Savoie ?",

@@ -42,7 +42,7 @@ const faqItems = [
       name: "Quel est le prix d'une maison ossature bois à Saint-Julien-en-Genevois ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dans le secteur de Saint-Julien-en-Genevois, zone très prisée des frontaliers suisses, le foncier est élevé (400 à 800 €/m² selon les secteurs). Le coût de construction d'une maison ossature bois se situe entre 1 900 et 2 700 € HT/m², auquel s'ajoute la viabilisation et les éventuels surcoûts liés au terrain en pente.",
+        text: "Dans le secteur de Saint-Julien-en-Genevois, zone très prisée des frontaliers suisses, le foncier est élevé (400 à 800 €/m² selon les secteurs). Le coût de construction d'une maison ossature bois se situe entre 2 000 et 2 700 € HT/m², auquel s'ajoute la viabilisation et les éventuels surcoûts liés au terrain en pente.",
       },
     },
 ];

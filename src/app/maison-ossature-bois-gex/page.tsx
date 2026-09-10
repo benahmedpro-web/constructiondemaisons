@@ -42,7 +42,7 @@ const faqItems = [
       name: "Quel budget pour une maison ossature bois dans le Pays de Gex ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Le Pays de Gex est l'une des zones les plus chères de France hors Île-de-France pour le foncier (500 à 1 000 €/m² selon les communes). Le coût de construction d'une maison ossature bois se situe entre 2 000 et 2 800 € HT/m². À budget total, la maison sur mesure en MOE est souvent plus rentable qu'un CCMI catalogue sur cette zone.",
+        text: "Le Pays de Gex est l'une des zones les plus chères de France hors Île-de-France pour le foncier (500 à 1 000 €/m² selon les communes). Le coût de construction d'une maison ossature bois se situe entre 2 100 et 2 800 € HT/m². À budget total, la maison sur mesure en MOE est souvent plus rentable qu'un CCMI catalogue sur cette zone.",
       },
     },
 ];

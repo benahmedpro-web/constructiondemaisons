@@ -125,7 +125,7 @@ export default function ExtensionBoisPage() {
               En zone sismique 3 (Genevois français, Annecy, Annemasse), la légèreté structurelle de l&apos;ossature bois réduit les contraintes sur les fondations existantes — un avantage décisif par rapport à une extension maçonnée, qui nécessite souvent des travaux de reprise en sous-œuvre.
             </p>
             <p className="text-[16px] text-[#888780] leading-[1.8]">
-              Sur le plan budgétaire, une extension ossature bois en Haute-Savoie représente généralement entre 1 500 et 2 200 €/m² de surface créée, selon la complexité de l&apos;intégration structurelle et le niveau de finitions. Le chantier d&apos;une extension de 20 à 40 m² dure en moyenne 4 à 8 semaines une fois le permis obtenu — soit un délai total de 6 à 12 mois du premier échange à la réception, permis de construire inclus.
+              Sur le plan budgétaire, une extension ossature bois en Haute-Savoie représente généralement entre 1 600 et 2 400 € HT/m² de surface créée, selon la complexité de l&apos;intégration structurelle et le niveau de finitions. Le chantier d&apos;une extension de 20 à 40 m² dure en moyenne 4 à 8 semaines une fois le permis obtenu — soit un délai total de 6 à 12 mois du premier échange à la réception, permis de construire inclus.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4">

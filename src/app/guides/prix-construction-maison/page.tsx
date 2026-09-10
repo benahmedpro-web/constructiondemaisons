@@ -40,7 +40,7 @@ const faqItems = [
       name: "Quel est le prix moyen d'une construction de maison en 2026 ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "En France, le coût de construction d'une maison neuve varie entre 1 400 et 2 500 € HT/m² selon la région, les matériaux et les prestations. Dans le Grand Genève (Haute-Savoie, Ain frontalier), les prix sont structurellement plus élevés : de 1 800 à 2 800 € HT/m² pour une maison ossature bois, hors foncier et hors honoraires.",
+        text: "En France, le coût de construction d'une maison neuve varie entre 1 400 et 2 500 € HT/m² selon la région, les matériaux et les prestations. Dans le Grand Genève (Haute-Savoie, Ain frontalier), les prix sont structurellement plus élevés : de 1 700 à 2 800 € HT/m² pour une maison ossature bois, hors foncier, hors VRD et hors honoraires.",
       },
     },
     {
@@ -56,7 +56,7 @@ const faqItems = [
       name: "Une extension coûte-t-elle moins cher qu'une maison neuve ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Au m², une extension revient souvent plus cher qu'une maison neuve (2 000 à 3 200 € HT/m²) car les contraintes d'interface avec l'existant sont complexes : ouvertures en pignon, raccordements aux réseaux existants, adaptation de la toiture. En revanche, le budget global est inférieur car les surfaces sont plus petites et le foncier est déjà acquis.",
+        text: "Au m², une extension ossature bois se situe entre 1 600 et 2 400 € HT/m², un niveau proche de celui d'une maison neuve malgré une surface bien plus petite, car les contraintes d'interface avec l'existant sont complexes : ouvertures en pignon, raccordements aux réseaux existants, adaptation de la toiture. En revanche, le budget global est inférieur car les surfaces sont plus petites et le foncier est déjà acquis.",
       },
     },
     {

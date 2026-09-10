@@ -156,7 +156,7 @@ export default function GuideMaisonBoisPage() {
 
           <h2 className="text-[26px] font-bold text-[#2C2C2A] mt-10 mb-4">Budget : combien coûte une maison ossature bois en 2026 ?</h2>
           <p className="text-[16px] text-[#888780] leading-[1.8] mb-4">
-            En Haute-Savoie et Ain, une maison ossature bois neuve construite en maîtrise d&apos;œuvre se situe entre 1 400 et 2 000 €/m² de surface habitable, hors terrain et hors viabilisation (VRD). Ce budget inclut la charpente ossature bois préfabriquée en atelier, l&apos;isolation thermique (laine de bois ou ouate de cellulose pour atteindre R ≥ 6 m².K/W, exigé par la RE2020), les menuiseries extérieures, le bardage bois ventilé et l&apos;ensemble des corps de métier du second œuvre (plomberie, électricité, carrelage, peinture). Les honoraires de maîtrise d&apos;œuvre (8 à 12 % du coût travaux HT) s&apos;ajoutent à ce budget mais sont souvent compensés par les économies dégagées lors de la mise en concurrence des artisans. À titre indicatif, une maison de 120 m² en zone alpine avec fondations sur terrain plat, charpente ossature bois et finitions standard revient entre 168 000 et 240 000 € hors terrain. Les principales variables sont la pente du terrain (fondations spéciales en Haute-Savoie), le niveau de finitions et la complexité architecturale.
+            En Haute-Savoie et Ain, une maison ossature bois neuve construite en maîtrise d&apos;œuvre se situe entre 1 700 et 2 800 € HT/m² de surface habitable selon le secteur et les prestations, hors terrain, hors viabilisation et hors honoraires. Le détail par secteur, poste par poste, est dans notre <Link href="/guides/prix-maison-ossature-bois-haute-savoie/" className="text-[#BA7517] underline">guide des prix en Haute-Savoie</Link>.
           </p>
           <div className="border border-[#D9D4CC] mb-6 overflow-hidden">
             <div className="grid grid-cols-3 bg-[#2C2C2A] text-white text-[12px] font-bold uppercase tracking-wide p-3">
@@ -165,11 +165,9 @@ export default function GuideMaisonBoisPage() {
               <div className="text-center">Prix haut</div>
             </div>
             {[
-              ["Ossature + charpente + isolation", "600 €/m²", "900 €/m²"],
-              ["Second œuvre (plomberie, élec, finitions)", "400 €/m²", "600 €/m²"],
-              ["Menuiseries extérieures", "100 €/m²", "180 €/m²"],
+              ["Construction fourni posé, hors terrain (selon secteur et prestations)", "1 700 € HT/m²", "2 800 € HT/m²"],
               ["Honoraires maître d'œuvre", "8 %", "12 % du coût travaux"],
-              ["Total fourni posé (hors terrain)", "1 400 €/m²", "2 000 €/m²"],
+              ["Adaptation au sol, VRD, études", "variable selon terrain", "voir guide des prix"],
             ].map((row, i) => (
               <div key={i} className={`grid grid-cols-3 p-3 text-[14px] ${i % 2 === 0 ? "bg-white" : "bg-[#F2EDE6]"}`}>
                 <div className="text-[#2C2C2A] font-medium">{row[0]}</div>

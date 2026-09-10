@@ -1,3 +1,4 @@
+import { PRIX_ZONES } from "@/lib/prix";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -32,7 +33,7 @@ const faqItems = [
       name: "Quel est le prix moyen d'une maison ossature bois en Haute-Savoie ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "En Haute-Savoie, le coût de construction d'une maison ossature bois varie entre 1 800 et 2 800 € HT/m² selon les prestations, la zone géographique et les contraintes techniques. Une maison de 120 m² représente donc un budget travaux de 216 000 à 336 000 € HT, hors foncier et hors frais annexes (raccordements, études, honoraires MOE).",
+        text: "En Haute-Savoie, le coût de construction d'une maison ossature bois varie entre 1 700 et 2 800 € HT/m² selon les prestations, la zone géographique et les contraintes techniques. Une maison de 120 m² représente donc un budget travaux de 204 000 à 336 000 € HT, hors foncier et hors frais annexes (raccordements, études, honoraires MOE).",
       },
     },
     {
@@ -96,13 +97,7 @@ const postes = [
   { poste: "VRD + raccordements", part: "5–8 %", detail: "Eau, électricité, assainissement, voirie. Variable selon éloignement des réseaux" },
 ];
 
-const zones = [
-  { zone: "Annemasse / Genevois nord", fourchette: "1 900 – 2 600 €/m²", foncier: "300 – 700 €/m²" },
-  { zone: "Saint-Julien / Genevois sud", fourchette: "2 000 – 2 700 €/m²", foncier: "400 – 800 €/m²" },
-  { zone: "Gex / Pays de Gex (01)", fourchette: "2 100 – 2 800 €/m²", foncier: "500 – 1 000 €/m²" },
-  { zone: "Thonon / Chablais", fourchette: "1 800 – 2 500 €/m²", foncier: "200 – 500 €/m²" },
-  { zone: "Zone rurale 74 (hors frontalier)", fourchette: "1 700 – 2 300 €/m²", foncier: "100 – 300 €/m²" },
-];
+const zones = PRIX_ZONES;
 
 export default function GuidePrixMaisonBoisPage() {
   return (
@@ -143,7 +138,7 @@ export default function GuidePrixMaisonBoisPage() {
               </span>
             </div>
           </Link>
-            <p className="text-white/40 text-[13px]">Mis à jour le 25 juin 2026</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 10 septembre 2026</p>
           </div>
         </div>
 
@@ -173,7 +168,7 @@ export default function GuidePrixMaisonBoisPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[13px] text-[#888780] italic mb-8">Prix indicatifs HT, hors VRD, hors honoraires MOE, hors études. Mis à jour juin 2026.</p>
+            <p className="text-[13px] text-[#888780] italic mb-8">Prix indicatifs HT au m² habitable, hors foncier, hors VRD et raccordements, hors adaptation au sol, hors honoraires de maîtrise d'œuvre, hors études. Grille unique du site, mise à jour septembre 2026.</p>
 
             <h2 className="text-[24px] font-bold text-[#2C2C2A] mt-10 mb-4">Délais de permis de construire et tension artisanale par zone</h2>
             <p className="text-[16px] text-[#888780] leading-[1.8] mb-5">

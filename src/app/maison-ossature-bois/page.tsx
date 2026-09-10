@@ -90,7 +90,7 @@ const points = [
 const faq = [
   {
     q: "Quel est le budget moyen pour une maison ossature bois en Haute-Savoie ?",
-    a: "Comptez 1 800 à 2 500 €/m² en maîtrise d'œuvre, finitions comprises, hors terrain et hors viabilisation. Sur une maison de 120 m², cela représente entre 216 000 et 300 000 €. Le coût varie selon le niveau de finition, la complexité du terrain et l'altitude du chantier. Les frais de viabilisation en Haute-Savoie oscillent généralement entre 5 000 et 15 000 € selon la distance aux réseaux.",
+    a: "Comptez 1 700 à 2 800 € HT/m² selon le secteur et les prestations, finitions comprises, hors terrain, hors viabilisation et hors honoraires. Sur une maison de 120 m², cela représente entre 204 000 et 336 000 € HT. Le coût varie selon le niveau de finition, la complexité du terrain et l'altitude du chantier. Les frais de viabilisation en Haute-Savoie oscillent généralement entre 5 000 et 15 000 € selon la distance aux réseaux.",
   },
   {
     q: "Quels sont les délais réels pour une construction maison bois en Haute-Savoie ?",

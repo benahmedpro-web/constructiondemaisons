@@ -42,7 +42,7 @@ const faqItems = [
       name: "Quel est le prix d'une maison ossature bois à Thonon-les-Bains ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dans le Chablais, le coût de construction varie entre 1 800 et 2 600 € HT/m² selon les prestations. Le foncier y est moins tendu qu'à Annecy ou dans le Genevois (200 à 500 €/m² selon les secteurs), ce qui en fait une zone intéressante pour optimiser le budget global. Une étude de faisabilité gratuite permet d'obtenir une estimation précise pour votre terrain.",
+        text: "Dans le Chablais, le coût de construction varie entre 1 800 et 2 800 € HT/m² selon les prestations et l'altitude. Le foncier y est moins tendu qu'à Annecy ou dans le Genevois (200 à 700 €/m² selon les secteurs), ce qui en fait une zone intéressante pour optimiser le budget global. Une étude de faisabilité gratuite permet d'obtenir une estimation précise pour votre terrain.",
       },
     },
     {
@@ -176,7 +176,7 @@ export default function MaisonBoisThononPage() {
                 {
                   titre: "Coteaux et arrière-pays",
                   communes: "Publier, Douvaine, Maxilly",
-                  construction: "1 700 – 2 200 €/m²",
+                  construction: "1 800 – 2 200 €/m²",
                   foncier: "200 – 400 €/m²",
                   detail: "Meilleur rapport qualité-prix. Terrains plus grands, moins de pression PLU.",
                 },
