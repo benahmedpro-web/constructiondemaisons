@@ -60,50 +60,42 @@ export function CookieBanner() {
   if (!show) return null;
 
   return (
-    <>
-      {/* Mobile : overlay sombre */}
-      <div className="fixed inset-0 z-40 bg-black/50 sm:hidden" aria-hidden="true" />
-
-      {/* Bannière / modale */}
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label="Gestion des cookies"
-        className={[
-          // Mobile : carte centrée (modale)
-          "fixed z-50 bg-[#2C2C2A] border-2 border-[#BA7517] shadow-2xl",
-          "inset-x-4 top-1/2 -translate-y-1/2 p-6 rounded-none",
-          // Desktop : bande en bas
-          "sm:inset-x-0 sm:bottom-0 sm:top-auto sm:translate-y-0 sm:rounded-none sm:border-t-2 sm:border-l-0 sm:border-r-0 sm:border-b-0 sm:px-5 sm:py-4",
-        ].join(" ")}
-      >
-        <div className="max-w-[1100px] mx-auto flex flex-col gap-4 sm:flex-row sm:items-center">
-          <p className="text-[13px] text-white/75 leading-[1.6] flex-1">
-            Ce site utilise Google Analytics pour mesurer son audience et le pixel OpenAI Ads
-            pour savoir si nos campagnes génèrent des demandes. Aucune donnée n&apos;est
-            revendue. Vous pouvez changer d&apos;avis à tout moment.{" "}
-            <Link href="/politique-cookies/" className="text-[#BA7517] hover:underline">
-              En savoir plus
-            </Link>
-            .
-          </p>
-          <div className="flex gap-3 flex-shrink-0">
-            <button
-              onClick={refuse}
-              className="flex-1 sm:flex-none border border-white/30 text-white text-[13px] font-bold px-5 py-2.5 hover:bg-white/10 transition-colors cursor-pointer"
-            >
-              Tout refuser
-            </button>
-            <button
-              onClick={accept}
-              className="flex-1 sm:flex-none bg-[#BA7517] text-white text-[13px] font-bold px-5 py-2.5 hover:bg-[#9E6312] transition-colors cursor-pointer"
-            >
-              Tout accepter
-            </button>
-          </div>
+    // Bande basse non bloquante sur tous les écrans (correction du 10/09/2026). Avant : en mobile,
+    // un overlay plein écran + une carte centrée recouvraient le sous-titre et le CTA de la landing
+    // indice-de-faisabilite, rendant la page inutilisable tant qu'un choix cookies n'était pas fait.
+    // Le RGPD n'impose pas de bloquer la page : le bandeau reste visible, les deux choix restent
+    // équivalents, le contenu reste lisible et cliquable derrière.
+    <div
+      role="dialog"
+      aria-label="Gestion des cookies"
+      className="fixed z-50 inset-x-0 bottom-0 bg-[#2C2C2A] border-t-2 border-[#BA7517] shadow-2xl px-4 py-3 sm:px-5 sm:py-4"
+    >
+      <div className="max-w-[1100px] mx-auto flex flex-col gap-3 sm:flex-row sm:items-center">
+        <p className="text-[13px] text-white/75 leading-[1.6] flex-1">
+          Ce site utilise Google Analytics pour mesurer son audience et le pixel OpenAI Ads
+          pour savoir si nos campagnes génèrent des demandes. Aucune donnée n&apos;est
+          revendue. Vous pouvez changer d&apos;avis à tout moment.{" "}
+          <Link href="/politique-cookies/" className="text-[#BA7517] hover:underline">
+            En savoir plus
+          </Link>
+          .
+        </p>
+        <div className="flex gap-3 flex-shrink-0">
+          <button
+            onClick={refuse}
+            className="flex-1 sm:flex-none border border-white/30 text-white text-[13px] font-bold px-5 py-2.5 hover:bg-white/10 transition-colors cursor-pointer"
+          >
+            Tout refuser
+          </button>
+          <button
+            onClick={accept}
+            className="flex-1 sm:flex-none bg-[#BA7517] text-white text-[13px] font-bold px-5 py-2.5 hover:bg-[#9E6312] transition-colors cursor-pointer"
+          >
+            Tout accepter
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
