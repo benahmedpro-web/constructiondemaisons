@@ -20,8 +20,14 @@ function niveauFromScore(total: number): Niveau {
 
 // Un déficit budgétaire significatif (>= 10% du budget) surclasse le statut global, quel que
 // soit le score total par ailleurs — jamais "Projet bien engagé/prometteur" dans ce cas.
+// Nuance ajoutée le 10/09/2026 (demande de Mahmoud) : quand le score seul aurait donné un niveau
+// vert (>= 60), le libellé dit les deux choses — le projet tient, c'est le budget qui coince —
+// plutôt qu'un "Projet à ajuster" sec à côté de domaines à 25/25, lu comme une contradiction.
 function statutGlobalLabel(total: number, estimate: Estimate | null): Niveau {
-  if (deficitSignificatif(estimate)) return { label: "Projet à ajuster", couleur: "orange" };
+  if (deficitSignificatif(estimate)) {
+    const solide = niveauFromScore(total).couleur === "vert";
+    return { label: solide ? "Projet solide, budget à ajuster" : "Projet à ajuster", couleur: "orange" };
+  }
   return niveauFromScore(total);
 }
 
