@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 const BASE = "https://www.constructiondemaisons.com";
 
@@ -83,6 +84,7 @@ const prestations = [
 export default function RenovationBoisPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/renovation-bois/", "Rénovation maison bois Haute-Savoie", "Coordination de travaux de rénovation thermique et d'isolation bois en Haute-Savoie, Ain et Grand Genève. ITE bardage bois, réhabilitation ossature existante, changement menuiseries.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />

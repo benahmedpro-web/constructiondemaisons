@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 export const metadata: Metadata = {
   title: "Maison ossature bois Annemasse (74)",
@@ -60,6 +61,7 @@ const jsonLdBreadcrumb = {
 export default function MaisonBoisAnnemassePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/maison-ossature-bois-annemasse/", "Maison ossature bois Annemasse (74)", "Construction maison ossature bois à Annemasse et dans le Genevois français. PLU, sismique zone 3, artisans locaux vérifiés. Étude gratuite sous 48h.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>

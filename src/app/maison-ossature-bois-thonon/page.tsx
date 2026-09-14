@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 export const metadata: Metadata = {
   title: "Maison bois Thonon-les-Bains — Chablais",
@@ -68,6 +69,7 @@ const jsonLdBreadcrumb = {
 export default function MaisonBoisThononPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/maison-ossature-bois-thonon/", "Maison bois Thonon-les-Bains — Chablais", "Maison ossature bois à Thonon-les-Bains et dans le Chablais (Evian, Douvaine, Publier, Sciez). PLU, sismique zone 3, artisans vérifiés.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>

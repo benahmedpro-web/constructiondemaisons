@@ -22,7 +22,7 @@ const jsonLdArticle = {
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
   datePublished: "2025-03-01",
-  dateModified: "2026-06-25",
+  dateModified: "2026-09-10",
   inLanguage: "fr-FR",
   image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };

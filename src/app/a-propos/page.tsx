@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 const BASE = "https://www.constructiondemaisons.com";
 
@@ -101,6 +102,10 @@ const parcours = [
 export default function AProposPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/a-propos/", "À propos — Mahmoud Ben Ahmed", "Maître d'œuvre en Haute-Savoie et Grand Genève. Parcours, méthode et engagement sur les projets de maison ossature bois.")) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}

@@ -21,7 +21,7 @@ const jsonLdArticle = {
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
   datePublished: "2025-04-01",
-  dateModified: "2026-06-25",
+  dateModified: "2026-08-20",
   inLanguage: "fr-FR",
   image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
@@ -134,7 +134,7 @@ export default function GuideChaletPage() {
               </span>
             </div>
           </Link>
-            <p className="text-white/40 text-[13px]">Mis à jour le 25 juin 2026</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 20 août 2026</p>
           </div>
         </div>
 

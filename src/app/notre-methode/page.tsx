@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 const BASE = "https://www.constructiondemaisons.com";
 
@@ -177,6 +178,7 @@ const phases = [
 export default function NotreMethodePage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/notre-methode/", "Notre méthode — 5 phases", "Accompagnement complet de votre projet de maison bois : évaluation, conception, permis de construire, sélection artisans, coordination de chantier, réception. Zone Haute-Savoie, Ain, Grand Genève.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHowTo) }} />

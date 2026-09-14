@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 export const metadata: Metadata = {
   title: "Maison bois à Saint-Julien-en-Genevois",
@@ -60,6 +61,7 @@ const jsonLdBreadcrumb = {
 export default function MaisonBoisSaintJulienPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/maison-ossature-bois-saint-julien-en-genevois/", "Maison bois à Saint-Julien-en-Genevois", "Construction maison ossature bois à Saint-Julien-en-Genevois, dans le Genevois français. Terrains en pente, PLU frontalier, sismique zone 3. Accompagnement complet. Étude gratuite.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <main>

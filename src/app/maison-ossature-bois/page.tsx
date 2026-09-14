@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 export const metadata: Metadata = {
   title: "Construction maison ossature bois Haute-Savoie",
@@ -125,6 +126,7 @@ const faq = [
 export default function MaisonOssatureBoisPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/maison-ossature-bois/", "Construction maison ossature bois Haute-Savoie", "Maison ossature bois neuve en Haute-Savoie et Grand Genève : conception, permis, artisans vérifiés, coordination de chantier. Étude gratuite.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { jsonLdPageDatee } from "@/lib/dates-pages";
 
 const BASE = "https://www.constructiondemaisons.com";
 
@@ -82,6 +83,7 @@ const etapes = [
 export default function ExtensionBoisPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPageDatee("/extension-bois/", "Extension ossature bois Haute-Savoie", "Coordination complète de votre extension ossature bois en Haute-Savoie, Genevois français, Ain et Grand Genève. Permis de construire, sélection artisans qualifiés bois, suivi de chantier.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
