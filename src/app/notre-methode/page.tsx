@@ -80,7 +80,7 @@ const jsonLdFaq = {
     {
       "@type": "Question",
       name: "Quelle est la différence concrète entre un maître d'œuvre et un constructeur CCMI ?",
-      acceptedAnswer: { "@type": "Answer", text: "En CCMI, vous signez avec un seul interlocuteur commercial qui sous-traite à des artisans — sa marge (15 à 25 %) est incluse dans le prix global. En maîtrise d'œuvre, vous avez des contrats directs avec chaque artisan : vous voyez chaque devis, chaque facture. Le maître d'œuvre est rémunéré par honoraires fixes, pas par une marge sur les travaux." },
+      acceptedAnswer: { "@type": "Answer", text: "En CCMI, vous signez avec un seul interlocuteur commercial qui sous-traite à des artisans — sa marge (15 à 25 %) est incluse dans le prix global. En maîtrise d'œuvre, vous avez des contrats directs avec chaque artisan : vous voyez chaque devis, chaque facture. Le maître d'œuvre est rémunéré par des honoraires de 8 à 12 % du coût travaux HT, dont le taux est connu à la signature — pas par une marge sur les travaux." },
     },
     {
       "@type": "Question",
@@ -224,7 +224,7 @@ export default function NotreMethodePage() {
               <div className="text-[12px] font-bold uppercase tracking-widest text-[#BA7517] mb-4">M&M CONSTRUCTION (MOE)</div>
               {[
                 "Conception sur mesure, adapté à votre terrain",
-                "Honoraires forfaitaires, pas de marge cachée",
+                "Taux d'honoraires connu à la signature, pas de marge cachée",
                 "Mahmoud Ben Ahmed, maître d'œuvre spécialisé bois",
                 "Artisans sélectionnés, contrats directs avec vous",
                 "Budget chiffré avec précision avant démarrage",
@@ -304,7 +304,7 @@ export default function NotreMethodePage() {
               },
               {
                 q: "Quelle est la différence concrète entre un maître d'œuvre et un constructeur CCMI ?",
-                a: "En CCMI, vous signez avec un seul interlocuteur commercial qui sous-traite à des artisans — sa marge (15 à 25 %) est incluse dans le prix global. En maîtrise d'œuvre, vous avez des contrats directs avec chaque artisan : vous voyez chaque devis, chaque facture. Le maître d'œuvre est rémunéré par honoraires fixes, pas par une marge sur les travaux.",
+                a: "En CCMI, vous signez avec un seul interlocuteur commercial qui sous-traite à des artisans — sa marge (15 à 25 %) est incluse dans le prix global. En maîtrise d'œuvre, vous avez des contrats directs avec chaque artisan : vous voyez chaque devis, chaque facture. Le maître d'œuvre est rémunéré par des honoraires de 8 à 12 % du coût travaux HT, dont le taux est connu à la signature — pas par une marge sur les travaux.",
               },
               {
                 q: "Quel est le délai total d'un projet de maison bois avec un maître d'œuvre ?",

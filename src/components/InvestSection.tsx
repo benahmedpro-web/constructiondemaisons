@@ -29,7 +29,7 @@ const whyCards = [
       </svg>
     ),
     title: "Indépendance & transparence",
-    body: "Nous ne revendons pas de maisons. Nos honoraires sont forfaitaires ou en % du coût travaux — pas de marge cachée sur les matériaux ou les artisans.",
+    body: "Nous ne revendons pas de maisons. Nos honoraires représentent 8 à 12 % du coût des travaux, taux connu à la signature — pas de marge cachée sur les matériaux ou les artisans.",
   },
   {
     icon: (

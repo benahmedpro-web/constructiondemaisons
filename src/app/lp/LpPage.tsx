@@ -126,7 +126,7 @@ export function LpPage() {
             Avant de vous engager avec un constructeur, demandez un avis indépendant.
           </h1>
           <p className="text-white/70 text-[17px] leading-[1.7] max-w-[580px] mx-auto mb-8">
-            M&M CONSTRUCTION coordonne votre projet de A à Z — construction neuve, extension ou rénovation. Spécialiste maison ossature bois. Honoraires fixes, aucune marge cachée sur vos artisans.
+            M&M CONSTRUCTION coordonne votre projet de A à Z — construction neuve, extension ou rénovation. Spécialiste maison ossature bois. Taux d&apos;honoraires connu à la signature, aucune marge sur vos artisans.
           </p>
 
           {/* Trust badges */}
@@ -187,7 +187,7 @@ export function LpPage() {
               {
                 dim: "Honoraires",
                 ccmi: "Intégrés dans le prix global",
-                mm: "Forfaitaires et connus à la signature",
+                mm: "8 à 12 % des travaux, taux connu à la signature",
               },
               {
                 dim: "Suivi",

@@ -168,7 +168,7 @@ export default async function AnnonceDetailPage({ params }: Props) {
                 <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
                   La maîtrise d&apos;œuvre en ossature bois diffère fondamentalement d&apos;un contrat CCMI. Ici, aucune marge
                   d&apos;entreprise générale n&apos;est répercutée : chaque corps de métier est contractualisé directement avec vous,
-                  sur la base d&apos;honoraires fixes et transparents. M&M CONSTRUCTION pilote la coordination de chantier,
+                  sur la base d&apos;honoraires dont le taux est connu dès la signature. M&M CONSTRUCTION pilote la coordination de chantier,
                   vérifie les garanties décennales des artisans et réceptionne les travaux à votre place.
                 </p>
                 <p className="text-[15px] text-[#888780] leading-[1.8] mb-4">
