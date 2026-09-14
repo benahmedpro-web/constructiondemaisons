@@ -15,6 +15,7 @@ export const DATES_PAGES: Record<string, string> = {
   "/guides/maison-ossature-bois/": "2026-09-10",
   "/guides/coordonner-chantier-bois/": "2026-08-24",
   "/guides/moe-vs-ccmi/": "2026-09-10",
+  "/guides/honoraires-maitre-oeuvre/": "2026-09-14",
   "/guides/re2020-maison-bois/": "2026-09-10",
   "/guides/extension-ossature-bois/": "2026-09-10",
   "/guides/choisir-artisans-maison-bois/": "2026-08-24",

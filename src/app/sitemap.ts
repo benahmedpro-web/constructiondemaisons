@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/guides/maison-ossature-bois/`, lastModified: datePage("/guides/maison-ossature-bois/"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/guides/coordonner-chantier-bois/`, lastModified: datePage("/guides/coordonner-chantier-bois/"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/guides/moe-vs-ccmi/`, lastModified: datePage("/guides/moe-vs-ccmi/"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/guides/honoraires-maitre-oeuvre/`, lastModified: datePage("/guides/honoraires-maitre-oeuvre/"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/guides/re2020-maison-bois/`, lastModified: datePage("/guides/re2020-maison-bois/"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/guides/extension-ossature-bois/`, lastModified: datePage("/guides/extension-ossature-bois/"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/guides/choisir-artisans-maison-bois/`, lastModified: datePage("/guides/choisir-artisans-maison-bois/"), changeFrequency: "monthly", priority: 0.7 },

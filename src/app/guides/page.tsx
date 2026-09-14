@@ -61,6 +61,13 @@ const guides = [
     tag: "Urbanisme",
   },
   {
+    title: "Honoraires maître d'œuvre : combien ça coûte pour une maison ?",
+    excerpt: "8 à 12 % du coût travaux HT — montants réels par surface en Haute-Savoie, prestations couvertes, postes non inclus et échéancier de paiement.",
+    image: "/images/MAB4451.jpg",
+    href: "/guides/honoraires-maitre-oeuvre/",
+    tag: "Budget",
+  },
+  {
     title: "Prix construction maison 2026 : budget complet par type de projet",
     excerpt: "Maison neuve, extension, rénovation — fourchettes réalistes, tableau des postes de coût et surcoûts spécifiques au Grand Genève.",
     image: "/images/MAB4451.jpg",
