@@ -1,0 +1,4690 @@
+{
+  "date": "2026-09-21T14:59:16.917Z",
+  "runs": 3,
+  "contextSize": "medium",
+  "model": "sonar",
+  "mock": false,
+  "summary": {
+    "authority": {
+      "score": 65,
+      "cited": 13,
+      "urlCited": 13,
+      "citedEarly": 3,
+      "avgPosition": 7.7
+    },
+    "freshness": {
+      "score": 0,
+      "cited": 0,
+      "urlCited": 0,
+      "citedEarly": 0,
+      "avgPosition": null
+    }
+  },
+  "results": [
+    {
+      "id": "pro-annemasse",
+      "etape": "Professionnel",
+      "label": "Accompagnement maison bois Annemasse",
+      "query": "Qui peut m'accompagner pour construire une maison ossature bois à Annemasse ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": true,
+          "position": 1,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/",
+            "https://www.constructiondemaisons.com/faire-construire-haute-savoie/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois-annemasse/"
+          ],
+          "competitors": [
+            {
+              "domain": "tradi-chalets-annemasse.fr",
+              "count": 3
+            },
+            {
+              "domain": "bilik.fr",
+              "count": 3
+            },
+            {
+              "domain": "construction-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "lorignal-construction74.fr",
+              "count": 3
+            },
+            {
+              "domain": "entreprisemorel.com",
+              "count": 3
+            },
+            {
+              "domain": "chalets-carme.com",
+              "count": 3
+            },
+            {
+              "domain": "maison-boegeat.com",
+              "count": 3
+            },
+            {
+              "domain": "blokiwood.fr",
+              "count": 3
+            },
+            {
+              "domain": "chalets-artis.com",
+              "count": 3
+            },
+            {
+              "domain": "lebonconstructeur.fr",
+              "count": 3
+            },
+            {
+              "domain": "bcb-charpente.fr",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "gbe-expertises.com",
+              "count": 3
+            },
+            {
+              "domain": "travaux.obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "chalets-chardon.com",
+              "count": 3
+            },
+            {
+              "domain": "toituresdebelledonne.fr",
+              "count": 3
+            },
+            {
+              "domain": "starofservice.com",
+              "count": 3
+            },
+            {
+              "domain": "artisavoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "houzz.fr",
+              "count": 3
+            },
+            {
+              "domain": "couvreur-thonon.fr",
+              "count": 3
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "emploi.ouest-france.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-france-confort.fr",
+              "count": 2
+            },
+            {
+              "domain": "blog-investissement-immobilier.lybox.fr",
+              "count": 2
+            },
+            {
+              "domain": "chablais-ossature-bois.fr",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "artisavoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "chalet-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "calexstructure.com",
+              "count": 3
+            },
+            {
+              "domain": "candidat.francetravail.fr",
+              "count": 3
+            },
+            {
+              "domain": "immo-et-habitat.com",
+              "count": 3
+            },
+            {
+              "domain": "guillaumie.com",
+              "count": 3
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "artisan-en-ligne.com",
+              "count": 3
+            },
+            {
+              "domain": "eco2scop.fr",
+              "count": 3
+            },
+            {
+              "domain": "afcmenuiserie.com",
+              "count": 3
+            },
+            {
+              "domain": "lesweppes.fr",
+              "count": 3
+            },
+            {
+              "domain": "letopimmobilier.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-pelle.com",
+              "count": 3
+            },
+            {
+              "domain": "best-of-batiment.com",
+              "count": 3
+            },
+            {
+              "domain": "lyon-franchise.com",
+              "count": 3
+            },
+            {
+              "domain": "trecobois.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "arboisconstruction.fr",
+              "count": 3
+            },
+            {
+              "domain": "mysweetimmo.com",
+              "count": 3
+            },
+            {
+              "domain": "batiweb.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-en-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "french-box.fr",
+              "count": 3
+            },
+            {
+              "domain": "annu-constructeurs-maisons.fr",
+              "count": 3
+            },
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "zonebourse.com",
+              "count": 3
+            },
+            {
+              "domain": "leparisien.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "annonces-legales.lesechos.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 2
+            },
+            {
+              "domain": "pappers.fr",
+              "count": 2
+            },
+            {
+              "domain": "travaux.com",
+              "count": 2
+            },
+            {
+              "domain": "francemarches.com",
+              "count": 2
+            },
+            {
+              "domain": "fr.indeed.com",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "pro-genevois",
+      "etape": "Professionnel",
+      "label": "Maître d'œuvre bois Genevois français",
+      "query": "Quel maître d'œuvre choisir pour une maison bois dans le Genevois français ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": true,
+          "position": 1,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois-annemasse/",
+            "https://www.constructiondemaisons.com/a-propos/",
+            "https://www.constructiondemaisons.com/faire-construire-haute-savoie/"
+          ],
+          "competitors": [
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "bernard-escurier.fr",
+              "count": 3
+            },
+            {
+              "domain": "equerre.fr",
+              "count": 3
+            },
+            {
+              "domain": "builder-designer.com",
+              "count": 3
+            },
+            {
+              "domain": "maitre-doeuvre.fr",
+              "count": 3
+            },
+            {
+              "domain": "houzz.fr",
+              "count": 3
+            },
+            {
+              "domain": "local.ch",
+              "count": 3
+            },
+            {
+              "domain": "mocabois.fr",
+              "count": 3
+            },
+            {
+              "domain": "alain-pardigon-architecte.com",
+              "count": 3
+            },
+            {
+              "domain": "atelier-novalp.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonsfranceforet.com",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "mathis-timber-construction.com",
+              "count": 3
+            },
+            {
+              "domain": "peinturefraiche.io",
+              "count": 3
+            },
+            {
+              "domain": "local.ch",
+              "count": 3
+            },
+            {
+              "domain": "lesweppes.fr",
+              "count": 3
+            },
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "afcmenuiserie.com",
+              "count": 3
+            },
+            {
+              "domain": "best-of-batiment.com",
+              "count": 3
+            },
+            {
+              "domain": "amorconcept.ch",
+              "count": 3
+            },
+            {
+              "domain": "obras.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 3
+            },
+            {
+              "domain": "exactimmo.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-still.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisonsbois21.fr",
+              "count": 3
+            },
+            {
+              "domain": "xcubedesign.fr",
+              "count": 3
+            },
+            {
+              "domain": "propylon.ch",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "pro-saint-julien",
+      "etape": "Professionnel",
+      "label": "MOE bois Saint-Julien-en-Genevois",
+      "query": "Maître d'œuvre maison bois à Saint-Julien-en-Genevois : qui contacter ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": true,
+          "position": 1,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/renovation-bois/",
+            "https://www.constructiondemaisons.com/faire-construire-haute-savoie/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois-annemasse/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois-saint-julien-en-genevois/"
+          ],
+          "competitors": [
+            {
+              "domain": "bernard-escurier.fr",
+              "count": 3
+            },
+            {
+              "domain": "atelier-novalp.com",
+              "count": 3
+            },
+            {
+              "domain": "mocabois.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-france-confort.fr",
+              "count": 3
+            },
+            {
+              "domain": "lesfreresbatisseurs.com",
+              "count": 3
+            },
+            {
+              "domain": "visionbois.com",
+              "count": 3
+            },
+            {
+              "domain": "menuiserie-echo-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "blokiwood.fr",
+              "count": 3
+            },
+            {
+              "domain": "jollyconstructionsbois.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.kompass.com",
+              "count": 3
+            },
+            {
+              "domain": "espritbois74.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-artis.com",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "lpcharpente.com",
+              "count": 3
+            },
+            {
+              "domain": "maitre-doeuvre.fr",
+              "count": 3
+            },
+            {
+              "domain": "houzz.fr",
+              "count": 3
+            },
+            {
+              "domain": "travaux.obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "menuiserie-duret.com",
+              "count": 3
+            },
+            {
+              "domain": "blog-investissement-immobilier.lybox.fr",
+              "count": 3
+            },
+            {
+              "domain": "travaux.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonsarchidesign.com",
+              "count": 3
+            },
+            {
+              "domain": "qualitech-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "guidemoe.fr",
+              "count": 3
+            },
+            {
+              "domain": "alexismorand-design.com",
+              "count": 3
+            },
+            {
+              "domain": "quelconstructeur.com",
+              "count": 2
+            },
+            {
+              "domain": "maitredoeuvre.com",
+              "count": 2
+            },
+            {
+              "domain": "trouver-mon-architecte.fr",
+              "count": 2
+            },
+            {
+              "domain": "rdvartisans.fr",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisonsbois21.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-still.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "best-of-batiment.com",
+              "count": 3
+            },
+            {
+              "domain": "reseauconvergence.fr",
+              "count": 3
+            },
+            {
+              "domain": "artisan-en-ligne.com",
+              "count": 3
+            },
+            {
+              "domain": "hometopus.fr",
+              "count": 3
+            },
+            {
+              "domain": "holzbau-schweiz-architektur.ch",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 2
+            },
+            {
+              "domain": "travaux.obat.fr",
+              "count": 2
+            },
+            {
+              "domain": "frenchhome.fr",
+              "count": 2
+            },
+            {
+              "domain": "chablais-chalets.fr",
+              "count": 2
+            },
+            {
+              "domain": "doucerain-architecte.fr",
+              "count": 2
+            },
+            {
+              "domain": "eurekartisan.com",
+              "count": 2
+            },
+            {
+              "domain": "batico.fr",
+              "count": 2
+            },
+            {
+              "domain": "candidat.francetravail.fr",
+              "count": 2
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 2
+            },
+            {
+              "domain": "calexstructure.com",
+              "count": 2
+            },
+            {
+              "domain": "atelier-anaka.fr",
+              "count": 2
+            },
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 2
+            },
+            {
+              "domain": "travaux.com",
+              "count": 2
+            },
+            {
+              "domain": "constructeur-groupejs.fr",
+              "count": 2
+            },
+            {
+              "domain": "francemarches.com",
+              "count": 2
+            },
+            {
+              "domain": "peinturefraiche.io",
+              "count": 2
+            },
+            {
+              "domain": "mathis-timber-construction.com",
+              "count": 1
+            },
+            {
+              "domain": "maisons-en-bois.com",
+              "count": 1
+            },
+            {
+              "domain": "terroirsengages.fr",
+              "count": 1
+            },
+            {
+              "domain": "brocabrac.fr",
+              "count": 1
+            },
+            {
+              "domain": "leparisien.fr",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "pro-thonon",
+      "etape": "Professionnel",
+      "label": "Maison bois Thonon-les-Bains",
+      "query": "Qui construit des maisons ossature bois à Thonon-les-Bains ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 15,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/faire-construire-haute-savoie/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois/"
+          ],
+          "competitors": [
+            {
+              "domain": "chablais-ossature-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "favrat-ossature-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.mappy.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-france-confort.fr",
+              "count": 3
+            },
+            {
+              "domain": "elemanbois.com",
+              "count": 3
+            },
+            {
+              "domain": "socorebat-france.fr",
+              "count": 3
+            },
+            {
+              "domain": "mocabois.fr",
+              "count": 3
+            },
+            {
+              "domain": "artisansartipole.fr",
+              "count": 3
+            },
+            {
+              "domain": "lpcharpente.com",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "chalets-artis.com",
+              "count": 3
+            },
+            {
+              "domain": "chalets-carme.com",
+              "count": 3
+            },
+            {
+              "domain": "bilik.fr",
+              "count": 3
+            },
+            {
+              "domain": "houzz.fr",
+              "count": 3
+            },
+            {
+              "domain": "blokiwood.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "kubus-house.com",
+              "count": 3
+            },
+            {
+              "domain": "best-of-batiment.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-en-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "batiweb.com",
+              "count": 3
+            },
+            {
+              "domain": "trecobois.fr",
+              "count": 3
+            },
+            {
+              "domain": "annu-constructeurs-maisons.fr",
+              "count": 3
+            },
+            {
+              "domain": "lyon-franchise.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-pelle.com",
+              "count": 3
+            },
+            {
+              "domain": "lesecoconstructeurs.com",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "tierrhabitat.com",
+              "count": 3
+            },
+            {
+              "domain": "propylon.ch",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "comp-moe-ccmi",
+      "etape": "Comparaison",
+      "label": "MOE vs CCMI bois",
+      "query": "Maître d'œuvre ou constructeur CCMI pour une maison bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 1,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/renovation-bois/",
+            "https://www.constructiondemaisons.com/a-propos/"
+          ],
+          "competitors": [
+            {
+              "domain": "visionbois.com",
+              "count": 3
+            },
+            {
+              "domain": "blokiwood.fr",
+              "count": 3
+            },
+            {
+              "domain": "mocabois.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-artis.com",
+              "count": 3
+            },
+            {
+              "domain": "atelier-novalp.com",
+              "count": 3
+            },
+            {
+              "domain": "lesfreresbatisseurs.com",
+              "count": 3
+            },
+            {
+              "domain": "lpcharpente.com",
+              "count": 3
+            },
+            {
+              "domain": "greenkub.fr",
+              "count": 3
+            },
+            {
+              "domain": "polehabitat-ffb.com",
+              "count": 3
+            },
+            {
+              "domain": "mikit.fr",
+              "count": 3
+            },
+            {
+              "domain": "espritbois74.com",
+              "count": 3
+            },
+            {
+              "domain": "alain-pardigon-architecte.com",
+              "count": 3
+            },
+            {
+              "domain": "ckarchitecte74.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisonsnaturea.fr",
+              "count": 3
+            },
+            {
+              "domain": "dimensionhabitatlp.space",
+              "count": 3
+            },
+            {
+              "domain": "qualitech-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 3
+            },
+            {
+              "domain": "maison-natilia.fr",
+              "count": 3
+            },
+            {
+              "domain": "maitre-doeuvre.fr",
+              "count": 3
+            },
+            {
+              "domain": "blog-investissement-immobilier.lybox.fr",
+              "count": 3
+            },
+            {
+              "domain": "construiresamaison.com",
+              "count": 3
+            },
+            {
+              "domain": "forumconstruire.com",
+              "count": 3
+            },
+            {
+              "domain": "ingenieur-expert-batiment.fr",
+              "count": 3
+            },
+            {
+              "domain": "construction-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "travaux.obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisonsoxygene.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-bois.com",
+              "count": 2
+            },
+            {
+              "domain": "quelconstructeur.com",
+              "count": 2
+            },
+            {
+              "domain": "mcalpes.com",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "travaux.obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 3
+            },
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "frenchhome.fr",
+              "count": 3
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 3
+            },
+            {
+              "domain": "rg-conception.fr",
+              "count": 3
+            },
+            {
+              "domain": "lesweppes.fr",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "atelier-anaka.fr",
+              "count": 3
+            },
+            {
+              "domain": "best-of-batiment.com",
+              "count": 3
+            },
+            {
+              "domain": "artisan-en-ligne.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-arbor.fr",
+              "count": 3
+            },
+            {
+              "domain": "artisavoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "doucerain-architecte.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "annu-constructeurs-maisons.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "chablais-chalets.fr",
+              "count": 3
+            },
+            {
+              "domain": "eurekartisan.com",
+              "count": 3
+            },
+            {
+              "domain": "logimanche.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-en-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisonsbois21.fr",
+              "count": 3
+            },
+            {
+              "domain": "kubus-house.com",
+              "count": 3
+            },
+            {
+              "domain": "leboncoin.fr",
+              "count": 3
+            },
+            {
+              "domain": "constructeur-groupejs.fr",
+              "count": 3
+            },
+            {
+              "domain": "leparisien.fr",
+              "count": 3
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 2
+            },
+            {
+              "domain": "batico.fr",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "comp-moe-archi",
+      "etape": "Comparaison",
+      "label": "MOE vs architecte 120 m²",
+      "query": "Maître d'œuvre ou architecte pour une maison de 120 m² en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 19,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/",
+            "https://www.constructiondemaisons.com/guides/prix-maison-ossature-bois-haute-savoie/"
+          ],
+          "competitors": [
+            {
+              "domain": "ms-habitat.com",
+              "count": 3
+            },
+            {
+              "domain": "maitre-doeuvre.fr",
+              "count": 3
+            },
+            {
+              "domain": "visionbois.com",
+              "count": 3
+            },
+            {
+              "domain": "alpinarchi.fr",
+              "count": 3
+            },
+            {
+              "domain": "trouver-mon-architecte.fr",
+              "count": 3
+            },
+            {
+              "domain": "omizi.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonsarchidesign.com",
+              "count": 3
+            },
+            {
+              "domain": "domo-savoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "travaux.obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "maitre-oeuvre-annecy.fr",
+              "count": 3
+            },
+            {
+              "domain": "ckarchitecte74.fr",
+              "count": 3
+            },
+            {
+              "domain": "houzz.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.indeed.com",
+              "count": 3
+            },
+            {
+              "domain": "architectes-interieur-annecy.com",
+              "count": 3
+            },
+            {
+              "domain": "atelier-novalp.com",
+              "count": 3
+            },
+            {
+              "domain": "arch-home.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-savoie-constructions.fr",
+              "count": 3
+            },
+            {
+              "domain": "tezgel-construction.fr",
+              "count": 3
+            },
+            {
+              "domain": "plans-projets-immo.fr",
+              "count": 3
+            },
+            {
+              "domain": "rdvartisans.fr",
+              "count": 3
+            },
+            {
+              "domain": "renovation-batiment-ceb.com",
+              "count": 3
+            },
+            {
+              "domain": "architectes-pour-tous.fr",
+              "count": 3
+            },
+            {
+              "domain": "adequateconstruction.fr",
+              "count": 2
+            },
+            {
+              "domain": "m2-developpement.com",
+              "count": 2
+            },
+            {
+              "domain": "amitecte.fr",
+              "count": 2
+            },
+            {
+              "domain": "travaux.com",
+              "count": 1
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 1
+            },
+            {
+              "domain": "archibien.com",
+              "count": 1
+            },
+            {
+              "domain": "maisonsclairlogis.fr",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "deselistudio.com",
+              "count": 3
+            },
+            {
+              "domain": "maison-contemporaine.org",
+              "count": 3
+            },
+            {
+              "domain": "archi-habitat.com",
+              "count": 3
+            },
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "leboncoin.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "talentsconstruction.fr",
+              "count": 3
+            },
+            {
+              "domain": "groupe-seuil.com",
+              "count": 3
+            },
+            {
+              "domain": "frenchhome.fr",
+              "count": 3
+            },
+            {
+              "domain": "logic-immo.com",
+              "count": 3
+            },
+            {
+              "domain": "kcmh.fr",
+              "count": 3
+            },
+            {
+              "domain": "architectes.org",
+              "count": 3
+            },
+            {
+              "domain": "mtrenovation74.fr",
+              "count": 3
+            },
+            {
+              "domain": "xcubedesign.fr",
+              "count": 3
+            },
+            {
+              "domain": "artisavoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "constructionsdumidi.com",
+              "count": 3
+            },
+            {
+              "domain": "midipapierspeints.fr",
+              "count": 3
+            },
+            {
+              "domain": "nogepe.fr",
+              "count": 3
+            },
+            {
+              "domain": "sorelest.fr",
+              "count": 3
+            },
+            {
+              "domain": "local.ch",
+              "count": 3
+            },
+            {
+              "domain": "lemessager.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "extension-maison-savoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "dimo-diagnostic.net",
+              "count": 3
+            },
+            {
+              "domain": "logimanche.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonsclairlogis.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "budget-120",
+      "etape": "Budget",
+      "label": "Prix maison bois 120 m² 74",
+      "query": "Combien coûte une maison ossature bois de 120 m² en Haute-Savoie en 2026 ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 5,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/guides/prix-construction-maison/"
+          ],
+          "competitors": [
+            {
+              "domain": "immo.trovit.fr",
+              "count": 3
+            },
+            {
+              "domain": "simulateur-prix-construction-maison.fr",
+              "count": 3
+            },
+            {
+              "domain": "construction-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "une-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "renovbox.fr",
+              "count": 3
+            },
+            {
+              "domain": "creationbatiment.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-et-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "construireenfrance.fr",
+              "count": 3
+            },
+            {
+              "domain": "leredubois.fr",
+              "count": 3
+            },
+            {
+              "domain": "travaux.com",
+              "count": 3
+            },
+            {
+              "domain": "architecteo.com",
+              "count": 3
+            },
+            {
+              "domain": "habitatpresto.com",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "dimo-diagnostic.net",
+              "count": 3
+            },
+            {
+              "domain": "devis-artisan.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "iadfrance.fr",
+              "count": 3
+            },
+            {
+              "domain": "logic-immo.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonslemasson.com",
+              "count": 3
+            },
+            {
+              "domain": "brikawood.com",
+              "count": 3
+            },
+            {
+              "domain": "calameo.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonsdelavenir.com",
+              "count": 3
+            },
+            {
+              "domain": "eco-dechets.fr",
+              "count": 3
+            },
+            {
+              "domain": "studiodejardinpro.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "capital.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "budget-m2",
+      "etape": "Budget",
+      "label": "Prix au m² bois 74",
+      "query": "Prix au m² d'une maison ossature bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 1,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/guides/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois-saint-julien-en-genevois/"
+          ],
+          "competitors": [
+            {
+              "domain": "construction-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "corealis.fr",
+              "count": 3
+            },
+            {
+              "domain": "immo.trovit.fr",
+              "count": 3
+            },
+            {
+              "domain": "forumconstruire.com",
+              "count": 3
+            },
+            {
+              "domain": "construire-une-maison-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-ideales.com",
+              "count": 3
+            },
+            {
+              "domain": "une-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "renovbox.fr",
+              "count": 3
+            },
+            {
+              "domain": "habitatpresto.com",
+              "count": 3
+            },
+            {
+              "domain": "prokit.fr",
+              "count": 3
+            },
+            {
+              "domain": "constructiondurable.net",
+              "count": 3
+            },
+            {
+              "domain": "travaux.com",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "logic-immo.com",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "estimation-prix-immobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "espaces-atypiques.com",
+              "count": 3
+            },
+            {
+              "domain": "paruvendu.fr",
+              "count": 2
+            },
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 2
+            },
+            {
+              "domain": "dimo-diagnostic.net",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "budget-honoraires",
+      "etape": "Budget",
+      "label": "Honoraires maître d'œuvre",
+      "query": "Combien coûtent les honoraires d'un maître d'œuvre pour une maison ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "travaux.com",
+              "count": 3
+            },
+            {
+              "domain": "creatishabitat.com",
+              "count": 3
+            },
+            {
+              "domain": "devis-artisan.fr",
+              "count": 3
+            },
+            {
+              "domain": "camif-habitat.fr",
+              "count": 3
+            },
+            {
+              "domain": "assurance-maitrise-oeuvre.fr",
+              "count": 3
+            },
+            {
+              "domain": "travauxbricolage.fr",
+              "count": 3
+            },
+            {
+              "domain": "voxacte.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonentravaux.fr",
+              "count": 3
+            },
+            {
+              "domain": "travauxavenue.com",
+              "count": 3
+            },
+            {
+              "domain": "prix-travaux-m2.com",
+              "count": 3
+            },
+            {
+              "domain": "domutrack.fr",
+              "count": 3
+            },
+            {
+              "domain": "plus-que-pro.fr",
+              "count": 3
+            },
+            {
+              "domain": "kazimo.fr",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "droit-finances.commentcamarche.com",
+              "count": 3
+            },
+            {
+              "domain": "choisir-mon-artisan.fr",
+              "count": 3
+            },
+            {
+              "domain": "actualite.seloger-construire.com",
+              "count": 3
+            },
+            {
+              "domain": "projet-immobilier.org",
+              "count": 3
+            },
+            {
+              "domain": "anil.org",
+              "count": 3
+            },
+            {
+              "domain": "challenges.fr",
+              "count": 3
+            },
+            {
+              "domain": "travaux.obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "magnolia.fr",
+              "count": 3
+            },
+            {
+              "domain": "forumconstruire.com",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "maad-architectes.fr",
+              "count": 3
+            },
+            {
+              "domain": "amu-asso.fr",
+              "count": 3
+            },
+            {
+              "domain": "quilefait.com",
+              "count": 3
+            },
+            {
+              "domain": "salmaabderahim.com",
+              "count": 3
+            },
+            {
+              "domain": "xcubedesign.fr",
+              "count": 3
+            },
+            {
+              "domain": "permis-maison-individuelle.fr",
+              "count": 3
+            },
+            {
+              "domain": "go-construction.fr",
+              "count": 3
+            },
+            {
+              "domain": "maison-terre.com",
+              "count": 3
+            },
+            {
+              "domain": "jbb.fr",
+              "count": 3
+            },
+            {
+              "domain": "propylon.ch",
+              "count": 3
+            },
+            {
+              "domain": "at-spp.fr",
+              "count": 3
+            },
+            {
+              "domain": "dimo-diagnostic.net",
+              "count": 3
+            },
+            {
+              "domain": "wilow.fr",
+              "count": 3
+            },
+            {
+              "domain": "devis-artisan.fr",
+              "count": 3
+            },
+            {
+              "domain": "aude-location.fr",
+              "count": 3
+            },
+            {
+              "domain": "kazimo.fr",
+              "count": 3
+            },
+            {
+              "domain": "metiersdart-artisanat.com",
+              "count": 3
+            },
+            {
+              "domain": "sorelest.fr",
+              "count": 3
+            },
+            {
+              "domain": "global-expertises.fr",
+              "count": 3
+            },
+            {
+              "domain": "renovinterieurs.fr",
+              "count": 3
+            },
+            {
+              "domain": "atelier-anaka.fr",
+              "count": 3
+            },
+            {
+              "domain": "akea-energies.com",
+              "count": 3
+            },
+            {
+              "domain": "maconstruction.be",
+              "count": 3
+            },
+            {
+              "domain": "kohenavocats.fr",
+              "count": 3
+            },
+            {
+              "domain": "obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "qualitel.org",
+              "count": 3
+            },
+            {
+              "domain": "renov-maison-guide.fr",
+              "count": 1
+            },
+            {
+              "domain": "travaux.com",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "budget-total",
+      "etape": "Budget",
+      "label": "Budget total terrain + maison Genevois",
+      "query": "Quel budget total, terrain compris, pour construire dans le Genevois français ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 11,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/guides/prix-maison-ossature-bois-haute-savoie/"
+          ],
+          "competitors": [
+            {
+              "domain": "simulateur-prix-construction-maison.fr",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "milleniumproperties.ch",
+              "count": 3
+            },
+            {
+              "domain": "annecy-ville.fr",
+              "count": 3
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 3
+            },
+            {
+              "domain": "rousseau5.ch",
+              "count": 3
+            },
+            {
+              "domain": "e-immobilier.credit-agricole.fr",
+              "count": 3
+            },
+            {
+              "domain": "welcome-suisse.ch",
+              "count": 3
+            },
+            {
+              "domain": "construction-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "greenkub.fr",
+              "count": 3
+            },
+            {
+              "domain": "trouver-un-logement-neuf.com",
+              "count": 3
+            },
+            {
+              "domain": "forumconstruire.com",
+              "count": 2
+            },
+            {
+              "domain": "onfaitconstruire.fr",
+              "count": 2
+            },
+            {
+              "domain": "maisons-ideales.com",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "hilo-architectes.ch",
+              "count": 3
+            },
+            {
+              "domain": "devis-artisan.fr",
+              "count": 3
+            },
+            {
+              "domain": "atelier-cuisinier.fr",
+              "count": 3
+            },
+            {
+              "domain": "eco-dechets.fr",
+              "count": 3
+            },
+            {
+              "domain": "gambettaimmobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "architecte-malakoff.com",
+              "count": 3
+            },
+            {
+              "domain": "maison-terre.com",
+              "count": 3
+            },
+            {
+              "domain": "guidedufrontalier.com",
+              "count": 3
+            },
+            {
+              "domain": "construire-maison-aisne.fr",
+              "count": 3
+            },
+            {
+              "domain": "tisserin-promotion.com",
+              "count": 3
+            },
+            {
+              "domain": "youpi-la-maison.com",
+              "count": 3
+            },
+            {
+              "domain": "maconstruction.be",
+              "count": 3
+            },
+            {
+              "domain": "mmimmobilier.fr",
+              "count": 2
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 2
+            },
+            {
+              "domain": "logic-immo.com",
+              "count": 2
+            },
+            {
+              "domain": "cc-genevois.fr",
+              "count": 2
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "terrain-constructible",
+      "etape": "Terrain",
+      "label": "Terrain constructible 74",
+      "query": "Comment savoir si un terrain est constructible en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "haute-savoie.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "giezdescimes.com",
+              "count": 3
+            },
+            {
+              "domain": "boege.fr",
+              "count": 3
+            },
+            {
+              "domain": "an-architecte.com",
+              "count": 3
+            },
+            {
+              "domain": "rg-conception.fr",
+              "count": 3
+            },
+            {
+              "domain": "observatoire.savoie.equipement-agriculture.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "savoie.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "data.geopf.fr",
+              "count": 3
+            },
+            {
+              "domain": "savigny74.fr",
+              "count": 3
+            },
+            {
+              "domain": "archicrea2savoie.com",
+              "count": 3
+            },
+            {
+              "domain": "allinges.fr",
+              "count": 3
+            },
+            {
+              "domain": "machilly.fr",
+              "count": 3
+            },
+            {
+              "domain": "terrain-construction.com",
+              "count": 3
+            },
+            {
+              "domain": "auvergne-rhone-alpes.developpement-durable.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "grandpoitiers.fr",
+              "count": 3
+            },
+            {
+              "domain": "seyssel74.com",
+              "count": 3
+            },
+            {
+              "domain": "data.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "usses-et-rhone.fr",
+              "count": 3
+            },
+            {
+              "domain": "viry74.fr",
+              "count": 3
+            },
+            {
+              "domain": "alpesvente.com",
+              "count": 3
+            },
+            {
+              "domain": "annecy-ville.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "formulaires.service-public.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "service-public.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "alexismorand-design.com",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "urbanisme-facile.fr",
+              "count": 3
+            },
+            {
+              "domain": "tisserin-promotion.com",
+              "count": 3
+            },
+            {
+              "domain": "lemessager.fr",
+              "count": 3
+            },
+            {
+              "domain": "properstar.co.uk",
+              "count": 3
+            },
+            {
+              "domain": "smarthausswiss.ch",
+              "count": 3
+            },
+            {
+              "domain": "aumaka-architecture.com",
+              "count": 3
+            },
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "construction.gouv.ci",
+              "count": 3
+            },
+            {
+              "domain": "pergoladefrance.fr",
+              "count": 3
+            },
+            {
+              "domain": "coval-construction.com",
+              "count": 3
+            },
+            {
+              "domain": "buildhelp.eu",
+              "count": 3
+            },
+            {
+              "domain": "mavilleenpoche.fr",
+              "count": 3
+            },
+            {
+              "domain": "habitation-magazine.com",
+              "count": 3
+            },
+            {
+              "domain": "altavision.fr",
+              "count": 3
+            },
+            {
+              "domain": "classorga.ch",
+              "count": 3
+            },
+            {
+              "domain": "sci-ai.app",
+              "count": 3
+            },
+            {
+              "domain": "conseils-immobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "vibe-ar.ch",
+              "count": 3
+            },
+            {
+              "domain": "natureetresidencehabitat.com",
+              "count": 3
+            },
+            {
+              "domain": "kubus-house.com",
+              "count": 3
+            },
+            {
+              "domain": "basedespermis.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "cabinet-bacci.fr",
+              "count": 3
+            },
+            {
+              "domain": "go-construction.fr",
+              "count": 3
+            },
+            {
+              "domain": "village-justice.com",
+              "count": 3
+            },
+            {
+              "domain": "geode-experts.fr",
+              "count": 3
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 3
+            },
+            {
+              "domain": "agencedelamer.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-crisalis.net",
+              "count": 3
+            },
+            {
+              "domain": "babi-architectes.fr",
+              "count": 3
+            },
+            {
+              "domain": "dna.fr",
+              "count": 3
+            },
+            {
+              "domain": "construire-maison-aisne.fr",
+              "count": 3
+            },
+            {
+              "domain": "blog.qoridor.fr",
+              "count": 3
+            },
+            {
+              "domain": "statistiques.developpement-durable.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "camif-habitat.fr",
+              "count": 3
+            },
+            {
+              "domain": "newsonair.gov.in",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "costar.com",
+              "count": 3
+            },
+            {
+              "domain": "travelandtourworld.com",
+              "count": 3
+            },
+            {
+              "domain": "madeinvilnius.lt",
+              "count": 3
+            },
+            {
+              "domain": "standard.co.uk",
+              "count": 3
+            },
+            {
+              "domain": "powder.com",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "terrain-prix",
+      "etape": "Terrain",
+      "label": "Prix terrain Annemasse",
+      "query": "Combien coûte un terrain constructible près d'Annemasse ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "landup.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "solvimo.com",
+              "count": 3
+            },
+            {
+              "domain": "properstar.fr",
+              "count": 3
+            },
+            {
+              "domain": "bienici.com",
+              "count": 3
+            },
+            {
+              "domain": "lalliance.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "lesiteimmo.com",
+              "count": 3
+            },
+            {
+              "domain": "immobilier-annemasse.nestenn.com",
+              "count": 3
+            },
+            {
+              "domain": "nexity.fr",
+              "count": 3
+            },
+            {
+              "domain": "logic-immo.com",
+              "count": 3
+            },
+            {
+              "domain": "century21-adl-annemasse.com",
+              "count": 3
+            },
+            {
+              "domain": "nestenn.com",
+              "count": 3
+            },
+            {
+              "domain": "la-mairie.com",
+              "count": 3
+            },
+            {
+              "domain": "annecy-ville.fr",
+              "count": 3
+            },
+            {
+              "domain": "les-terrains.com",
+              "count": 3
+            },
+            {
+              "domain": "terrain-construction.com",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "les-terrains.com",
+              "count": 3
+            },
+            {
+              "domain": "logic-immo.com",
+              "count": 3
+            },
+            {
+              "domain": "mmimmobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "viagimmo.fr",
+              "count": 3
+            },
+            {
+              "domain": "seloger.com",
+              "count": 3
+            },
+            {
+              "domain": "stonimmo.com",
+              "count": 3
+            },
+            {
+              "domain": "renta-immo.fr",
+              "count": 3
+            },
+            {
+              "domain": "espacepro-immobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "procivis.fr",
+              "count": 3
+            },
+            {
+              "domain": "kati24.com",
+              "count": 3
+            },
+            {
+              "domain": "news.lesiteimmo.com",
+              "count": 3
+            },
+            {
+              "domain": "athome.lu",
+              "count": 3
+            },
+            {
+              "domain": "climascore.fr",
+              "count": 3
+            },
+            {
+              "domain": "immoa.fr",
+              "count": 3
+            },
+            {
+              "domain": "123-immo.com",
+              "count": 3
+            },
+            {
+              "domain": "alentoor.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "decouverte-etapes",
+      "etape": "Découverte",
+      "label": "Étapes faire construire 74",
+      "query": "Quelles sont les étapes pour faire construire une maison en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "haute-savoie.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "rg-conception.fr",
+              "count": 3
+            },
+            {
+              "domain": "an-architecte.com",
+              "count": 3
+            },
+            {
+              "domain": "giezdescimes.com",
+              "count": 3
+            },
+            {
+              "domain": "alpesvente.com",
+              "count": 3
+            },
+            {
+              "domain": "viry74.fr",
+              "count": 3
+            },
+            {
+              "domain": "archicrea2savoie.com",
+              "count": 3
+            },
+            {
+              "domain": "magland.fr",
+              "count": 3
+            },
+            {
+              "domain": "qualitech-construction.com",
+              "count": 3
+            },
+            {
+              "domain": "cruseilles.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisonsbts.com",
+              "count": 3
+            },
+            {
+              "domain": "feternes.fr",
+              "count": 3
+            },
+            {
+              "domain": "porte-de-savoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "mcalpes.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonsclairlogis.fr",
+              "count": 3
+            },
+            {
+              "domain": "blokiwood.fr",
+              "count": 3
+            },
+            {
+              "domain": "mairie-marin.fr",
+              "count": 3
+            },
+            {
+              "domain": "forumconstruire.com",
+              "count": 3
+            },
+            {
+              "domain": "prokit.fr",
+              "count": 3
+            },
+            {
+              "domain": "service-public.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "design-construction.info",
+              "count": 3
+            },
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "vd.ch",
+              "count": 3
+            },
+            {
+              "domain": "tradition-logis.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-artis.com",
+              "count": 3
+            },
+            {
+              "domain": "conseil-etat.fr",
+              "count": 3
+            },
+            {
+              "domain": "hemea.com",
+              "count": 3
+            },
+            {
+              "domain": "bonneville.lamaisondestravaux.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonsarchidesign.com",
+              "count": 3
+            },
+            {
+              "domain": "atelier-novalp.com",
+              "count": 3
+            },
+            {
+              "domain": "lecoindesartisans.fr",
+              "count": 3
+            },
+            {
+              "domain": "hautesavoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 3
+            },
+            {
+              "domain": "montagnesdugiffre.fr",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "construire-sa.fr",
+              "count": 3
+            },
+            {
+              "domain": "deselistudio.com",
+              "count": 3
+            },
+            {
+              "domain": "apb-batiment.fr",
+              "count": 3
+            },
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "alpha-constructions.net",
+              "count": 3
+            },
+            {
+              "domain": "mavilleenpoche.fr",
+              "count": 3
+            },
+            {
+              "domain": "brikawood.com",
+              "count": 3
+            },
+            {
+              "domain": "kubus-house.com",
+              "count": 3
+            },
+            {
+              "domain": "ville-saint-florent-sur-cher.fr",
+              "count": 3
+            },
+            {
+              "domain": "classorga.ch",
+              "count": 3
+            },
+            {
+              "domain": "leblogdubricoleur.net",
+              "count": 3
+            },
+            {
+              "domain": "groupe-seuil.com",
+              "count": 3
+            },
+            {
+              "domain": "maisonendevenir.fr",
+              "count": 3
+            },
+            {
+              "domain": "devis-artisan.fr",
+              "count": 3
+            },
+            {
+              "domain": "juriup.ch",
+              "count": 3
+            },
+            {
+              "domain": "archipossible.fr",
+              "count": 3
+            },
+            {
+              "domain": "doctrine.fr",
+              "count": 3
+            },
+            {
+              "domain": "metiersdart-artisanat.com",
+              "count": 3
+            },
+            {
+              "domain": "construction.gouv.ci",
+              "count": 3
+            },
+            {
+              "domain": "propylon.ch",
+              "count": 3
+            },
+            {
+              "domain": "basedespermis.fr",
+              "count": 3
+            },
+            {
+              "domain": "energiesplus.be",
+              "count": 3
+            },
+            {
+              "domain": "maisonfloralis.fr",
+              "count": 3
+            },
+            {
+              "domain": "sci-ai.app",
+              "count": 3
+            },
+            {
+              "domain": "construire-maison-aisne.fr",
+              "count": 3
+            },
+            {
+              "domain": "cabinetlaurentvalere.com",
+              "count": 3
+            },
+            {
+              "domain": "hometopus.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-crisalis.net",
+              "count": 3
+            },
+            {
+              "domain": "artisavoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 2
+            },
+            {
+              "domain": "service-public.gouv.fr",
+              "count": 2
+            },
+            {
+              "domain": "blm-maconnerie.fr",
+              "count": 2
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 2
+            },
+            {
+              "domain": "statistiques.developpement-durable.gouv.fr",
+              "count": 2
+            },
+            {
+              "domain": "macon-haute-savoie.fr",
+              "count": 2
+            },
+            {
+              "domain": "alexia.fr",
+              "count": 2
+            },
+            {
+              "domain": "village-justice.com",
+              "count": 2
+            },
+            {
+              "domain": "betwood.fr",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "decouverte-faisabilite",
+      "etape": "Découverte",
+      "label": "Étude de faisabilité",
+      "query": "Qu'est-ce qu'une étude de faisabilité pour un projet de maison ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "blog.archibien.com",
+              "count": 3
+            },
+            {
+              "domain": "trouver-mon-architecte.fr",
+              "count": 3
+            },
+            {
+              "domain": "creditmutuel-immobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "archibien.com",
+              "count": 3
+            },
+            {
+              "domain": "plans-projets-immo.fr",
+              "count": 3
+            },
+            {
+              "domain": "passivact.fr",
+              "count": 3
+            },
+            {
+              "domain": "scet.fr",
+              "count": 3
+            },
+            {
+              "domain": "h3m-ingenierie.fr",
+              "count": 3
+            },
+            {
+              "domain": "buddimm.fr",
+              "count": 3
+            },
+            {
+              "domain": "pretto.fr",
+              "count": 3
+            },
+            {
+              "domain": "archipad.com",
+              "count": 3
+            },
+            {
+              "domain": "wafa-lahmar-architecte.com",
+              "count": 3
+            },
+            {
+              "domain": "villaspeos.fr",
+              "count": 3
+            },
+            {
+              "domain": "angelotti.fr",
+              "count": 3
+            },
+            {
+              "domain": "rg-conception.fr",
+              "count": 3
+            },
+            {
+              "domain": "lelab-amo.com",
+              "count": 3
+            },
+            {
+              "domain": "blog-gestion-de-projet.com",
+              "count": 3
+            },
+            {
+              "domain": "legalstart.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "j-element.fr",
+              "count": 3
+            },
+            {
+              "domain": "djaboo.com",
+              "count": 3
+            },
+            {
+              "domain": "sublio.com",
+              "count": 3
+            },
+            {
+              "domain": "ok-energy.be",
+              "count": 3
+            },
+            {
+              "domain": "deselistudio.com",
+              "count": 3
+            },
+            {
+              "domain": "babi-architectes.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-france-atlantique.com",
+              "count": 3
+            },
+            {
+              "domain": "prigent-associes.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisonsnovea.com",
+              "count": 3
+            },
+            {
+              "domain": "area-studio.eu",
+              "count": 3
+            },
+            {
+              "domain": "valarchitecture.fr",
+              "count": 3
+            },
+            {
+              "domain": "coval-construction.com",
+              "count": 3
+            },
+            {
+              "domain": "be3i.com",
+              "count": 3
+            },
+            {
+              "domain": "revizly.fr",
+              "count": 3
+            },
+            {
+              "domain": "ba-it.fr",
+              "count": 3
+            },
+            {
+              "domain": "construire-sa.fr",
+              "count": 3
+            },
+            {
+              "domain": "energence.eu",
+              "count": 3
+            },
+            {
+              "domain": "bureau-etude-md.fr",
+              "count": 3
+            },
+            {
+              "domain": "mahe-gaetan.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "terrain-permis",
+      "etape": "Terrain",
+      "label": "Délai permis Genevois",
+      "query": "Combien de temps prend un permis de construire dans le Genevois français ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 13,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/faire-construire-haute-savoie/"
+          ],
+          "competitors": [
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "permis-construire.ch",
+              "count": 3
+            },
+            {
+              "domain": "nessell.ch",
+              "count": 3
+            },
+            {
+              "domain": "service-public.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "ge.ch",
+              "count": 3
+            },
+            {
+              "domain": "rousseau5.ch",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.ch",
+              "count": 3
+            },
+            {
+              "domain": "hilo-architectes.ch",
+              "count": 3
+            },
+            {
+              "domain": "artisan-romandie.ch",
+              "count": 3
+            },
+            {
+              "domain": "sfarchitecte.ch",
+              "count": 3
+            },
+            {
+              "domain": "suissearchitecte.ch",
+              "count": 3
+            },
+            {
+              "domain": "boma-architectes.ch",
+              "count": 3
+            },
+            {
+              "domain": "maitre-doeuvre.fr",
+              "count": 3
+            },
+            {
+              "domain": "apage.ch",
+              "count": 3
+            },
+            {
+              "domain": "senat.fr",
+              "count": 3
+            },
+            {
+              "domain": "legalstart.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "classorga.ch",
+              "count": 3
+            },
+            {
+              "domain": "ge.ch",
+              "count": 3
+            },
+            {
+              "domain": "nessell.ch",
+              "count": 3
+            },
+            {
+              "domain": "juriup.ch",
+              "count": 3
+            },
+            {
+              "domain": "blog.qoridor.fr",
+              "count": 3
+            },
+            {
+              "domain": "hilo-architectes.ch",
+              "count": 3
+            },
+            {
+              "domain": "construction-metallique-vaud.ch",
+              "count": 3
+            },
+            {
+              "domain": "mavilleenpoche.fr",
+              "count": 3
+            },
+            {
+              "domain": "propylon.ch",
+              "count": 3
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 3
+            },
+            {
+              "domain": "plans-projets-immo.fr",
+              "count": 3
+            },
+            {
+              "domain": "rister.ch",
+              "count": 3
+            },
+            {
+              "domain": "atlas-justice.fr",
+              "count": 3
+            },
+            {
+              "domain": "maison-gard-30.fr",
+              "count": 3
+            },
+            {
+              "domain": "milleniumproperties.ch",
+              "count": 3
+            },
+            {
+              "domain": "construire-maison-aisne.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "comp-bois-tradi",
+      "etape": "Comparaison",
+      "label": "Bois vs traditionnel 74",
+      "query": "Maison bois ou maison traditionnelle en Haute-Savoie : que choisir ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "forumconstruire.com",
+              "count": 3
+            },
+            {
+              "domain": "abctravaux.org",
+              "count": 3
+            },
+            {
+              "domain": "blokiwood.fr",
+              "count": 3
+            },
+            {
+              "domain": "annecy.pro",
+              "count": 3
+            },
+            {
+              "domain": "rj-home-france.fr",
+              "count": 3
+            },
+            {
+              "domain": "conceptionsimmobilieres.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 3
+            },
+            {
+              "domain": "constructionwiki.info",
+              "count": 3
+            },
+            {
+              "domain": "prokit.fr",
+              "count": 3
+            },
+            {
+              "domain": "anco.pro",
+              "count": 3
+            },
+            {
+              "domain": "welcome-suisse.ch",
+              "count": 3
+            },
+            {
+              "domain": "conseils-thermiques.org",
+              "count": 3
+            },
+            {
+              "domain": "construire-une-maison-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "atelierciel.fr",
+              "count": 3
+            },
+            {
+              "domain": "matmut.fr",
+              "count": 3
+            },
+            {
+              "domain": "mygardenloft.com",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "bigmat.fr",
+              "count": 3
+            },
+            {
+              "domain": "arlogis.com",
+              "count": 3
+            },
+            {
+              "domain": "vivre-en-haute-savoie.com",
+              "count": 3
+            },
+            {
+              "domain": "mma.fr",
+              "count": 3
+            },
+            {
+              "domain": "simulateur-prix-construction-maison.fr",
+              "count": 3
+            },
+            {
+              "domain": "breizhdance.fr",
+              "count": 3
+            },
+            {
+              "domain": "blog-investissement-immobilier.lybox.fr",
+              "count": 3
+            },
+            {
+              "domain": "tourisme-annecy.net",
+              "count": 3
+            },
+            {
+              "domain": "lunil.com",
+              "count": 3
+            },
+            {
+              "domain": "rfi.fr",
+              "count": 3
+            },
+            {
+              "domain": "marieclaire.fr",
+              "count": 3
+            },
+            {
+              "domain": "etreproprio.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-interieur-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "lalocalerie.fr",
+              "count": 3
+            },
+            {
+              "domain": "maison-natilia.fr",
+              "count": 3
+            },
+            {
+              "domain": "vie-veranda.com",
+              "count": 3
+            },
+            {
+              "domain": "travaux.com",
+              "count": 3
+            },
+            {
+              "domain": "fr.euronews.com",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "msn.com",
+              "count": 3
+            },
+            {
+              "domain": "letribunaldunet.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "heute.at",
+              "count": 3
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 3
+            },
+            {
+              "domain": "a5r5br.net",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 3
+            },
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-en-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "rfi.fr",
+              "count": 3
+            },
+            {
+              "domain": "kubus-house.com",
+              "count": 3
+            },
+            {
+              "domain": "maconstruction.be",
+              "count": 3
+            },
+            {
+              "domain": "pakami.fr",
+              "count": 3
+            },
+            {
+              "domain": "maisons-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "tierrhabitat.com",
+              "count": 3
+            },
+            {
+              "domain": "fibois-aura.org",
+              "count": 3
+            },
+            {
+              "domain": "maisonkalixo.fr",
+              "count": 3
+            },
+            {
+              "domain": "calexstructure.com",
+              "count": 3
+            },
+            {
+              "domain": "vert.eco",
+              "count": 3
+            },
+            {
+              "domain": "maison.com",
+              "count": 3
+            },
+            {
+              "domain": "oxoarch.com",
+              "count": 3
+            },
+            {
+              "domain": "groupe-seuil.com",
+              "count": 3
+            },
+            {
+              "domain": "al-rock.fr",
+              "count": 3
+            },
+            {
+              "domain": "hotel-st-georges.fr",
+              "count": 3
+            },
+            {
+              "domain": "tourisme-haute-savoie.com",
+              "count": 3
+            },
+            {
+              "domain": "toituresantus.com",
+              "count": 3
+            },
+            {
+              "domain": "insights.made-in-china.com",
+              "count": 3
+            },
+            {
+              "domain": "metiersdart-artisanat.com",
+              "count": 3
+            },
+            {
+              "domain": "vialabois.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.euronews.com",
+              "count": 3
+            },
+            {
+              "domain": "archilibre.org",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "letribunaldunet.fr",
+              "count": 3
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 3
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "recherche-appartement-ou-maison.com",
+              "count": 3
+            },
+            {
+              "domain": "a5r5br.net",
+              "count": 3
+            },
+            {
+              "domain": "centrepresseaveyron.fr",
+              "count": 3
+            },
+            {
+              "domain": "forumconstruire.com",
+              "count": 3
+            },
+            {
+              "domain": "transaxia.fr",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "lemessager.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "decouverte-extension",
+      "etape": "Découverte",
+      "label": "Extension bois 74",
+      "query": "Comment faire une extension ossature bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 1,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/extension-bois/"
+          ],
+          "competitors": [
+            {
+              "domain": "actuelveranda74.com",
+              "count": 3
+            },
+            {
+              "domain": "mocabois.fr",
+              "count": 3
+            },
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "kitmaisonbois.com",
+              "count": 3
+            },
+            {
+              "domain": "amitecte.fr",
+              "count": 3
+            },
+            {
+              "domain": "atelier-novalp.com",
+              "count": 3
+            },
+            {
+              "domain": "ninet-gavin.fr",
+              "count": 3
+            },
+            {
+              "domain": "vie-veranda.com",
+              "count": 3
+            },
+            {
+              "domain": "archibien.com",
+              "count": 3
+            },
+            {
+              "domain": "haute-savoie.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "extension-maison.net",
+              "count": 3
+            },
+            {
+              "domain": "maitre-doeuvre.fr",
+              "count": 3
+            },
+            {
+              "domain": "giezdescimes.com",
+              "count": 3
+            },
+            {
+              "domain": "linkedin.com",
+              "count": 3
+            },
+            {
+              "domain": "charpente-ossature-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "espasshabitat.com",
+              "count": 3
+            },
+            {
+              "domain": "visionbois.com",
+              "count": 3
+            },
+            {
+              "domain": "an-architecte.com",
+              "count": 3
+            },
+            {
+              "domain": "batico.fr",
+              "count": 3
+            },
+            {
+              "domain": "haeconcept.fr",
+              "count": 3
+            },
+            {
+              "domain": "bois.com",
+              "count": 3
+            },
+            {
+              "domain": "piece-jointe-carto.developpement-durable.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "cedricbrun.immo",
+              "count": 3
+            },
+            {
+              "domain": "forumconstruire.com",
+              "count": 3
+            },
+            {
+              "domain": "maitre-ao.fr",
+              "count": 3
+            },
+            {
+              "domain": "bddbois.fibois-france.fr",
+              "count": 3
+            },
+            {
+              "domain": "service-public.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "cybel-extension.com",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "extension-maison.net",
+              "count": 3
+            },
+            {
+              "domain": "artisan-en-ligne.com",
+              "count": 3
+            },
+            {
+              "domain": "mczbois.com",
+              "count": 3
+            },
+            {
+              "domain": "calexstructure.com",
+              "count": 3
+            },
+            {
+              "domain": "artisavoie.fr",
+              "count": 3
+            },
+            {
+              "domain": "ootravaux.fr",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-pelle.com",
+              "count": 3
+            },
+            {
+              "domain": "studiodejardinpro.fr",
+              "count": 3
+            },
+            {
+              "domain": "tutos-poele.com",
+              "count": 3
+            },
+            {
+              "domain": "brikawood.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "renovbox.fr",
+              "count": 3
+            },
+            {
+              "domain": "rg-conception.fr",
+              "count": 3
+            },
+            {
+              "domain": "ar92sud.fr",
+              "count": 3
+            },
+            {
+              "domain": "travaux.obat.fr",
+              "count": 3
+            },
+            {
+              "domain": "renovationimmobilier.com",
+              "count": 3
+            },
+            {
+              "domain": "constructionwiki.info",
+              "count": 3
+            },
+            {
+              "domain": "mon-extension-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "kubus-house.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 3
+            },
+            {
+              "domain": "arboisconstruction.fr",
+              "count": 3
+            },
+            {
+              "domain": "camif-habitat.fr",
+              "count": 2
+            },
+            {
+              "domain": "francemarches.com",
+              "count": 2
+            },
+            {
+              "domain": "pappers.fr",
+              "count": 2
+            },
+            {
+              "domain": "vinci-immobilier.com",
+              "count": 2
+            },
+            {
+              "domain": "maisons-france-confort.fr",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "decouverte-re2020",
+      "etape": "Découverte",
+      "label": "RE2020 maison bois 74",
+      "query": "La RE2020 change-t-elle quelque chose pour une maison bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 30,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/"
+          ],
+          "competitors": [
+            {
+              "domain": "ecologie.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "atelier-novalp.com",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "plan-immobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "construction-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "rt-re-batiment.developpement-durable.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "une-maison-en-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "domindo.fr",
+              "count": 3
+            },
+            {
+              "domain": "greenkub.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.scribd.com",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "codifab.fr",
+              "count": 3
+            },
+            {
+              "domain": "lesiteimmo.com",
+              "count": 3
+            },
+            {
+              "domain": "permisclair.fr",
+              "count": 3
+            },
+            {
+              "domain": "haute-savoie.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "jfr-nature-et-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "visionbois.com",
+              "count": 3
+            },
+            {
+              "domain": "chaletpro.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.wikipedia.org",
+              "count": 3
+            },
+            {
+              "domain": "trecobois.fr",
+              "count": 3
+            },
+            {
+              "domain": "pollen-construction.fr",
+              "count": 3
+            },
+            {
+              "domain": "construction21.org",
+              "count": 3
+            },
+            {
+              "domain": "isere.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "conseils.xpair.com",
+              "count": 3
+            },
+            {
+              "domain": "conseils-thermiques.org",
+              "count": 3
+            },
+            {
+              "domain": "cerema.fr",
+              "count": 3
+            },
+            {
+              "domain": "finistere.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "deux-sevres.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "hautes-pyrenees.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "leprogres.fr",
+              "count": 3
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "lemessager.fr",
+              "count": 3
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 2
+            },
+            {
+              "domain": "dna.fr",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "etude-bet.fr",
+              "count": 3
+            },
+            {
+              "domain": "trecobois.fr",
+              "count": 3
+            },
+            {
+              "domain": "recherche-appartement-ou-maison.com",
+              "count": 3
+            },
+            {
+              "domain": "tarulo.com",
+              "count": 3
+            },
+            {
+              "domain": "rt-re-batiment.developpement-durable.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "ecologie.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "habitbois.com",
+              "count": 3
+            },
+            {
+              "domain": "ceilingo-isolation.com",
+              "count": 3
+            },
+            {
+              "domain": "youpi-la-maison.com",
+              "count": 3
+            },
+            {
+              "domain": "re2020-enligne.fr",
+              "count": 3
+            },
+            {
+              "domain": "logic-immo.com",
+              "count": 3
+            },
+            {
+              "domain": "gueudry.fr",
+              "count": 3
+            },
+            {
+              "domain": "r-e2020.fr",
+              "count": 3
+            },
+            {
+              "domain": "studiodejardinpro.fr",
+              "count": 3
+            },
+            {
+              "domain": "letabli-blog.fr",
+              "count": 3
+            },
+            {
+              "domain": "home-expertise.fr",
+              "count": 3
+            },
+            {
+              "domain": "artisanfacture.fr",
+              "count": 3
+            },
+            {
+              "domain": "lecobat.fr",
+              "count": 3
+            },
+            {
+              "domain": "partenaire-materiaux.fr",
+              "count": 3
+            },
+            {
+              "domain": "cedreo.com",
+              "count": 3
+            },
+            {
+              "domain": "alterea.fr",
+              "count": 3
+            },
+            {
+              "domain": "futurenvironnement.fr",
+              "count": 3
+            },
+            {
+              "domain": "solerpalau.com",
+              "count": 3
+            },
+            {
+              "domain": "batimi.fr",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "proprietes.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "polehabitat-ffb.com",
+              "count": 3
+            },
+            {
+              "domain": "vinci-immobilier.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-alain-metral.fr",
+              "count": 3
+            },
+            {
+              "domain": "ledauphine.com",
+              "count": 3
+            },
+            {
+              "domain": "letribunaldunet.fr",
+              "count": 3
+            },
+            {
+              "domain": "lemessager.fr",
+              "count": 3
+            },
+            {
+              "domain": "tf1info.fr",
+              "count": 3
+            },
+            {
+              "domain": "mas-occitan.fr",
+              "count": 2
+            },
+            {
+              "domain": "leprogres.fr",
+              "count": 2
+            },
+            {
+              "domain": "emploi.lefigaro.fr",
+              "count": 2
+            },
+            {
+              "domain": "afabat.fr",
+              "count": 2
+            },
+            {
+              "domain": "entreprise-cartier.fr",
+              "count": 1
+            },
+            {
+              "domain": "kubus-house.com",
+              "count": 1
+            },
+            {
+              "domain": "dna.fr",
+              "count": 1
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 1
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "decision-verifier-moe",
+      "etape": "Décision",
+      "label": "Vérifier un maître d'œuvre",
+      "query": "Comment vérifier un maître d'œuvre avant de signer ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "at-spp.fr",
+              "count": 3
+            },
+            {
+              "domain": "xcubedesign.fr",
+              "count": 3
+            },
+            {
+              "domain": "archipad.com",
+              "count": 3
+            },
+            {
+              "domain": "keobiz.fr",
+              "count": 3
+            },
+            {
+              "domain": "marche-public.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.scribd.com",
+              "count": 3
+            },
+            {
+              "domain": "qualitel.org",
+              "count": 3
+            },
+            {
+              "domain": "global-expertises.fr",
+              "count": 3
+            },
+            {
+              "domain": "batiscript.com",
+              "count": 3
+            },
+            {
+              "domain": "bati-confort.fr",
+              "count": 3
+            },
+            {
+              "domain": "youretudes.com",
+              "count": 3
+            },
+            {
+              "domain": "anil.org",
+              "count": 3
+            },
+            {
+              "domain": "ressources.unit.eu",
+              "count": 3
+            },
+            {
+              "domain": "anco.pro",
+              "count": 3
+            },
+            {
+              "domain": "pilotetonchantier.fr",
+              "count": 3
+            },
+            {
+              "domain": "jaimelapierre.com",
+              "count": 3
+            },
+            {
+              "domain": "qce781.org",
+              "count": 3
+            },
+            {
+              "domain": "checkmy-house.fr",
+              "count": 3
+            },
+            {
+              "domain": "maf.fr",
+              "count": 3
+            },
+            {
+              "domain": "france-renov.gouv.fr",
+              "count": 3
+            },
+            {
+              "domain": "cfg.asso.fr",
+              "count": 3
+            },
+            {
+              "domain": "saqara.com",
+              "count": 3
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 3
+            },
+            {
+              "domain": "code-commande-publique.com",
+              "count": 3
+            },
+            {
+              "domain": "hemea.com",
+              "count": 3
+            },
+            {
+              "domain": "service-public.gouv.fr",
+              "count": 3
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "at-spp.fr",
+              "count": 3
+            },
+            {
+              "domain": "xcubedesign.fr",
+              "count": 3
+            },
+            {
+              "domain": "mhstructure.com",
+              "count": 3
+            },
+            {
+              "domain": "kohenavocats.com",
+              "count": 3
+            },
+            {
+              "domain": "l-e-couvreur.fr",
+              "count": 3
+            },
+            {
+              "domain": "3ehabitat.fr",
+              "count": 3
+            },
+            {
+              "domain": "gambettaimmobilier.fr",
+              "count": 3
+            },
+            {
+              "domain": "propylon.ch",
+              "count": 3
+            },
+            {
+              "domain": "monplandemaison.fr",
+              "count": 3
+            },
+            {
+              "domain": "maison-travaux.fr",
+              "count": 3
+            },
+            {
+              "domain": "fr.trabajo.org",
+              "count": 3
+            },
+            {
+              "domain": "maconstruction.be",
+              "count": 3
+            },
+            {
+              "domain": "immorenoplus.com",
+              "count": 3
+            },
+            {
+              "domain": "amu-asso.fr",
+              "count": 3
+            },
+            {
+              "domain": "tunisienumerique.com",
+              "count": 3
+            },
+            {
+              "domain": "nodalreno.com",
+              "count": 3
+            },
+            {
+              "domain": "meteojob.com",
+              "count": 3
+            },
+            {
+              "domain": "vesta-expertises.fr",
+              "count": 3
+            },
+            {
+              "domain": "assurancepratique.com",
+              "count": 3
+            },
+            {
+              "domain": "fr.saharamedias.net",
+              "count": 3
+            },
+            {
+              "domain": "ecvcheck.com",
+              "count": 3
+            },
+            {
+              "domain": "app.studyraid.com",
+              "count": 3
+            },
+            {
+              "domain": "maad-architectes.fr",
+              "count": 3
+            },
+            {
+              "domain": "decennales.fr",
+              "count": 3
+            },
+            {
+              "domain": "annuaireci.com",
+              "count": 3
+            },
+            {
+              "domain": "kohenavocats.fr",
+              "count": 3
+            },
+            {
+              "domain": "candidat.francetravail.fr",
+              "count": 3
+            },
+            {
+              "domain": "maxiassur.fr",
+              "count": 3
+            },
+            {
+              "domain": "qualitel.org",
+              "count": 2
+            },
+            {
+              "domain": "creatishabitat.com",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "id": "pro-grand-geneve",
+      "etape": "Professionnel",
+      "label": "Construire bois Grand Genève côté français",
+      "query": "Comment faire construire une maison ossature bois dans le Grand Genève côté français ?",
+      "passes": {
+        "authority": {
+          "cited": true,
+          "citedEarly": false,
+          "position": 1,
+          "citedRuns": 3,
+          "mmUrls": [
+            "https://www.constructiondemaisons.com/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois/",
+            "https://www.constructiondemaisons.com/maison-ossature-bois-saint-julien-en-genevois/",
+            "https://www.constructiondemaisons.com/extension-bois/"
+          ],
+          "competitors": [
+            {
+              "domain": "ge.ch",
+              "count": 3
+            },
+            {
+              "domain": "geneve.ch",
+              "count": 3
+            },
+            {
+              "domain": "polarlifehaus.fr",
+              "count": 3
+            },
+            {
+              "domain": "immotep.ch",
+              "count": 3
+            },
+            {
+              "domain": "cl-couverture.com",
+              "count": 3
+            },
+            {
+              "domain": "avenirbois.ch",
+              "count": 3
+            },
+            {
+              "domain": "charpente-forster.ch",
+              "count": 3
+            },
+            {
+              "domain": "silgeneve.ch",
+              "count": 3
+            },
+            {
+              "domain": "rouxentreprise.com",
+              "count": 3
+            },
+            {
+              "domain": "menuiserie-echo-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "nessell.ch",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-construction.ch",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.ch",
+              "count": 3
+            },
+            {
+              "domain": "bernard-escurier.fr",
+              "count": 3
+            },
+            {
+              "domain": "tschoppcharpente.ch",
+              "count": 3
+            },
+            {
+              "domain": "maison-natilia.fr",
+              "count": 3
+            },
+            {
+              "domain": "mj-ossature-bois.fr",
+              "count": 3
+            },
+            {
+              "domain": "holzeo.fr",
+              "count": 3
+            },
+            {
+              "domain": "lodgesconstruction.com",
+              "count": 3
+            },
+            {
+              "domain": "houzz.com",
+              "count": 3
+            },
+            {
+              "domain": "blokiwood.fr",
+              "count": 3
+            },
+            {
+              "domain": "hilo-architectes.ch",
+              "count": 2
+            },
+            {
+              "domain": "plans-projets-immo.fr",
+              "count": 2
+            },
+            {
+              "domain": "a-vos-projets.fr",
+              "count": 2
+            },
+            {
+              "domain": "chaletdejardin.fr",
+              "count": 2
+            },
+            {
+              "domain": "meilleur-artisan.com",
+              "count": 2
+            },
+            {
+              "domain": "blog.archibien.com",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [
+            {
+              "domain": "smarthausswiss.ch",
+              "count": 3
+            },
+            {
+              "domain": "classorga.ch",
+              "count": 3
+            },
+            {
+              "domain": "ch-fr.indeed.com",
+              "count": 3
+            },
+            {
+              "domain": "tinyhousesuisse.ch",
+              "count": 3
+            },
+            {
+              "domain": "lebau.ch",
+              "count": 3
+            },
+            {
+              "domain": "juriup.ch",
+              "count": 3
+            },
+            {
+              "domain": "propylon.ch",
+              "count": 3
+            },
+            {
+              "domain": "rister.ch",
+              "count": 3
+            },
+            {
+              "domain": "maisons-en-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "local.ch",
+              "count": 3
+            },
+            {
+              "domain": "nessell.ch",
+              "count": 3
+            },
+            {
+              "domain": "photostudio13.ch",
+              "count": 3
+            },
+            {
+              "domain": "jardinetchalet.com",
+              "count": 3
+            },
+            {
+              "domain": "artisan-en-ligne.com",
+              "count": 3
+            },
+            {
+              "domain": "gmg-pepiniere-paysage.fr",
+              "count": 3
+            },
+            {
+              "domain": "permisconstruire.ch",
+              "count": 3
+            },
+            {
+              "domain": "calexstructure.com",
+              "count": 3
+            },
+            {
+              "domain": "tierrhabitat.com",
+              "count": 3
+            },
+            {
+              "domain": "construction-metallique-vaud.ch",
+              "count": 3
+            },
+            {
+              "domain": "studiodejardinpro.fr",
+              "count": 3
+            },
+            {
+              "domain": "entreprise-pelle.com",
+              "count": 3
+            },
+            {
+              "domain": "odafr.com",
+              "count": 3
+            },
+            {
+              "domain": "maisons-bois.com",
+              "count": 3
+            },
+            {
+              "domain": "lindemannlaw.ch",
+              "count": 3
+            },
+            {
+              "domain": "mathis.eu",
+              "count": 3
+            },
+            {
+              "domain": "compao.fr",
+              "count": 3
+            },
+            {
+              "domain": "ojarchitecte.com",
+              "count": 3
+            },
+            {
+              "domain": "arboisconstruction.fr",
+              "count": 3
+            },
+            {
+              "domain": "hilo-architectes.ch",
+              "count": 3
+            },
+            {
+              "domain": "mathis-timber-construction.com",
+              "count": 3
+            },
+            {
+              "domain": "entreprises.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "immobilier.lefigaro.fr",
+              "count": 3
+            },
+            {
+              "domain": "broadwayworld.com",
+              "count": 3
+            },
+            {
+              "domain": "monochrome-watches.com",
+              "count": 3
+            },
+            {
+              "domain": "lematin.ch",
+              "count": 3
+            },
+            {
+              "domain": "msn.com",
+              "count": 3
+            },
+            {
+              "domain": "sofascore.com",
+              "count": 3
+            },
+            {
+              "domain": "faovd.ch",
+              "count": 2
+            },
+            {
+              "domain": "progineer.fr",
+              "count": 2
+            }
+          ],
+          "runs": 3,
+          "errors": 0
+        }
+      }
+    }
+  ]
+}
