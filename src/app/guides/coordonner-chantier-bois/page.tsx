@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/coordonner-chantier-bois/",
   },
+  openGraph: { type: "article", publishedTime: "2025-01-15", modifiedTime: "2026-08-24" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";

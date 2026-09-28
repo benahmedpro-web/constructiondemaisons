@@ -7,7 +7,7 @@
  *
  * Met à jour :
  *   - src/lib/dates-pages.ts      → lastmod du sitemap
- *   - les guides (`dateModified` du JSON-LD + mention « Mis à jour le … » affichée)
+ *   - les guides (`dateModified` du JSON-LD, `modifiedTime` Open Graph + mention « Mis à jour le … » affichée)
  *
  * Usage :
  *   node scripts/sync-dates.mjs            vérifie et liste les écarts (aucune écriture)
@@ -93,6 +93,7 @@ for (const f of guides) {
   const avant = readFileSync(f, "utf8");
   const apres = avant
     .replace(/(dateModified:\s*")[0-9-]+(")/, `$1${date}$2`)
+    .replace(/(modifiedTime:\s*")[0-9-]+(")/, `$1${date}$2`)
     .replace(/(Mis à jour le )[^<]*/, `$1${enFrancais(date)}`);
   if (apres !== avant) {
     modifies++;

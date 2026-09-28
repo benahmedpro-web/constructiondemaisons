@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/honoraires-maitre-oeuvre/",
   },
+  openGraph: { type: "article", publishedTime: "2026-09-14", modifiedTime: "2026-09-14" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";

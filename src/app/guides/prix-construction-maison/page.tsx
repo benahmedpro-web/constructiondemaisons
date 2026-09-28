@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     canonical: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
   },
   openGraph: {
+    publishedTime: "2026-06-26", modifiedTime: "2026-09-10",
     title: "Prix construction maison 2026 : budget complet par type de projet",
     description: "Combien coûte une construction de maison en 2026 dans le Grand Genève ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
     url: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
