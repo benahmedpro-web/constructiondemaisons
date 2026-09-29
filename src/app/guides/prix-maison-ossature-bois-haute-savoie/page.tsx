@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-maison-ossature-bois-haute-savoie/",
   },
+  openGraph: { type: "article", publishedTime: "2025-03-01", modifiedTime: "2026-09-10" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";

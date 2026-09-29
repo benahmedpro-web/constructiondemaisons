@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/extension-ossature-bois/",
   },
+  openGraph: { type: "article", publishedTime: "2025-01-15", modifiedTime: "2026-09-10" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";

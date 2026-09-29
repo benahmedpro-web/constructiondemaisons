@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/construction-chalet-ossature-bois-haute-savoie/",
   },
+  openGraph: { type: "article", publishedTime: "2025-04-01", modifiedTime: "2026-08-20" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";

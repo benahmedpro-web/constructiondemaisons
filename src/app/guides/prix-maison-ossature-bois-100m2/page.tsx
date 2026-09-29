@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/prix-maison-ossature-bois-100m2/",
   },
+  openGraph: { type: "article", publishedTime: "2025-01-15", modifiedTime: "2026-09-10" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";
