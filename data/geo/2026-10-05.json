@@ -1,0 +1,585 @@
+{
+  "date": "2026-10-05T16:43:03.101Z",
+  "runs": 3,
+  "contextSize": "medium",
+  "model": "sonar",
+  "mock": false,
+  "summary": {
+    "authority": {
+      "score": 0,
+      "cited": 0,
+      "urlCited": 0,
+      "citedEarly": 0,
+      "avgPosition": null
+    },
+    "freshness": {
+      "score": 0,
+      "cited": 0,
+      "urlCited": 0,
+      "citedEarly": 0,
+      "avgPosition": null
+    }
+  },
+  "results": [
+    {
+      "id": "pro-annemasse",
+      "etape": "Professionnel",
+      "label": "Accompagnement maison bois Annemasse",
+      "query": "Qui peut m'accompagner pour construire une maison ossature bois à Annemasse ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "pro-genevois",
+      "etape": "Professionnel",
+      "label": "Maître d'œuvre bois Genevois français",
+      "query": "Quel maître d'œuvre choisir pour une maison bois dans le Genevois français ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "pro-saint-julien",
+      "etape": "Professionnel",
+      "label": "MOE bois Saint-Julien-en-Genevois",
+      "query": "Maître d'œuvre maison bois à Saint-Julien-en-Genevois : qui contacter ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "pro-thonon",
+      "etape": "Professionnel",
+      "label": "Maison bois Thonon-les-Bains",
+      "query": "Qui construit des maisons ossature bois à Thonon-les-Bains ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "comp-moe-ccmi",
+      "etape": "Comparaison",
+      "label": "MOE vs CCMI bois",
+      "query": "Maître d'œuvre ou constructeur CCMI pour une maison bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "comp-moe-archi",
+      "etape": "Comparaison",
+      "label": "MOE vs architecte 120 m²",
+      "query": "Maître d'œuvre ou architecte pour une maison de 120 m² en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "budget-120",
+      "etape": "Budget",
+      "label": "Prix maison bois 120 m² 74",
+      "query": "Combien coûte une maison ossature bois de 120 m² en Haute-Savoie en 2026 ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "budget-m2",
+      "etape": "Budget",
+      "label": "Prix au m² bois 74",
+      "query": "Prix au m² d'une maison ossature bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "budget-honoraires",
+      "etape": "Budget",
+      "label": "Honoraires maître d'œuvre",
+      "query": "Combien coûtent les honoraires d'un maître d'œuvre pour une maison ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "budget-total",
+      "etape": "Budget",
+      "label": "Budget total terrain + maison Genevois",
+      "query": "Quel budget total, terrain compris, pour construire dans le Genevois français ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "terrain-constructible",
+      "etape": "Terrain",
+      "label": "Terrain constructible 74",
+      "query": "Comment savoir si un terrain est constructible en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "terrain-prix",
+      "etape": "Terrain",
+      "label": "Prix terrain Annemasse",
+      "query": "Combien coûte un terrain constructible près d'Annemasse ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "decouverte-etapes",
+      "etape": "Découverte",
+      "label": "Étapes faire construire 74",
+      "query": "Quelles sont les étapes pour faire construire une maison en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "decouverte-faisabilite",
+      "etape": "Découverte",
+      "label": "Étude de faisabilité",
+      "query": "Qu'est-ce qu'une étude de faisabilité pour un projet de maison ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "terrain-permis",
+      "etape": "Terrain",
+      "label": "Délai permis Genevois",
+      "query": "Combien de temps prend un permis de construire dans le Genevois français ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "comp-bois-tradi",
+      "etape": "Comparaison",
+      "label": "Bois vs traditionnel 74",
+      "query": "Maison bois ou maison traditionnelle en Haute-Savoie : que choisir ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "decouverte-extension",
+      "etape": "Découverte",
+      "label": "Extension bois 74",
+      "query": "Comment faire une extension ossature bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "decouverte-re2020",
+      "etape": "Découverte",
+      "label": "RE2020 maison bois 74",
+      "query": "La RE2020 change-t-elle quelque chose pour une maison bois en Haute-Savoie ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "decision-verifier-moe",
+      "etape": "Décision",
+      "label": "Vérifier un maître d'œuvre",
+      "query": "Comment vérifier un maître d'œuvre avant de signer ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    },
+    {
+      "id": "pro-grand-geneve",
+      "etape": "Professionnel",
+      "label": "Construire bois Grand Genève côté français",
+      "query": "Comment faire construire une maison ossature bois dans le Grand Genève côté français ?",
+      "passes": {
+        "authority": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        },
+        "freshness": {
+          "cited": false,
+          "citedEarly": false,
+          "position": null,
+          "citedRuns": 0,
+          "mmUrls": [],
+          "competitors": [],
+          "runs": 3,
+          "errors": 3
+        }
+      }
+    }
+  ]
+}
