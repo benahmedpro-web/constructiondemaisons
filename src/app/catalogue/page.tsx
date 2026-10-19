@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { gammes } from "@/lib/gammes";
 
 export const metadata: Metadata = {
   title: "Catalogue de maisons ossature bois RE2020",
@@ -17,75 +18,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-const gammes = [
-  {
-    nom: "Tournette",
-    slug: "tournette",
-    type: "Plain-pied",
-    surfaces: "65 – 90 m²",
-    typologies: "T3 à T4",
-    variantes: 9,
-    description: "Maison de plain-pied compacte et fonctionnelle. Idéale pour les terrains à faible emprise. Disponible avec ou sans garage intégré.",
-    tag: "Entrée de gamme",
-    image: "/images/modele-tournette.png",
-  },
-  {
-    nom: "Bargy",
-    slug: "bargy",
-    type: "Plain-pied",
-    surfaces: "75 – 100 m²",
-    typologies: "T4 à T5",
-    variantes: 8,
-    description: "Plain-pied spacieux avec séjour traversant ou séjour avant selon l'orientation de votre terrain. Grande luminosité naturelle.",
-    tag: "Le plus populaire",
-    image: "/images/modele-bargy.png",
-  },
-  {
-    nom: "Voirons",
-    slug: "voirons",
-    type: "Plain-pied",
-    surfaces: "100 m²",
-    typologies: "T5",
-    variantes: 1,
-    description: "Grand plain-pied 4 chambres avec garage intégré. Conçu pour les familles qui souhaitent tout de plain-pied sans compromis sur les espaces.",
-    tag: "Famille",
-    image: "/images/modele-voirons.png",
-  },
-  {
-    nom: "Salève",
-    slug: "saleve",
-    type: "Étage",
-    surfaces: "75 – 90 m²",
-    typologies: "T4",
-    variantes: 3,
-    description: "Maison à étage gamme Éco. Emprise au sol réduite — idéale pour les terrains étroits. Séjour généreux au RDC, chambres à l'étage.",
-    tag: "Gamme Éco",
-    image: "/images/modele-saleve.png",
-  },
-  {
-    nom: "Aravis",
-    slug: "aravis",
-    type: "Étage",
-    surfaces: "80 – 100 m²",
-    typologies: "T4 à T5",
-    variantes: 5,
-    description: "Maison à étage avec suite parentale au RDC. Organisation optimale : vie de famille à l'étage, intimité des parents préservée.",
-    tag: "Suite parentale",
-    image: "/images/modele-aravis.png",
-  },
-  {
-    nom: "Étale",
-    slug: "etale",
-    type: "Étage",
-    surfaces: "81 – 118 m²",
-    typologies: "T4 à T5",
-    variantes: 5,
-    description: "La gamme la plus spacieuse. Grandes pièces de vie, volumes généreux, jusqu'à 118 m² habitables. Pour un projet sans compromis.",
-    tag: "Haut de gamme",
-    image: "/images/modele-etale.png",
-  },
-];
 
 function BadgeType({ type }: { type: string }) {
   const isEtage = type === "Étage";
@@ -216,6 +148,12 @@ export default function CataloguePage() {
                     </div>
                   </div>
                   <Link
+                    href={`/catalogue/${g.slug}/`}
+                    className="block border border-[#2C2C2A] text-[#2C2C2A] text-center text-[13px] font-bold py-3 no-underline hover:bg-[#2C2C2A] hover:text-white transition-colors mb-2"
+                  >
+                    Découvrir la gamme
+                  </Link>
+                  <Link
                     href={`/demande-etude/?type=maison-neuve&gamme=${encodeURIComponent(g.nom)}`}
                     className="block bg-[#BA7517] text-white text-center text-[13px] font-bold py-3 no-underline hover:bg-[#9E6312] transition-colors"
                   >
@@ -266,6 +204,12 @@ export default function CataloguePage() {
                       <div className="text-[14px] font-bold text-[#2C2C2A] mt-0.5">{g.variantes} plans</div>
                     </div>
                   </div>
+                  <Link
+                    href={`/catalogue/${g.slug}/`}
+                    className="block border border-[#2C2C2A] text-[#2C2C2A] text-center text-[13px] font-bold py-3 no-underline hover:bg-[#2C2C2A] hover:text-white transition-colors mb-2"
+                  >
+                    Découvrir la gamme
+                  </Link>
                   <Link
                     href="/demande-etude/"
                     className="block bg-[#BA7517] text-white text-center text-[13px] font-bold py-3 no-underline hover:bg-[#9E6312] transition-colors"
