@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { redirectionsAnnonces } from "./src/lib/redirections-annonces";
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -27,6 +28,9 @@ const nextConfig: NextConfig = {
       { source: "/tarifs", destination: "/demande-etude/", statusCode: 301 },
       { source: "/devis", destination: "/demande-etude/", statusCode: 301 },
       { source: "/construction-maison", destination: "/faire-construire-haute-savoie/", statusCode: 301 },
+      // Fiches dont le slug a changé avec la correction des surfaces habitables.
+      // Table générée depuis les données du portefeuille, cf. src/lib/redirections-annonces.ts
+      ...redirectionsAnnonces.map((r) => ({ ...r, statusCode: 301 as const })),
     ];
   },
 
