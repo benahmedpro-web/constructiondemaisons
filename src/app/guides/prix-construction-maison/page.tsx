@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
   },
   openGraph: {
-    publishedTime: "2026-06-26", modifiedTime: "2026-09-10",
+    publishedTime: "2026-06-26", modifiedTime: "2026-09-28",
     title: "Prix construction maison 2026 : budget complet par type de projet",
     description: "Combien coûte une construction de maison en 2026 dans le Grand Genève ? Tableau par type de projet, postes de dépense, spécificités Haute-Savoie.",
     url: "https://www.constructiondemaisons.com/guides/prix-construction-maison/",
@@ -30,7 +30,7 @@ const jsonLdArticle = {
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
   datePublished: "2026-06-26",
-  dateModified: "2026-09-10",
+  dateModified: "2026-09-28",
   inLanguage: "fr-FR",
   image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
@@ -182,7 +182,7 @@ export default function GuidePrixConstructionMaisonPage() {
               </span>
             </div>
           </Link>
-            <p className="text-white/40 text-[13px]">Mis à jour le 10 septembre 2026</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 28 septembre 2026</p>
           </div>
         </div>
 

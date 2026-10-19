@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/honoraires-maitre-oeuvre/",
   },
-  openGraph: { type: "article", publishedTime: "2026-09-14", modifiedTime: "2026-09-14" },
+  openGraph: { type: "article", publishedTime: "2026-09-14", modifiedTime: "2026-09-28" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";
@@ -22,7 +22,7 @@ const jsonLdArticle = {
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
   datePublished: "2026-09-14",
-  dateModified: "2026-09-14",
+  dateModified: "2026-09-28",
   inLanguage: "fr-FR",
   image: "https://www.constructiondemaisons.com/images/MAB4451.jpg",
 };
@@ -182,7 +182,7 @@ export default function GuideHonorairesMaitreOeuvrePage() {
                 </span>
               </div>
             </Link>
-            <p className="text-white/40 text-[13px]">Mis à jour le 14 septembre 2026</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 28 septembre 2026</p>
           </div>
         </div>
 

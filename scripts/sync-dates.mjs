@@ -14,7 +14,7 @@
  *   node scripts/sync-dates.mjs --write    applique les corrections
  */
 import { execFileSync } from "node:child_process";
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 
 
 const WRITE = process.argv.includes("--write");
@@ -34,7 +34,24 @@ const routes = [...sitemapSrc.matchAll(/\$\{BASE\}(\/[^`$]*)`/g)].map((m) => m[1
 
 const fichierDeRoute = (route) => {
   const seg = route.replace(/^\/|\/$/g, "");
-  return seg ? `src/app/${seg}/page.tsx` : "src/app/page.tsx";
+  if (!seg) return "src/app/page.tsx";
+
+  const direct = `src/app/${seg}/page.tsx`;
+  if (existsSync(direct)) return direct;
+
+  // Route rendue par un segment dynamique : /catalogue/aravis/ n'a pas de dossier
+  // propre, c'est src/app/catalogue/[modele]/page.tsx qui la produit. Sans ce repli,
+  // ces routes étaient écartées et disparaissaient du référentiel à chaque exécution.
+  const parts = seg.split("/");
+  const parent = parts.slice(0, -1).join("/");
+  if (parent) {
+    const dossierParent = `src/app/${parent}`;
+    if (existsSync(dossierParent)) {
+      const dynamique = readdirSync(dossierParent).find((d) => /^\[.+\]$/.test(d));
+      if (dynamique) return `${dossierParent}/${dynamique}/page.tsx`;
+    }
+  }
+  return direct;
 };
 
 const dates = {};
@@ -57,6 +74,23 @@ const moduleDates = `// Dates de dernière modification réelle de chaque page d
 export const DATES_PAGES: Record<string, string> = {
 ${Object.entries(dates).map(([r, d]) => `  ${JSON.stringify(r)}: ${JSON.stringify(d)},`).join("\n")}
 };
+
+// Les pages piliers et locales n'exposaient aucune date en JSON-LD : les moteurs
+// génératifs les lisaient comme non datées, d'où un score de fraîcheur nul dans
+// l'audit GEO du 14/09/2026. La date vient du référentiel ci-dessus, jamais d'une
+// valeur fabriquée.
+export function jsonLdPageDatee(route: string, nom: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: nom,
+    description,
+    url: \`https://www.constructiondemaisons.com\${route}\`,
+    inLanguage: "fr-FR",
+    dateModified: DATES_PAGES[route],
+    publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: "https://www.constructiondemaisons.com" },
+  };
+}
 
 /** Date de dernière modification d'une page, pour le lastmod du sitemap. */
 export function datePage(route: string): Date {

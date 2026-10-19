@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.constructiondemaisons.com/guides/garanties-assurance-maitre-oeuvre/",
   },
-  openGraph: { type: "article", publishedTime: "2025-01-15", modifiedTime: "2026-08-20" },
+  openGraph: { type: "article", publishedTime: "2025-01-15", modifiedTime: "2026-09-28" },
 };
 
 const BASE = "https://www.constructiondemaisons.com";
@@ -22,7 +22,7 @@ const jsonLdArticle = {
   author: { "@type": "Person", name: "Mahmoud Ben Ahmed" },
   publisher: { "@type": "Organization", name: "M&M CONSTRUCTION", url: BASE },
   datePublished: "2025-01-15",
-  dateModified: "2026-08-20",
+  dateModified: "2026-09-28",
   inLanguage: "fr-FR",
   image: "https://www.constructiondemaisons.com/images/hero-maison-bois-alpine.jpg",
 };
@@ -125,7 +125,7 @@ export default function GuideGarantiesPage() {
               </span>
             </div>
           </Link>
-            <p className="text-white/40 text-[13px]">Mis à jour le 20 août 2026</p>
+            <p className="text-white/40 text-[13px]">Mis à jour le 28 septembre 2026</p>
           </div>
         </div>
 
