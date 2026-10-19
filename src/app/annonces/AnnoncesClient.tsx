@@ -121,28 +121,44 @@ function formatBudget(n: number) {
   return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
 }
 
+const MODEL_KEYS = ["tournette", "bargy", "voirons", "saleve", "aravis", "etale", "prestige"];
+
+const TYPE_OPTIONS = [
+  { value: "",           label: "Tous",             group: null },
+  { value: "terrain",    label: "Terrain à bâtir",  group: null },
+  { value: "maison",     label: "Maison + terrain",  group: null },
+  { value: "tournette",  label: "Modèle Tournette",  group: "Modèles" },
+  { value: "bargy",      label: "Modèle Bargy",      group: "Modèles" },
+  { value: "voirons",    label: "Modèle Voirons",    group: "Modèles" },
+  { value: "saleve",     label: "Modèle Salève",     group: "Modèles" },
+  { value: "aravis",     label: "Modèle Aravis",     group: "Modèles" },
+  { value: "etale",      label: "Modèle Étale",      group: "Modèles" },
+  { value: "prestige",   label: "Sur mesure",        group: "Modèles" },
+];
+
+const TYPES_VALIDES = new Set(TYPE_OPTIONS.map((o) => o.value).filter(Boolean));
+
 export default function AnnoncesPage() {
   const searchParams = useSearchParams();
 
-  // Type filter — initialisé depuis le param URL (liens nav), modifiable via dropdown
+  // Type filter — initialisé depuis le param URL, modifiable via dropdown.
+  // Tous les types du menu sont acceptés, modèles compris : un lien ?type=aravis
+  // doit arriver filtré, sinon le filtre n'est ni partageable ni indexable.
   const typeParam = searchParams.get("type");
-  const typeInit = typeParam === "terrain" ? "terrain" : typeParam === "maison" ? "maison" : "";
+  const typeInit = typeParam && TYPES_VALIDES.has(typeParam) ? typeParam : "";
   const [typeActif, setTypeActif] = useState(typeInit);
   const [typeOpen, setTypeOpen] = useState(false);
   const typeRef = useRef<HTMLDivElement>(null);
 
-  const TYPE_OPTIONS = [
-    { value: "",           label: "Tous",             group: null },
-    { value: "terrain",    label: "Terrain à bâtir",  group: null },
-    { value: "maison",     label: "Maison + terrain",  group: null },
-    { value: "tournette",  label: "Modèle Tournette",  group: "Modèles" },
-    { value: "bargy",      label: "Modèle Bargy",      group: "Modèles" },
-    { value: "voirons",    label: "Modèle Voirons",    group: "Modèles" },
-    { value: "saleve",     label: "Modèle Salève",     group: "Modèles" },
-    { value: "aravis",     label: "Modèle Aravis",     group: "Modèles" },
-    { value: "etale",      label: "Modèle Étale",      group: "Modèles" },
-    { value: "prestige",   label: "Sur mesure",        group: "Modèles" },
-  ];
+  // Synchronisation inverse : la sélection se reporte dans l'URL pour que le lien
+  // reste partageable après un clic. replaceState plutôt que router.replace —
+  // le filtrage est purement client, inutile de provoquer une navigation.
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (typeActif) url.searchParams.set("type", typeActif);
+    else url.searchParams.delete("type");
+    if (url.href !== window.location.href) window.history.replaceState(null, "", url);
+  }, [typeActif]);
 
   const [communesFiltrees, setCommunesFiltrees] = useState<string[]>([]);
   const [prixMin, setPrixMin] = useState("");
@@ -320,7 +336,6 @@ export default function AnnoncesPage() {
   const surfaceActif = surfaceMin !== "" || surfaceMax !== "";
   const maisonSurfaceActif = maisonSurfaceMin !== "" || maisonSurfaceMax !== "";
   const nbFiltresActifs = [typeActif !== "", communesFiltrees.length > 0, prixActif, surfaceActif, maisonSurfaceActif, chambresMin > 0].filter(Boolean).length;
-  const MODEL_KEYS = ["tournette", "bargy", "voirons", "saleve", "aravis", "etale", "prestige"];
   const isModelFilter = MODEL_KEYS.includes(typeActif);
   const showMaisonFilters = typeActif !== "terrain";
 
