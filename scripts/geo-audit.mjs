@@ -41,6 +41,9 @@ const MOCK = process.env.GEO_MOCK === "1";
 const RUNS = Number(ARGS.get("runs") ?? process.env.GEO_RUNS ?? 3);
 const CONTEXT_SIZE = process.env.GEO_CONTEXT_SIZE ?? "medium";
 const SLEEP_MS = Number(process.env.GEO_SLEEP_MS ?? 800);
+// Part d'appels API en échec au-delà de laquelle un score n'a plus de sens : on envoie
+// une alerte « mesure impossible » au lieu d'un rapport, et on n'archive rien.
+const MAX_FAILURE_RATE = Number(process.env.GEO_MAX_FAILURE_RATE ?? 0.2);
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = join(ROOT, "data", "geo");
@@ -154,8 +157,10 @@ function median(nums) {
 
 function aggregateRuns(runs) {
   const ok = runs.filter((r) => !r.error);
+  // Le message de l'API est conservé : sans lui, un audit en échec est indiagnosticable.
+  const errorSample = runs.find((r) => r.error)?.error ?? null;
   if (!ok.length) {
-    return { cited: false, citedEarly: false, position: null, citedRuns: 0, mmUrls: [], competitors: [], runs: runs.length, errors: runs.length, sample: "" };
+    return { cited: false, citedEarly: false, position: null, citedRuns: 0, mmUrls: [], competitors: [], runs: runs.length, errors: runs.length, sample: "", errorSample };
   }
   const positions = ok.map((r) => r.position).filter((p) => p !== null);
   const compCount = {};
@@ -173,7 +178,54 @@ function aggregateRuns(runs) {
     runs: runs.length,
     errors: runs.length - ok.length,
     sample: ok[0]?.content?.slice(0, 400) ?? "",
+    errorSample,
   };
+}
+
+// ─── Santé de la mesure ──────────────────────────────────────────────────────
+
+// Compte les appels réellement aboutis. Un rapport n'est publiable que si la mesure
+// a eu lieu : 120 appels en échec donnent 0 %, ce qui se lit comme un effondrement
+// alors que rien n'a été mesuré.
+function measureHealth(results) {
+  let calls = 0;
+  let failed = 0;
+  const messages = new Map();
+  for (const r of results) {
+    for (const p of Object.values(r.passes ?? {})) {
+      calls += p.runs ?? 0;
+      failed += p.errors ?? 0;
+      if (p.errorSample) messages.set(p.errorSample, (messages.get(p.errorSample) ?? 0) + 1);
+    }
+  }
+  const failureRate = calls ? failed / calls : 1;
+  const errors = [...messages.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([message, count]) => ({ message, count }));
+  const status = failed === calls ? "failed" : failureRate > MAX_FAILURE_RATE ? "unreliable" : failed > 0 ? "degraded" : "ok";
+  return { calls, failed, failureRate: Math.round(failureRate * 1000) / 1000, errors, status, publishable: status === "ok" || status === "degraded" };
+}
+
+// Traduit l'erreur brute de l'API en cause et en geste de réparation.
+function diagnose(errors) {
+  const all = errors.map((e) => e.message).join(" ");
+  if (/402|insufficient|credit/i.test(all)) {
+    return { cause: "Crédits API Perplexity épuisés.", fix: "Recharger le compte sur https://www.perplexity.ai/account/api/billing, puis relancer le workflow." };
+  }
+  if (/401|403|unauthorized|forbidden|invalid.{0,20}key/i.test(all)) {
+    return { cause: "Clé API Perplexity refusée (expirée, révoquée ou mal copiée).", fix: "Regénérer la clé chez Perplexity et mettre à jour le secret PERPLEXITY_API_KEY du dépôt." };
+  }
+  if (/429|rate.?limit|too many requests/i.test(all)) {
+    return { cause: "Limite de débit de l'API atteinte.", fix: "Augmenter GEO_SLEEP_MS (800 ms actuellement) et relancer." };
+  }
+  if (/ENOTFOUND|ECONNRESET|ETIMEDOUT|fetch failed|network/i.test(all)) {
+    return { cause: "L'API Perplexity était injoignable (réseau ou panne côté fournisseur).", fix: "Relancer le workflow ; si l'erreur persiste, vérifier le statut du service Perplexity." };
+  }
+  if (/\b400\b|model|not.{0,10}found|deprecat/i.test(all)) {
+    return { cause: "Requête refusée par l'API — le modèle « sonar » a peut-être été renommé ou retiré.", fix: "Vérifier les modèles disponibles dans la documentation Perplexity et corriger le champ model du script." };
+  }
+  return { cause: "Cause non identifiée automatiquement.", fix: "Lire le message d'erreur ci-dessous et les logs du workflow." };
 }
 
 // ─── Audit ───────────────────────────────────────────────────────────────────
@@ -219,22 +271,52 @@ async function runAudit() {
     };
   }
 
-  return { date: new Date().toISOString(), runs: RUNS, contextSize: CONTEXT_SIZE, model: "sonar", mock: MOCK, summary, results };
+  const health = measureHealth(results);
+  return { date: new Date().toISOString(), runs: RUNS, contextSize: CONTEXT_SIZE, model: "sonar", mock: MOCK, health, summary, results };
 }
 
 // ─── Historique ──────────────────────────────────────────────────────────────
 
+// Un audit archivé n'est un point de comparaison valable que si ses appels ont abouti.
+// Les audits du 05, 12 et 19/10/2026 (crédits API épuisés) sont à 0 % sans rien avoir
+// mesuré : les comparer donnerait un faux bond de +60 au premier audit réussi.
+function auditIsUsable(audit) {
+  const results = audit?.results;
+  if (!Array.isArray(results) || !results.length) return false;
+  let calls = 0;
+  let failed = 0;
+  for (const r of results) {
+    for (const pass of Object.values(r.passes ?? {})) {
+      calls += pass.runs ?? 0;
+      failed += pass.errors ?? 0;
+    }
+  }
+  return calls > 0 && failed / calls <= MAX_FAILURE_RATE;
+}
+
 function loadPrevious() {
   if (!existsSync(DATA_DIR)) return null;
   const files = readdirSync(DATA_DIR).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
-  if (!files.length) return null;
-  try { return JSON.parse(readFileSync(join(DATA_DIR, files[files.length - 1]), "utf8")); } catch { return null; }
+  // On remonte jusqu'au dernier audit réellement mesuré.
+  for (let i = files.length - 1; i >= 0; i--) {
+    try {
+      const audit = JSON.parse(readFileSync(join(DATA_DIR, files[i]), "utf8"));
+      if (auditIsUsable(audit)) return audit;
+      console.log(`⏭  ${files[i]} écarté de la comparaison : mesure incomplète.`);
+    } catch {
+      console.log(`⏭  ${files[i]} illisible, ignoré.`);
+    }
+  }
+  return null;
 }
 
 function saveAudit(audit) {
   // Pas d'archive en mock ni en test rapide (--runs < 3) : un résultat hors protocole ne doit
   // jamais servir de référence à la comparaison de la semaine suivante.
   if (MOCK || RUNS < 3) return null;
+  // Une mesure trop incomplète n'entre pas dans l'historique : elle ne doit ni servir de
+  // référence, ni apparaître comme un point de mesure dans le suivi hebdomadaire.
+  if (!audit.health?.publishable) return null;
   mkdirSync(DATA_DIR, { recursive: true });
   const name = `${audit.date.slice(0, 10)}.json`;
   const slim = {
@@ -312,6 +394,7 @@ function buildHtml(audit, previous) {
       <div style="color:#fff;font-size:22px;font-weight:700">constructiondemaisons.com</div>
       <div style="color:rgba(255,255,255,.5);font-size:13px;margin-top:4px">${dateStr} · Perplexity ${esc(audit.model)} · contexte ${esc(audit.contextSize)} · ${audit.runs} exécution(s) par requête${prevDate ? ` · comparé au ${prevDate}` : ""}${audit.mock ? " · MOCK" : ""}</div>
     </div>
+    ${audit.health?.status === "degraded" ? `<div style="background:#FEF3C7;border-bottom:1px solid #f59e0b;padding:12px 32px;font-size:13px;color:#2C2C2A">⚠️ Mesure partielle : ${esc(audit.health.failed)} appel(s) sur ${esc(audit.health.calls)} en échec. Les scores ci-dessous sont légèrement sous-estimés.</div>` : ""}
     <div style="display:flex;border-bottom:1px solid #e5e7eb">
       ${kpi(`${A.score}%${delta(A.score, PA?.score)}`, "Score autorité (sans filtre de date)", scoreColor(A.score))}
       ${kpi(`${A.urlCited}/${QUERIES.length}${delta(A.urlCited, PA?.urlCited)}`, "Requêtes avec une URL du site citée", "#2563eb")}
@@ -340,11 +423,66 @@ function buildHtml(audit, previous) {
 </html>`;
 }
 
+// Alerte envoyée quand la mesure n'a pas eu lieu. Aucun score n'y figure : le but est
+// de dire « on n'a pas pu mesurer » et comment réparer, pas de laisser croire à une chute.
+function buildAlertHtml(audit, previous) {
+  const h = audit.health;
+  const d = diagnose(h.errors);
+  const dateStr = new Date(audit.date).toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  const prev = previous?.summary?.authority
+    ? `<p style="margin:0 0 6px;font-size:14px;color:#2C2C2A">Dernière mesure valide — <strong>${previous.date.slice(0, 10)}</strong> : autorité <strong>${previous.summary.authority.score}%</strong>, ${previous.summary.authority.citedEarly} requête(s) en tête.</p>
+       <p style="margin:0;font-size:13px;color:#6b7280">Elle reste la référence : rien n'indique qu'elle ait changé.</p>`
+    : `<p style="margin:0;font-size:13px;color:#6b7280">Aucune mesure valide antérieure dans l'historique.</p>`;
+
+  return `<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="font-family:system-ui,sans-serif;background:#f9fafb;margin:0;padding:24px">
+  <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)">
+    <div style="background:#2C2C2A;padding:28px 32px">
+      <div style="color:#f59e0b;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">GEO Audit — mesure impossible</div>
+      <div style="color:#fff;font-size:22px;font-weight:700">constructiondemaisons.com</div>
+      <div style="color:rgba(255,255,255,.5);font-size:13px;margin-top:4px">${dateStr}</div>
+    </div>
+
+    <div style="padding:24px 32px">
+      <div style="background:#FEF3C7;border-left:4px solid #f59e0b;padding:14px 16px;margin-bottom:22px">
+        <p style="margin:0;font-size:15px;color:#2C2C2A;line-height:1.6">
+          <strong>Aucun score cette semaine : l'audit n'a pas pu interroger Perplexity.</strong><br>
+          ${esc(h.failed)} appel(s) sur ${esc(h.calls)} en échec. Ce n'est pas une perte de visibilité — aucune donnée n'a été collectée.
+        </p>
+      </div>
+
+      <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em">Cause</p>
+      <p style="margin:0 0 4px;font-size:15px;color:#2C2C2A">${esc(d.cause)}</p>
+      <p style="margin:0 0 22px;font-size:14px;color:#2C2C2A"><strong>À faire :</strong> ${esc(d.fix)}</p>
+
+      <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em">Où en était le référencement</p>
+      <div style="background:#F2EDE6;padding:14px 16px;margin-bottom:22px">${prev}</div>
+
+      <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em">Message brut de l'API</p>
+      <pre style="margin:0;padding:12px;background:#f3f4f6;font-size:12px;color:#374151;white-space:pre-wrap;word-break:break-word;border-radius:4px">${esc(h.errors.map((e) => `[${e.count}×] ${e.message}`).join("\n\n") || "aucun message capturé")}</pre>
+    </div>
+
+    <div style="padding:16px 24px;background:#f9fafb;border-top:1px solid #e5e7eb">
+      <p style="margin:0;font-size:12px;color:#9ca3af;line-height:1.6">
+        Rien n'a été archivé dans l'historique : la semaine prochaine, la comparaison repartira de la dernière mesure valide.
+        Le workflow est volontairement marqué en échec dans l'onglet Actions du dépôt.
+      </p>
+    </div>
+  </div>
+</body>
+</html>`;
+}
+
 async function sendEmail(html, audit) {
   if (DRY) { console.log("\n📧 --dry : email non envoyé."); return; }
   if (!RESEND_API_KEY) { console.log("\n📧 RESEND_API_KEY absente — email non envoyé."); return; }
   const A = audit.summary.authority;
-  const subject = `GEO Audit — Autorité ${A.score}% · ${A.citedEarly} en tête · ${new Date(audit.date).toLocaleDateString("fr-FR")}`;
+  const dateFr = new Date(audit.date).toLocaleDateString("fr-FR");
+  const subject = audit.health?.publishable
+    ? `GEO Audit — Autorité ${A.score}% · ${A.citedEarly} en tête · ${dateFr}`
+    : `⚠️ GEO Audit — mesure impossible · ${dateFr}`;
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
@@ -358,7 +496,28 @@ async function sendEmail(html, audit) {
 
 const previous = loadPrevious();
 const audit = await runAudit();
+const health = audit.health;
 const saved = saveAudit(audit);
+
+// Mesure non publiable : on envoie une alerte explicite plutôt qu'un rapport à 0 %,
+// on n'archive rien, et on sort en échec pour que le run soit rouge dans Actions.
+if (!health.publishable) {
+  const d = diagnose(health.errors);
+  const html = buildAlertHtml(audit, previous);
+  if (ARGS.get("html")) writeFileSync(ARGS.get("html"), html);
+  await sendEmail(html, audit);
+
+  console.error(`\n❌ Mesure impossible : ${health.failed}/${health.calls} appels en échec (${Math.round(health.failureRate * 100)}%).`);
+  console.error(`   Cause : ${d.cause}`);
+  console.error(`   À faire : ${d.fix}`);
+  for (const e of health.errors) console.error(`   [${e.count}×] ${e.message}`);
+  if (previous?.summary?.authority) {
+    console.error(`\n↔  Dernière mesure valide (${previous.date.slice(0, 10)}) : autorité ${previous.summary.authority.score}% — inchangée, faute de nouvelle mesure.`);
+  }
+  console.error("   Aucun résultat archivé.");
+  process.exit(1);
+}
+
 const html = buildHtml(audit, previous);
 if (ARGS.get("html")) writeFileSync(ARGS.get("html"), html);
 await sendEmail(html, audit);
@@ -366,5 +525,6 @@ await sendEmail(html, audit);
 const A = audit.summary.authority, F = audit.summary.freshness;
 console.log(`\n📊 Autorité : ${A.score}% (${A.cited}/${QUERIES.length} citées, ${A.urlCited} avec URL, ${A.citedEarly} en tête, position moyenne ${A.avgPosition ?? "—"})`);
 console.log(`🗓  Fraîcheur : ${F.score}% (${F.cited}/${QUERIES.length})`);
+if (health.status === "degraded") console.log(`⚠️  Mesure partielle : ${health.failed}/${health.calls} appels en échec — scores sous-estimés.`);
 if (previous?.summary?.authority) console.log(`↔  Précédent (${previous.date.slice(0, 10)}) : autorité ${previous.summary.authority.score}%`);
 if (saved) console.log(`💾 data/geo/${saved}`);
