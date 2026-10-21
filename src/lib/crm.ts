@@ -49,11 +49,20 @@ function str(v: unknown): string | undefined {
   return typeof v === "string" && v.trim() ? v.trim() : undefined;
 }
 
-function num(v: unknown): number | undefined {
+/**
+ * Nombre lu dans une valeur de formulaire. Une tranche « A – B » donne B (borne haute) ; « Moins de A » et « Plus de A » donnent A.
+ * Avant le 21/10/2026, tous les caractères non numériques étaient supprimés : « 250 000 – 350 000 € » devenait 250000350000.
+ */
+export function num(v: unknown): number | undefined {
   if (typeof v === "number" && Number.isFinite(v)) return v;
   if (typeof v === "string") {
-    const digits = v.replace(/[^\d]/g, "");
-    if (digits) return Number(digits);
+    const nums = v
+      .split(/[–—-]|\bà\b|\bet\b|\//i)
+      .map((part) => part.replace(/[^\d]/g, ""))
+      .filter(Boolean)
+      .map(Number)
+      .filter(Number.isFinite);
+    if (nums.length) return Math.max(...nums);
   }
   return undefined;
 }
