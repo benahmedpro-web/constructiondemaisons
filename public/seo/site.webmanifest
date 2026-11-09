@@ -1,0 +1,28 @@
+{
+  "name": "M&M CONSTRUCTION — Maison ossature bois Haute-Savoie",
+  "short_name": "M&M CONSTRUCTION",
+  "description": "Maîtrise d'œuvre en maison ossature bois en Haute-Savoie, Pays de Gex et Grand Genève.",
+  "lang": "fr-FR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#BA7517",
+  "icons": [
+    {
+      "src": "/seo/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/seo/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/seo/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}

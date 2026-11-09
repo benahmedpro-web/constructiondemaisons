@@ -14,7 +14,7 @@ const jsonLdBusiness = {
   "@id": BASE + "/#business",
   name: "M&M CONSTRUCTION",
   url: BASE + "/",
-  logo: BASE + "/seo/logo.svg",
+  logo: BASE + "/seo/logo.png",
   image: BASE + "/images/hero-maison-bois-montagne-1.jpg",
   description:
     "Maîtrise d'œuvre spécialisée construction maison ossature bois en Haute-Savoie, Genevois français, Ain et Grand Genève. Conception, permis de construire, coordination de chantier.",
@@ -153,8 +153,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/seo/favicon.svg", type: "image/svg+xml" },
       { url: "/seo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/seo/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [{ url: "/seo/apple-touch-icon.png", sizes: "180x180" }],
   },
