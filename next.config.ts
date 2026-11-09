@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { redirectionsAnnonces } from "./src/lib/redirections-annonces";
+import { redirectionsMaisonsRemplacees } from "./src/lib/redirections-maisons-remplacees";
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -31,6 +32,9 @@ const nextConfig: NextConfig = {
       // Fiches dont le slug a changé avec la correction des surfaces habitables.
       // Table générée depuis les données du portefeuille, cf. src/lib/redirections-annonces.ts
       ...redirectionsAnnonces.map((r) => ({ ...r, statusCode: 301 as const })),
+      // Fiches maison remplacées par la reprise du portefeuille, indexées depuis
+      // des mois. Chacune mène à une page sur la même parcelle, pas à une liste.
+      ...redirectionsMaisonsRemplacees.map((r) => ({ ...r, statusCode: 301 as const })),
     ];
   },
 
